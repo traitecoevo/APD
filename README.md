@@ -1,7 +1,7 @@
-# APT
-## The Australian Plant Traits Dictionary
+# APD
+## The AusTraits Plant Dictionary
 
-The Australian Plant Traits Dictionary includes the trait definitions used by AusTraits, a database of Australian plant traits. Upon its release in 2023, the APT will include definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. Each trait definition has been reviewed by multiple people and includes references and links to identical/similar traits in other trait databases whenever possible. APT will be machine-readable, allowing the traits to be readily re-used by other databases. 
+The AusTraits Plant Dictionaryy includes the trait definitions used by AusTraits, a database of Australian plant traits. Upon its release in 2023, the APD will include definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. Each trait definition has been reviewed by multiple people and includes references and links to identical/similar traits in other trait databases whenever possible. APT will be machine-readable, allowing the traits to be readily re-used by other databases. 
 
 Each trait includes the following fields:
 * trait name (label)
