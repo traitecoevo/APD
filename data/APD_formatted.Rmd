@@ -1,0 +1,305 @@
+---
+title: AusTraits Plant Dictionary
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+devtools::load_all()
+library(knitr)
+library(kableExtra)
+my_kable_styling <- util_kable_styling_html
+
+APD <- read_csv("APD_2023_02_13.csv")
+words <- read_csv("ontology_links.csv")
+reviewers <- read_csv("APD_reviewers.csv")
+TOP <- read_csv("TOP_terms.csv")
+units <- read_csv("units_links.csv")
+references <- read_csv("APD_references.csv")
+categorical_values <- read_csv("APD_categorical_values.csv") 
+
+traits_selected <- "seed_length"
+trait_i <- APD %>% filter(trait == traits_selected)
+categorical_i <- categorical_values %>% filter(trait_name == traits_selected) %>% select(allowed_values, value_definitions)
+```
+### [trait name](http://www.w3.org/2000/01/rdf-schema#label): `r trait_i$label` 
+
+**AusTraits trait code:** `r trait_i$trait`  
+**APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
+**[trait description](http://purl.org/dc/terms/description)**:  
+
+```{r, results='asis', echo=FALSE}
+ if(!is.na(trait_i$description)){
+   cat('- ')
+   trait_i$description
+  }  
+```
+  
+- `r trait_i$description_encoded`  
+
+**[comments](http://www.w3.org/2000/01/rdf-schema#comment)** :
+```{r, results='asis', echo=FALSE}
+if(!is.na(trait_i$comments)){
+  trait_i$comments
+}else{
+  cat(' no comments')
+}    
+```
+    
+**[trait type](http://terminologies.gfbio.org/terms/ETS/valueType)**: [`r words$term[match(trait_i$type, words$base_identifier_to_match)]`](`r words$url[match(trait_i$type, words$base_identifier_to_match)]`)   
+
+```{r, results='asis', echo=FALSE}
+if(trait_i$type_x == "numeric"){
+  cat('[**units:**](http://terminologies.gfbio.org/terms/ETS/expectedUnit)')
+  if(is.na(match(trait_i$units_UCUM, units$code_to_match))) {
+  trait_i$units
+  } else {
+  sprintf("[%s](%s)", trait_i$units, units$Entity[match(trait_i$units_UCUM, units$code_to_match)])  
+  }
+}  
+```
+
+
+```{r, results='asis', echo=FALSE}
+if(trait_i$type_x == "numeric"){
+  cat('[**allowable minimum value: **](http://terminologies.gfbio.org/terms/ETS/minAllowedValue)')
+  trait_i$min
+}  
+```
+
+
+```{r, results='asis', echo=FALSE}
+if(trait_i$type_x == "numeric"){
+  cat('[**allowable maximum value: **](http://terminologies.gfbio.org/terms/ETS/maxAllowedValue)')
+  trait_i$max
+}  
+```
+
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+if(trait_i$type_x == "categorical"){
+sprintf("[**allowable values: **](https://terminologies.gfbio.org/terms/ets/pages/#factorlevels)  ")  
+  
+categorical_i  %>%
+  my_kable_styling()
+}
+```
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+
+cat('[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote): ') 
+if(is.na(trait_i$constraints)) {
+  cat('none')
+} else {
+trait_i$constraints    
+}
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+
+cat('[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote): ') 
+if(is.na(trait_i$deprecated_trait_name)) {
+  cat('none')
+} else {
+trait_i$deprecated_trait_name    
+}
+
+
+```
+
+```{r, results='asis', echo=FALSE}
+trait_category <- trait_i %>%
+  select(trait, category, category2, category3, category4) %>% 
+  pivot_longer(cols = 2:5) %>% 
+  filter(!is.na(value)) %>% 
+  select(value) %>%
+  mutate(value = paste(value, collapse = "; ")) %>% 
+  distinct()
+```
+**trait group**: `r trait_category$value`     
+
+```{r, results='asis', echo=FALSE}
+plant_structure <- trait_i %>%
+  select(plant_structure_1, plant_structure_2, plant_structure_3, plant_structure_4) %>% 
+  pivot_longer(cols = 1:4) %>% 
+  filter(!is.na(value)) %>% 
+  select(-name) %>%
+  mutate(
+    term = words$term[match(value, words$base_identifier_to_match)],
+    url = words$url[match(value, words$base_identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(joined) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct()
+```
+
+[**plant structure(s) measured**](https://w3id.org/iadopt/ont/hasContextObject): `r plant_structure$joined[1]`
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+measured_characteristic <- trait_i %>%
+  select(trait, measurement_char_1, measurement_char_2, measurement_char_3, measurement_char_4, measurement_char_5) %>% 
+  pivot_longer(cols = 2:6) %>% 
+  filter(!is.na(value)) %>% 
+  select(-name) %>%
+  mutate(
+    term = words$term[match(value, words$base_identifier_to_match)],
+    url = words$url[match(value, words$base_identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(trait, joined) %>%
+  group_by(trait) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct() 
+```
+
+[**characteristic(s) measured**](http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic): `r measured_characteristic$joined`   
+ 
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+keywords <- trait_i %>%
+  select(trait, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10, keyword_11, keyword_12, keyword_13, keyword_14, keyword_15, keyword_16, keyword_17, keyword_18, keyword_19, keyword_20) %>% 
+  pivot_longer(cols = 2:21) %>% 
+  filter(!is.na(value)) %>%
+  filter(value != "AusTraits_xxxxxxx") %>%
+  distinct() %>%
+  select(-name) %>%
+  mutate(
+    term = words$term[match(value, words$base_identifier_to_match)],
+    url = words$url[match(value, words$base_identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(trait, joined) %>%
+  group_by(trait) %>%
+  mutate(joined = paste(joined, collapse = ";  ")) %>% distinct() 
+``` 
+
+
+**[keywords](http://semanticscience.org/resource/SIO_000147) and other encoded terms**: `r keywords$joined`   
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  refs <- trait_i %>%
+    select(trait, ref1, ref2, ref3, ref4, ref5) %>%
+    pivot_longer(cols = 2:6) %>%
+    mutate(
+      label = references$label[match(value, references$label)],
+      citation = references$citation[match(value, references$label)],
+      identifier = references$Entity[match(value, references$label)],
+      identifier = ifelse(stringr::str_detect(identifier,"ISBN"), "https://books.google.com.au/", identifier),
+      joined = paste0("[",label,"](",identifier,") : ", citation)
+    ) %>%
+    filter(!is.na(value)) %>% 
+    select(joined) %>%
+    distinct() %>%
+    rename(references = joined)
+  
+  if(nrow(refs) > 0) {
+    cat('**[references](http://purl.org/dc/terms/references)**:') 
+    refs %>%  kable(col.names = NULL)
+  } else {  
+    cat('**[references](http://purl.org/dc/terms/references)**: No references linked to this trait.\n')
+  }
+```
+<br>
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+exact_match <- trait_i %>%
+  select(trait, exact_TOP_verbal, exact_TRY, exact_LEDA, exact_GIFT, exact_other1) %>% 
+  mutate(
+    exact_TOP_verbal = ifelse(!is.na(exact_TOP_verbal),paste0(TOP$label[match(trait_i$exact_TOP_verbal, TOP$traitID)]," [", trait_i$exact_TOP_verbal,"](https://top-thesaurus.org/index)"),NA),
+    exact_other1 = ifelse(!is.na(exact_other1), paste0(words$term[match(trait_i$exact_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$exact_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$exact_other1, words$base_identifier_to_match)], ")"), NA),
+    exact_TRY = stringr::str_replace(exact_TRY, "\\] \\(", "\\]\\("),
+    exact_GIFT = stringr::str_replace(exact_GIFT, "\\] \\(", "\\]\\("),
+    exact_LEDA = stringr::str_replace(exact_LEDA, "\\] \\(", "\\]\\(")
+    ) %>%
+  pivot_longer(cols = 2:6) %>%
+  select(value) %>% 
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%  
+  filter(value != "NA NA") %>% 
+  distinct() %>%
+  rename('[**exact matches **](http://www.w3.org/2004/02/skos/core#exactMatch)' = value)
+
+close_match <- trait_i %>%
+  select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>% 
+  mutate(
+    close_TOP_verbal = ifelse(!is.na(close_TOP_verbal),paste0(TOP$label[match(trait_i$close_TOP_verbal, TOP$traitID)]," [", trait_i$close_TOP_verbal,"](http://top-thesaurus.org/)"),NA),
+    close_other1 = ifelse(!is.na(close_other1), paste0(words$term[match(trait_i$close_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other1, words$base_identifier_to_match)], ")"), NA),
+    close_other2 = ifelse(!is.na(close_other2), paste0(words$term[match(trait_i$close_other2, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other2, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other2, words$base_identifier_to_match)], ")"), NA),
+    close_TRY = stringr::str_replace(close_TRY, "\\] \\(", "\\]\\("),
+    close_GIFT = stringr::str_replace(close_GIFT, "\\] \\(", "\\]\\("),
+    close_LEDA = stringr::str_replace(close_LEDA, "\\] \\(", "\\]\\(")
+    ) %>%
+  pivot_longer(cols = 2:7) %>%
+  select(value) %>% 
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%
+  distinct() %>%
+  rename('[**close matches **](http://www.w3.org/2004/02/skos/core#closeMatch)' = value)
+
+
+related_match <- trait_i %>%
+  select(trait, related_TOP, related_TRY, related_LEDA, related_GIFT, related_other, related_TOP2) %>% 
+  mutate(
+    related_TOP = ifelse(!is.na(related_TOP),paste0(TOP$label[match(trait_i$related_TOP, TOP$traitID)]," [", trait_i$related_TOP,"](http://top-thesaurus.org/)"),NA),
+    related_TOP2 = ifelse(!is.na(related_TOP2),paste0(TOP$label[match(trait_i$related_TOP2, TOP$traitID)]," [", trait_i$related_TOP2,"](http://top-thesaurus.org/)"),NA),
+    related_other = ifelse(!is.na(related_other), paste0(words$term[match(trait_i$related_other, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$related_other, words$base_identifier_to_match)],"](", words$url[match(trait_i$related_other, words$base_identifier_to_match)], ")"), NA),
+    related_TRY = stringr::str_replace(related_TRY, "\\] \\(", "\\]\\("),
+    related_GIFT = stringr::str_replace(related_GIFT, "\\] \\(", "\\]\\("),
+    related_LEDA = stringr::str_replace(related_LEDA, "\\] \\(", "\\]\\(")
+    ) %>%
+  pivot_longer(cols = 2:7) %>% 
+  select(value) %>%
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%
+  distinct() %>%
+  rename('[**related matches **](http://www.w3.org/2004/02/skos/core#relatedMatch)' = value)
+
+cat('**matches to other databases**: ')
+
+if(!nrow(exact_match>0)&!nrow(close_match>0)&!nrow(related_match>0)){
+  cat('No matches to other trait databases documented. \n')
+}
+
+if(nrow(exact_match)>0) {
+ exact_match %>% my_kable_styling()
+}
+
+if(nrow(close_match)>0) {
+ close_match %>% my_kable_styling()
+}
+
+if(nrow(related_match)>0) {
+ related_match %>% my_kable_styling()
+}
+
+
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+reviews <- trait_i %>%
+  select(trait, reviewer01, reviewer02, reviewer03, reviewer04, reviewer05, reviewer06, reviewer07, reviewer08, reviewer09, reviewer10) %>% 
+  pivot_longer(cols = 2:11) %>% 
+  filter(!is.na(value)) %>% 
+  distinct() %>%
+  select(-name) %>%
+  mutate(
+    term = reviewers$name[match(value, reviewers$name)],
+    url = reviewers$ORCID_link[match(value, reviewers$name)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(joined) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct(joined)
+```
+[**date created**](http://purl.org/dc/terms/created): `r trait_i$created`  
+
+[**date reviewed**](http://purl.org/dc/terms/modified): `r trait_i$modified`  
+
+[**reviewers**](http://purl.org/datacite/v4.4/IsReviewedBy):
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  if(nrow(reviews)>0) {
+    reviews$joined
+  } else {
+    cat('Trait has been reviewed by the AusTraits team, but not an external reviewer.')
+  }
+```
