@@ -1,5 +1,7 @@
 ---
 title: AusTraits Plant Dictionary
+params:
+  traits_selected: "seed_length"
 ---
 
 ```{r setup, include=FALSE}
@@ -9,73 +11,67 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
-devtools::load_all()
 library(knitr)
 library(kableExtra)
+library(readr)
+library(tidyr)
+library(dplyr)
+source("R/kable.R")
+source("R/helpers.R")
+
 my_kable_styling <- util_kable_styling_html
 
-APD <- read_csv("APD_2023_02_13.csv")
-words <- read_csv("ontology_links.csv")
-reviewers <- read_csv("APD_reviewers.csv")
-TOP <- read_csv("TOP_terms.csv")
-units <- read_csv("units_links.csv")
-references <- read_csv("APD_references.csv")
-categorical_values <- read_csv("APD_categorical_values.csv") 
+APD <- read_csv("data/APD_2023_02_13.csv")
+words <- read_csv("data/ontology_links.csv")
+reviewers <- read_csv("data/APD_reviewers.csv")
+TOP <- read_csv("data/TOP_terms.csv")
+units <- read_csv("data/units_links.csv")
+references <- read_csv("data/APD_references.csv")
+categorical_values <- read_csv("data/APD_categorical_values.csv") 
 
-traits_selected <- "seed_length"
-trait_i <- APD %>% filter(trait == traits_selected)
-categorical_i <- categorical_values %>% filter(trait_name == traits_selected) %>% select(allowed_values, value_definitions)
+trait_i <- 
+  APD %>% filter(trait == params$traits_selected)
+categorical_i <- 
+  categorical_values %>% filter(trait_name == params$traits_selected) %>% select(allowed_values, value_definitions)
+
 ```
-### [trait name](http://www.w3.org/2000/01/rdf-schema#label): `r trait_i$label` 
+## [trait name](http://www.w3.org/2000/01/rdf-schema#label): `r trait_i$label` 
 
 **AusTraits trait code:** `r trait_i$trait`  
 **APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
-**[trait description](http://purl.org/dc/terms/description)**:  
 
 ```{r, results='asis', echo=FALSE}
- if(!is.na(trait_i$description)){
-   cat('- ')
-   trait_i$description
-  }  
+print_list(
+  c(trait_i$description, trait_i$description_encoded),
+  title = "**[trait description](http://purl.org/dc/terms/description)**:")
 ```
   
-- `r trait_i$description_encoded`  
-
-**[comments](http://www.w3.org/2000/01/rdf-schema#comment)** :
 ```{r, results='asis', echo=FALSE}
-if(!is.na(trait_i$comments)){
-  trait_i$comments
-}else{
-  cat(' no comments')
-}    
+print_list(
+  trait_i$comments, 
+  title = "**[comments](http://www.w3.org/2000/01/rdf-schema#comment)** :", 
+  empty_text = "none")
 ```
     
 **[trait type](http://terminologies.gfbio.org/terms/ETS/valueType)**: [`r words$term[match(trait_i$type, words$base_identifier_to_match)]`](`r words$url[match(trait_i$type, words$base_identifier_to_match)]`)   
 
 ```{r, results='asis', echo=FALSE}
 if(trait_i$type_x == "numeric"){
-  cat('[**units:**](http://terminologies.gfbio.org/terms/ETS/expectedUnit)')
-  if(is.na(match(trait_i$units_UCUM, units$code_to_match))) {
-  trait_i$units
+  
+  ii <- match(trait_i$units_UCUM, units$code_to_match)
+  if(is.na(ii)) {
+    out <- trait_i$units
   } else {
-  sprintf("[%s](%s)", trait_i$units, units$Entity[match(trait_i$units_UCUM, units$code_to_match)])  
+    out <- sprintf("[%s](%s)", trait_i$units, units$Entity[ii])
   }
-}  
-```
 
-
-```{r, results='asis', echo=FALSE}
-if(trait_i$type_x == "numeric"){
-  cat('[**allowable minimum value: **](http://terminologies.gfbio.org/terms/ETS/minAllowedValue)')
-  trait_i$min
-}  
-```
-
-
-```{r, results='asis', echo=FALSE}
-if(trait_i$type_x == "numeric"){
-  cat('[**allowable maximum value: **](http://terminologies.gfbio.org/terms/ETS/maxAllowedValue)')
-  trait_i$max
+  c(
+    paste("[**units:**](http://terminologies.gfbio.org/terms/ETS/expectedUnit)", out),
+    "\n", 
+    paste("[**allowable minimum value: **](http://terminologies.gfbio.org/terms/ETS/minAllowedValue)", trait_i$min),
+    "\n", 
+    paste("[**allowable maximum value: **](http://terminologies.gfbio.org/terms/ETS/maxAllowedValue)", trait_i$max)
+    ) %>% writeLines()
 }  
 ```
 
@@ -186,7 +182,7 @@ keywords <- trait_i %>%
       citation = references$citation[match(value, references$label)],
       identifier = references$Entity[match(value, references$label)],
       identifier = ifelse(stringr::str_detect(identifier,"ISBN"), "https://books.google.com.au/", identifier),
-      joined = paste0("[",label,"](",identifier,") : ", citation)
+      joined = paste0("- [",label,"](",identifier,") : ", citation)
     ) %>%
     filter(!is.na(value)) %>% 
     select(joined) %>%
@@ -194,13 +190,14 @@ keywords <- trait_i %>%
     rename(references = joined)
   
   if(nrow(refs) > 0) {
-    cat('**[references](http://purl.org/dc/terms/references)**:') 
-    refs %>%  kable(col.names = NULL)
+    out <- refs$references
   } else {  
-    cat('**[references](http://purl.org/dc/terms/references)**: No references linked to this trait.\n')
+    out <- "No references linked to this trait."
   }
+  c('**[references](http://purl.org/dc/terms/references)**:',"",
+    out) %>% writeLines()
 ```
-<br>
+
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 exact_match <- trait_i %>%
@@ -217,8 +214,7 @@ exact_match <- trait_i %>%
   filter(!is.na(value)) %>% 
   filter(value != "[NA]NA") %>%  
   filter(value != "NA NA") %>% 
-  distinct() %>%
-  rename('[**exact matches **](http://www.w3.org/2004/02/skos/core#exactMatch)' = value)
+  distinct()
 
 close_match <- trait_i %>%
   select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>% 
@@ -234,9 +230,7 @@ close_match <- trait_i %>%
   select(value) %>% 
   filter(!is.na(value)) %>% 
   filter(value != "[NA]NA") %>%
-  distinct() %>%
-  rename('[**close matches **](http://www.w3.org/2004/02/skos/core#closeMatch)' = value)
-
+  distinct()
 
 related_match <- trait_i %>%
   select(trait, related_TOP, related_TRY, related_LEDA, related_GIFT, related_other, related_TOP2) %>% 
@@ -252,28 +246,31 @@ related_match <- trait_i %>%
   select(value) %>%
   filter(!is.na(value)) %>% 
   filter(value != "[NA]NA") %>%
-  distinct() %>%
-  rename('[**related matches **](http://www.w3.org/2004/02/skos/core#relatedMatch)' = value)
-
-cat('**matches to other databases**: ')
+  distinct() 
+  
+writeLines('**matches to other databases**: ')
 
 if(!nrow(exact_match>0)&!nrow(close_match>0)&!nrow(related_match>0)){
   cat('No matches to other trait databases documented. \n')
+} else{
+
+ 
+if(nrow(exact_match)>0)
+   print_list(
+    exact_match$value,
+    title = "\n[**exact matches **](http://www.w3.org/2004/02/skos/core#exactMatch)")
+
+if(nrow(close_match)>0) 
+  print_list(
+    close_match$value,
+    title = "\n[**close matches **](http://www.w3.org/2004/02/skos/core#closeMatch)")
+
+if(nrow(related_match)>0) 
+  print_list(
+    related_match$value,
+    title = "\n[**related matches **](http://www.w3.org/2004/02/skos/core#relatedMatch)")
+
 }
-
-if(nrow(exact_match)>0) {
- exact_match %>% my_kable_styling()
-}
-
-if(nrow(close_match)>0) {
- close_match %>% my_kable_styling()
-}
-
-if(nrow(related_match)>0) {
- related_match %>% my_kable_styling()
-}
-
-
 ```
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
@@ -295,11 +292,14 @@ reviews <- trait_i %>%
 
 [**date reviewed**](http://purl.org/dc/terms/modified): `r trait_i$modified`  
 
-[**reviewers**](http://purl.org/datacite/v4.4/IsReviewedBy):
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  
+  
   if(nrow(reviews)>0) {
-    reviews$joined
+   out <- reviews$joined
   } else {
-    cat('Trait has been reviewed by the AusTraits team, but not an external reviewer.')
+   out <- 'Trait has been reviewed by the AusTraits team, but not an external reviewer.'
   }
+  paste("[**reviewers**](http://purl.org/datacite/v4.4/IsReviewedBy):", out) %>% 
+  writeLines()
 ```
