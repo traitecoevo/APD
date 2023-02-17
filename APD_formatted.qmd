@@ -41,7 +41,7 @@ categorical_i <-
 **APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
 
 ```{r, results='asis', echo=FALSE}
-print_list(
+<span style="linkcolor: red;">print_list(
   c(trait_i$description, trait_i$description_encoded),
   title = "**[trait description](http://purl.org/dc/terms/description)**:")
 ```
@@ -84,26 +84,25 @@ categorical_i  %>%
   my_kable_styling()
 }
 ```
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 
-cat('[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote): ') 
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 if(is.na(trait_i$constraints)) {
-  cat('none')
+  out <- "none"
 } else {
-trait_i$constraints    
+  out <- trait_i$constraints 
 }
-```
 
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+ paste("[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote):", out,"\n") %>% 
+   writeLines()
 
-cat('[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote): ') 
 if(is.na(trait_i$deprecated_trait_name)) {
-  cat('none')
+  out <- "none"
 } else {
-trait_i$deprecated_trait_name    
+  out <- trait_i$deprecated_trait_name 
 }
 
-
+ paste("[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote):", out,"\n") %>% 
+   writeLines()
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -251,7 +250,7 @@ related_match <- trait_i %>%
 writeLines('**matches to other databases**: ')
 
 if(!nrow(exact_match>0)&!nrow(close_match>0)&!nrow(related_match>0)){
-  cat('No matches to other trait databases documented. \n')
+  paste("No matches to other trait databases documented. \n") %>% writeLines()
 } else{
 
  
