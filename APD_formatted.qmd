@@ -1,7 +1,7 @@
 ---
 title: AusTraits Plant Dictionary
 params:
-  traits_selected: "seed_length"
+  traits_selected: "plant_succulence"
 ---
 
 ```{r setup, include=FALSE}
@@ -21,7 +21,8 @@ source("R/helpers.R")
 
 my_kable_styling <- util_kable_styling_html
 
-APD <- read_csv("data/APD_2023_02_13.csv")
+APD <- read_csv("data/APD_2023_02_28.csv")
+hierarchy <- read_csv("data/trait_hierarchy.csv")
 words <- read_csv("data/ontology_links.csv")
 reviewers <- read_csv("data/APD_reviewers.csv")
 TOP <- read_csv("data/TOP_terms.csv")
@@ -41,7 +42,7 @@ categorical_i <-
 **APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
 
 ```{r, results='asis', echo=FALSE}
-<span style="linkcolor: red;">print_list(
+print_list(
   c(trait_i$description, trait_i$description_encoded),
   title = "**[trait description](http://purl.org/dc/terms/description)**:")
 ```
@@ -58,7 +59,10 @@ print_list(
 ```{r, results='asis', echo=FALSE}
 if(trait_i$type_x == "numeric"){
   
-  ii <- match(trait_i$units_UCUM, units$code_to_match)
+  trait_i <-  trait_i %>%
+    mutate(units_UCUM_stripped = stringr::str_remove_all(units_UCUM, "\\{H2O\\}|\\{CO2\\}|\\{count\\}|\\{N\\}|\\{P\\}|\\{biomass\\}|\\{leaf\\}"))
+  
+  ii <- match(trait_i$units_UCUM_stripped, units$code_to_match)
   if(is.na(ii)) {
     out <- trait_i$units
   } else {
@@ -107,18 +111,21 @@ if(is.na(trait_i$deprecated_trait_name)) {
 
 ```{r, results='asis', echo=FALSE}
 trait_category <- trait_i %>%
-  select(trait, category, category2, category3, category4) %>% 
+  select(trait, category_1, category_2, category_3, category_4) %>% 
   pivot_longer(cols = 2:5) %>% 
   filter(!is.na(value)) %>% 
   select(value) %>%
-  mutate(value = paste(value, collapse = "; ")) %>% 
+  mutate(
+    full_hierarchy = hierarchy$hierarchy[match(value, hierarchy$label)],
+    value = paste(full_hierarchy, collapse = "; ")
+    ) %>% 
   distinct()
 ```
-**trait group**: `r trait_category$value`     
+**trait group**: `r trait_category$value[1]`     
 
 ```{r, results='asis', echo=FALSE}
 plant_structure <- trait_i %>%
-  select(plant_structure_1, plant_structure_2, plant_structure_3, plant_structure_4) %>% 
+  select(structure_1, structure_2, structure_3, structure_4) %>% 
   pivot_longer(cols = 1:4) %>% 
   filter(!is.na(value)) %>% 
   select(-name) %>%
@@ -135,8 +142,8 @@ plant_structure <- trait_i %>%
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 measured_characteristic <- trait_i %>%
-  select(trait, measurement_char_1, measurement_char_2, measurement_char_3, measurement_char_4, measurement_char_5) %>% 
-  pivot_longer(cols = 2:6) %>% 
+  select(trait, meas_char_1, meas_char_2, meas_char_3, meas_char_4, meas_char_5, meas_char_6) %>% 
+  pivot_longer(cols = 2:7) %>% 
   filter(!is.na(value)) %>% 
   select(-name) %>%
   mutate(
@@ -164,17 +171,17 @@ keywords <- trait_i %>%
     url = words$url[match(value, words$base_identifier_to_match)],
     joined = paste0("[",term,"](",url,")")
     ) %>%
-  select(trait, joined) %>%
-  group_by(trait) %>%
+  arrange(joined) %>%
+  select(joined) %>% 
   mutate(joined = paste(joined, collapse = ";  ")) %>% distinct() 
 ``` 
 
 
-**[keywords](http://semanticscience.org/resource/SIO_000147) and other encoded terms**: `r keywords$joined`   
+**[keywords](http://semanticscience.org/resource/SIO_000147)**: `r keywords$joined`   
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
   refs <- trait_i %>%
-    select(trait, ref1, ref2, ref3, ref4, ref5) %>%
+    select(trait, ref_1, ref_2, ref_3, ref_4, ref_5) %>%
     pivot_longer(cols = 2:6) %>%
     mutate(
       label = references$label[match(value, references$label)],
@@ -216,7 +223,7 @@ exact_match <- trait_i %>%
   distinct()
 
 close_match <- trait_i %>%
-  select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>% 
+  select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>%
   mutate(
     close_TOP_verbal = ifelse(!is.na(close_TOP_verbal),paste0(TOP$label[match(trait_i$close_TOP_verbal, TOP$traitID)]," [", trait_i$close_TOP_verbal,"](http://top-thesaurus.org/)"),NA),
     close_other1 = ifelse(!is.na(close_other1), paste0(words$term[match(trait_i$close_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other1, words$base_identifier_to_match)], ")"), NA),
@@ -274,7 +281,7 @@ if(nrow(related_match)>0)
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 reviews <- trait_i %>%
-  select(trait, reviewer01, reviewer02, reviewer03, reviewer04, reviewer05, reviewer06, reviewer07, reviewer08, reviewer09, reviewer10) %>% 
+  select(trait, rev_01, rev_02, rev_03, rev_04, rev_05, rev_06, rev_07, rev_08, rev_09, rev_10) %>% 
   pivot_longer(cols = 2:11) %>% 
   filter(!is.na(value)) %>% 
   distinct() %>%
