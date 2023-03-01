@@ -1,7 +1,7 @@
 ---
 title: AusTraits Plant Dictionary
 params:
-  traits_selected: "plant_succulence"
+  traits_selected: "leaf_water_use_efficiency_integrated"
 ---
 
 ```{r setup, include=FALSE}
@@ -206,13 +206,19 @@ keywords <- trait_i %>%
 
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+trait_i <- trait_i %>%
+  mutate(
+    across(c("exact_TRY", "close_TRY", "related_TRY"), .fns = ~stringr::str_remove(.x, " \\(https\\://www.try-db.org\\/de\\/de.php\\)")),
+    across(c("exact_GIFT", "close_GIFT", "related_GIFT"), .fns = ~stringr::str_remove(.x, " \\(https\\://gift.uni-goettingen.de\\)"))
+    )
+
 exact_match <- trait_i %>%
   select(trait, exact_TOP_verbal, exact_TRY, exact_LEDA, exact_GIFT, exact_other1) %>% 
   mutate(
-    exact_TOP_verbal = ifelse(!is.na(exact_TOP_verbal),paste0(TOP$label[match(trait_i$exact_TOP_verbal, TOP$traitID)]," [", trait_i$exact_TOP_verbal,"](https://top-thesaurus.org/index)"),NA),
+    exact_TOP_verbal = ifelse(!is.na(exact_TOP_verbal),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$exact_TOP_verbal, TOP$traitID)]," [", trait_i$exact_TOP_verbal,"]"),NA),
     exact_other1 = ifelse(!is.na(exact_other1), paste0(words$term[match(trait_i$exact_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$exact_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$exact_other1, words$base_identifier_to_match)], ")"), NA),
-    exact_TRY = stringr::str_replace(exact_TRY, "\\] \\(", "\\]\\("),
-    exact_GIFT = stringr::str_replace(exact_GIFT, "\\] \\(", "\\]\\("),
+    exact_TRY = ifelse(!is.na(exact_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", exact_TRY), NA),
+    exact_GIFT = ifelse(!is.na(exact_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", exact_GIFT), NA),
     exact_LEDA = stringr::str_replace(exact_LEDA, "\\] \\(", "\\]\\(")
     ) %>%
   pivot_longer(cols = 2:6) %>%
@@ -225,11 +231,11 @@ exact_match <- trait_i %>%
 close_match <- trait_i %>%
   select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>%
   mutate(
-    close_TOP_verbal = ifelse(!is.na(close_TOP_verbal),paste0(TOP$label[match(trait_i$close_TOP_verbal, TOP$traitID)]," [", trait_i$close_TOP_verbal,"](http://top-thesaurus.org/)"),NA),
-    close_other1 = ifelse(!is.na(close_other1), paste0(words$term[match(trait_i$close_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other1, words$base_identifier_to_match)], ")"), NA),
+    close_TOP_verbal = ifelse(!is.na(close_TOP_verbal),paste0("[TOP](http://top-thesaurus.org/): ",TOP$label[match(trait_i$close_TOP_verbal, TOP$traitID)]," [", trait_i$close_TOP_verbal,"]"),NA),
+    close_other1 = ifelse(!is.na(close_other1), paste0("[",words$identifier[match(trait_i$close_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other1, words$base_identifier_to_match)], "): ", words$term[match(trait_i$close_other1, words$base_identifier_to_match)]), NA),
     close_other2 = ifelse(!is.na(close_other2), paste0(words$term[match(trait_i$close_other2, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other2, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other2, words$base_identifier_to_match)], ")"), NA),
-    close_TRY = stringr::str_replace(close_TRY, "\\] \\(", "\\]\\("),
-    close_GIFT = stringr::str_replace(close_GIFT, "\\] \\(", "\\]\\("),
+    close_TRY = ifelse(!is.na(close_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", close_TRY), NA),
+    close_GIFT = ifelse(!is.na(close_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", close_GIFT), NA),
     close_LEDA = stringr::str_replace(close_LEDA, "\\] \\(", "\\]\\(")
     ) %>%
   pivot_longer(cols = 2:7) %>%
@@ -244,8 +250,8 @@ related_match <- trait_i %>%
     related_TOP = ifelse(!is.na(related_TOP),paste0(TOP$label[match(trait_i$related_TOP, TOP$traitID)]," [", trait_i$related_TOP,"](http://top-thesaurus.org/)"),NA),
     related_TOP2 = ifelse(!is.na(related_TOP2),paste0(TOP$label[match(trait_i$related_TOP2, TOP$traitID)]," [", trait_i$related_TOP2,"](http://top-thesaurus.org/)"),NA),
     related_other = ifelse(!is.na(related_other), paste0(words$term[match(trait_i$related_other, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$related_other, words$base_identifier_to_match)],"](", words$url[match(trait_i$related_other, words$base_identifier_to_match)], ")"), NA),
-    related_TRY = stringr::str_replace(related_TRY, "\\] \\(", "\\]\\("),
-    related_GIFT = stringr::str_replace(related_GIFT, "\\] \\(", "\\]\\("),
+    related_TRY = ifelse(!is.na(related_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", related_TRY), NA),
+    related_GIFT = ifelse(!is.na(related_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", related_GIFT), NA),
     related_LEDA = stringr::str_replace(related_LEDA, "\\] \\(", "\\]\\(")
     ) %>%
   pivot_longer(cols = 2:7) %>% 
