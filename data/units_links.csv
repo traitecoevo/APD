@@ -61,3 +61,4 @@ https://w3id.org/uom/umol.mol-1.s-1,umol/mol/s,'micromole per mole second',,'A u
 https://w3id.org/uom/umol.umol-1,umol/umol,'micromole per micromole',,'A unit which is equal to 10â»â¶ mole per 10â»â¶ mole.',,'umol umol-1',"'umol.umol-1'	'umol/umol'"
 https://w3id.org/uom/%5Bppm%5D,[ppm],'parts per million',,,"'http://vocab.nerc.ac.uk/collection/P06/current/UPPM'	'http://qudt.org/vocab/unit/PPM'	'http://www.ontology-of-units-of-measure.org/resource/om-2/partsPerMillion'	'http://purl.obolibrary.org/obo/UO_0000169'",,'[ppm]'
 https://w3id.org/uom/%5Bppth%5D,[ppth],'parts per thousand',,,"'http://purl.obolibrary.org/obo/UO_0000168'	'http://vocab.nerc.ac.uk/collection/P06/current/UPPT'	'http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PartPerThousand'	'http://qudt.org/vocab/unit/PPTH'",,'[ppth]'
+https://w3id.org/uom/mm2.um,mm2.um,square millimetre micrometre',,A unit which is equal to 10⁻³ square metre by 10⁻⁶ metre.',,'mm2 um','mm2.um'

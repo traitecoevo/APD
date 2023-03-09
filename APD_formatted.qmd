@@ -1,7 +1,7 @@
 ---
 title: AusTraits Plant Dictionary
 params:
-  traits_selected: "leaf_photosynthetic_rate_per_area_maximum"
+  traits_selected: "leaf_epidermis_Ca_per_fresh_mass"
 format:
    pdf:
     toc: false
@@ -220,17 +220,18 @@ keywords <- trait_i %>%
 trait_i <- trait_i %>%
   mutate(
     across(c("exact_TRY", "close_TRY", "related_TRY"), .fns = ~stringr::str_remove(.x, " \\(https\\://www.try-db.org\\/de\\/de.php\\)")),
-    across(c("exact_GIFT", "close_GIFT", "related_GIFT"), .fns = ~stringr::str_remove(.x, " \\(https\\://gift.uni-goettingen.de\\)"))
+    across(c("exact_GIFT", "close_GIFT", "related_GIFT"), .fns = ~stringr::str_remove(.x, " \\(https\\://gift.uni-goettingen.de\\)")),
+    across(c("exact_LEDA", "close_LEDA", "related_LEDA"), .fns = ~stringr::str_remove(.x, " \\(https\\://uol.de\\/en\\/landeco\\/research\\/leda\\/standards\\)"))
     )
 
 exact_match <- trait_i %>%
-  select(trait, exact_TOP_verbal, exact_TRY, exact_LEDA, exact_GIFT, exact_other1) %>% 
+  select(trait, exact_TOP, exact_TRY, exact_LEDA, exact_GIFT, exact_other1) %>% 
   mutate(
-    exact_TOP_verbal = ifelse(!is.na(exact_TOP_verbal),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$exact_TOP_verbal, TOP$traitID)]," [", trait_i$exact_TOP_verbal,"]"),NA),
-    exact_other1 = ifelse(!is.na(exact_other1), paste0(words$term[match(trait_i$exact_other1, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$exact_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$exact_other1, words$base_identifier_to_match)], ")"), NA),
+    exact_TOP = ifelse(!is.na(exact_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$exact_TOP, TOP$traitID)]," [", trait_i$exact_TOP,"]"),NA),
+    exact_other1 = ifelse(!is.na(exact_other1), paste0("[",words$identifier[match(trait_i$exact_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$exact_other1, words$base_identifier_to_match)], "): ", words$term[match(trait_i$exact_other1, words$base_identifier_to_match)]), NA),
     exact_TRY = ifelse(!is.na(exact_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", exact_TRY), NA),
     exact_GIFT = ifelse(!is.na(exact_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", exact_GIFT), NA),
-    exact_LEDA = stringr::str_replace(exact_LEDA, "\\] \\(", "\\]\\(")
+    exact_LEDA = ifelse(!is.na(exact_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", exact_LEDA), NA)
     ) %>%
   pivot_longer(cols = 2:6) %>%
   select(value) %>% 
@@ -240,14 +241,14 @@ exact_match <- trait_i %>%
   distinct()
 
 close_match <- trait_i %>%
-  select(trait, close_TOP_verbal, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>%
+  select(trait, close_TOP, close_TRY, close_LEDA, close_GIFT, close_other1, close_other2) %>%
   mutate(
-    close_TOP_verbal = ifelse(!is.na(close_TOP_verbal),paste0("[TOP](http://top-thesaurus.org/): ",TOP$label[match(trait_i$close_TOP_verbal, TOP$traitID)]," [", trait_i$close_TOP_verbal,"]"),NA),
+    close_TOP = ifelse(!is.na(close_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$close_TOP, TOP$traitID)]," [", trait_i$close_TOP,"]"),NA),
     close_other1 = ifelse(!is.na(close_other1), paste0("[",words$identifier[match(trait_i$close_other1, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other1, words$base_identifier_to_match)], "): ", words$term[match(trait_i$close_other1, words$base_identifier_to_match)]), NA),
-    close_other2 = ifelse(!is.na(close_other2), paste0(words$term[match(trait_i$close_other2, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$close_other2, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other2, words$base_identifier_to_match)], ")"), NA),
+    close_other2 = ifelse(!is.na(close_other2), paste0("[",words$identifier[match(trait_i$close_other2, words$base_identifier_to_match)],"](", words$url[match(trait_i$close_other2, words$base_identifier_to_match)], "): ", words$term[match(trait_i$close_other2, words$base_identifier_to_match)]), NA),
     close_TRY = ifelse(!is.na(close_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", close_TRY), NA),
     close_GIFT = ifelse(!is.na(close_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", close_GIFT), NA),
-    close_LEDA = stringr::str_replace(close_LEDA, "\\] \\(", "\\]\\(")
+    close_LEDA = ifelse(!is.na(close_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", close_LEDA), NA)
     ) %>%
   pivot_longer(cols = 2:7) %>%
   select(value) %>% 
@@ -258,12 +259,12 @@ close_match <- trait_i %>%
 related_match <- trait_i %>%
   select(trait, related_TOP, related_TRY, related_LEDA, related_GIFT, related_other, related_TOP2) %>% 
   mutate(
-    related_TOP = ifelse(!is.na(related_TOP),paste0(TOP$label[match(trait_i$related_TOP, TOP$traitID)]," [", trait_i$related_TOP,"](http://top-thesaurus.org/)"),NA),
-    related_TOP2 = ifelse(!is.na(related_TOP2),paste0(TOP$label[match(trait_i$related_TOP2, TOP$traitID)]," [", trait_i$related_TOP2,"](http://top-thesaurus.org/)"),NA),
-    related_other = ifelse(!is.na(related_other), paste0(words$term[match(trait_i$related_other, words$base_identifier_to_match)]," [",words$identifier[match(trait_i$related_other, words$base_identifier_to_match)],"](", words$url[match(trait_i$related_other, words$base_identifier_to_match)], ")"), NA),
+    related_TOP = ifelse(!is.na(related_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$related_TOP, TOP$traitID)]," [", trait_i$related_TOP,"]"),NA),
+    related_TOP2 = ifelse(!is.na(related_TOP2),paste0("[TOP](https://top-thesaurus.org/index): ", TOP$label[match(trait_i$related_TOP2, TOP$traitID)]," [", trait_i$related_TOP2,"]"),NA),
+    related_other = ifelse(!is.na(related_other), paste0("[",words$identifier[match(trait_i$related_other, words$base_identifier_to_match)],"](", words$url[match(trait_i$related_other, words$base_identifier_to_match)], "): ", words$term[match(trait_i$related_other, words$base_identifier_to_match)]), NA),
     related_TRY = ifelse(!is.na(related_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", related_TRY), NA),
     related_GIFT = ifelse(!is.na(related_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", related_GIFT), NA),
-    related_LEDA = stringr::str_replace(related_LEDA, "\\] \\(", "\\]\\(")
+    related_LEDA = ifelse(!is.na(related_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", related_LEDA), NA)
     ) %>%
   pivot_longer(cols = 2:7) %>% 
   select(value) %>%
