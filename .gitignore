@@ -1,5 +1,6 @@
 
 *.html
-APD_formatted_files
+*.pdf
+*_files
 factsheets
 .Rproj.user

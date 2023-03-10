@@ -1,0 +1,76 @@
+---
+title:  AusTraits Plant Dictionary
+subtitle: Extract of traits for review
+author: Elizabeth Wenk on behalf of APD
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    smooth-scroll: true
+    toc: true
+  pdf:
+    documentclass: report
+    papersize: A4
+    classoption: [twocolumn, portrait]
+    toc: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    fontfamily: libertinus
+    colorlinks: false
+date: "2023.03.10"
+---
+
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+simplified <- TRUE
+
+traits <- c("leaf_Al_per_dry_mass", "leaf_B_per_dry_mass", "leaf_C_per_dry_mass", "leaf_Ca_per_dry_mass", "leaf_Cl_per_dry_mass", "leaf_Cr_per_dry_mass", "leaf_Co_per_dry_mass", "leaf_Cu_per_dry_mass", "leaf_Fe_per_dry_mass", "leaf_K_per_area", "leaf_K_per_dry_mass", "leaf_Mg_per_dry_mass", "leaf_Mn_per_dry_mass", "leaf_Mo_per_dry_mass", "leaf_N_per_area", "leaf_N_per_dry_mass", "leaf_Na_per_dry_mass", "leaf_Ni_per_dry_mass", "leaf_P_per_area", "leaf_P_per_dry_mass")[1:2]
+```
+
+
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(readr)
+library(tidyr)
+library(dplyr)
+
+source("R/kable.R")
+source("R/helpers.R")
+
+APD <- read_csv("data/APD_2023_02_28.csv")
+hierarchy <- read_csv("data/trait_hierarchy.csv")
+words <- read_csv("data/ontology_links.csv")
+reviewers <- read_csv("data/APD_reviewers.csv")
+TOP <- read_csv("data/TOP_terms.csv")
+units <- read_csv("data/units_links.csv")
+references <- read_csv("data/APD_references.csv")
+categorical_values <- read_csv("data/APD_categorical_values.csv") 
+
+if(knitr::is_html_output()) {
+  my_kable_styling <- util_kable_styling_html
+} else {
+  my_kable_styling <- util_kable_styling_pdf
+}
+```
+
+The APD is XXXX Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+
+for (thistrait in traits) {
+  
+  a <- knitr::knit_child("write_APD_trait.qmd", quiet = TRUE)
+  
+  writeLines(a)
+
+  if(!knitr::is_html_output()) {
+    writeLines("\n\\newpage\n")
+  }
+  
+  if(knitr::is_html_output()) {
+    writeLines("\n<br><br>\n")
+  }
+}
+```

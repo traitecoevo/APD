@@ -1,53 +1,18 @@
 ---
-title: AusTraits Plant Dictionary
-params:
-  traits_selected: "leaf_epidermis_Ca_per_fresh_mass"
-format:
-   pdf:
-    toc: false
-    papersize: A4
-    colorlinks: false
-    fontsize: 1.2em
-   html:
-    embed-resources: true
-    theme: cosmo
 editor_options: 
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
-
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-library(knitr)
-library(kableExtra)
-library(readr)
-library(tidyr)
-library(dplyr)
-source("R/kable.R")
-source("R/helpers.R")
-
-my_kable_styling <- util_kable_styling_html
-
-APD <- read_csv("data/APD_2023_02_28.csv")
-hierarchy <- read_csv("data/trait_hierarchy.csv")
-words <- read_csv("data/ontology_links.csv")
-reviewers <- read_csv("data/APD_reviewers.csv")
-TOP <- read_csv("data/TOP_terms.csv")
-units <- read_csv("data/units_links.csv")
-references <- read_csv("data/APD_references.csv")
-categorical_values <- read_csv("data/APD_categorical_values.csv") 
-
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
 trait_i <- 
-  APD %>% filter(trait == params$traits_selected)
+  APD %>% filter(trait == thistrait)
+
 categorical_i <- 
-  categorical_values %>% filter(trait_name == params$traits_selected) %>% select(allowed_values, value_definitions)
+  categorical_values %>% filter(trait_name == thistrait) %>% 
+  select(allowed_values, value_definitions)
 
 ```
-## [trait name](http://www.w3.org/2000/01/rdf-schema#label): `r trait_i$label` 
+## `r trait_i$label` 
 
 **AusTraits trait code:** `r trait_i$trait`  
 **APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
@@ -116,8 +81,10 @@ if(is.na(trait_i$deprecated_trait_name)) {
   out <- trait_i$deprecated_trait_name 
 }
 
- paste("[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote):", out,"\n") %>% 
+ if(!simplified) {
+   paste("[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote):", out,"\n") %>% 
    writeLines()
+}
 ```
 
 ```{r, results='asis', echo=FALSE}
