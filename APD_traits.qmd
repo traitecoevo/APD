@@ -19,6 +19,10 @@ format:
       - heightrounded
     fontfamily: libertinus
     colorlinks: false
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
 date: "2023.03.10"
 ---
 
@@ -50,8 +54,10 @@ categorical_values <- read_csv("data/APD_categorical_values.csv")
 
 if(knitr::is_html_output()) {
   my_kable_styling <- util_kable_styling_html
-} else {
+} else if (knitr::is_latex_output()){
   my_kable_styling <- util_kable_styling_pdf
+} else {
+  my_kable_styling <- util_kable_styling_docx
 }
 ```
 

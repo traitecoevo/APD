@@ -24,3 +24,8 @@ util_kable_styling_pdf <- function(...) {
     kableExtra::kable_styling(latex_options = c("striped", "HOLD_position")) %>%
     kableExtra::column_spec(2, width = "32em")
 }
+
+#' @export
+util_kable_styling_docx <- function(...) {
+  kableExtra::kbl(...)
+}
