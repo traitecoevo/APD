@@ -39,12 +39,12 @@ library(dplyr)
 source("R/kable.R")
 source("R/helpers.R")
 
-APD <- read_csv("data/APD_2023_02_28.csv")
-hierarchy <- read_csv("data/trait_hierarchy.csv")
+APD <- read_csv("data/APD_traits.csv")
+hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
 words <- read_csv("data/ontology_links.csv")
 reviewers <- read_csv("data/APD_reviewers.csv")
 TOP <- read_csv("data/TOP_terms.csv")
-units <- read_csv("data/units_links.csv")
+units <- read_csv("data/APD_units.csv")
 references <- read_csv("data/APD_references.csv")
 categorical_values <- read_csv("data/APD_categorical_values.csv") 
 
@@ -55,7 +55,9 @@ if(knitr::is_html_output()) {
 }
 ```
 
-The APD is XXXX Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait defintion, excepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (an owl ontology), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies
+
+The APD is a community resource and we welcome any suggestions for edits, including additional key references for each trait or other trait databases for which we should add links. 
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 
