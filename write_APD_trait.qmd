@@ -15,7 +15,7 @@ categorical_i <-
 ## `r trait_i$label` 
 
 **AusTraits trait code:** `r trait_i$trait`  
-**APD identifier:** `r trait_i$traitID_code`  *this will eventually link to RVA page*   
+**APD identifier:** `r trait_i$traitID_code` 
 
 ```{r, results='asis', echo=FALSE}
 print_list(
@@ -36,7 +36,7 @@ print_list(
 if(trait_i$type_x == "numeric"){
   
   trait_i <-  trait_i %>%
-    mutate(units_UCUM_stripped = stringr::str_remove_all(units_UCUM, "\\{H2O\\}|\\{CO2\\}|\\{count\\}|\\{N\\}|\\{P\\}|\\{biomass\\}|\\{leaf\\}"))
+    mutate(units_UCUM_stripped = stringr::str_remove_all(units_UCUM, "\\{H2O\\}|\\{CO2\\}|\\{count\\}|\\{N\\}|\\{P\\}|\\{biomass\\}|\\{leaf\\}|\\{sapwood\\}|\\{root\\}|\\{shoot\\}"))
   
   ii <- match(trait_i$units_UCUM_stripped, units$code_to_match)
   if(is.na(ii)) {
@@ -72,8 +72,10 @@ if(is.na(trait_i$constraints)) {
   out <- trait_i$constraints 
 }
 
- paste("[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote):", out,"\n") %>% 
-   writeLines()
+ if(!simplified) {
+   paste("[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote):", out,"\n") %>% 
+     writeLines()
+  }
 
 if(is.na(trait_i$deprecated_trait_name)) {
   out <- "none"
@@ -98,8 +100,14 @@ trait_category <- trait_i %>%
     value = paste(full_hierarchy, collapse = "; ")
     ) %>% 
   distinct()
+
+ if(!simplified) {
+   paste("**trait group**", trait_category$value[1],"\n") %>% 
+   writeLines()
+  }
+
 ```
-**trait group**: `r trait_category$value[1]`     
+   
 
 ```{r, results='asis', echo=FALSE}
 plant_structure <- trait_i %>%
@@ -114,11 +122,14 @@ plant_structure <- trait_i %>%
     ) %>%
   select(joined) %>%
   mutate(joined = paste(joined, collapse = "; ")) %>% distinct()
+
 ```
 
 [**plant structure(s) measured**](https://w3id.org/iadopt/ont/hasContextObject): `r plant_structure$joined[1]`
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# measured characteristic
+
 measured_characteristic <- trait_i %>%
   select(trait, meas_char_1, meas_char_2, meas_char_3, meas_char_4, meas_char_5, meas_char_6) %>% 
   pivot_longer(cols = 2:7) %>% 
@@ -132,14 +143,20 @@ measured_characteristic <- trait_i %>%
   select(trait, joined) %>%
   group_by(trait) %>%
   mutate(joined = paste(joined, collapse = "; ")) %>% distinct() 
+
+ if(!simplified) {
+   paste("[**characteristic(s) measured**](http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic):", measured_characteristic$joined,"\n") %>% 
+   writeLines()
+  }
 ```
 
-[**characteristic(s) measured**](http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic): `r measured_characteristic$joined`   
- 
+
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# keywords
+
 keywords <- trait_i %>%
-  select(trait, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10, keyword_11, keyword_12, keyword_13, keyword_14, keyword_15, keyword_16, keyword_17, keyword_18, keyword_19, keyword_20) %>% 
-  pivot_longer(cols = 2:21) %>% 
+  select(trait, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10) %>% 
+  pivot_longer(cols = 2:11) %>% 
   filter(!is.na(value)) %>%
   filter(value != "AusTraits_xxxxxxx") %>%
   distinct() %>%
@@ -152,12 +169,17 @@ keywords <- trait_i %>%
   arrange(joined) %>%
   select(joined) %>% 
   mutate(joined = paste(joined, collapse = ";  ")) %>% distinct() 
+
+ if(!simplified) {
+   paste("[**keywords**](http://semanticscience.org/resource/SIO_000147):", keywords$joined,"\n") %>% 
+   writeLines()
+  }
 ``` 
 
 
-**[keywords](http://semanticscience.org/resource/SIO_000147)**: `r keywords$joined`   
-
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# references
+
   refs <- trait_i %>%
     select(trait, ref_1, ref_2, ref_3, ref_4, ref_5) %>%
     pivot_longer(cols = 2:6) %>%
@@ -184,6 +206,8 @@ keywords <- trait_i %>%
 
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# matches
+
 trait_i <- trait_i %>%
   mutate(
     across(c("exact_TRY", "close_TRY", "related_TRY"), .fns = ~stringr::str_remove(.x, " \\(https\\://www.try-db.org\\/de\\/de.php\\)")),
@@ -265,6 +289,23 @@ if(nrow(related_match)>0)
 ```
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# date created 
+  if(!simplified) {
+     paste("[**date created**](http://purl.org/dc/terms/created):", trait_i$created,"\n") %>% 
+     writeLines()
+  }
+
+
+# date reviewed
+ if(!simplified) {
+   paste("[**date reviewed**](http://purl.org/dc/terms/modified):", trait_i$modified,"\n") %>% 
+   writeLines()
+  }
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# reviewers
+
 reviews <- trait_i %>%
   select(trait, rev_01, rev_02, rev_03, rev_04, rev_05, rev_06, rev_07, rev_08, rev_09, rev_10) %>% 
   pivot_longer(cols = 2:11) %>% 
@@ -278,18 +319,11 @@ reviews <- trait_i %>%
     ) %>%
   select(joined) %>%
   mutate(joined = paste(joined, collapse = "; ")) %>% distinct(joined)
-```
-[**date created**](http://purl.org/dc/terms/created): `r trait_i$created`  
 
-[**date reviewed**](http://purl.org/dc/terms/modified): `r trait_i$modified`  
-
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-  
-  
   if(nrow(reviews)>0) {
    out <- reviews$joined
   } else {
-   out <- 'Trait has been reviewed by the AusTraits team, but not an external reviewer.'
+   out <- 'Trait has been reviewed by the AusTraits team but not an external reviewer.'
   }
   paste("[**reviewers**](http://purl.org/datacite/v4.4/IsReviewedBy):", out) %>% 
   writeLines()

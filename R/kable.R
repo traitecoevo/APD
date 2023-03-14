@@ -20,7 +20,7 @@ util_kable_styling_html <- function(...) {
 
 #' @export
 util_kable_styling_pdf <- function(...) {
-    kableExtra::kbl(format = "latex", booktabs = T, linesep = "\\addlinespace", ...) %>%
+    kableExtra::kbl(format = "latex", booktabs = T, linesep = "\\addlinespace", longtable = T, ...) %>%
     kableExtra::kable_styling(latex_options = c("striped", "HOLD_position")) %>%
     kableExtra::column_spec(2, width = "32em")
 }
