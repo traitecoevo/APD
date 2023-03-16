@@ -15,3 +15,18 @@ Each trait includes the following fields:
 * references
 * names/ORCIDs of people who have reviewed the trait definition
 * links to identical/similar/related traits in other plant trait databases
+
+
+```{r}
+#single
+ quarto::quarto_render("APD_formatted.qmd", execute_params = list(traits_selected = "seed_width"), output_file = "APD_seed_width.html")      
+
+ # many
+
+traits <- c("seed_width") 
+
+for(trait in traits){
+  quarto::quarto_render("APD_formatted.qmd", execute_params = list(traits_selected = trait), output_file = paste0("APD_", trait, ".html")) 
+}
+
+```

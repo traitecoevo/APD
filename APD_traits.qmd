@@ -1,0 +1,86 @@
+---
+title:  AusTraits Plant Dictionary
+subtitle: Extract of APD traits intended for review
+author: Elizabeth Wenk on behalf of APD
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    smooth-scroll: true
+    toc: true
+  pdf:
+    documentclass: report
+    papersize: A4
+    classoption: [onecolumn, portrait]
+    toc: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    fontfamily: libertinus
+    colorlinks: false
+  docx:
+    toc: true
+    number-sections: false
+    highlight-style: github
+    prefer-html: true
+date: "2023.03.10"
+---
+
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+simplified <- TRUE
+
+traits <- c("leaf_C_per_dry_mass","leaf_N_per_area","leaf_N_per_dry_mass","leaf_P_per_area","leaf_P_per_dry_mass","leaf_CN_ratio","plant_height","plant_diameter_breast_height","leaf_area","leaf_thickness","leaf_dry_mass","leaf_fresh_mass","leaf_mass_per_area","leaf_dry_matter_content","leaf_compoundness","wood_density","stem_density","flower_colour","fruit_type","seed_dry_mass","seed_length","stem_vessel_density","stem_vessel_diameter","leaf_work_to_shear_adjusted")
+```
+
+
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(readr)
+library(tidyr)
+library(dplyr)
+
+source("R/kable.R")
+source("R/helpers.R")
+
+APD <- read_csv("data/APD_traits.csv")
+hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
+classes <- read_csv("data/ontology_links.csv")
+reviewers <- read_csv("data/APD_reviewers.csv")
+units <- read_csv("data/APD_units.csv")
+references <- read_csv("data/APD_references.csv")
+categorical_values <- read_csv("data/APD_categorical_values.csv") 
+
+if(knitr::is_html_output()) {
+  my_kable_styling <- util_kable_styling_html
+} else if (knitr::is_latex_output()){
+  my_kable_styling <- util_kable_styling_pdf
+} else {
+  my_kable_styling <- util_kable_styling_docx
+}
+
+
+```
+
+The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait definition, excepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (an owl ontology), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies
+
+The APD is a community resource and we welcome any suggestions for edits, including additional key references for each trait or other trait databases for which we should add links. 
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+
+for (thistrait in traits) {
+  
+  a <- knitr::knit_child("write_APD_trait.qmd", quiet = TRUE)
+  
+  writeLines(a)
+
+  if(!knitr::is_html_output()) {
+    writeLines("\n\\newpage\n")
+  }
+  
+  if(knitr::is_html_output()) {
+    writeLines("\n<br><br>\n")
+  }
+}
+```

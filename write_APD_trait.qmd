@@ -1,0 +1,339 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+trait_i <- 
+  APD %>% filter(trait == thistrait)
+
+categorical_i <- 
+  categorical_values %>% filter(trait_name == thistrait) %>% 
+  select(allowed_values, value_definitions)
+
+```
+## `r trait_i$label` 
+
+**AusTraits trait code:** `r trait_i$trait`  
+**APD identifier:** `r trait_i$traitID_code` 
+
+```{r, results='asis', echo=FALSE}
+print_list(
+  c(trait_i$description, trait_i$description_encoded),
+  title = "**[trait description](http://purl.org/dc/terms/description)**:")
+```
+  
+```{r, results='asis', echo=FALSE}
+print_list(
+  trait_i$comments, 
+  title = "**[comments](http://www.w3.org/2000/01/rdf-schema#comment)** :", 
+  empty_text = "none")
+```
+    
+**[trait type](http://terminologies.gfbio.org/terms/ETS/valueType)**: [`r classes$label[match(trait_i$type, classes$identifier_to_match)]`](`r classes$Entity[match(trait_i$type, classes$identifier_to_match)]`)   
+
+```{r, results='asis', echo=FALSE}
+if(trait_i$type_x == "numeric"){
+
+  ii <- match(trait_i$units_uom, units$label)
+  if(is.na(ii)) {
+    out <- trait_i$units
+  } else {
+    out <- sprintf("[%s](%s)", trait_i$units, units$Entity[ii])
+  }
+
+  c(
+    paste("[**units:**](http://terminologies.gfbio.org/terms/ETS/expectedUnit)", out),
+    "\n", 
+    paste("[**allowable minimum value: **](http://terminologies.gfbio.org/terms/ETS/minAllowedValue)", trait_i$min),
+    "\n", 
+    paste("[**allowable maximum value: **](http://terminologies.gfbio.org/terms/ETS/maxAllowedValue)", trait_i$max)
+    ) %>% writeLines()
+}  
+```
+
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+if(trait_i$type_x == "categorical"){
+sprintf("[**allowable values: **](https://terminologies.gfbio.org/terms/ets/pages/#factorlevels)  ")  
+  
+categorical_i  %>%
+  my_kable_styling()
+}
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+if(is.na(trait_i$constraints)) {
+  out <- "none"
+} else {
+  out <- trait_i$constraints 
+}
+
+ if(!simplified) {
+   paste("[**constraints**](http://www.w3.org/2004/02/skos/core#scopeNote):", out,"\n") %>% 
+     writeLines()
+  }
+
+if(is.na(trait_i$deprecated_trait_name)) {
+  out <- "none"
+} else {
+  out <- trait_i$deprecated_trait_name 
+}
+
+ if(!simplified) {
+   paste("[**deprecated trait labels**](http://www.w3.org/2004/02/skos/core#changeNote):", out,"\n") %>% 
+   writeLines()
+}
+```
+
+```{r, results='asis', echo=FALSE}
+trait_category <- trait_i %>%
+  select(trait, category_1, category_2, category_3, category_4) %>% 
+  pivot_longer(cols = 2:5) %>% 
+  filter(!is.na(value)) %>% 
+  select(value) %>%
+  mutate(
+    full_hierarchy = hierarchy$hierarchy[match(value, hierarchy$label)],
+    value = paste(full_hierarchy, collapse = "; ")
+    ) %>% 
+  distinct()
+
+ if(!simplified) {
+   paste("**trait group**", trait_category$value[1],"\n") %>% 
+   writeLines()
+  }
+
+```
+   
+
+```{r, results='asis', echo=FALSE}
+plant_structure <- trait_i %>%
+  select(structure_1, structure_2, structure_3, structure_4) %>% 
+  pivot_longer(cols = 1:4) %>% 
+  filter(!is.na(value)) %>% 
+  select(-name) %>%
+  mutate(
+    term = classes$label[match(value, classes$identifier_to_match)],
+    url = classes$Entity[match(value, classes$identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(joined) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct()
+
+```
+
+[**plant structure(s) measured**](https://w3id.org/iadopt/ont/hasContextObject): `r plant_structure$joined[1]`
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# measured characteristic
+
+measured_characteristic <- trait_i %>%
+  select(trait, meas_char_1, meas_char_2, meas_char_3, meas_char_4, meas_char_5, meas_char_6) %>% 
+  pivot_longer(cols = 2:7) %>% 
+  filter(!is.na(value)) %>% 
+  select(-name) %>%
+  mutate(
+    term = classes$label[match(value, classes$identifier_to_match)],
+    url = classes$Entity[match(value, classes$identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(trait, joined) %>%
+  group_by(trait) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct() 
+
+ if(!simplified) {
+   paste("[**characteristic(s) measured**](http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic):", measured_characteristic$joined,"\n") %>% 
+   writeLines()
+  }
+```
+
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# keywords
+
+keywords <- trait_i %>%
+  select(trait, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10) %>% 
+  pivot_longer(cols = 2:11) %>% 
+  filter(!is.na(value)) %>%
+  filter(value != "AusTraits_xxxxxxx") %>%
+  distinct() %>%
+  select(-name) %>%
+  mutate(
+    term = classes$label[match(value, classes$identifier_to_match)],
+    url = classes$Entity[match(value, classes$identifier_to_match)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  arrange(joined) %>%
+  select(joined) %>% 
+  mutate(joined = paste(joined, collapse = ";  ")) %>% distinct() 
+
+ if(!simplified) {
+   paste("[**keywords**](http://semanticscience.org/resource/SIO_000147):", keywords$joined,"\n") %>% 
+   writeLines()
+  }
+``` 
+
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# references
+
+  refs <- trait_i %>%
+    select(trait, ref_1, ref_2, ref_3, ref_4, ref_5) %>%
+    pivot_longer(cols = 2:6) %>%
+    mutate(
+      label = references$label[match(value, references$label)],
+      citation = references$citation[match(value, references$label)],
+      identifier = references$Entity[match(value, references$label)],
+      identifier = ifelse(stringr::str_detect(identifier,"ISBN"), "https://books.google.com.au/", identifier),
+      joined = paste0("- [",label,"](",identifier,") : ", citation)
+    ) %>%
+    filter(!is.na(value)) %>% 
+    select(joined) %>%
+    distinct() %>%
+    rename(references = joined)
+  
+  if(nrow(refs) > 0) {
+    out <- refs$references
+  } else {  
+    out <- "No references linked to this trait."
+  }
+  c('**[references](http://purl.org/dc/terms/references)**:',"",
+    out) %>% writeLines()
+```
+
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# matches
+
+trait_i <- trait_i %>%
+  mutate(
+    across(c("exact_TOP", "close_TOP", "related_TOP"), .fns = ~stringr::str_remove(.x, " \\(https\\://top-thesaurus.org\\/index\\)")),
+    across(c("exact_TRY", "close_TRY", "related_TRY"), .fns = ~stringr::str_remove(.x, " \\(https\\://www.try-db.org\\/de\\/de.php\\)")),
+    across(c("exact_GIFT", "close_GIFT", "related_GIFT"), .fns = ~stringr::str_remove(.x, " \\(https\\://gift.uni-goettingen.de\\)")),
+    across(c("exact_LEDA", "close_LEDA", "related_LEDA"), .fns = ~stringr::str_remove(.x, " \\(https\\://uol.de\\/en\\/landeco\\/research\\/leda\\/standards\\)")),
+    across(c("exact_BIEN", "close_BIEN", "related_BIEN"), .fns = ~stringr::str_remove(.x, " \\(https\\://bien.nceas.ucsb.edu\\/bien\\/biendata\\)")),
+    across(c("exact_BROT", "close_BROT", "related_BROT"), .fns = ~stringr::str_remove(.x, " \\(http\\://doi.org\\/10.1038\\/sdata.2018.135\\)"))
+    )
+
+exact_match <- trait_i %>%
+  select(trait, exact_TOP, exact_TRY, exact_GIFT, exact_BIEN, exact_BROT, exact_LEDA, exact_other1) %>% 
+  mutate(
+    exact_other1 = ifelse(!is.na(exact_other1), paste0("[",classes$identifier[match(trait_i$exact_other1, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$exact_other1, classes$identifier_to_match)], "): ", classes$label[match(trait_i$exact_other1, classes$identifier_to_match)]), NA),
+    exact_TOP = ifelse(!is.na(exact_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", exact_TOP), NA),
+    exact_TRY = ifelse(!is.na(exact_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", exact_TRY), NA),
+    exact_GIFT = ifelse(!is.na(exact_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", exact_GIFT), NA),
+    exact_BIEN = ifelse(!is.na(exact_BIEN),paste0("[BIEN](https://bien.nceas.ucsb.edu/bien/biendata): ", exact_BIEN), NA),
+    exact_BROT = ifelse(!is.na(exact_BROT),paste0("[BROT](http://doi.org/10.1038/sdata.2018.135): ", exact_BROT), NA),
+    exact_LEDA = ifelse(!is.na(exact_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", exact_LEDA), NA)
+    ) %>%
+  pivot_longer(cols = 2:8) %>%
+  select(value) %>% 
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%  
+  filter(value != "NA NA") %>% 
+  distinct()
+
+close_match <- trait_i %>%
+  select(trait, close_TOP, close_TRY, close_GIFT, close_BIEN, close_BROT, close_LEDA, close_other1, close_other2) %>%
+  mutate(
+    close_other1 = ifelse(!is.na(close_other1), paste0("[",classes$identifier[match(trait_i$close_other1, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$close_other1, classes$identifier_to_match)], "): ", classes$label[match(trait_i$close_other1, classes$identifier_to_match)]), NA),
+    close_other2 = ifelse(!is.na(close_other2), paste0("[",classes$identifier[match(trait_i$close_other2, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$close_other2, classes$identifier_to_match)], "): ", classes$label[match(trait_i$close_other2, classes$identifier_to_match)]), NA),
+    close_TOP = ifelse(!is.na(close_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", close_TOP), NA),
+    close_TRY = ifelse(!is.na(close_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", close_TRY), NA),
+    close_GIFT = ifelse(!is.na(close_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", close_GIFT), NA),
+    close_BIEN = ifelse(!is.na(close_BIEN),paste0("[BIEN](https://bien.nceas.ucsb.edu/bien/biendata): ", close_BIEN), NA),
+    close_BROT = ifelse(!is.na(close_BROT),paste0("[BROT](http://doi.org/10.1038/sdata.2018.135): ", close_BROT), NA),
+    close_LEDA = ifelse(!is.na(close_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", close_LEDA), NA)
+    ) %>%
+  pivot_longer(cols = 2:9) %>%
+  select(value) %>% 
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%
+  distinct()
+
+related_match <- trait_i %>%
+  select(trait, related_TOP, related_TOP2, related_TRY, related_GIFT, related_BIEN, related_BROT, related_LEDA, related_other) %>% 
+  mutate(
+    related_other = ifelse(!is.na(related_other), paste0("[",classes$identifier[match(trait_i$related_other, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$related_other, classes$identifier_to_match)], "): ", classes$label[match(trait_i$related_other, classes$identifier_to_match)]), NA),
+    related_TOP = ifelse(!is.na(related_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", related_TOP), NA),
+    related_TOP2 = ifelse(!is.na(related_TOP2),paste0("[TOP](https://top-thesaurus.org/index): ", related_TOP2), NA),
+    related_TRY = ifelse(!is.na(related_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", related_TRY), NA),
+    related_GIFT = ifelse(!is.na(related_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", related_GIFT), NA),
+    related_BIEN = ifelse(!is.na(related_BIEN),paste0("[BIEN](https://bien.nceas.ucsb.edu/bien/biendata): ", related_BIEN), NA),
+    related_BROT = ifelse(!is.na(related_BROT),paste0("[BROT](http://doi.org/10.1038/sdata.2018.135): ", related_BROT), NA),
+    related_LEDA = ifelse(!is.na(related_LEDA),paste0("[LEDA](https://uol.de/en/landeco/research/leda/standards): ", related_LEDA), NA)
+    ) %>%
+  pivot_longer(cols = 2:9) %>% 
+  select(value) %>%
+  filter(!is.na(value)) %>% 
+  filter(value != "[NA]NA") %>%
+  distinct() 
+  
+writeLines('**matches to other databases**: ')
+
+if(!nrow(exact_match>0)&!nrow(close_match>0)&!nrow(related_match>0)){
+  paste("No matches to other trait databases documented. \n") %>% writeLines()
+} else{
+
+ 
+if(nrow(exact_match)>0)
+   print_list(
+    exact_match$value,
+    title = "\n[**exact matches **](http://www.w3.org/2004/02/skos/core#exactMatch)")
+
+if(nrow(close_match)>0) 
+  print_list(
+    close_match$value,
+    title = "\n[**close matches **](http://www.w3.org/2004/02/skos/core#closeMatch)")
+
+if(nrow(related_match)>0) 
+  print_list(
+    related_match$value,
+    title = "\n[**related matches **](http://www.w3.org/2004/02/skos/core#relatedMatch)")
+
+}
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# date created 
+  if(!simplified) {
+     paste("[**date created**](http://purl.org/dc/terms/created):", trait_i$created,"\n") %>% 
+     writeLines()
+  }
+
+
+# date reviewed
+ if(!simplified) {
+   paste("[**date reviewed**](http://purl.org/dc/terms/modified):", trait_i$modified,"\n") %>% 
+   writeLines()
+  }
+```
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+# reviewers
+
+reviews <- trait_i %>%
+  select(trait, rev_01, rev_02, rev_03, rev_04, rev_05, rev_06, rev_07, rev_08, rev_09, rev_10) %>% 
+  pivot_longer(cols = 2:11) %>% 
+  filter(!is.na(value)) %>% 
+  distinct() %>%
+  select(-name) %>%
+  mutate(
+    term = reviewers$label[match(value, reviewers$label)],
+    url = reviewers$Entity[match(value, reviewers$label)],
+    joined = paste0("[",term,"](",url,")")
+    ) %>%
+  select(joined) %>%
+  mutate(joined = paste(joined, collapse = "; ")) %>% distinct(joined)
+
+  if(nrow(reviews)>0) {
+   out <- reviews$joined
+  } else {
+   out <- 'Trait has been reviewed by the AusTraits team but not an external reviewer.'
+  }
+  paste("[**reviewers**](http://purl.org/datacite/v4.4/IsReviewedBy):", out) %>% 
+  writeLines()
+```
+
+
+
