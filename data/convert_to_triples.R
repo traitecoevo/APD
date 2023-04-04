@@ -23,7 +23,7 @@ read_csv("data/APD_references.csv") %>%
     Predicate = name,
     Object = value
   ) %>%
-  write_csv("data/reformatted_references.csv")
+  write_csv("data/reformatted_references.csv") -> reformatted_references
 
 read_csv("data/APD_reviewers.csv") %>%
   mutate(
@@ -41,8 +41,10 @@ read_csv("data/APD_reviewers.csv") %>%
     Predicate = name,
     Object = value
   ) %>% 
-  write_csv("data/reformatted_reviewers.csv")
+  write_csv("data/reformatted_reviewers.csv") -> reformatted_reviewers
 
+reformatted_references %>%
+  bind_rows()
 read_csv("data/APD_units.csv") %>%
   select(Entity, label, description, SI_code, UCUM_code) %>%
   mutate(
@@ -65,7 +67,7 @@ read_csv("data/APD_units.csv") %>%
     Object = value
   ) %>%
   filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_units.csv")
+  write_csv("data/reformatted_units.csv") -> reformatted_units
 
 read_csv("data/APD_traits.csv") -> traits
 
@@ -90,7 +92,7 @@ read_csv("data/APD_categorical_values.csv") %>%
     Predicate = name,
     Object = value
   ) %>% 
-  write_csv("data/reformatted_categorical_values.csv")
+  write_csv("data/reformatted_categorical_values.csv") -> reformatted_categorical
   
 read_csv("data/APD_trait_hierarchy.csv") %>%
     select(Entity, label, description, Parent, exactMatch) %>%
@@ -114,7 +116,7 @@ read_csv("data/APD_trait_hierarchy.csv") %>%
       Object = value
     ) %>% 
   filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_trait_hierarchy.csv")
+  write_csv("data/reformatted_trait_hierarchy.csv") -> reformatted_hierarchy
 
 read_csv("data/ontology_links.csv") %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
@@ -140,7 +142,7 @@ read_csv("data/ontology_links.csv") %>%
     Object = value
   ) %>% 
   filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_ontology_terms.csv")
+  write_csv("data/reformatted_ontology_terms.csv") -> reformatted_ontology
   
 read_csv("data/ontology_links.csv") -> ontology_links
 read_csv("data/APD_reviewers.csv") -> reviewers
@@ -181,21 +183,21 @@ read_csv("data/APD_traits.csv") %>%
     meas_char_4 = ifelse(!is.na(meas_char_4), paste0("<", ontology_links$Entity[match(meas_char_4, ontology_links$identifier)], ">"), NA),
     meas_char_5 = ifelse(!is.na(meas_char_5), paste0("<", ontology_links$Entity[match(meas_char_5, ontology_links$identifier)], ">"), NA),
     meas_char_6 = ifelse(!is.na(meas_char_6), paste0("<", ontology_links$Entity[match(meas_char_6, ontology_links$identifier)], ">"), NA),
-    #rev_01 = ifelse(!is.na(rev_01), paste0("<", reviewers$Entity[match(rev_01, reviewers$label)], ">"), NA),
-    #rev_02 = ifelse(!is.na(rev_02), paste0("<", reviewers$Entity[match(rev_02, reviewers$label)], ">"), NA),
-    #rev_03 = ifelse(!is.na(rev_03), paste0("<", reviewers$Entity[match(rev_03, reviewers$label)], ">"), NA),
-    #rev_04 = ifelse(!is.na(rev_04), paste0("<", reviewers$Entity[match(rev_04, reviewers$label)], ">"), NA),
-    #rev_05 = ifelse(!is.na(rev_05), paste0("<", reviewers$Entity[match(rev_05, reviewers$label)], ">"), NA),
-    #rev_06 = ifelse(!is.na(rev_06), paste0("<", reviewers$Entity[match(rev_06, reviewers$label)], ">"), NA),
-    #rev_07 = ifelse(!is.na(rev_07), paste0("<", reviewers$Entity[match(rev_07, reviewers$label)], ">"), NA),
-    #rev_08 = ifelse(!is.na(rev_08), paste0("<", reviewers$Entity[match(rev_08, reviewers$label)], ">"), NA),
-    #rev_09 = ifelse(!is.na(rev_09), paste0("<", reviewers$Entity[match(rev_09, reviewers$label)], ">"), NA),
-    #rev_10 = ifelse(!is.na(rev_10), paste0("<", reviewers$Entity[match(rev_10, reviewers$label)], ">"), NA),
-    #ref_1 = ifelse(!is.na(ref_1), paste0("<", references$Entity[match(ref_1, references$label)], ">"), NA),
-    #ref_2 = ifelse(!is.na(ref_2), paste0("<", references$Entity[match(ref_2, references$label)], ">"), NA),
-    #ref_3 = ifelse(!is.na(ref_3), paste0("<", references$Entity[match(ref_3, references$label)], ">"), NA),
-    #ref_4 = ifelse(!is.na(ref_4), paste0("<", references$Entity[match(ref_4, references$label)], ">"), NA),
-    #ref_5 = ifelse(!is.na(ref_5), paste0("<", references$Entity[match(ref_5, references$label)], ">"), NA),
+    rev_01 = ifelse(!is.na(rev_01), paste0("<", reviewers$Entity[match(rev_01, reviewers$label)], ">"), NA),
+    rev_02 = ifelse(!is.na(rev_02), paste0("<", reviewers$Entity[match(rev_02, reviewers$label)], ">"), NA),
+    rev_03 = ifelse(!is.na(rev_03), paste0("<", reviewers$Entity[match(rev_03, reviewers$label)], ">"), NA),
+    rev_04 = ifelse(!is.na(rev_04), paste0("<", reviewers$Entity[match(rev_04, reviewers$label)], ">"), NA),
+    rev_05 = ifelse(!is.na(rev_05), paste0("<", reviewers$Entity[match(rev_05, reviewers$label)], ">"), NA),
+    rev_06 = ifelse(!is.na(rev_06), paste0("<", reviewers$Entity[match(rev_06, reviewers$label)], ">"), NA),
+    rev_07 = ifelse(!is.na(rev_07), paste0("<", reviewers$Entity[match(rev_07, reviewers$label)], ">"), NA),
+    rev_08 = ifelse(!is.na(rev_08), paste0("<", reviewers$Entity[match(rev_08, reviewers$label)], ">"), NA),
+    rev_09 = ifelse(!is.na(rev_09), paste0("<", reviewers$Entity[match(rev_09, reviewers$label)], ">"), NA),
+    rev_10 = ifelse(!is.na(rev_10), paste0("<", reviewers$Entity[match(rev_10, reviewers$label)], ">"), NA),
+    ref_1 = ifelse(!is.na(ref_1), paste0("<", references$Entity[match(ref_1, references$label)], ">"), NA),
+    ref_2 = ifelse(!is.na(ref_2), paste0("<", references$Entity[match(ref_2, references$label)], ">"), NA),
+    ref_3 = ifelse(!is.na(ref_3), paste0("<", references$Entity[match(ref_3, references$label)], ">"), NA),
+    ref_4 = ifelse(!is.na(ref_4), paste0("<", references$Entity[match(ref_4, references$label)], ">"), NA),
+    ref_5 = ifelse(!is.na(ref_5), paste0("<", references$Entity[match(ref_5, references$label)], ">"), NA),
     keyword_1 = ifelse(!is.na(keyword_1), paste0("<", ontology_links$Entity[match(keyword_1, ontology_links$identifier)], ">"), NA),
     keyword_2 = ifelse(!is.na(keyword_2), paste0("<", ontology_links$Entity[match(keyword_2, ontology_links$identifier)], ">"), NA),
     keyword_3 = ifelse(!is.na(keyword_3), paste0("<", ontology_links$Entity[match(keyword_3, ontology_links$identifier)], ">"), NA),
@@ -320,5 +322,4 @@ read_csv("data/APD_traits.csv") %>%
     Object = value
   ) %>% 
   filter(!is.na(Object)) %>%
-  mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>")) %>%
-  write_csv("data/reformatted_traits.csv")
+  mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>")) %>% write_csv("data/reformatted_traits.csv") -> reformatted_traits
