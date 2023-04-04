@@ -4,6 +4,7 @@ library(readr)
 library(stringr)
 
 read_csv("data/APD_references.csv") %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -26,6 +27,7 @@ read_csv("data/APD_references.csv") %>%
   write_csv("data/reformatted_references.csv") -> reformatted_references
 
 read_csv("data/APD_reviewers.csv") %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -45,8 +47,10 @@ read_csv("data/APD_reviewers.csv") %>%
 
 reformatted_references %>%
   bind_rows()
+
 read_csv("data/APD_units.csv") %>%
   select(Entity, label, description, SI_code, UCUM_code) %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -73,6 +77,7 @@ read_csv("data/APD_traits.csv") -> traits
 
 read_csv("data/APD_categorical_values.csv") %>%
   select(Entity, label, description, trait_name) %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<https://github.com/traitecoevo/", Entity, ">"),
     label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -96,6 +101,7 @@ read_csv("data/APD_categorical_values.csv") %>%
   
 read_csv("data/APD_trait_hierarchy.csv") %>%
     select(Entity, label, description, Parent, exactMatch) %>%
+    mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
       label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -120,6 +126,7 @@ read_csv("data/APD_trait_hierarchy.csv") %>%
 
 read_csv("data/ontology_links.csv") %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "^^<xsd:string>"),
@@ -151,7 +158,7 @@ read_csv("data/APD_units.csv") -> units_csv
 read_csv("data/APD_trait_hierarchy.csv") -> hierarchy
 
 read_csv("data/APD_traits.csv") %>% 
-  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) |>
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity =  paste0("<https://github.com/traitecoevo/", identifier, ">"),
     trait = paste0("\"", trait, "\"", "^^<xsd:string>"),
@@ -321,7 +328,15 @@ read_csv("data/APD_traits.csv") %>%
   rename(
     Predicate = name,
     Object = value
-  ) %>% 
+  ) %>%
+  write_csv("data/reformatted_traits.csv") -> reformatted_traits
+
+
+# stack rows via read_csv
+triples_df <-  fs::dir_ls("data", regexp = "^data/reformatted.*") %>% 
+readr::read_csv()
+
+triples_df %>% 
   filter(!is.na(Object)) %>%
   mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>")) ->
   triples_df
@@ -331,16 +346,17 @@ read_csv("data/APD_traits.csv") %>%
 triples_df %>% 
   mutate(Object = stringi::stri_enc_toascii(Object),
          graph = ".") %>% # quads have a fourth column, usually "."
-  filter(Object != "<NA>") %>% # we have some NAs sneaking in as URIs
+  filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
+  mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
   write_delim("data/traits.nq", col_names=FALSE, escape="none", quote="none")
 
 # prove this parses correctly
 library(rdflib)
-true_triples <- read_nquads("data/traits.nq")
+true_triples <- read_nquads("data/ADP.nq")
 
 # serialize to any format
-rdflib::rdf_serialize(true_triples, "data/traits.ttl")
-rdflib::rdf_serialize(true_triples, "data/traits.json", format="jsonld")
+rdflib::rdf_serialize(true_triples, "data/ADP.ttl")
+rdflib::rdf_serialize(true_triples, "data/ADP.json", format="jsonld")
 
 # Smoke-tests / example sparql queries
 
@@ -355,6 +371,23 @@ rdf_query(true_triples, sparql)
 sparql <-
 'SELECT DISTINCT ?orcid
  WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid . }
+'
+rdf_query(true_triples, sparql)
+
+
+# how many unique references are in the data?
+sparql <-
+  'SELECT DISTINCT ?id
+ WHERE { ?s <http://purl.org/dc/terms/references> ?id .
+       }
+'
+rdf_query(true_triples, sparql)
+
+
+sparql <-
+  'SELECT DISTINCT ?s
+ WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> "plant trait"^^<xsd:string> .
+       }
 '
 rdf_query(true_triples, sparql)
 
