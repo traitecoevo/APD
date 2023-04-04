@@ -28,8 +28,6 @@ Subject,Predicate,Object
 <https://w3id.org/uom/S>,<https://w3id.org/uom/SI_code>,'S'^^[xsd:string]
 <https://w3id.org/uom/S>,<https://w3id.org/uom/UCUM_code>,'S'^^[xsd:string]
 <https://w3id.org/uom/a>,<http://www.w3.org/2000/01/rdf-schema#label>,'year'^^[xsd:string]
-<https://w3id.org/uom/a>,<http://purl.org/dc/terms/description>,'NA'@en
-<https://w3id.org/uom/a>,<https://w3id.org/uom/SI_code>,'NA'^^[xsd:string]
 <https://w3id.org/uom/a>,<https://w3id.org/uom/UCUM_code>,'a'^^[xsd:string]
 <https://w3id.org/uom/cm.s-1>,<http://www.w3.org/2000/01/rdf-schema#label>,'centimetre per second'^^[xsd:string]
 <https://w3id.org/uom/cm.s-1>,<http://purl.org/dc/terms/description>,'A unit which is equal to 10² metre per 1 second.'@en
@@ -184,8 +182,6 @@ Subject,Predicate,Object
 <https://w3id.org/uom/mmol.m-2.s-1>,<https://w3id.org/uom/SI_code>,'mmol m-2 s-1'^^[xsd:string]
 <https://w3id.org/uom/mmol.m-2.s-1>,<https://w3id.org/uom/UCUM_code>,'mmol/m2/s'^^[xsd:string]
 <https://w3id.org/uom/mo>,<http://www.w3.org/2000/01/rdf-schema#label>,'month'^^[xsd:string]
-<https://w3id.org/uom/mo>,<http://purl.org/dc/terms/description>,'NA'@en
-<https://w3id.org/uom/mo>,<https://w3id.org/uom/SI_code>,'NA'^^[xsd:string]
 <https://w3id.org/uom/mo>,<https://w3id.org/uom/UCUM_code>,'mo'^^[xsd:string]
 <https://w3id.org/uom/mol.m-2.s-1>,<http://www.w3.org/2000/01/rdf-schema#label>,'mole per square metre second'^^[xsd:string]
 <https://w3id.org/uom/mol.m-2.s-1>,<http://purl.org/dc/terms/description>,'A unit which is equal to 1 mole per 1 square metre by 1 second.'@en
@@ -240,12 +236,8 @@ Subject,Predicate,Object
 <https://w3id.org/uom/umol.umol-1>,<https://w3id.org/uom/SI_code>,'umol umol-1'^^[xsd:string]
 <https://w3id.org/uom/umol.umol-1>,<https://w3id.org/uom/UCUM_code>,'umol/umol'^^[xsd:string]
 <https://w3id.org/uom/%5Bppm%5D>,<http://www.w3.org/2000/01/rdf-schema#label>,'parts per million'^^[xsd:string]
-<https://w3id.org/uom/%5Bppm%5D>,<http://purl.org/dc/terms/description>,'NA'@en
-<https://w3id.org/uom/%5Bppm%5D>,<https://w3id.org/uom/SI_code>,'NA'^^[xsd:string]
 <https://w3id.org/uom/%5Bppm%5D>,<https://w3id.org/uom/UCUM_code>,'[ppm]'^^[xsd:string]
 <https://w3id.org/uom/%5Bppth%5D>,<http://www.w3.org/2000/01/rdf-schema#label>,'parts per thousand'^^[xsd:string]
-<https://w3id.org/uom/%5Bppth%5D>,<http://purl.org/dc/terms/description>,'NA'@en
-<https://w3id.org/uom/%5Bppth%5D>,<https://w3id.org/uom/SI_code>,'NA'^^[xsd:string]
 <https://w3id.org/uom/%5Bppth%5D>,<https://w3id.org/uom/UCUM_code>,'[ppth]'^^[xsd:string]
 <https://w3id.org/uom/mm2.um>,<http://www.w3.org/2000/01/rdf-schema#label>,'square millimetre micrometre'^^[xsd:string]
 <https://w3id.org/uom/mm2.um>,<http://purl.org/dc/terms/description>,'A unit which is equal to 10⁻³ square metre by 10⁻⁶ metre.'@en
