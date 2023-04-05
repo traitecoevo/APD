@@ -342,20 +342,30 @@ triples_df %>%
   triples_df
 
 
-# rdflib can't handle UTF-8 :(, see stringi::stri_enc_mark()
+# rdflib can't handle UTF-8 :(, 
+# We can either "transliterate" our UTF-8 to ASCII (i.e. drop accent marks)
+# or we can replace with Unicode, which we can later un-encode back to the original UTF-8
 triples_df %>% 
-  mutate(Object = stringi::stri_enc_toascii(Object),
-         graph = ".") %>% # quads have a fourth column, usually "."
+  mutate(Object = iconv(Object, from="UTF-8", to="ASCII", sub="Unicode")) %>%
+#  mutate(Object = iconv(Object, from="UTF-8", to="ASCII/TRANSLIT")) %>%
+  mutate(graph = ".") %>% # quads have a fourth column, usually "."
   filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
   mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
   write_delim("data/ADP.nq", col_names=FALSE, escape="none", quote="none")
+
+unescape_unicode <- function(x) {
+  stringi::stri_unescape_unicode(gsub("<U\\+(....)>", "\\\\u\\1", x))
+}
 
 # prove this parses correctly
 library(rdflib)
 true_triples <- read_nquads("data/ADP.nq")
 
 # serialize to any format
-rdflib::rdf_serialize(true_triples, "data/ADP.ttl")
+rdflib::rdf_serialize(true_triples, "data/ADP.ttl",
+                      namespace = c(dc = "http://purl.org/dc/elements/1.1/",
+                                    skos = "http://www.w3.org/2004/02/skos/core#")
+                      )
 rdflib::rdf_serialize(true_triples, "data/ADP.json", format="jsonld")
 
 # Smoke-tests / example sparql queries
@@ -368,11 +378,16 @@ sparql <-
 rdf_query(true_triples, sparql)
 
 # how many unique reviewers are in the data?
+
+
 sparql <-
-'SELECT DISTINCT ?orcid
- WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid . }
+'SELECT DISTINCT ?orcid ?label
+ WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid .
+         ?orcid <http://www.w3.org/2000/01/rdf-schema#label> ?label
+       }
 '
-rdf_query(true_triples, sparql)
+rdf_query(true_triples, sparql) %>%
+  mutate(label = unescape_unicode(label))
 
 
 # how many unique references are in the data?
