@@ -9,7 +9,7 @@ trait_i <-
 
 categorical_i <- 
   categorical_values %>% filter(trait_name == thistrait) %>% 
-  select(allowed_values, value_definitions)
+  select(Entity, description)
 
 ```
 ## `r trait_i$label` 
@@ -30,7 +30,7 @@ print_list(
   empty_text = "none")
 ```
     
-**[trait type](http://terminologies.gfbio.org/terms/ETS/valueType)**: [`r classes$label[match(trait_i$type, classes$identifier_to_match)]`](`r classes$Entity[match(trait_i$type, classes$identifier_to_match)]`)   
+**[trait type](http://terminologies.gfbio.org/terms/ETS/valueType)**: [`r classes$label[match(trait_i$type, classes$identifier)]`](`r classes$Entity[match(trait_i$type, classes$identifier)]`)   
 
 ```{r, results='asis', echo=FALSE}
 if(trait_i$type_x == "numeric"){
@@ -113,8 +113,8 @@ plant_structure <- trait_i %>%
   filter(!is.na(value)) %>% 
   select(-name) %>%
   mutate(
-    term = classes$label[match(value, classes$identifier_to_match)],
-    url = classes$Entity[match(value, classes$identifier_to_match)],
+    term = classes$label[match(value, classes$identifier)],
+    url = classes$Entity[match(value, classes$identifier)],
     joined = paste0("[",term,"](",url,")")
     ) %>%
   select(joined) %>%
@@ -133,8 +133,8 @@ measured_characteristic <- trait_i %>%
   filter(!is.na(value)) %>% 
   select(-name) %>%
   mutate(
-    term = classes$label[match(value, classes$identifier_to_match)],
-    url = classes$Entity[match(value, classes$identifier_to_match)],
+    term = classes$label[match(value, classes$identifier)],
+    url = classes$Entity[match(value, classes$identifier)],
     joined = paste0("[",term,"](",url,")")
     ) %>%
   select(trait, joined) %>%
@@ -159,8 +159,8 @@ keywords <- trait_i %>%
   distinct() %>%
   select(-name) %>%
   mutate(
-    term = classes$label[match(value, classes$identifier_to_match)],
-    url = classes$Entity[match(value, classes$identifier_to_match)],
+    term = classes$label[match(value, classes$identifier)],
+    url = classes$Entity[match(value, classes$identifier)],
     joined = paste0("[",term,"](",url,")")
     ) %>%
   arrange(joined) %>%
@@ -218,7 +218,7 @@ trait_i <- trait_i %>%
 exact_match <- trait_i %>%
   select(trait, exact_TOP, exact_TRY, exact_GIFT, exact_BIEN, exact_BROT, exact_LEDA, exact_other1) %>% 
   mutate(
-    exact_other1 = ifelse(!is.na(exact_other1), paste0("[",classes$identifier[match(trait_i$exact_other1, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$exact_other1, classes$identifier_to_match)], "): ", classes$label[match(trait_i$exact_other1, classes$identifier_to_match)]), NA),
+    exact_other1 = ifelse(!is.na(exact_other1), paste0("[",classes$identifier[match(trait_i$exact_other1, classes$identifier)],"](", classes$Entity[match(trait_i$exact_other1, classes$identifier)], "): ", classes$label[match(trait_i$exact_other1, classes$identifier)]), NA),
     exact_TOP = ifelse(!is.na(exact_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", exact_TOP), NA),
     exact_TRY = ifelse(!is.na(exact_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", exact_TRY), NA),
     exact_GIFT = ifelse(!is.na(exact_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", exact_GIFT), NA),
@@ -236,8 +236,8 @@ exact_match <- trait_i %>%
 close_match <- trait_i %>%
   select(trait, close_TOP, close_TRY, close_GIFT, close_BIEN, close_BROT, close_LEDA, close_other1, close_other2) %>%
   mutate(
-    close_other1 = ifelse(!is.na(close_other1), paste0("[",classes$identifier[match(trait_i$close_other1, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$close_other1, classes$identifier_to_match)], "): ", classes$label[match(trait_i$close_other1, classes$identifier_to_match)]), NA),
-    close_other2 = ifelse(!is.na(close_other2), paste0("[",classes$identifier[match(trait_i$close_other2, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$close_other2, classes$identifier_to_match)], "): ", classes$label[match(trait_i$close_other2, classes$identifier_to_match)]), NA),
+    close_other1 = ifelse(!is.na(close_other1), paste0("[",classes$identifier[match(trait_i$close_other1, classes$identifier)],"](", classes$Entity[match(trait_i$close_other1, classes$identifier)], "): ", classes$label[match(trait_i$close_other1, classes$identifier)]), NA),
+    close_other2 = ifelse(!is.na(close_other2), paste0("[",classes$identifier[match(trait_i$close_other2, classes$identifier)],"](", classes$Entity[match(trait_i$close_other2, classes$identifier)], "): ", classes$label[match(trait_i$close_other2, classes$identifier)]), NA),
     close_TOP = ifelse(!is.na(close_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", close_TOP), NA),
     close_TRY = ifelse(!is.na(close_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", close_TRY), NA),
     close_GIFT = ifelse(!is.na(close_GIFT),paste0("[GIFT](https://gift.uni-goettingen.de): ", close_GIFT), NA),
@@ -254,7 +254,7 @@ close_match <- trait_i %>%
 related_match <- trait_i %>%
   select(trait, related_TOP, related_TOP2, related_TRY, related_GIFT, related_BIEN, related_BROT, related_LEDA, related_other) %>% 
   mutate(
-    related_other = ifelse(!is.na(related_other), paste0("[",classes$identifier[match(trait_i$related_other, classes$identifier_to_match)],"](", classes$Entity[match(trait_i$related_other, classes$identifier_to_match)], "): ", classes$label[match(trait_i$related_other, classes$identifier_to_match)]), NA),
+    related_other = ifelse(!is.na(related_other), paste0("[",classes$identifier[match(trait_i$related_other, classes$identifier)],"](", classes$Entity[match(trait_i$related_other, classes$identifier)], "): ", classes$label[match(trait_i$related_other, classes$identifier)]), NA),
     related_TOP = ifelse(!is.na(related_TOP),paste0("[TOP](https://top-thesaurus.org/index): ", related_TOP), NA),
     related_TOP2 = ifelse(!is.na(related_TOP2),paste0("[TOP](https://top-thesaurus.org/index): ", related_TOP2), NA),
     related_TRY = ifelse(!is.na(related_TRY),paste0("[TRY](https://www.try-db.org/de/de.php): ", related_TRY), NA),
