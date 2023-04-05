@@ -348,7 +348,7 @@ triples_df %>%
          graph = ".") %>% # quads have a fourth column, usually "."
   filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
   mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
-  write_delim("data/traits.nq", col_names=FALSE, escape="none", quote="none")
+  write_delim("data/ADP.nq", col_names=FALSE, escape="none", quote="none")
 
 # prove this parses correctly
 library(rdflib)
