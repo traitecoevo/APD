@@ -3,7 +3,8 @@ library(tidyr)
 library(readr)
 library(stringr)
 
-read_csv("data/APD_references.csv") %>%
+reformatted_references <- read_csv("data/APD_references.csv") %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("'", label, "'", "^^[xsd:string]"),
@@ -22,10 +23,10 @@ read_csv("data/APD_references.csv") %>%
   rename(
     Predicate = name,
     Object = value
-  ) %>%
-  write_csv("data/reformatted_references.csv") -> reformatted_references
+  )
 
-read_csv("data/APD_reviewers.csv") %>%
+reformatted_reviewers <- read_csv("data/APD_reviewers.csv") %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("'", label, "'", "^^[xsd:string]"),
@@ -40,12 +41,9 @@ read_csv("data/APD_reviewers.csv") %>%
   rename(
     Predicate = name,
     Object = value
-  ) %>% 
-  write_csv("data/reformatted_reviewers.csv") -> reformatted_reviewers
+  )
 
-reformatted_references %>%
-  bind_rows()
-read_csv("data/APD_units.csv") %>%
+reformatted_units <- read_csv("data/APD_units.csv") %>%
   select(Entity, label, description, SI_code, UCUM_code) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
@@ -66,41 +64,42 @@ read_csv("data/APD_units.csv") %>%
     Predicate = name,
     Object = value
   ) %>%
-  filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_units.csv") -> reformatted_units
+  filter(!is.na(Object))
 
-read_csv("data/APD_traits.csv") -> traits
+traits <- read_csv("data/APD_traits.csv")
 
-read_csv("data/APD_categorical_values.csv") %>%
+reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   select(Entity, label, description, trait_name) %>%
   mutate(
     Entity = paste0("<https://github.com/traitecoevo/", Entity, ">"),
     label = paste0("'", label, "'", "^^[xsd:string]"),
     description = paste0("'", description, "'", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
-    Parent = paste0("<https://github.com/traitecoevo/", Parent, ">")
+    Parent = paste0("<https://github.com/traitecoevo/", Parent, ">"),
+    SubClassOf = Parent
   ) %>%
   select(-trait_name) %>%
   rename(
     Subject = Entity,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://purl.org/dc/terms/description>` = description,
-    `<http://www.w3.org/2004/02/skos/core#broader>` = Parent
+    `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
+    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
   ) %>%
   pivot_longer(cols = c(2:4)) %>% 
   rename(
     Predicate = name,
     Object = value
-  ) %>% 
-  write_csv("data/reformatted_categorical_values.csv") -> reformatted_categorical
+  )
   
-read_csv("data/APD_trait_hierarchy.csv") %>%
+reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
     select(Entity, label, description, Parent, exactMatch) %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
       label = paste0("'", label, "'", "^^[xsd:string]"),
       description = paste0("'", description, "'", "@en"),
       Parent = paste0("<", Parent, ">"),
+      SubClassOf = Parent
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA)
     ) %>%
     rename(
@@ -108,6 +107,7 @@ read_csv("data/APD_trait_hierarchy.csv") %>%
       `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
       `<http://purl.org/dc/terms/description>` = description,
       `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
+      `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
     pivot_longer(cols = c(2:5)) %>% 
@@ -115,10 +115,9 @@ read_csv("data/APD_trait_hierarchy.csv") %>%
       Predicate = name,
       Object = value
     ) %>% 
-  filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_trait_hierarchy.csv") -> reformatted_hierarchy
+  filter(!is.na(Object))
 
-read_csv("data/ontology_links.csv") %>%
+reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
@@ -141,24 +140,25 @@ read_csv("data/ontology_links.csv") %>%
     Predicate = name,
     Object = value
   ) %>% 
-  filter(!is.na(Object)) %>%
-  write_csv("data/reformatted_ontology_terms.csv") -> reformatted_ontology
+  filter(!is.na(Object))
   
-read_csv("data/ontology_links.csv") -> ontology_links
-read_csv("data/APD_reviewers.csv") -> reviewers
-read_csv("data/APD_references.csv") -> references
-read_csv("data/APD_units.csv") -> units_csv
-read_csv("data/APD_trait_hierarchy.csv") -> hierarchy
+ontology_links <- read_csv("data/ontology_links.csv")
+reviewers <- read_csv("data/APD_reviewers.csv")
+references <- read_csv("data/APD_references.csv")
+units_csv <- read_csv("data/APD_units.csv")
+hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
 
-read_csv("data/APD_traits.csv") %>%
+reformatted_traits <- read_csv("data/APD_traits.csv") %>% 
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity =  paste0("<https://github.com/traitecoevo/", identifier, ">"),
-    trait = paste0("'", trait, "'", "^^[xsd:string]"),
-    label = paste0("'", label, "'", "^^[xsd:string]"),
-    description_encoded = ifelse(!is.na(description_encoded), paste0("'", description_encoded, "'", "@en"), NA),
-    description = ifelse(!is.na(description), paste0("'", description, "'", "@en"), NA),
-    comments = ifelse(!is.na(comments), paste0("'", comments, "'", "@en"), NA),
-    inScheme = paste0("'", inScheme, "'", "^^[xsd:string]"),
+    trait = paste0("\"", trait, "\"", "^^<xsd:string>"),
+    label = paste0("\"", label, "\"", "^^<xsd:string>"),
+    preflabel = label,
+    description_encoded = ifelse(!is.na(description_encoded), paste0("\"", description_encoded, "\"", "@en"), NA),
+    description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
+    comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
+    inScheme = paste0("\"", inScheme, "\"", "^^<xsd:string>"),
     type = paste0("<", ontology_links$Entity[match(type, ontology_links$identifier)], ">"),
     min = ifelse(!is.na(min), paste0("'", min, "'", "^^[xsd:double]"), NA),
     max = ifelse(!is.na(max), paste0("'", max, "'", "^^[xsd:double]"), NA),
@@ -169,10 +169,14 @@ read_csv("data/APD_traits.csv") %>%
     category_2 = ifelse(!is.na(category_2), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
     category_3 = ifelse(!is.na(category_3), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
     category_4 = ifelse(!is.na(category_4), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
-    created = ifelse(!is.na(created), paste0("'", created, "'", "^^[xsd:date]"), NA),
-    modified = ifelse(!is.na(modified), paste0("'", modified, "'", "^^[xsd:date]"), NA),
-    deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("'", deprecated_trait_name, "'", "^^[xsd:string]"), NA),
-    constraints = ifelse(!is.na(constraints), paste0("'", constraints, "'", "@en"), NA),
+    SubClassOf_1 = category_1,
+    SubClassOf_2 = category_2,
+    SubClassOf_3 = category_3,
+    SubClassOf_4 = category_4,
+    created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
+    modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
+    deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\"", "^^<xsd:string>"), NA),
+    constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
     structure_1 = ifelse(!is.na(structure_1), paste0("<", ontology_links$Entity[match(structure_1, ontology_links$identifier)], ">"), NA),
     structure_2 = ifelse(!is.na(structure_2), paste0("<", ontology_links$Entity[match(structure_2, ontology_links$identifier)], ">"), NA),
     structure_3 = ifelse(!is.na(structure_3), paste0("<", ontology_links$Entity[match(structure_3, ontology_links$identifier)], ">"), NA),
@@ -238,6 +242,7 @@ read_csv("data/APD_traits.csv") %>%
     Subject = Entity,
     `<http://www.w3.org/2004/02/skos/core#altLabel>`= trait,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2000/01/rdf-schema#prefLabel>`= preflabel,
     `<http://purl.org/dc/terms/description>` = description_encoded,
     `<http://purl.org/dc/terms/description>2` = description,
     `<http://www.w3.org/2000/01/rdf-schema#comment>`= comments,
@@ -252,6 +257,10 @@ read_csv("data/APD_traits.csv") %>%
     `<http://www.w3.org/2004/02/skos/core#broader>2` = category_2,
     `<http://www.w3.org/2004/02/skos/core#broader>3` = category_3,
     `<http://www.w3.org/2004/02/skos/core#broader>4` = category_4,
+    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>1` = SubClassOf_1,
+    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>2` = SubClassOf_2,
+    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>3` = SubClassOf_3,
+    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>4` = SubClassOf_4,
     `<http://purl.org/dc/terms/created>`= created,
     `<http://purl.org/dc/terms/modified>`= modified,
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,
@@ -320,6 +329,112 @@ read_csv("data/APD_traits.csv") %>%
   rename(
     Predicate = name,
     Object = value
-  ) %>% 
+  )
+
+# bind rows from individual dataframes
+triples_df <- bind_rows(
+  reformatted_ontology,
+  reformatted_references,
+  reformatted_reviewers,
+  reformatted_units,
+  reformatted_hierarchy,
+  reformatted_categorical,
+  reformatted_traits
+)
+
+#remove NA's; remove stray numbers required before to create unique column names 
+triples_df <- triples_df %>% 
   filter(!is.na(Object)) %>%
-  mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>")) %>% write_csv("data/reformatted_traits.csv") -> reformatted_traits
+  mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>"))
+
+
+# rdflib can't handle UTF-8 :(, 
+# We can either "transliterate" our UTF-8 to ASCII (i.e. drop accent marks)
+# or we can replace with Unicode, which we can later un-encode back to the original UTF-8
+triples_df %>% 
+  mutate(Object = iconv(Object, from="UTF-8", to="ASCII", sub="Unicode")) %>%
+#  mutate(Object = iconv(Object, from="UTF-8", to="ASCII/TRANSLIT")) %>%
+  mutate(graph = ".") %>% # quads have a fourth column, usually "."
+  filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
+  mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
+  write_delim("data/ADP.nq", col_names=FALSE, escape="none", quote="none")
+
+unescape_unicode <- function(x) {
+  stringi::stri_unescape_unicode(gsub("<U\\+(....)>", "\\\\u\\1", x))
+}
+
+# prove this parses correctly
+library(rdflib)
+true_triples <- read_nquads("data/ADP.nq")
+
+# serialize to any format
+rdflib::rdf_serialize(true_triples, "data/ADP.ttl",
+                      namespace = c(APD = "https://github.com/traitecoevo/APD/",
+                                    dc = "http://purl.org/dc/elements/1.1/",
+                                    skos = "http://www.w3.org/2004/02/skos/core#",
+                                    dwc = "http://rs.tdwg.org/dwc/terms/attributes/",
+                                    dcam = "http://purl.org/dc/dcam/",
+                                    dcterms = "http://purl.org/dc/terms/",
+                                    ets = "http://terminologies.gfbio.org/terms/ETS/",
+                                    obo = "http://purl.obolibrary.org/obo/",
+                                    oboecore = "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#",
+                                    ont = "https://w3id.org/iadopt/ont/",
+                                    owl = "http://www.w3.org/2002/07/owl#",
+                                    rdfs = "http://www.w3.org/2000/01/rdf-schema#",
+                                    uom = "https://w3id.org/uom/",
+                                    datacite = "http://purl.org/datacite/v4.4/",
+                                    xsd = "http://www.w3.org/2001/XMLSchema#",
+                                    Cerrado = "http://cerrado.linkeddata.es/ecology/",
+                                    CorVeg  = "http://linked.data.gov.au/def/corveg-cv/",
+                                    DCM = "http://dicom.nema.org/resources/ontology/DCM/",
+                                    EDAM = "http://edamontology.org/ ",
+                                    EFO = "http://www.ebi.ac.uk/efo/",
+                                    EnvThes = "http://vocabs.lter-europe.net/EnvThes/",
+                                    hupson = "http://scai.fraunhofer.de/HuPSON#",
+                                    IOBC = "http://purl.jp/bio/4/id/",
+                                    MESH = "http://purl.bioontology.org/ontology/MESH/",
+                                    odo = "http://purl.dataone.org/odo/",
+                                    SIO = "http://semanticscience.org/resource/",
+                                    SWEET = "http://sweetontology.net/")
+)
+rdflib::rdf_serialize(true_triples, "data/ADP.json", format="jsonld")
+
+# Smoke-tests / example sparql queries
+
+# how many unique predicates?
+sparql <-
+'SELECT DISTINCT ?p
+ WHERE { ?s ?p ?c . }
+'
+rdf_query(true_triples, sparql)
+
+# how many unique reviewers are in the data?
+
+
+sparql <-
+'SELECT DISTINCT ?orcid ?label
+ WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid .
+         ?orcid <http://www.w3.org/2000/01/rdf-schema#label> ?label
+       }
+'
+rdf_query(true_triples, sparql) %>%
+  mutate(label = unescape_unicode(label))
+
+
+# how many unique references are in the data?
+sparql <-
+  'SELECT DISTINCT ?id
+ WHERE { ?s <http://purl.org/dc/terms/references> ?id .
+       }
+'
+rdf_query(true_triples, sparql)
+
+
+sparql <-
+  'SELECT DISTINCT ?s
+ WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> "plant trait"^^<xsd:string> .
+       }
+'
+rdf_query(true_triples, sparql)
+
+
