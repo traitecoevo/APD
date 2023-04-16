@@ -7,8 +7,8 @@ reformatted_references <- read_csv("data/APD_references.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
-    identifier = paste0("\"", identifier, "\"", "^^<xsd:string>"),
+    label = paste0("\"", label, "\""),
+    identifier = paste0("\"", identifier, "\""),
     citation = paste0("\"", citation, "\"", "@en"),
     title = paste0("\"", title, "\"", "@en")
   ) %>%
@@ -29,8 +29,8 @@ reformatted_reviewers <- read_csv("data/APD_reviewers.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
-    ORCID = paste0("\"", ORCID, "\"", "^^<xsd:string>")
+    label = paste0("\"", label, "\""),
+    ORCID = paste0("\"", ORCID, "\"")
   ) %>%
   rename(
     Subject = Entity,
@@ -48,10 +48,10 @@ reformatted_units <- read_csv("data/APD_units.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
+    label = paste0("\"", label, "\""),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
-    SI_code = ifelse(!is.na(SI_code), paste0("\"", SI_code, "\"", "^^<xsd:string>"), NA),
-    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\"", "^^<xsd:string>"), NA)
+    SI_code = ifelse(!is.na(SI_code), paste0("\"", SI_code, "\""), NA),
+    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\""), NA)
   ) %>%
   rename(
     Subject = Entity,
@@ -74,7 +74,7 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<https://github.com/traitecoevo/", Entity, ">"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
+    label = paste0("\"", label, "\""),
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
     Parent = paste0("<https://github.com/traitecoevo/", Parent, ">"),
@@ -99,7 +99,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
     mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
-      label = paste0("\"", label, "\"", "^^<xsd:string>"),
+      label = paste0("\"", label, "\""),
       description = paste0("\"", description, "\"", "@en"),
       Parent = paste0("<", Parent, ">"),
       SubClassOf = Parent
@@ -125,11 +125,11 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
+    label = paste0("\"", label, "\""),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
-    identifier = paste0("\"", identifier, "\"", "^^<xsd:string>"),
-    inScheme = paste0("\"", inScheme, "\"", "^^<xsd:string>")
+    identifier = paste0("\"", identifier, "\""),
+    inScheme = paste0("\"", inScheme, "\"")
   ) %>%
   select(-prefix) %>%
   rename(
@@ -156,18 +156,18 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity =  paste0("<https://github.com/traitecoevo/", identifier, ">"),
-    trait = paste0("\"", trait, "\"", "^^<xsd:string>"),
-    label = paste0("\"", label, "\"", "^^<xsd:string>"),
+    trait = paste0("\"", trait, "\""),
+    label = paste0("\"", label, "\""),
     preflabel = label,
     description_encoded = ifelse(!is.na(description_encoded), paste0("\"", description_encoded, "\"", "@en"), NA),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
-    inScheme = paste0("\"", inScheme, "\"", "^^<xsd:string>"),
+    inScheme = paste0("\"", inScheme, "\""),
     type = paste0("<", ontology_links$Entity[match(type, ontology_links$identifier)], ">"),
-    min = ifelse(!is.na(min), paste0("\"", min, "\"", "^^<xsd:double>"), NA),
-    max = ifelse(!is.na(max), paste0("\"", max, "\"", "^^<xsd:double>"), NA),
-    units = ifelse(!is.na(units), paste0("\"", units, "\"", "^^<xsd:string>"), NA),
-    units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\"", "^^<xsd:string>"), NA),
+    min = ifelse(!is.na(min), paste0("\"", min, "\"", "^^<https://www.w3.org/2001/XMLSchema#double>"), NA),
+    max = ifelse(!is.na(max), paste0("\"", max, "\"", "^^<https://www.w3.org/2001/XMLSchema#double>"), NA),
+    units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
+    units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     category_1 = ifelse(!is.na(category_1), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
     category_2 = ifelse(!is.na(category_2), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
@@ -179,7 +179,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     SubClassOf_4 = category_4,
     created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
     modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
-    deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\"", "^^<xsd:string>"), NA),
+    deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
     structure_1 = ifelse(!is.na(structure_1), paste0("<", ontology_links$Entity[match(structure_1, ontology_links$identifier)], ">"), NA),
     structure_2 = ifelse(!is.na(structure_2), paste0("<", ontology_links$Entity[match(structure_2, ontology_links$identifier)], ">"), NA),
@@ -219,27 +219,27 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     close_other1 = ifelse(!is.na(close_other1), paste0("<", ontology_links$Entity[match(close_other1, ontology_links$identifier)], ">"), NA),
     close_other2 = ifelse(!is.na(close_other2), paste0("<", ontology_links$Entity[match(close_other2, ontology_links$identifier)], ">"), NA),
     related_other = ifelse(!is.na(related_other), paste0("<", ontology_links$Entity[match(related_other, ontology_links$identifier)], ">"), NA),
-    exact_TOP = ifelse(!is.na(exact_TOP), paste0("\"", exact_TOP, "\"", "^^<xsd:string>"), NA),
-    close_TOP = ifelse(!is.na(close_TOP), paste0("\"", close_TOP, "\"", "^^<xsd:string>"), NA),
-    related_TOP = ifelse(!is.na(related_TOP), paste0("\"", related_TOP, "\"", "^^<xsd:string>"), NA),
-    related_TOP2 = ifelse(!is.na(related_TOP2), paste0("\"", related_TOP2, "\"", "^^<xsd:string>"), NA),
-    exact_TRY = ifelse(!is.na(exact_TRY), paste0("\"", exact_TRY, "\"", "^^<xsd:string>"), NA),
-    close_TRY = ifelse(!is.na(close_TRY), paste0("\"", close_TRY, "\"", "^^<xsd:string>"), NA),
-    related_TRY = ifelse(!is.na(related_TRY), paste0("\"", related_TRY, "\"", "^^<xsd:string>"), NA),
-    exact_LEDA = ifelse(!is.na(exact_LEDA), paste0("\"", exact_LEDA, "\"", "^^<xsd:string>"), NA),
-    close_LEDA = ifelse(!is.na(close_LEDA), paste0("\"", close_LEDA, "\"", "^^<xsd:string>"), NA),
-    related_LEDA = ifelse(!is.na(related_LEDA), paste0("\"", related_LEDA, "\"", "^^<xsd:string>"), NA),
-    exact_GIFT = ifelse(!is.na(exact_GIFT), paste0("\"", exact_GIFT, "\"", "^^<xsd:string>"), NA),
-    close_GIFT = ifelse(!is.na(close_GIFT), paste0("\"", close_GIFT, "\"", "^^<xsd:string>"), NA),
-    related_GIFT = ifelse(!is.na(related_GIFT), paste0("\"", related_GIFT, "\"", "^^<xsd:string>"), NA),
-    exact_BIEN = ifelse(!is.na(exact_BIEN), paste0("\"", exact_BIEN, "\"", "^^<xsd:string>"), NA),
-    close_BIEN = ifelse(!is.na(close_BIEN), paste0("\"", close_BIEN, "\"", "^^<xsd:string>"), NA),
-    related_BIEN = ifelse(!is.na(related_BIEN), paste0("\"", related_BIEN, "\"", "^^<xsd:string>"), NA),
-    exact_BROT = ifelse(!is.na(exact_BROT), paste0("\"", exact_BROT, "\"", "^^<xsd:string>"), NA),
-    close_BROT = ifelse(!is.na(close_BROT), paste0("\"", close_BROT, "\"", "^^<xsd:string>"), NA),
-    related_BROT = ifelse(!is.na(related_BROT), paste0("\"", related_BROT, "\"", "^^<xsd:string>"), NA),
-    PalmTraits_exact = ifelse(!is.na(PalmTraits_exact), paste0("\"", PalmTraits_exact, "\"", "^^<xsd:string>"), NA),
-    PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\"", "^^<xsd:string>"), NA)
+    exact_TOP = ifelse(!is.na(exact_TOP), paste0("\"", exact_TOP, "\""), NA),
+    close_TOP = ifelse(!is.na(close_TOP), paste0("\"", close_TOP, "\""), NA),
+    related_TOP = ifelse(!is.na(related_TOP), paste0("\"", related_TOP, "\""), NA),
+    related_TOP2 = ifelse(!is.na(related_TOP2), paste0("\"", related_TOP2, "\""), NA),
+    exact_TRY = ifelse(!is.na(exact_TRY), paste0("\"", exact_TRY, "\""), NA),
+    close_TRY = ifelse(!is.na(close_TRY), paste0("\"", close_TRY, "\""), NA),
+    related_TRY = ifelse(!is.na(related_TRY), paste0("\"", related_TRY, "\""), NA),
+    exact_LEDA = ifelse(!is.na(exact_LEDA), paste0("\"", exact_LEDA, "\""), NA),
+    close_LEDA = ifelse(!is.na(close_LEDA), paste0("\"", close_LEDA, "\""), NA),
+    related_LEDA = ifelse(!is.na(related_LEDA), paste0("\"", related_LEDA, "\""), NA),
+    exact_GIFT = ifelse(!is.na(exact_GIFT), paste0("\"", exact_GIFT, "\""), NA),
+    close_GIFT = ifelse(!is.na(close_GIFT), paste0("\"", close_GIFT, "\""), NA),
+    related_GIFT = ifelse(!is.na(related_GIFT), paste0("\"", related_GIFT, "\""), NA),
+    exact_BIEN = ifelse(!is.na(exact_BIEN), paste0("\"", exact_BIEN, "\""), NA),
+    close_BIEN = ifelse(!is.na(close_BIEN), paste0("\"", close_BIEN, "\""), NA),
+    related_BIEN = ifelse(!is.na(related_BIEN), paste0("\"", related_BIEN, "\""), NA),
+    exact_BROT = ifelse(!is.na(exact_BROT), paste0("\"", exact_BROT, "\""), NA),
+    close_BROT = ifelse(!is.na(close_BROT), paste0("\"", close_BROT, "\""), NA),
+    related_BROT = ifelse(!is.na(related_BROT), paste0("\"", related_BROT, "\""), NA),
+    PalmTraits_exact = ifelse(!is.na(PalmTraits_exact), paste0("\"", PalmTraits_exact, "\""), NA),
+    PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\""), NA)
   ) %>%
   select(-identifier, -type_x, -traitID, -keyword_10) %>% 
   rename(
@@ -436,7 +436,7 @@ rdf_query(true_triples, sparql)
 
 sparql <-
   'SELECT DISTINCT ?s
- WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> "plant trait"^^<xsd:string> .
+ WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> "plant trait" .
        }
 '
 rdf_query(true_triples, sparql)
