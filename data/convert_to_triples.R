@@ -361,7 +361,7 @@ triples_df %>%
   mutate(graph = ".") %>% # quads have a fourth column, usually "."
   filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
   mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
-  write_delim("data/ADP.nq", col_names=FALSE, escape="none", quote="none")
+  write_delim("docs/ADP.nq", col_names=FALSE, escape="none", quote="none")
 
 unescape_unicode <- function(x) {
   stringi::stri_unescape_unicode(gsub("<U\\+(....)>", "\\\\u\\1", x))
@@ -369,10 +369,10 @@ unescape_unicode <- function(x) {
 
 # prove this parses correctly
 library(rdflib)
-true_triples <- read_nquads("data/ADP.nq")
+true_triples <- read_nquads("docs/ADP.nq")
 
 # serialize to any format
-rdflib::rdf_serialize(true_triples, "data/ADP.ttl",
+rdflib::rdf_serialize(true_triples, "docs/ADP.ttl",
                       namespace = c(APD = "https://github.com/traitecoevo/APD/",
                                     dc = "http://purl.org/dc/elements/1.1/",
                                     skos = "http://www.w3.org/2004/02/skos/core#",
@@ -391,7 +391,7 @@ rdflib::rdf_serialize(true_triples, "data/ADP.ttl",
                                     Cerrado = "http://cerrado.linkeddata.es/ecology/",
                                     CorVeg  = "http://linked.data.gov.au/def/corveg-cv/",
                                     DCM = "http://dicom.nema.org/resources/ontology/DCM/",
-                                    EDAM = "http://edamontology.org/ ",
+                                    EDAM = "http://edamontology.org/",
                                     EFO = "http://www.ebi.ac.uk/efo/",
                                     EnvThes = "http://vocabs.lter-europe.net/EnvThes/",
                                     hupson = "http://scai.fraunhofer.de/HuPSON#",
@@ -401,7 +401,7 @@ rdflib::rdf_serialize(true_triples, "data/ADP.ttl",
                                     SIO = "http://semanticscience.org/resource/",
                                     SWEET = "http://sweetontology.net/")
 )
-rdflib::rdf_serialize(true_triples, "data/ADP.json", format="jsonld")
+rdflib::rdf_serialize(true_triples, "docs/ADP.json", format="jsonld")
 
 # Smoke-tests / example sparql queries
 
