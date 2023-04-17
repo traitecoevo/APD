@@ -113,7 +113,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
       `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
-    pivot_longer(cols = c(2:5)) %>% 
+    pivot_longer(cols = c(2:6)) %>% 
     rename(
       Predicate = name,
       Object = value
@@ -164,8 +164,8 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
     inScheme = paste0("\"", inScheme, "\""),
     type = paste0("<", ontology_links$Entity[match(type, ontology_links$identifier)], ">"),
-    min = ifelse(!is.na(min), paste0("\"", min, "\"", "^^<https://www.w3.org/2001/XMLSchema#double>"), NA),
-    max = ifelse(!is.na(max), paste0("\"", max, "\"", "^^<https://www.w3.org/2001/XMLSchema#double>"), NA),
+    min = ifelse(!is.na(min), paste0("\"", min, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
+    max = ifelse(!is.na(max), paste0("\"", max, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
     units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
     units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
@@ -329,7 +329,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     `<http://www.w3.org/2004/02/skos/core#exactMatch>8`= PalmTraits_exact,
     `<http://www.w3.org/2004/02/skos/core#closeMatch>9`= PalmTraits_close
   ) %>%
-  pivot_longer(cols = c(1:79)) %>% 
+  pivot_longer(cols = c(1:79,81:85)) %>% 
   rename(
     Predicate = name,
     Object = value
