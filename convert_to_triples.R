@@ -102,7 +102,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
       label = paste0("\"", label, "\""),
       description = paste0("\"", description, "\"", "@en"),
       Parent = paste0("<", Parent, ">"),
-      SubClassOf = Parent
+      SubClassOf = Parent,
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA)
     ) %>%
     rename(
