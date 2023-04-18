@@ -88,7 +88,7 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
   ) %>%
-  pivot_longer(cols = c(2:4)) %>% 
+  pivot_longer(cols = c(2:5)) %>% 
   rename(
     Predicate = name,
     Object = value
