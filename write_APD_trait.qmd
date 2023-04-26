@@ -9,7 +9,7 @@ trait_i <-
 
 categorical_i <- 
   categorical_values %>% filter(trait_name == thistrait) %>% 
-  select(Entity, description)
+  select(label, description)
 
 ```
 ## `r trait_i$label` 
