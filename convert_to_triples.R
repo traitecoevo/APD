@@ -10,7 +10,8 @@ reformatted_references <- read_csv("data/APD_references.csv") %>%
     label = paste0("\"", label, "\""),
     identifier = paste0("\"", identifier, "\""),
     citation = paste0("\"", citation, "\"", "@en"),
-    title = paste0("\"", title, "\"", "@en")
+    title = paste0("\"", title, "\"", "@en"),
+    `<http://aa#a>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   rename(
     Subject = Entity,
@@ -19,7 +20,7 @@ reformatted_references <- read_csv("data/APD_references.csv") %>%
     `<http://purl.org/dc/terms/bibliographicCitation>` = citation,
     `<http://purl.org/dc/terms/title>` = title
   ) %>%
-  pivot_longer(cols = c(2:5)) %>% 
+  pivot_longer(cols = c(2:6)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -29,15 +30,16 @@ reformatted_reviewers <- read_csv("data/APD_reviewers.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\""),
-    ORCID = paste0("\"", ORCID, "\"")
+    label = paste0("\"", label, "\"", "@en"),
+    ORCID = paste0("\"", ORCID, "\""),
+    `<http://aa#a>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   rename(
     Subject = Entity,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://purl.obolibrary.org/obo/IAO_0000708>` = ORCID
   ) %>%
-  pivot_longer(cols = c(2:3)) %>% 
+  pivot_longer(cols = c(2:4)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -48,10 +50,11 @@ reformatted_units <- read_csv("data/APD_units.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\""),
+    label = paste0("\"", label, "\"", "@en"),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     SI_code = ifelse(!is.na(SI_code), paste0("\"", SI_code, "\""), NA),
-    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\""), NA)
+    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\""), NA),
+    `<http://aa#a>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   rename(
     Subject = Entity,
@@ -60,7 +63,7 @@ reformatted_units <- read_csv("data/APD_units.csv") %>%
     `<https://w3id.org/uom/SI_code>` = SI_code,
     `<https://w3id.org/uom/UCUM_code>` = UCUM_code
   ) %>%
-  pivot_longer(cols = c(2:5)) %>% 
+  pivot_longer(cols = c(2:6)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -74,12 +77,14 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<https://github.com/traitecoevo/", Entity, ">"),
-    label = paste0("\"", label, "\""),
+    label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
     Parent = paste0("<https://github.com/traitecoevo/", Parent, ">"),
-    SubClassOf = Parent
+    SubClassOf = Parent,
+    `<http://aa#a>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
+    `<http://aa#a>2` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   select(-trait_name) %>%
   rename(
@@ -90,7 +95,7 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
   ) %>%
-  pivot_longer(cols = c(2:6)) %>% 
+  pivot_longer(cols = c(2:8)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -101,12 +106,14 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
     mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
-      label = paste0("\"", label, "\""),
+      label = paste0("\"", label, "\"", "@en"),
       prefLabel = label,
       description = paste0("\"", description, "\"", "@en"),
       Parent = paste0("<", Parent, ">"),
       SubClassOf = Parent,
-      exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA)
+      exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
+      `<http://aa#a>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
+      `<http://aa#a>2` = "<http://www.w3.org/2002/07/owl#Class>"
     ) %>%
     rename(
       Subject = Entity,
@@ -117,7 +124,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
       `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
-    pivot_longer(cols = c(2:7)) %>% 
+    pivot_longer(cols = c(2:9)) %>% 
     rename(
       Predicate = name,
       Object = value
@@ -138,11 +145,13 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
-    label = paste0("\"", label, "\""),
+    label = paste0("\"", label, "\"", "@en"),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
-    inScheme = paste0("\"", inScheme, "\"")
+    inScheme = paste0("\"", inScheme, "\""),
+    `<http://aa#a>` = ifelse(stringr::str_detect(prefix,"APD"), "<http://www.w3.org/2004/02/skos/core#Concept>", NA),
+    `<http://aa#a>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
   select(-prefix) %>%
   rename(
@@ -152,7 +161,7 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
     `<http://purl.org/dc/elements/1.1/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme
   ) %>%
-  pivot_longer(cols = c(2:5)) %>% 
+  pivot_longer(cols = c(2:7)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -170,7 +179,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
   mutate(
     Entity =  paste0("<https://github.com/traitecoevo/", identifier, ">"),
     trait = paste0("\"", trait, "\""),
-    label = paste0("\"", label, "\""),
+    label = paste0("\"", label, "\"", "@en"),
     preflabel = label,
     description_encoded = ifelse(!is.na(description_encoded), paste0("\"", description_encoded, "\"", "@en"), NA),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
@@ -183,9 +192,9 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     category_1 = ifelse(!is.na(category_1), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
-    category_2 = ifelse(!is.na(category_2), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
-    category_3 = ifelse(!is.na(category_3), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
-    category_4 = ifelse(!is.na(category_4), paste0("<", hierarchy$Entity[match(category_1, hierarchy$label)], ">"), NA),
+    category_2 = ifelse(!is.na(category_2), paste0("<", hierarchy$Entity[match(category_2, hierarchy$label)], ">"), NA),
+    category_3 = ifelse(!is.na(category_3), paste0("<", hierarchy$Entity[match(category_3, hierarchy$label)], ">"), NA),
+    category_4 = ifelse(!is.na(category_4), paste0("<", hierarchy$Entity[match(category_4, hierarchy$label)], ">"), NA),
     SubClassOf_1 = category_1,
     SubClassOf_2 = category_2,
     SubClassOf_3 = category_3,
@@ -252,7 +261,9 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     close_BROT = ifelse(!is.na(close_BROT), paste0("\"", close_BROT, "\""), NA),
     related_BROT = ifelse(!is.na(related_BROT), paste0("\"", related_BROT, "\""), NA),
     PalmTraits_exact = ifelse(!is.na(PalmTraits_exact), paste0("\"", PalmTraits_exact, "\""), NA),
-    PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\""), NA)
+    PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\""), NA),
+    `<http://aa#a>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
+    `<http://aa#a>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
   select(-identifier, -type_x, -traitID, -keyword_10) %>% 
   rename(
@@ -342,11 +353,22 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     `<http://www.w3.org/2004/02/skos/core#exactMatch>8`= PalmTraits_exact,
     `<http://www.w3.org/2004/02/skos/core#closeMatch>9`= PalmTraits_close
   ) %>%
-  pivot_longer(cols = c(1:79,81:85)) %>% 
+  pivot_longer(cols = c(1:79,81:87)) %>% 
   rename(
     Predicate = name,
     Object = value
   )
+
+reformatted_traits_x <- reformatted_traits %>%
+  filter(Predicate %in% c("<http://www.w3.org/2004/02/skos/core#broader>", "<http://www.w3.org/2004/02/skos/core#broader>2",
+                          "<http://www.w3.org/2004/02/skos/core#broader>3", "<http://www.w3.org/2004/02/skos/core#broader>4")) %>%
+  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
+  rename(Object2 = Subject, Subject = Object) %>%
+  rename(Object = Object2) %>%
+  filter(!is.na(Subject))
+
+reformatted_hierarchy <- reformatted_hierarchy %>%
+  bind_rows(reformatted_traits_x)
 
 reformatted_categorical_x <- reformatted_categorical %>%
   filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
