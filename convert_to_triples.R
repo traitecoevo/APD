@@ -335,8 +335,11 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     Object = value
   )
 
+APD_resource <- read_csv("data/APD_resource.csv")
+
 # bind rows from individual dataframes
 triples_df <- bind_rows(
+  APD_resource,
   reformatted_ontology,
   reformatted_references,
   reformatted_reviewers,

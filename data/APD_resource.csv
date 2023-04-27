@@ -1,0 +1,12 @@
+Subject,Predicate,Object
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2000/01/rdf-schema#resource>,"""http://terminologies.gfbio.org/terms/ETS/TraitData"""
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2004/02/skos/core#ConceptScheme>,"""http://terminologies.gfbio.org/terms/ETS/TraitData"""
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2002/07/owl#ontology>,"""http://terminologies.gfbio.org/terms/ETS/TraitData"""
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2000/01/rdf-schema#label>,"""AusTraits""@en"
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2000/01/rdf-schema#seeAlso>,"""https://github.com/traitecoevo/APD_values""^^xsd:anyURI"
+<https://github.com/traitecoevo/APD>,<http://purl.org/dc/terms/description>,"""AusTraits is an open-source, harmonized database of Australian plant trait data. It synthesises data on nearly 500 traits across more than 30,000 taxa from field campaigns, published literature, taxonomic monographs, and individual taxon descriptions. Begun in 2016 as an initiative between three lab groups, it has grown to be the largest collation of plant trait data for Australian plants. AusTraits integrates plant trait data collected by researchers from diverse disciplines, including functional plant biology, plant physiology, plant taxonomy, and conservation biology. By harmonizing and error checking values, linking all AusTraits data entries to detailed metadata, and documenting trait and trait values definitions, AusTraits is a resource researchers can trust and use for their research agendas with minimal additional filtering or manipulations.""@en"
+<https://github.com/traitecoevo/APD>,<http://purl.org/dc/terms/license >,"""https://creativecommons.org/licenses/by/4.0/""^^xsd:anyURI"
+<https://github.com/traitecoevo/APD>,<http://purl.org/dc/terms/publisher>,"""https://austraits.org/""^^xsd:anyURI"
+<https://github.com/traitecoevo/APD>,<http://purl.org/dc/terms/title>,"""AusTraits""@en"
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2004/02/skos/core#hasTopConcept>,"""https://github.com/traitecoevo/APD#0000000"""
+<https://github.com/traitecoevo/APD>,<http://www.w3.org/2004/02/skos/core#prefLabel>,"""AusTraits""@en"
