@@ -75,6 +75,7 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   mutate(
     Entity = paste0("<https://github.com/traitecoevo/", Entity, ">"),
     label = paste0("\"", label, "\""),
+    prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
     Parent = paste0("<https://github.com/traitecoevo/", Parent, ">"),
@@ -84,11 +85,12 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   rename(
     Subject = Entity,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= prefLabel,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
   ) %>%
-  pivot_longer(cols = c(2:5)) %>% 
+  pivot_longer(cols = c(2:6)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -100,6 +102,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
       label = paste0("\"", label, "\""),
+      prefLabel = label,
       description = paste0("\"", description, "\"", "@en"),
       Parent = paste0("<", Parent, ">"),
       SubClassOf = Parent,
@@ -108,17 +111,27 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
     rename(
       Subject = Entity,
       `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+      `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
       `<http://purl.org/dc/terms/description>` = description,
       `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
       `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
-    pivot_longer(cols = c(2:6)) %>% 
+    pivot_longer(cols = c(2:7)) %>% 
     rename(
       Predicate = name,
       Object = value
     ) %>% 
   filter(!is.na(Object))
+
+reformatted_hierarchy_x <- reformatted_hierarchy %>%
+  filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
+  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
+  rename(Object2 = Subject, Subject = Object) %>%
+  rename(Object = Object2)
+
+reformatted_hierarchy <- reformatted_hierarchy %>%
+  bind_rows(reformatted_hierarchy_x)
 
 reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
@@ -246,7 +259,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     Subject = Entity,
     `<http://www.w3.org/2004/02/skos/core#altLabel>`= trait,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
-    `<http://www.w3.org/2000/01/rdf-schema#prefLabel>`= preflabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= preflabel,
     `<http://purl.org/dc/terms/description>` = description_encoded,
     `<http://purl.org/dc/terms/description>2` = description,
     `<http://www.w3.org/2000/01/rdf-schema#comment>`= comments,
@@ -334,6 +347,15 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     Predicate = name,
     Object = value
   )
+
+reformatted_categorical_x <- reformatted_categorical %>%
+  filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
+  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
+  rename(Object2 = Subject, Subject = Object) %>%
+  rename(Object = Object2)
+
+reformatted_traits <- reformatted_traits %>%
+  bind_rows(reformatted_categorical_x)
 
 APD_resource <- read_csv("data/APD_resource.csv")
 
