@@ -246,7 +246,6 @@ fruit_dehiscence_dehiscent,dehiscent,Fruits are dehiscent when mature.,fruit_deh
 fruit_dehiscence_indehiscent,indehiscent,Fruits are indehiscent when mature.,fruit_dehiscence
 diaspore_fleshiness_dry,dry,"Diaspores where the true fruit, accessory tissues and dispersal appendages are all dry when mature.",diaspore_fleshiness
 diaspore_fleshiness_fleshy,fleshy,"Diaspores where either the true fruit, accessory tissues or dispersal appendages are fleshy when mature.",diaspore_fleshiness
-NA,NA,NA,fruiting_time
 seed_germination_treatment_after_ripening,after_ripening,"Seed germinates more readily after a period of warm, dry storage.",seed_germination_treatment
 seed_germination_treatment_chemical_treatment,chemical_treatment,Seed germinates more readily after a chemical treatment.,seed_germination_treatment
 seed_germination_treatment_cold,cold,Seed germinates more readily after cold treatment.,seed_germination_treatment
