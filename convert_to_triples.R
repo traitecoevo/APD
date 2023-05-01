@@ -142,6 +142,34 @@ reformatted_hierarchy_x <- reformatted_hierarchy %>%
 reformatted_hierarchy <- reformatted_hierarchy %>%
   bind_rows(reformatted_hierarchy_x)
 
+reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
+  select(Entity, label, description, identifier) %>%
+  mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
+  mutate(
+    Entity = paste0("<", Entity, ">"),
+    label = paste0("\"", label, "\"", "@en"),
+    prefLabel = label,
+    description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
+    identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
+    identifier = paste0("\"", identifier, "\""),
+    `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://github.com/traitecoevo/APD/APD_glossary/", "\""),
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#topConcept>",
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
+  ) %>%
+  rename(
+    Subject = Entity,
+    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
+    `<http://purl.org/dc/terms/description>` = description,
+    `<http://purl.org/dc/elements/1.1/identifier>` = identifier
+  ) %>%
+  pivot_longer(cols = c(2:8)) %>% 
+  rename(
+    Predicate = name,
+    Object = value
+  ) %>% 
+  filter(!is.na(Object))
+
 reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
@@ -153,7 +181,6 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
     inScheme = ifelse(stringr::str_detect(prefix,"APD"), paste0("\"", inScheme, "\""), NA),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = ifelse(stringr::str_detect(prefix,"APD"), "<http://www.w3.org/2004/02/skos/core#Concept>", NA),
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
   select(-prefix) %>%
@@ -165,7 +192,7 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
     `<http://purl.org/dc/elements/1.1/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme
   ) %>%
-  pivot_longer(cols = c(2:8)) %>% 
+  pivot_longer(cols = c(2:7)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -200,7 +227,8 @@ reformatted_annotation <- read_csv("data/APD_annotation_properties.csv") %>%
   filter(!is.na(Object)) %>%
   filter(!stringr::str_detect(Object,"\"NA\"@en"))
 
-ontology_links <- read_csv("data/ontology_links.csv")
+glossary <- read_csv("data/APD_glossary.csv")
+ontology_links <- read_csv("data/ontology_links.csv") %>% bind_rows(glossary)
 reviewers <- read_csv("data/APD_reviewers.csv")
 references <- read_csv("data/APD_references.csv")
 units_csv <- read_csv("data/APD_units.csv")
