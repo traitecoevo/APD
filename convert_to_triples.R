@@ -153,7 +153,7 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://github.com/traitecoevo/APD/APD_glossary/", "\""),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#topConcept>",
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#topConceptOf>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
   rename(
@@ -436,10 +436,19 @@ reformatted_categorical_x <- reformatted_categorical %>%
   rename(Object2 = Subject, Subject = Object) %>%
   rename(Object = Object2)
 
+reformatted_glossary_x <- reformatted_glossary %>%
+  filter(Object == "<http://www.w3.org/2004/02/skos/core#topConceptOf>") %>%
+  mutate(
+    Predicate = "<http://www.w3.org/2004/02/skos/core#hasTopConcept>",
+    Object = Subject,
+    Subject = "<https://github.com/traitecoevo/APD/APD_glossary>"
+    )
+
 reformatted_traits <- reformatted_traits %>%
   bind_rows(reformatted_categorical_x)
 
-APD_resource <- read_csv("data/APD_resource.csv")
+APD_resource <- read_csv("data/APD_resource.csv") %>%
+  bind_rows(reformatted_glossary_x)
 
 # bind rows from individual dataframes
 triples_df <- bind_rows(
@@ -451,7 +460,8 @@ triples_df <- bind_rows(
   reformatted_units,
   reformatted_hierarchy,
   reformatted_categorical,
-  reformatted_traits
+  reformatted_traits,
+  reformatted_glossary
 )
 
 #remove NA's; remove stray numbers required before to create unique column names 
@@ -482,7 +492,7 @@ true_triples <- read_nquads("docs/ADP.nq")
 # serialize to any format
 rdflib::rdf_serialize(true_triples, "docs/ADP.ttl",
                       namespace = c(APD = "https://github.com/traitecoevo/APD/",
-                                    APD_glossary = "https://github.com/traitecoevo/APD_glossary/",
+                                    APD_glossary = "https://github.com/traitecoevo/APD/APD_glossary/",
                                     dc = "http://purl.org/dc/elements/1.1/",
                                     skos = "http://www.w3.org/2004/02/skos/core#",
                                     dwc = "http://rs.tdwg.org/dwc/terms/attributes/",

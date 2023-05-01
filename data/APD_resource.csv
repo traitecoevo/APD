@@ -9,10 +9,10 @@ Subject,Predicate,Object
 <https://github.com/traitecoevo/APD>,<http://www.w3.org/2004/02/skos/core#hasTopConcept>,<https://github.com/traitecoevo/APD/0000000>
 <https://github.com/traitecoevo/APD>,<http://www.w3.org/2004/02/skos/core#prefLabel>,"""AusTraits Plant Dictionary""@en"
 <https://github.com/traitecoevo/APD/0000000>,<http://www.w3.org/2004/02/skos/core#topConceptOf>,<https://github.com/traitecoevo/APD>
-<https://github.com/traitecoevo/APD_glossary>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,<http://www.w3.org/2004/02/skos/core#ConceptScheme>
-<https://github.com/traitecoevo/APD_glossary>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2,<http://www.w3.org/2002/07/owl#Class>
-<https://github.com/traitecoevo/APD_glossary>,<http://www.w3.org/2000/01/rdf-schema#label>,"""AusTraits Plant Dictionary glossary""@en"
-<https://github.com/traitecoevo/APD_glossary>,<http://purl.org/dc/terms/license>,"""<https://creativecommons.org/licenses/by/4.0/>""^^<xsd:anyURI>"
-<https://github.com/traitecoevo/APD_glossary>,<http://purl.org/dc/terms/publisher>,"""<https://austraits.org/>""^^<xsd:anyURI>"
-<https://github.com/traitecoevo/APD_glossary>,<http://purl.org/dc/terms/title>,"""AusTraits Plant Dictionary glossary""@en"
-<https://github.com/traitecoevo/APD_glossary>,<http://www.w3.org/2004/02/skos/core#prefLabel>,"""AusTraits Plant Dictionary glossary""@en"
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,<http://www.w3.org/2004/02/skos/core#ConceptScheme>
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2,<http://www.w3.org/2002/07/owl#Class>
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://www.w3.org/2000/01/rdf-schema#label>,"""AusTraits Plant Dictionary glossary""@en"
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://purl.org/dc/terms/license>,"""<https://creativecommons.org/licenses/by/4.0/>""^^<xsd:anyURI>"
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://purl.org/dc/terms/publisher>,"""<https://austraits.org/>""^^<xsd:anyURI>"
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://purl.org/dc/terms/title>,"""AusTraits Plant Dictionary glossary""@en"
+<https://github.com/traitecoevo/APD/APD_glossary>,<http://www.w3.org/2004/02/skos/core#prefLabel>,"""AusTraits Plant Dictionary glossary""@en"
