@@ -153,7 +153,8 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://github.com/traitecoevo/APD/APD_glossary/", "\""),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#topConceptOf>",
+    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://github.com/traitecoevo/APD/APD_glossary>",
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
   rename(
@@ -163,7 +164,7 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
     `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/elements/1.1/identifier>` = identifier
   ) %>%
-  pivot_longer(cols = c(2:8)) %>% 
+  pivot_longer(cols = c(2:9)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -437,7 +438,7 @@ reformatted_categorical_x <- reformatted_categorical %>%
   rename(Object = Object2)
 
 reformatted_glossary_x <- reformatted_glossary %>%
-  filter(Object == "<http://www.w3.org/2004/02/skos/core#topConceptOf>") %>%
+  filter(Predicate == "<http://www.w3.org/2004/02/skos/core#topConceptOf>") %>%
   mutate(
     Predicate = "<http://www.w3.org/2004/02/skos/core#hasTopConcept>",
     Object = Subject,
