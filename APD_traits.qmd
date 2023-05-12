@@ -30,7 +30,17 @@ date: "2023.03.10"
 ```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
 simplified <- TRUE
 
-traits <- c("leaf_C_per_dry_mass","leaf_N_per_area","leaf_N_per_dry_mass","leaf_P_per_area","leaf_P_per_dry_mass","leaf_CN_ratio","plant_height","plant_diameter_breast_height","leaf_area","leaf_thickness","leaf_dry_mass","leaf_fresh_mass","leaf_mass_per_area","leaf_dry_matter_content","leaf_compoundness","wood_density","stem_density","flower_colour","fruit_type","seed_dry_mass","seed_length","stem_vessel_density","stem_vessel_diameter","leaf_work_to_shear_adjusted")
+traits <- c("leaf_photosynthetic_rate_per_area_ambient", "leaf_photosynthetic_rate_per_area_maximum", "leaf_photosynthetic_rate_per_area_saturated", "leaf_photosynthetic_rate_per_dry_mass_ambient", 
+  "leaf_photosynthetic_rate_per_dry_mass_maximum", "leaf_photosynthetic_rate_per_dry_mass_saturated", "leaf_intercellular_CO2_concentration_at_Amax", 
+  "leaf_intercellular_CO2_concentration_at_Asat", "leaf_intercellular_CO2_concentration_at_Aambient", "leaf_intercellular_CO2_concentration_to_atmospheric_CO2_concentration_ratio", 
+  "leaf_chloroplast_CO2_concentration", "atmospheric_CO2_concentration", "leaf_photosynthesis_Jmax_per_area", "leaf_photosynthesis_Jmax_per_area_25C", "leaf_photosynthesis_Vcmax_per_area", 
+  "leaf_photosynthesis_Vcmax_per_area_25C", "leaf_photosynthesis_Jmax_over_Vcmax_25C", "leaf_fluorescence_fv_over_fm", "leaf_fluorescence_quantum_yield", "leaf_dark_respiration_per_area", 
+  "leaf_dark_respiration_per_dry_mass", "leaf_light_respiration_per_area", "stem_dark_respiration_per_area", "leaf_stomatal_conductance_per_area_ambient", 
+  "leaf_stomatal_conductance_per_area_at_Amax", "leaf_stomatal_conductance_per_area_at_Asat", "leaf_stomatal_resistance_ambient", "leaf_mesophyll_conductance_per_area", 
+  "leaf_mesophyll_conductance_per_mass", "leaf_transpiration_per_area_ambient", "leaf_transpiration_per_area_at_Amax", "leaf_transpiration_per_area_at_Asat", 
+  "leaf_dark_transpiration_per_area", "integrated_plant_transpiration", "leaf_photosynthetic_nitrogen_use_efficiency_maximum", "leaf_photosynthetic_nitrogen_use_efficiency_saturated", 
+  "leaf_photosynthetic_phosphorus_use_efficiency_maximum", "leaf_photosynthetic_phosphorus_use_efficiency_saturated", "leaf_water_use_efficiency_integrated", 
+  "leaf_water_use_efficiency_intrinsic", "leaf_water_use_efficiency_instantaneous")
 ```
 
 

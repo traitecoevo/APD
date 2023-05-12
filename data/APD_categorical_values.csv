@@ -16,8 +16,8 @@ cotyledon_function_foliaceous,foliaceous,Cotyledons are photosynthetic and funct
 cotyledon_function_reserve,reserve,Cotyledons function as energy reserve organs.,cotyledon_function
 cotyledon_position_cryptocotylar,cryptocotylar,A type of seed germination in which the cotyledons remain within the seed coat at germination.,cotyledon_position
 cotyledon_position_phanerocotylar,phanerocotylar,A type of seed germination in which the cotyledons emerge from the seed coat.,cotyledon_position
-cotyledon_type_glabrous,glabrous,Cotyledons lack hairs.,cotyledon_hairs
-cotyledon_type_hairy,hairy,Cotyledons have hairs.,cotyledon_hairs
+cotyledon_hairs_glabrous,glabrous,Cotyledons lack hairs.,cotyledon_hairs
+cotyledon_hairs_hairy,hairy,Cotyledons have hairs.,cotyledon_hairs
 seedling_germination_location_epigeal,epigeal,Germinant with one or more cotyledons emerging aboveground.,seedling_germination_location
 seedling_germination_location_hypogeal,hypogeal,Germinant with all cotyledons remaining belowground.,seedling_germination_location
 dispersal_appendage_aril,aril,"Fleshy outgrowth of a seed, that often attracts animals like birds or ants.",dispersal_appendage
@@ -112,6 +112,15 @@ flower_colour_pink,pink,Flower colour is pink.,flower_colour
 flower_colour_red_brown,red_brown,Flower colour is red or brown.,flower_colour
 flower_colour_white_cream,white_cream,Flower colour is white or cream.,flower_colour
 flower_colour_yellow_orange,yellow_orange,Flower colour is yellow orange.,flower_colour
+flowering_cues_rain,rain,"Plants increase flowering in response to rain, but the time of year is not specified.",flowering_cues
+flowering_cues_rain_obligate,rain_obligate,Plants only flower following rain events.,flowering_cues
+flowering_cues_rain_all_year,rain_all_year,Plants increase flowering in response to rain at any time of the year.,flowering_cues
+flowering_cues_rain_summer,rain_summer,Plants increase flowering in response to summer rains.,flowering_cues
+flowering_cues_rain_autumn,rain_autumn,Plants increase flowering in response to autumn rains.,flowering_cues
+flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to winter rains.,flowering_cues
+flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
+flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
+flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
 flower_structural_sex_type_bisexual,bisexual,Hermaphrodite; flowers with both male and female reproductive organs.,flower_structural_sex_type
 flower_structural_sex_type_incompletely_unisexual,incompletely_unisexual,Male flowers with pistillodes and/or female flowers with staminodes.,flower_structural_sex_type
 flower_structural_sex_type_unisexual,unisexual,Flowers with either male or female reproductive organs.,flower_structural_sex_type
@@ -228,9 +237,10 @@ fruit_type_follicle,follicle,"A dry, dehiscent fruit derived from a single carpe
 fruit_type_legume,legume,"A dry, dehiscent fruit derived from a single carpel that splits along two sutures; applies to Fabaceae. (Synonyms, pod)",fruit_type
 fruit_type_legume_indehiscent,legume_indehiscent,"A dry, indehiscent fruit derived from a single carpel; applies to Fabaceae.",fruit_type
 fruit_type_mericarp,mericarp,"A fruitlet (seed-containing portion of a fruit) that is a half-carpel; the individual fruitlets separate from one another at maturity; a specific type of schizocarp. (In some datasets, term likely refers to any fruitlet derived from a portion of a schizocarp that separates at maturity, not explicitly just a half-carpel.)",fruit_type
-fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits.",fruit_type
+fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits. (Synonym, apocarp)",fruit_type
 fruit_type_nut,nut,"A simple, dry, indehiscent fruit with a single seed and a hard pericarp.",fruit_type
 fruit_type_nutlet,nutlet,"A diminutive of nut, referring to a simple, dry, indehiscent structure with a single seed that might be an entire fruit (nut; monocarp) or a portion of a fruit, such as the individual components derived from an apocarp (fruit with multiple unfused ovaries) or schizocarp (fruit with multiple ovaries that separate at maturity).",fruit_type
+fruit_type_pepo,pepo,XXX,fruit_type
 fruit_type_pome,pome,A fleshy fruit with the bulk of the fleshy tissue derived from flora tissue that surrounds the inferior ovary.,fruit_type
 fruit_type_pyrene,pyrene,A fleshy fruit in which the seed(s) are covered by a hard layer of endocarp.,fruit_type
 fruit_type_samara,samara,"A winged, dry fruit.",fruit_type
@@ -289,7 +299,7 @@ leaf_arrangement_crowded,crowded,"When internode length varies considerably alon
 leaf_phyllotaxis_alternate,alternate,A single leaf is attached at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_opposite,opposite,A pair of leaves are attached opposite to one another at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_whorled,whorled,"Three or more leaves are attached at each stem node, arranged in a symmetrical pattern around the stem. (Synonyms, verticillate)",leaf_phyllotaxis
-leaf_glaucousness_glaucous,glaucous,"Mature (fully expanded) leaves on adult plants have a waxy coating, giving them a glaucous appearance.",leaf_glaucousness
+leaf_glaucousness_glaucous,glaucous,"Mature (fully expanded) leaves on adult plants have a waxy coating, giving them a glaucous appearance. (Synonyms, waxy bloom, pruinose)",leaf_glaucousness
 leaf_glaucousness_not_glaucous,not_glaucous,Mature (fully expanded) leaves on adult plants do not have a glaucous appearance.,leaf_glaucousness
 leaf_hairs_adult_leaves_glabrous,glabrous,Mature (fully expanded) leaves on adult plants do not have hairs (trichomes).,leaf_hairs_adult_leaves
 leaf_hairs_adult_leaves_hairy,hairy,Mature (fully expanded) leaves on adult plants have hairs (trichomes).,leaf_hairs_adult_leaves
@@ -320,12 +330,12 @@ leaf_lamina_division_pinnatipartite,pinnatipartite,Leaf with lobes that extend m
 leaf_lamina_division_pinnatisect,pinnatisect,Leaf with lobes that extend nearly to the midrib but the divisions are not separated into distinct leaflets.,leaf_lamina_division
 leaf_lamina_division_bipinnatipartite,bipinnatipartite,"Leaf that is twice pinnatipartite, with two series of lobes that extend more than half-way to the midrib.",leaf_lamina_division
 leaf_lamina_division_bipinnatisect,bipinnatisect,"Leaf that is twice pinnatisect, with two series of lobes that extend nearly to the midrib but the divisions are not separated into distinct leaflets.",leaf_lamina_division
-leaf_lamina_division_trichotomously_divided,trichotomously_divided,Leaf divided repeatedly into three lobes.,leaf_lamina_division
-leaf_lamina_division_dichotomously_divided,dichotomously_divided,Leaf divided repeatedly into two lobes.,leaf_lamina_division
+leaf_lamina_division_trichotomously_lobed,trichotomously_lobed,Leaf divided repeatedly into three lobes.,leaf_lamina_division
+leaf_lamina_division_dichotomously_lobed,dichotomously_lobed,Leaf divided repeatedly into two lobes.,leaf_lamina_division
 leaf_lamina_division_bipartite,bipartite,Leaf divided into two lobes.,leaf_lamina_division
 leaf_lamina_division_tripartite,tripartite,Leaf divided into three lobes.,leaf_lamina_division
-leaf_lamina_division_pinnately_divided,pinnately_divided,Leaf divided into leaflets that attach along a central axis. [PATO_0000410],leaf_lamina_division
-leaf_lamina_division_palmately_divided,palmately_divided,"Leaf divided into leaflets that attach to a central point. (Synonyms, digitate)",leaf_lamina_division
+leaf_lamina_division_pinnately_compound,pinnately_compound,Leaf divided into leaflets that attach along a central axis. [PATO_0000410],leaf_lamina_division
+leaf_lamina_division_palmately_compound,palmately_compound,"Leaf divided into leaflets that attach to a central point. (Synonyms, digitate)",leaf_lamina_division
 leaf_lamina_division_bipinnate,bipinnate,"Leaf that is twice pinnate, having pinnate leaflets that are themselves pinnately divided.",leaf_lamina_division
 leaf_lamina_division_tripinnate,tripinnate,"Leaf that is three times pinnate, with pinnate leaflets that are twice more pinnately divided.",leaf_lamina_division
 leaf_lamina_division_trifoliate,trifoliate,"Leaf divided into three leaflets. (Synonyms, ternate, trifoliolate)",leaf_lamina_division
@@ -374,10 +384,10 @@ leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximatel
 leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped).",leaf_shape
 leaf_shape_peltate,peltate,"A 2-dimensional orbicular shape, distinguished by the petiole attaching near the center of the leaf lamina.",leaf_shape
 leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous.",leaf_shape
-leaf_base_shape_attenuate,attenuate,"Basal leaf margin abruptly incurved (concave), the two sides intersecting at an angle of less than 45??.",leaf_base_shape
+leaf_base_shape_attenuate,attenuate,"Basal leaf margin abruptly incurved (concave), the two sides intersecting at an angle of less than 45Â°.",leaf_base_shape
 leaf_base_shape_auriculate,auriculate,Basal leaf margin with two rounded lobes. The leaf margin above the lobes is concave. The petiole attaches in the incised region between the lobes.,leaf_base_shape
-leaf_base_shape_cuneate,cuneate,"Basal leaf margin approximately straight, the two sides intersecting at an angle between 45?? to 90??.",leaf_base_shape
-leaf_base_shape_hastate,hastate,"Basal leaf margin with two lobes oriented outward, such that they are at approximately 90?? relative to the central axis and the leaf margin is fairly flat at the base.",leaf_base_shape
+leaf_base_shape_cuneate,cuneate,"Basal leaf margin approximately straight, the two sides intersecting at an angle between 45Â° to 90Â°.",leaf_base_shape
+leaf_base_shape_hastate,hastate,"Basal leaf margin with two lobes oriented outward, such that they are at approximately 90Â° relative to the central axis and the leaf margin is fairly flat at the base.",leaf_base_shape
 leaf_base_shape_sagittate,sagittate,"Basal leaf margin with two lobes oriented downward, away from apex. The petiole attaches in the concave region between the lobes.",leaf_base_shape
 plant_photosynthetic_organ_leaf,leaf,"A true leaf, including both laminar and needle-shaped leaves.",plant_photosynthetic_organ
 plant_photosynthetic_organ_cladode,cladode,"A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)",plant_photosynthetic_organ
@@ -493,7 +503,7 @@ plant_growth_substrate_aquatic,aquatic,A plant that grows in water.,plant_growth
 plant_growth_substrate_marine,marine,A plant that grows in the sea.,plant_growth_substrate
 plant_growth_substrate_hemiepiphyte,hemiepiphyte,"A plant that spends part of its life cycle as an epiphyte, growing upon another plant.",plant_growth_substrate
 plant_type_by_resource_use_hydrohalophyte,hydrohalophyte,Tidal swamp or 'mangrove' and coastal lagoon elements and temperate-zone salt-marsh taxa are classed together.,plant_type_by_resource_use
-plant_type_by_resource_use_phreatophyte,phreatophyte,Deep-rooted plants?Çöusually trees?Çöobtaining water from a deep underground source that may or may not be saline.,plant_type_by_resource_use
+plant_type_by_resource_use_phreatophyte,phreatophyte,Deep-rooted plantsâ€”usually treesâ€”obtaining water from a deep underground source that may or may not be saline.,plant_type_by_resource_use
 plant_type_by_resource_use_psammophile,psammophile,Sand-loving plants commonly found in littoral strand or inland sandfields.,plant_type_by_resource_use
 plant_type_by_resource_use_weedy,weedy,"This inexact term is meant to indicate a high degree of adaptability to sites, and proven tendency toward aggressive colonization of either dry or wet sites, or rarely, both. In general, weeds invade and colonize highly disturbed sites or areas.",plant_type_by_resource_use
 plant_type_by_resource_use_xerohalophyte,xerohalophyte,Plants adapted to inland salt desert and saline habitats.,plant_type_by_resource_use
@@ -576,6 +586,7 @@ plant_tolerance_salt_salinity_tolerance_undefined,salinity_tolerance_undefined,P
 plant_tolerance_salt_xerohalophyte,xerohalophyte,Plants adapted to inland salt desert and saline habitats.,plant_tolerance_salt
 seed_shape_comma-shaped,comma-shaped,"A seed displaying a single arc of curvature, such that it bilaterally symmetrical. (Synonyms, comma-shaped, falcate, sickle-shaped scimitar-shaped)",seed_shape
 seed_shape_conical,conical,"Cone-shaped, with a broad flat base and narrow apex; turbinate refers to the inverse shape. (Synonyms, obconical, cone-shaped, turbinate, top-shaped)",seed_shape
+seed_shape_cuneate,cuneate,A 3-dimensional shape that is wedge-shaped or boat-shaped.,seed_shape
 seed_shape_cylindrical,cylindrical,"A cylinder, a shape with a flat top and bottom that are circular or elliptical in outline and are linked by a curved surface. (Synonyms, terete)",seed_shape
 seed_shape_discoid,discoid,"A subset of cylinder, a shape with a flat, circular or elliptical top and bottom, linked by a curved surface, where the length of the curved surface is much shorter than the cross-section of the flat surfaces. (Synonyms, flat)",seed_shape
 seed_shape_ellipsoid,ellipsoid,"A 3-dimensional shape that is elliptic in long section and circular in cross section; length:width ratio between 2:1 and 3:2. (Synonyms, obloid, oblong)",seed_shape
@@ -583,7 +594,7 @@ seed_shape_ellipsoid_flattened,ellipsoid_flattened,A 3-dimensional shape that is
 seed_shape_fusiform,fusiform,"Spindle-shaped; A 3-dimension shape that is narrowly ellipsoid, circular in cross-section and tapering sharply toward both ends. (Synonyms, spindle-shaped)",seed_shape
 seed_shape_globoid,globoid,"A 3-dimensional shape that is circular in both long section and cross section. (Synonyms, globose, globular, spherical)",seed_shape
 seed_shape_globoid_flattened,globoid_flattened,A 3-dimensional shape that is circular in both long section and somewhat flattened such that it is non-circular in cross section.,seed_shape
-seed_shape_hemispheric,hemispheric,"Half a sphere or globe, with a flat base, domed top, and circular in cross-section.",seed_shape
+seed_shape_hemispheric,hemispheric,"Half a sphere or globe, with a flat base, domed top, and circular in cross-section. (Synonyms, convex)",seed_shape
 seed_shape_hemispheric_flattened,hemispheric_flattened,"A 3-dimensional shape that is a laterally compressed/flattened half-sphere or globe; shape has a flat base, a domed top, and is elliptical in cross-section.",seed_shape
 seed_shape_lenticular,lenticular,Shaped like a biconvex lens and circular in cross section; shaped like a lentil.,seed_shape
 seed_shape_orbicular,orbicular,A poorly defined term that remains in AusTraits only as a placeholder; it appears to be used as both globoid (spherical) and lenticular by different authors.,seed_shape
@@ -594,20 +605,24 @@ seed_shape_polyhedral,polyhedral,"A 3-dimensional shape with distinct, fairly fl
 seed_shape_polyhedral_elongated,polyhedral_elongated,"A 3-dimensional shape with distinct, fairly flat faces and edges, where the length dimension is much longer than the width/height dimensions; includes elongate prisms and elongate tetrahedral shaped seeds.",seed_shape
 seed_shape_polyhedral_inflated,polyhedral_inflated,A 3-dimensional shape with distinct faces and edges but the faces tend to bulge outwards.,seed_shape
 seed_shape_reniform,reniform,"Having a cross-section that is roughly circular with a notch; strictly a kidney-shape but the definition applied here includes heart-shaped seeds and other seeds with a distinct notch. (Synonyms, cordiform, kidney-shaped, heart-shaped)",seed_shape
-seed_shape_samara,samara,A seed with wings.,seed_shape
+seed_shape_winged,winged,"A seed with wings. (Synonyms, samara)",seed_shape
 seed_shape_sectoroid,sectoroid,"Shaped like an orange segment or wedge of a sphere. (Synonyms, wedge-shaped)",seed_shape
 seed_shape_sinusoidal,sinusoidal,"A seed with two arcs of curvature or a single arc, such that it lacks an axis of symmetry. (Synonyms, sigmoidal)",seed_shape
+seed_surface_hairs_glabrous,glabrous,Seed surface lacks trichomes or bristles.,seed_surface_hairs
 seed_surface_hairs_hairs,hairs,Seed surface with trichomes or bristles.,seed_surface_hairs
 seed_surface_hairs_hairs_branched,hairs_branched,"Seed surface with branched trichomes or bristles.(Synonyms, stellate, plumose)",seed_surface_hairs
 seed_surface_hairs_hairs_simple,hairs_simple,"Seed surface with simple trichomes or bristles. (Synonyms, tomentose, velutinous, velvety, sericeous)",seed_surface_hairs
-seed_surface_texture_bumpy,bumpy,"Seed surface covered with minute, rounded protuberances. (Synonyms, verrucate, papillate, tuberculate, undulate)",seed_surface_texture
-seed_surface_texture_netted,netted,"Seed surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate)",seed_surface_texture
+seed_surface_reflectivity_dull,dull,"Seed surface appears dull, indicating it has a low reflectivity.",seed_surface_reflectivity
+seed_surface_reflectivity_shiny,shiny,"Seed surface appears shiny or glossy, indicating it has a high reflectivity. (Synonyms, glossy, lustrous, polished)",seed_surface_reflectivity
+seed_surface_texture_bumpy,bumpy,"Seed surface covered with minute, rounded protuberances. (Synonyms, colliculate, verrucate, papillate, tuberculate, undulate)",seed_surface_texture
+seed_surface_texture_netted,netted,"Seed surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate, honey-combed)",seed_surface_texture
 seed_surface_texture_papery,papery,"Seed surface with a thin and papery texture. (Synonyms, chartaceous)",seed_surface_texture
-seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, foveate, dimpled, punctate)",seed_surface_texture
-seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigate, lineolate, scalariform)",seed_surface_texture
+seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, foveate, dimpled, punctate, lacunose)",seed_surface_texture
+seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigate, lineolate, scalariform, ridged)",seed_surface_texture
 seed_surface_texture_rough,rough,"Seed surface rough with no organisation of markings, resembling sandpaper. (Synonyms, scabrous)",seed_surface_texture
 seed_surface_texture_scaly,scaly,"Seed surface rough with loose scales differing in direction or not parallel in direction. (Synonyms, scurfy, squarrose)",seed_surface_texture
-seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture. (Synonyms, glabrous)",seed_surface_texture
+seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture.",seed_surface_texture
+seed_surface_texture_spiny,spiny,"Seed surface with spines. (Synonyms, echinulate)",seed_surface_texture
 seed_surface_texture_wrinkled,wrinkled,"Seed surface with a wrinkled, rugose texture. (Synonyms, rugose, rugulose, bullate)",seed_surface_texture
 canopy_seedbank_canopy_seedbank_absent,canopy_seedbank_absent,Seeds not present in canopy seedbank.,canopy_seedbank
 canopy_seedbank_canopy_seedbank_present,canopy_seedbank_present,Seeds present in canopy seedbank.,canopy_seedbank
