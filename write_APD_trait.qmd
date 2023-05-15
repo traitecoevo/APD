@@ -58,7 +58,7 @@ if(trait_i$type_x == "categorical"){
 sprintf("[**allowable values: **](https://terminologies.gfbio.org/terms/ets/pages/#factorlevels)  ")  
   
 categorical_i  %>%
-  my_kable_styling()
+  my_table()
 }
 ```
 

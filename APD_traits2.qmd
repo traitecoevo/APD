@@ -40,9 +40,12 @@ library(kableExtra)
 library(readr)
 library(tidyr)
 library(dplyr)
+library(gt)
+library(purrr)
 
 source("R/kable.R")
 source("R/helpers.R")
+source("R/create_APD_trait_table.R")
 
 APD <- read_csv("data/APD_traits.csv")
 hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
@@ -90,8 +93,7 @@ XXX
 
 # Example html table
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-library(gt)
-library(purrr)
+
 
 df <- tibble(
   country = c("UK", "US"),
@@ -101,9 +103,9 @@ df <- tibble(
 # using html
 df %>%
     mutate(
-        link = map2(name, link, name, ~ make_link(.x, .y)),
-        link2 = map(link, ~ paste("A ", .x) %>% gt::html()),
-        link3 = map(link, ~ paste_html("A ", .x, "3"))
+        link2 = map2(name, link, ~ make_link(.x, .y)),
+        link3 = map(link2, ~ paste("A ", .x) %>% gt::html()),
+        link4 = map(link2, ~ paste_html("A ", .x, "3"))
         ) -> A
   
 A %>%
@@ -113,20 +115,19 @@ A %>%
 # Trait concepts
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+make_link("trait description", "http://purl.org/dc/terms/description")
 
 for (thistrait in traits) {
   
-  a <- knitr::knit_child("write_APD_trait.qmd", quiet = TRUE)
-  
-  writeLines(a)
+  writeLines(paste0("\n# ", thistrait, "\n\n"))
 
-  if(!knitr::is_html_output()) {
-    writeLines("\n\\newpage\n")
-  }
-  
-  if(knitr::is_html_output()) {
-    writeLines("\n<br><br>\n")
-  }
+  out <- 
+    create_APD_trait_table(thistrait, APD, categorical_values)
+
+  out %>% 
+    gt() %>% 
+    cols_align(align = "left") %>%
+    print()
 }
 ```
 
