@@ -69,6 +69,12 @@ if(knitr::is_html_output()) {
 **This version**: https://www.w3id.org/APD/2023-05-1/APD.html
 **Previous version**: https://www.w3id.org/APD/2023-02-1/APD.html
 
+<!-- Examples:
+https://www.w3.org/2009/08/skos-reference/skos.html
+https://terminologies.gfbio.org/terms/ets/pages/#expectedunit
+
+gt packgae: https://gt.rstudio.com/
+-->
 # Status of this Docuemnt
 
 This document describes the schema available from the APD namespace.
