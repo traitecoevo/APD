@@ -76,16 +76,16 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   select(Entity, label, description, trait_name) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    Entity = paste0("<https://github.com/traitecoevo/APD/APD_traits/", Entity, ">"),
+    Entity = paste0("<https://w3id.org/ADP/traits/", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
-    Parent = paste0("<https://github.com/traitecoevo/APD/APD_traits/", Parent, ">"),
+    Parent = paste0("<https://w3id.org/ADP/traits/", Parent, ">"),
     SubClassOf = Parent,
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#NamedIndividual>",
-    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://github.com/traitecoevo/APD/APD_traits>"
+    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/ADP/traits>"
   ) %>%
   select(-trait_name) %>%
   rename(
@@ -115,7 +115,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
-      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://github.com/traitecoevo/APD/APD_traits/>"
+      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/ADP/traits/>"
     ) %>%
     rename(
       Subject = Entity,
@@ -152,8 +152,8 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
-    `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://github.com/traitecoevo/APD/APD_glossary/", "\""),
-    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://github.com/traitecoevo/APD/APD_glossary>",
+    `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary/", "\""),
+    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
@@ -238,7 +238,7 @@ hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
 reformatted_traits <- read_csv("data/APD_traits.csv") %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    Entity =  paste0("<https://github.com/traitecoevo/APD/APD_traits/", identifier, ">"),
+    Entity =  paste0("<https://w3id.org/ADP/traits/", identifier, ">"),
     trait = paste0("\"", trait, "\""),
     label = paste0("\"", label, "\"", "@en"),
     preflabel = label,
@@ -442,7 +442,7 @@ reformatted_glossary_x <- reformatted_glossary %>%
   mutate(
     Predicate = "<http://www.w3.org/2004/02/skos/core#hasTopConcept>",
     Object = Subject,
-    Subject = "<https://github.com/traitecoevo/APD/APD_glossary>"
+    Subject = "<https://w3id.org/APD/glossary>"
     )
 
 reformatted_traits <- reformatted_traits %>%
@@ -492,8 +492,8 @@ true_triples <- read_nquads("docs/ADP.nq")
 
 # serialize to any format
 rdflib::rdf_serialize(true_triples, "docs/ADP.ttl",
-                      namespace = c(APD = "https://github.com/traitecoevo/APD/APD_traits/",
-                                    APD_glossary = "https://github.com/traitecoevo/APD/APD_glossary/",
+                      namespace = c(APD = "https://w3id.org/ADP/traits/",
+                                    APD_glossary = "https://w3id.org/APD/glossary/",
                                     dc = "http://purl.org/dc/elements/1.1/",
                                     skos = "http://www.w3.org/2004/02/skos/core#",
                                     dwc = "http://rs.tdwg.org/dwc/terms/attributes/",
