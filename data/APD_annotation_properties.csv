@@ -47,3 +47,9 @@ http://www.w3.org/2004/02/skos/core#semanticRelation,is in semantic relation wit
 https://w3id.org/iadopt/ont/hasContextObject,has context object,A Variable has an Entity that provides additional background information regarding the ObjectOfInterest.,,,https://w3id.org/iadopt/ont/,https://w3id.org/iadopt/ont/
 https://w3id.org/uom/SI_code,SI code,,,,https://w3id.org/uom/,https://w3id.org/uom/
 https://w3id.org/uom/UCUM_code,UCUM code,,,,https://w3id.org/uom/,https://w3id.org/uom/
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type,type,,,,http://www.w3.org/1999/02/22-rdf-syntax-ns#,http://www.w3.org/1999/02/22-rdf-syntax-ns#
+http://www.w3.org/2000/01/rdf-schema#subClassOf,sub class of,,,,http://www.w3.org/2000/01/rdf-schema#,http://www.w3.org/2000/01/rdf-schema#
+http://www.w3.org/2004/02/skos/core#topConceptOf,top concept of,,,,http://www.w3.org/2004/02/skos/core#,http://www.w3.org/2004/02/skos/core#
+http://www.w3.org/2004/02/skos/core#hasTopConcept,has top concept,,,,http://www.w3.org/2004/02/skos/core#,http://www.w3.org/2004/02/skos/core#
+http://purl.org/dc/terms/license,license,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
+http://purl.org/dc/terms/publisher,publisher,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
