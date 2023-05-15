@@ -2,7 +2,7 @@
 title:  The AusTraits Plant Dictionary (APD)
 subtitle: Extract of APD traits intended for review
 author: Elizabeth Wenk on behalf of APD
-format:
+format:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
   html:
     embed-resources: true
     theme: cosmo
@@ -65,9 +65,9 @@ if(knitr::is_html_output()) {
 
 
 ```
-**Latest version**: https://www.w3id.org/APD/APD.html
-**This version**: https://www.w3id.org/APD/2023-05-1/APD.html
-**Previous version**: https://www.w3id.org/APD/2023-02-1/APD.html
+**Latest version**: https://w3id.org/APD/APD.html
+**This version**: https://w3id.org/APD/2023-05-1/APD.html
+**Previous version**: https://w3id.org/APD/2023-02-1/APD.html
 
 <!-- Examples:
 https://www.w3.org/2009/08/skos-reference/skos.html
@@ -86,7 +86,7 @@ The APD is a community resource and we welcome any suggestions for edits, includ
 
 # APD Schema Overview
 
-The following table gives an overview of the APD voabulary. This document includes the folliwng sections
+The following table gives an overview of the APD vocabulary. This document includes the following sections
 
 - [Trait concepts](#trait-concepts): XXX
 - [Trait groups](#trait-groupings): XXX
@@ -128,7 +128,7 @@ for (thistrait in traits) {
   writeLines(paste0("\n# ", thistrait, "\n\n"))
 
   out <- 
-    create_APD_trait_table(thistrait, APD, categorical_values)
+    create_APD_trait_table(thistrait, triples_with_labels, categorical_values, annotation)
 
   out %>% 
     gt() %>% 

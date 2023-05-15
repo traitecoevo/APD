@@ -62,9 +62,9 @@ if(knitr::is_html_output()) {
 
 
 ```
-**Latest version**: https://www.w3id.org/APD/APD.html
-**This version**: https://www.w3id.org/APD/2023-05-1/APD.html
-**Previous version**: https://www.w3id.org/APD/2023-02-1/APD.html
+**Latest version**: https://w3id.org/APD/APD.html
+**This version**: https://w3id.org/APD/2023-05-1/APD.html
+**Previous version**: https://w3id.org/APD/2023-02-1/APD.html
 
 # Status of this Docuemnt
 

@@ -3,6 +3,16 @@ library(tidyr)
 library(readr)
 library(stringr)
 
+annotation <- read_csv("data/APD_annotation_properties.csv")
+traits <- read_csv("data/APD_traits.csv")
+glossary <- read_csv("data/APD_glossary.csv")
+ontology_links <- read_csv("data/ontology_links.csv") %>% bind_rows(glossary)
+reviewers <- read_csv("data/APD_reviewers.csv")
+references <- read_csv("data/APD_references.csv")
+units_csv <- read_csv("data/APD_units.csv")
+hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
+categorical_values <- read_csv("data/APD_categorical_values.csv")
+
 reformatted_references <- read_csv("data/APD_references.csv") %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
@@ -70,22 +80,20 @@ reformatted_units <- read_csv("data/APD_units.csv") %>%
   ) %>%
   filter(!is.na(Object))
 
-traits <- read_csv("data/APD_traits.csv")
-
 reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
   select(Entity, label, description, trait_name) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    Entity = paste0("<https://w3id.org/ADP/traits/", Entity, ">"),
+    Entity = paste0("<https://w3id.org/APD/traits/", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits$identifier[match(trait_name, traits$trait)],
-    Parent = paste0("<https://w3id.org/ADP/traits/", Parent, ">"),
+    Parent = paste0("<https://w3id.org/APD/traits/", Parent, ">"),
     SubClassOf = Parent,
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#NamedIndividual>",
-    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/ADP/traits>"
+    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
   ) %>%
   select(-trait_name) %>%
   rename(
@@ -115,7 +123,7 @@ reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
-      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/ADP/traits/>"
+      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits/>"
     ) %>%
     rename(
       Subject = Entity,
@@ -228,17 +236,10 @@ reformatted_annotation <- read_csv("data/APD_annotation_properties.csv") %>%
   filter(!is.na(Object)) %>%
   filter(!stringr::str_detect(Object,"\"NA\"@en"))
 
-glossary <- read_csv("data/APD_glossary.csv")
-ontology_links <- read_csv("data/ontology_links.csv") %>% bind_rows(glossary)
-reviewers <- read_csv("data/APD_reviewers.csv")
-references <- read_csv("data/APD_references.csv")
-units_csv <- read_csv("data/APD_units.csv")
-hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
-
 reformatted_traits <- read_csv("data/APD_traits.csv") %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    Entity =  paste0("<https://w3id.org/ADP/traits/", identifier, ">"),
+    Entity =  paste0("<https://w3id.org/APD/traits/", identifier, ">"),
     trait = paste0("\"", trait, "\""),
     label = paste0("\"", label, "\"", "@en"),
     preflabel = label,
@@ -428,9 +429,6 @@ reformatted_traits_x <- reformatted_traits %>%
   rename(Object = Object2) %>%
   filter(!is.na(Subject))
 
-reformatted_hierarchy <- reformatted_hierarchy %>%
-  bind_rows(reformatted_traits_x)
-
 reformatted_categorical_x <- reformatted_categorical %>%
   filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
   mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
@@ -474,12 +472,14 @@ triples_df <- triples_df %>%
 # rdflib can't handle UTF-8 :(, 
 # We can either "transliterate" our UTF-8 to ASCII (i.e. drop accent marks)
 # or we can replace with Unicode, which we can later un-encode back to the original UTF-8
-triples_df %>% 
-  mutate(Object = iconv(Object, from="UTF-8", to="ASCII", sub="Unicode")) %>%
+triples_df <- triples_df %>% 
 #  mutate(Object = iconv(Object, from="UTF-8", to="ASCII/TRANSLIT")) %>%
-  mutate(graph = ".") %>% # quads have a fourth column, usually "."
   filter(Object != "<NA>", Subject != "<NA>", Predicate != "<NA>") %>% # we have some NAs sneaking in as URIs
-  mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) %>% # escape backslashes :(
+  mutate(Object = gsub("\\", "\\\\", Object, fixed=TRUE)) # escape backslashes :(
+  
+triples_df %>%   
+  mutate(Object = iconv(Object, from="UTF-8", to="ASCII", sub="Unicode")) %>%
+  mutate(graph = ".") %>% # quads have a fourth column, usually "."
   write_delim("docs/ADP.nq", col_names=FALSE, escape="none", quote="none")
 
 unescape_unicode <- function(x) {
@@ -492,7 +492,7 @@ true_triples <- read_nquads("docs/ADP.nq")
 
 # serialize to any format
 rdflib::rdf_serialize(true_triples, "docs/ADP.ttl",
-                      namespace = c(APD = "https://w3id.org/ADP/traits/",
+                      namespace = c(APD = "https://w3id.org/APD/traits/",
                                     APD_glossary = "https://w3id.org/APD/glossary/",
                                     dc = "http://purl.org/dc/elements/1.1/",
                                     skos = "http://www.w3.org/2004/02/skos/core#",
@@ -523,6 +523,75 @@ rdflib::rdf_serialize(true_triples, "docs/ADP.ttl",
                                     SWEET = "http://sweetontology.net/")
 )
 rdflib::rdf_serialize(true_triples, "docs/ADP.json", format="jsonld")
+
+#add labels to predicates, objects to create output tables
+triples_with_labels <- triples_df %>%
+  filter(str_detect(Subject, "APD")) %>%
+  mutate(property = NA,
+         value = Object,
+         Predicate_stripped = Predicate,
+         Object_stripped = Object,
+         Predicate_stripped = stringr::str_replace(Predicate_stripped, "\\<", ""),
+         Predicate_stripped = stringr::str_replace(Predicate_stripped, "\\>", ""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\<", ""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\>", ""),
+         property = annotation$label[match(Predicate_stripped, annotation$Entity)],
+         value = ifelse(stringr::str_detect(Object_stripped,"^http"), Object_stripped, value),
+         value = ifelse(property == "has exact match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
+                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+         value = ifelse(property == "has close match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
+                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+         value = ifelse(property == "has related match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
+                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+         value = ifelse(property == "has broader" & Subject %in% reformatted_hierarchy$Subject,
+                        hierarchy$label[match(Object_stripped, hierarchy$Entity)], value), #match hierarchical levels, within file
+         value = ifelse(property == "sub class of" & Subject %in% reformatted_hierarchy$Subject,
+                        hierarchy$label[match(Object_stripped, hierarchy$Entity)], value), #match hierarchical levels, within file
+         value = ifelse(property == "has narrower" & Subject %in% reformatted_categorical$Subject,
+                        categorical_values$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values$Entity))], value), #match traits to categorical
+         value = ifelse(property == "has broader" & Subject %in% reformatted_categorical$Subject,
+                        traits$label[match(Object_stripped, traits$Entity)], value),
+         value = ifelse(property == "sub class of" & Subject %in% reformatted_categorical$Subject,
+                        traits$label[match(Object_stripped, traits$Entity)], value),
+         value = ifelse(property == "has narrower" & Subject %in% reformatted_hierarchy$Subject,
+                        hierarchy$label[match(Object_stripped, hierarchy$Entity)], value),
+         value = ifelse(property == "has narrower" & Subject %in% reformatted_traits$Subject,
+                        traits$label[match(Object_stripped, traits$Entity)], value),
+         value = ifelse(property == "has broader" & Subject %in% reformatted_traits$Subject,
+                        hierarchy$label[match(Object_stripped, hierarchy$Entity)], value), #match traits to broader hierarchy
+         value = ifelse(property == "sub class of" & Subject %in% reformatted_traits$Subject,
+                        hierarchy$label[match(Object_stripped, hierarchy$Entity)], value), #match traits to broader hierarchy
+         value = ifelse(property == "has top concept" & Subject == "<https://w3id.org/APD/glossary>",
+                        glossary$label[match(Object_stripped, glossary$Entity)], value),
+         value = ifelse(property == "has narrower" & Subject %in% reformatted_traits$Subject,
+                        categorical_values$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values$Entity))], value), #match traits to categorical
+         value = ifelse(property == "references", references$label[match(Object_stripped, references$Entity)], value),
+         value = ifelse(property == "reviewed by", reviewers$label[match(Object_stripped, reviewers$Entity)], value),
+         value = ifelse(property == "unit" & stringr::str_detect(Object, "https"), units_csv$label[match(Object_stripped, units_csv$Entity)], value),
+         value = ifelse(property %in% c("value type", "keyword", "measured characteristic", "has context object"),
+                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+         value = stringr::str_replace(value, "https\\:\\/\\/www\\.w3\\.org\\/2001\\/XMLSchema\\#double",""),
+         value = stringr::str_replace(value, "\\@en", ""),
+         value = stringr::str_replace(value, "\\^\\^\\<xsd\\:date\\>",""),
+         value = stringr::str_replace(value, "\\^\\^\\<xsd\\:anyURI\\>",""),
+         value = stringr::str_replace(value, "\\<\\>",""),
+         value = stringr::str_replace(value, "[:punct:]$",""),
+         value = stringr::str_replace(value, "^[:punct:]",""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\@en", ""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\^\\^\\<xsd\\:date\\>",""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\^\\^\\<xsd\\:anyURI\\>",""),
+         Object_stripped = stringr::str_replace(Object_stripped, "[:punct:]$",""),
+         Object_stripped = stringr::str_replace(Object_stripped, "^[:punct:]","")
+  ) %>% 
+  select(-Predicate, -Object) %>%
+  rename(Predicate = Predicate_stripped) %>%
+  mutate(
+    Object = ifelse(stringr::str_detect(Object_stripped, "^http"), Object_stripped, NA),
+    Subject = stringr::str_replace(Subject, "\\<", ""),
+    Subject = stringr::str_replace(Subject, "\\>", "")
+  ) %>%
+  select(-Object_stripped) %>%
+  filter(property != "type")
 
 # Smoke-tests / example sparql queries
 
