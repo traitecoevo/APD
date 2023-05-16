@@ -8,6 +8,7 @@ format:
     theme: cosmo
     smooth-scroll: true
     toc: true
+    toc-expand: 1
   pdf:
     documentclass: report
     papersize: A4
@@ -108,7 +109,7 @@ for (thistrait in trait_groupings) {
     filter(property == "label") %>%
     select(Subject_stripped, value)
   
-  writeLines(paste0("\n# ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
+  writeLines(paste0("\n## ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
