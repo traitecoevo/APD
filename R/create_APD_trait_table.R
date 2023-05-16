@@ -18,16 +18,9 @@ add_row <- function(data, name, description) {
 
 create_APD_trait_table <- function(thistrait, triples_with_labels) {
 
-  trait_matches_tmp <- 
-    triples_with_labels %>% 
-    filter(property %in% c("alternative label")) %>%
-    select(Subject_stripped, value)
-  
-  thistrait_entity <- trait_matches_tmp$Subject_stripped[match(thistrait,trait_matches_tmp$value)]
-    
   trait_i <- 
     triples_with_labels %>% 
-    filter(Subject == thistrait_entity) %>%
+    filter(Subject == thistrait) %>%
     mutate(property_link = NA, value_link = NA)
   
   
@@ -39,7 +32,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   output <- tibble(name =  list(), description = list())
 
   output <- 
-    add_row(output, "Entity", trait_i$Subject[1])
+    add_row(output, "URI", trait_i$Subject[1])
   
   # label
     label <- trait_i %>% filter(property == "label")
@@ -318,7 +311,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
   output <- tibble(name =  list(), description = list())
   
   output <- 
-    add_row(output, "Entity", trait_i$Subject[1])
+    add_row(output, "URI", trait_i$Subject[1])
   
   # label
     label_tmp <- trait_i %>% filter(property == "label")
@@ -402,7 +395,7 @@ create_APD_categorical_values_table <- function(thistrait, triples_with_labels) 
   output <- tibble(name =  list(), description = list())
   
   output <- 
-    add_row(output, "Entity", trait_i$Subject[1])
+    add_row(output, "URI", trait_i$Subject[1])
   
   # label
   label_tmp <- trait_i %>% filter(property == "label")
@@ -472,7 +465,7 @@ create_APD_trait_glossary_table <- function(thistrait, triples_with_labels) {
   output <- tibble(name =  list(), description = list())
   
   output <- 
-    add_row(output, "Entity", trait_i$Subject[1])
+    add_row(output, "URI", trait_i$Subject[1])
   
   # label
   label_tmp <- trait_i %>% filter(property == "label")

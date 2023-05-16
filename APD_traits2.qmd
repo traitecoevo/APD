@@ -101,10 +101,14 @@ The following table gives an overview of the APD vocabulary. This document inclu
 
 trait_groupings <- c("https://w3id.org/APD/traits/trait_0000000", "https://w3id.org/APD/traits/trait_0000002", "https://w3id.org/APD/traits/trait_0000004", "https://w3id.org/APD/traits/trait_0000006", "https://w3id.org/APD/traits/trait_0000008", "https://w3id.org/APD/traits/trait_0000108", "https://w3id.org/APD/traits/trait_0000206", "https://w3id.org/APD/traits/trait_0000408", "https://w3id.org/APD/traits/trait_0000508", "https://w3id.org/APD/traits/trait_0000608", "https://w3id.org/APD/traits/trait_0000808", "https://w3id.org/APD/traits/trait_0001006", "https://w3id.org/APD/traits/trait_0001502", "https://w3id.org/APD/traits/trait_0002004", "https://w3id.org/APD/traits/trait_0002005", "https://w3id.org/APD/traits/trait_0002006", "https://w3id.org/APD/traits/trait_0002007", "https://w3id.org/APD/traits/trait_0002008", "https://w3id.org/APD/traits/trait_0002009", "https://w3id.org/APD/traits/trait_0003004", "https://w3id.org/APD/traits/trait_0010001", "https://w3id.org/APD/traits/trait_0010004", "https://w3id.org/APD/traits/trait_0010114", "https://w3id.org/APD/traits/trait_0011001", "https://w3id.org/APD/traits/trait_0011202", "https://w3id.org/APD/traits/trait_0011204", "https://w3id.org/APD/traits/trait_0011206", "https://w3id.org/APD/traits/trait_0011304", "https://w3id.org/APD/traits/trait_0011402", "https://w3id.org/APD/traits/trait_0011502", "https://w3id.org/APD/traits/trait_0011503", "https://w3id.org/APD/traits/trait_0011602", "https://w3id.org/APD/traits/trait_0011702", "https://w3id.org/APD/traits/trait_0011802", "https://w3id.org/APD/traits/trait_0011902", "https://w3id.org/APD/traits/trait_0012002", "https://w3id.org/APD/traits/trait_0012006", "https://w3id.org/APD/traits/trait_0012102", "https://w3id.org/APD/traits/trait_0012104", "https://w3id.org/APD/traits/trait_0012106", "https://w3id.org/APD/traits/trait_0012108", "https://w3id.org/APD/traits/trait_0012202", "https://w3id.org/APD/traits/trait_0012404", "https://w3id.org/APD/traits/trait_0012406", "https://w3id.org/APD/traits/trait_0012408", "https://w3id.org/APD/traits/trait_0012409", "https://w3id.org/APD/traits/trait_0012504", "https://w3id.org/APD/traits/trait_0012604", "https://w3id.org/APD/traits/trait_0013001", "https://w3id.org/APD/traits/trait_0013006", "https://w3id.org/APD/traits/trait_0013102", "https://w3id.org/APD/traits/trait_0014001", "https://w3id.org/APD/traits/trait_0020001", "https://w3id.org/APD/traits/trait_0020202", "https://w3id.org/APD/traits/trait_0020204", "https://w3id.org/APD/traits/trait_0020206", "https://w3id.org/APD/traits/trait_0020208", "https://w3id.org/APD/traits/trait_0020210", "https://w3id.org/APD/traits/trait_0020212", "https://w3id.org/APD/traits/trait_0020812", "https://w3id.org/APD/traits/trait_0021002", "https://w3id.org/APD/traits/trait_0022002", "https://w3id.org/APD/traits/trait_0030001", "https://w3id.org/APD/traits/trait_0030006", "https://w3id.org/APD/traits/trait_0030008", "https://w3id.org/APD/traits/trait_0030009", "https://w3id.org/APD/traits/trait_0030059", "https://w3id.org/APD/traits/trait_0030504", "https://w3id.org/APD/traits/trait_0030602", "https://w3id.org/APD/traits/trait_0030702", "https://w3id.org/APD/traits/trait_0030704")
 
-
 for (thistrait in trait_groupings) {
   
-  writeLines(paste0("\n# ", thistrait, "\n\n"))
+  to_match_tmp <- triples_with_labels %>% 
+    filter(Subject_stripped %in% trait_groupings) %>%
+    filter(property == "label") %>%
+    select(Subject_stripped, value)
+  
+  writeLines(paste0("\n# ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
@@ -115,28 +119,6 @@ for (thistrait in trait_groupings) {
     print()
 }
 ```
-
-# Example html table
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-
-
-df <- tibble(
-  country = c("UK", "US"),
-  name = c("BBC", "CNN"),
-  link = c("https://www.bbc.com/news", "https://edition.cnn.com/"))
-  
-# using html
-df %>%
-    mutate(
-        link2 = map2(name, link, ~ make_link(.x, .y)),
-        link3 = map(link2, ~ paste("A ", .x) %>% gt::html()),
-        link4 = map(link2, ~ paste_html("A ", .x, "3"))
-        ) -> A
-  
-A %>%
-    gt()
-```
-
 # Trait concepts
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
@@ -148,9 +130,26 @@ traits <- c("leaf_Al_per_dry_mass", "leaf_B_per_dry_mass", "leaf_C_per_dry_mass"
 traits <- c("leaf_length", "leaf_shape", "parasitic", "sex_type", "genome_size")
 
 for (thistrait in traits) {
+  
+  tmp_subjects <- triples_with_labels %>% 
+    filter(value %in% traits) %>%
+    filter(property %in% c("alternative label")) %>%
+    select(value, Subject_stripped)
+    
+  
+  tmp_traits <- triples_with_labels %>% 
+    filter(Subject_stripped %in% tmp_subjects$Subject_stripped) %>%
+    filter(property == "label") %>%
+    select(value, Subject_stripped) %>%
+    rename(label = value) %>%
+    left_join(tmp_subjects)
 
-  writeLines(paste0("\n# ", thistrait, "\n\n"))
+  
+  writeLines(paste0("\n## ", tmp_traits$label[match(thistrait,tmp_traits$value)], "\n\n"))
 
+  
+  thistrait <- tmp_traits$Subject_stripped[match(thistrait,tmp_traits$value)]
+  
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
 
@@ -171,7 +170,7 @@ categorical_allowed <- c("canopy_seedbank_canopy_seedbank_present", "soil_seedba
 
 for (thistrait in categorical_allowed) {
   
-  writeLines(paste0("\n# ", thistrait, "\n\n"))
+  writeLines(paste0("\n## ", thistrait, "\n\n"))
 
   out <- 
     create_APD_categorical_values_table(thistrait, triples_with_labels)
@@ -194,8 +193,13 @@ glossary_terms <- c("https://w3id.org/APD/glossary/glossary_40004", "https://w3i
 
 for (thistrait in glossary_terms) {
   
-  writeLines(paste0("\n# ", thistrait, "\n\n"))
-
+  to_match_tmp <- triples_with_labels %>% 
+    filter(Subject_stripped %in% glossary_terms) %>%
+    filter(property == "label") %>%
+    select(Subject_stripped, value)
+  
+  writeLines(paste0("\n## ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
+  
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
 
