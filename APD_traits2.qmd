@@ -2,7 +2,7 @@
 title:  The AusTraits Plant Dictionary (APD)
 subtitle: Extract of APD traits intended for review
 author: Elizabeth Wenk on behalf of APD
-format:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
+format: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
   html:
     embed-resources: true
     theme: cosmo
@@ -47,13 +47,14 @@ source("R/kable.R")
 source("R/helpers.R")
 source("R/create_APD_trait_table.R")
 
-APD <- read_csv("data/APD_traits.csv")
-hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
-classes <- read_csv("data/ontology_links.csv")
-reviewers <- read_csv("data/APD_reviewers.csv")
-units <- read_csv("data/APD_units.csv")
-references <- read_csv("data/APD_references.csv")
-categorical_values <- read_csv("data/APD_categorical_values.csv") 
+#traits_csv <- read_csv("data/APD_traits.csv")
+#hierarchy_csv <- read_csv("data/APD_trait_hierarchy.csv")
+#ontology_links <- read_csv("data/ontology_links.csv")
+#reviewers <- read_csv("data/APD_reviewers.csv")
+#units <- read_csv("data/APD_units.csv")
+#references <- read_csv("data/APD_references.csv")
+#categorical_values <- read_csv("data/APD_categorical_values.csv") 
+triples_with_labels <- read_csv("data/triples_with_labels.csv")
 
 if(knitr::is_html_output()) {
   my_table <- util_kable_styling_html
@@ -88,14 +89,32 @@ The APD is a community resource and we welcome any suggestions for edits, includ
 
 The following table gives an overview of the APD vocabulary. This document includes the following sections
 
-- [Trait concepts](#trait-concepts): XXX
-- [Trait groups](#trait-groupings): XXX
-- [Values for categorical traits](#values-for-categorical-traits): XXXX
-- [Glossary](#glossary): XXXX
+- [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
+- [Trait groups](#trait-groupings): Hierarchical trait groupings, included to enhance trait findability.
+- [Values for categorical traits](#values-for-categorical-traits): Allowed categorical trait values to support the defined trait concepts.
+- [Glossary](#glossary): Terms used as keywords that were not available in other published vocabularies.
 
 # Hierachical trait groupings
 
-XXX
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+#trait_groupings <- datapasta::vector_paste(hierarchy_csv$Entity)
+
+trait_groupings <- c("https://w3id.org/APD/traits/trait_0000000", "https://w3id.org/APD/traits/trait_0000002", "https://w3id.org/APD/traits/trait_0000004", "https://w3id.org/APD/traits/trait_0000006", "https://w3id.org/APD/traits/trait_0000008", "https://w3id.org/APD/traits/trait_0000108", "https://w3id.org/APD/traits/trait_0000206", "https://w3id.org/APD/traits/trait_0000408", "https://w3id.org/APD/traits/trait_0000508", "https://w3id.org/APD/traits/trait_0000608", "https://w3id.org/APD/traits/trait_0000808", "https://w3id.org/APD/traits/trait_0001006", "https://w3id.org/APD/traits/trait_0001502", "https://w3id.org/APD/traits/trait_0002004", "https://w3id.org/APD/traits/trait_0002005", "https://w3id.org/APD/traits/trait_0002006", "https://w3id.org/APD/traits/trait_0002007", "https://w3id.org/APD/traits/trait_0002008", "https://w3id.org/APD/traits/trait_0002009", "https://w3id.org/APD/traits/trait_0003004", "https://w3id.org/APD/traits/trait_0010001", "https://w3id.org/APD/traits/trait_0010004", "https://w3id.org/APD/traits/trait_0010114", "https://w3id.org/APD/traits/trait_0011001", "https://w3id.org/APD/traits/trait_0011202", "https://w3id.org/APD/traits/trait_0011204", "https://w3id.org/APD/traits/trait_0011206", "https://w3id.org/APD/traits/trait_0011304", "https://w3id.org/APD/traits/trait_0011402", "https://w3id.org/APD/traits/trait_0011502", "https://w3id.org/APD/traits/trait_0011503", "https://w3id.org/APD/traits/trait_0011602", "https://w3id.org/APD/traits/trait_0011702", "https://w3id.org/APD/traits/trait_0011802", "https://w3id.org/APD/traits/trait_0011902", "https://w3id.org/APD/traits/trait_0012002", "https://w3id.org/APD/traits/trait_0012006", "https://w3id.org/APD/traits/trait_0012102", "https://w3id.org/APD/traits/trait_0012104", "https://w3id.org/APD/traits/trait_0012106", "https://w3id.org/APD/traits/trait_0012108", "https://w3id.org/APD/traits/trait_0012202", "https://w3id.org/APD/traits/trait_0012404", "https://w3id.org/APD/traits/trait_0012406", "https://w3id.org/APD/traits/trait_0012408", "https://w3id.org/APD/traits/trait_0012409", "https://w3id.org/APD/traits/trait_0012504", "https://w3id.org/APD/traits/trait_0012604", "https://w3id.org/APD/traits/trait_0013001", "https://w3id.org/APD/traits/trait_0013006", "https://w3id.org/APD/traits/trait_0013102", "https://w3id.org/APD/traits/trait_0014001", "https://w3id.org/APD/traits/trait_0020001", "https://w3id.org/APD/traits/trait_0020202", "https://w3id.org/APD/traits/trait_0020204", "https://w3id.org/APD/traits/trait_0020206", "https://w3id.org/APD/traits/trait_0020208", "https://w3id.org/APD/traits/trait_0020210", "https://w3id.org/APD/traits/trait_0020212", "https://w3id.org/APD/traits/trait_0020812", "https://w3id.org/APD/traits/trait_0021002", "https://w3id.org/APD/traits/trait_0022002", "https://w3id.org/APD/traits/trait_0030001", "https://w3id.org/APD/traits/trait_0030006", "https://w3id.org/APD/traits/trait_0030008", "https://w3id.org/APD/traits/trait_0030009", "https://w3id.org/APD/traits/trait_0030059", "https://w3id.org/APD/traits/trait_0030504", "https://w3id.org/APD/traits/trait_0030602", "https://w3id.org/APD/traits/trait_0030702", "https://w3id.org/APD/traits/trait_0030704")
+
+
+for (thistrait in trait_groupings) {
+  
+  writeLines(paste0("\n# ", thistrait, "\n\n"))
+
+  out <- 
+    create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
+
+  out %>% 
+    gt() %>% 
+    cols_align(align = "left") %>%
+    print()
+}
+```
 
 # Example html table
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
@@ -121,14 +140,19 @@ A %>%
 # Trait concepts
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-make_link("trait description", "http://purl.org/dc/terms/description")
+
+#datapasta::vector_paste(traits_csv$trait)
+
+traits <- c("leaf_Al_per_dry_mass", "leaf_B_per_dry_mass", "leaf_C_per_dry_mass", "leaf_Ca_per_dry_mass", "leaf_Cl_per_dry_mass", "leaf_Cr_per_dry_mass", "leaf_Co_per_dry_mass", "leaf_Cu_per_dry_mass", "leaf_Fe_per_dry_mass", "leaf_K_per_area", "leaf_K_per_dry_mass", "leaf_Mg_per_dry_mass", "leaf_Mn_per_dry_mass", "leaf_Mo_per_dry_mass", "leaf_N_per_area", "leaf_N_per_dry_mass", "leaf_Na_per_dry_mass", "leaf_Ni_per_dry_mass", "leaf_P_per_area", "leaf_P_per_dry_mass", "leaf_S_per_dry_mass", "leaf_Se_per_dry_mass", "leaf_Si_per_dry_mass", "leaf_Zn_per_dry_mass", "leaf_CN_ratio", "leaf_NP_ratio", "leaf_senesced_Al_per_dry_mass", "leaf_senesced_B_per_dry_mass", "leaf_senesced_C_per_dry_mass", "leaf_senesced_Ca_per_dry_mass", "leaf_senesced_Cu_per_dry_mass", "leaf_senesced_Fe_per_dry_mass", "leaf_senesced_K_per_dry_mass", "leaf_senesced_Mg_per_dry_mass", "leaf_senesced_Mn_per_dry_mass", "leaf_senesced_Mo_per_dry_mass", "leaf_senesced_N_per_dry_mass", "leaf_senesced_Na_per_dry_mass", "leaf_senesced_Ni_per_dry_mass", "leaf_senesced_P_per_dry_mass", "leaf_senesced_S_per_dry_mass", "leaf_senesced_Zn_per_dry_mass", "leaf_N_resorption", "leaf_P_resorption", "stem_C_per_dry_mass", "stem_N_per_dry_mass", "wood_C_per_dry_mass", "wood_Ca_per_dry_mass", "wood_K_per_dry_mass", "wood_Mg_per_dry_mass", "wood_N_per_dry_mass", "wood_Na_per_dry_mass", "wood_P_per_dry_mass", "wood_dead_Ca_per_dry_mass", "wood_dead_K_per_dry_mass", "wood_dead_Mg_per_dry_mass", "wood_dead_N_per_dry_mass", "wood_dead_Na_per_dry_mass", "wood_dead_P_per_dry_mass", "bark_Al_per_dry_mass", "bark_B_per_dry_mass", "bark_C_per_dry_mass", "bark_Ca_per_dry_mass", "bark_Cu_per_dry_mass", "bark_Fe_per_dry_mass", "bark_K_per_dry_mass", "bark_Mg_per_dry_mass", "bark_Mn_per_dry_mass", "bark_N_per_dry_mass", "bark_Na_per_dry_mass", "bark_P_per_dry_mass", "bark_S_per_dry_mass", "bark_Zn_per_dry_mass", "root_C_per_dry_mass", "root_N_per_dry_mass", "root_P_per_dry_mass", "flower_N_per_dry_mass", "fruit_Ca_per_dry_mass", "fruit_K_per_dry_mass", "fruit_Mg_per_dry_mass", "fruit_N_per_dry_mass", "fruit_P_per_dry_mass", "fruit_S_per_dry_mass", "seed_Ca_per_seed_dry_mass", "seed_K_per_seed_dry_mass", "seed_Mg_per_seed_dry_mass", "seed_N_per_seed_dry_mass", "seed_P_per_seed_dry_mass", "seed_S_per_seed_dry_mass", "leaf_cell_wall_N_per_cell_wall_dry_mass", "leaf_cell_wall_N_per_leaf_N", "leaf_rubisco_N_per_total_leaf_N", "leaf_thylakoid_N_per_total_leaf_N", "leaf_epidermis_Ca_per_fresh_mass", "leaf_hypodermis_Ca_per_fresh_mass", "leaf_internal_parenchyma_Ca_per_fresh_mass", "leaf_palisade_mesophyll_Ca_per_fresh_mass", "leaf_sclerenchyma_Ca_per_fresh_mass", "leaf_spongy_mesophyll_Ca_per_fresh_mass", "leaf_epidermis_P_per_fresh_mass", "leaf_hypodermis_P_per_fresh_mass", "leaf_internal_parenchyma_P_per_fresh_mass", "leaf_palisade_mesophyll_P_per_fresh_mass", "leaf_sclerenchyma_P_per_fresh_mass", "leaf_spongy_mesophyll_P_per_fresh_mass", "leaf_total_non-structural_carbohydrates_per_area", "leaf_total_non-structural_carbohydrates_per_mass", "leaf_cellulose_per_dry_mass", "leaf_starch_per_area", "leaf_soluble_starch_per_area", "leaf_soluble_starch_per_mass", "leaf_soluble_sugars_per_area", "leaf_soluble_sugars_per_mass", "leaf_soluble_protein_per_area", "leaf_insoluble_protein_per_area", "leaf_lignin_per_dry_mass", "leaf_phenol_per_dry_mass", "leaf_tannin_per_dry_mass", "leaf_carotenoid_per_area", "leaf_carotenoid_per_dry_mass", "leaf_chlorophyll_per_area", "leaf_chlorophyll_per_dry_mass", "leaf_chlorophyll_A_per_area", "leaf_chlorophyll_A_per_dry_mass", "leaf_chlorophyll_B_per_area", "leaf_chlorophyll_B_per_dry_mass", "leaf_chlorophyll_A_B_ratio", "leaf_rubisco_per_leaf_dry_mass", "stem_soluble_starch_per_mass", "stem_soluble_sugars_per_mass", "bark_cellulose_per_dry_mass", "bark_lignin_per_dry_mass", "bark_tannin_per_dry_mass", "root_soluble_starch_per_mass", "root_soluble_sugars_per_mass", "seed_protein_per_seed_dry_mass", "seed_oil_per_seed_dry_mass", "leaf_ash_per_dry_mass", "bark_ash_per_dry_mass", "bark_delta13C", "leaf_delta13C", "stem_delta13C", "root_delta13C", "wood_delta13C", "bark_delta15N", "leaf_delta15N", "stem_delta15N", "root_delta15N", "wood_delta15N", "leaf_xylem_delta15N", "root_xylem_delta15N", "leaf_delta18O", "stem_water_delta18O", "plant_width", "plant_breadth", "plant_height", "plant_diameter_breast_height", "stem_count", "plant_spinescence", "plant_spinescence", "embryo_colour", "cotyledon_function", "cotyledon_position", "cotyledon_hairs", "seedling_hypocotyl_hairs", "seedling_first_node_leaf_type", "seedling_first_node_leaf_count", "seedling_germination_location", "leaf_area", "leaflet_area", "leaf_length", "leaf_width", "leaf_thickness", "leaf_dry_mass", "leaflet_dry_mass", "leaf_fresh_mass", "leaf_mass_per_area", "leaf_lamina_mass_per_area", "leaf_density", "leaf_area_ratio", "leaf_mass_fraction", "leaf_dry_matter_content", "leaf_fresh_mass_per_area", "leaf_water_content_per_area", "leaf_water_content_per_dry_mass", "leaf_water_content_per_fresh_mass", "leaf_water_content_per_saturated_mass", "leaf_cell_wall_fraction", "leaf_type", "leaf_shape", "leaf_base_shape", "leaf_margin", "leaf_margin_posture", "leaf_lobation", "leaf_compoundness", "leaf_lamina_division", "leaf_posture_numeric", "leaf_glaucousness", "leaf_hairs_adult_leaves", "leaf_hairs_juvenile_leaves", "leaf_hairs_immature_leaves", "leaf_phyllotaxis", "leaf_arrangement", "leaf_axil_angle", "leaf_inclination_angle", "leaf_pendulousness", "leaf_cuticle_thickness_abaxial", "leaf_cuticle_thickness_adaxial", "leaf_epidermis_thickness", "leaf_epidermis_thickness_abaxial", "leaf_epidermis_thickness_adaxial", "leaf_epidermal_cell_density_both_sides", "leaf_epidermal_cell_density_abaxial", "leaf_epidermal_cell_density_adaxial", "leaf_hypodermis_thickness_abaxial", "leaf_hypodermis_thickness_adaxial", "leaf_palisade_tissue_thickness_abaxial", "leaf_palisade_tissue_thickness_adaxial", "leaf_palisade_cell_length", "leaf_palisade_cell_width", "leaf_palisade_layer_number", "leaf_spongy_mesophyll_thickness", "cell_cross-sectional_area", "leaf_stomatal_density_abaxial", "leaf_stomatal_density_adaxial", "leaf_stomatal_density_average", "leaf_stomatal_distribution", "leaf_stomatal_hairs", "leaf_guard_cell_length", "leaf_transmission", "leaf_absorption", "leaf_reflectance", "leaf_reflectance_near_infrared", "stem_cross_sectional_area", "sapwood_cross_sectional_area", "branch_terminal_twig_cross_sectional_area", "branch_terminal_twig_length", "wood_density", "stem_density", "huber_value", "leaf_mass_to_stem_mass_ratio", "stem_mass_to_shoot_mass_ratio", "branch_mass_fraction", "stem_dry_matter_content", "stem_water_content_per_saturated_mass", "stem_mass_fraction", "bark_morphology_eucalyptus", "bark_thickness", "bark_thickness_index", "bark_density", "bark_dry_mass_per_surface_area", "bark_water_content_per_dry_mass", "bark_water_content_per_saturated_mass", "root_diameter", "root_system_classification", "root_fine_root_coarse_root_ratio", "root_distribution_coefficient", "root_system_type", "root_specific_root_length", "root_specific_taproot_length", "root_specific_root_area", "root_wood_density", "root_shoot_ratio", "root_dry_matter_content", "root_mass_fraction", "accessory_cost_fraction", "accessory_cost_mass", "flower_androecium_structural_merism", "flower_androecium_structural_phyllotaxis", "flower_androecium_structural_whorls_count", "flower_anther_attachment", "flower_anther_connective_extension", "flower_anther_dehiscence", "flower_anther_orientation", "flower_colour", "flower_count_maximum", "flower_fertile_stamens_count", "flower_filament", "flower_filament_fusion", "flower_filament_fusion_to_inner_perianth", "flower_gynoecium_phyllotaxis", "flower_gynoecium_placentation", "flower_ovary_fusion", "flower_ovary_position", "flower_ovules_per_functional_carpel_count", "flower_perianth_differentiation", "flower_perianth_fusion", "flower_perianth_merism", "flower_perianth_parts_count", "flower_perianth_phyllotaxis", "flower_perianth_symmetry", "flower_perianth_whorls_count", "flower_pollen_aperture_shape", "flower_pollen_apertures_count", "flower_structural_carpels_count", "flower_structural_sex_type", "flower_style_differentiation", "flower_style_fusion", "fruit_dry_mass", "fruit_length", "fruit_width", "fruit_height", "fruit_wall_thickness", "fruit_type", "fruit_fleshiness", "fruit_dehiscence", "fruit_colour", "seed_dry_mass", "diaspore_dry_mass", "seed_dry_mass_reserve", "seed_length", "seed_width", "seed_height", "seed_volume", "seed_count", "seed_shape", "seed_surface_hairs", "seed_surface_texture", "seed_surface_reflectivity", "diaspore_fleshiness", "dispersal_appendage", "dispersal_unit", "leaf_secondary_vein_angle", "leaf_major_vein_density", "leaf_total_vein_density", "leaf_vein_frequency", "stem_vessel_density", "leaf_vessel_density", "stem_vessel_diameter", "stem_vessel_diameter_hydraulic", "leaf_vessel_diameter", "stem_vessel_lumen_fraction", "stem_vessel_multiple_fraction", "stem_vessel_non_lumen_fraction", "stem_vessel_wall_fraction", "stem_xylem_vulnerability_index", "wood_axial_parenchyma_fraction", "wood_conduit_fraction", "wood_fibre_fraction", "wood_ray_parenchyma_fraction", "wood_tracheid_fraction", "leaf_work_to_punch", "leaf_work_to_punch_adjusted", "leaf_work_to_shear", "leaf_work_to_shear_adjusted", "leaf_work_to_tear", "leaf_work_to_tear_adjusted", "bark_modulus_of_elasticity", "stem_modulus_of_elasticity", "xylem_modulus_of_elasticity", "modulus_of_rupture", "photosynthetic_pathway", "bark_photosynthetic_status", "leaf_photosynthetic_rate_per_area_ambient", "leaf_photosynthetic_rate_per_area_maximum", "leaf_photosynthetic_rate_per_area_saturated", "leaf_photosynthetic_rate_per_dry_mass_ambient", "leaf_photosynthetic_rate_per_dry_mass_maximum", "leaf_photosynthetic_rate_per_dry_mass_saturated", "leaf_intercellular_CO2_concentration_at_Amax", "leaf_intercellular_CO2_concentration_at_Asat", "leaf_intercellular_CO2_concentration_at_Aambient", "leaf_intercellular_CO2_concentration_to_atmospheric_CO2_concentration_ratio", "leaf_chloroplast_CO2_concentration", "atmospheric_CO2_concentration", "leaf_photosynthesis_Jmax_per_area", "leaf_photosynthesis_Jmax_per_area_25C", "leaf_photosynthesis_Jmax_per_mass", "leaf_photosynthesis_Vcmax_per_area", "leaf_photosynthesis_Vcmax_per_area_25C", "leaf_photosynthesis_Vcmax_per_mass", "leaf_photosynthesis_Jmax_over_Vcmax_25C", "leaf_fluorescence_fv_over_fm", "leaf_fluorescence_quantum_yield", "leaf_gas_exchange_quantum_yield", "leaf_dark_respiration_per_area", "leaf_dark_respiration_per_dry_mass", "leaf_light_respiration_per_area", "stem_dark_respiration_per_area", "leaf_stomatal_conductance_per_area_ambient", "leaf_stomatal_conductance_per_area_at_Amax", "leaf_stomatal_conductance_per_area_at_Asat", "leaf_stomatal_resistance_ambient", "leaf_mesophyll_conductance_per_area", "leaf_mesophyll_conductance_per_mass", "leaf_transpiration_per_area_ambient", "leaf_transpiration_per_area_at_Amax", "leaf_transpiration_per_area_at_Asat", "leaf_dark_transpiration_per_area", "integrated_plant_transpiration", "leaf_photosynthetic_nitrogen_use_efficiency_maximum", "leaf_photosynthetic_nitrogen_use_efficiency_saturated", "leaf_photosynthetic_phosphorus_use_efficiency_maximum", "leaf_photosynthetic_phosphorus_use_efficiency_saturated", "leaf_water_use_efficiency_integrated", "leaf_water_use_efficiency_intrinsic", "leaf_water_use_efficiency_instantaneous", "stem_hydraulic_conductivity", "sapwood_specific_conductivity", "sapwood_specific_conductivity_theoretical", "stem_specific_conductivity", "leaf_specific_conductance", "leaf_specific_conductivity", "water_potential_predawn", "water_potential_midday", "vapor_pressure_deficit", "leaf_hydraulic_vulnerability", "water_potential_50percent_lost_conductivity", "water_potential_88percent_lost_conductivity", "hydraulic_safety_margin_50", "leaf_turgor_loss_point", "osmotic_potential", "osmotic_potential_at_full_turgor", "bulk_modulus_of_elasticity", "leaf_relative_water_content_predawn", "leaf_relative_water_content_at_turgor_loss_point", "leaf_photochemical_reflectance_index", "leaf_water_band_index", "modified_NDVI", "plant_growth_form", "life_form", "life_history", "life_history_ephemeral_class", "lifespan", "plant_growth_substrate", "plant_photosynthetic_organ", "plant_alternative_energy_and_nutrient_acquisition_strategy", "woodiness", "woodiness_detailed", "plant_physical_defence_structures", "plant_climbing_mechanism", "plant_succulence", "stem_growth_habit", "competitive_stratum", "nitrogen_fixing", "root_structure", "parasitic", "sex_type", "genome_size", "ploidy", "leaf_phenology", "leaf_lifespan", "flowering_time", "fruiting_time", "pollination_syndrome", "pollination_system", "vegetative_reproduction_ability", "clonal_spread_mechanism", "storage_organ", "bud_bank_location", "sprout_depth", "regeneration_non_fire_disturbance", "reproductive_maturity", "reproductive_maturity_secondary_after_fire", "seed_storage_location", "canopy_seedbank", "soil_seedbank", "seed_longevity_categorical", "seed_longevity_numeric", "seed_release", "serotiny", "seed_dormancy_class", "seed_germination_treatment", "seed_germination", "seed_viability", "dispersal_syndrome", "dispersers", "reproductive_light_environment_index", "establishment_light_environment_index", "fire_response", "fire_response_detailed", "fire_response_numeric", "fire_response_juvenile", "fire_response_on_maturity", "fire_response_stem_ratio", "fire_exposure_level", "fire_and_establishing", "post_fire_recruitment", "post_fire_flowering", "fire_time_from_fire_to_fruit", "fire_time_from_fire_to_50_percent_fruit", "fire_time_from_fire_to_flowering", "fire_fuel_bed_bulk_density", "fire_fuel_consumption", "fire_rate_of_spread", "fire_smoulder_duration", "fire_flame_duration", "fire_total_burn_duration", "fire_time_to_ignition", "plant_type_by_resource_use", "plant_flood_regime_classification", "plant_tolerance_water_logged_soils", "plant_tolerance_inundation", "plant_tolerance_snow", "plant_tolerance_soil_salinity", "plant_tolerance_salt", "plant_tolerance_calcicole", "plant_tolerance_fire", "plant_influence_on_fire_risk")
+
+traits <- c("leaf_length", "leaf_shape", "parasitic", "sex_type", "genome_size")
 
 for (thistrait in traits) {
-  
+
   writeLines(paste0("\n# ", thistrait, "\n\n"))
 
   out <- 
-    create_APD_trait_table(thistrait, triples_with_labels, categorical_values, annotation)
+    create_APD_trait_table(thistrait, triples_with_labels)
 
   out %>% 
     gt() %>% 
@@ -140,4 +164,44 @@ for (thistrait in traits) {
 
 # Values for categorical traits
 
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+#categorical_allowed <- datapasta::vector_paste(categorical_values$Entity)
+
+
+for (thistrait in categorical_allowed) {
+  
+  writeLines(paste0("\n# ", thistrait, "\n\n"))
+
+  out <- 
+    create_APD_categorical_values_table(thistrait, triples_with_labels)
+
+  out %>% 
+    gt() %>% 
+    cols_align(align = "left") %>%
+    print()
+}
+```
+
 # Glossary
+
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+#glossary_terms <- datapasta::vector_paste(glossary$Entity)
+
+glossary_terms <- c("https://w3id.org/APD/glossary/glossary_40004", "https://w3id.org/APD/glossary/glossary_40006", "https://w3id.org/APD/glossary/glossary_40014", "https://w3id.org/APD/glossary/glossary_40026", "https://w3id.org/APD/glossary/glossary_40040", "https://w3id.org/APD/glossary/glossary_40044", "https://w3id.org/APD/glossary/glossary_40050", "https://w3id.org/APD/glossary/glossary_40058", "https://w3id.org/APD/glossary/glossary_40060", "https://w3id.org/APD/glossary/glossary_40062", "https://w3id.org/APD/glossary/glossary_40066", "https://w3id.org/APD/glossary/glossary_40068", "https://w3id.org/APD/glossary/glossary_40074", "https://w3id.org/APD/glossary/glossary_40076", "https://w3id.org/APD/glossary/glossary_40080", "https://w3id.org/APD/glossary/glossary_40081", "https://w3id.org/APD/glossary/glossary_40086", "https://w3id.org/APD/glossary/glossary_40088", "https://w3id.org/APD/glossary/glossary_40092", "https://w3id.org/APD/glossary/glossary_40094", "https://w3id.org/APD/glossary/glossary_40106", "https://w3id.org/APD/glossary/glossary_40112", "https://w3id.org/APD/glossary/glossary_40114", "https://w3id.org/APD/glossary/glossary_40124")
+
+
+
+for (thistrait in glossary_terms) {
+  
+  writeLines(paste0("\n# ", thistrait, "\n\n"))
+
+  out <- 
+    create_APD_trait_glossary_table(thistrait, triples_with_labels)
+
+  out %>% 
+    gt() %>% 
+    cols_align(align = "left") %>%
+    print()
+}
+```
+
