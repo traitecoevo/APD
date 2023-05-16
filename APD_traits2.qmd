@@ -117,6 +117,14 @@ for (thistrait in trait_groupings) {
   out %>% 
     gt() %>% 
     cols_align(align = "left") %>%
+      cols_width(
+        name ~ px(150),
+        description ~px(500)
+        ) %>%
+      cols_label(
+        name = "**Property**",
+        description = "**Value**"
+        ) %>%
     print()
 }
 ```
@@ -157,6 +165,14 @@ for (thistrait in traits) {
   out %>% 
     gt() %>% 
     cols_align(align = "left") %>%
+    cols_width(
+        name ~ px(150),
+        description ~px(600)
+      ) %>%
+    cols_label(
+        name = "**Property**",
+        description = "**Value**"
+        ) %>%
     print()
 }
 ```
@@ -204,6 +220,14 @@ for (j in seq_along(1:nrow(traits_names_tmp))) {
     out %>% 
       gt() %>% 
       cols_align(align = "left") %>%
+      cols_width(
+        name ~ px(150),
+        description ~px(500)
+        ) %>%
+      cols_label(
+        name = "**Property**",
+        description = "**Value**"
+        ) %>%
       print()
   }
   
@@ -234,6 +258,14 @@ for (thistrait in glossary_terms) {
   out %>% 
     gt() %>% 
     cols_align(align = "left") %>%
+      cols_width(
+        name ~ px(150),
+        description ~px(500)
+        ) %>%
+      cols_label(
+        name = "**Property**",
+        description = "**Value**"
+        ) %>%
     print()
 }
 ```
