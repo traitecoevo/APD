@@ -2,7 +2,7 @@
 title:  The AusTraits Plant Dictionary (APD)
 subtitle: Extract of APD traits intended for review
 author: Elizabeth Wenk on behalf of APD
-format: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
+format: 
   html:
     embed-resources: true
     theme: cosmo
@@ -167,6 +167,7 @@ for (thistrait in traits) {
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #categorical_allowed <- datapasta::vector_paste(categorical_values$Entity)
 
+categorical_allowed <- c("canopy_seedbank_canopy_seedbank_present", "soil_seedbank_soil_seedbank_absent", "soil_seedbank_soil_seedbank_present", "seed_storage_location_canopy", "seed_storage_location_soil", "seed_storage_location_none", "seed_storage_location_not_canopy", "seed_longevity_categorical_transient", "seed_longevity_categorical_intermediate_longevity", "seed_longevity_categorical_persistent", "seed_longevity_categorical_short_persistent", "seed_longevity_categorical_long_persistent", "seed_longevity_categorical_widely_dispersed", "seed_release_serotinous", "seed_release_mature_en_mass", "seed_release_gradual_release", "serotiny_not_serotinous", "serotiny_serotinous", "serotiny_serotiny_low", "serotiny_serotiny_moderate", "serotiny_serotiny_high", "seedling_first_node_leaf_type_scale-like", "seedling_first_node_leaf_type_leaf-like", "seedling_first_node_leaf_count_single", "seedling_first_node_leaf_count_paired")
 
 for (thistrait in categorical_allowed) {
   
