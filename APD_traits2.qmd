@@ -48,13 +48,6 @@ source("R/kable.R")
 source("R/helpers.R")
 source("R/create_APD_trait_table.R")
 
-#traits_csv <- read_csv("data/APD_traits.csv")
-#hierarchy_csv <- read_csv("data/APD_trait_hierarchy.csv")
-#ontology_links <- read_csv("data/ontology_links.csv")
-#reviewers <- read_csv("data/APD_reviewers.csv")
-#units <- read_csv("data/APD_units.csv")
-#references <- read_csv("data/APD_references.csv")
-#categorical_values <- read_csv("data/APD_categorical_values.csv") 
 triples_with_labels <- read_csv("data/triples_with_labels.csv")
 
 if(knitr::is_html_output()) {
@@ -67,22 +60,73 @@ if(knitr::is_html_output()) {
 
 
 ```
-**Latest version**: https://w3id.org/APD/APD.html
-**This version**: https://w3id.org/APD/2023-05-1/APD.html
+**Latest version**: https://w3id.org/APD/APD.html  
+
+**This version**: https://w3id.org/APD/2023-05-1/APD.html  
+
 **Previous version**: https://w3id.org/APD/2023-02-1/APD.html
+
+**Authors**: 
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  make_link("Elizabeth Wenk", "https://orcid.org/0000-0001-5640-5910")
+  make_link("Daniel Falster", "https://orcid.org/0000-0002-9814-092X") 
+  make_link("Hervé Sauquet", "https://orcid.org/0000-0001-8305-3236")  
+  make_link("Rowan Brownlee", "https://orcid.org/0000-0002-1955-1262")  
+  make_link("Carl Boettiger", "https://orcid.org/0000-0002-1642-628X")
+```
+  \n\n
+  
+**Contributors**:
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  make_link("Tony Auld", "https://orcid.org/0000-0002-8766-2829")
+  make_link("Russell Barrett", "https://orcid.org/0000-0003-0360-8321")
+  make_link("Timothy Brodribb", "https://orcid.org/0000-0002-4964-6107")
+  make_link("Brendan Choat", "https://orcid.org/0000-0002-9105-640X")
+  make_link("David Coleman", "https://orcid.org/0000-0002-1773-6597")
+  make_link("Félix de Tombeur", "https://orcid.org/0000-0002-6012-8458")
+  make_link("Lily Dun", "https://orcid.org/0000-0002-0712-5143")
+  make_link("David Ellsworth", "https://orcid.org/0000-0002-9699-2272")
+  make_link("Rachael Gallagher", "https://orcid.org/0000-0002-4680-8115")
+  make_link("Carl Gosper", "https://orcid.org/0000-0002-0962-5117")
+  make_link("Lydia Guja", "https://orcid.org/0000-0001-5945-438X")
+  make_link("Gregory J. Jordan", "https://orcid.org/0000-0002-6033-2766")
+  make_link("Tom Le Breton", "https://orcid.org/0000-0001-9353-0067")
+  make_link("Andy Leigh", "https://orcid.org/0000-0003-3568-2606")
+  make_link("Patricia Lu-Irving", "https://orcid.org/0000-0003-1116-9402")
+  make_link("Belinda Medlyn", "https://orcid.org/0000-0001-5728-9827")
+  make_link("Rachael Nolan", "https://orcid.org/0000-0001-9277-5142")
+  make_link("Mark Ooi", "https://orcid.org/0000-0002-3046-0417")
+  make_link("Karen D. Sommerville", "https://orcid.org/0000-0002-9843-6616")
+  make_link("Ruby Stephens", "https://orcid.org/0000-0002-3767-2690")
+  make_link("Peter Vesk", "https://orcid.org/0000-0003-2008-7062")
+  make_link("Matthew White", "https://orcid.org/0000-0003-2120-0071")
+  make_link("Ian J. Wright", "https://orcid.org/0000-0001-8338-9143")
+
+```
+  \n\n  
+    
+**License**: 
+```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+  make_link("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/")
+```
+  \n\n
+  
+**Cite as**:
+
 
 <!-- Examples:
 https://www.w3.org/2009/08/skos-reference/skos.html
 https://terminologies.gfbio.org/terms/ets/pages/#expectedunit
+https://i-adopt.github.io/index.html
 
-gt packgae: https://gt.rstudio.com/
+gt package: https://gt.rstudio.com/
 -->
-# Status of this Docuemnt
+# Status of this Document
 
 This document describes the schema available from the APD namespace.
 
 # Introduction
-The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait definition, excepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (an owl ontology), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies
+The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait definition, accepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (rdf representation), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies.
 
 The APD is a community resource and we welcome any suggestions for edits, including additional key references for each trait or other trait databases for which we should add links. 
 
@@ -90,12 +134,12 @@ The APD is a community resource and we welcome any suggestions for edits, includ
 
 The following table gives an overview of the APD vocabulary. This document includes the following sections
 
-- [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
 - [Trait groups](#trait-groupings): Hierarchical trait groupings, included to enhance trait findability.
+- [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
 - [Values for categorical traits](#values-for-categorical-traits): Allowed categorical trait values to support the defined trait concepts.
 - [Glossary](#glossary): Terms used as keywords that were not available in other published vocabularies.
 
-# Hierachical trait groupings
+# Trait groups
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #trait_groupings <- datapasta::vector_paste(hierarchy_csv$Entity)
@@ -109,7 +153,11 @@ for (thistrait in trait_groupings) {
     filter(property == "label") %>%
     select(Subject_stripped, value)
   
-  writeLines(paste0("\n## ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
+  #term_to_display <- make_link(to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], thistrait)
+  term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
+  
+  
+  writeLines(paste0("\n## ", term_to_display, "\n\n"))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)

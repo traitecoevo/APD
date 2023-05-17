@@ -2,18 +2,23 @@ library(dplyr)
 library(tidyr)
 library(readr)
 library(stringr)
+library(rdflib)
 
-annotation <- read_csv("data/APD_annotation_properties.csv")
-traits_csv <- read_csv("data/APD_traits.csv")
-glossary <- read_csv("data/APD_glossary.csv")
-ontology_links <- read_csv("data/ontology_links.csv") %>% bind_rows(glossary)
-reviewers <- read_csv("data/APD_reviewers.csv")
-references <- read_csv("data/APD_references.csv")
+annotation_properties_csv <- read_csv("data/APD_annotation_properties.csv")
+traits_csv <- read_csv("data/APD_traits.csv") %>%
+  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
+glossary_csv <- read_csv("data/APD_glossary.csv") %>%
+  mutate(Entity = paste0("https://w3id.org/APD/glossary/", identifier))
+published_classes_csv <- read_csv("data/published_classes.csv")
+reviewers_csv <- read_csv("data/APD_reviewers.csv")
+references_csv <- read_csv("data/APD_references.csv")
 units_csv <- read_csv("data/APD_units.csv")
-hierarchy_csv <- read_csv("data/APD_trait_hierarchy.csv")
-categorical_values <- read_csv("data/APD_categorical_values.csv")
+hierarchy_csv <- read_csv("data/APD_trait_hierarchy.csv") %>%
+  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
+categorical_values_csv <- read_csv("data/APD_categorical_values.csv") %>%
+  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
 
-reformatted_references <- read_csv("data/APD_references.csv") %>%
+reformatted_references <- references_csv %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
@@ -36,7 +41,7 @@ reformatted_references <- read_csv("data/APD_references.csv") %>%
     Object = value
   )
 
-reformatted_reviewers <- read_csv("data/APD_reviewers.csv") %>%
+reformatted_reviewers <- reviewers_csv %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
@@ -55,7 +60,7 @@ reformatted_reviewers <- read_csv("data/APD_reviewers.csv") %>%
     Object = value
   )
 
-reformatted_units <- read_csv("data/APD_units.csv") %>%
+reformatted_units <- units_csv %>%
   select(Entity, label, description, SI_code, UCUM_code) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
@@ -80,12 +85,12 @@ reformatted_units <- read_csv("data/APD_units.csv") %>%
   ) %>%
   filter(!is.na(Object))
 
-reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
-  select(Entity, label, description, trait_name) %>%
+reformatted_categorical <- categorical_values_csv %>%
+  select(Entity, identifier, label, description, trait_name) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    identifier = Entity,
-    Entity = paste0("<https://w3id.org/APD/traits/", Entity, ">"),
+    Entity = paste0("<", Entity, ">"),
+    identifier = paste0("\"", identifier, "\""),
     label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
@@ -112,12 +117,12 @@ reformatted_categorical <- read_csv("data/APD_categorical_values.csv") %>%
     Object = value
   )
   
-reformatted_hierarchy <- read_csv("data/APD_trait_hierarchy.csv") %>%
-    select(Entity, label, description, Parent, exactMatch) %>%
+reformatted_hierarchy <- hierarchy_csv %>%
+    select(Entity, identifier, label, description, Parent, exactMatch) %>%
     mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
     mutate(
       Entity = paste0("<", Entity, ">"),
-      identifier = stringr::str_extract(Entity, "trait_[:digit:]+"),
+      identifier = paste0("\"", identifier, "\""),
       label = paste0("\"", label, "\"", "@en"),
       prefLabel = label,
       description = paste0("\"", description, "\"", "@en"),
@@ -154,16 +159,15 @@ reformatted_hierarchy_x <- reformatted_hierarchy %>%
 reformatted_hierarchy <- reformatted_hierarchy %>%
   bind_rows(reformatted_hierarchy_x)
 
-reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
-  select(Entity, label, description, identifier) %>%
+reformatted_glossary <- glossary_csv %>%
+  select(Entity, identifier, label, description) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
+    identifier = paste0("\"", identifier, "\""),
     label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
-    identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
-    identifier = paste0("\"", identifier, "\""),
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary", "\""),
     `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
@@ -171,10 +175,10 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
   ) %>%
   rename(
     Subject = Entity,
+    `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
-    `<http://purl.org/dc/terms/description>` = description,
-    `<http://purl.org/dc/terms/identifier>` = identifier
+    `<http://purl.org/dc/terms/description>` = description
   ) %>%
   pivot_longer(cols = c(2:9)) %>% 
   rename(
@@ -183,7 +187,7 @@ reformatted_glossary <- read_csv("data/APD_glossary.csv") %>%
   ) %>% 
   filter(!is.na(Object))
 
-reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
+reformatted_published_classes <- published_classes_csv %>%
   select(Entity, label, description, identifier, inScheme, prefix) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
@@ -212,7 +216,7 @@ reformatted_ontology <- read_csv("data/ontology_links.csv") %>%
   ) %>% 
   filter(!is.na(Object))
  
-reformatted_annotation <- read_csv("data/APD_annotation_properties.csv") %>%
+reformatted_annotation <- annotation_properties_csv %>%
   select(Entity, label, description, issued, comment) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
@@ -240,10 +244,11 @@ reformatted_annotation <- read_csv("data/APD_annotation_properties.csv") %>%
   filter(!is.na(Object)) %>%
   filter(!stringr::str_detect(Object,"\"NA\"@en"))
 
-reformatted_traits <- read_csv("data/APD_traits.csv") %>% 
+reformatted_traits <- traits_csv %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
-    Entity =  paste0("<https://w3id.org/APD/traits/", identifier, ">"),
+    Entity =  paste0("<", Entity, ">"),
+    identifier = paste0("\"", identifier, "\""),
     trait = paste0("\"", trait, "\""),
     label = paste0("\"", label, "\"", "@en"),
     preflabel = label,
@@ -251,7 +256,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
     inScheme = paste0("\"", "https://w3id.org/APD/traits", "\""),
-    type = paste0("<", ontology_links$Entity[match(type, ontology_links$identifier)], ">"),
+    type = paste0("<", published_classes_csv$Entity[match(type, published_classes_csv$identifier)], ">"),
     min = ifelse(!is.na(min), paste0("\"", min, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
     max = ifelse(!is.na(max), paste0("\"", max, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
     units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
@@ -269,44 +274,44 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
-    structure_1 = ifelse(!is.na(structure_1), paste0("<", ontology_links$Entity[match(structure_1, ontology_links$identifier)], ">"), NA),
-    structure_2 = ifelse(!is.na(structure_2), paste0("<", ontology_links$Entity[match(structure_2, ontology_links$identifier)], ">"), NA),
-    structure_3 = ifelse(!is.na(structure_3), paste0("<", ontology_links$Entity[match(structure_3, ontology_links$identifier)], ">"), NA),
-    structure_4 = ifelse(!is.na(structure_4), paste0("<", ontology_links$Entity[match(structure_4, ontology_links$identifier)], ">"), NA),
-    meas_char_1 = ifelse(!is.na(meas_char_1), paste0("<", ontology_links$Entity[match(meas_char_1, ontology_links$identifier)], ">"), NA),
-    meas_char_2 = ifelse(!is.na(meas_char_2), paste0("<", ontology_links$Entity[match(meas_char_2, ontology_links$identifier)], ">"), NA),
-    meas_char_3 = ifelse(!is.na(meas_char_3), paste0("<", ontology_links$Entity[match(meas_char_3, ontology_links$identifier)], ">"), NA),
-    meas_char_4 = ifelse(!is.na(meas_char_4), paste0("<", ontology_links$Entity[match(meas_char_4, ontology_links$identifier)], ">"), NA),
-    meas_char_5 = ifelse(!is.na(meas_char_5), paste0("<", ontology_links$Entity[match(meas_char_5, ontology_links$identifier)], ">"), NA),
-    meas_char_6 = ifelse(!is.na(meas_char_6), paste0("<", ontology_links$Entity[match(meas_char_6, ontology_links$identifier)], ">"), NA),
-    rev_01 = ifelse(!is.na(rev_01), paste0("<", reviewers$Entity[match(rev_01, reviewers$label)], ">"), NA),
-    rev_02 = ifelse(!is.na(rev_02), paste0("<", reviewers$Entity[match(rev_02, reviewers$label)], ">"), NA),
-    rev_03 = ifelse(!is.na(rev_03), paste0("<", reviewers$Entity[match(rev_03, reviewers$label)], ">"), NA),
-    rev_04 = ifelse(!is.na(rev_04), paste0("<", reviewers$Entity[match(rev_04, reviewers$label)], ">"), NA),
-    rev_05 = ifelse(!is.na(rev_05), paste0("<", reviewers$Entity[match(rev_05, reviewers$label)], ">"), NA),
-    rev_06 = ifelse(!is.na(rev_06), paste0("<", reviewers$Entity[match(rev_06, reviewers$label)], ">"), NA),
-    rev_07 = ifelse(!is.na(rev_07), paste0("<", reviewers$Entity[match(rev_07, reviewers$label)], ">"), NA),
-    rev_08 = ifelse(!is.na(rev_08), paste0("<", reviewers$Entity[match(rev_08, reviewers$label)], ">"), NA),
-    rev_09 = ifelse(!is.na(rev_09), paste0("<", reviewers$Entity[match(rev_09, reviewers$label)], ">"), NA),
-    rev_10 = ifelse(!is.na(rev_10), paste0("<", reviewers$Entity[match(rev_10, reviewers$label)], ">"), NA),
-    ref_1 = ifelse(!is.na(ref_1), paste0("<", references$Entity[match(ref_1, references$label)], ">"), NA),
-    ref_2 = ifelse(!is.na(ref_2), paste0("<", references$Entity[match(ref_2, references$label)], ">"), NA),
-    ref_3 = ifelse(!is.na(ref_3), paste0("<", references$Entity[match(ref_3, references$label)], ">"), NA),
-    ref_4 = ifelse(!is.na(ref_4), paste0("<", references$Entity[match(ref_4, references$label)], ">"), NA),
-    ref_5 = ifelse(!is.na(ref_5), paste0("<", references$Entity[match(ref_5, references$label)], ">"), NA),
-    keyword_1 = ifelse(!is.na(keyword_1), paste0("<", ontology_links$Entity[match(keyword_1, ontology_links$identifier)], ">"), NA),
-    keyword_2 = ifelse(!is.na(keyword_2), paste0("<", ontology_links$Entity[match(keyword_2, ontology_links$identifier)], ">"), NA),
-    keyword_3 = ifelse(!is.na(keyword_3), paste0("<", ontology_links$Entity[match(keyword_3, ontology_links$identifier)], ">"), NA),
-    keyword_4 = ifelse(!is.na(keyword_4), paste0("<", ontology_links$Entity[match(keyword_4, ontology_links$identifier)], ">"), NA),
-    keyword_5 = ifelse(!is.na(keyword_5), paste0("<", ontology_links$Entity[match(keyword_5, ontology_links$identifier)], ">"), NA),
-    keyword_6 = ifelse(!is.na(keyword_6), paste0("<", ontology_links$Entity[match(keyword_6, ontology_links$identifier)], ">"), NA),
-    keyword_7 = ifelse(!is.na(keyword_7), paste0("<", ontology_links$Entity[match(keyword_7, ontology_links$identifier)], ">"), NA),
-    keyword_8 = ifelse(!is.na(keyword_8), paste0("<", ontology_links$Entity[match(keyword_8, ontology_links$identifier)], ">"), NA),
-    keyword_9 = ifelse(!is.na(keyword_9), paste0("<", ontology_links$Entity[match(keyword_9, ontology_links$identifier)], ">"), NA),
-    exact_other1 = ifelse(!is.na(exact_other1), paste0("<", ontology_links$Entity[match(exact_other1, ontology_links$identifier)], ">"), NA),
-    close_other1 = ifelse(!is.na(close_other1), paste0("<", ontology_links$Entity[match(close_other1, ontology_links$identifier)], ">"), NA),
-    close_other2 = ifelse(!is.na(close_other2), paste0("<", ontology_links$Entity[match(close_other2, ontology_links$identifier)], ">"), NA),
-    related_other = ifelse(!is.na(related_other), paste0("<", ontology_links$Entity[match(related_other, ontology_links$identifier)], ">"), NA),
+    structure_1 = ifelse(!is.na(structure_1), paste0("<", published_classes_csv$Entity[match(structure_1, published_classes_csv$identifier)], ">"), NA),
+    structure_2 = ifelse(!is.na(structure_2), paste0("<", published_classes_csv$Entity[match(structure_2, published_classes_csv$identifier)], ">"), NA),
+    structure_3 = ifelse(!is.na(structure_3), paste0("<", published_classes_csv$Entity[match(structure_3, published_classes_csv$identifier)], ">"), NA),
+    structure_4 = ifelse(!is.na(structure_4), paste0("<", published_classes_csv$Entity[match(structure_4, published_classes_csv$identifier)], ">"), NA),
+    meas_char_1 = ifelse(!is.na(meas_char_1), paste0("<", published_classes_csv$Entity[match(meas_char_1, published_classes_csv$identifier)], ">"), NA),
+    meas_char_2 = ifelse(!is.na(meas_char_2), paste0("<", published_classes_csv$Entity[match(meas_char_2, published_classes_csv$identifier)], ">"), NA),
+    meas_char_3 = ifelse(!is.na(meas_char_3), paste0("<", published_classes_csv$Entity[match(meas_char_3, published_classes_csv$identifier)], ">"), NA),
+    meas_char_4 = ifelse(!is.na(meas_char_4), paste0("<", published_classes_csv$Entity[match(meas_char_4, published_classes_csv$identifier)], ">"), NA),
+    meas_char_5 = ifelse(!is.na(meas_char_5), paste0("<", published_classes_csv$Entity[match(meas_char_5, published_classes_csv$identifier)], ">"), NA),
+    meas_char_6 = ifelse(!is.na(meas_char_6), paste0("<", published_classes_csv$Entity[match(meas_char_6, published_classes_csv$identifier)], ">"), NA),
+    rev_01 = ifelse(!is.na(rev_01), paste0("<", reviewers_csv$Entity[match(rev_01, reviewers_csv$label)], ">"), NA),
+    rev_02 = ifelse(!is.na(rev_02), paste0("<", reviewers_csv$Entity[match(rev_02, reviewers_csv$label)], ">"), NA),
+    rev_03 = ifelse(!is.na(rev_03), paste0("<", reviewers_csv$Entity[match(rev_03, reviewers_csv$label)], ">"), NA),
+    rev_04 = ifelse(!is.na(rev_04), paste0("<", reviewers_csv$Entity[match(rev_04, reviewers_csv$label)], ">"), NA),
+    rev_05 = ifelse(!is.na(rev_05), paste0("<", reviewers_csv$Entity[match(rev_05, reviewers_csv$label)], ">"), NA),
+    rev_06 = ifelse(!is.na(rev_06), paste0("<", reviewers_csv$Entity[match(rev_06, reviewers_csv$label)], ">"), NA),
+    rev_07 = ifelse(!is.na(rev_07), paste0("<", reviewers_csv$Entity[match(rev_07, reviewers_csv$label)], ">"), NA),
+    rev_08 = ifelse(!is.na(rev_08), paste0("<", reviewers_csv$Entity[match(rev_08, reviewers_csv$label)], ">"), NA),
+    rev_09 = ifelse(!is.na(rev_09), paste0("<", reviewers_csv$Entity[match(rev_09, reviewers_csv$label)], ">"), NA),
+    rev_10 = ifelse(!is.na(rev_10), paste0("<", reviewers_csv$Entity[match(rev_10, reviewers_csv$label)], ">"), NA),
+    ref_1 = ifelse(!is.na(ref_1), paste0("<", references_csv$Entity[match(ref_1, references_csv$label)], ">"), NA),
+    ref_2 = ifelse(!is.na(ref_2), paste0("<", references_csv$Entity[match(ref_2, references_csv$label)], ">"), NA),
+    ref_3 = ifelse(!is.na(ref_3), paste0("<", references_csv$Entity[match(ref_3, references_csv$label)], ">"), NA),
+    ref_4 = ifelse(!is.na(ref_4), paste0("<", references_csv$Entity[match(ref_4, references_csv$label)], ">"), NA),
+    ref_5 = ifelse(!is.na(ref_5), paste0("<", references_csv$Entity[match(ref_5, references_csv$label)], ">"), NA),
+    keyword_1 = ifelse(!is.na(keyword_1), paste0("<", published_classes_csv$Entity[match(keyword_1, published_classes_csv$identifier)], ">"), NA),
+    keyword_2 = ifelse(!is.na(keyword_2), paste0("<", published_classes_csv$Entity[match(keyword_2, published_classes_csv$identifier)], ">"), NA),
+    keyword_3 = ifelse(!is.na(keyword_3), paste0("<", published_classes_csv$Entity[match(keyword_3, published_classes_csv$identifier)], ">"), NA),
+    keyword_4 = ifelse(!is.na(keyword_4), paste0("<", published_classes_csv$Entity[match(keyword_4, published_classes_csv$identifier)], ">"), NA),
+    keyword_5 = ifelse(!is.na(keyword_5), paste0("<", published_classes_csv$Entity[match(keyword_5, published_classes_csv$identifier)], ">"), NA),
+    keyword_6 = ifelse(!is.na(keyword_6), paste0("<", published_classes_csv$Entity[match(keyword_6, published_classes_csv$identifier)], ">"), NA),
+    keyword_7 = ifelse(!is.na(keyword_7), paste0("<", published_classes_csv$Entity[match(keyword_7, published_classes_csv$identifier)], ">"), NA),
+    keyword_8 = ifelse(!is.na(keyword_8), paste0("<", published_classes_csv$Entity[match(keyword_8, published_classes_csv$identifier)], ">"), NA),
+    keyword_9 = ifelse(!is.na(keyword_9), paste0("<", published_classes_csv$Entity[match(keyword_9, published_classes_csv$identifier)], ">"), NA),
+    exact_other1 = ifelse(!is.na(exact_other1), paste0("<", published_classes_csv$Entity[match(exact_other1, published_classes_csv$identifier)], ">"), NA),
+    close_other1 = ifelse(!is.na(close_other1), paste0("<", published_classes_csv$Entity[match(close_other1, published_classes_csv$identifier)], ">"), NA),
+    close_other2 = ifelse(!is.na(close_other2), paste0("<", published_classes_csv$Entity[match(close_other2, published_classes_csv$identifier)], ">"), NA),
+    related_other = ifelse(!is.na(related_other), paste0("<", published_classes_csv$Entity[match(related_other, published_classes_csv$identifier)], ">"), NA),
     exact_TOP = ifelse(!is.na(exact_TOP), paste0("\"", exact_TOP, "\""), NA),
     close_TOP = ifelse(!is.na(close_TOP), paste0("\"", close_TOP, "\""), NA),
     related_TOP = ifelse(!is.na(related_TOP), paste0("\"", related_TOP, "\""), NA),
@@ -331,7 +336,7 @@ reformatted_traits <- read_csv("data/APD_traits.csv") %>%
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
   ) %>%
-  select(-type_x, -traitID, -keyword_10) %>% 
+  select(-type_x, -keyword_10) %>%
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
@@ -458,7 +463,7 @@ APD_resource <- read_csv("data/APD_resource.csv") %>%
 triples_df <- bind_rows(
   APD_resource,
   reformatted_annotation,
-  reformatted_ontology,
+  reformatted_published_classes,
   reformatted_references,
   reformatted_reviewers,
   reformatted_units,
@@ -469,7 +474,7 @@ triples_df <- bind_rows(
   reformatted_traits_x
 )
 
-#remove NA's; remove stray numbers required before to create unique column names 
+#remove NA's; remove stray numbers added during processing to create unique column names 
 triples_df <- triples_df %>% 
   filter(!is.na(Object)) %>%
   mutate(Predicate = stringr::str_replace(Predicate, "\\>[:digit:]", "\\>"))
@@ -493,7 +498,6 @@ unescape_unicode <- function(x) {
 }
 
 # prove this parses correctly
-library(rdflib)
 true_triples <- read_nquads("docs/ADP.nq")
 
 # serialize to any format
@@ -544,20 +548,20 @@ triples_with_labels <- triples_df %>%
          Object_stripped = stringr::str_replace(Object_stripped, "\\>", ""),
          Subject_stripped = stringr::str_replace(Subject_stripped, "\\<", ""),
          Subject_stripped = stringr::str_replace(Subject_stripped, "\\>", ""),
-         property = annotation$label[match(Predicate_stripped, annotation$Entity)],
+         property = annotation_properties_csv$label[match(Predicate_stripped, annotation_properties_csv$Entity)],
          value = ifelse(stringr::str_detect(Object_stripped,"^http"), Object_stripped, value),
-         value = ifelse(property == "has exact match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
-                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
-         value = ifelse(property == "has close match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
-                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
-         value = ifelse(property == "has related match" & !is.na(match(Object_stripped, ontology_links$Entity)), 
-                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+         value = ifelse(property == "has exact match" & !is.na(match(Object_stripped, published_classes_csv$Entity)), 
+                        published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
+         value = ifelse(property == "has close match" & !is.na(match(Object_stripped, published_classes_csv$Entity)), 
+                        published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
+         value = ifelse(property == "has related match" & !is.na(match(Object_stripped, published_classes_csv$Entity)), 
+                        published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
          value = ifelse(property == "has broader" & Subject %in% reformatted_hierarchy$Subject,
                         hierarchy_csv$label[match(Object_stripped, hierarchy_csv$Entity)], value), #match hierarchical levels, within file
          value = ifelse(property == "sub class of" & Subject %in% reformatted_hierarchy$Subject,
                         hierarchy_csv$label[match(Object_stripped, hierarchy_csv$Entity)], value), #match hierarchical levels, within file
          value = ifelse(property == "has narrower" & Subject %in% reformatted_categorical$Subject,
-                        categorical_values$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values$Entity))], value), #match traits to categorical
+                        categorical_values_csv$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values_csv$Entity))], value), #match traits to categorical
          value = ifelse(property == "has broader" & Subject %in% reformatted_categorical$Subject,
                         traits_csv$label[match(Object_stripped, traits_csv$Entity)], value),
          value = ifelse(property == "sub class of" & Subject %in% reformatted_categorical$Subject,
@@ -573,14 +577,14 @@ triples_with_labels <- triples_df %>%
          value = ifelse(property == "sub class of" & Subject %in% reformatted_traits$Subject,
                         hierarchy_csv$label[match(Object_stripped, hierarchy_csv$Entity)], value), #match traits to broader hierarchy
          value = ifelse(property == "has top concept" & Subject == "<https://w3id.org/APD/glossary>",
-                        glossary$label[match(Object_stripped, glossary$Entity)], value),
+                        glossary_csv$label[match(Object_stripped, glossary_csv$Entity)], value),
          value = ifelse(property == "has narrower" & Subject %in% reformatted_traits$Subject,
-                        categorical_values$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values$Entity))], value), #match traits to categorical
-         value = ifelse(property == "references", references$label[match(Object_stripped, references$Entity)], value),
-         value = ifelse(property == "reviewed by", reviewers$label[match(Object_stripped, reviewers$Entity)], value),
+                        categorical_values_csv$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values_csv$Entity))], value), #match traits to categorical
+         value = ifelse(property == "references", references_csv$label[match(Object_stripped, references_csv$Entity)], value),
+         value = ifelse(property == "reviewed by", reviewers_csv$label[match(Object_stripped, reviewers_csv$Entity)], value),
          value = ifelse(property == "unit" & stringr::str_detect(Object, "https"), units_csv$label[match(Object_stripped, units_csv$Entity)], value),
          value = ifelse(property %in% c("value type", "keyword", "measured characteristic", "has context object"),
-                        ontology_links$label[match(Object_stripped, ontology_links$Entity)], value),
+                        published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
          value = stringr::str_replace(value, "https\\:\\/\\/www\\.w3\\.org\\/2001\\/XMLSchema\\#double",""),
          value = stringr::str_replace(value, "\\@en", ""),
          value = stringr::str_replace(value, "\\^\\^\\<xsd\\:date\\>",""),

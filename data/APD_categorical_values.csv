@@ -1,4 +1,4 @@
-Entity,label,description,trait_name
+identifier,label,description,trait_name
 bark_morphology_eucalyptus_eucalypt_box,eucalypt_box,"Eucalyptus, Corymbia or Angophora taxa with ""Box"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_gum,eucalypt_gum,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_stocking,eucalypt_stocking,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark above a rough barked stocking.",bark_morphology_eucalyptus
