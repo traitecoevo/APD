@@ -1,7 +1,5 @@
 ---
-title:  The AusTraits Plant Dictionary (APD)
-subtitle: Extract of APD traits intended for review
-author: Elizabeth Wenk on behalf of APD
+title:  The AusTraits Plant Dictionary (APD) Ontology
 format: 
   html:
     embed-resources: true
@@ -9,30 +7,59 @@ format:
     smooth-scroll: true
     toc: true
     toc-expand: 1
-  pdf:
-    documentclass: report
-    papersize: A4
-    classoption: [onecolumn, portrait]
-    toc: true
-    geometry:
-      - top=30mm
-      - left=20mm
-      - heightrounded
-    fontfamily: libertinus
-    colorlinks: false
-  docx:
-    toc: true
-    number-sections: false
-    highlight-style: github
-    prefer-html: true
-date: "2023.03.10"
 ---
 
-```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
-simplified <- TRUE
+# Release XX June, 2023
 
-traits <- c("leaf_shape", "leaf_photosynthetic_rate_per_area_ambient", "leaf_photosynthetic_rate_per_area_maximum", "leaf_photosynthetic_rate_per_area_saturated")
-```
+<dl>
+<dt> **This version**:</dt> <dd><https://w3id.org/APD/2023-05-1/APD.html>  </dd>
+<dt>**Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
+<dt>**Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
+<dt> **Previous version**:</dt> <dd> <https://w3id.org/APD/2023-02-1/APD.html> </dd>
+<dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X"), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262"), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X") </dd>
+<dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
+  [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
+  [Timothy Brodribb](https://orcid.org/0000-0002-4964-6107),
+  [Brendan Choat](https://orcid.org/0000-0002-9105-640X),
+  [David Coleman](https://orcid.org/0000-0002-1773-6597),
+  [Félix de Tombeur](https://orcid.org/0000-0002-6012-8458),
+  [Lily Dun](https://orcid.org/0000-0002-0712-5143),
+  [David Ellsworth](https://orcid.org/0000-0002-9699-2272),
+  [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115),
+  [Carl Gosper](https://orcid.org/0000-0002-0962-5117),
+  [Lydia Guja](https://orcid.org/0000-0001-5945-438X),
+  [Gregory J. Jordan](https://orcid.org/0000-0002-6033-2766),
+  [Tom Le Breton](https://orcid.org/0000-0001-9353-0067),
+  [Andy Leigh](https://orcid.org/0000-0003-3568-2606),
+  [Patricia Lu-Irving](https://orcid.org/0000-0003-1116-9402),
+  [Belinda Medlyn](https://orcid.org/0000-0001-5728-9827),
+  [Rachael Nolan](https://orcid.org/0000-0001-9277-5142),
+  [Mark Ooi](https://orcid.org/0000-0002-3046-0417),
+  [Karen D. Sommerville](https://orcid.org/0000-0002-9843-6616),
+  [Ruby Stephens](https://orcid.org/0000-0002-3767-2690),
+  [Peter Vesk](https://orcid.org/0000-0003-2008-7062),
+  [Matthew White](https://orcid.org/0000-0003-2120-0071),
+  [Ian J. Wright](https://orcid.org/0000-0001-8338-914),
+  [Sophie Yang](https://orcid.org/0000-0001-7328-345X)</dd>
+
+<dt>Download serialization:</dt> <dd>
+<span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD"></a> </span>
+<span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples"></a> </span>
+<span><a href="ontology.nq" target="_blank"><img src="https://img.shields.io/badge/Format-N_Quads-blue.svg" alt="N-Quads"></a> </span>
+<span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL"></a> </span></dd>
+
+<dt>License: </dt> <dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0"></a> </dd>
+<!-- <dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl"></a></dd> -->
+
+<dt>Cite as:</dt> <dd>Wenk et al, APD ontology, Retrieved from: https://w3id.org/APD/0.1.0</dd> </dl>
+
+<!-- Examples:
+https://i-adopt.github.io/index.html
+https://www.w3.org/2009/08/skos-reference/skos.html
+https://terminologies.gfbio.org/terms/ets/pages/#expectedunit
+
+gt package: https://gt.rstudio.com/
+-->
 
 
 ```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
@@ -60,104 +87,48 @@ if(knitr::is_html_output()) {
 
 
 ```
-**Latest version**: https://w3id.org/APD/APD.html  
+# Abstract
+This document describes the schema available from the APD namespace. XXXX more for short abstractXXX
 
-**This version**: https://w3id.org/APD/2023-05-1/APD.html  
+# Table of Contents 
 
-**Previous version**: https://w3id.org/APD/2023-02-1/APD.html
+1. [Introduction](#introduction)
+2. [Trait groups](#trait-groupings): Hierarchical trait groupings, included to enhance trait findability.
+3. [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
+4. [Values for categorical traits](#values-for-categorical-traits): Allowed categorical trait values to support the defined trait concepts.
+5. [Glossary](#glossary): Terms used as keywords that were not available in other published vocabularies.
+6. [Acknowledgements](#acknowledgements)
 
-**Authors**: 
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-  make_link("Elizabeth Wenk", "https://orcid.org/0000-0001-5640-5910")
-  make_link("Daniel Falster", "https://orcid.org/0000-0002-9814-092X") 
-  make_link("Hervé Sauquet", "https://orcid.org/0000-0001-8305-3236")  
-  make_link("Rowan Brownlee", "https://orcid.org/0000-0002-1955-1262")  
-  make_link("Carl Boettiger", "https://orcid.org/0000-0002-1642-628X")
-```
-  \n\n
-  
-**Contributors**:
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-  make_link("Tony Auld", "https://orcid.org/0000-0002-8766-2829")
-  make_link("Russell Barrett", "https://orcid.org/0000-0003-0360-8321")
-  make_link("Timothy Brodribb", "https://orcid.org/0000-0002-4964-6107")
-  make_link("Brendan Choat", "https://orcid.org/0000-0002-9105-640X")
-  make_link("David Coleman", "https://orcid.org/0000-0002-1773-6597")
-  make_link("Félix de Tombeur", "https://orcid.org/0000-0002-6012-8458")
-  make_link("Lily Dun", "https://orcid.org/0000-0002-0712-5143")
-  make_link("David Ellsworth", "https://orcid.org/0000-0002-9699-2272")
-  make_link("Rachael Gallagher", "https://orcid.org/0000-0002-4680-8115")
-  make_link("Carl Gosper", "https://orcid.org/0000-0002-0962-5117")
-  make_link("Lydia Guja", "https://orcid.org/0000-0001-5945-438X")
-  make_link("Gregory J. Jordan", "https://orcid.org/0000-0002-6033-2766")
-  make_link("Tom Le Breton", "https://orcid.org/0000-0001-9353-0067")
-  make_link("Andy Leigh", "https://orcid.org/0000-0003-3568-2606")
-  make_link("Patricia Lu-Irving", "https://orcid.org/0000-0003-1116-9402")
-  make_link("Belinda Medlyn", "https://orcid.org/0000-0001-5728-9827")
-  make_link("Rachael Nolan", "https://orcid.org/0000-0001-9277-5142")
-  make_link("Mark Ooi", "https://orcid.org/0000-0002-3046-0417")
-  make_link("Karen D. Sommerville", "https://orcid.org/0000-0002-9843-6616")
-  make_link("Ruby Stephens", "https://orcid.org/0000-0002-3767-2690")
-  make_link("Peter Vesk", "https://orcid.org/0000-0003-2008-7062")
-  make_link("Matthew White", "https://orcid.org/0000-0003-2120-0071")
-  make_link("Ian J. Wright", "https://orcid.org/0000-0001-8338-9143")
+# 1. Introduction
 
-```
-  \n\n  
-    
-**License**: 
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-  make_link("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/")
-```
-  \n\n
-  
-**Cite as**:
-
-
-<!-- Examples:
-https://www.w3.org/2009/08/skos-reference/skos.html
-https://terminologies.gfbio.org/terms/ets/pages/#expectedunit
-https://i-adopt.github.io/index.html
-
-gt package: https://gt.rstudio.com/
--->
-# Status of this Document
-
-This document describes the schema available from the APD namespace.
-
-# Introduction
 The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait definition, accepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (rdf representation), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies.
 
 The APD is a community resource and we welcome any suggestions for edits, including additional key references for each trait or other trait databases for which we should add links. 
 
-# APD Schema Overview
+# 2. Trait groups
 
-The following table gives an overview of the APD vocabulary. This document includes the following sections
-
-- [Trait groups](#trait-groupings): Hierarchical trait groupings, included to enhance trait findability.
-- [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
-- [Values for categorical traits](#values-for-categorical-traits): Allowed categorical trait values to support the defined trait concepts.
-- [Glossary](#glossary): Terms used as keywords that were not available in other published vocabularies.
-
-# Trait groups
+The APD Trait groups express XXXX
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #trait_groupings <- datapasta::vector_paste(hierarchy_csv$Entity)
 
-trait_groupings <- c("https://w3id.org/APD/traits/trait_0000000", "https://w3id.org/APD/traits/trait_0000002", "https://w3id.org/APD/traits/trait_0000004", "https://w3id.org/APD/traits/trait_0000006", "https://w3id.org/APD/traits/trait_0000008", "https://w3id.org/APD/traits/trait_0000108", "https://w3id.org/APD/traits/trait_0000206", "https://w3id.org/APD/traits/trait_0000408", "https://w3id.org/APD/traits/trait_0000508", "https://w3id.org/APD/traits/trait_0000608", "https://w3id.org/APD/traits/trait_0000808", "https://w3id.org/APD/traits/trait_0001006", "https://w3id.org/APD/traits/trait_0001502", "https://w3id.org/APD/traits/trait_0002004", "https://w3id.org/APD/traits/trait_0002005", "https://w3id.org/APD/traits/trait_0002006", "https://w3id.org/APD/traits/trait_0002007", "https://w3id.org/APD/traits/trait_0002008", "https://w3id.org/APD/traits/trait_0002009", "https://w3id.org/APD/traits/trait_0003004", "https://w3id.org/APD/traits/trait_0010001", "https://w3id.org/APD/traits/trait_0010004", "https://w3id.org/APD/traits/trait_0010114", "https://w3id.org/APD/traits/trait_0011001", "https://w3id.org/APD/traits/trait_0011202", "https://w3id.org/APD/traits/trait_0011204", "https://w3id.org/APD/traits/trait_0011206", "https://w3id.org/APD/traits/trait_0011304", "https://w3id.org/APD/traits/trait_0011402", "https://w3id.org/APD/traits/trait_0011502", "https://w3id.org/APD/traits/trait_0011503", "https://w3id.org/APD/traits/trait_0011602", "https://w3id.org/APD/traits/trait_0011702", "https://w3id.org/APD/traits/trait_0011802", "https://w3id.org/APD/traits/trait_0011902", "https://w3id.org/APD/traits/trait_0012002", "https://w3id.org/APD/traits/trait_0012006", "https://w3id.org/APD/traits/trait_0012102", "https://w3id.org/APD/traits/trait_0012104", "https://w3id.org/APD/traits/trait_0012106", "https://w3id.org/APD/traits/trait_0012108", "https://w3id.org/APD/traits/trait_0012202", "https://w3id.org/APD/traits/trait_0012404", "https://w3id.org/APD/traits/trait_0012406", "https://w3id.org/APD/traits/trait_0012408", "https://w3id.org/APD/traits/trait_0012409", "https://w3id.org/APD/traits/trait_0012504", "https://w3id.org/APD/traits/trait_0012604", "https://w3id.org/APD/traits/trait_0013001", "https://w3id.org/APD/traits/trait_0013006", "https://w3id.org/APD/traits/trait_0013102", "https://w3id.org/APD/traits/trait_0014001", "https://w3id.org/APD/traits/trait_0020001", "https://w3id.org/APD/traits/trait_0020202", "https://w3id.org/APD/traits/trait_0020204", "https://w3id.org/APD/traits/trait_0020206", "https://w3id.org/APD/traits/trait_0020208", "https://w3id.org/APD/traits/trait_0020210", "https://w3id.org/APD/traits/trait_0020212", "https://w3id.org/APD/traits/trait_0020812", "https://w3id.org/APD/traits/trait_0021002", "https://w3id.org/APD/traits/trait_0022002", "https://w3id.org/APD/traits/trait_0030001", "https://w3id.org/APD/traits/trait_0030006", "https://w3id.org/APD/traits/trait_0030008", "https://w3id.org/APD/traits/trait_0030009", "https://w3id.org/APD/traits/trait_0030059", "https://w3id.org/APD/traits/trait_0030504", "https://w3id.org/APD/traits/trait_0030602", "https://w3id.org/APD/traits/trait_0030702", "https://w3id.org/APD/traits/trait_0030704")
+base_url <- "https://w3id.org/APD/traits/"
 
+trait_groupings <- c("trait_0000000", "trait_0000002", "trait_0000004", "trait_0000006", "trait_0000008", "trait_0000108", "trait_0000206", "trait_0000408", "trait_0000508", "trait_0000608", "trait_0000808", "trait_0001006", "trait_0001502", "trait_0002004", "trait_0002005", "trait_0002006", "trait_0002007", "trait_0002008", "trait_0002009", "trait_0003004", "trait_0010001", "trait_0010004", "trait_0010114", "trait_0011001", "trait_0011202", "trait_0011204", "trait_0011206", "trait_0011304", "trait_0011402", "trait_0011502", "trait_0011503", "trait_0011602", "trait_0011702", "trait_0011802", "trait_0011902", "trait_0012002", "trait_0012006", "trait_0012102", "trait_0012104", "trait_0012106", "trait_0012108", "trait_0012202", "trait_0012404", "trait_0012406", "trait_0012408", "trait_0012409", "trait_0012504", "trait_0012604", "trait_0013001", "trait_0013006", "trait_0013102", "trait_0014001", "trait_0020001", "trait_0020202", "trait_0020204", "trait_0020206", "trait_0020208", "trait_0020210", "trait_0020212", "trait_0020812", "trait_0021002", "trait_0022002", "trait_0030001", "trait_0030006", "trait_0030008", "trait_0030009", "trait_0030059", "trait_0030504", "trait_0030602", "trait_0030702", "trait_0030704") %>% paste0(base_url, .)
+
+to_match_tmp <- triples_with_labels %>%
+  filter(Subject_stripped %in% trait_groupings) %>%
+  filter(property == "label") %>%
+  select(Subject_stripped, value)
+ 
 for (thistrait in trait_groupings) {
   
-  to_match_tmp <- triples_with_labels %>% 
-    filter(Subject_stripped %in% trait_groupings) %>%
-    filter(property == "label") %>%
-    select(Subject_stripped, value)
-  
-  #term_to_display <- make_link(to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], thistrait)
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   
-  
-  writeLines(paste0("\n## ", term_to_display, "\n\n"))
+  ## [header1](#trait_0011212)
+
+  anchor <- gsub(base_url, "", thistrait, fixed = TRUE)
+  writeLines(paste0("\n## [", term_to_display, "](#",anchor,")\n\n"))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
@@ -176,8 +147,9 @@ for (thistrait in trait_groupings) {
     print()
 }
 ```
-# Trait concepts
+# 3. Trait concepts
 
+The APD Trait concepts express XXXX
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 
 #datapasta::vector_paste(traits_csv$trait)
@@ -200,7 +172,6 @@ for (thistrait in traits) {
     select(value, Subject_stripped) %>%
     rename(label = value) %>%
     left_join(tmp_subjects)
-
   
   writeLines(paste0("\n## ", tmp_traits$label[match(thistrait,tmp_traits$value)], "\n\n"))
 
@@ -226,7 +197,9 @@ for (thistrait in traits) {
 ```
 
 
-# Values for categorical traits
+# 4. Values for categorical traits
+
+This section of the ontology express XXXX
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #categorical_allowed <- datapasta::vector_paste(categorical_values$Entity)
@@ -258,7 +231,7 @@ for (j in seq_along(1:nrow(traits_names_tmp))) {
   
   for (i in seq_along(1:nrow(cat_for_trait))) {
   
-    writeLines(paste0("\n#### ", cat_for_trait$categorical_allowed[i], "\n\n"))
+    writeLines(paste0("\n### ", cat_for_trait$categorical_allowed[i], "\n\n"))
   
     thistrait <- cat_for_trait$categorical_allowed[i]
       
@@ -282,14 +255,17 @@ for (j in seq_along(1:nrow(traits_names_tmp))) {
 }
 ```
 
-# Glossary
+# 5. Glossary
+
+This section of the ontology express XXXX
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 #glossary_terms <- datapasta::vector_paste(glossary$Entity)
 
-glossary_terms <- c("https://w3id.org/APD/glossary/glossary_40004", "https://w3id.org/APD/glossary/glossary_40006", "https://w3id.org/APD/glossary/glossary_40014", "https://w3id.org/APD/glossary/glossary_40026", "https://w3id.org/APD/glossary/glossary_40040", "https://w3id.org/APD/glossary/glossary_40044", "https://w3id.org/APD/glossary/glossary_40050", "https://w3id.org/APD/glossary/glossary_40058", "https://w3id.org/APD/glossary/glossary_40060", "https://w3id.org/APD/glossary/glossary_40062", "https://w3id.org/APD/glossary/glossary_40066", "https://w3id.org/APD/glossary/glossary_40068", "https://w3id.org/APD/glossary/glossary_40074", "https://w3id.org/APD/glossary/glossary_40076", "https://w3id.org/APD/glossary/glossary_40080", "https://w3id.org/APD/glossary/glossary_40081", "https://w3id.org/APD/glossary/glossary_40086", "https://w3id.org/APD/glossary/glossary_40088", "https://w3id.org/APD/glossary/glossary_40092", "https://w3id.org/APD/glossary/glossary_40094", "https://w3id.org/APD/glossary/glossary_40106", "https://w3id.org/APD/glossary/glossary_40112", "https://w3id.org/APD/glossary/glossary_40114", "https://w3id.org/APD/glossary/glossary_40124")
+base_url <- "https://w3id.org/APD/glossary/"
 
-
+glossary_terms <- c("glossary_40004", "glossary_40006", "glossary_40014", "glossary_40026", "glossary_40040", "glossary_40044", "glossary_40050", "glossary_40058", "glossary_40060", "glossary_40062", "glossary_40066", "glossary_40068", "glossary_40074", "glossary_40076", "glossary_40080", "glossary_40081", "glossary_40086", "glossary_40088", "glossary_40092", "glossary_40094", "glossary_40106", "glossary_40112", "glossary_40114", "glossary_40124") %>%
+paste0(base_url, . )
 
 for (thistrait in glossary_terms) {
   
@@ -298,7 +274,10 @@ for (thistrait in glossary_terms) {
     filter(property == "label") %>%
     select(Subject_stripped, value)
   
-  writeLines(paste0("\n## ", to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)], "\n\n"))
+  term_to_display <- to_match_tmp$value[match(thistrait, to_match_tmp$Subject_stripped)]
+  anchor <- gsub(base_url, "", thistrait, fixed = TRUE)
+  
+  writeLines(paste0("\n## [", term_to_display, "](#", anchor, ")\n\n"))
   
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
@@ -317,4 +296,8 @@ for (thistrait in glossary_terms) {
     print()
 }
 ```
+
+# 6. Acknowledgements
+
+We are grateful to S Cox, K Levett, M Barlow, C Brady for useful conversations. The AusTraits project received investment (<https://doi.org/10.47486/TD044>, <https://doi.org/10.47486/DP720>) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). 
 
