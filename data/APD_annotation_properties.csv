@@ -9,6 +9,7 @@ http://purl.org/dc/elements/1.1/description,description,,,,http://purl.org/dc/el
 http://purl.org/dc/elements/1.1/identifier,identifier,,,,http://purl.org/dc/elements/1.1/,http://purl.org/dc/elements/1.1/
 http://purl.org/dc/terms/bibliographicCitation,bibliographic citation,,2/15/2003,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/created,date created,"Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.",7/11/2000,Date of creation of the resource.,http://purl.org/dc/terms/,http://purl.org/dc/terms/
+http://purl.org/dc/terms/reviewed,date reviewed,"Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.",,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/date,date,A point or period of time associated with an event in the lifecycle of the resource.,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/description,description,"Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.",1/14/2008,An account of the resource.,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/format,format,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
