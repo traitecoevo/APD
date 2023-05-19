@@ -97,6 +97,7 @@ reformatted_categorical <- categorical_values_csv %>%
     Parent = traits_csv$identifier[match(trait_name, traits_csv$trait)],
     Parent = paste0("<https://w3id.org/APD/traits/", Parent, ">"),
     SubClassOf = Parent,
+    `<http://www.w3.org/2004/02/skos/core#definition>` = description,
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#NamedIndividual>",
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
@@ -111,7 +112,7 @@ reformatted_categorical <- categorical_values_csv %>%
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
   ) %>%
-  pivot_longer(cols = c(2:10)) %>% 
+  pivot_longer(cols = c(2:11)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -129,6 +130,7 @@ reformatted_hierarchy <- hierarchy_csv %>%
       Parent = ifelse(stringr::str_detect(Entity, "0000000"), NA, paste0("<", Parent, ">")),
       SubClassOf = Parent,
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
+      `<http://www.w3.org/2004/02/skos/core#definition>` = description,
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
       `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
@@ -143,7 +145,7 @@ reformatted_hierarchy <- hierarchy_csv %>%
       `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
-    pivot_longer(cols = c(2:11)) %>% 
+    pivot_longer(cols = c(2:12)) %>% 
     rename(
       Predicate = name,
       Object = value
@@ -168,6 +170,7 @@ reformatted_glossary <- glossary_csv %>%
     label = paste0("\"", label, "\"", "@en"),
     prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
+    `<http://www.w3.org/2004/02/skos/core#definition>` = description,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary", "\""),
     `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>",
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
@@ -180,7 +183,7 @@ reformatted_glossary <- glossary_csv %>%
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
     `<http://purl.org/dc/terms/description>` = description
   ) %>%
-  pivot_longer(cols = c(2:9)) %>% 
+  pivot_longer(cols = c(2:10)) %>% 
   rename(
     Predicate = name,
     Object = value
@@ -334,7 +337,8 @@ reformatted_traits <- traits_csv %>%
     PalmTraits_exact = ifelse(!is.na(PalmTraits_exact), paste0("\"", PalmTraits_exact, "\""), NA),
     PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\""), NA),
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
+    `<http://www.w3.org/2004/02/skos/core#definition>` = description
   ) %>%
   select(-type_x, -keyword_10) %>%
   rename(
@@ -425,7 +429,7 @@ reformatted_traits <- traits_csv %>%
     `<http://www.w3.org/2004/02/skos/core#exactMatch>8`= PalmTraits_exact,
     `<http://www.w3.org/2004/02/skos/core#closeMatch>9`= PalmTraits_close
   ) %>%
-  pivot_longer(cols = c(1:80,82:88)) %>% 
+  pivot_longer(cols = c(1:80,82:89)) %>% 
   rename(
     Predicate = name,
     Object = value
