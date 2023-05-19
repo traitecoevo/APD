@@ -131,7 +131,7 @@ reformatted_hierarchy <- hierarchy_csv %>%
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
       `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
-      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits/>"
+      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
     ) %>%
     rename(
       Subject = Entity,

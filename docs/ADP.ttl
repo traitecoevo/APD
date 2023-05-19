@@ -5363,6 +5363,12 @@ dcterms:relation
     rdfs:label "relation"@en ;
     skos:prefLabel "relation"@en .
 
+dcterms:reviewed
+    dcterms:description "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+    a owl:Class ;
+    rdfs:label "date reviewed"@en ;
+    skos:prefLabel "date reviewed"@en .
+
 dcterms:subject
     dcterms:created "1/14/2008"^^<xsd:date> ;
     dcterms:description "Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary."@en ;
@@ -6645,7 +6651,6 @@ skos:topConceptOf
     dcterms:title "AusTraits Plant Dictionary"@en ;
     a owl:Class, skos:ConceptScheme ;
     rdfs:label "AusTraits Plant Dictionary"@en ;
-    skos:hasTopConcept APD:trait_0000000 ;
     skos:prefLabel "AusTraits Plant Dictionary"@en .
 
 <https://w3id.org/APD/glossary>
@@ -6872,6 +6877,14 @@ APD_glossary:glossary_40124
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "pressure-volume curve"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
+
+<https://w3id.org/APD/traits>
+    dcterms:license "<https://creativecommons.org/licenses/by/4.0/>"^^<xsd:anyURI> ;
+    dcterms:publisher "<https://austraits.org/>"^^<xsd:anyURI> ;
+    a owl:Class, skos:ConceptScheme ;
+    rdfs:label "AusTraits Plant Dictionary traits"@en ;
+    skos:hasTopConcept APD:trait_0000000 ;
+    skos:prefLabel "AusTraits Plant Dictionary traits"@en .
 
 APD:bark_morphology_eucalyptus_eucalypt_box
     dcterms:description "Eucalyptus, Corymbia or Angophora taxa with 'Box' type bark."@en ;
@@ -14319,10 +14332,10 @@ APD:trait_0000000
     a owl:Class, skos:Concept ;
     rdfs:label "plant trait"@en ;
     skos:exactMatch obo:TO_0000387 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000002, APD:trait_0010001, APD:trait_0020001, APD:trait_0030001 ;
     skos:prefLabel "plant trait"@en ;
-    skos:topConceptOf <https://w3id.org/APD> .
+    skos:topConceptOf <https://w3id.org/APD/traits> .
 
 APD:trait_0000002
     dcterms:description "A plant trait [TO:0000387] which is a quality of a chemical entity [CHEBI:24431], a plant metabolite [CHEBI:76924], or a molecular function [GO:0003674], which occurs in a cellular component [GO:0005575], plant anatomical entity [PO:0025131] or during a plant structure development stage [PO:0009012]."@en ;
@@ -14332,7 +14345,7 @@ APD:trait_0000002
     rdfs:subClassOf APD:trait_0000000 ;
     skos:broader APD:trait_0000000 ;
     skos:exactMatch obo:TO_0000277 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000004, APD:trait_0002004, APD:trait_0003004 ;
     skos:prefLabel "biochemical trait"@en .
 
@@ -14344,7 +14357,7 @@ APD:trait_0000004
     rdfs:subClassOf APD:trait_0000002 ;
     skos:broader APD:trait_0000002 ;
     skos:exactMatch obo:TO_0000465 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000006, APD:trait_0000206, APD:trait_0000608, APD:trait_0000808, APD:trait_0001006, APD:trait_0001502 ;
     skos:prefLabel "mineral and ion content trait"@en .
 
@@ -14355,7 +14368,7 @@ APD:trait_0000006
     rdfs:label "leaf mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000008, APD:trait_0000108 ;
     skos:prefLabel "leaf mineral and ion content trait"@en .
 
@@ -14366,7 +14379,7 @@ APD:trait_0000008
     rdfs:label "live leaf mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000006 ;
     skos:broader APD:trait_0000006 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000012, APD:trait_0000014, APD:trait_0000016, APD:trait_0000018, APD:trait_0000020, APD:trait_0000022, APD:trait_0000024, APD:trait_0000026, APD:trait_0000028, APD:trait_0000029, APD:trait_0000030, APD:trait_0000032, APD:trait_0000034, APD:trait_0000036, APD:trait_0000037, APD:trait_0000038, APD:trait_0000040, APD:trait_0000042, APD:trait_0000043, APD:trait_0000044, APD:trait_0000046, APD:trait_0000048, APD:trait_0000050, APD:trait_0000052, APD:trait_0000090, APD:trait_0000091, APD:trait_0001511, APD:trait_0001512, APD:trait_0002822, APD:trait_0020710, APD:trait_0020711, APD:trait_0020712, APD:trait_0020713 ;
     skos:prefLabel "live leaf mineral and ion content trait"@en .
 
@@ -14977,7 +14990,7 @@ APD:trait_0000108
     rdfs:label "senesced leaf mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000006 ;
     skos:broader APD:trait_0000006 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000112, APD:trait_0000114, APD:trait_0000116, APD:trait_0000118, APD:trait_0000126, APD:trait_0000128, APD:trait_0000130, APD:trait_0000132, APD:trait_0000134, APD:trait_0000136, APD:trait_0000138, APD:trait_0000140, APD:trait_0000142, APD:trait_0000144, APD:trait_0000146, APD:trait_0000152 ;
     skos:prefLabel "senesced leaf mineral and ion content trait"@en .
 
@@ -15355,7 +15368,7 @@ APD:trait_0000206
     rdfs:label "stem mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000216, APD:trait_0000238, APD:trait_0000408, APD:trait_0000508, APD:trait_0000612, APD:trait_0000614, APD:trait_0000616, APD:trait_0000618, APD:trait_0000626, APD:trait_0000628, APD:trait_0000630, APD:trait_0000632, APD:trait_0000634, APD:trait_0000638, APD:trait_0000640, APD:trait_0000644, APD:trait_0000646, APD:trait_0000652, APD:trait_0002824 ;
     skos:prefLabel "stem mineral and ion content trait"@en .
 
@@ -15408,7 +15421,7 @@ APD:trait_0000408
     rdfs:label "wood mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000206 ;
     skos:broader APD:trait_0000206 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000416, APD:trait_0000418, APD:trait_0000430, APD:trait_0000432, APD:trait_0000438, APD:trait_0000440, APD:trait_0000444 ;
     skos:prefLabel "wood mineral and ion content trait"@en .
 
@@ -15572,7 +15585,7 @@ APD:trait_0000508
     rdfs:label "senesced wood mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000206 ;
     skos:broader APD:trait_0000206 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000518, APD:trait_0000530, APD:trait_0000532, APD:trait_0000538, APD:trait_0000540, APD:trait_0000544 ;
     skos:prefLabel "senesced wood mineral and ion content trait"@en .
 
@@ -15721,7 +15734,7 @@ APD:trait_0000608
     rdfs:label "bark mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "bark mineral and ion content trait"@en .
 
 APD:trait_0000612
@@ -16025,7 +16038,7 @@ APD:trait_0000808
     rdfs:label "root mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0000816, APD:trait_0000838, APD:trait_0000844 ;
     skos:prefLabel "root mineral and ion content trait"@en .
 
@@ -16099,7 +16112,7 @@ APD:trait_0001006
     rdfs:label "reproductive shoot system mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0001038, APD:trait_0001118, APD:trait_0001130, APD:trait_0001132, APD:trait_0001138, APD:trait_0001144, APD:trait_0001146, APD:trait_0001218, APD:trait_0001230, APD:trait_0001232, APD:trait_0001238, APD:trait_0001244, APD:trait_0001246 ;
     skos:prefLabel "reproductive shoot system mineral and ion content trait"@en .
 
@@ -16382,7 +16395,7 @@ APD:trait_0001502
     rdfs:label "cell or tissue mineral and ion content trait"@en ;
     rdfs:subClassOf APD:trait_0000004 ;
     skos:broader APD:trait_0000004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0001513, APD:trait_0001514, APD:trait_0001611, APD:trait_0001612, APD:trait_0001613, APD:trait_0001614, APD:trait_0001615, APD:trait_0001616, APD:trait_0001661, APD:trait_0001662, APD:trait_0001663, APD:trait_0001664, APD:trait_0001665, APD:trait_0001666 ;
     skos:prefLabel "cell or tissue mineral and ion content trait"@en .
 
@@ -16737,7 +16750,7 @@ APD:trait_0002004
     rdfs:subClassOf APD:trait_0000002 ;
     skos:broader APD:trait_0000002 ;
     skos:exactMatch obo:TO_0000281 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002005, APD:trait_0002006, APD:trait_0002007, APD:trait_0002008, APD:trait_0002009 ;
     skos:prefLabel "metabolite content trait"@en .
 
@@ -16749,7 +16762,7 @@ APD:trait_0002005
     rdfs:subClassOf APD:trait_0002004 ;
     skos:broader APD:trait_0002004 ;
     skos:exactMatch obo:TO_0000291 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002021, APD:trait_0002022, APD:trait_0002024, APD:trait_0002025, APD:trait_0002027, APD:trait_0002028, APD:trait_0002031, APD:trait_0002032, APD:trait_0002127, APD:trait_0002131, APD:trait_0002224, APD:trait_0002327, APD:trait_0002331 ;
     skos:prefLabel "carbohydrate content trait"@en .
 
@@ -16760,7 +16773,7 @@ APD:trait_0002006
     rdfs:label "lipid content trait"@en ;
     rdfs:subClassOf APD:trait_0002004 ;
     skos:broader APD:trait_0002004 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002544 ;
     skos:prefLabel "lipid content trait"@en .
 
@@ -16772,7 +16785,7 @@ APD:trait_0002007
     rdfs:subClassOf APD:trait_0002004 ;
     skos:broader APD:trait_0002004 ;
     skos:exactMatch obo:TO_0020076 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002050, APD:trait_0002052, APD:trait_0002054, APD:trait_0002250, APD:trait_0002255 ;
     skos:prefLabel "phenolic compound content trait"@en .
 
@@ -16784,7 +16797,7 @@ APD:trait_0002008
     rdfs:subClassOf APD:trait_0002004 ;
     skos:broader APD:trait_0002004 ;
     skos:exactMatch obo:TO_0000494 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002055, APD:trait_0002056, APD:trait_0002081, APD:trait_0002082, APD:trait_0002083, APD:trait_0002084, APD:trait_0002085, APD:trait_0002086, APD:trait_0002087 ;
     skos:prefLabel "pigment content trait"@en .
 
@@ -16796,7 +16809,7 @@ APD:trait_0002009
     rdfs:subClassOf APD:trait_0002004 ;
     skos:broader APD:trait_0002004 ;
     skos:exactMatch obo:TO_0000598 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002035, APD:trait_0002037, APD:trait_0002090, APD:trait_0002534 ;
     skos:prefLabel "protein content trait"@en .
 
@@ -17551,7 +17564,7 @@ APD:trait_0003004
     rdfs:label "stable isotope ratio determination"@en ;
     rdfs:subClassOf APD:trait_0000002 ;
     skos:broader APD:trait_0000002 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0003011, APD:trait_0003012, APD:trait_0003013, APD:trait_0003014, APD:trait_0003015, APD:trait_0003031, APD:trait_0003032, APD:trait_0003033, APD:trait_0003034, APD:trait_0003035, APD:trait_0003052, APD:trait_0003053, APD:trait_0003072, APD:trait_0003092 ;
     skos:prefLabel "stable isotope ratio determination"@en .
 
@@ -17873,7 +17886,7 @@ APD:trait_0010001
     rdfs:subClassOf APD:trait_0000000 ;
     skos:broader APD:trait_0000000 ;
     skos:exactMatch obo:TO_0000017 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010004, APD:trait_0011001, APD:trait_0013001, APD:trait_0014001 ;
     skos:prefLabel "plant morphology trait"@en .
 
@@ -17885,7 +17898,7 @@ APD:trait_0010004
     rdfs:subClassOf APD:trait_0010001 ;
     skos:broader APD:trait_0010001 ;
     skos:exactMatch obo:TO_0000398 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010021, APD:trait_0010022, APD:trait_0010023, APD:trait_0010104, APD:trait_0030010, APD:trait_0030011 ;
     skos:prefLabel "whole plant morphology trait"@en .
 
@@ -18036,7 +18049,7 @@ APD:trait_0010104
     rdfs:subClassOf APD:trait_0010004 ;
     skos:broader APD:trait_0010004 ;
     skos:exactMatch obo:TO_0000064 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010110, APD:trait_0010111, APD:trait_0010112, APD:trait_0010113, APD:trait_0010114, APD:trait_0010160, APD:trait_0010161, APD:trait_0010162 ;
     skos:prefLabel "plant embryo morphology trait"@en .
 
@@ -18189,7 +18202,7 @@ APD:trait_0011001
     rdfs:label "plant structure morphology trait"@en ;
     rdfs:subClassOf APD:trait_0010001 ;
     skos:broader APD:trait_0010001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010070, APD:trait_0011202, APD:trait_0011502, APD:trait_0011503, APD:trait_0011802, APD:trait_0012002, APD:trait_0012102, APD:trait_0012202, APD:trait_0030020, APD:trait_0030028, APD:trait_0030311, APD:trait_0030312 ;
     skos:prefLabel "plant structure morphology trait"@en .
 
@@ -18201,7 +18214,7 @@ APD:trait_0011202
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0000748 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010111, APD:trait_0011204, APD:trait_0011206, APD:trait_0011304, APD:trait_0011360, APD:trait_0011361, APD:trait_0011362, APD:trait_0011363, APD:trait_0011402, APD:trait_0011515, APD:trait_0011516, APD:trait_0011517, APD:trait_0011522, APD:trait_0011523, APD:trait_0011524, APD:trait_0011525, APD:trait_0011602, APD:trait_0011702, APD:trait_0013011, APD:trait_0013012, APD:trait_0013013, APD:trait_0013014, APD:trait_0013112, APD:trait_0013115, APD:trait_0014011, APD:trait_0014012, APD:trait_0014013, APD:trait_0014014, APD:trait_0014015, APD:trait_0014016, APD:trait_0030016, APD:trait_0030020, APD:trait_0030021, APD:trait_0030022 ;
     skos:prefLabel "leaf morphology trait"@en .
 
@@ -18213,7 +18226,7 @@ APD:trait_0011204
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
     skos:exactMatch obo:TO_0002637 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011211, APD:trait_0011212, APD:trait_0011213, APD:trait_0011214, APD:trait_0011215, APD:trait_0011230, APD:trait_0011231, APD:trait_0011260, APD:trait_0011263 ;
     skos:prefLabel "leaf size trait"@en .
 
@@ -18225,7 +18238,7 @@ APD:trait_0011206
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
     skos:exactMatch obo:TO_0000505 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011216, APD:trait_0011217, APD:trait_0011218, APD:trait_0011230, APD:trait_0011231, APD:trait_0011232, APD:trait_0011261, APD:trait_0011262, APD:trait_0011263, APD:trait_0011264, APD:trait_0011265, APD:trait_0011266, APD:trait_0011267, APD:trait_0011268, APD:trait_0011912, APD:trait_0011913 ;
     skos:prefLabel "leaf mass trait"@en .
 
@@ -18707,7 +18720,7 @@ APD:trait_0011304
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
     skos:exactMatch obo:TO_0000492 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010070, APD:trait_0011310, APD:trait_0011311, APD:trait_0011312, APD:trait_0011313, APD:trait_0011314, APD:trait_0011315, APD:trait_0011316, APD:trait_0011317, APD:trait_0011318 ;
     skos:prefLabel "leaf shape trait"@en .
 
@@ -19026,7 +19039,7 @@ APD:trait_0011402
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
     skos:exactMatch obo:TO_0000541 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011410, APD:trait_0011411, APD:trait_0011412, APD:trait_0011413, APD:trait_0011414 ;
     skos:prefLabel "leaf position trait"@en .
 
@@ -19164,7 +19177,7 @@ APD:trait_0011502
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0000843 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011510, APD:trait_0011511, APD:trait_0011512, APD:trait_0011513, APD:trait_0011514, APD:trait_0011518, APD:trait_0011519, APD:trait_0011520, APD:trait_0011521, APD:trait_0011524, APD:trait_0011525 ;
     skos:prefLabel "portion of plant tissue morphology trait"@en .
 
@@ -19176,7 +19189,7 @@ APD:trait_0011503
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0002683 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011515, APD:trait_0011516, APD:trait_0011517, APD:trait_0011522, APD:trait_0011523, APD:trait_0011526 ;
     skos:prefLabel "plant cell morphology trait"@en .
 
@@ -19553,7 +19566,7 @@ APD:trait_0011602
     rdfs:label "leaf stomatal complex morphology trait"@en ;
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011610, APD:trait_0011611, APD:trait_0011612, APD:trait_0011613, APD:trait_0011614, APD:trait_0011615 ;
     skos:prefLabel "leaf stomatal complex morphology trait"@en .
 
@@ -19691,7 +19704,7 @@ APD:trait_0011702
     rdfs:label "leaf optical properties trait"@en ;
     rdfs:subClassOf APD:trait_0011202 ;
     skos:broader APD:trait_0011202 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011710, APD:trait_0011711, APD:trait_0011712, APD:trait_0011713 ;
     skos:prefLabel "leaf optical properties trait"@en .
 
@@ -19785,7 +19798,7 @@ APD:trait_0011802
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0000361 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010024, APD:trait_0010025, APD:trait_0011811, APD:trait_0011812, APD:trait_0011813, APD:trait_0011814, APD:trait_0011815, APD:trait_0011816, APD:trait_0011902, APD:trait_0011911, APD:trait_0012120, APD:trait_0013111, APD:trait_0013113, APD:trait_0013114, APD:trait_0013116, APD:trait_0013117, APD:trait_0013118, APD:trait_0013119, APD:trait_0013120, APD:trait_0013161, APD:trait_0013162, APD:trait_0013163, APD:trait_0013164, APD:trait_0013165, APD:trait_0014018, APD:trait_0014019, APD:trait_0014020, APD:trait_0030010, APD:trait_0030016, APD:trait_0030018, APD:trait_0030019, APD:trait_0030020, APD:trait_0030021, APD:trait_0030022, APD:trait_0030023 ;
     skos:prefLabel "stem morphology trait"@en .
 
@@ -19926,7 +19939,7 @@ APD:trait_0011902
     rdfs:label "stem mass trait"@en ;
     rdfs:subClassOf APD:trait_0011802 ;
     skos:broader APD:trait_0011802 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0011912, APD:trait_0011913, APD:trait_0011914, APD:trait_0011915, APD:trait_0011916, APD:trait_0011917 ;
     skos:prefLabel "stem mass trait"@en .
 
@@ -20089,7 +20102,7 @@ APD:trait_0012002
     rdfs:label "bark morphology trait"@en ;
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012006, APD:trait_0012010, APD:trait_0012011, APD:trait_0012012, APD:trait_0012013, APD:trait_0012014, APD:trait_0012015, APD:trait_0012016, APD:trait_0014017, APD:trait_0030020 ;
     skos:prefLabel "bark morphology trait"@en .
 
@@ -20100,7 +20113,7 @@ APD:trait_0012006
     rdfs:label "bark mass trait"@en ;
     rdfs:subClassOf APD:trait_0012002 ;
     skos:broader APD:trait_0012002 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "bark mass trait"@en .
 
 APD:trait_0012010
@@ -20254,7 +20267,7 @@ APD:trait_0012102
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0000985 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012104, APD:trait_0012106, APD:trait_0012108 ;
     skos:prefLabel "root system morphology trait"@en .
 
@@ -20266,7 +20279,7 @@ APD:trait_0012104
     rdfs:subClassOf APD:trait_0012102 ;
     skos:broader APD:trait_0012102 ;
     skos:exactMatch obo:TO_0000043 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012111, APD:trait_0012112, APD:trait_0012113, APD:trait_0012114, APD:trait_0012115, APD:trait_0012116, APD:trait_0012117, APD:trait_0012118, APD:trait_0012119, APD:trait_0012120, APD:trait_0012121, APD:trait_0012122, APD:trait_0030025, APD:trait_0030026 ;
     skos:prefLabel "root morphology trait"@en .
 
@@ -20277,7 +20290,7 @@ APD:trait_0012106
     rdfs:label "root mass trait"@en ;
     rdfs:subClassOf APD:trait_0012102 ;
     skos:broader APD:trait_0012102 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "root mass trait"@en .
 
 APD:trait_0012108
@@ -20287,7 +20300,7 @@ APD:trait_0012108
     rdfs:label "root branchiness trait"@en ;
     rdfs:subClassOf APD:trait_0012102 ;
     skos:broader APD:trait_0012102 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "root branchiness trait"@en .
 
 APD:trait_0012111
@@ -20552,7 +20565,7 @@ APD:trait_0012202
     rdfs:subClassOf APD:trait_0011001 ;
     skos:broader APD:trait_0011001 ;
     skos:exactMatch obo:TO_0000786 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012221, APD:trait_0012222, APD:trait_0012404, APD:trait_0012504, APD:trait_0012604, APD:trait_0030011 ;
     skos:prefLabel "reproductive shoot system morphology trait"@en .
 
@@ -20606,7 +20619,7 @@ APD:trait_0012404
     rdfs:label "floral organ morphology trait"@en ;
     rdfs:subClassOf APD:trait_0012202 ;
     skos:broader APD:trait_0012202 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012406, APD:trait_0012408, APD:trait_0012409, APD:trait_0012422, APD:trait_0012482, APD:trait_0030260, APD:trait_0030261 ;
     skos:prefLabel "floral organ morphology trait"@en .
 
@@ -20618,7 +20631,7 @@ APD:trait_0012406
     rdfs:subClassOf APD:trait_0012404 ;
     skos:broader APD:trait_0012404 ;
     skos:exactMatch obo:TO_0000275 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012417, APD:trait_0012418, APD:trait_0012419, APD:trait_0012420, APD:trait_0012421, APD:trait_0012461, APD:trait_0012462, APD:trait_0012463, APD:trait_0012464, APD:trait_0012465, APD:trait_0012466, APD:trait_0012467 ;
     skos:prefLabel "perianth morphology trait"@en .
 
@@ -20630,7 +20643,7 @@ APD:trait_0012408
     rdfs:subClassOf APD:trait_0012404 ;
     skos:broader APD:trait_0012404 ;
     skos:exactMatch obo:TO_0000994 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012410, APD:trait_0012411, APD:trait_0012412, APD:trait_0012413, APD:trait_0012414, APD:trait_0012415, APD:trait_0012416, APD:trait_0012431, APD:trait_0012432, APD:trait_0012433, APD:trait_0012434, APD:trait_0012471, APD:trait_0012472, APD:trait_0012473 ;
     skos:prefLabel "androecium morphology trait"@en .
 
@@ -20641,7 +20654,7 @@ APD:trait_0012409
     rdfs:label "gynoecium morphology trait"@en ;
     rdfs:subClassOf APD:trait_0012404 ;
     skos:broader APD:trait_0012404 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012441, APD:trait_0012442, APD:trait_0012443, APD:trait_0012444, APD:trait_0012445, APD:trait_0012481, APD:trait_0012483, APD:trait_0012484 ;
     skos:prefLabel "gynoecium morphology trait"@en .
 
@@ -21392,7 +21405,7 @@ APD:trait_0012504
     rdfs:subClassOf APD:trait_0012202 ;
     skos:broader APD:trait_0012202 ;
     skos:exactMatch obo:TO_0002629 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012511, APD:trait_0012512, APD:trait_0012513, APD:trait_0012514, APD:trait_0012515, APD:trait_0012516, APD:trait_0012517, APD:trait_0012518, APD:trait_0012519, APD:trait_0012622, APD:trait_0012623, APD:trait_0012624, APD:trait_0030560 ;
     skos:prefLabel "fruit morphology trait"@en .
 
@@ -21616,7 +21629,7 @@ APD:trait_0012604
     rdfs:subClassOf APD:trait_0012202 ;
     skos:broader APD:trait_0012202 ;
     skos:exactMatch obo:TO_0000184 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012610, APD:trait_0012611, APD:trait_0012612, APD:trait_0012613, APD:trait_0012614, APD:trait_0012615, APD:trait_0012616, APD:trait_0012617, APD:trait_0012618, APD:trait_0012619, APD:trait_0012620, APD:trait_0012621, APD:trait_0012622, APD:trait_0012623, APD:trait_0012624, APD:trait_0030560 ;
     skos:prefLabel "seed morphology trait"@en .
 
@@ -21979,7 +21992,7 @@ APD:trait_0013001
     rdfs:subClassOf APD:trait_0010001 ;
     skos:broader APD:trait_0010001 ;
     skos:exactMatch obo:TO_0000470 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0013006, APD:trait_0013102, APD:trait_0013161, APD:trait_0013162, APD:trait_0013163, APD:trait_0013164, APD:trait_0013165 ;
     skos:prefLabel "vascular tissue morphology trait"@en .
 
@@ -21991,7 +22004,7 @@ APD:trait_0013006
     rdfs:subClassOf APD:trait_0013001 ;
     skos:broader APD:trait_0013001 ;
     skos:exactMatch obo:TO_0000820 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0013011, APD:trait_0013012, APD:trait_0013013, APD:trait_0013014 ;
     skos:prefLabel "leaf vein morphology trait"@en .
 
@@ -22110,7 +22123,7 @@ APD:trait_0013102
     rdfs:label "xylem vessel morphology trait"@en ;
     rdfs:subClassOf APD:trait_0013001 ;
     skos:broader APD:trait_0013001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0013111, APD:trait_0013112, APD:trait_0013113, APD:trait_0013114, APD:trait_0013115, APD:trait_0013116, APD:trait_0013117, APD:trait_0013118, APD:trait_0013119, APD:trait_0013120 ;
     skos:prefLabel "xylem vessel morphology trait"@en .
 
@@ -22449,7 +22462,7 @@ APD:trait_0014001
     rdfs:label "plant structure strength trait"@en ;
     rdfs:subClassOf APD:trait_0010001 ;
     skos:broader APD:trait_0010001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0014011, APD:trait_0014012, APD:trait_0014013, APD:trait_0014014, APD:trait_0014015, APD:trait_0014016, APD:trait_0014017, APD:trait_0014018, APD:trait_0014019, APD:trait_0014020 ;
     skos:prefLabel "plant structure strength trait"@en .
 
@@ -22686,7 +22699,7 @@ APD:trait_0020001
     rdfs:subClassOf APD:trait_0000000 ;
     skos:broader APD:trait_0000000 ;
     skos:exactMatch obo:TO_0000283 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020202, APD:trait_0021002, APD:trait_0022002 ;
     skos:prefLabel "biological process trait, physiological process trait"@en .
 
@@ -22697,7 +22710,7 @@ APD:trait_0020202
     rdfs:label "photosynthetic trait"@en ;
     rdfs:subClassOf APD:trait_0020001 ;
     skos:broader APD:trait_0020001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020204, APD:trait_0020221, APD:trait_0020812, APD:trait_0030016 ;
     skos:prefLabel "photosynthetic trait"@en .
 
@@ -22708,7 +22721,7 @@ APD:trait_0020204
     rdfs:label "gas exchange trait"@en ;
     rdfs:subClassOf APD:trait_0020202 ;
     skos:broader APD:trait_0020202 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020206, APD:trait_0020208, APD:trait_0020210, APD:trait_0020212, APD:trait_0020610, APD:trait_0020611, APD:trait_0020612, APD:trait_0020630, APD:trait_0020640, APD:trait_0020641, APD:trait_0020664, APD:trait_0020710, APD:trait_0020711, APD:trait_0020712, APD:trait_0020713, APD:trait_0020760, APD:trait_0020761, APD:trait_0020762 ;
     skos:prefLabel "gas exchange trait"@en .
 
@@ -22720,7 +22733,7 @@ APD:trait_0020206
     rdfs:subClassOf APD:trait_0020204 ;
     skos:broader APD:trait_0020204 ;
     skos:exactMatch obo:TO_0001015 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020222, APD:trait_0020240, APD:trait_0020241, APD:trait_0020242, APD:trait_0020243, APD:trait_0020244, APD:trait_0020245 ;
     skos:prefLabel "photosynthetic rate trait"@en .
 
@@ -22731,7 +22744,7 @@ APD:trait_0020208
     rdfs:label "respiration rate trait"@en ;
     rdfs:subClassOf APD:trait_0020204 ;
     skos:broader APD:trait_0020204 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020510, APD:trait_0020511, APD:trait_0020512, APD:trait_0020513 ;
     skos:prefLabel "respiration rate trait"@en .
 
@@ -22742,7 +22755,7 @@ APD:trait_0020210
     rdfs:label "transpiration rate trait"@en ;
     rdfs:subClassOf APD:trait_0020204 ;
     skos:broader APD:trait_0020204 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020660, APD:trait_0020661, APD:trait_0020662, APD:trait_0020663 ;
     skos:prefLabel "transpiration rate trait"@en .
 
@@ -22753,7 +22766,7 @@ APD:trait_0020212
     rdfs:label "carbon dioxide concentration trait"@en ;
     rdfs:subClassOf APD:trait_0020204 ;
     skos:broader APD:trait_0020204 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020310, APD:trait_0020311, APD:trait_0020312, APD:trait_0020313, APD:trait_0020314, APD:trait_0020315 ;
     skos:prefLabel "carbon dioxide concentration trait"@en .
 
@@ -23870,7 +23883,7 @@ APD:trait_0020812
     rdfs:label "photosystem performance trait"@en ;
     rdfs:subClassOf APD:trait_0020202 ;
     skos:broader APD:trait_0020202 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020410, APD:trait_0020411, APD:trait_0020412, APD:trait_0020413, APD:trait_0020414, APD:trait_0020415, APD:trait_0020416, APD:trait_0020417, APD:trait_0020418, APD:trait_0020419, APD:trait_0020813 ;
     skos:prefLabel "photosystem performance trait"@en .
 
@@ -23968,7 +23981,7 @@ APD:trait_0021002
     rdfs:label "water transport trait, hydraulic trait"@en ;
     rdfs:subClassOf APD:trait_0020001 ;
     skos:broader APD:trait_0020001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0013011, APD:trait_0013012, APD:trait_0013013, APD:trait_0013014, APD:trait_0013111, APD:trait_0013112, APD:trait_0013113, APD:trait_0013114, APD:trait_0013115, APD:trait_0013116, APD:trait_0013117, APD:trait_0013118, APD:trait_0013119, APD:trait_0013120, APD:trait_0013161, APD:trait_0013162, APD:trait_0013163, APD:trait_0013164, APD:trait_0013165, APD:trait_0020814, APD:trait_0021013, APD:trait_0021014, APD:trait_0021015, APD:trait_0021016, APD:trait_0021021, APD:trait_0021022, APD:trait_0021030, APD:trait_0021031, APD:trait_0021040, APD:trait_0021050, APD:trait_0021051, APD:trait_0021052, APD:trait_0021053, APD:trait_0021054, APD:trait_0021055, APD:trait_0021056, APD:trait_0021057, APD:trait_0021058, APD:trait_0021059 ;
     skos:prefLabel "water transport trait, hydraulic trait"@en .
 
@@ -24395,7 +24408,7 @@ APD:trait_0022002
     rdfs:label "nutrient recycling trait"@en ;
     rdfs:subClassOf APD:trait_0020001 ;
     skos:broader APD:trait_0020001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0022012, APD:trait_0022013 ;
     skos:prefLabel "nutrient recycling trait"@en .
 
@@ -24448,7 +24461,7 @@ APD:trait_0030001
     rdfs:label "life history trait"@en ;
     rdfs:subClassOf APD:trait_0000000 ;
     skos:broader APD:trait_0000000 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0030006, APD:trait_0030008, APD:trait_0030009, APD:trait_0030013, APD:trait_0030015, APD:trait_0030059, APD:trait_0030311, APD:trait_0030312, APD:trait_0030315, APD:trait_0030504, APD:trait_0030602, APD:trait_0030702, APD:trait_0030704 ;
     skos:prefLabel "life history trait"@en .
 
@@ -24459,7 +24472,7 @@ APD:trait_0030006
     rdfs:label "whole plant phenotype trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0010070, APD:trait_0030010, APD:trait_0030011, APD:trait_0030012, APD:trait_0030014, APD:trait_0030017, APD:trait_0030018, APD:trait_0030019, APD:trait_0030021, APD:trait_0030022, APD:trait_0030023, APD:trait_0030024, APD:trait_0030310, APD:trait_0030313, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627 ;
     skos:prefLabel "whole plant phenotype trait"@en .
 
@@ -24471,7 +24484,7 @@ APD:trait_0030008
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
     skos:exactMatch obo:TO_0000933 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0030110, APD:trait_0030111, APD:trait_0030210, APD:trait_0030211, APD:trait_0030212, APD:trait_0030410, APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030590, APD:trait_0030591, APD:trait_0030622 ;
     skos:prefLabel "plant phenological trait"@en .
 
@@ -24482,7 +24495,7 @@ APD:trait_0030009
     rdfs:label "interspecific interactions trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0012623, APD:trait_0030025, APD:trait_0030026, APD:trait_0030027, APD:trait_0030260, APD:trait_0030261, APD:trait_0030560, APD:trait_0030561 ;
     skos:prefLabel "interspecific interactions trait"@en .
 
@@ -24917,7 +24930,7 @@ APD:trait_0030059
     rdfs:label "genetic structure trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0030060, APD:trait_0030061 ;
     skos:prefLabel "genetic structure trait"@en .
 
@@ -25271,7 +25284,7 @@ APD:trait_0030504
     rdfs:label "reproductive structure life history trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030530, APD:trait_0030531, APD:trait_0030532, APD:trait_0030533, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627 ;
     skos:prefLabel "reproductive structure life history trait"@en .
 
@@ -25601,7 +25614,7 @@ APD:trait_0030602
     rdfs:label "fire response trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002822, APD:trait_0002824, APD:trait_0030013, APD:trait_0030314, APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030610, APD:trait_0030612, APD:trait_0030613, APD:trait_0030614, APD:trait_0030615, APD:trait_0030616, APD:trait_0030619, APD:trait_0030621, APD:trait_0030622, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627, APD:trait_0030631, APD:trait_0030632, APD:trait_0030633, APD:trait_0030634, APD:trait_0030635, APD:trait_0030636, APD:trait_0030637, APD:trait_0030718 ;
     skos:prefLabel "fire response trait"@en .
 
@@ -26038,7 +26051,7 @@ APD:trait_0030702
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
     skos:exactMatch obo:TO_0000482 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0030715, APD:trait_0030716, APD:trait_0030717 ;
     skos:prefLabel "chemical stress sensitivity trait"@en .
 
@@ -26049,7 +26062,7 @@ APD:trait_0030704
     rdfs:label "environmental tolerance trait"@en ;
     rdfs:subClassOf APD:trait_0030001 ;
     skos:broader APD:trait_0030001 ;
-    skos:inScheme <https://w3id.org/APD/traits/> ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020813, APD:trait_0020814, APD:trait_0020815, APD:trait_0020816, APD:trait_0030022, APD:trait_0030212, APD:trait_0030710, APD:trait_0030711, APD:trait_0030712, APD:trait_0030713, APD:trait_0030714, APD:trait_0030715, APD:trait_0030716, APD:trait_0030717 ;
     skos:prefLabel "environmental tolerance trait"@en .
 

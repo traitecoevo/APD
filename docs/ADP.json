@@ -12779,6 +12779,22 @@
       }
     },
     {
+      "@id": "http://purl.org/dc/terms/reviewed",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."
+      },
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "date reviewed"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "date reviewed"
+      }
+    },
+    {
       "@id": "http://purl.org/dc/terms/subject",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "http://purl.org/dc/terms/created": {
@@ -15740,9 +15756,6 @@
         "@language": "en",
         "@value": "AusTraits Plant Dictionary"
       },
-      "http://www.w3.org/2004/02/skos/core#hasTopConcept": {
-        "@id": "https://w3id.org/APD/trait_0000000"
-      },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "AusTraits Plant Dictionary"
@@ -16426,25 +16439,30 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/trait_0000000",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
-        "@id": "https://w3id.org/APD"
+      "@id": "https://w3id.org/APD/traits",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#Class",
+        "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      ],
+      "http://purl.org/dc/terms/license": {
+        "@type": "xsd:anyURI",
+        "@value": "<https://creativecommons.org/licenses/by/4.0/>"
+      },
+      "http://purl.org/dc/terms/publisher": {
+        "@type": "xsd:anyURI",
+        "@value": "<https://austraits.org/>"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "AusTraits Plant Dictionary traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#hasTopConcept": {
+        "@id": "https://w3id.org/APD/traits/trait_0000000"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "AusTraits Plant Dictionary traits"
       }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/NA",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_moderate_fire_killed"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_resprout"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_fire_killed"
-        }
-      ]
     },
     {
       "@id": "https://w3id.org/APD/traits/bark_morphology_eucalyptus_eucalypt_box",
@@ -19663,93 +19681,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "fire_not_relevant"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_fire_killed",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Few to no juvenile plants resprout following fire."
-      },
-      "http://purl.org/dc/terms/identifier": "fire_response_juvenile_juvenile_fire_killed",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "juvenile_fire_killed"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "juvenile_fire_killed"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_moderate_fire_killed",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "25-50% of juvenile plants resprout following fire."
-      },
-      "http://purl.org/dc/terms/identifier": "fire_response_juvenile_juvenile_moderate_fire_killed",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "juvenile_moderate_fire_killed"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "juvenile_moderate_fire_killed"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/fire_response_juvenile_juvenile_resprout",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "More than 50% of juvenile plants survive and resprout following fire."
-      },
-      "http://purl.org/dc/terms/identifier": "fire_response_juvenile_juvenile_resprout",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "juvenile_resprout"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/NA"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "juvenile_resprout"
       }
     },
     {
@@ -33006,6 +32937,93 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_fire_killed",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Few to no juvenile plants resprout following fire."
+      },
+      "http://purl.org/dc/terms/identifier": "resprouting_capacity_juvenile_juvenile_fire_killed",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "juvenile_fire_killed"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "juvenile_fire_killed"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_moderate_fire_killed",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "25-50% of juvenile plants resprout following fire."
+      },
+      "http://purl.org/dc/terms/identifier": "resprouting_capacity_juvenile_juvenile_moderate_fire_killed",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "juvenile_moderate_fire_killed"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "juvenile_moderate_fire_killed"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_resprout",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "More than 50% of juvenile plants survive and resprout following fire."
+      },
+      "http://purl.org/dc/terms/identifier": "resprouting_capacity_juvenile_juvenile_resprout",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "juvenile_resprout"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030613"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "juvenile_resprout"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/resprouting_capacity_no_significant_resprouting_capacity",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -38025,8 +38043,8 @@
     {
       "@id": "https://w3id.org/APD/traits/trait_0000000",
       "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://www.w3.org/2004/02/skos/core#Concept",
+        "http://www.w3.org/2002/07/owl#Class"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
@@ -38041,7 +38059,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000387"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -38060,6 +38078,9 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "plant trait"
+      },
+      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
+        "@id": "https://w3id.org/APD/traits"
       }
     },
     {
@@ -38087,7 +38108,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000277"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -38130,7 +38151,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000465"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -38179,7 +38200,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -38216,7 +38237,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000006"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -40354,7 +40375,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000006"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -41713,7 +41734,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -41936,7 +41957,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000206"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -42540,7 +42561,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000206"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -43087,7 +43108,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -44077,7 +44098,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -44324,7 +44345,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -45377,7 +45398,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -46652,7 +46673,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000281"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -46701,7 +46722,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000291"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -46771,7 +46792,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0002004"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": {
         "@id": "https://w3id.org/APD/traits/trait_0002544"
@@ -46806,7 +46827,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0020076"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -46855,7 +46876,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000494"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -46916,7 +46937,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000598"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -49376,7 +49397,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000002"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -50560,7 +50581,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000017"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -50606,7 +50627,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000398"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -51273,7 +51294,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000064"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -51990,7 +52011,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0010001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -52060,7 +52081,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000748"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -52196,7 +52217,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0002637"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -52257,7 +52278,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000505"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -54374,7 +54395,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000492"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -56329,7 +56350,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000541"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -57026,7 +57047,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000843"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -57093,7 +57114,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0002683"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -58482,7 +58503,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0011202"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -59031,7 +59052,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0011202"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -59403,7 +59424,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000361"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -59989,7 +60010,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0011802"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -60612,7 +60633,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0011001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -60673,7 +60694,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0012002"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -61219,7 +61240,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000985"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -61262,7 +61283,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000043"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -61335,7 +61356,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0012102"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -61364,7 +61385,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0012102"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -62370,7 +62391,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000786"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -62576,7 +62597,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0012202"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -62631,7 +62652,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000275"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -62701,7 +62722,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000994"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -62774,7 +62795,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0012404"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -66321,7 +66342,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0002629"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -67553,7 +67574,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000184"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -69573,7 +69594,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000470"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -69628,7 +69649,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000820"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -70267,7 +70288,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0013001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -71829,7 +71850,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0010001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -72814,7 +72835,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000283"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -72854,7 +72875,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -72897,7 +72918,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020202"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -72985,7 +73006,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0001015"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -73037,7 +73058,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020204"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -73080,7 +73101,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020204"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -73123,7 +73144,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020204"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -77799,7 +77820,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020202"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -78277,7 +78298,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -80205,7 +80226,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0020001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -80400,7 +80421,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0000000"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -80470,7 +80491,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -80561,7 +80582,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000933"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -80628,7 +80649,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -83501,7 +83522,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -85439,7 +85460,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -87442,7 +87463,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -87850,6 +87871,17 @@
       },
       "http://www.w3.org/2004/02/skos/core#closeMatch": "Species tolerance to fire [TRY:318]; Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)",
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
+      "http://www.w3.org/2004/02/skos/core#narrower": [
+        {
+          "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_moderate_fire_killed"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_resprout"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/resprouting_capacity_juvenile_juvenile_fire_killed"
+        }
+      ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "Post-fire resprouting capacity of juvenile plants"
@@ -89572,7 +89604,7 @@
         "@id": "http://purl.obolibrary.org/obo/TO_0000482"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
@@ -89612,7 +89644,7 @@
         "@id": "https://w3id.org/APD/traits/trait_0030001"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits/"
+        "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
