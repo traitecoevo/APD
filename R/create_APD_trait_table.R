@@ -107,7 +107,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   }
 
   # categorical values (has narrower)
-    if(value_type$value == "categorical variable") {
+    if(value_type$value == "categorical variable" & !altlabel$value %in% c("flowering_time", "fruiting_time")) {
       
       categorical_narrower <- trait_i %>%
         filter(property == "has narrower")
@@ -137,7 +137,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   
   output <-
     add_row(output, 
-            grouping$property_link,
+            grouping$property_link[1],
             print_list2(grouping$value_link)
             ) 
   
@@ -348,7 +348,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
     
     output <-
       add_row(output, 
-              grouping$property_link,
+              grouping$property_link[1],
               print_list2(grouping$value_link)
               ) 
   
@@ -421,7 +421,7 @@ create_APD_categorical_values_table <- function(thistrait, triples_with_labels) 
   
   output <-
     add_row(output,
-            broader_tmp$property_link,
+            broader_tmp$property_link[1],
             broader_tmp$value_link
     )
   

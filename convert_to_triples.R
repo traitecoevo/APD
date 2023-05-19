@@ -271,7 +271,7 @@ reformatted_traits <- traits_csv %>%
     SubClassOf_3 = category_3,
     SubClassOf_4 = category_4,
     created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
-    modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
+    reviewed = ifelse(!is.na(reviewed), paste0("\"", reviewed, "\"", "^^<xsd:date>"), NA),
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
     structure_1 = ifelse(!is.na(structure_1), paste0("<", published_classes_csv$Entity[match(structure_1, published_classes_csv$identifier)], ">"), NA),
@@ -362,7 +362,7 @@ reformatted_traits <- traits_csv %>%
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>3` = SubClassOf_3,
     `<http://www.w3.org/2000/01/rdf-schema#subClassOf>4` = SubClassOf_4,
     `<http://purl.org/dc/terms/created>`= created,
-    `<http://purl.org/dc/terms/modified>`= modified,
+    `<http://purl.org/dc/terms/reviewed>`= reviewed,
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,
     `<http://www.w3.org/2004/02/skos/core#scopeNote>`= constraints,
     `<https://w3id.org/iadopt/ont/hasContextObject>`= structure_1,
@@ -561,7 +561,7 @@ triples_with_labels <- triples_df %>%
          value = ifelse(property == "sub class of" & Subject %in% reformatted_hierarchy$Subject,
                         hierarchy_csv$label[match(Object_stripped, hierarchy_csv$Entity)], value), #match hierarchical levels, within file
          value = ifelse(property == "has narrower" & Subject %in% reformatted_categorical$Subject,
-                        categorical_values_csv$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values_csv$Entity))], value), #match traits to categorical
+                        categorical_values_csv$Entity[match(Object_stripped, categorical_values_csv$Entity)], value), #match traits to categorical
          value = ifelse(property == "has broader" & Subject %in% reformatted_categorical$Subject,
                         traits_csv$label[match(Object_stripped, traits_csv$Entity)], value),
          value = ifelse(property == "sub class of" & Subject %in% reformatted_categorical$Subject,
@@ -569,7 +569,7 @@ triples_with_labels <- triples_df %>%
          value = ifelse(property == "has narrower" & Subject_stripped %in% hierarchy_csv$Entity & Object_stripped %in% hierarchy_csv$Entity,
                         hierarchy_csv$label[match(Object_stripped, hierarchy_csv$Entity)], value),
          value = ifelse(property == "has narrower" & Subject_stripped %in% hierarchy_csv$Entity & !Object_stripped %in% hierarchy_csv$Entity,
-                        traits_csv$label[match(Object_stripped, paste0("https://w3id.org/APD/traits/",traits_csv$identifier))], value),
+                        traits_csv$label[match(Object_stripped, traits_csv$Entity)], value),
          value = ifelse(property == "has narrower" & Subject %in% reformatted_traits$Subject,
                         traits_csv$label[match(Object_stripped, traits_csv$Entity)], value),
          value = ifelse(property == "has broader" & Subject %in% reformatted_traits$Subject,
@@ -579,7 +579,7 @@ triples_with_labels <- triples_df %>%
          value = ifelse(property == "has top concept" & Subject == "<https://w3id.org/APD/glossary>",
                         glossary_csv$label[match(Object_stripped, glossary_csv$Entity)], value),
          value = ifelse(property == "has narrower" & Subject %in% reformatted_traits$Subject,
-                        categorical_values_csv$Entity[match(Object_stripped, paste0("https://w3id.org/APD/traits/",categorical_values_csv$Entity))], value), #match traits to categorical
+                        categorical_values_csv$identifier[match(Object_stripped, categorical_values_csv$Entity)], value), #match traits to categorical
          value = ifelse(property == "references", references_csv$label[match(Object_stripped, references_csv$Entity)], value),
          value = ifelse(property == "reviewed by", reviewers_csv$label[match(Object_stripped, reviewers_csv$Entity)], value),
          value = ifelse(property == "unit" & stringr::str_detect(Object, "https"), units_csv$label[match(Object_stripped, units_csv$Entity)], value),
@@ -593,7 +593,7 @@ triples_with_labels <- triples_df %>%
          value = stringr::str_replace(value, "[:punct:]$",""),
          value = stringr::str_replace(value, "^[:punct:]",""),
          Object_stripped = stringr::str_replace(Object_stripped, "\\@en", ""),
-         Object_stripped = stringr::str_replace(Object_stripped, "\\^\\^\\<xsd\\:date\\>",""),
+         Object_stripped = stringr::str_replace(Object_stripped, "\\^\\^\\<xsd\\:date\\>",""), 
          Object_stripped = stringr::str_replace(Object_stripped, "\\^\\^\\<xsd\\:anyURI\\>",""),
          Object_stripped = stringr::str_replace(Object_stripped, "[:punct:]$",""),
          Object_stripped = stringr::str_replace(Object_stripped, "^[:punct:]","")
