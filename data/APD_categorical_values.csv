@@ -83,27 +83,27 @@ seed_dormancy_class_physical_dormancy,physical_dormancy,Seeds exhibit physical d
 seed_dormancy_class_physiological_dormancy,physiological_dormancy,Seeds exhibit physiological dormancy.,seed_dormancy_class
 embryo_colour_colourless,colourless,Colourless embryo.,embryo_colour
 embryo_colour_green,green,Green embryo.,embryo_colour
-fire_exposure_level_fire_not_relevant,fire_not_relevant,Plants are aquatic and they are never affected by fire.,fire_exposure_level
-fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,"The plants' habitat is restricted to rocky outcrops or rock pavement, where they rarely experience fire.",fire_exposure_level
-resprouting_capacity_fire_killed,fire_killed,Fewer than 30% of plants resprout following a hot fire.,resprouting_capacity
-resprouting_capacity_resprouts,resprouts,More than 70% of plants resprout following a hot fire.,resprouting_capacity
-resprouting_capacity_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a hot fire.,resprouting_capacity
-resprouting_capacity_no_significant_resprouting_capacity,no_significant_resprouting_capacity,Plants are rarely killed by a moderate-intensity fire but also do not resprout.,resprouting_capacity
-resprouting_capacity_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire.,resprouting_capacity_juvenile
-resprouting_capacity_juvenile_juvenile_resprout,juvenile_resprout,More than 50% of juvenile plants survive and resprout following fire.,resprouting_capacity_juvenile
-resprouting_capacity_juvenile_juvenile_moderate_fire_killed,juvenile_moderate_fire_killed,25-50% of juvenile plants resprout following fire.,resprouting_capacity_juvenile
-fire_response_on_maturity_remain_mature,remain_mature,Mature plants remain mature following fire.,fire_response_on_maturity
-fire_response_on_maturity_mature_to_juvenile,mature_to_juvenile,Mature plants become juvenile following fire.,fire_response_on_maturity
-fire_response_on_maturity_mature_do_not_resprout,mature_do_not_resprout,Mature plants do not resprout following fire.,fire_response_on_maturity
-post_fire_recruitment_post_fire_recruitment,post_fire_recruitment,Plants that germinate robustly post-fire.,post_fire_recruitment
-post_fire_recruitment_post_fire_recruitment_moderate,post_fire_recruitment_moderate,Plants with a moderate number of seedlings present post-fire.,post_fire_recruitment
+fire_exposure_level_aquatic_taxon,aquatic_taxon,Plants rarely or never experience fires because they are aquatic.,fire_exposure_level
+fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,Plants rarely experience fires because their habitat is restricted to rocky outcrops or rock pavement.,fire_exposure_level
+fire_exposure_level_fire_avoidance_near_water,fire_avoidance_near_water,Plants rarely or never experience fires because their habitat is close to a body of water.,fire_exposure_level
+fire_exposure_level_fire_avoidance_in_swamp,fire_avoidance_in_swamp,"Plants rarely experience fires because their habitat is usually saturated, but populations can be catastrophically impacted during severe droughts when the swamps dry out.",fire_exposure_level
+fire_exposure_level_seasonal_fire_avoidance,seasonal_fire_avoidance,"Plants avoid fire by only have above-ground parts during seasons when fire is rare or absent, but populations can be catastrophically impacted if fire occurs during an atypical season.",fire_exposure_level
+resprouting_capacity_fire_killed,fire_killed,Fewer than 30% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_resprouts,resprouts,More than 70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+resprouting_capacity_juvenile_juvenile_resprout,juvenile_resprout,More than 50% of juvenile plants survive and resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+resprouting_capacity_juvenile_juvenile_moderate_fire_killed,juvenile_moderate_fire_killed,25-50% of juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+post_fire_recruitment_post_fire_recruitment,post_fire_recruitment,Plants that germinate post-fire.,post_fire_recruitment
 post_fire_recruitment_no_post_fire_recruitment,no_post_fire_recruitment,Plants where there is no germination and seedling establishment post-fire.,post_fire_recruitment
 flower_colour_blue_purple,blue_purple,Flower colour is blue or purple.,flower_colour
 flower_colour_green,green,Flower colour is green.,flower_colour
 flower_colour_pink,pink,Flower colour is pink.,flower_colour
 flower_colour_red_brown,red_brown,Flower colour is red or brown.,flower_colour
 flower_colour_white_cream,white_cream,Flower colour is white or cream.,flower_colour
-flower_colour_yellow_orange,yellow_orange,Flower colour is yellow orange.,flower_colour
+flower_colour_yellow_orange,yellow_orange,Flower colour is yellow or orange.,flower_colour
+flower_colour_grey,grey,Flower colour is grey.,flower_colour
+flower_colour_black,black,Flower colour is black.,flower_colour
 flowering_cues_rain,rain,"Plants increase flowering in response to rain, but the time of year is not specified.",flowering_cues
 flowering_cues_rain_obligate,rain_obligate,Plants only flower following rain events.,flowering_cues
 flowering_cues_rain_all_year,rain_all_year,Plants increase flowering in response to rain at any time of the year.,flowering_cues
@@ -131,16 +131,16 @@ flower_perianth_symmetry_zygomorphic,zygomorphic,"Monosymmetric, with a single p
 flower_perianth_phyllotaxis_irregular,irregular,Perianth parts lacking any symmetrical organisation.,flower_perianth_phyllotaxis
 flower_perianth_phyllotaxis_spiral,spiral,"Perianth parts organised along a continuous spiral, usually with wide divergence angles more or less equal to 137.5 degrees, the Fibonacci 'golden angle'.",flower_perianth_phyllotaxis
 flower_perianth_phyllotaxis_whorled,whorled,Perianth parts organised in one or more whorls.,flower_perianth_phyllotaxis
-flower_perianth_differentiation_undifferentiated,undifferentiated,All tepals alike; includes a single undifferentiated whorl,flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_outer_sepaloid_inner_petaloid,marked_differentiation_outer_sepaloid_inner_petaloid,A typical flower with calyx and corolla,flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_among_petaloid_tepals,marked_differentiation_among_petaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_among_sepaloid_tepals,marked_differentiation_among_sepaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation,marked_differentiation,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_outer_sepaloid_inner_petaloid,continuous_differentiation_outer_sepaloid_inner_petaloid,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_among_petaloid_tepals,continuous_differentiation_among_petaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_among_sepaloid_tepals,continuous_differentiation_among_sepaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_weak_differentiation,weak_differentiation,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_very_weak_differentiation,very_weak_differentiation,[unknown],flower_perianth_differentiation
+flower_perianth_differentiation_undifferentiated,undifferentiated,"Flower were all tepals are alike, including flowers with a single, undifferentiated whorl.",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_outer_sepaloid_inner_petaloid,marked_differentiation_outer_sepaloid_inner_petaloid,A typical flower with a distinct calyx and corolla.,flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_among_petaloid_tepals,marked_differentiation_among_petaloid_tepals,"A flower with tepals that all resemble petals, but with marked differentiation between whorls of tepals. ",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_among_sepaloid_tepals,marked_differentiation_among_sepaloid_tepals,"A flower with tepals that all resemble sepals, but with marked differentiation between whorls of tepals. ",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation,marked_differentiation,"A flower with marked differentiation between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_outer_sepaloid_inner_petaloid,continuous_differentiation_outer_sepaloid_inner_petaloid,"A flower with multiple whorls, where there is continuous differentiation between the outer sepaloid parts and the inner petaloid parts.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_among_petaloid_tepals,continuous_differentiation_among_petaloid_tepals,"A flower with series of tepals that all resemble petals, which display continuous, gradual differentiation between whorls.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_among_sepaloid_tepals,continuous_differentiation_among_sepaloid_tepals,"A flower with series of tepals that all resemble sepals, which display continuous, gradual differentiation between whorls.",flower_perianth_differentiation
+flower_perianth_differentiation_weak_differentiation,weak_differentiation,"A flower with weak between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_very_weak_differentiation,very_weak_differentiation,"A flower with very weak between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
 flower_filament_absent,absent,No filaments present,flower_filament
 flower_filament_present_general,present_general,"Filaments present, with no specific defining characteristics.",flower_filament
 flower_filament_long_and_narrow,long_and_narrow,"Filaments have a long and narrow shape. (Synonyms, filiform, slender)",flower_filament
@@ -162,7 +162,9 @@ flower_anther_attachment_dorsifixed,dorsifixed,Filament attached to the dorsal s
 flower_anther_attachment_dorsifixed_at_base,dorsifixed_at_base,"Filament attached to the dorsal side of the anther, at the base.",flower_anther_attachment
 flower_anther_attachment_ventrifixed,ventrifixed,Filament attached to the ventral side of the anther.,flower_anther_attachment
 flower_anther_dehiscence_longitudinal_slit,longitudinal_slit,Anther with longitudinal slits that extend along the entire length of each theca.,flower_anther_dehiscence
-flower_anther_dehiscence_poricidal,poricidal,"Anther where dehiscence of longitudinal slits is incomplete, with pollen exiting via a small pore.",flower_anther_dehiscence
+flower_anther_dehiscence_poricidal,poricidal,"Anther where dehiscence of longitudinal slits is incomplete, with pollen exiting via a small pore at the tip.",flower_anther_dehiscence
+flower_anther_dehiscence_pores_many,pores_many,Anther with pollen exiting from many pores along its length.,
+flower_anther_dehiscence_circular,circular,Anther with a transverse slit that goes entirely around the anther.,
 flower_anther_dehiscence_h_valvate,h_valvate,"Anther with two valves on longitudinal hinges, opening horizontally as salon doors; when the stomium bifurcates at its distal and/or proximal end and thus a valve is formed.",flower_anther_dehiscence
 flower_anther_dehiscence_flap_valvate,flap_valvate,"Anther with one or more flap-like valves on horizontal hinges, opening vertically.",flower_anther_dehiscence
 flower_anther_dehiscence_transverse_slit,transverse_slit,Anther with horizontal slit.,flower_anther_dehiscence
@@ -170,7 +172,7 @@ flower_anther_dehiscence_short_basal_slits,short_basal_slits,Anther where dehisc
 flower_anther_dehiscence_short_central_slits,short_central_slits,Anther where dehiscence of longitudinal slits is incomplete and only occurs over a short extent at the center of the theca.,flower_anther_dehiscence
 flower_anther_dehiscence_short_apical_slits,short_apical_slits,Anther where dehiscence of longitudinal slits is incomplete and only occurs over a short extent at the apical end of the theca.,flower_anther_dehiscence
 flower_anther_dehiscence_t_valvate,t_valvate,Anther with T-shaped stomium; reduced transverse slit at base.,flower_anther_dehiscence
-flower_anther_dehiscence_common_stomium_confluent_thecae,common_stomium_confluent_thecae,(uncertain),flower_anther_dehiscence
+flower_anther_dehiscence_common_stomium_confluent_thecae,common_stomium_confluent_thecae,The two thecae of a single anther are fused at one end with a single pore through which pollen exits.,flower_anther_dehiscence
 flower_anther_connective_extension_absent,absent,Apical connective extensions are lacking.,flower_anther_connective_extension
 flower_anther_connective_extension_short_extension,short_extension,Connective extension less than a third of the length of anther.,flower_anther_connective_extension
 flower_anther_connective_extension_long_extension,long_extension,Connective extension more than a third but less than length of anther; e.g. Idiospermum australiense.,flower_anther_connective_extension
@@ -197,11 +199,11 @@ flower_gynoecium_placentation_parietal,parietal,Ovules attach to the ovary wall 
 flower_gynoecium_placentation_marginal,marginal,Ovules attach along the ventral slit; in apocarpous and unicarpellate gynoecia.,flower_gynoecium_placentation
 flower_gynoecium_placentation_free_central,free_central,Ovules are attached to a central column that emerges from the base of the ovary and protrudes into the non-septate ovary; in syncarpous gynoecia.,flower_gynoecium_placentation
 flower_gynoecium_placentation_laminar,laminar,When there is more than one series of ovules at the flanks of a carpel; in syncarpous gynoecia and apocarpous and unicarpellate gynoecia.,flower_gynoecium_placentation
-flower_pollen_aperture_shape_absent,absent,(uncertain),flower_pollen_aperture_shape
+flower_pollen_aperture_shape_absent,absent,Pollen that lacks an aperture.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_colporus,colporus,Pollen aperture shape that combines the groove of colpate and the pore of porate apertures.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_colpus,colpus,Pollen aperture shape is elongate and grooved and may be positioned globally or equatorially.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_pore,pore,Pollen aperture shape is round and pore-like and may be positioned globally or equatorially.,flower_pollen_aperture_shape
-flower_pollen_aperture_shape_ring_like,ring_like,(uncertain),flower_pollen_aperture_shape
+flower_pollen_aperture_shape_ring_like,ring_like,Aperture that completely encircles the pollen.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_spiraperturate,spiraperturate,Pollen grain with one or more spiral apertures.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_sulcus,sulcus,Pollen aperture shape is elongate and grooved and positioned at the pole.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_syncolpus,syncolpus,"Pollen grain with two or more simple (or compound) colpi, the ends of which join at the pole.",flower_pollen_aperture_shape
@@ -232,7 +234,7 @@ fruit_type_mericarp,mericarp,"A fruitlet (seed-containing portion of a fruit) th
 fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits. (Synonym, apocarp)",fruit_type
 fruit_type_nut,nut,"A simple, dry, indehiscent fruit with a single seed and a hard pericarp.",fruit_type
 fruit_type_nutlet,nutlet,"A diminutive of nut, referring to a simple, dry, indehiscent structure with a single seed that might be an entire fruit (nut; monocarp) or a portion of a fruit, such as the individual components derived from an apocarp (fruit with multiple unfused ovaries) or schizocarp (fruit with multiple ovaries that separate at maturity).",fruit_type
-fruit_type_pepo,pepo,XXX,fruit_type
+fruit_type_pepo,pepo,"A fleshy fruit derived from a single ovary that is divided into several carpels, has multiple seeds, and has a tough rind when mature.",fruit_type
 fruit_type_pome,pome,A fleshy fruit with the bulk of the fleshy tissue derived from flora tissue that surrounds the inferior ovary.,fruit_type
 fruit_type_pyrene,pyrene,A fleshy fruit in which the seed(s) are covered by a hard layer of endocarp.,fruit_type
 fruit_type_samara,samara,"A winged, dry fruit.",fruit_type
@@ -754,3 +756,13 @@ perianth_colour_green,green,Perianth colour is green.,perianth_colour
 perianth_colour_grey,grey,Perianth colour is grey.,perianth_colour
 perianth_colour_brown,brown,Perianth colour is brown.,perianth_colour
 perianth_colour_black,black,Perianth colour is black.,perianth_colour
+recruitment_season_spring,spring,Seed germination and seedling establishment occurs in spring.,recruitment_season
+recruitment_season_summer,summer,Seed germination and seedling establishment occurs in summer.,recruitment_season
+recruitment_season_autumn,autumn,Seed germination and seedling establishment occurs in autumn.,recruitment_season
+recruitment_season_winter,winter,Seed germination and seedling establishment occurs in winter.,recruitment_season
+seedling_establishment_conditions_establish_post_fire,establish_post_fire,Seedling establishment occurs following fire.,seedling_establishment_conditions
+seedling_establishment_conditions_establish_post_disturbance,establish_post_disturbance,"Seedling establishment occurs following disturbances that increase light levels at the ground surface, but the type of disturbance is not documented.",seedling_establishment_conditions
+seedling_establishment_conditions_establish_anytime,establish_anytime,"Seedlings can establish immediately following a disturbance and in later years as vegetation ages, right thru to mature and over-mature vegetation",seedling_establishment_conditions
+seedling_establishment_conditions_establish_intermediate_to_mature_vegetation,establish_intermediate_to_mature_vegetation,"Seedlings require some environmental characteristics not found in vegetation straight after fires to establish, for they cannot establish within the first season or two after fire but can establish in older vegetation (including mature to over-mature vegetation). ",seedling_establishment_conditions
+,,,
+,,,

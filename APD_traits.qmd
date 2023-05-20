@@ -28,9 +28,12 @@ date: "2023.03.10"
 ---
 
 ```{r, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
-simplified <- TRUE
+simplified <- FALSE
 
-traits <- c("leaf_shape", "leaf_photosynthetic_rate_per_area_ambient", "leaf_photosynthetic_rate_per_area_maximum", "leaf_photosynthetic_rate_per_area_saturated")
+traits <- c("recruitment_season","reproductive_maturity","resprouting_capacity","resprouting_capacity_proportion_individuals","resprouting_capacity_juvenile",
+"resprouting_capacity_time_from_germination","resprouting_capacity_stem_ratio","fire_exposure_level","post_fire_recruitment","post_fire_flowering",
+"fire_time_from_fire_to_flowering","fire_time_from_fire_to_50_percent_flowering","fire_time_from_fire_to_peak_flowering","fire_time_from_fire_to_flowering_decline",
+"fire_time_from_fire_to_fruiting","fire_time_from_fire_to_50_percent_fruiting","plant_tolerance_fire", "seedling_establishment_conditions")
 ```
 
 
@@ -46,7 +49,7 @@ source("R/helpers.R")
 
 APD <- read_csv("data/APD_traits.csv")
 hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
-classes <- read_csv("data/ontology_links.csv")
+classes <- read_csv("data/published_classes.csv")
 reviewers <- read_csv("data/APD_reviewers.csv")
 units <- read_csv("data/APD_units.csv")
 references <- read_csv("data/APD_references.csv")
@@ -74,41 +77,6 @@ This document describes the schema available from the APD namespace.
 The APD is a compilation of the traits concepts used by AusTraits, a database of Australian plant traits. APD includes definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. The metadata for each trait concept has been reviewed by multiple people. Metadata includes a trait definition, excepted units and ranges (for numeric traits), allowable values (for categorical traits), keywords and trait groupings to enhance trait findability, references, and links to identical/similar traits in other trait databases. APD will be published in a machine-readable format (an owl ontology), allowing the traits to be readily re-used by other databases. This is a human-friendly output, with embedded links to the references, other trait databases and keywords/concepts borrowed from other ontologies
 
 The APD is a community resource and we welcome any suggestions for edits, including additional key references for each trait or other trait databases for which we should add links. 
-
-# APD Schema Overview
-
-The following table gives an overview of the APD voabulary. This document includes the folliwng sections
-
-- [Trait concepts](#trait-concepts): XXX
-- [Trait groups](#trait-groupings): XXX
-- [Values for categorical traits](#values-for-categorical-traits): XXXX
-- [Glossary](#glossary): XXXX
-
-# Hierachical trait groupings
-
-XXX
-
-# Example html table
-```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-library(gt)
-library(purrr)
-
-df <- tibble(
-  country = c("UK", "US"),
-  name = c("BBC", "CNN"),
-  link = c("https://www.bbc.com/news", "https://edition.cnn.com/"))
-  
-# using html
-df %>%
-    mutate(
-        link = map2(name, link, name, ~ make_link(.x, .y)),
-        link2 = map(link, ~ paste("A ", .x) %>% gt::html()),
-        link3 = map(link, ~ paste_html("A ", .x, "3"))
-        ) -> A
-  
-A %>%
-    gt()
-```
 
 # Trait concepts
 
