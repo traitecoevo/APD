@@ -62,3 +62,5 @@ https://w3id.org/uom/umol.umol-1,micromole per micromole, ,A unit which is equal
 https://w3id.org/uom/%5Bppm%5D,parts per million, , , ,[ppm], , , ,http://vocab.nerc.ac.uk/collection/P06/current/UPPM,http://qudt.org/vocab/unit/PPM,http://www.ontology-of-units-of-measure.org/resource/om-2/partsPerMillion,http://purl.obolibrary.org/obo/UO_0000169, , , ,,,,
 https://w3id.org/uom/%5Bppth%5D,parts per thousand, , , ,[ppth], , , ,http://purl.obolibrary.org/obo/UO_0000168,http://vocab.nerc.ac.uk/collection/P06/current/UPPT,http://ecoinformatics.org/oboe/oboe.1.2/oboe-standards.owl#PartPerThousand,http://qudt.org/vocab/unit/PPTH, , , ,,,,
 https://w3id.org/uom/mm2.um,square millimetre micrometre, ,A unit which is equal to 10⁻³ square metre by 10⁻⁶ metre.,mm2 um,mm2.um, , , , , , , , , , ,,,,
+https://w3id.org/uom/m3.h-1.m-2,cubic metre per hour square metre,,A unit which is equal to 1 cubic metre per 1 hour by 1 square metre.,m3 h-1 m-2,m3/h/m2,m3.h-1.m-2,,,,,,,,,,,,,
+https://w3id.org/uom/kg.m-3.MPa-1,kilogram per cubic metre megapascal,,A unit which is equal to 10³ gram per 1 cubic metre by 10⁶ pascal.,kg m-3 MPa-1,kg/m3/MPa,kg.m-3.MPa-1,,,,,,,,,,,,,
