@@ -17,9 +17,9 @@ Subject,Predicate,Object
 <https://w3id.org/APD/traits>,<http://www.w3.org/2000/01/rdf-schema#label>,"""AusTraits Plant Dictionary traits""@en"
 <https://w3id.org/APD/traits>,<http://purl.org/dc/terms/license>,"""<https://creativecommons.org/licenses/by/4.0/>""^^<xsd:anyURI>"
 <https://w3id.org/APD/traits>,<http://purl.org/dc/terms/publisher>,"""<https://austraits.org/>""^^<xsd:anyURI>"
-https://w3id.org/APD/traits,<http://purl.org/dc/terms/title>,"""AusTraits Plant Dictionary traits""@en"
+<https://w3id.org/APD/traits>,<http://purl.org/dc/terms/title>,"""AusTraits Plant Dictionary traits""@en"
 <https://w3id.org/APD/traits>,<http://www.w3.org/2004/02/skos/core#prefLabel>,"""AusTraits Plant Dictionary traits""@en"
 <https://w3id.org/APD/traits>,<http://www.w3.org/2004/02/skos/core#hasTopConcept>,<https://w3id.org/APD/traits/trait_0000000>
 <https://w3id.org/APD/traits/trait_0000000>,<http://www.w3.org/2004/02/skos/core#topConceptOf>,<https://w3id.org/APD/traits>
-<https://w3id.org/APD/traits/trait_0000000>,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,<http://www.w3.org/2004/02/skos/core#Concept>
+<https://w3id.org/APD/traits/trait_0000000>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,<http://www.w3.org/2004/02/skos/core#Concept>
 <https://w3id.org/APD/traits/trait_0000000>,<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2,<http://www.w3.org/2002/07/owl#Class>

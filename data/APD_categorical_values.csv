@@ -163,8 +163,8 @@ flower_anther_attachment_dorsifixed_at_base,dorsifixed_at_base,"Filament attache
 flower_anther_attachment_ventrifixed,ventrifixed,Filament attached to the ventral side of the anther.,flower_anther_attachment
 flower_anther_dehiscence_longitudinal_slit,longitudinal_slit,Anther with longitudinal slits that extend along the entire length of each theca.,flower_anther_dehiscence
 flower_anther_dehiscence_poricidal,poricidal,"Anther where dehiscence of longitudinal slits is incomplete, with pollen exiting via a small pore at the tip.",flower_anther_dehiscence
-flower_anther_dehiscence_pores_many,pores_many,Anther with pollen exiting from many pores along its length.,
-flower_anther_dehiscence_circular,circular,Anther with a transverse slit that goes entirely around the anther.,
+flower_anther_dehiscence_pores_many,pores_many,Anther with pollen exiting from many pores along its length.,flower_anther_dehiscence
+flower_anther_dehiscence_circular,circular,Anther with a transverse slit that goes entirely around the anther.,flower_anther_dehiscence
 flower_anther_dehiscence_h_valvate,h_valvate,"Anther with two valves on longitudinal hinges, opening horizontally as salon doors; when the stomium bifurcates at its distal and/or proximal end and thus a valve is formed.",flower_anther_dehiscence
 flower_anther_dehiscence_flap_valvate,flap_valvate,"Anther with one or more flap-like valves on horizontal hinges, opening vertically.",flower_anther_dehiscence
 flower_anther_dehiscence_transverse_slit,transverse_slit,Anther with horizontal slit.,flower_anther_dehiscence
@@ -764,5 +764,3 @@ seedling_establishment_conditions_establish_post_fire,establish_post_fire,Seedli
 seedling_establishment_conditions_establish_post_disturbance,establish_post_disturbance,"Seedling establishment occurs following disturbances that increase light levels at the ground surface, but the type of disturbance is not documented.",seedling_establishment_conditions
 seedling_establishment_conditions_establish_anytime,establish_anytime,"Seedlings can establish immediately following a disturbance and in later years as vegetation ages, right thru to mature and over-mature vegetation",seedling_establishment_conditions
 seedling_establishment_conditions_establish_intermediate_to_mature_vegetation,establish_intermediate_to_mature_vegetation,"Seedlings require some environmental characteristics not found in vegetation straight after fires to establish, for they cannot establish within the first season or two after fire but can establish in older vegetation (including mature to over-mature vegetation). ",seedling_establishment_conditions
-,,,
-,,,
