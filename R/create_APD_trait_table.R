@@ -107,7 +107,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   }
 
   # categorical values (has narrower)
-    if(value_type$value == "categorical variable" & !altlabel$value %in% c("flowering_time", "fruiting_time")) {
+    if(value_type$value == "categorical variable" & !altlabel$value %in% c("flowering_time", "fruiting_time", "recruitment_time")) {
       
       categorical_narrower <- trait_i %>%
         filter(property == "has narrower")
