@@ -148,10 +148,6 @@ flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to 
 flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
 flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
 flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
-recruitment_season_spring,spring,Seed germination and seedling establishment occurs in spring.,recruitment_season
-recruitment_season_summer,summer,Seed germination and seedling establishment occurs in summer.,recruitment_season
-recruitment_season_autumn,autumn,Seed germination and seedling establishment occurs in autumn.,recruitment_season
-recruitment_season_winter,winter,Seed germination and seedling establishment occurs in winter.,recruitment_season
 flower_structural_sex_type_bisexual,bisexual,Hermaphrodite; flowers with both male and female reproductive organs.,flower_structural_sex_type
 flower_structural_sex_type_incompletely_unisexual,incompletely_unisexual,Male flowers with pistillodes and/or female flowers with staminodes.,flower_structural_sex_type
 flower_structural_sex_type_unisexual,unisexual,Flowers with either male or female reproductive organs.,flower_structural_sex_type
