@@ -39,20 +39,20 @@ Export various formats
 
 ```{r}
 triples_with_labels %>%
-  write_csv("docs/triples_with_labels.csv")
+  write_csv("triples_with_labels.csv")
 
 triples_df %>%
-  write_delim("docs/APD.nq", col_names=FALSE, escape="none", quote="none")
+  write_delim("APD.nq", col_names=FALSE, escape="none", quote="none")
 
 triples_df %>%
   select(-graph) %>%
-  write_delim("docs/APD.nt", col_names = FALSE, escape = "none", quote = "none")
+  write_delim("APD.nt", col_names = FALSE, escape = "none", quote = "none")
 
 # prove this parses correctly
-true_triples <- read_nquads("docs/APD.nq")
+true_triples <- read_nquads("APD.nq")
 
 # serialize to any format
-rdflib::rdf_serialize(true_triples, "docs/APD.ttl",
+rdflib::rdf_serialize(true_triples, "APD.ttl",
                       namespace = c(APD = "https://w3id.org/APD/traits/",
                                     APD_glossary = "https://w3id.org/APD/glossary/",
                                     dc = "http://purl.org/dc/elements/1.1/",
@@ -83,7 +83,7 @@ rdflib::rdf_serialize(true_triples, "docs/APD.ttl",
                                     SIO = "http://semanticscience.org/resource/",
                                     SWEET = "http://sweetontology.net/")
                                     )
-rdflib::rdf_serialize(true_triples, "docs/APD.json", format="jsonld")
+rdflib::rdf_serialize(true_triples, "APD.json", format="jsonld")
 ```
 
 
@@ -132,6 +132,12 @@ rdf_query(true_triples, sparql)
 # Build docs
 
 ```{r}
-quarto::quarto_render("index.qmd", output_file = "all")
+# Build the website
+quarto::quarto_render()
+
+files <- c("APD.nq", "APD.nt", "APD.ttl", "APD.json", "triples_with_labels.csv")
+
+file.copy(files, file.path("docs", files))
 ```
+
 

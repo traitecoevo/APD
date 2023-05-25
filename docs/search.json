@@ -1,0 +1,506 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "",
+    "text": "Latest version:\n\n\nhttps://w3id.org/APD/APD.html\n\n\n\nAuthors:\n\n\nElizabeth Wenk, Daniel Falster, Hervé Sauquet, Rowan Brownlee, Carl Boettiger\n\n\nContributors:\n\n\nTony Auld, Russell Barrett, Timothy Brodribb, Brendan Choat, David Coleman, Félix de Tombeur, Lily Dun, David Ellsworth, Rachael Gallagher, Carl Gosper, Lydia Guja, Gregory J. Jordan, Tom Le Breton, Andy Leigh, Patricia Lu-Irving, Belinda Medlyn, Rachael Nolan, Mark Ooi, Karen D. Sommerville, Ruby Stephens, Peter Vesk, Matthew White, Ian J. Wright, Sophie Yang\n\n\nDownload serialization:\n\n\n       \n\n\nLicense:\n\n\n\n\n\n\nCite as:\n\n\nWenk et al, APD ontology, Retrieved from: https://w3id.org/APD/0.1.0"
+  },
+  {
+    "objectID": "index.html#plant-trait",
+    "href": "index.html#plant-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant trait",
+    "text": "plant trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000000\n\n\n\n\nlabel\n\n\nplant trait\n\n\n\n\ndescription\n\n\nA measurable or observable characteristic of a cellular component [GO:0005575], biological process [GO:0008150] or molecular function [GO:0003674] that is part of, or has participant a plant anatomical entity [PO:0025131] and/or a plant structure development stage [PO:0009012]. This includes physiological, molecular and biochemical traits as well.\n\n\n\n\nhas narrower\n\n\n\nbiochemical trait\nplant morphology trait\nbiological process trait, physiological process trait\nlife history trait\n\n\n\n\nNA\n\n\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000000"
+  },
+  {
+    "objectID": "index.html#biochemical-trait",
+    "href": "index.html#biochemical-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "biochemical trait",
+    "text": "biochemical trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000002\n\n\n\n\nlabel\n\n\nbiochemical trait\n\n\n\n\ndescription\n\n\nA plant trait [TO:0000387] which is a quality of a chemical entity [CHEBI:24431], a plant metabolite [CHEBI:76924], or a molecular function [GO:0003674], which occurs in a cellular component [GO:0005575], plant anatomical entity [PO:0025131] or during a plant structure development stage [PO:0009012].\n\n\n\n\nhas narrower\n\n\n\nmineral and ion content trait\nmetabolite content trait\nstable isotope ratio determination\n\n\n\n\nhas broader\n\n\nplant trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000002"
+  },
+  {
+    "objectID": "index.html#mineral-and-ion-content-trait",
+    "href": "index.html#mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "mineral and ion content trait",
+    "text": "mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000004\n\n\n\n\nlabel\n\n\nmineral and ion content trait\n\n\n\n\ndescription\n\n\nA biochemical trait [TO:0000277] that is the amount of a particular mineral or ion constituent occurring in a plant anatomical entity [PO:0025131].\n\n\n\n\nhas narrower\n\n\n\nleaf mineral and ion content trait\nstem mineral and ion content trait\nbark mineral and ion content trait\nroot mineral and ion content trait\nreproductive shoot system mineral and ion content trait\ncell or tissue mineral and ion content trait\n\n\n\n\nhas broader\n\n\nbiochemical trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000004"
+  },
+  {
+    "objectID": "index.html#leaf-mineral-and-ion-content-trait",
+    "href": "index.html#leaf-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf mineral and ion content trait",
+    "text": "leaf mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000006\n\n\n\n\nlabel\n\n\nleaf mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on a leaf [PO:0025034].\n\n\n\n\nhas narrower\n\n\n\nlive leaf mineral and ion content trait\nsenesced leaf mineral and ion content trait\n\n\n\n\nhas broader\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000006"
+  },
+  {
+    "objectID": "index.html#live-leaf-mineral-and-ion-content-trait",
+    "href": "index.html#live-leaf-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "live leaf mineral and ion content trait",
+    "text": "live leaf mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000008\n\n\n\n\nlabel\n\n\nlive leaf mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on a live [PATO:0001421] leaf [PO:0025034].\n\n\n\n\nhas narrower\n\n\n\nLeaf aluminium (Al) content per unit leaf dry mass\nLeaf boron (B) content per unit leaf dry mass\nLeaf carbon (C) content per unit leaf dry mass\nLeaf calcium (Ca) content per unit leaf dry mass\nLeaf chlorine (Cl) content per unit leaf dry mass\nLeaf chromium (Cr) content per unit leaf dry mass\nLeaf cobalt (Co) content per unit leaf dry mass\nLeaf copper (Cu) content per unit leaf dry mass\nLeaf iron (Fe) content per unit leaf dry mass\nLeaf potassium (K) content per unit leaf area\nLeaf potassium (K) content per unit leaf dry mass\nLeaf magnesium (Mg) content per unit leaf dry mass\nLeaf manganese (Mn) content per unit leaf dry mass\nLeaf molybdenum (Mo) content per unit leaf dry mass\nLeaf nitrogen (N) content per unit leaf area\nLeaf nitrogen (N) content per unit leaf dry mass\nLeaf sodium (Na) content per unit leaf dry mass\nLeaf nickel (Ni) content per unit leaf dry mass\nLeaf phosphorus (P) content per unit leaf area\nLeaf phosphorus (P) content per unit leaf dry mass\nLeaf sulphur (S) content per unit leaf dry mass\nLeaf selenium (Se) content per unit leaf dry mass\nLeaf silicon (Si) content per unit leaf dry mass\nLeaf zinc (Zn) content per unit leaf dry mass\nLeaf carbon to nitrogen ratio (C/N\nLeaf nitrogen to phosphorus ratio (N/P) per unit leaf dry mass\nLeaf cell wall nitrogen (N) per unit cell wall dry mass\nLeaf cell wall nitrogen (N) per unit leaf N content\nLeaf ash content per unit leaf dry mass\nLeaf photosynthetic nitrogen use efficiency during Amax measurement (PNUE\nLeaf photosynthetic nitrogen use efficiency during Asat measurement (PNUE\nLeaf photosynthetic phosphorus use efficiency during Amax measurement PPUE\nLeaf photosynthetic phosphorus use efficiency during Asat measurement (PPUE\n\n\n\n\nhas broader\n\n\nleaf mineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000008"
+  },
+  {
+    "objectID": "index.html#senesced-leaf-mineral-and-ion-content-trait",
+    "href": "index.html#senesced-leaf-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "senesced leaf mineral and ion content trait",
+    "text": "senesced leaf mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000108\n\n\n\n\nlabel\n\n\nsenesced leaf mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on a senescent [PATO:0001487] leaf [PO:0025034].\n\n\n\n\nhas narrower\n\n\n\nSenesced leaf aluminium (Al) content per unit leaf dry mass\nSenesced leaf boron (B) content per unit leaf dry mass\nSenesced leaf carbon (C) content per unit leaf dry mass\nSenesced leaf calcium (Ca) content per unit leaf dry mass\nSenesced leaf copper (Cu) content per unit leaf dry mass\nSenesced leaf iron (Fe) content per unit leaf dry mass\nSenesced leaf potassium (K) content per unit leaf dry mass\nSenesced leaf magnesium (Mg) content per unit leaf dry mass\nSenesced leaf manganese (Mn) content per unit leaf dry mass\nSenesced leaf molybdenum (Mo) content per unit leaf dry mass\nSenesced leaf nitrogen (N) content per unit leaf dry mass\nSenesced leaf sodium (Na) content per unit leaf dry mass\nSenesced leaf nickel (Ni) content per unit leaf dry mass\nSenesced leaf phosphorus (P) content per unit leaf dry mass\nSenesced leaf sulphur (S) content per unit leaf dry mass\nSenesced leaf zinc (Zn) content per unit leaf dry mass\n\n\n\n\nhas broader\n\n\nleaf mineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000108"
+  },
+  {
+    "objectID": "index.html#stem-mineral-and-ion-content-trait",
+    "href": "index.html#stem-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "stem mineral and ion content trait",
+    "text": "stem mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000206\n\n\n\n\nlabel\n\n\nstem mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on a stem [PO:0009047].\n\n\n\n\nhas narrower\n\n\n\nwood mineral and ion content trait\nsenesced wood mineral and ion content trait\nStem carbon (C) content per unit stem dry mass\nStem nitrogen (N) content per unit stem dry mass\nBark aluminium (Al) content per unit bark dry mass\nBark boron (B) content per unit bark dry mass\nBark carbon (C) content per unit bark dry mass\nBark calcium (Ca) content per unit bark dry mass\nBark copper (Cu) content per unit bark dry mass\nBark iron (Fe) content per unit bark dry mass\nBark potassium (K) content per unit bark dry mass\nBark magnesium (Mg) content per unit bark dry mass\nBark manganese (Mn) content per unit bark dry mass\nBark nitrogen (N) content per unit bark dry mass\nBark sodium (Na) content per unit bark dry mass\nBark phosphorus (P) content per unit bark dry mass\nBark sulphur (S) content per unit bark dry mass\nBark zinc (Zn) content per unit bark dry mass\nBark ash content per unit bark dry mass\n\n\n\n\nhas broader\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000206"
+  },
+  {
+    "objectID": "index.html#wood-mineral-and-ion-content-trait",
+    "href": "index.html#wood-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "wood mineral and ion content trait",
+    "text": "wood mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000408\n\n\n\n\nlabel\n\n\nwood mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on wood [NCIT:C93062].\n\n\n\n\nhas narrower\n\n\n\nWood carbon (C) content per unit wood dry mass\nWood calcium (Ca) content per unit wood dry mass\nWood potassium (K) content per unit wood dry mass\nWood magnesium (Mg) content per unit wood dry mass\nWood nitrogen (N) content per unit wood dry mass\nWood sodium (Na) content per unit wood dry mass\nWood phosphorus (P) content per unit wood dry mass\n\n\n\n\nhas broader\n\n\nstem mineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000408"
+  },
+  {
+    "objectID": "index.html#senesced-wood-mineral-and-ion-content-trait",
+    "href": "index.html#senesced-wood-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "senesced wood mineral and ion content trait",
+    "text": "senesced wood mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000508\n\n\n\n\nlabel\n\n\nsenesced wood mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on senescent [PATO:0001487] wood [NCIT:C93062].\n\n\n\n\nhas narrower\n\n\n\nDead wood calcium (Ca) content per unit dead wood dry mass\nDead wood potassium (K) content per unit dead wood dry mass\nDead wood magnesium (Mg) content per unit dead wood dry mass\nDead wood nitrogen (N) content per unit dead wood dry mass\nDead wood sodium (Na) content per unit dead wood dry mass\nDead wood phosphorus (P) content per unit dead wood dry mass\n\n\n\n\nhas broader\n\n\nstem mineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000508"
+  },
+  {
+    "objectID": "index.html#bark-mineral-and-ion-content-trait",
+    "href": "index.html#bark-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "bark mineral and ion content trait",
+    "text": "bark mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000608\n\n\n\n\nlabel\n\n\nbark mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on bark [PO:0004518].\n\n\n\n\nNA\n\n\n\n\n\n\nhas broader\n\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000608"
+  },
+  {
+    "objectID": "index.html#root-mineral-and-ion-content-trait",
+    "href": "index.html#root-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "root mineral and ion content trait",
+    "text": "root mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0000808\n\n\n\n\nlabel\n\n\nroot mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on a root [PO:0009005].\n\n\n\n\nhas narrower\n\n\n\nRoot carbon (C) content per unit root dry mass\nRoot nitrogen (N) content per unit root dry mass\nRoot phosphorus (P) content per unit root dry mass\n\n\n\n\nhas broader\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0000808"
+  },
+  {
+    "objectID": "index.html#reproductive-shoot-system-mineral-and-ion-content-trait",
+    "href": "index.html#reproductive-shoot-system-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "reproductive shoot system mineral and ion content trait",
+    "text": "reproductive shoot system mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0001006\n\n\n\n\nlabel\n\n\nreproductive shoot system mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on the reproductive shoot system [PO:0025082].\n\n\n\n\nhas narrower\n\n\n\nFlower nitrogen (N) content per unit flower dry mass\nFruit calcium (Ca) content per unit fruit dry mass\nFruit potassium (K) content per unit fruit dry mass\nFruit magnesium (Mg) content per unit fruit dry mass\nFruit nitrogen (N) content per unit fruit dry mass\nFruit phosphorus (P) content per unit fruit dry mass\nFruit sulphur (S) content per unit fruit dry mass\nSeed calcium (Ca) content per unit seed dry mass\nSeed potassium (K) content per unit seed dry mass\nSeed magnesium (Mg) content per unit seed dry mass\nSeed nitrogen (N) content per unit seed dry mass\nSeed phosphorus (P) content per unit seed dry mass\nSeed sulphur (S) content per unit seed dry mass\n\n\n\n\nhas broader\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0001006"
+  },
+  {
+    "objectID": "index.html#cell-or-tissue-mineral-and-ion-content-trait",
+    "href": "index.html#cell-or-tissue-mineral-and-ion-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "cell or tissue mineral and ion content trait",
+    "text": "cell or tissue mineral and ion content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0001502\n\n\n\n\nlabel\n\n\ncell or tissue mineral and ion content trait\n\n\n\n\ndescription\n\n\nA mineral and ion content trait which is measured on an individual tissue [CARO:0000043] type or cell [CL:0000000] type.\n\n\n\n\nhas narrower\n\n\n\nLeaf rubisco nitrogen (N) content per unit leaf N content\nLeaf thylakoid protein nitrogen (N) content per unit leaf N content\nLeaf epidermis calcium (Ca) content per unit leaf fresh mass\nLeaf hypodermis calcium (Ca) content per unit leaf fresh mass\nLeaf internal parenchyma cell calcium (Ca) content per unit leaf fresh mass\nLeaf palisade mesophyll cell calcium (Ca) content per unit leaf fresh mass\nLeaf sclerenchyma cell calcium (Ca) content per unit leaf fresh mass\nLeaf spongy mesophyll cell calcium (Ca) content per unit leaf fresh mass\nLeaf epidermis phosphorus (P) content per unit leaf fresh mass\nLeaf hypodermis phosphorus (P) content per unit leaf fresh mass\nLeaf internal parenchyma cell phosphorus (P) content per unit leaf fresh mass\nLeaf palisade mesophyll cell phosphorus (P) content per unit leaf fresh mass\nLeaf sclerenchyma cell phosphorus (P) content per unit leaf fresh mass\nLeaf spongy mesophyll cell phosphorus (P) content per unit leaf fresh mass\n\n\n\n\nhas broader\n\n\nmineral and ion content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0001502"
+  },
+  {
+    "objectID": "index.html#metabolite-content-trait",
+    "href": "index.html#metabolite-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "metabolite content trait",
+    "text": "metabolite content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002004\n\n\n\n\nlabel\n\n\nmetabolite content trait\n\n\n\n\ndescription\n\n\nThe trait associated with an assay to determine the affected metabolites profile.\n\n\n\n\nhas narrower\n\n\n\ncarbohydrate content trait\nlipid content trait\nphenolic compound content trait\npigment content trait\nprotein content trait\n\n\n\n\nhas broader\n\n\nbiochemical trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002004"
+  },
+  {
+    "objectID": "index.html#carbohydrate-content-trait",
+    "href": "index.html#carbohydrate-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "carbohydrate content trait",
+    "text": "carbohydrate content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002005\n\n\n\n\nlabel\n\n\ncarbohydrate content trait\n\n\n\n\ndescription\n\n\nA metabolite content trait [TO:0000281] which is the amount of carbohydrate [CHEBI:16646] in a plant structure [PO:0009011].\n\n\n\n\nhas narrower\n\n\n\nLeaf total non-structural carbohydrate content per unit leaf area\nLeaf total non-structural carbohydrate content per unit leaf dry mass\nLeaf cellulose content per unit leaf dry mass\nLeaf starch content per unit leaf area\nLeaf soluble starch content per unit leaf area\nLeaf soluble starch content per unit leaf dry mass\nLeaf soluble sugar content per unit leaf area\nLeaf soluble sugar content per unit leaf dry mass\nStem soluble starch content per unit stem dry mass\nStem soluble sugar content per unit stem dry mass\nBark cellulose content per unit bark dry mass\nRoot soluble starch content per unit root dry mass\nRoot soluble sugar content per unit root dry mass\n\n\n\n\nhas broader\n\n\nmetabolite content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002005"
+  },
+  {
+    "objectID": "index.html#lipid-content-trait",
+    "href": "index.html#lipid-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "lipid content trait",
+    "text": "lipid content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002006\n\n\n\n\nlabel\n\n\nlipid content trait\n\n\n\n\ndescription\n\n\nThe total lipid [CHEBI:18059] content measured in a plant or a plant part.\n\n\n\n\nhas narrower\n\n\n\nSeed oil content per unit seed dry mass\n\n\n\n\nhas broader\n\n\nmetabolite content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002006"
+  },
+  {
+    "objectID": "index.html#phenolic-compound-content-trait",
+    "href": "index.html#phenolic-compound-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "phenolic compound content trait",
+    "text": "phenolic compound content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002007\n\n\n\n\nlabel\n\n\nphenolic compound content trait\n\n\n\n\ndescription\n\n\nAmount of phenolics present in the plant part, whole plant or product.\n\n\n\n\nhas narrower\n\n\n\nLeaf lignin content per unit leaf dry mass\nTotal leaf phenolic content per unit leaf dry mass\nLeaf tannin content per unit leaf dry mass\nBark lignin content per unit bark dry mass\nBark tannin content per unit bark dry mass\n\n\n\n\nhas broader\n\n\nmetabolite content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002007"
+  },
+  {
+    "objectID": "index.html#pigment-content-trait",
+    "href": "index.html#pigment-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "pigment content trait",
+    "text": "pigment content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002008\n\n\n\n\nlabel\n\n\npigment content trait\n\n\n\n\ndescription\n\n\nA metabolite content trait [TO:0000281] which is the amount of pigment [NCIT:C747] in a plant structure [PO:0009011].\n\n\n\n\nhas narrower\n\n\n\nLeaf carotenoid content per unit leaf area\nLeaf carotenoid content per unit leaf dry mass\nLeaf total chlorophyll content (chlorophyll A + B) per unit leaf area\nLeaf total chlorophyll content (chlorophyll A + B) per unit leaf dry mass\nLeaf chlorophyll A content per unit leaf area\nLeaf chlorophyll A content per unit leaf dry mass\nLeaf chlorophyll B content per unit leaf area\nLeaf chlorophyll B content per unit leaf dry mass\nRatio of leaf chlorophyll A content to leaf chlorophyll B content\n\n\n\n\nhas broader\n\n\nmetabolite content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002008"
+  },
+  {
+    "objectID": "index.html#protein-content-trait",
+    "href": "index.html#protein-content-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "protein content trait",
+    "text": "protein content trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0002009\n\n\n\n\nlabel\n\n\nprotein content trait\n\n\n\n\ndescription\n\n\nThe total protein content measured in a plant or a plant part.\n\n\n\n\nhas narrower\n\n\n\nLeaf soluble protein content per unit leaf area\nLeaf insoluble protein content per unit leaf area\nLeaf rubisco content per unit leaf dry mass\nSeed protein content per unit seed dry mass\n\n\n\n\nhas broader\n\n\nmetabolite content trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0002009"
+  },
+  {
+    "objectID": "index.html#stable-isotope-ratio-determination",
+    "href": "index.html#stable-isotope-ratio-determination",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "stable isotope ratio determination",
+    "text": "stable isotope ratio determination\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0003004\n\n\n\n\nlabel\n\n\nstable isotope ratio determination\n\n\n\n\ndescription\n\n\nA mineral and ion content trait [TO:0000465] which is a ratio [PATO:0001470] of two naturally occurring stable isotopes [EnvThes:20310], generally expressed in delta notation.\n\n\n\n\nhas narrower\n\n\n\nBark stable carbon isotope composition (delta13C\nLeaf stable carbon isotope composition (delta13C\nStem stable carbon isotope composition (delta13C\nRoot stable carbon isotope composition (delta13C\nWood stable carbon isotope composition (delta13C\nBark stable nitrogen isotope composition (delta15N\nLeaf stable nitrogen isotope composition (delta15N\nStem stable nitrogen isotope composition (delta15N\nRoot stable nitrogen isotope composition (delta15N\nWood stable nitrogen isotope composition (delta15N\nLeaf xylem stable nitrogen isotope composition (delta15N\nRoot xylem stable nitrogen isotope composition (delta15N\nLeaf stable oxygen isotope composition (delta18O\nStem water stable oxygen isotope composition (delta18O\n\n\n\n\nhas broader\n\n\nbiochemical trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0003004"
+  },
+  {
+    "objectID": "index.html#plant-morphology-trait",
+    "href": "index.html#plant-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant morphology trait",
+    "text": "plant morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0010001\n\n\n\n\nlabel\n\n\nplant morphology trait\n\n\n\n\ndescription\n\n\nA plant trait [TO:0000387] which is a morphological quality of a plant anatomical entity [PO:0025131] or a constituent cellular component [GO:0005575] contained therein. Includes traits of plant structures [PO:0009011] such as plant cell [PO:0009002], plant organ [PO:0009008], portion of plant tissue [PO:0009007], vascular system [PO:0000034], whole plant [PO:0000003] and seed [PO:0009010], as well as those of plant anatomical spaces [PO:0025117] and portions of plant substance [PO:0025161].\n\n\n\n\nhas narrower\n\n\n\nwhole plant morphology trait\nplant structure morphology trait\nvascular tissue morphology trait\nplant structure strength trait\n\n\n\n\nhas broader\n\n\nplant trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0010001"
+  },
+  {
+    "objectID": "index.html#whole-plant-morphology-trait",
+    "href": "index.html#whole-plant-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "whole plant morphology trait",
+    "text": "whole plant morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0010004\n\n\n\n\nlabel\n\n\nwhole plant morphology trait\n\n\n\n\ndescription\n\n\nA plant structure morphology trait [TO:0000839] which is a quality of a whole plant [PO:0000003].\n\n\n\n\nhas narrower\n\n\n\nplant embryo morphology trait\nPlant canopy width\nPlant canopy breadth\nPlant vegetative height\nPlant growth form\nLife form\n\n\n\n\nhas broader\n\n\nplant morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0010004"
+  },
+  {
+    "objectID": "index.html#plant-embryo-morphology-trait",
+    "href": "index.html#plant-embryo-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant embryo morphology trait",
+    "text": "plant embryo morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0010104\n\n\n\n\nlabel\n\n\nplant embryo morphology trait\n\n\n\n\ndescription\n\n\nA whole plant morphology trait [TO:0000398] which is a quality of a plant embryo [PO:0009009].\n\n\n\n\nhas narrower\n\n\n\nEmbryo colour\nCotyledon function\nCotyledon position at germination\nCotyledon hairiness\nHypocotyl hairiness\nSeedling first true leaf type\nSeedling first node leaf count\nSeedling germination location\n\n\n\n\nhas broader\n\n\nwhole plant morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0010104"
+  },
+  {
+    "objectID": "index.html#plant-structure-morphology-trait",
+    "href": "index.html#plant-structure-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant structure morphology trait",
+    "text": "plant structure morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011001\n\n\n\n\nlabel\n\n\nplant structure morphology trait\n\n\n\n\ndescription\n\n\nA plant morphology trait [TO:0000017] which is a quality of a plant structure [PO:0009011].\n\n\n\n\nhas narrower\n\n\n\nleaf morphology trait\nportion of plant tissue morphology trait\nplant cell morphology trait\nstem morphology trait\nbark morphology trait\nroot system morphology trait\nreproductive shoot system morphology trait\nPlant spinescence\nPhysical defence structures\nPlant sex type\nClonal spread mechanism\nStorage organ\n\n\n\n\nhas broader\n\n\nplant morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011001"
+  },
+  {
+    "objectID": "index.html#leaf-morphology-trait",
+    "href": "index.html#leaf-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf morphology trait",
+    "text": "leaf morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011202\n\n\n\n\nlabel\n\n\nleaf morphology trait\n\n\n\n\ndescription\n\n\nA phyllome morphology trait [TO:0000747] which is quality of a leaf [PO:0025034].\n\n\n\n\nhas narrower\n\n\n\nleaf size trait\nleaf mass trait\nleaf shape trait\nleaf position trait\nleaf stomatal complex morphology trait\nleaf optical properties trait\nCotyledon function\nLeaf glaucousness\nMature leaf hairiness\nJuvenile phase leaf hairiness\nImmature leaf hairiness\nAverage leaf epidermal cell density\nLower leaf side epidermal cell density\nUpper leaf side epidermal cell density\nPalisade cell length\nPalisade cell width\nNumber of layers of palisade cells\nSpongy mesophyll cell thickness\nLeaf secondary vein angle\nMajor leaf vein density\nLength of all minor and major leaf lamina veins per unit area\nLeaf vein frequency\nLeaf xylem vessel density\nLeaf xylem vessel diameter\nLeaf work to punch\nLeaf specific work to punch\nLeaf work to shear\nLeaf specific work to shear (fracture toughness\nLeaf work to tear\nLeaf specific work to tear\nPlant photosynthetic organ\nPhysical defence structures\nPlant climbing mechanisms\nPlant succulence\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011202"
+  },
+  {
+    "objectID": "index.html#leaf-size-trait",
+    "href": "index.html#leaf-size-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf size trait",
+    "text": "leaf size trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011204\n\n\n\n\nlabel\n\n\nleaf size trait\n\n\n\n\ndescription\n\n\nRefer to size [PATO:0000117]: A morphology quality inhering in a bearer by virtue of the bearers physical magnitude.\n\n\n\n\nhas narrower\n\n\n\nLeaf area\nLeaflet area\nLeaf length\nLeaf width\nLeaf thickness\nLeaf mass per area\nLeaf lamina mass per area\nLeaf area ratio (LAR\nLeaf fresh mass per leaf area\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011204"
+  },
+  {
+    "objectID": "index.html#leaf-mass-trait",
+    "href": "index.html#leaf-mass-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf mass trait",
+    "text": "leaf mass trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011206\n\n\n\n\nlabel\n\n\nleaf mass trait\n\n\n\n\ndescription\n\n\nA leaf morphology trait [TO:0000505] which is the weight of a leaf [PO:0025034].\n\n\n\n\nhas narrower\n\n\n\nLeaf dry mass\nLeaflet dry mass\nLeaf fresh mass\nLeaf mass per area\nLeaf lamina mass per area\nLeaf tissue density\nLeaf mass fraction\nLeaf dry matter content (LDMC\nLeaf fresh mass per leaf area\nLeaf water content per unit leaf area (leaf succulence\nLeaf water content per unit leaf dry mass\nLeaf water content per unit leaf fresh mass\nLeaf water content per unit saturated leaf mass\nLeaf cell wall fraction\nLeaf dry mass to stem dry mass ratio\nStem dry mass to vegetative shoot dry mass ratio (support fraction\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011206"
+  },
+  {
+    "objectID": "index.html#leaf-shape-trait",
+    "href": "index.html#leaf-shape-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf shape trait",
+    "text": "leaf shape trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011304\n\n\n\n\nlabel\n\n\nleaf shape trait\n\n\n\n\ndescription\n\n\nA leaf morphology trait [TO:0000748] which is the variation in shapes and forms of a leaf [PO:0025034]. Refer to shape [PATO:0000052]: A morphological quality inhering in a bearer by virtue of the bearers ratios of distances between its features [points, edges, surfaces and also holes etc].\n\n\n\n\nhas narrower\n\n\n\nPlant spinescence\nLeaf type\nLeaf shape\nLeaf base shape\nLeaf margin\nLeaf margin posture\nLeaf lobation\nLeaf compoundness\nLeaf divisions\nLeaf lamina posture (leaf 3-dimensionality\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011304"
+  },
+  {
+    "objectID": "index.html#leaf-position-trait",
+    "href": "index.html#leaf-position-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf position trait",
+    "text": "leaf position trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011402\n\n\n\n\nlabel\n\n\nleaf position trait\n\n\n\n\ndescription\n\n\nA leaf morphology trait [TO:0000748] which refers to the position [PATO:0000140] of leaves [PO:0025034] relative to the stem [PO:0009047].\n\n\n\n\nhas narrower\n\n\n\nLeaf phyllotaxis\nLeaf arrangement\nLeaf axil angle\nLeaf inclination angle\nLeaf pendulousness\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011402"
+  },
+  {
+    "objectID": "index.html#portion-of-plant-tissue-morphology-trait",
+    "href": "index.html#portion-of-plant-tissue-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "portion of plant tissue morphology trait",
+    "text": "portion of plant tissue morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011502\n\n\n\n\nlabel\n\n\nportion of plant tissue morphology trait\n\n\n\n\ndescription\n\n\nA plant structure morphology trait [TO:0000839] which is a quality of a portion of plant tissue [PO:0009007].\n\n\n\n\nhas narrower\n\n\n\nCuticle thickness on the lower leaf surface\nCuticle thickness on the upper leaf surface\nLeaf epidermis thickness\nLower leaf side epidermis thickness\nUpper leaf side epidermis thickness\nLower leaf side hypodermis thickness\nUpper leaf side hypodermis thickness\nLower palisade mesophyll thickness\nUpper palisade mesophyll thickness\nNumber of layers of palisade cells\nSpongy mesophyll cell thickness\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011502"
+  },
+  {
+    "objectID": "index.html#plant-cell-morphology-trait",
+    "href": "index.html#plant-cell-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant cell morphology trait",
+    "text": "plant cell morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011503\n\n\n\n\nlabel\n\n\nplant cell morphology trait\n\n\n\n\ndescription\n\n\nA plant structure morphology trait [TO:0000839] which is a quality of a plant cell [PO:0009002].\n\n\n\n\nhas narrower\n\n\n\nAverage leaf epidermal cell density\nLower leaf side epidermal cell density\nUpper leaf side epidermal cell density\nPalisade cell length\nPalisade cell width\nCell cross-sectional area\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011503"
+  },
+  {
+    "objectID": "index.html#leaf-stomatal-complex-morphology-trait",
+    "href": "index.html#leaf-stomatal-complex-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf stomatal complex morphology trait",
+    "text": "leaf stomatal complex morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011602\n\n\n\n\nlabel\n\n\nleaf stomatal complex morphology trait\n\n\n\n\ndescription\n\n\nA vascular leaf morphology trait [TO:0000419] which is a quality of the stomatal complexes [PO:0002000] present on the leaf surface.\n\n\n\n\nhas narrower\n\n\n\nStomatal density on the lower leaf surface\nStomatal density on the upper leaf surface\nStomatal density averaged across both leaf surfaces\nStomatal distribution\nStomatal hairiness\nGuard cell length\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011602"
+  },
+  {
+    "objectID": "index.html#leaf-optical-properties-trait",
+    "href": "index.html#leaf-optical-properties-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf optical properties trait",
+    "text": "leaf optical properties trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011702\n\n\n\n\nlabel\n\n\nleaf optical properties trait\n\n\n\n\ndescription\n\n\nLeaf morphology trait [TO:0000748] associated with the leafs optical [NCIT:C16940] properties, including the absorption [SWEET:soprocw:Absorption], transmission [SWEET:soprocw:Transmission], and reflection [SWEET:soprocw:Reflection] of light [OMIT:0009112].\n\n\n\n\nhas narrower\n\n\n\nLeaf visible light transmission\nLeaf visible light absorption\nLeaf visible light reflection\nLeaf infra-red light reflection\n\n\n\n\nhas broader\n\n\nleaf morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011702"
+  },
+  {
+    "objectID": "index.html#stem-morphology-trait",
+    "href": "index.html#stem-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "stem morphology trait",
+    "text": "stem morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011802\n\n\n\n\nlabel\n\n\nstem morphology trait\n\n\n\n\ndescription\n\n\nA shoot axis morphology trait [TO:0000739] which is the quality of a stem [PO:0009047].\n\n\n\n\nhas narrower\n\n\n\nstem mass trait\nStem diameter at breast height\nStem count\nStem cross-sectional area\nWood cross-sectional area\nTerminal twig cross-sectional area\nTerminal twig length\nWood density\nHerbaceous stem density\nHuber value\nRoot to shoot ratio\nStem xylem vessel density\nStem xylem vessel diameter\nStem xylem vessel hydraulic mean diameter\nStem xylem vessel lumen fraction\nStem xylem vessel multiple fraction\nStem non-lumen fraction\nxylem vessel wall fraction\nXylem vulnerability index\nWood axial parenchyma fraction\nWood conduit fraction\nWood fibre fraction\nWood ray parenchyma fraction\nWood tracheid fraction\nStem modulus of elasticity\nXylem modulus of elasticity\nModulus of rupture\nPlant growth form\nPlant photosynthetic organ\nWoodiness\nDetailed woodiness categories\nPhysical defence structures\nPlant climbing mechanisms\nPlant succulence\nStem growth habit\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011802"
+  },
+  {
+    "objectID": "index.html#stem-mass-trait",
+    "href": "index.html#stem-mass-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "stem mass trait",
+    "text": "stem mass trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0011902\n\n\n\n\nlabel\n\n\nstem mass trait\n\n\n\n\ndescription\n\n\nA stem morphology trait [TO:0000361] which is the mass [PATO:0000125] of a stem [PO:0009047].\n\n\n\n\nhas narrower\n\n\n\nLeaf dry mass to stem dry mass ratio\nStem dry mass to vegetative shoot dry mass ratio (support fraction\nSide branch dry mass to whole plant dry mass ratio\nStem dry matter content (SDMC\nStem water content per unit saturated stem mass\nStem mass fraction\n\n\n\n\nhas broader\n\n\nstem morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0011902"
+  },
+  {
+    "objectID": "index.html#bark-morphology-trait",
+    "href": "index.html#bark-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "bark morphology trait",
+    "text": "bark morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012002\n\n\n\n\nlabel\n\n\nbark morphology trait\n\n\n\n\ndescription\n\n\nA plant structure morphology trait [TO:0000736] which is a quality of bark [PO:0004518].\n\n\n\n\nhas narrower\n\n\n\nbark mass trait\nBark morphology, Eucalyptus\nBark thickness\nScaled bark thickness\nBark density\nBark dry mass per unit bark surface area\nBark water content per unit bark dry mass\nBark water content per unit saturated bark mass\nBark modulus of elasticity\nPhysical defence structures\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012002"
+  },
+  {
+    "objectID": "index.html#bark-mass-trait",
+    "href": "index.html#bark-mass-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "bark mass trait",
+    "text": "bark mass trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012006\n\n\n\n\nlabel\n\n\nbark mass trait\n\n\n\n\ndescription\n\n\nA bark morphology trait which is the mass of bark.\n\n\n\n\nNA\n\n\n\n\n\n\nhas broader\n\n\n\nbark morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012006"
+  },
+  {
+    "objectID": "index.html#root-system-morphology-trait",
+    "href": "index.html#root-system-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "root system morphology trait",
+    "text": "root system morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012102\n\n\n\n\nlabel\n\n\nroot system morphology trait\n\n\n\n\ndescription\n\n\nA collective plant organ structure morphology trait [TO:0000842] which is a quality of a root system [PO:0025025].\n\n\n\n\nhas narrower\n\n\n\nroot morphology trait\nroot mass trait\nroot branchiness trait\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012102"
+  },
+  {
+    "objectID": "index.html#root-morphology-trait",
+    "href": "index.html#root-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "root morphology trait",
+    "text": "root morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012104\n\n\n\n\nlabel\n\n\nroot morphology trait\n\n\n\n\ndescription\n\n\nA plant axis morphology trait [TO:0000738] which is a quality of a root [PO:0025025].\n\n\n\n\nhas narrower\n\n\n\nRoot diameter\nRoot system morphology\nFine root volume to coarse root volume ratio\nRoot biomass depth distribution coefficient\nRoot system type (presence of taproot\nSpecific root length (SRL\nSpecific tap root length (STRL\nRoot surface area per unit root dry mass (specific root area\nRoot wood density\nRoot to shoot ratio\nRoot dry matter content (RDMC\nRoot mass fraction\nPlant nitrogen fixation capacity\nPlant root structures\n\n\n\n\nhas broader\n\n\nroot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012104"
+  },
+  {
+    "objectID": "index.html#root-mass-trait",
+    "href": "index.html#root-mass-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "root mass trait",
+    "text": "root mass trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012106\n\n\n\n\nlabel\n\n\nroot mass trait\n\n\n\n\ndescription\n\n\nA root morphology trait [TO:0000043] which is the weight of a root [PO:0009005].\n\n\n\n\nNA\n\n\n\n\n\n\nhas broader\n\n\n\nroot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012106"
+  },
+  {
+    "objectID": "index.html#root-branchiness-trait",
+    "href": "index.html#root-branchiness-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "root branchiness trait",
+    "text": "root branchiness trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012108\n\n\n\n\nlabel\n\n\nroot branchiness trait\n\n\n\n\ndescription\n\n\nA root system morphology trait [TO:0000985] which is the branchiness [PATO:0002009] of the root system [PO:0025025].\n\n\n\n\nNA\n\n\n\n\n\n\nhas broader\n\n\n\nroot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012108"
+  },
+  {
+    "objectID": "index.html#reproductive-shoot-system-morphology-trait",
+    "href": "index.html#reproductive-shoot-system-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "reproductive shoot system morphology trait",
+    "text": "reproductive shoot system morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012202\n\n\n\n\nlabel\n\n\nreproductive shoot system morphology trait\n\n\n\n\ndescription\n\n\nA shoot system morphology trait [TO:0000077] that is a quality of a reproductive shoot system [PO:0025082].\n\n\n\n\nhas narrower\n\n\n\nfloral organ morphology trait\nfruit morphology trait\nseed morphology trait\nSeed accessory cost fraction\nSeed accessory cost mass\nLife form\n\n\n\n\nhas broader\n\n\nplant structure morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012202"
+  },
+  {
+    "objectID": "index.html#floral-organ-morphology-trait",
+    "href": "index.html#floral-organ-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "floral organ morphology trait",
+    "text": "floral organ morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012404\n\n\n\n\nlabel\n\n\nfloral organ morphology trait\n\n\n\n\ndescription\n\n\nA plant organ morphology trait [TO:0000736] which is a quality of a floral organ [PO:0025395].\n\n\n\n\nhas narrower\n\n\n\nperianth morphology trait\nandroecium morphology trait\ngynoecium morphology trait\nMaximum flower number\nFloral structural sex\nPollination syndrome\nPollination system\n\n\n\n\nhas broader\n\n\nreproductive shoot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012404"
+  },
+  {
+    "objectID": "index.html#perianth-morphology-trait",
+    "href": "index.html#perianth-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "perianth morphology trait",
+    "text": "perianth morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012406\n\n\n\n\nlabel\n\n\nperianth morphology trait\n\n\n\n\ndescription\n\n\nA collective phyllome structure morphology trait [TO:0000845] which is a quality of a perianth [PO:0009058].\n\n\n\n\nhas narrower\n\n\n\nFlower colour\nPerianth colour\nFlower length\nFlower diameter\nFloral orientation\nPerianth differentiation\nFusion of perianth\nNumber of perianth parts in each whorl (Perianth merism\nNumber of perianth parts\nPerianth phyllotaxis\nSymmetry of perianth\nNumber of perianth whorls\n\n\n\n\nhas broader\n\n\nfloral organ morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012406"
+  },
+  {
+    "objectID": "index.html#androecium-morphology-trait",
+    "href": "index.html#androecium-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "androecium morphology trait",
+    "text": "androecium morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012408\n\n\n\n\nlabel\n\n\nandroecium morphology trait\n\n\n\n\ndescription\n\n\nA collective phyllome structure morphology trait [TO:0000845] that is a quality of the androecium [PO:0009061].\n\n\n\n\nhas narrower\n\n\n\nNumber of androecium parts in each whorl (Androecium structural merism\nAndroecium structural phyllotaxis\nNumber of androecium structural whorls\nAnther attachment\nConnective extension (apical\nAnther dehiscence\nAnther orientation\nNumber of fertile stamens\nFilament presence and shape\nFusion of filaments\nFusion of filaments to inner perianth series\nPollen grain aperture shape\nNumber of pollen grain apertures\nPollen grain length\n\n\n\n\nhas broader\n\n\nfloral organ morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012408"
+  },
+  {
+    "objectID": "index.html#gynoecium-morphology-trait",
+    "href": "index.html#gynoecium-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "gynoecium morphology trait",
+    "text": "gynoecium morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012409\n\n\n\n\nlabel\n\n\ngynoecium morphology trait\n\n\n\n\ndescription\n\n\nA collective phyllome structure morphology trait [TO:0000845] that is a quality of the gynoecium [PO:0009062].\n\n\n\n\nhas narrower\n\n\n\nGynoecium phyllotaxis\nPlacentation\nFusion of ovaries\nOvary position\nNumber of ovules per functional carpel\nNumber of structural carpels\nStyle differentiation\nFusion of styles\n\n\n\n\nhas broader\n\n\nfloral organ morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012409"
+  },
+  {
+    "objectID": "index.html#fruit-morphology-trait",
+    "href": "index.html#fruit-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "fruit morphology trait",
+    "text": "fruit morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012504\n\n\n\n\nlabel\n\n\nfruit morphology trait\n\n\n\n\ndescription\n\n\nA multi-tissue plant structure morphology trait [TO:0000836] which is a quality of a fruit [PO:0009001].\n\n\n\n\nhas narrower\n\n\n\nFruit dry mass\nFruit length\nFruit width\nFruit breadth\nFruit wall thickness\nFruit type\nFruit fleshiness\nFruit dehiscence\nFruit colour\nDiaspore fleshiness\nDispersal appendage\nDispersal unit\nDiaspore dispersal syndrome\n\n\n\n\nhas broader\n\n\nreproductive shoot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012504"
+  },
+  {
+    "objectID": "index.html#seed-morphology-trait",
+    "href": "index.html#seed-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "seed morphology trait",
+    "text": "seed morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0012604\n\n\n\n\nlabel\n\n\nseed morphology trait\n\n\n\n\ndescription\n\n\nA multi-tissue plant structure morphology trait [TO:0000836] which is a quality of a seed [PO:0009010].\n\n\n\n\nhas narrower\n\n\n\nSeed dry mass\nDiaspore dry mass\nSeed embryo and endosperm dry mass\nSeed length\nSeed width\nSeed height\nSeed volume\nSeed count\nSeed shape\nSeed surface hairs\nSeed surface texture\nSeed surface reflectivity\nDiaspore fleshiness\nDispersal appendage\nDispersal unit\nDiaspore dispersal syndrome\n\n\n\n\nhas broader\n\n\nreproductive shoot system morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0012604"
+  },
+  {
+    "objectID": "index.html#vascular-tissue-morphology-trait",
+    "href": "index.html#vascular-tissue-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "vascular tissue morphology trait",
+    "text": "vascular tissue morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0013001\n\n\n\n\nlabel\n\n\nvascular tissue morphology trait\n\n\n\n\ndescription\n\n\nA portion of plant tissue morphology trait [TO:0000843] which is a quality of a vascular tissue and its parts.\n\n\n\n\nhas narrower\n\n\n\nleaf vein morphology trait\nxylem vessel morphology trait\nWood axial parenchyma fraction\nWood conduit fraction\nWood fibre fraction\nWood ray parenchyma fraction\nWood tracheid fraction\n\n\n\n\nhas broader\n\n\nplant morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0013001"
+  },
+  {
+    "objectID": "index.html#leaf-vein-morphology-trait",
+    "href": "index.html#leaf-vein-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "leaf vein morphology trait",
+    "text": "leaf vein morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0013006\n\n\n\n\nlabel\n\n\nleaf vein morphology trait\n\n\n\n\ndescription\n\n\nA vascular leaf morphology trait [TO:0000419] which is a quality of a leaf lamina vein [PO:0020138].\n\n\n\n\nhas narrower\n\n\n\nLeaf secondary vein angle\nMajor leaf vein density\nLength of all minor and major leaf lamina veins per unit area\nLeaf vein frequency\n\n\n\n\nhas broader\n\n\nvascular tissue morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0013006"
+  },
+  {
+    "objectID": "index.html#xylem-vessel-morphology-trait",
+    "href": "index.html#xylem-vessel-morphology-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "xylem vessel morphology trait",
+    "text": "xylem vessel morphology trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0013102\n\n\n\n\nlabel\n\n\nxylem vessel morphology trait\n\n\n\n\ndescription\n\n\nA vascular tissue morphology trait [TO:0000470] which is a quality of a xylem vessel [PO:0025417].\n\n\n\n\nhas narrower\n\n\n\nStem xylem vessel density\nLeaf xylem vessel density\nStem xylem vessel diameter\nStem xylem vessel hydraulic mean diameter\nLeaf xylem vessel diameter\nStem xylem vessel lumen fraction\nStem xylem vessel multiple fraction\nStem non-lumen fraction\nxylem vessel wall fraction\nXylem vulnerability index\n\n\n\n\nhas broader\n\n\nvascular tissue morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0013102"
+  },
+  {
+    "objectID": "index.html#plant-structure-strength-trait",
+    "href": "index.html#plant-structure-strength-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant structure strength trait",
+    "text": "plant structure strength trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0014001\n\n\n\n\nlabel\n\n\nplant structure strength trait\n\n\n\n\ndescription\n\n\nA plant structure morphology trait [TO:0000736] pertaining to the strength [PATO:0001230] of a plant structure [PO:0009011] and often indicating the amount of work [PATO:0001026] required to break or deform the plant structure.\n\n\n\n\nhas narrower\n\n\n\nLeaf work to punch\nLeaf specific work to punch\nLeaf work to shear\nLeaf specific work to shear (fracture toughness\nLeaf work to tear\nLeaf specific work to tear\nBark modulus of elasticity\nStem modulus of elasticity\nXylem modulus of elasticity\nModulus of rupture\n\n\n\n\nhas broader\n\n\nplant morphology trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0014001"
+  },
+  {
+    "objectID": "index.html#biological-process-trait-physiological-process-trait",
+    "href": "index.html#biological-process-trait-physiological-process-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "biological process trait, physiological process trait",
+    "text": "biological process trait, physiological process trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020001\n\n\n\n\nlabel\n\n\nbiological process trait, physiological process trait\n\n\n\n\ndescription\n\n\nRefers to process quality [PATO:0001236]: A quality which inheres in an process. A plant trait [TO:0000387] which is a process quality [PATO:0001236] of a biological process [GO:0008150] which occurs in a plant anatomical entity [PO:0025131], a cellular component [GO:0005575], or during a plant structure development stage [PO:0009012].\n\n\n\n\nhas narrower\n\n\n\nphotosynthetic trait\nwater transport trait, hydraulic trait\nnutrient recycling trait\n\n\n\n\nhas broader\n\n\nplant trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020001"
+  },
+  {
+    "objectID": "index.html#photosynthetic-trait",
+    "href": "index.html#photosynthetic-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "photosynthetic trait",
+    "text": "photosynthetic trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020202\n\n\n\n\nlabel\n\n\nphotosynthetic trait\n\n\n\n\ndescription\n\n\nA plant physiological process trait [TO:0000283] associated with photosynthesis [GO:0015979].\n\n\n\n\nhas narrower\n\n\n\ngas exchange trait\nphotosystem performance trait\nPlant photosynthetic pathway\nPlant photosynthetic organ\n\n\n\n\nhas broader\n\n\nbiological process trait, physiological process trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020202"
+  },
+  {
+    "objectID": "index.html#gas-exchange-trait",
+    "href": "index.html#gas-exchange-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "gas exchange trait",
+    "text": "gas exchange trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020204\n\n\n\n\nlabel\n\n\ngas exchange trait\n\n\n\n\ndescription\n\n\nA plant photosynthesis trait pertaining to the movement [NCIT:C37994] of carbon dioxide [CHEBI:16526], water [CHEBI:15377], and oxygen [CHEBI:15379] into and out of a plant cellular metabolic processes [GO:0044237] where these molecules are the reactant [SIO:000879] or product [SIO:010363].\n\n\n\n\nhas narrower\n\n\n\nphotosynthetic rate trait\nrespiration rate trait\ntranspiration rate trait\ncarbon dioxide concentration trait\nLeaf stomatal conductance to water vapour per unit leaf area under ambient conditions (gsw\nLeaf stomatal conductance to water vapour per unit leaf area during Amax measurement (gsw\nLeaf stomatal conductance to water vapour per unit leaf area during Asat measurement (gsw\nLeaf stomatal water vapour resistance under ambient conditions\nLeaf mesophyll conductance to carbon dioxide per unit leaf area (gm\nLeaf mesophyll conductance to carbon dioxide per unit leaf mass (gm\nLeaf photosynthetic nitrogen use efficiency during Amax measurement (PNUE\nLeaf photosynthetic nitrogen use efficiency during Asat measurement (PNUE\nLeaf photosynthetic phosphorus use efficiency during Amax measurement PPUE\nLeaf photosynthetic phosphorus use efficiency during Asat measurement (PPUE\nIntegrated water use efficiency\nIntrinsic water use efficiency (WUEi\nInstantaneous water use efficiency (WUE\n\n\n\n\nhas broader\n\n\nphotosynthetic trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020204"
+  },
+  {
+    "objectID": "index.html#photosynthetic-rate-trait",
+    "href": "index.html#photosynthetic-rate-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "photosynthetic rate trait",
+    "text": "photosynthetic rate trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020206\n\n\n\n\nlabel\n\n\nphotosynthetic rate trait\n\n\n\n\ndescription\n\n\nThe total amount of carbon fixed by the plant per unit time and is measured by determining the changes in CO2 concentration over a plant leaf in a glass enclosure.\n\n\n\n\nhas narrower\n\n\n\nBark photosynthesis\nLeaf photosynthesis rate per unit leaf area under ambient light and CO2 (A\nLeaf photosynthesis rate per unit leaf area under saturating light and CO2 (Amax\nLeaf photosynthesis rate per unit leaf area under saturating light and ambient CO2 (Asat\nLeaf photosynthesis rate per unit leaf dry mass under ambient light and CO2 (A\nLeaf photosynthesis rate per unit leaf dry mass under saturating light and CO2 (Amax\nLeaf photosynthesis rate per unit leaf dry mass under saturating light and ambient CO2 (Asat\n\n\n\n\nhas broader\n\n\ngas exchange trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020206"
+  },
+  {
+    "objectID": "index.html#respiration-rate-trait",
+    "href": "index.html#respiration-rate-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "respiration rate trait",
+    "text": "respiration rate trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020208\n\n\n\n\nlabel\n\n\nrespiration rate trait\n\n\n\n\ndescription\n\n\nA plant gas exchange trait which is the net rate of carbon dioxide [CHEBI:16526] released from a whole plant [PO:0000003] or plant organ [PO:0009008] due to cellular respiration [GO:0045333] and photorespiration [GO:0009853].\n\n\n\n\nhas narrower\n\n\n\nLeaf respiration rate per unit leaf area, in the dark (Rdark\nLeaf respiration rate per unit leaf dry mass, in the dark (Rdark\nLeaf respiration rate per unit leaf area, in the light (Rday\nStem respiration rate per unit stem area, in the dark\n\n\n\n\nhas broader\n\n\ngas exchange trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020208"
+  },
+  {
+    "objectID": "index.html#transpiration-rate-trait",
+    "href": "index.html#transpiration-rate-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "transpiration rate trait",
+    "text": "transpiration rate trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020210\n\n\n\n\nlabel\n\n\ntranspiration rate trait\n\n\n\n\ndescription\n\n\nA plant gas exchange trait which is the rate of transpiration [ENVO:02500035].\n\n\n\n\nhas narrower\n\n\n\nLeaf transpiration per unit leaf area under ambient conditions (E\nLeaf transpiration per unit leaf area during Amax measurement (E\nLeaf transpiration per unit leaf area during Asat measurement (E\nLeaf transpiration rate per unit leaf area, in the dark\nIntegrated plant transpiration\nWhole plant sapflow\n\n\n\n\nhas broader\n\n\ngas exchange trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020210"
+  },
+  {
+    "objectID": "index.html#carbon-dioxide-concentration-trait",
+    "href": "index.html#carbon-dioxide-concentration-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "carbon dioxide concentration trait",
+    "text": "carbon dioxide concentration trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020212\n\n\n\n\nlabel\n\n\ncarbon dioxide concentration trait\n\n\n\n\ndescription\n\n\nA plant gas exchange trait which is the concentration [PATO:0000033] of carbon dioxide [CHEBI:16526].\n\n\n\n\nhas narrower\n\n\n\nLeaf internal CO2 concentration during Amax measurement (ci\nInternal CO2 concentration during Asat measurement (ci\nInternal CO2 concentration under ambient conditions (ci\nRatio of internal to external CO2 concentrations (ci/ca\nCO2 concentration inside chloroplasts (cc\nAmbient CO2 concentration (ca\n\n\n\n\nhas broader\n\n\ngas exchange trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020212"
+  },
+  {
+    "objectID": "index.html#photosystem-performance-trait",
+    "href": "index.html#photosystem-performance-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "photosystem performance trait",
+    "text": "photosystem performance trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0020812\n\n\n\n\nlabel\n\n\nphotosystem performance trait\n\n\n\n\ndescription\n\n\nA plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO:01001864] during the photosynthesis light reactions [GO:0019684].\n\n\n\n\nhas narrower\n\n\n\nLeaf Jmax per unit leaf area (Jmax\nLeaf Jmax per unit leaf area at 25 deg C (Jmax25\nLeaf Jmax per unit leaf mass (Jmax\nLeaf Vcmax per unit leaf area (Vcmax\nLeaf Vcmax per unit leaf area at 25 deg C (Vcmax25\nLeaf Vcmax per unit leaf mass (Vcmax\nLeaf Jmax to leaf Vcmax ratio at 25 deg C\nLeaf maximum quantum yield (Fv/Fm\nLeaf ambient quantum yield\nLeaf quantum yield, gas exchange measurement\nPhotochemical reflectance index (PRI\n\n\n\n\nhas broader\n\n\nphotosynthetic trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0020812"
+  },
+  {
+    "objectID": "index.html#water-transport-trait-hydraulic-trait",
+    "href": "index.html#water-transport-trait-hydraulic-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "water transport trait, hydraulic trait",
+    "text": "water transport trait, hydraulic trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0021002\n\n\n\n\nlabel\n\n\nwater transport trait, hydraulic trait\n\n\n\n\ndescription\n\n\nA plant physiological process trait [TO:0000283] pertaining to the movement [NCIT:C37994] of water [CHEBI:15377] through a plants vascular system [PO:0000034], including water stress traits [TO:0000237].\n\n\n\n\nhas narrower\n\n\n\nLeaf secondary vein angle\nMajor leaf vein density\nLength of all minor and major leaf lamina veins per unit area\nLeaf vein frequency\nStem xylem vessel density\nLeaf xylem vessel density\nStem xylem vessel diameter\nStem xylem vessel hydraulic mean diameter\nLeaf xylem vessel diameter\nStem xylem vessel lumen fraction\nStem xylem vessel multiple fraction\nStem non-lumen fraction\nxylem vessel wall fraction\nXylem vulnerability index\nWood axial parenchyma fraction\nWood conduit fraction\nWood fibre fraction\nWood ray parenchyma fraction\nWood tracheid fraction\nStem hydraulic conductivity (Kh\nSapwood specific hydraulic conductivity (Ks\nTheoretical sapwood specific hydraulic conductivity (Ks\nStem specific hydraulic conductivity (Ks\nLeaf specific hydraulic conductance (kleaf\nLeaf specific hydraulic conductivity (Kl\nRoot hydraulic conductivity (Kh\nPre-dawn water potential\nMidday water potential\nWhole plant intrinsic capacitance (C\nLeaf xylem pressure, 50% lost conductance\nStem xylem pressure, 12% lost conductivity\nStem xylem pressure, 50% lost conductivity\nStem xylem pressure, 88% lost conductivity\nHydraulic safety margin, 50\nHydraulic safety margin, 88\nLeaf turgor loss point\nOsmotic potential\nOsmotic potential at full tugor\nBulk modulus of elasticity (e\nLeaf relative water content predawn\nLeaf relative water content at turgor loss point\nWater band index\n\n\n\n\nhas broader\n\n\nbiological process trait, physiological process trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0021002"
+  },
+  {
+    "objectID": "index.html#nutrient-recycling-trait",
+    "href": "index.html#nutrient-recycling-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "nutrient recycling trait",
+    "text": "nutrient recycling trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0022002\n\n\n\n\nlabel\n\n\nnutrient recycling trait\n\n\n\n\ndescription\n\n\nA plant physiological process trait [TO:0000283] associated with the resorption [NCIT:C93204] and recycling [NCIT:C126395] of macronutrients [CHEBI:33937] and micronutrients [CHEBI:27027] as plant structures [PO:0009011] senesce [PATO:0001487].\n\n\n\n\nhas narrower\n\n\n\nLeaf nitrogen resorption\nLeaf phosphorus resorption\n\n\n\n\nhas broader\n\n\nbiological process trait, physiological process trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0022002"
+  },
+  {
+    "objectID": "index.html#life-history-trait",
+    "href": "index.html#life-history-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "life history trait",
+    "text": "life history trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030001\n\n\n\n\nlabel\n\n\nlife history trait\n\n\n\n\ndescription\n\n\nA plant trait [TO:0000387] pertaining to an individuals life history [ECOCORE:00000018].\n\n\n\n\nhas narrower\n\n\n\nwhole plant phenotype trait\nplant phenological trait\ninterspecific interactions trait\ngenetic structure trait\nreproductive structure life history trait\nfire response trait\nchemical stress sensitivity trait\nenvironmental tolerance trait\nEphemeral life history class\nPlant growth substrate\nClonal spread mechanism\nStorage organ\nPlant regeneration, non-fire disturbance\n\n\n\n\nhas broader\n\n\nplant trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030001"
+  },
+  {
+    "objectID": "index.html#whole-plant-phenotype-trait",
+    "href": "index.html#whole-plant-phenotype-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "whole plant phenotype trait",
+    "text": "whole plant phenotype trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030006\n\n\n\n\nlabel\n\n\nwhole plant phenotype trait\n\n\n\n\ndescription\n\n\nA plant life history trait which is a whole plant phenotype [FLOPO:0000089].\n\n\n\n\nhas narrower\n\n\n\nPlant spinescence\nPlant growth form\nLife form\nLife history\nLifespan\nPlant alternative energy and nutrient acquisition strategies\nWoodiness\nDetailed woodiness categories\nPlant climbing mechanisms\nPlant succulence\nStem growth habit\nCompetitive stratum\nVegetative reproduction ability\nBud bank location\nTime from fire to fruiting\nTime from fire until 50% of individuals are fruiting\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030006"
+  },
+  {
+    "objectID": "index.html#plant-phenological-trait",
+    "href": "index.html#plant-phenological-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "plant phenological trait",
+    "text": "plant phenological trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030008\n\n\n\n\nlabel\n\n\nplant phenological trait\n\n\n\n\ndescription\n\n\nA growth and development trait [TO:0000357] which is the timing of the occurrence of plant structure development stages [PO:0009012] and the relevant biological processes [GO:0008150].\n\n\n\n\nhas narrower\n\n\n\nLeaf phenology\nLeaf lifespan\nFlowering time, by month\nFruiting time, by month\nEnvironmental flowering cues\nSeedling recruitment season\nSeedling establishment conditions\nAge of reproductive maturity\nSeed storage location\nCanopy seedbank\nSoil seedbank\nCanopy light environment required for reproduction\nCanopy light environment required for seedling establishment\nPost-fire flowering\nTime from fire to first flowering\nTime from fire until 50% of individuals are flowering\nTime from fire to peak flowering\nTime from fire until flowering declines\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030008"
+  },
+  {
+    "objectID": "index.html#interspecific-interactions-trait",
+    "href": "index.html#interspecific-interactions-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "interspecific interactions trait",
+    "text": "interspecific interactions trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030009\n\n\n\n\nlabel\n\n\ninterspecific interactions trait\n\n\n\n\ndescription\n\n\nA plant life history trait that captures an interspecific interaction between organisms [GO:0044419].\n\n\n\n\nhas narrower\n\n\n\nDispersal appendage\nPlant nitrogen fixation capacity\nPlant root structures\nPlant parasitism status\nPollination syndrome\nPollination system\nDiaspore dispersal syndrome\nDiaspore dispersal agents\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030009"
+  },
+  {
+    "objectID": "index.html#genetic-structure-trait",
+    "href": "index.html#genetic-structure-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "genetic structure trait",
+    "text": "genetic structure trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030059\n\n\n\n\nlabel\n\n\ngenetic structure trait\n\n\n\n\ndescription\n\n\nA plant life history trait that captures information about genetic structures.\n\n\n\n\nhas narrower\n\n\n\nPlant genome size\nChromosome ploidy\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030059"
+  },
+  {
+    "objectID": "index.html#reproductive-structure-life-history-trait",
+    "href": "index.html#reproductive-structure-life-history-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "reproductive structure life history trait",
+    "text": "reproductive structure life history trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030504\n\n\n\n\nlabel\n\n\nreproductive structure life history trait\n\n\n\n\ndescription\n\n\nA plant life history trait pertaining to a plants reproductive structures [UBERON:0005156].\n\n\n\n\nhas narrower\n\n\n\nSeed storage location\nCanopy seedbank\nSoil seedbank\nSeed longevity, categorical\nSeed longevity\nSeed maturation and release, timing\nSerotiny\nDormancy type\nSeed germination treatment\nSeed germination proportion\nSeed viability\nTime from fire to first flowering\nTime from fire until 50% of individuals are flowering\nTime from fire to peak flowering\nTime from fire until flowering declines\nTime from fire to fruiting\nTime from fire until 50% of individuals are fruiting\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030504"
+  },
+  {
+    "objectID": "index.html#fire-response-trait",
+    "href": "index.html#fire-response-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "fire response trait",
+    "text": "fire response trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030602\n\n\n\n\nlabel\n\n\nfire response trait\n\n\n\n\ndescription\n\n\nA plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire.\n\n\n\n\nhas narrower\n\n\n\nLeaf ash content per unit leaf dry mass\nBark ash content per unit bark dry mass\nEphemeral life history class\nSeedling recruitment season\nSeedling establishment conditions\nSprout depth\nSeed storage location\nCanopy seedbank\nSoil seedbank\nSeed longevity, categorical\nSeed longevity\nSeed maturation and release, timing\nSerotiny\nPost-fire resprouting capacity\nPost-fire proportion resprouting individuals\nPost-fire resprouting capacity of juvenile plants\nTime from seedling germination until individuals survive a fire\nPost-fire to pre-fire stem ratio\nFire exposure level\nPost-fire recruitment\nPost-fire flowering\nTime from fire to first flowering\nTime from fire until 50% of individuals are flowering\nTime from fire to peak flowering\nTime from fire until flowering declines\nTime from fire to fruiting\nTime from fire until 50% of individuals are fruiting\nFuel bed bulk density\nFuel consumption by fire\nFire rate of spread\nLeaf smoulder duration\nLeaf flame duration\nLeaf flame and smoulder duration\nFire time to ignition\nPlant fire tolerance strategy\nPlants’ influence on fire risk\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030602"
+  },
+  {
+    "objectID": "index.html#chemical-stress-sensitivity-trait",
+    "href": "index.html#chemical-stress-sensitivity-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "chemical stress sensitivity trait",
+    "text": "chemical stress sensitivity trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030702\n\n\n\n\nlabel\n\n\nchemical stress sensitivity trait\n\n\n\n\ndescription\n\n\nResponse by the plant in terms of resistivity or senility to chemical stress.\n\n\n\n\nhas narrower\n\n\n\nPlant soil salinity tolerance\nPlant salt tolerance strategy\nPlant calcium sensitivity\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030702"
+  },
+  {
+    "objectID": "index.html#environmental-tolerance-trait",
+    "href": "index.html#environmental-tolerance-trait",
+    "title": "The AusTraits Plant Dictionary (APD) Ontology",
+    "section": "environmental tolerance trait",
+    "text": "environmental tolerance trait\n\n\n\n\n\n\n\n\n\n\n\nProperty\n\n\nValue\n\n\n\n\n\n\n\nURI\n\n\nhttps://w3id.org/APD/traits/trait_group_0030704\n\n\n\n\nlabel\n\n\nenvironmental tolerance trait\n\n\n\n\ndescription\n\n\nA plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO:01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245].\n\n\n\n\nhas narrower\n\n\n\nPhotochemical reflectance index (PRI\nWater band index\nModified normalized difference vegetation index (modified NDVI\nModified chlorophyll absorption ratio index 705\nPlant succulence\nEnvironmental flowering cues\nSeedling recruitment season\nSeedling establishment conditions\nPlant resource requirements and tolerance\nPlant flood regime response\nPlant water-logging tolerance\nPlant inundation tolerance\nPlant snow tolerance\nPlant soil salinity tolerance\nPlant salt tolerance strategy\nPlant calcium sensitivity\n\n\n\n\nhas broader\n\n\nlife history trait\n\n\n\n\nis in scheme\n\n\nhttps://w3id.org/APD/traits\n\n\n\n\nidentifier\n\n\ntrait_group_0030704"
+  }
+]

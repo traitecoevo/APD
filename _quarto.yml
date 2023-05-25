@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+
+website:
+  title: "APD"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+    right:
+      - href: https://github.com/traitecoevo/APD/issues
+        text: Issues
+      - href: index.qmd
+        text: APD source on Github
+      - href: http://austraits.org
+        text: AusTraits
+      - href: index.qmd
+        text: RVA endpoint
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
