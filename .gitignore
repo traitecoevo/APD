@@ -1,6 +1,5 @@
 
 *.docx
-*.html
 *.pdf
 *_files
 factsheets
@@ -8,3 +7,4 @@ ignore
 .Rproj.user
 .Rhistory
 .RData
+/.quarto/
