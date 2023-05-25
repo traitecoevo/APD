@@ -110,9 +110,6 @@ post_fire_flowering_fire_dependent_flowering,fire_dependent_flowering,"Plants pr
 post_fire_flowering_fire_enhanced_flowering,fire_enhanced_flowering,"Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire.",post_fire_flowering
 post_fire_flowering_fire_independent_flowering,fire_independent_flowering,"Flowering is independent of fire, with the magnitude of flowers produced by plants unchanged following a fire.",post_fire_flowering
 post_fire_flowering_fire_suppressed_flowering,fire_suppressed_flowering,"Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire.",post_fire_flowering
-plant_influence_on_fire_risk_fire_risk_decreased,fire_risk_decreased,Presence of plant decreases the local fire risk.,plant_influence_on_fire_risk
-plant_influence_on_fire_risk_fire_risk_increased,fire_risk_increased,Presence of plant increases the local fire risk.,plant_influence_on_fire_risk
-plant_influence_on_fire_risk_fire_risk_unchanged,fire_risk_unchanged,Presence of plant has no effect on the local fire risk.,plant_influence_on_fire_risk
 plant_tolerance_fire_fire_retardant,fire_retardant,"Plants protected from fire by fire retardant in their bark, stems, or other tissues.",plant_tolerance_fire
 plant_tolerance_fire_fire_retardant_bark,fire_retardant_bark,Plants protected from fire by fire retardant in their bark.,plant_tolerance_fire
 plant_tolerance_fire_thick_bark,thick_bark,Plants protected from fire by thick bark.,plant_tolerance_fire
