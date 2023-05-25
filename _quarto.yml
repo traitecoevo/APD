@@ -6,6 +6,7 @@ project:
     - "APD.ttl"
     - "APD.json"
     - "APD.csv"
+    - "406.html"
   output-dir: docs
   render:
     - index.qmd
@@ -22,14 +23,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: http://austraits.org
-        text: AusTraits
       # - href: index.qmd
       #   text: ARDC RVA endpoint
 
     right:
       - icon: github
         href: https://github.com/traitecoevo/APD/
+      - href: http://austraits.org
+        text: AusTraits Project
     
     page-footer:
       - right: "This blog is built with [Quarto](https://quarto.org/)."
@@ -38,6 +39,5 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
 

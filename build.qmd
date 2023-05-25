@@ -134,10 +134,6 @@ rdf_query(true_triples, sparql)
 ```{r}
 # Build the website
 quarto::quarto_render()
-
-files <- c("APD.nq", "APD.nt", "APD.ttl", "APD.json", "APD.csv")
-
-file.copy(files, file.path("docs", files))
 ```
 
 
