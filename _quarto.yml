@@ -1,0 +1,43 @@
+project:
+  type: website
+  resources:
+    - "APD.nq"
+    - "APD.nt"
+    - "APD.ttl"
+    - "APD.json"
+    - "APD.csv"
+    - "406.html"
+  output-dir: docs
+  render:
+    - index.qmd
+
+website:
+  title: "APD"
+  site-url: https://traitecoevo.github.io/APD/
+  description: The AusTraits Plant Dictionary (APD) Ontology
+
+  repo-url: https://github.com/traitecoevo/APD
+  repo-actions: [issue]
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      # - href: index.qmd
+      #   text: ARDC RVA endpoint
+
+    right:
+      - icon: github
+        href: https://github.com/traitecoevo/APD/
+      - href: http://austraits.org
+        text: AusTraits Project
+    
+    page-footer:
+      - right: "This blog is built with [Quarto](https://quarto.org/)."
+
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+

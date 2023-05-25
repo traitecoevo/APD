@@ -9,6 +9,7 @@ http://purl.org/dc/elements/1.1/description,description,,,,http://purl.org/dc/el
 http://purl.org/dc/elements/1.1/identifier,identifier,,,,http://purl.org/dc/elements/1.1/,http://purl.org/dc/elements/1.1/
 http://purl.org/dc/terms/bibliographicCitation,bibliographic citation,,2/15/2003,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/created,date created,"Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.",7/11/2000,Date of creation of the resource.,http://purl.org/dc/terms/,http://purl.org/dc/terms/
+http://purl.org/dc/terms/reviewed,date reviewed,"Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.",,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/date,date,A point or period of time associated with an event in the lifecycle of the resource.,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/description,description,"Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.",1/14/2008,An account of the resource.,http://purl.org/dc/terms/,http://purl.org/dc/terms/
 http://purl.org/dc/terms/format,format,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
@@ -47,3 +48,9 @@ http://www.w3.org/2004/02/skos/core#semanticRelation,is in semantic relation wit
 https://w3id.org/iadopt/ont/hasContextObject,has context object,A Variable has an Entity that provides additional background information regarding the ObjectOfInterest.,,,https://w3id.org/iadopt/ont/,https://w3id.org/iadopt/ont/
 https://w3id.org/uom/SI_code,SI code,,,,https://w3id.org/uom/,https://w3id.org/uom/
 https://w3id.org/uom/UCUM_code,UCUM code,,,,https://w3id.org/uom/,https://w3id.org/uom/
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type,type,,,,http://www.w3.org/1999/02/22-rdf-syntax-ns#,http://www.w3.org/1999/02/22-rdf-syntax-ns#
+http://www.w3.org/2000/01/rdf-schema#subClassOf,sub class of,,,,http://www.w3.org/2000/01/rdf-schema#,http://www.w3.org/2000/01/rdf-schema#
+http://www.w3.org/2004/02/skos/core#topConceptOf,top concept of,,,,http://www.w3.org/2004/02/skos/core#,http://www.w3.org/2004/02/skos/core#
+http://www.w3.org/2004/02/skos/core#hasTopConcept,has top concept,,,,http://www.w3.org/2004/02/skos/core#,http://www.w3.org/2004/02/skos/core#
+http://purl.org/dc/terms/license,license,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/
+http://purl.org/dc/terms/publisher,publisher,,,,http://purl.org/dc/terms/,http://purl.org/dc/terms/

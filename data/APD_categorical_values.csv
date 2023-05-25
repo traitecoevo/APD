@@ -1,4 +1,4 @@
-Entity,label,description,trait_name
+identifier,label,description,trait_name
 bark_morphology_eucalyptus_eucalypt_box,eucalypt_box,"Eucalyptus, Corymbia or Angophora taxa with ""Box"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_gum,eucalypt_gum,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_stocking,eucalypt_stocking,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark above a rough barked stocking.",bark_morphology_eucalyptus
@@ -45,7 +45,7 @@ dispersal_syndrome_anthrochory,anthrochory,"Diaspore is dispersed by humans, eit
 dispersal_syndrome_atelochory,atelochory,"Diaspore dispersal is prevented. (Synonyms, antitelochory)",dispersal_syndrome
 dispersal_syndrome_autochory,autochory,Diaspore is dispersed by methods originating from the parent plant or diaspore.,dispersal_syndrome
 dispersal_syndrome_ballistic,ballistic,Seeds are launched away from the plant by explosion as soon as the seed capsule opens.,dispersal_syndrome
-dispersal_syndrome_barochory,barochory,"Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted)",dispersal_syndrome
+dispersal_syndrome_barochory,barochory,"Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted, passive)",dispersal_syndrome
 dispersal_syndrome_chamaechory,chamaechory,Diaspore is dispersed by being rolled along ground surface by wind.,dispersal_syndrome
 dispersal_syndrome_endozoochory,endozoochory,"Diaspore is ingested by animals, either intentionally or accidentally, then transported before being deposited. (Synonyms, ingestion)",dispersal_syndrome
 dispersal_syndrome_epizoochory,epizoochory,"Diaspore is dispersed by accidentally attaching itself to the outside of an animal vector. (Synonyms, ectozoochory, exozoochory)",dispersal_syndrome
@@ -56,11 +56,15 @@ dispersal_syndrome_zoochory,zoochory,"Diaspore is dispersed by animals, by an un
 dispersal_unit_fruit,fruit,Dispersal unit is a fruit.,dispersal_unit
 dispersal_unit_seed,seed,Dispersal unit is a seed.,dispersal_unit
 dispersal_unit_spore,spore,Dispersal unit is a spore.,dispersal_unit
-dispersers_indigenous_people,indigenous_people,Indigenous people disperse the fruit through traditional practises.,dispersers
+dispersal_unit_seedling,seedling,"Dispersal unit is a seedling. (Synonyms, viviparous)",dispersal_unit
+dispersers_indigenous_people,indigenous_people,Indigenous people disperse the fruit through traditional practices.,dispersers
+dispersers_abiotic,abiotic,Fruits are dispersed by unspecified abiotic mechanisms.,dispersers
 dispersers_ants,ants,Ants are an important fruit dispersal agent.,dispersers
+dispersers_animals,animals,Animals are an important fruit dispersal agent.,dispersers
 dispersers_bats,bats,Bats are an important fruit dispersal agent.,dispersers
 dispersers_birds,birds,Birds are an important fruit dispersal agent.,dispersers
 dispersers_cassowaries,cassowaries,"Cassowaries, in contrast to smaller flying birds, are an important fruit dispersal agent.",dispersers
+dispersers_fish,fish,Fish are an important fruit dispersal agent.,dispersers
 dispersers_floods,floods,Floods are an important fruit dispersal agent.,dispersers
 dispersers_flying_vertebrates,flying_vertebrates,Flying birds and bats are important fruit dispersal agents.,dispersers
 dispersers_flying_foxes,flying_foxes,Flying foxes are an important fruit dispersal agent.,dispersers
@@ -68,6 +72,7 @@ dispersers_garden_refuse,garden_refuse,Fruit are dispersed through garden refuse
 dispersers_insects,insects,Insects are an important fruit dispersal agent.,dispersers
 dispersers_invertebrates,invertebrates,Invertebrates are an important fruit dispersal agent.,dispersers
 dispersers_mammals,mammals,Mammals are an important fruit dispersal agent.,dispersers
+dispersers_mammals_domestic,mammals_domestic,Domesticated ammals are an important fruit dispersal agent.,dispersers
 dispersers_non-flying_vertebrates,non-flying_vertebrates,"Mammals and non-flying birds (i.e. cassowary, emu) are important fruit dispersal agents.",dispersers
 dispersers_passive,passive,There is no special dispersal agent.,dispersers
 dispersers_rain,rain,Rain is an important fruit dispersal agent; the diaspore is propelled by action of rain on plant structure or the wetting of the plant structure by rain or dew.,dispersers
@@ -77,41 +82,60 @@ dispersers_vertebrates,vertebrates,Vertebrates are an important fruit dispersal 
 dispersers_wind,wind,Wind is an important fruit dispersal agent.,dispersers
 dispersers_water,water,Water is an important fruit dispersal agent.,dispersers
 dispersers_water_currents,water_currents,Water currents are an important fruit dispersal agent; the diaspore may be either floating or submerged in fresh/saltwater currents.,dispersers
-seed_dormancy_class_morphophysiological_dormancy,morphophysiological_dormancy,Seeds exhibit morphophysiological dormancy.,seed_dormancy_class
+seed_dormancy_class_morphophysiological_dormancy,morphophysiological_dormancy,"Seeds exhibit morphophysiological dormancy, with both morphological and physiological dormancy mechanisms that must be overcome.",seed_dormancy_class
+seed_dormancy_class_morphological_dormancy,morphological_dormancy,"Seeds exhibit morphological dormancy, generally because an underdeveloped embryo needs to grow.",seed_dormancy_class
 seed_dormancy_class_non_dormant,non_dormant,Seeds are non-dormant.,seed_dormancy_class
-seed_dormancy_class_physical_dormancy,physical_dormancy,Seeds exhibit physical dormancy.,seed_dormancy_class
-seed_dormancy_class_physiological_dormancy,physiological_dormancy,Seeds exhibit physiological dormancy.,seed_dormancy_class
+seed_dormancy_class_physical_dormancy,physical_dormancy,"Seeds exhibit physical dormancy, due to one or more water-impermeable layers in the seed coat.",seed_dormancy_class
+seed_dormancy_class_physiological_dormancy,physiological_dormancy,"Seeds exhibit physiological dormancy, whereby chemical changes are required within the seed to break dormancy, including temperature stratification and after-ripening.",seed_dormancy_class
 embryo_colour_colourless,colourless,Colourless embryo.,embryo_colour
 embryo_colour_green,green,Green embryo.,embryo_colour
-fire_exposure_level_fire_not_relevant,fire_not_relevant,Plants are aquatic and they are never affected by fire.,fire_exposure_level
-fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,"The plants' habitat is restricted to rocky outcrops or rock pavement, where they rarely experience fire.",fire_exposure_level
-fire_response_fire_killed,fire_killed,Fewer than 30% of plants resprout following a hot fire.,fire_response
-fire_response_resprouts,resprouts,More than 70% of plants resprout following a hot fire.,fire_response
-fire_response_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a hot fire.,fire_response
-fire_response_no_significant_fire_response,no_significant_fire_response,Plants are rarely killed by a moderate-intensity fire but also do not resprout.,fire_response
-fire_response_unknown,unknown,Fire status assessed but unknown.,fire_response
-fire_response_detailed_fire_killed,fire_killed,Plants killed by hot fires.,fire_response_detailed
-fire_response_detailed_weak_resprouting,weak_resprouting,"Plant shows weak resprouting following fire; unless an author defines a study-specific cut-off, this term is applied to populations where some individuals but fewer than 30% of individuals resprout following a fire.",fire_response_detailed
-fire_response_detailed_intermediate_resprouting,intermediate_resprouting,"Plant shows intermediate resprouting following fire; unless an author defines a study-specific cut-off, this term is  applied to populations where between 30-70% of individuals resprout.",fire_response_detailed
-fire_response_detailed_strong_resprouting,strong_resprouting,"Plant shows strong resprouting following fire; unless an author defines a study-specific cut-off, this term is  applied to populations where > 70% of individuals resprout.",fire_response_detailed
-fire_response_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire.,fire_response_juvenile
-fire_response_juvenile_juvenile_resprout,juvenile_resprout,More than 50% of juvenile plants survive and resprout following fire.,fire_response_juvenile
-fire_response_juvenile_juvenile_moderate_fire_killed,juvenile_moderate_fire_killed,25-50% of juvenile plants resprout following fire.,fire_response_juvenile
-fire_response_on_maturity_remain_mature,remain_mature,Mature plants remain mature following fire.,fire_response_on_maturity
-fire_response_on_maturity_mature_to_juvenile,mature_to_juvenile,Mature plants become juvenile following fire.,fire_response_on_maturity
-fire_response_on_maturity_mature_do_not_resprout,mature_do_not_resprout,Mature plants do not resprout following fire.,fire_response_on_maturity
-post_fire_recruitment_post_fire_recruitment,post_fire_recruitment,Plants that germinate robustly post-fire.,post_fire_recruitment
-post_fire_recruitment_post_fire_recruitment_moderate,post_fire_recruitment_moderate,Plants with a moderate number of seedlings present post-fire.,post_fire_recruitment
-post_fire_recruitment_no_post_fire_recruitment,no_post_fire_recruitment,Plants where there is no germination and seedling establishment post-fire.,post_fire_recruitment
-fire_and_establishing_establish_anytime,establish_anytime,"Plants can establish immediately after fire and in later years as vegetation ages, right thru to mature and over-mature vegetation (assuming suitable seasonal conditions).",fire_and_establishing
-fire_and_establishing_establish_just_after_fire_only,establish_just_after_fire_only,"Plants establish immediately after a fire (within the first 2 seasons, and usually within the first season) but cannot continue recruitment as the vegetation ages further, unable to establish in mature vegetation.",fire_and_establishing
-fire_and_establishing_establish_intermediate_to_mature_vegetation_only,establish_intermediate_to_mature_vegetation_only,"Plants unable to establish immediately after fire (within the first season or two) but can establish in older vegetation (including mature to over-mature vegetation), requires some environmental characteristics not found in vegetation straight after fires.",fire_and_establishing
+fire_exposure_level_aquatic_taxon,aquatic_taxon,Plants rarely or never experience fires because they are aquatic.,fire_exposure_level
+fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,Plants rarely experience fires because their habitat is restricted to rocky outcrops or rock pavement.,fire_exposure_level
+fire_exposure_level_fire_avoidance_near_water,fire_avoidance_near_water,Plants rarely or never experience fires because their habitat is close to a body of water.,fire_exposure_level
+fire_exposure_level_fire_avoidance_in_swamp,fire_avoidance_in_swamp,"Plants rarely experience fires because their habitat is usually saturated, but populations can be catastrophically impacted during severe droughts when the swamps dry out.",fire_exposure_level
+fire_exposure_level_seasonal_fire_avoidance,seasonal_fire_avoidance,"Plants avoid fire by only have above-ground parts during seasons when fire is rare or absent, but populations can be catastrophically impacted if fire occurs during an atypical season.",fire_exposure_level
+resprouting_capacity_fire_killed,fire_killed,Fewer than 30% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_resprouts,resprouts,More than 70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+resprouting_capacity_juvenile_juvenile_resprout,juvenile_resprout,More than 50% of juvenile plants survive and resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+resprouting_capacity_juvenile_juvenile_moderate_fire_killed,juvenile_moderate_fire_killed,25-50% of juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
+seedling_establishment_conditions_establish_post_fire,establish_post_fire,Seedling establishment occurs following fire.,seedling_establishment_conditions
+seedling_establishment_conditions_establish_post_disturbance,establish_post_disturbance,"Seedling establishment occurs following disturbances that increase light levels at the ground surface, but the type of disturbance is not documented.",seedling_establishment_conditions
+seedling_establishment_conditions_establish_anytime,establish_anytime,"Seedlings can establish immediately following a disturbance and in later years as vegetation ages, right thru to mature and over-mature vegetation",seedling_establishment_conditions
+seedling_establishment_conditions_establish_intermediate_to_mature_vegetation,establish_intermediate_to_mature_vegetation,"Seedlings require some environmental characteristics not found in vegetation straight after fires to establish, for they cannot establish within the first season or two after fire but can establish in older vegetation (including mature to over-mature vegetation).",seedling_establishment_conditions
+post_fire_recruitment_post_fire_recruitment,post_fire_recruitment,Plants that germinate post-fire.,post_fire_recruitment
+post_fire_recruitment_post_fire_recruitment_absent,post_fire_recruitment_absent,Plants that do not show increased seeding following fire.,post_fire_recruitment
+post_fire_flowering_fire_dependent_flowering,fire_dependent_flowering,"Plants predominantly flower after a fire, usually within the first 1-4 growing seasons following the fire.",post_fire_flowering
+post_fire_flowering_fire_enhanced_flowering,fire_enhanced_flowering,"Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire.",post_fire_flowering
+post_fire_flowering_fire_independent_flowering,fire_independent_flowering,"Flowering is independent of fire, with the magnitude of flowers produced by plants unchanged following a fire.",post_fire_flowering
+post_fire_flowering_fire_suppressed_flowering,fire_suppressed_flowering,"Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire.",post_fire_flowering
+plant_tolerance_fire_fire_retardant,fire_retardant,"Plants protected from fire by fire retardant in their bark, stems, or other tissues.",plant_tolerance_fire
+plant_tolerance_fire_fire_retardant_bark,fire_retardant_bark,Plants protected from fire by fire retardant in their bark.,plant_tolerance_fire
+plant_tolerance_fire_thick_bark,thick_bark,Plants protected from fire by thick bark.,plant_tolerance_fire
 flower_colour_blue_purple,blue_purple,Flower colour is blue or purple.,flower_colour
 flower_colour_green,green,Flower colour is green.,flower_colour
 flower_colour_pink,pink,Flower colour is pink.,flower_colour
 flower_colour_red_brown,red_brown,Flower colour is red or brown.,flower_colour
 flower_colour_white_cream,white_cream,Flower colour is white or cream.,flower_colour
-flower_colour_yellow_orange,yellow_orange,Flower colour is yellow orange.,flower_colour
+flower_colour_yellow_orange,yellow_orange,Flower colour is yellow or orange.,flower_colour
+flower_colour_grey,grey,Flower colour is grey.,flower_colour
+flower_colour_black,black,Flower colour is black.,flower_colour
+perianth_colour_white,white,Perianth colour is white.,perianth_colour
+perianth_colour_yellow,yellow,Perianth colour is yellow.,perianth_colour
+perianth_colour_orange,orange,Perianth colour is orange.,perianth_colour
+perianth_colour_red,red,Perianth colour is red.,perianth_colour
+perianth_colour_pink,pink,Perianth colour is pink.,perianth_colour
+perianth_colour_purple,purple,Perianth colour is purple.,perianth_colour
+perianth_colour_blue,blue,Perianth colour is blue.,perianth_colour
+perianth_colour_green,green,Perianth colour is green.,perianth_colour
+perianth_colour_grey,grey,Perianth colour is grey.,perianth_colour
+perianth_colour_brown,brown,Perianth colour is brown.,perianth_colour
+perianth_colour_black,black,Perianth colour is black.,perianth_colour
+flower_orientation_up,up,"Flower orientation is vertical, with the floral entrance pointing up.",flower_orientation
+flower_orientation_lateral,lateral,"Flower orientation is horizontal, with the floral entrance perpendicular to main vertical axis.",flower_orientation
+flower_orientation_down,down,"Flower orientation is pendant, with the floral entrance pointing down.",flower_orientation
+flower_orientation_mixed,mixed,"Flower orientation is mixed, with different flowers exhibiting different orientations.",flower_orientation
 flowering_cues_rain,rain,"Plants increase flowering in response to rain, but the time of year is not specified.",flowering_cues
 flowering_cues_rain_obligate,rain_obligate,Plants only flower following rain events.,flowering_cues
 flowering_cues_rain_all_year,rain_all_year,Plants increase flowering in response to rain at any time of the year.,flowering_cues
@@ -139,16 +163,16 @@ flower_perianth_symmetry_zygomorphic,zygomorphic,"Monosymmetric, with a single p
 flower_perianth_phyllotaxis_irregular,irregular,Perianth parts lacking any symmetrical organisation.,flower_perianth_phyllotaxis
 flower_perianth_phyllotaxis_spiral,spiral,"Perianth parts organised along a continuous spiral, usually with wide divergence angles more or less equal to 137.5 degrees, the Fibonacci 'golden angle'.",flower_perianth_phyllotaxis
 flower_perianth_phyllotaxis_whorled,whorled,Perianth parts organised in one or more whorls.,flower_perianth_phyllotaxis
-flower_perianth_differentiation_undifferentiated,undifferentiated,All tepals alike; includes a single undifferentiated whorl,flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_outer_sepaloid_inner_petaloid,marked_differentiation_outer_sepaloid_inner_petaloid,A typical flower with calyx and corolla,flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_among_petaloid_tepals,marked_differentiation_among_petaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation_among_sepaloid_tepals,marked_differentiation_among_sepaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_marked_differentiation,marked_differentiation,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_outer_sepaloid_inner_petaloid,continuous_differentiation_outer_sepaloid_inner_petaloid,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_among_petaloid_tepals,continuous_differentiation_among_petaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_continuous_differentiation_among_sepaloid_tepals,continuous_differentiation_among_sepaloid_tepals,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_weak_differentiation,weak_differentiation,[unknown],flower_perianth_differentiation
-flower_perianth_differentiation_very_weak_differentiation,very_weak_differentiation,[unknown],flower_perianth_differentiation
+flower_perianth_differentiation_undifferentiated,undifferentiated,"Flower were all tepals are alike, including flowers with a single, undifferentiated whorl.",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_outer_sepaloid_inner_petaloid,marked_differentiation_outer_sepaloid_inner_petaloid,A typical flower with a distinct calyx and corolla.,flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_among_petaloid_tepals,marked_differentiation_among_petaloid_tepals,"A flower with tepals that all resemble petals, but with marked differentiation between whorls of tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation_among_sepaloid_tepals,marked_differentiation_among_sepaloid_tepals,"A flower with tepals that all resemble sepals, but with marked differentiation between whorls of tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_marked_differentiation,marked_differentiation,"A flower with marked differentiation between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_outer_sepaloid_inner_petaloid,continuous_differentiation_outer_sepaloid_inner_petaloid,"A flower with multiple whorls, where there is continuous differentiation between the outer sepaloid parts and the inner petaloid parts.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_among_petaloid_tepals,continuous_differentiation_among_petaloid_tepals,"A flower with series of tepals that all resemble petals, which display continuous, gradual differentiation between whorls.",flower_perianth_differentiation
+flower_perianth_differentiation_continuous_differentiation_among_sepaloid_tepals,continuous_differentiation_among_sepaloid_tepals,"A flower with series of tepals that all resemble sepals, which display continuous, gradual differentiation between whorls.",flower_perianth_differentiation
+flower_perianth_differentiation_weak_differentiation,weak_differentiation,"A flower with weak between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
+flower_perianth_differentiation_very_weak_differentiation,very_weak_differentiation,"A flower with very weak between whorls, but without an indication if the perianth whorls are petals, sepals, or tepals.",flower_perianth_differentiation
 flower_filament_absent,absent,No filaments present,flower_filament
 flower_filament_present_general,present_general,"Filaments present, with no specific defining characteristics.",flower_filament
 flower_filament_long_and_narrow,long_and_narrow,"Filaments have a long and narrow shape. (Synonyms, filiform, slender)",flower_filament
@@ -170,7 +194,8 @@ flower_anther_attachment_dorsifixed,dorsifixed,Filament attached to the dorsal s
 flower_anther_attachment_dorsifixed_at_base,dorsifixed_at_base,"Filament attached to the dorsal side of the anther, at the base.",flower_anther_attachment
 flower_anther_attachment_ventrifixed,ventrifixed,Filament attached to the ventral side of the anther.,flower_anther_attachment
 flower_anther_dehiscence_longitudinal_slit,longitudinal_slit,Anther with longitudinal slits that extend along the entire length of each theca.,flower_anther_dehiscence
-flower_anther_dehiscence_poricidal,poricidal,"Anther where dehiscence of longitudinal slits is incomplete, with pollen exiting via a small pore.",flower_anther_dehiscence
+flower_anther_dehiscence_poricidal,poricidal,"Anther where dehiscence of longitudinal slits is incomplete, with pollen exiting via a small pore at the tip.",flower_anther_dehiscence
+flower_anther_dehiscence_pores_many,pores_many,Anther with pollen exiting from many pores along its length.,flower_anther_dehiscence
 flower_anther_dehiscence_h_valvate,h_valvate,"Anther with two valves on longitudinal hinges, opening horizontally as salon doors; when the stomium bifurcates at its distal and/or proximal end and thus a valve is formed.",flower_anther_dehiscence
 flower_anther_dehiscence_flap_valvate,flap_valvate,"Anther with one or more flap-like valves on horizontal hinges, opening vertically.",flower_anther_dehiscence
 flower_anther_dehiscence_transverse_slit,transverse_slit,Anther with horizontal slit.,flower_anther_dehiscence
@@ -178,7 +203,8 @@ flower_anther_dehiscence_short_basal_slits,short_basal_slits,Anther where dehisc
 flower_anther_dehiscence_short_central_slits,short_central_slits,Anther where dehiscence of longitudinal slits is incomplete and only occurs over a short extent at the center of the theca.,flower_anther_dehiscence
 flower_anther_dehiscence_short_apical_slits,short_apical_slits,Anther where dehiscence of longitudinal slits is incomplete and only occurs over a short extent at the apical end of the theca.,flower_anther_dehiscence
 flower_anther_dehiscence_t_valvate,t_valvate,Anther with T-shaped stomium; reduced transverse slit at base.,flower_anther_dehiscence
-flower_anther_dehiscence_common_stomium_confluent_thecae,common_stomium_confluent_thecae,(uncertain),flower_anther_dehiscence
+flower_anther_dehiscence_common_stomium_confluent_thecae,common_stomium_confluent_thecae,The two thecae of a single anther are fused at one end with a single pore through which pollen exits.,flower_anther_dehiscence
+flower_anther_dehiscence_circular,circular,Anther with a transverse slit that goes entirely around the anther.,flower_anther_dehiscence
 flower_anther_connective_extension_absent,absent,Apical connective extensions are lacking.,flower_anther_connective_extension
 flower_anther_connective_extension_short_extension,short_extension,Connective extension less than a third of the length of anther.,flower_anther_connective_extension
 flower_anther_connective_extension_long_extension,long_extension,Connective extension more than a third but less than length of anther; e.g. Idiospermum australiense.,flower_anther_connective_extension
@@ -205,11 +231,11 @@ flower_gynoecium_placentation_parietal,parietal,Ovules attach to the ovary wall 
 flower_gynoecium_placentation_marginal,marginal,Ovules attach along the ventral slit; in apocarpous and unicarpellate gynoecia.,flower_gynoecium_placentation
 flower_gynoecium_placentation_free_central,free_central,Ovules are attached to a central column that emerges from the base of the ovary and protrudes into the non-septate ovary; in syncarpous gynoecia.,flower_gynoecium_placentation
 flower_gynoecium_placentation_laminar,laminar,When there is more than one series of ovules at the flanks of a carpel; in syncarpous gynoecia and apocarpous and unicarpellate gynoecia.,flower_gynoecium_placentation
-flower_pollen_aperture_shape_absent,absent,(uncertain),flower_pollen_aperture_shape
+flower_pollen_aperture_shape_absent,absent,Pollen that lacks an aperture.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_colporus,colporus,Pollen aperture shape that combines the groove of colpate and the pore of porate apertures.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_colpus,colpus,Pollen aperture shape is elongate and grooved and may be positioned globally or equatorially.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_pore,pore,Pollen aperture shape is round and pore-like and may be positioned globally or equatorially.,flower_pollen_aperture_shape
-flower_pollen_aperture_shape_ring_like,ring_like,(uncertain),flower_pollen_aperture_shape
+flower_pollen_aperture_shape_ring_like,ring_like,Aperture that completely encircles the pollen.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_spiraperturate,spiraperturate,Pollen grain with one or more spiral apertures.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_sulcus,sulcus,Pollen aperture shape is elongate and grooved and positioned at the pole.,flower_pollen_aperture_shape
 flower_pollen_aperture_shape_syncolpus,syncolpus,"Pollen grain with two or more simple (or compound) colpi, the ends of which join at the pole.",flower_pollen_aperture_shape
@@ -240,7 +266,7 @@ fruit_type_mericarp,mericarp,"A fruitlet (seed-containing portion of a fruit) th
 fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits. (Synonym, apocarp)",fruit_type
 fruit_type_nut,nut,"A simple, dry, indehiscent fruit with a single seed and a hard pericarp.",fruit_type
 fruit_type_nutlet,nutlet,"A diminutive of nut, referring to a simple, dry, indehiscent structure with a single seed that might be an entire fruit (nut; monocarp) or a portion of a fruit, such as the individual components derived from an apocarp (fruit with multiple unfused ovaries) or schizocarp (fruit with multiple ovaries that separate at maturity).",fruit_type
-fruit_type_pepo,pepo,XXX,fruit_type
+fruit_type_pepo,pepo,"A fleshy fruit derived from a single ovary that is divided into several carpels, has multiple seeds, and has a tough rind when mature.",fruit_type
 fruit_type_pome,pome,A fleshy fruit with the bulk of the fleshy tissue derived from flora tissue that surrounds the inferior ovary.,fruit_type
 fruit_type_pyrene,pyrene,A fleshy fruit in which the seed(s) are covered by a hard layer of endocarp.,fruit_type
 fruit_type_samara,samara,"A winged, dry fruit.",fruit_type
@@ -293,9 +319,13 @@ leaf_pendulousness_pendulous,pendulous,Leaves are pendulous.,leaf_pendulousness
 leaf_pendulousness_not_pendulous,not_pendulous,Leaves are not pendulous.,leaf_pendulousness
 leaf_arrangement_decussate,decussate,When sequential pairs of opposite leaves attach at right angles to the pair above or below.,leaf_arrangement
 leaf_arrangement_distichous,distichous,When alternate or opposite leaves are arranged in two opposite rows.,leaf_arrangement
+leaf_arrangement_scattered,scattered,When leaves are attached along the entire length of stem.,leaf_arrangement
 leaf_arrangement_spiral,spiral,When alternate leaves are attached in a progressive spiral pattern along the stem.,leaf_arrangement
-leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes.",leaf_arrangement
-leaf_arrangement_crowded,crowded,"When internode length varies considerably along a stem, such that leaves appear crowded or tufted.",leaf_arrangement
+leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)",leaf_arrangement
+leaf_arrangement_clustered,clustered,"When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided.",leaf_arrangement
+leaf_arrangement_clustered_basal,clustered_basal,"When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)",leaf_arrangement
+leaf_arrangement_crowded,crowded,"When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)",leaf_arrangement
+leaf_arrangement_imbricate,imbricate,When leaves lay tightly against the stem and are overlapping.,leaf_arrangement
 leaf_phyllotaxis_alternate,alternate,A single leaf is attached at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_opposite,opposite,A pair of leaves are attached opposite to one another at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_whorled,whorled,"Three or more leaves are attached at each stem node, arranged in a symmetrical pattern around the stem. (Synonyms, verticillate)",leaf_phyllotaxis
@@ -312,6 +342,7 @@ leaf_margin_toothed,toothed,"Leaf margin has small projections or lobes along th
 leaf_margin_toothed_serrate,toothed_serrate,"Type of toothed leaf margin with sharp teeth that are angled toward the tip of the leaf. (Synonyms, saw-toothed)",leaf_margin
 leaf_margin_toothed_dentate,toothed_dentate,Type of toothed leaf margin with sharp teeth that point outwards at right angles to the leaf margin.,leaf_margin
 leaf_margin_toothed_crenate,toothed_crenate,"Type of toothed leaf margin with teeth that are rounded or obtuse, rather than having a sharp apex. [PO:0025519]",leaf_margin
+leaf_margin_posture_involute,involute,"Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)",leaf_margin_posture
 leaf_margin_posture_revolute,revolute,Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963],leaf_margin_posture
 leaf_margin_posture_recurved,recurved,Leaf tip is curved outward or downward. [PATO:0002211],leaf_margin_posture
 leaf_margin_posture_flat,flat,"Leaf lamina, including margins, is a flat plane. [PATO:0000407]",leaf_margin_posture
@@ -355,6 +386,7 @@ leaf_shape_elliptical,elliptical,"A 2-dimensional shape that is an oval, with cu
 leaf_shape_widely_elliptical,widely_elliptical,"A 2-dimensional shape that is a broad oval, with curved margins, lacking a distinct point, and a length:width ratio of approximately 6:5.",leaf_shape
 leaf_shape_orbicular,orbicular,"A 2-dimensional shape that is approximately circular. (Synonyms, circular)",leaf_shape
 leaf_shape_oblate,oblate,"A 2-dimensional shape that is a broad oval, with curved margins, lacking a distinct point, and a length:width ratio of approximately 5:6. The petiole attaches along the broader side.",leaf_shape
+leaf_shape_narrowly_lanceolate,narrowly_lanceolate,"A 2-dimensional shape that is very narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The petiole attaches near the wide, curved portion of the leaf lamina.",leaf_shape
 leaf_shape_lanceolate,lanceolate,"A 2-dimensional shape that is narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 6:1 and 3:1. The petiole attaches near the wide, curved portion of the leaf lamina.",leaf_shape
 leaf_shape_narrowly_ovate,narrowly_ovate,"A 2-dimensional shape that is narrowly egg-shaped, with a length:width ratio between 3:1 and 2:1. The petiole attaches near the wide, curved portion of the leaf lamina. (Synonyms, lance_ovate, widely_lanceolate)",leaf_shape
 leaf_shape_ovate,ovate,"A 2-dimensional shape that is egg-shaped, with a length:width ratio between 2:1 and 3:2. The petiole attaches near the wide, curved portion of the leaf lamina.",leaf_shape
@@ -364,8 +396,8 @@ leaf_shape_oblanceolate,oblanceolate,"A 2-dimensional shape that is narrowly tea
 leaf_shape_narrowly_obovate,narrowly_obovate,"A 2-dimensional shape that is narrowly egg-shaped or teardrop-shaped with a length:width ratio between 3:1 and 2:1. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole. (Synonyms, oblance-obovate)",leaf_shape
 leaf_shape_obovate,obovate,A 2-dimensional shape that is egg-shaped with a length:width ratio between 2:1 and 3:2. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole.,leaf_shape
 leaf_shape_widely_obovate,widely_obovate,A 2-dimensional shape that is broadly egg-shaped with a length:width ratio of approximately 6:5. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole.,leaf_shape
-leaf_shape_narrowly_triangular,narrowly_triangular,"A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular; wedge-shaped)",leaf_shape
-leaf_shape_triangular,triangular,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf. (Synonyms, wedge-shaped)",leaf_shape
+leaf_shape_narrowly_triangular,narrowly_triangular,"A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)",leaf_shape
+leaf_shape_triangular,triangular,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf.",leaf_shape
 leaf_shape_deltate,deltate,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio of 1:1 and the petiole attaching along one of the broad sides.",leaf_shape
 leaf_shape_obtriangular,obtriangular,"A 2-dimensional shape that is triangular to fan-shaped or wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the narrowest portion of the leaf. (Synonyms, flabelliform, fan-shaped, wedge-shaped)",leaf_shape
 leaf_shape_narrowly_rhomboidal,narrowly_rhomboidal,"A 2-dimensional shape that is like a narrow diamond, with approximately straight edges, widest near the middle, and a length:width ratio 6:1 to 3:1. The petiole attaches near one of the points.",leaf_shape
@@ -375,20 +407,29 @@ leaf_shape_narrowly_obtrullate,narrowly_obtrullate,"A 2-dimensional shape that i
 leaf_shape_obtrullate,obtrullate,"A 2-dimensional shape that is approximately parallelogram-shaped, widest near the tip, and with a length:width ratio 2:1 to 3:2.",leaf_shape
 leaf_shape_widely_obtrullate,widely_obtrullate,"A 2-dimensional shape that is broadly parallelogram-shaped, widest near the tip, and with a length:width ratio of approximately 6:5.",leaf_shape
 leaf_shape_acicular,acicular,"A 2-dimensional or 3-dimensional shape with a needlelike tip, often round in cross-section, with margins straight and parallel, and a length:width ratio greater than 12:1. (Synonyms, needle-shaped)",leaf_shape
-leaf_shape_terete,terete,"A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip.",leaf_shape
+leaf_shape_terete,terete,"A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)",leaf_shape
 leaf_shape_cordate,cordate,"A 2-dimensional heart shape, approximately ovate with a cordate base, with the petiole attaching at the notch between the lobes. (Synonyms, cordiform)",leaf_shape
 leaf_shape_obcordate,obcordate,"A 2-dimensional heart shape, approximately ovate with a cordate apex, and the petiole attaching along the broad, curve side.",leaf_shape
-leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform)",leaf_shape
+leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)",leaf_shape
 leaf_shape_reniform,reniform,"A 2-dimensional shape that is roughly kidney-shaped, wider than long with a rounded apex and two rounded, basal lobes that are smoothly concave at their intersection. (Synonyms, kidney-shaped)",leaf_shape
-leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped)",leaf_shape
+leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)",leaf_shape
+leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1,leaf_shape
+leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)",leaf_shape
 leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped).",leaf_shape
 leaf_shape_peltate,peltate,"A 2-dimensional orbicular shape, distinguished by the petiole attaching near the center of the leaf lamina.",leaf_shape
 leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous.",leaf_shape
+leaf_base_shape_acute,acute,Two sides of the leaf meet at an angle that is less than 90°.,leaf_base_shape
 leaf_base_shape_attenuate,attenuate,"Basal leaf margin abruptly incurved (concave), the two sides intersecting at an angle of less than 45°.",leaf_base_shape
 leaf_base_shape_auriculate,auriculate,Basal leaf margin with two rounded lobes. The leaf margin above the lobes is concave. The petiole attaches in the incised region between the lobes.,leaf_base_shape
+leaf_base_shape_cordate,cordate,Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded.,leaf_base_shape
 leaf_base_shape_cuneate,cuneate,"Basal leaf margin approximately straight, the two sides intersecting at an angle between 45° to 90°.",leaf_base_shape
 leaf_base_shape_hastate,hastate,"Basal leaf margin with two lobes oriented outward, such that they are at approximately 90° relative to the central axis and the leaf margin is fairly flat at the base.",leaf_base_shape
+leaf_base_shape_oblique,oblique,XXX,leaf_base_shape
+leaf_base_shape_obtuse,obtuse,Two sides of the leaf meet at an angle that is greater than 90°.,leaf_base_shape
+leaf_base_shape_rounded,rounded,Basal leaf margin is rounded.,leaf_base_shape
 leaf_base_shape_sagittate,sagittate,"Basal leaf margin with two lobes oriented downward, away from apex. The petiole attaches in the concave region between the lobes.",leaf_base_shape
+leaf_base_shape_sheathing,sheathing,XXX,leaf_base_shape
+leaf_base_shape_truncate,truncate,XXX,leaf_base_shape
 plant_photosynthetic_organ_leaf,leaf,"A true leaf, including both laminar and needle-shaped leaves.",plant_photosynthetic_organ
 plant_photosynthetic_organ_cladode,cladode,"A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)",plant_photosynthetic_organ
 plant_photosynthetic_organ_phyllode,phyllode,"A flattened bladelike petiole. (Synonyms, switch plant)",plant_photosynthetic_organ
@@ -412,6 +453,11 @@ life_history_annual,annual,"A plant that lives for up to one year after germinat
 life_history_biennial,biennial,"A plant that lives for up to two years after germinating, requiring two growing seasons to complete its life cycle and dying following the second growing season.",life_history
 life_history_perennial,perennial,"A plant that lives for three or more growing seasons, with an exact lifespan that is indeterminate.",life_history
 life_history_short_lived_perennial,short_lived_perennial,"A perennial whose lifespan is less than approximately five years, with the exact lifespan generally dependent on environmental conditions.",life_history
+life_history_ephemeral_class_disturbance_ephemeral,disturbance_ephemeral,"Ephemeral plant the germinates and establishes following disturbance, but the type of disturbance is not specified.",life_history_ephemeral_class
+life_history_ephemeral_class_rain_ephemeral,rain_ephemeral,Ephemeral plant that germinates and establishes following rain or flood events.,life_history_ephemeral_class
+life_history_ephemeral_class_fire_ephemeral,fire_ephemeral,"Ephemeral plant that germinates and establishes following fire, where it is unknown if the plant is an obligate or facultative fire ephemeral.",life_history_ephemeral_class
+life_history_ephemeral_class_fire_ephemeral_facultative,fire_ephemeral_facultative,"Ephemeral plant that increases its germination and establishment following fire, but can also germinate and establish without fire.",life_history_ephemeral_class
+life_history_ephemeral_class_fire_ephemeral_obligate,fire_ephemeral_obligate,Ephemeral plant that only germinates and establishes following fire.,life_history_ephemeral_class
 sex_type_androdioecious,androdioecious,Taxa in which hermaphroditic and staminate (male) plants coexist within a population.,sex_type
 sex_type_andromonoecious,andromonoecious,Taxa with hermaphrodite flowers and staminate flowers (producing just male gametes) on the same plant but no pistillate (female) flowers.,sex_type
 sex_type_dioecious,dioecious,Taxa that produce male and female flowers on separate plants.,sex_type
@@ -449,7 +495,7 @@ plant_growth_form_herb,herb,"A seed-bearing plant which does not have a woody ab
 plant_growth_form_subshrub,subshrub,"A plant that is only woody at the base, with the remainder of the stems regenerating yearly. This term is not meant to encompass short-lived plants that are only borderline woody. (Synonyms, suffrutescent)",plant_growth_form
 plant_growth_form_shrub,shrub,"A woody plant that is distinguished by NOT being a tree, due to one of more of the following characteristics, 1) they are less than 8 metres in height; 2) if a plant community includes trees, the shrubs are shorter than the surrounding trees and not part of the canopy; 3) in comparison to trees, the leaves are more distributed along the entire trunk; 4) the plant has multiple relatively narrow stems arising at or near ground level. The definition of `shrub` is complex, as there are many single-stemmed shrubs within Australia and many taxa that are described in the taxonomic literature as a shrub or small tree.",plant_growth_form
 plant_growth_form_mallee,mallee,Refers to Eucalyptus species which are small trees that form a large lignotuber. They have multiple stems arising at or near ground level and regenerate from the lignotuber following fire.,plant_growth_form
-plant_growth_form_tree,tree,"A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominately elevated above the ground surface.",plant_growth_form
+plant_growth_form_tree,tree,"A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface.",plant_growth_form
 plant_growth_form_graminoid,graminoid,"Herbaceous plant with a grass-like morphology that is within the order Poales. Taxa both with and without a tussock form are mapped to this term. This term is most frequently applied to three large monocot families, Poaceae, Cyperaceae, and Juncaceae, but the term could apply to other taxa within Poales with a grass-like morphology, including narrow, linear leaves and non-showy flowers, including Restionaceae, Centrolepidaceae, Anarthriaceae, and Ecdeiocoleaceae. Taxa outside Poales with a grass-like morphology should be designated as `herbs` and also have the term `tufted` mapped to the trait `stem_growth_habit`.",plant_growth_form
 plant_growth_form_tussock,tussock,"A subcategory of graminoid, which is a plant where many shoots from the basal meristem form prominent tufts.",plant_growth_form
 plant_growth_form_graminoid_not_tussock,graminoid_not_tussock,"A subcategory of graminoid, indicating a plant which explicitly lacks a tussock morphology, with the leaves not growing in tufts.",plant_growth_form
@@ -511,6 +557,7 @@ plant_type_by_resource_use_xerophyte,xerophyte,Drought-tolerant and drought-adap
 pollination_syndrome_abiotic,abiotic,"Floral syndrome indicates pollination occurs through wind, water, or collision of free-floating particles.",pollination_syndrome
 pollination_syndrome_biotic,biotic,Floral syndrome suggests flowers are pollinated by a biotic agent.,pollination_syndrome
 pollination_syndrome_animal,animal,Floral syndrome suggests flowers are animal-pollinated.,pollination_syndrome
+pollination_syndrome_ballistic,ballistic,Floral syndrome suggests pollen is launched away from the plant by explosion.,pollination_syndrome
 pollination_syndrome_bat,bat,Floral syndrome suggests flowers are bat-pollinated.,pollination_syndrome
 pollination_syndrome_bee,bee,Floral syndrome suggests flowers are bee-pollinated.,pollination_syndrome
 pollination_syndrome_beetle,beetle,Floral syndrome suggests flowers are beetle-pollinated.,pollination_syndrome
@@ -531,6 +578,7 @@ pollination_system_abiotic,abiotic,"Observations indicate pollination occurs thr
 pollination_system_biotic_unspecialised,biotic_unspecialised,"Taxa are pollinated by a biotic agent, but do not have a specialist pollinator.",pollination_system
 pollination_system_biotic_specialised,biotic_specialised,Taxa depend upon a specialist pollinator for pollen transfer.,pollination_system
 pollination_system_animal,animal,Flowers are observed to be animal-pollinated.,pollination_system
+pollination_system_ballistic,ballistic,Pollen is observed to be launched away from the plant by explosion.,pollination_system
 pollination_system_bat,bat,Flowers are observed to be bat-pollinated.,pollination_system
 pollination_system_bee,bee,Flowers are observed to be bee-pollinated.,pollination_system
 pollination_system_beetle,beetle,Flowers are observed to be beetle-pollinated.,pollination_system
@@ -546,7 +594,49 @@ pollination_system_wasp,wasp,Flowers are observed to be wasp-pollinated.,pollina
 pollination_system_water,water,Flowers are observed to be water-pollinated.,pollination_system
 pollination_system_wind,wind,Flowers are observed to be wind-pollinated.,pollination_system
 pollination_system_self,self,Flowers are self-pollinated.,pollination_system
+bud_bank_location_apical_buds,apical_buds,"Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)",bud_bank_location
+bud_bank_location_basal_buds,basal_buds,"Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)",bud_bank_location
+bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`.",bud_bank_location
+bud_bank_location_epicormic_buds,epicormic_buds,Plants resprout from the stem or trunk.,bud_bank_location
+bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)",bud_bank_location
+bud_bank_location_root_crown,root_crown,"Plants resprout from the root crown, the root tissue at the root-stem transition.",bud_bank_location
+bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)",bud_bank_location
+bud_bank_location_rhizome,rhizome,"Plants resprout from buds on a rhizome, where it is not specified if the rhizome is woody or non-woody.",bud_bank_location
+bud_bank_location_rhizome_woody,rhizome_woody,Plants resprout from buds on a woody rhizome.,bud_bank_location
+bud_bank_location_rhizome_non_woody,rhizome_non_woody,"Plants resprout from buds on a fleshy rhizome, rhizophore, or fibrous rhizome.",bud_bank_location
+bud_bank_location_stem_buds,stem_buds,"Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)",bud_bank_location
+bud_bank_location_stem_tuber,stem_tuber,Plants resprout from buds on a stem tuber.,bud_bank_location
+bud_bank_location_stolon,stolon,Horizontal branches (stems) resprout from the base of the plant.,bud_bank_location
+bud_bank_location_underground_buds,underground_buds,"Plants that resprout from underground organ, but the type of organ isn't specified.",bud_bank_location
+bud_bank_location_none,none,Plants lack regenerative buds.,bud_bank_location
+storage_organ_bulb,bulb,Below ground storage organ derived from stem and usually leaf tissue.,storage_organ
+storage_organ_corm,corm,"Below ground storage organ that is a short, rounded, vertical, fleshy, underground stem.",storage_organ
+storage_organ_caudex,caudex,"Swollen stem that usually functions in water storage, although the term can also apply to below ground structures or to swollen roots.",storage_organ
+storage_organ_fleshy_underground_organ,fleshy_underground_organ,"Plants that use fleshy, generally underground organs (swellings) to regenerate, but the type of organ is not specified; examples include corms, tubers, bulbs, and caudex.",storage_organ
+storage_organ_lignotuber,lignotuber,"Swollen woody structures are located at the transition between the stem base and root crown of woody shrubs, mallees and small trees, and are formed from stem tissues. Buds are located over the entire structure. No colonisation ability.",storage_organ
+storage_organ_pseudobulb,pseudobulb,An above ground storage organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes.,storage_organ
+storage_organ_rhizome,rhizome,"A type of continually growing or creeping underground stem, but it is not specified if the rhizome is woody or non-woody.",storage_organ
+storage_organ_rhizome_woody,rhizome_woody,A type of continually growing or creeping woody underground stem.,storage_organ
+storage_organ_rhizome_fleshy,rhizome_fleshy,"A type of continually growing or creeping fleshy, non-woody underground stem.",storage_organ
+storage_organ_rhizome_fibrous,rhizome_fibrous,"A type of continually growing or creeping fibrous, non-woody underground stem.",storage_organ
+storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)",storage_organ
+storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutrients, carbohydrates and water.",storage_organ
+storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
+storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
+storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
 regeneration_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,Fire-killed plants that have the ability to resprout following a disturbance other than fire.,regeneration_non_fire_disturbance
+clonal_spread_mechanism_aboveground_clonal,aboveground_clonal,"Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions).",clonal_spread_mechanism
+clonal_spread_mechanism_adventitious_roots,adventitious_roots,Adventitious roots can form at nodes on the main roots or aboveground from nodes on stems.,clonal_spread_mechanism
+clonal_spread_mechanism_bulb,bulb,"Below ground storage organ derived from stem (and sometimes leaf) tissue, that divides into new individuals.",clonal_spread_mechanism
+clonal_spread_mechanism_belowground_clonal,belowground_clonal,Plants use an unspecified underground organ for clonal spread.,clonal_spread_mechanism
+clonal_spread_mechanism_corm,corm,Below ground organ derived from stem tissue that can function either for vegetative spread or to regenerate following a disturbance.,clonal_spread_mechanism
+clonal_spread_mechanism_rhizome,rhizome,Plant has an underground stem that has stem buds and forms adventitious roots at nodes; this stem may be woody or non-woody. Rhizomes are both a mechanism for vegetative spread and a strategy to survive fire.,clonal_spread_mechanism
+clonal_spread_mechanism_root_buds,root_buds,Root buds that produce vertical suckers.,clonal_spread_mechanism
+clonal_spread_mechanism_root_tuber,root_tuber,A swollen root that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
+clonal_spread_mechanism_stem_tuber,stem_tuber,A swollen underground stem that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
+clonal_spread_mechanism_stolon,stolon,Plants having horizontal branches (stems) from the base of the plant that produce new plants from buds at its tip or nodes.,clonal_spread_mechanism
+clonal_spread_mechanism_viviparous,viviparous,Plant produces clonal offspring that grow while still attached to the parent plant.,clonal_spread_mechanism
+clonal_spread_mechanism_non_clonal,non_clonal,Plant does not display clonal growth.,clonal_spread_mechanism
 root_system_classification_type_i,type_i,The primary root is fibrous or fleshy and is relatively long; mesophytic.,root_system_classification
 root_system_classification_type_ii,type_ii,The primary root is relatively short and is fibrous. Roots are well branched in a dry habitat but branch little in one that is wet.,root_system_classification
 root_system_classification_type_iii,type_iii,The primary root is usually long and fibrous. The first order lateral roots are well branched and are usually short; they are rather evenly distributed along the primary root; xerophytic.,root_system_classification
@@ -615,6 +705,7 @@ seed_surface_hairs_hairs_simple,hairs_simple,"Seed surface with simple trichomes
 seed_surface_reflectivity_dull,dull,"Seed surface appears dull, indicating it has a low reflectivity.",seed_surface_reflectivity
 seed_surface_reflectivity_shiny,shiny,"Seed surface appears shiny or glossy, indicating it has a high reflectivity. (Synonyms, glossy, lustrous, polished)",seed_surface_reflectivity
 seed_surface_texture_bumpy,bumpy,"Seed surface covered with minute, rounded protuberances. (Synonyms, colliculate, verrucate, papillate, tuberculate, undulate)",seed_surface_texture
+seed_surface_texture_grooved,grooved,Seed surface covered with grooves.,seed_surface_texture
 seed_surface_texture_netted,netted,"Seed surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate, honey-combed)",seed_surface_texture
 seed_surface_texture_papery,papery,"Seed surface with a thin and papery texture. (Synonyms, chartaceous)",seed_surface_texture
 seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, foveate, dimpled, punctate, lacunose)",seed_surface_texture
@@ -624,28 +715,28 @@ seed_surface_texture_scaly,scaly,"Seed surface rough with loose scales differing
 seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture.",seed_surface_texture
 seed_surface_texture_spiny,spiny,"Seed surface with spines. (Synonyms, echinulate)",seed_surface_texture
 seed_surface_texture_wrinkled,wrinkled,"Seed surface with a wrinkled, rugose texture. (Synonyms, rugose, rugulose, bullate)",seed_surface_texture
-canopy_seedbank_canopy_seedbank_absent,canopy_seedbank_absent,Seeds not present in canopy seedbank.,canopy_seedbank
-canopy_seedbank_canopy_seedbank_present,canopy_seedbank_present,Seeds present in canopy seedbank.,canopy_seedbank
-soil_seedbank_soil_seedbank_absent,soil_seedbank_absent,Seeds not present in soil seedbank.,soil_seedbank
-soil_seedbank_soil_seedbank_present,soil_seedbank_present,Seeds present in soil seedbank.,soil_seedbank
-seed_storage_location_canopy,canopy,"Seeds stored in the canopy, usually still within a woody cone.",seed_storage_location
-seed_storage_location_soil,soil,Seeds stored in the soil.,seed_storage_location
+seed_storage_location_canopy_seedbank,canopy_seedbank,"Seeds stored in the canopy, usually still within a woody cone.",seed_storage_location
+seed_storage_location_soil_seedbank,soil_seedbank,Seeds stored in the soil.,seed_storage_location
 seed_storage_location_none,none,Seeds are not stored.,seed_storage_location
-seed_storage_location_not_canopy,not_canopy,Seed explicitly not stored in the canopy; other storage locations unknown.,seed_storage_location
+seed_storage_location_canopy_seedbank_absent,canopy_seedbank_absent,Seed explicitly not stored in the canopy.,seed_storage_location
+seed_storage_location_soil_seedbank_absent,soil_seedbank_absent,Seed explicitly not stored in the soil.,seed_storage_location
+seed_storage_location_seedbank,seedbank,"A seedbank exists, but its locations is not specified.",seed_storage_location
 seed_longevity_categorical_transient,transient,"Propagule transient, lasting in the seedbank for only weeks to months.",seed_longevity_categorical
 seed_longevity_categorical_intermediate_longevity,intermediate_longevity,"Propagule survives for approximately months to less than a year, although cutoff varies by study.",seed_longevity_categorical
 seed_longevity_categorical_persistent,persistent,"Propagule persistent, time not specified.",seed_longevity_categorical
 seed_longevity_categorical_short_persistent,short_persistent,"Propagule is persistent for approximately 1 to 5 years, although cutoff varies by study.",seed_longevity_categorical
 seed_longevity_categorical_long_persistent,long_persistent,"Propagule is persistent for more than 5 years, although cutoff varies by study.",seed_longevity_categorical
 seed_longevity_categorical_widely_dispersed,widely_dispersed,"Seed longevity not important, as seeds are widely dispersed and always available for germination.",seed_longevity_categorical
-seed_release_serotinous,serotinous,Plant releases its seeds following an environmental trigger (usually fire).,seed_release
-seed_release_mature_en_mass,mature_en_mass,Seeds released en masse when mature (eg annually).,seed_release
-seed_release_gradual_release,gradual_release,Seeds maturing and released gradually from parent.,seed_release
+seed_release_timing_en_masse_release_canopy_seedbank,en_masse_release_canopy_seedbank,"Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)",seed_release_timing
+seed_release_timing_gradual_release_canopy_seedbank,gradual_release_canopy_seedbank,"Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event.",seed_release_timing
+seed_release_timing_en_masse_release_at_maturity,en_masse_release_at_maturity,Plant releases its seeds en masse when or soon after they mature (eg annually).,seed_release_timing
+seed_release_timing_gradual_release_at_maturity,gradual_release_at_maturity,Plant releases its seeds gradually as they mature.,seed_release_timing
+seed_release_timing_gradual_release,gradual_release,"Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity.",seed_release_timing
 serotiny_not_serotinous,not_serotinous,Plant does not display serotiny.,serotiny
 serotiny_serotinous,serotinous,"Plant serotinous, level not specified.",serotiny
-serotiny_serotiny_low,serotiny_low,Plant displays a low level of serotiny.,serotiny
-serotiny_serotiny_moderate,serotiny_moderate,Plant displays a moderate level of serotiny.,serotiny
-serotiny_serotiny_high,serotiny_high,Plant displays a high level of serotiny.,serotiny
+serotiny_serotiny_low,serotiny_low,"Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank.",serotiny
+serotiny_serotiny_moderate,serotiny_moderate,"Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank.",serotiny
+serotiny_serotiny_high,serotiny_high,"Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release.",serotiny
 seedling_first_node_leaf_type_scale-like,scale-like,"The leaf at the first stem node above the epicotyl is scale-like, also referred to as a cataphyll.",seedling_first_node_leaf_type
 seedling_first_node_leaf_type_leaf-like,leaf-like,The leaf at the first stem node above the epicotyl is leaf-like (broad).,seedling_first_node_leaf_type
 seedling_first_node_leaf_count_single,single,There is a single leaf at the first stem node above the epicotyl.,seedling_first_node_leaf_count
@@ -679,6 +770,7 @@ root_system_type_tap_root_present,tap_root_present,Tap root present.,root_system
 root_system_type_tap_root_sometimes_present,tap_root_sometimes_present,Tap root sometimes present.,root_system_type
 vegetative_reproduction_ability_not_vegetative,not_vegetative,Plant taxa that regenerate and spread only by seed.,vegetative_reproduction_ability
 vegetative_reproduction_ability_vegetative,vegetative,"Plant taxa that can regenerate and spread through the growth and division of vegetative material, not just from seed; examples include runners, rhizomes, and bulbs.",vegetative_reproduction_ability
+vegetative_reproduction_ability_vegetative_obligate,vegetative_obligate,"Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material.",vegetative_reproduction_ability
 plant_tolerance_water_logged_soils_not_applicable,not_applicable,Taxa is not typically confronted with waterlogging and its response is unknown.,plant_tolerance_water_logged_soils
 plant_tolerance_water_logged_soils_less_than_1_month,less_than_1_month,Taxa able to tolerate less than 1 month of waterlogging.,plant_tolerance_water_logged_soils
 plant_tolerance_water_logged_soils_1-6_months,1-6_months,Taxa able to tolerate 1-6 months of waterlogging.,plant_tolerance_water_logged_soils
@@ -693,57 +785,3 @@ woodiness_detailed_woody_root,woody_root,Plant that has a woody rootstock but no
 woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem shrub, soft shrub, soft wood)",woodiness_detailed
 woodiness_detailed_woody_like_stem,woody_like_stem,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified stems but do not produce secondary xylem.",woodiness_detailed
 woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
-bud_bank_location_apical_buds,apical_buds,"Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus.",bud_bank_location
-bud_bank_location_basal_burl,basal_burl,"Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being on the `basal_burl` are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`.",bud_bank_location
-bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base of the stem following a fire. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`.",bud_bank_location
-bud_bank_location_epicormic_buds,epicormic_buds,Plants resprout from the stem or trunk following a fire.,bud_bank_location
-bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprout from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex.",bud_bank_location
-bud_bank_location_root_crown,root_crown,"Plants resprout from the root crown, the root tissue at the root-stem transition.",bud_bank_location
-bud_bank_location_bud-bearing_root,bud-bearing_root,Root buds produce vertical suckers (from root crown) or adventitious roots following a fire.,bud_bank_location
-bud_bank_location_rhizome,rhizome,"Plants resprout from buds on a rhizome, where it is not specified if the rhizome is woody or non-woody.",bud_bank_location
-bud_bank_location_rhizome_woody,rhizome_woody,Plants resprout from buds on a woody rhizome.,bud_bank_location
-bud_bank_location_rhizome_non_woody,rhizome_non_woody,"Plants resprout from buds on a fleshy rhizome, rhizophore, or fibrous rhizome.",bud_bank_location
-bud_bank_location_stem_buds,stem_buds,Plants resprout from stem buds; this trait value is separate to epicormic buds.,bud_bank_location
-bud_bank_location_stem_tuber,stem_tuber,Plants resprout from buds on a stem tuber.,bud_bank_location
-bud_bank_location_stolon,stolon,Horizontal branches (stems) resprout from the base of the plant.,bud_bank_location
-bud_bank_location_underground_buds,underground_buds,"Plants that resprout from underground organ, but the type of organ isn't specified.",bud_bank_location
-bud_bank_location_none,none,Plants lack regenerative buds.,bud_bank_location
-clonal_spread_mechanism_aboveground_clonal,aboveground_clonal,"Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions).",clonal_spread_mechanism
-clonal_spread_mechanism_adventitious_roots,adventitious_roots,Adventitious roots can form at nodes on the main roots or aboveground from nodes on stems.,clonal_spread_mechanism
-clonal_spread_mechanism_bulb,bulb,"Below ground storage organ derived from stem (and sometimes leaf) tissue, that divides into new individuals.",clonal_spread_mechanism
-clonal_spread_mechanism_belowground_clonal,belowground_clonal,Plants use an unspecified underground organ for clonal spread.,clonal_spread_mechanism
-clonal_spread_mechanism_corm,corm,Below ground organ derived from stem tissue that can function either for vegetative spread or to regenerate following a disturbance.,clonal_spread_mechanism
-clonal_spread_mechanism_rhizome,rhizome,Plant has an underground stem that has stem buds and forms adventitious roots at nodes; this stem may be woody or non-woody. Rhizomes are both a mechanism for vegetative spread and a strategy to survive fire.,clonal_spread_mechanism
-clonal_spread_mechanism_root_buds,root_buds,Root buds that produce vertical suckers.,clonal_spread_mechanism
-clonal_spread_mechanism_root_tuber,root_tuber,A swollen root that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
-clonal_spread_mechanism_stem_tuber,stem_tuber,A swollen underground stem that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
-clonal_spread_mechanism_stolon,stolon,Plants having horizontal branches (stems) from the base of the plant that produce new plants from buds at its tip or nodes.,clonal_spread_mechanism
-clonal_spread_mechanism_viviparous,viviparous,Plant produces clonal offspring that grow while still attached to the parent plant.,clonal_spread_mechanism
-clonal_spread_mechanism_non_clonal,non_clonal,Plant does not display clonal growth.,clonal_spread_mechanism
-storage_organ_bulb,bulb,Below ground storage organ derived from stem and usually leaf tissue.,storage_organ
-storage_organ_corm,corm,"Below ground storage organ that is a short, rounded, vertical, fleshy, underground stem.",storage_organ
-storage_organ_caudex,caudex,"Swollen stem that usually functions in water storage, although the term can also apply to below ground structures or to swollen roots.",storage_organ
-storage_organ_fleshy_underground_organ,fleshy_underground_organ,"Plants that use fleshy, generally underground organs (swellings) to regenerate, but the type of organ is not specified; examples include corms, tubers, bulbs, and caudex.",storage_organ
-storage_organ_lignotuber,lignotuber,"Swollen woody structures are located at the transition between the stem base and root crown of woody shrubs, mallees and small trees, and are formed from stem tissues. Buds are located over the entire structure. No colonisation ability.",storage_organ
-storage_organ_rhizome,rhizome,"A type of continually growing or creeping underground stem, but it is not specified if the rhizome is woody or non-woody.",storage_organ
-storage_organ_rhizome_woody,rhizome_woody,A type of continually growing or creeping woody underground stem.,storage_organ
-storage_organ_rhizome_felshy,rhizome_felshy,"A type of continually growing or creeping fleshy, non-woody underground stem.",storage_organ
-storage_organ_rhizome_fibrous,rhizome_fibrous,"A type of continually growing or creeping fibrous, non-woody underground stem.",storage_organ
-storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carbohydrates and water; synonym, taproot tuber",storage_organ
-storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutrients, carbohydrates and water.",storage_organ
-storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
-storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
-life_history_ephemeral_class_disturbance_ephemeral,disturbance_ephemeral,"Ephemeral plant the germinates and establishes following disturbance, but the type of disturbance is not specified.",life_history_ephemeral_class
-life_history_ephemeral_class_rain_ephemeral,rain_ephemeral,Ephemeral plant that germinates and establishes following rain or flood events.,life_history_ephemeral_class
-life_history_ephemeral_class_fire_ephemeral,fire_ephemeral,"Ephemeral plant that germinates and establishes following fire, where it is unknown if the plant is an obligate or facultative fire ephemeral.",life_history_ephemeral_class
-life_history_ephemeral_class_fire_ephemeral_facultative,fire_ephemeral_facultative,"Ephemeral plant that increases its germination and establishment following fire, but can also germinate and establish without fire.",life_history_ephemeral_class
-life_history_ephemeral_class_fire_ephemeral_obligate,fire_ephemeral_obligate,Ephemeral plant that only germinates and establishes following fire.,life_history_ephemeral_class
-post_fire_flowering_fire_dependent_flowering,fire_dependent_flowering,"Plants only flower after a fire, usually within the first 1-2 growing seasons following the fire.",post_fire_flowering
-post_fire_flowering_fire_enhanced_flowering,fire_enhanced_flowering,"Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-2 growing seasons following the fire.",post_fire_flowering
-post_fire_flowering_fire_independent_flowering,fire_independent_flowering,"Flowering is independent of fire, with the magnitude of flowers produced by plants unchanged following a fire.",post_fire_flowering
-post_fire_flowering_fire_suppressed_flowering,fire_suppressed_flowering,"Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-2 growing seasons following the fire.",post_fire_flowering
-plant_influence_on_fire_risk_fire_risk_decreased,fire_risk_decreased,Presence of plant decreases the local fire risk.,plant_influence_on_fire_risk
-plant_influence_on_fire_risk_fire_risk_increased,fire_risk_increased,Presence of plant increases the local fire risk.,plant_influence_on_fire_risk
-plant_influence_on_fire_risk_fire_risk_unchanged,fire_risk_unchanged,Presence of plant has no effect on the local fire risk.,plant_influence_on_fire_risk
-plant_tolerance_fire_fire_retardant,fire_retardant,"Plants protected from fire by fire retardant in their bark, stems, or other tissues.",plant_tolerance_fire
-plant_tolerance_fire_thick_bark,thick_bark,Plants protected from fire by thick bark.,plant_tolerance_fire
