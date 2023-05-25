@@ -25,8 +25,8 @@ This repository is the original source for the APD. It includes
 * `APD_annotation_properties.csv`: Table of annotation properties that come from a published ontology and are used in the APD. 
 * `APD_namespace_declaration.csv`: Table of all ontologies used within APD. These may be ontologies with annotation properties used by the APD (and listed in annotation_properties.csv) or with terms (classes) used by the APD (and listed in ontology_links.csv) .
 * `ontology_rules.txt`: List of rules to merge the above 9 data tables into a single ontology.
-* `APD_resource.csv`: XXX
-* `published_classes.csv`: XXX
+* `APD_resource.csv`: Information about the two APD resources, APD/traits and APD/glossary
+* `published_classes.csv`: List of published terms references as keywords (or similar) within the APD.
 
 Each trait includes the following fields:
 
@@ -49,7 +49,7 @@ The code in `build.qmd` builds the APD from the data files in `data/`, including
 - generated machine-readable representations of the APD, including
   - RDF Turtle: `APD.ttl`,
   - N-Quad: `APD.nq`, 
-  - XXX: `APD.nt`, 
+  - N-Triple: `APD.nt`, 
   - JSON Linked Data format: `APD.json`
 - create the APD website, saved in `docs/`
   - hosting via Github pages at <https://traitecoevo.github.io/APD/>
