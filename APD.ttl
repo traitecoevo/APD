@@ -3966,6 +3966,13 @@ obo:PO_0009062
     rdfs:label "gynoecium"@en ;
     skos:prefLabel "gynoecium"@en .
 
+obo:PO_0009064
+    dcterms:description "A cardinal organ part (PO:0025001) that is the region at the distal end of either a peduncle or a pedicel where the floral appendages (e.g.: sepals, petals, stamens and pistils) are attached. The fleshy part of a strawberry develops from a receptacle."@en ;
+    dcterms:identifier "PO_0009064" ;
+    a owl:Class ;
+    rdfs:label "receptacle"@en ;
+    skos:prefLabel "receptacle"@en .
+
 obo:PO_0009066
     dcterms:description "A collective plant organ structure (PO:0025007) that is the pollen-bearing part of a stamen (PO:0009029). Generally consists of four pollen sacs (microsporangia) in two anther thecas. If you are annotating to anther or one of its parts for Zea mays or other grasses, please also add an annotation to the corresponding floret type. Choose the most specific term possible from: spikelet floret (PO:0009082), tassel floret (PO:0006310), lower floret of pedicellate spikelet of tassel (PO:0006313), lower floret of sessile spikelet of tassel (PO:0006315), upper floret of pedicellate spikelet of tassel (PO:0006314), upper floret of sessile spikelet of tassel (PO:0006316)"@en ;
     dcterms:identifier "PO_0009066" ;
@@ -4406,6 +4413,13 @@ obo:PO_0025613
     a owl:Class ;
     rdfs:label "spine petiole"@en ;
     skos:prefLabel "spine petiole"@en .
+
+obo:PO_0030112
+    dcterms:description "A shoot axis (PO:0025029) that bears only a flower (PO:0009046) or a fruit (PO:0009001). A pedicel has a single internode, determinate growth, and is the ultimate shoot axis (PO:0025029) in a plant. When annotating to this term, use the most specific subclass of pedicel: flower pedicel (PO:0030113), inflorescence flower pedicel (PO:0009052), fruit pedicel (PO:0030114), or infructescence fruit pedicel (PO:0004536)."@en ;
+    dcterms:identifier "PO_0030112" ;
+    a owl:Class ;
+    rdfs:label "pedicel"@en ;
+    skos:prefLabel "pedicel"@en .
 
 obo:SP_0000003
     dcterms:description "[no definition]"@en ;
@@ -7065,68 +7079,68 @@ APD:bark_photosynthetic_status_photosynthetic_bark
     skos:prefLabel "photosynthetic_bark"@en .
 
 APD:bud_bank_location_apical_buds
-    dcterms:description "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus."@en ;
+    dcterms:description "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)"@en ;
     dcterms:identifier "bud_bank_location_apical_buds" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "apical_buds"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus."@en ;
+    skos:definition "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "apical_buds"@en .
 
-APD:bud_bank_location_basal_burl
-    dcterms:description "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being on the `basal_burl` are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."@en ;
-    dcterms:identifier "bud_bank_location_basal_burl" ;
+APD:bud_bank_location_basal_buds
+    dcterms:description "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"@en ;
+    dcterms:identifier "bud_bank_location_basal_buds" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "basal_burl"@en ;
+    rdfs:label "basal_buds"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being on the `basal_burl` are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."@en ;
+    skos:definition "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "basal_burl"@en .
+    skos:prefLabel "basal_buds"@en .
 
 APD:bud_bank_location_basal_stem_buds
-    dcterms:description "Plants resprout from the base of the stem following a fire. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."@en ;
+    dcterms:description "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."@en ;
     dcterms:identifier "bud_bank_location_basal_stem_buds" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "basal_stem_buds"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from the base of the stem following a fire. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."@en ;
+    skos:definition "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "basal_stem_buds"@en .
 
 APD:bud_bank_location_bud-bearing_root
-    dcterms:description "Root buds produce vertical suckers (from root crown) or adventitious roots following a fire."@en ;
+    dcterms:description "Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)"@en ;
     dcterms:identifier "bud_bank_location_bud-bearing_root" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "bud-bearing_root"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Root buds produce vertical suckers (from root crown) or adventitious roots following a fire."@en ;
+    skos:definition "Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "bud-bearing_root"@en .
 
 APD:bud_bank_location_epicormic_buds
-    dcterms:description "Plants resprout from the stem or trunk following a fire."@en ;
+    dcterms:description "Plants resprout from the stem or trunk."@en ;
     dcterms:identifier "bud_bank_location_epicormic_buds" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "epicormic_buds"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from the stem or trunk following a fire."@en ;
+    skos:definition "Plants resprout from the stem or trunk."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "epicormic_buds"@en .
 
 APD:bud_bank_location_fleshy_underground_organ
-    dcterms:description "Plants resprout from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex."@en ;
+    dcterms:description "Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)"@en ;
     dcterms:identifier "bud_bank_location_fleshy_underground_organ" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "fleshy_underground_organ"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex."@en ;
+    skos:definition "Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fleshy_underground_organ"@en .
 
@@ -7186,13 +7200,13 @@ APD:bud_bank_location_root_crown
     skos:prefLabel "root_crown"@en .
 
 APD:bud_bank_location_stem_buds
-    dcterms:description "Plants resprout from stem buds; this trait value is separate to epicormic buds."@en ;
+    dcterms:description "Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)"@en ;
     dcterms:identifier "bud_bank_location_stem_buds" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "stem_buds"@en ;
     rdfs:subClassOf APD:trait_0030313 ;
     skos:broader APD:trait_0030313 ;
-    skos:definition "Plants resprout from stem buds; this trait value is separate to epicormic buds."@en ;
+    skos:definition "Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "stem_buds"@en .
 
@@ -7228,28 +7242,6 @@ APD:bud_bank_location_underground_buds
     skos:definition "Plants that resprout from underground organ, but the type of organ isn't specified."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "underground_buds"@en .
-
-APD:canopy_seedbank_canopy_seedbank_absent
-    dcterms:description "Seeds not present in canopy seedbank."@en ;
-    dcterms:identifier "canopy_seedbank_canopy_seedbank_absent" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "canopy_seedbank_absent"@en ;
-    rdfs:subClassOf APD:trait_0030512 ;
-    skos:broader APD:trait_0030512 ;
-    skos:definition "Seeds not present in canopy seedbank."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "canopy_seedbank_absent"@en .
-
-APD:canopy_seedbank_canopy_seedbank_present
-    dcterms:description "Seeds present in canopy seedbank."@en ;
-    dcterms:identifier "canopy_seedbank_canopy_seedbank_present" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "canopy_seedbank_present"@en ;
-    rdfs:subClassOf APD:trait_0030512 ;
-    skos:broader APD:trait_0030512 ;
-    skos:definition "Seeds present in canopy seedbank."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "canopy_seedbank_present"@en .
 
 APD:clonal_spread_mechanism_aboveground_clonal
     dcterms:description "Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions)."@en ;
@@ -7791,13 +7783,13 @@ APD:dispersal_syndrome_ballistic
     skos:prefLabel "ballistic"@en .
 
 APD:dispersal_syndrome_barochory
-    dcterms:description "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted)"@en ;
+    dcterms:description "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted, passive)"@en ;
     dcterms:identifier "dispersal_syndrome_barochory" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "barochory"@en ;
     rdfs:subClassOf APD:trait_0030560 ;
     skos:broader APD:trait_0030560 ;
-    skos:definition "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted)"@en ;
+    skos:definition "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted, passive)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "barochory"@en .
 
@@ -7900,6 +7892,17 @@ APD:dispersal_unit_seed
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "seed"@en .
 
+APD:dispersal_unit_seedling
+    dcterms:description "Dispersal unit is a seedling. (Synonyms, viviparous)"@en ;
+    dcterms:identifier "dispersal_unit_seedling" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "seedling"@en ;
+    rdfs:subClassOf APD:trait_0012624 ;
+    skos:broader APD:trait_0012624 ;
+    skos:definition "Dispersal unit is a seedling. (Synonyms, viviparous)"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "seedling"@en .
+
 APD:dispersal_unit_spore
     dcterms:description "Dispersal unit is a spore."@en ;
     dcterms:identifier "dispersal_unit_spore" ;
@@ -7910,6 +7913,28 @@ APD:dispersal_unit_spore
     skos:definition "Dispersal unit is a spore."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "spore"@en .
+
+APD:dispersers_abiotic
+    dcterms:description "Fruits are dispersed by unspecified abiotic mechanisms."@en ;
+    dcterms:identifier "dispersers_abiotic" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "abiotic"@en ;
+    rdfs:subClassOf APD:trait_0030561 ;
+    skos:broader APD:trait_0030561 ;
+    skos:definition "Fruits are dispersed by unspecified abiotic mechanisms."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "abiotic"@en .
+
+APD:dispersers_animals
+    dcterms:description "Animals are an important fruit dispersal agent."@en ;
+    dcterms:identifier "dispersers_animals" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "animals"@en ;
+    rdfs:subClassOf APD:trait_0030561 ;
+    skos:broader APD:trait_0030561 ;
+    skos:definition "Animals are an important fruit dispersal agent."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "animals"@en .
 
 APD:dispersers_ants
     dcterms:description "Ants are an important fruit dispersal agent."@en ;
@@ -7954,6 +7979,17 @@ APD:dispersers_cassowaries
     skos:definition "Cassowaries, in contrast to smaller flying birds, are an important fruit dispersal agent."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "cassowaries"@en .
+
+APD:dispersers_fish
+    dcterms:description "Fish are an important fruit dispersal agent."@en ;
+    dcterms:identifier "dispersers_fish" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "fish"@en ;
+    rdfs:subClassOf APD:trait_0030561 ;
+    skos:broader APD:trait_0030561 ;
+    skos:definition "Fish are an important fruit dispersal agent."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "fish"@en .
 
 APD:dispersers_floods
     dcterms:description "Floods are an important fruit dispersal agent."@en ;
@@ -8000,13 +8036,13 @@ APD:dispersers_garden_refuse
     skos:prefLabel "garden_refuse"@en .
 
 APD:dispersers_indigenous_people
-    dcterms:description "Indigenous people disperse the fruit through traditional practises."@en ;
+    dcterms:description "Indigenous people disperse the fruit through traditional practices."@en ;
     dcterms:identifier "dispersers_indigenous_people" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "indigenous_people"@en ;
     rdfs:subClassOf APD:trait_0030561 ;
     skos:broader APD:trait_0030561 ;
-    skos:definition "Indigenous people disperse the fruit through traditional practises."@en ;
+    skos:definition "Indigenous people disperse the fruit through traditional practices."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "indigenous_people"@en .
 
@@ -8042,6 +8078,17 @@ APD:dispersers_mammals
     skos:definition "Mammals are an important fruit dispersal agent."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "mammals"@en .
+
+APD:dispersers_mammals_domestic
+    dcterms:description "Domesticated ammals are an important fruit dispersal agent."@en ;
+    dcterms:identifier "dispersers_mammals_domestic" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "mammals_domestic"@en ;
+    rdfs:subClassOf APD:trait_0030561 ;
+    skos:broader APD:trait_0030561 ;
+    skos:definition "Domesticated ammals are an important fruit dispersal agent."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "mammals_domestic"@en .
 
 APD:dispersers_non-flying_vertebrates
     dcterms:description "Mammals and non-flying birds (i.e. cassowary, emu) are important fruit dispersal agents."@en ;
@@ -9935,14 +9982,36 @@ APD:fruit_type_utricle
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "utricle"@en .
 
+APD:leaf_arrangement_clustered
+    dcterms:description "When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided."@en ;
+    dcterms:identifier "leaf_arrangement_clustered" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "clustered"@en ;
+    rdfs:subClassOf APD:trait_0011411 ;
+    skos:broader APD:trait_0011411 ;
+    skos:definition "When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "clustered"@en .
+
+APD:leaf_arrangement_clustered_basal
+    dcterms:description "When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)"@en ;
+    dcterms:identifier "leaf_arrangement_clustered_basal" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "clustered_basal"@en ;
+    rdfs:subClassOf APD:trait_0011411 ;
+    skos:broader APD:trait_0011411 ;
+    skos:definition "When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "clustered_basal"@en .
+
 APD:leaf_arrangement_crowded
-    dcterms:description "When internode length varies considerably along a stem, such that leaves appear crowded or tufted."@en ;
+    dcterms:description "When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)"@en ;
     dcterms:identifier "leaf_arrangement_crowded" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "crowded"@en ;
     rdfs:subClassOf APD:trait_0011411 ;
     skos:broader APD:trait_0011411 ;
-    skos:definition "When internode length varies considerably along a stem, such that leaves appear crowded or tufted."@en ;
+    skos:definition "When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "crowded"@en .
 
@@ -9969,15 +10038,37 @@ APD:leaf_arrangement_distichous
     skos:prefLabel "distichous"@en .
 
 APD:leaf_arrangement_fasciculate
-    dcterms:description "A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes."@en ;
+    dcterms:description "A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)"@en ;
     dcterms:identifier "leaf_arrangement_fasciculate" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "fasciculate"@en ;
     rdfs:subClassOf APD:trait_0011411 ;
     skos:broader APD:trait_0011411 ;
-    skos:definition "A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes."@en ;
+    skos:definition "A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fasciculate"@en .
+
+APD:leaf_arrangement_imbricate
+    dcterms:description "When leaves lay tightly against the stem and are overlapping."@en ;
+    dcterms:identifier "leaf_arrangement_imbricate" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "imbricate"@en ;
+    rdfs:subClassOf APD:trait_0011411 ;
+    skos:broader APD:trait_0011411 ;
+    skos:definition "When leaves lay tightly against the stem and are overlapping."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "imbricate"@en .
+
+APD:leaf_arrangement_scattered
+    dcterms:description "When leaves are attached along the entire length of stem."@en ;
+    dcterms:identifier "leaf_arrangement_scattered" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "scattered"@en ;
+    rdfs:subClassOf APD:trait_0011411 ;
+    skos:broader APD:trait_0011411 ;
+    skos:definition "When leaves are attached along the entire length of stem."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "scattered"@en .
 
 APD:leaf_arrangement_spiral
     dcterms:description "When alternate leaves are attached in a progressive spiral pattern along the stem."@en ;
@@ -9989,6 +10080,17 @@ APD:leaf_arrangement_spiral
     skos:definition "When alternate leaves are attached in a progressive spiral pattern along the stem."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "spiral"@en .
+
+APD:leaf_base_shape_acute
+    dcterms:description "Two sides of the leaf meet at an angle that is less than 90<U+00B0>."@en ;
+    dcterms:identifier "leaf_base_shape_acute" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "acute"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "Two sides of the leaf meet at an angle that is less than 90<U+00B0>."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "acute"@en .
 
 APD:leaf_base_shape_attenuate
     dcterms:description "Basal leaf margin abruptly incurved (concave), the two sides intersecting at an angle of less than 45<U+00B0>."@en ;
@@ -10012,6 +10114,17 @@ APD:leaf_base_shape_auriculate
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "auriculate"@en .
 
+APD:leaf_base_shape_cordate
+    dcterms:description "Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded."@en ;
+    dcterms:identifier "leaf_base_shape_cordate" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "cordate"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "cordate"@en .
+
 APD:leaf_base_shape_cuneate
     dcterms:description "Basal leaf margin approximately straight, the two sides intersecting at an angle between 45<U+00B0> to 90<U+00B0>."@en ;
     dcterms:identifier "leaf_base_shape_cuneate" ;
@@ -10034,6 +10147,39 @@ APD:leaf_base_shape_hastate
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "hastate"@en .
 
+APD:leaf_base_shape_oblique
+    dcterms:description "XXX"@en ;
+    dcterms:identifier "leaf_base_shape_oblique" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "oblique"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "XXX"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "oblique"@en .
+
+APD:leaf_base_shape_obtuse
+    dcterms:description "Two sides of the leaf meet at an angle that is greater than 90<U+00B0>."@en ;
+    dcterms:identifier "leaf_base_shape_obtuse" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "obtuse"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "Two sides of the leaf meet at an angle that is greater than 90<U+00B0>."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "obtuse"@en .
+
+APD:leaf_base_shape_rounded
+    dcterms:description "Basal leaf margin is rounded."@en ;
+    dcterms:identifier "leaf_base_shape_rounded" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "rounded"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "Basal leaf margin is rounded."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "rounded"@en .
+
 APD:leaf_base_shape_sagittate
     dcterms:description "Basal leaf margin with two lobes oriented downward, away from apex. The petiole attaches in the concave region between the lobes."@en ;
     dcterms:identifier "leaf_base_shape_sagittate" ;
@@ -10044,6 +10190,28 @@ APD:leaf_base_shape_sagittate
     skos:definition "Basal leaf margin with two lobes oriented downward, away from apex. The petiole attaches in the concave region between the lobes."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "sagittate"@en .
+
+APD:leaf_base_shape_sheathing
+    dcterms:description "XXX"@en ;
+    dcterms:identifier "leaf_base_shape_sheathing" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "sheathing"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "XXX"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "sheathing"@en .
+
+APD:leaf_base_shape_truncate
+    dcterms:description "XXX"@en ;
+    dcterms:identifier "leaf_base_shape_truncate" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "truncate"@en ;
+    rdfs:subClassOf APD:trait_0011312 ;
+    skos:broader APD:trait_0011312 ;
+    skos:definition "XXX"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "truncate"@en .
 
 APD:leaf_compoundness_compound
     dcterms:description "A leaf that is divided into multiple leaflets. [PO:0020043]"@en ;
@@ -10408,6 +10576,17 @@ APD:leaf_margin_posture_flat
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "flat"@en .
 
+APD:leaf_margin_posture_involute
+    dcterms:description "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"@en ;
+    dcterms:identifier "leaf_margin_posture_involute" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "involute"@en ;
+    rdfs:subClassOf APD:trait_0011314 ;
+    skos:broader APD:trait_0011314 ;
+    skos:definition "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "involute"@en .
+
 APD:leaf_margin_posture_recurved
     dcterms:description "Leaf tip is curved outward or downward. [PATO:0002211]"@en ;
     dcterms:identifier "leaf_margin_posture_recurved" ;
@@ -10661,14 +10840,25 @@ APD:leaf_shape_elliptical
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "elliptical"@en .
 
+APD:leaf_shape_ensiform
+    dcterms:description "A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)"@en ;
+    dcterms:identifier "leaf_shape_ensiform" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "ensiform"@en ;
+    rdfs:subClassOf APD:trait_0011311 ;
+    skos:broader APD:trait_0011311 ;
+    skos:definition "A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "ensiform"@en .
+
 APD:leaf_shape_falcate
-    dcterms:description "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform)"@en ;
+    dcterms:description "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)"@en ;
     dcterms:identifier "leaf_shape_falcate" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "falcate"@en ;
     rdfs:subClassOf APD:trait_0011311 ;
     skos:broader APD:trait_0011311 ;
-    skos:definition "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform)"@en ;
+    skos:definition "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "falcate"@en .
 
@@ -10726,6 +10916,17 @@ APD:leaf_shape_narrowly_elliptical
     skos:definition "A 2-dimensional shape that is a narrow oval, with curved margins, lacking a distinct point, and a length:width ratio between 6:1 and 3:1."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "narrowly_elliptical"@en .
+
+APD:leaf_shape_narrowly_lanceolate
+    dcterms:description "A 2-dimensional shape that is very narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The petiole attaches near the wide, curved portion of the leaf lamina."@en ;
+    dcterms:identifier "leaf_shape_narrowly_lanceolate" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "narrowly_lanceolate"@en ;
+    rdfs:subClassOf APD:trait_0011311 ;
+    skos:broader APD:trait_0011311 ;
+    skos:definition "A 2-dimensional shape that is very narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The petiole attaches near the wide, curved portion of the leaf lamina."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "narrowly_lanceolate"@en .
 
 APD:leaf_shape_narrowly_oblanceolate
     dcterms:description "A 2-dimensional shape that is very narrowly teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole. (Synonyms, linear_oblanceolate)"@en ;
@@ -10794,13 +10995,13 @@ APD:leaf_shape_narrowly_rhomboidal
     skos:prefLabel "narrowly_rhomboidal"@en .
 
 APD:leaf_shape_narrowly_triangular
-    dcterms:description "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular; wedge-shaped)"@en ;
+    dcterms:description "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)"@en ;
     dcterms:identifier "leaf_shape_narrowly_triangular" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "narrowly_triangular"@en ;
     rdfs:subClassOf APD:trait_0011311 ;
     skos:broader APD:trait_0011311 ;
-    skos:definition "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular; wedge-shaped)"@en ;
+    skos:definition "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "narrowly_triangular"@en .
 
@@ -10937,15 +11138,26 @@ APD:leaf_shape_rhomboidal
     skos:prefLabel "rhomboidal"@en .
 
 APD:leaf_shape_spathulate
-    dcterms:description "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped)"@en ;
+    dcterms:description "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)"@en ;
     dcterms:identifier "leaf_shape_spathulate" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "spathulate"@en ;
     rdfs:subClassOf APD:trait_0011311 ;
     skos:broader APD:trait_0011311 ;
-    skos:definition "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped)"@en ;
+    skos:definition "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "spathulate"@en .
+
+APD:leaf_shape_strap-shaped
+    dcterms:description "A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1"@en ;
+    dcterms:identifier "leaf_shape_strap-shaped" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "strap-shaped"@en ;
+    rdfs:subClassOf APD:trait_0011311 ;
+    skos:broader APD:trait_0011311 ;
+    skos:definition "A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "strap-shaped"@en .
 
 APD:leaf_shape_subulate
     dcterms:description "A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped)."@en ;
@@ -10959,24 +11171,24 @@ APD:leaf_shape_subulate
     skos:prefLabel "subulate"@en .
 
 APD:leaf_shape_terete
-    dcterms:description "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip."@en ;
+    dcterms:description "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)"@en ;
     dcterms:identifier "leaf_shape_terete" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "terete"@en ;
     rdfs:subClassOf APD:trait_0011311 ;
     skos:broader APD:trait_0011311 ;
-    skos:definition "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip."@en ;
+    skos:definition "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "terete"@en .
 
 APD:leaf_shape_triangular
-    dcterms:description "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf. (Synonyms, wedge-shaped)"@en ;
+    dcterms:description "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf."@en ;
     dcterms:identifier "leaf_shape_triangular" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "triangular"@en ;
     rdfs:subClassOf APD:trait_0011311 ;
     skos:broader APD:trait_0011311 ;
-    skos:definition "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf. (Synonyms, wedge-shaped)"@en ;
+    skos:definition "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "triangular"@en .
 
@@ -12015,13 +12227,13 @@ APD:plant_growth_form_subshrub
     skos:prefLabel "subshrub"@en .
 
 APD:plant_growth_form_tree
-    dcterms:description "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominately elevated above the ground surface."@en ;
+    dcterms:description "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface."@en ;
     dcterms:identifier "plant_growth_form_tree" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "tree"@en ;
     rdfs:subClassOf APD:trait_0030010 ;
     skos:broader APD:trait_0030010 ;
-    skos:definition "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominately elevated above the ground surface."@en ;
+    skos:definition "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "tree"@en .
 
@@ -12112,39 +12324,6 @@ APD:plant_growth_substrate_terrestrial
     skos:definition "A plant that grows on land, and generally referencing a plant that grows in soil."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "terrestrial"@en .
-
-APD:plant_influence_on_fire_risk_fire_risk_decreased
-    dcterms:description "Presence of plant decreases the local fire risk."@en ;
-    dcterms:identifier "plant_influence_on_fire_risk_fire_risk_decreased" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "fire_risk_decreased"@en ;
-    rdfs:subClassOf APD:trait_0030619 ;
-    skos:broader APD:trait_0030619 ;
-    skos:definition "Presence of plant decreases the local fire risk."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "fire_risk_decreased"@en .
-
-APD:plant_influence_on_fire_risk_fire_risk_increased
-    dcterms:description "Presence of plant increases the local fire risk."@en ;
-    dcterms:identifier "plant_influence_on_fire_risk_fire_risk_increased" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "fire_risk_increased"@en ;
-    rdfs:subClassOf APD:trait_0030619 ;
-    skos:broader APD:trait_0030619 ;
-    skos:definition "Presence of plant increases the local fire risk."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "fire_risk_increased"@en .
-
-APD:plant_influence_on_fire_risk_fire_risk_unchanged
-    dcterms:description "Presence of plant has no effect on the local fire risk."@en ;
-    dcterms:identifier "plant_influence_on_fire_risk_fire_risk_unchanged" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "fire_risk_unchanged"@en ;
-    rdfs:subClassOf APD:trait_0030619 ;
-    skos:broader APD:trait_0030619 ;
-    skos:definition "Presence of plant has no effect on the local fire risk."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "fire_risk_unchanged"@en .
 
 APD:plant_photosynthetic_organ_cladode
     dcterms:description "A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)"@en ;
@@ -12420,6 +12599,17 @@ APD:plant_tolerance_fire_fire_retardant
     skos:definition "Plants protected from fire by fire retardant in their bark, stems, or other tissues."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fire_retardant"@en .
+
+APD:plant_tolerance_fire_fire_retardant_bark
+    dcterms:description "Plants protected from fire by fire retardant in their bark."@en ;
+    dcterms:identifier "plant_tolerance_fire_fire_retardant_bark" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "fire_retardant_bark"@en ;
+    rdfs:subClassOf APD:trait_0030718 ;
+    skos:broader APD:trait_0030718 ;
+    skos:definition "Plants protected from fire by fire retardant in their bark."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "fire_retardant_bark"@en .
 
 APD:plant_tolerance_fire_thick_bark
     dcterms:description "Plants protected from fire by thick bark."@en ;
@@ -12762,6 +12952,17 @@ APD:pollination_syndrome_animal
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "animal"@en .
 
+APD:pollination_syndrome_ballistic
+    dcterms:description "Floral syndrome suggests pollen is launched away from the plant by explosion."@en ;
+    dcterms:identifier "pollination_syndrome_ballistic" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "ballistic"@en ;
+    rdfs:subClassOf APD:trait_0030260 ;
+    skos:broader APD:trait_0030260 ;
+    skos:definition "Floral syndrome suggests pollen is launched away from the plant by explosion."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "ballistic"@en .
+
 APD:pollination_syndrome_bat
     dcterms:description "Floral syndrome suggests flowers are bat-pollinated."@en ;
     dcterms:identifier "pollination_syndrome_bat" ;
@@ -12971,6 +13172,17 @@ APD:pollination_system_animal
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "animal"@en .
 
+APD:pollination_system_ballistic
+    dcterms:description "Pollen is observed to be launched away from the plant by explosion."@en ;
+    dcterms:identifier "pollination_system_ballistic" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "ballistic"@en ;
+    rdfs:subClassOf APD:trait_0030261 ;
+    skos:broader APD:trait_0030261 ;
+    skos:definition "Pollen is observed to be launched away from the plant by explosion."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "ballistic"@en .
+
 APD:pollination_system_bat
     dcterms:description "Flowers are observed to be bat-pollinated."@en ;
     dcterms:identifier "pollination_system_bat" ;
@@ -13159,24 +13371,24 @@ APD:pollination_system_wind
     skos:prefLabel "wind"@en .
 
 APD:post_fire_flowering_fire_dependent_flowering
-    dcterms:description "Plants only flower after a fire, usually within the first 1-2 growing seasons following the fire."@en ;
+    dcterms:description "Plants predominantly flower after a fire, usually within the first 1-4 growing seasons following the fire."@en ;
     dcterms:identifier "post_fire_flowering_fire_dependent_flowering" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "fire_dependent_flowering"@en ;
     rdfs:subClassOf APD:trait_0030622 ;
     skos:broader APD:trait_0030622 ;
-    skos:definition "Plants only flower after a fire, usually within the first 1-2 growing seasons following the fire."@en ;
+    skos:definition "Plants predominantly flower after a fire, usually within the first 1-4 growing seasons following the fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fire_dependent_flowering"@en .
 
 APD:post_fire_flowering_fire_enhanced_flowering
-    dcterms:description "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-2 growing seasons following the fire."@en ;
+    dcterms:description "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire."@en ;
     dcterms:identifier "post_fire_flowering_fire_enhanced_flowering" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "fire_enhanced_flowering"@en ;
     rdfs:subClassOf APD:trait_0030622 ;
     skos:broader APD:trait_0030622 ;
-    skos:definition "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-2 growing seasons following the fire."@en ;
+    skos:definition "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fire_enhanced_flowering"@en .
 
@@ -13192,26 +13404,15 @@ APD:post_fire_flowering_fire_independent_flowering
     skos:prefLabel "fire_independent_flowering"@en .
 
 APD:post_fire_flowering_fire_suppressed_flowering
-    dcterms:description "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-2 growing seasons following the fire."@en ;
+    dcterms:description "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire."@en ;
     dcterms:identifier "post_fire_flowering_fire_suppressed_flowering" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "fire_suppressed_flowering"@en ;
     rdfs:subClassOf APD:trait_0030622 ;
     skos:broader APD:trait_0030622 ;
-    skos:definition "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-2 growing seasons following the fire."@en ;
+    skos:definition "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fire_suppressed_flowering"@en .
-
-APD:post_fire_recruitment_no_post_fire_recruitment
-    dcterms:description "Plants where there is no germination and seedling establishment post-fire."@en ;
-    dcterms:identifier "post_fire_recruitment_no_post_fire_recruitment" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "no_post_fire_recruitment"@en ;
-    rdfs:subClassOf APD:trait_0030621 ;
-    skos:broader APD:trait_0030621 ;
-    skos:definition "Plants where there is no germination and seedling establishment post-fire."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "no_post_fire_recruitment"@en .
 
 APD:post_fire_recruitment_post_fire_recruitment
     dcterms:description "Plants that germinate post-fire."@en ;
@@ -13224,49 +13425,16 @@ APD:post_fire_recruitment_post_fire_recruitment
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "post_fire_recruitment"@en .
 
-APD:recruitment_season_autumn
-    dcterms:description "Seed germination and seedling establishment occurs in autumn."@en ;
-    dcterms:identifier "recruitment_season_autumn" ;
+APD:post_fire_recruitment_post_fire_recruitment_absent
+    dcterms:description "Plants that do not show increased seeding following fire."@en ;
+    dcterms:identifier "post_fire_recruitment_post_fire_recruitment_absent" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "autumn"@en ;
-    rdfs:subClassOf APD:trait_0030213 ;
-    skos:broader APD:trait_0030213 ;
-    skos:definition "Seed germination and seedling establishment occurs in autumn."@en ;
+    rdfs:label "post_fire_recruitment_absent"@en ;
+    rdfs:subClassOf APD:trait_0030621 ;
+    skos:broader APD:trait_0030621 ;
+    skos:definition "Plants that do not show increased seeding following fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "autumn"@en .
-
-APD:recruitment_season_spring
-    dcterms:description "Seed germination and seedling establishment occurs in spring."@en ;
-    dcterms:identifier "recruitment_season_spring" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "spring"@en ;
-    rdfs:subClassOf APD:trait_0030213 ;
-    skos:broader APD:trait_0030213 ;
-    skos:definition "Seed germination and seedling establishment occurs in spring."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "spring"@en .
-
-APD:recruitment_season_summer
-    dcterms:description "Seed germination and seedling establishment occurs in summer."@en ;
-    dcterms:identifier "recruitment_season_summer" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "summer"@en ;
-    rdfs:subClassOf APD:trait_0030213 ;
-    skos:broader APD:trait_0030213 ;
-    skos:definition "Seed germination and seedling establishment occurs in summer."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "summer"@en .
-
-APD:recruitment_season_winter
-    dcterms:description "Seed germination and seedling establishment occurs in winter."@en ;
-    dcterms:identifier "recruitment_season_winter" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "winter"@en ;
-    rdfs:subClassOf APD:trait_0030213 ;
-    skos:broader APD:trait_0030213 ;
-    skos:definition "Seed germination and seedling establishment occurs in winter."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "winter"@en .
+    skos:prefLabel "post_fire_recruitment_absent"@en .
 
 APD:regeneration_non_fire_disturbance_resprouts_non_fire_disturbance
     dcterms:description "Fire-killed plants that have the ability to resprout following a disturbance other than fire."@en ;
@@ -13708,14 +13876,25 @@ APD:root_system_type_tap_root_sometimes_present
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "tap_root_sometimes_present"@en .
 
+APD:seed_dormancy_class_morphological_dormancy
+    dcterms:description "Seeds exhibit morphological dormancy, generally because an underdeveloped embryo needs to grow."@en ;
+    dcterms:identifier "seed_dormancy_class_morphological_dormancy" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "morphological_dormancy"@en ;
+    rdfs:subClassOf APD:trait_0030530 ;
+    skos:broader APD:trait_0030530 ;
+    skos:definition "Seeds exhibit morphological dormancy, generally because an underdeveloped embryo needs to grow."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "morphological_dormancy"@en .
+
 APD:seed_dormancy_class_morphophysiological_dormancy
-    dcterms:description "Seeds exhibit morphophysiological dormancy."@en ;
+    dcterms:description "Seeds exhibit morphophysiological dormancy, with both morphological and physiological dormancy mechanisms that must be overcome."@en ;
     dcterms:identifier "seed_dormancy_class_morphophysiological_dormancy" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "morphophysiological_dormancy"@en ;
     rdfs:subClassOf APD:trait_0030530 ;
     skos:broader APD:trait_0030530 ;
-    skos:definition "Seeds exhibit morphophysiological dormancy."@en ;
+    skos:definition "Seeds exhibit morphophysiological dormancy, with both morphological and physiological dormancy mechanisms that must be overcome."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "morphophysiological_dormancy"@en .
 
@@ -13731,24 +13910,24 @@ APD:seed_dormancy_class_non_dormant
     skos:prefLabel "non_dormant"@en .
 
 APD:seed_dormancy_class_physical_dormancy
-    dcterms:description "Seeds exhibit physical dormancy."@en ;
+    dcterms:description "Seeds exhibit physical dormancy, due to one or more water-impermeable layers in the seed coat."@en ;
     dcterms:identifier "seed_dormancy_class_physical_dormancy" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "physical_dormancy"@en ;
     rdfs:subClassOf APD:trait_0030530 ;
     skos:broader APD:trait_0030530 ;
-    skos:definition "Seeds exhibit physical dormancy."@en ;
+    skos:definition "Seeds exhibit physical dormancy, due to one or more water-impermeable layers in the seed coat."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "physical_dormancy"@en .
 
 APD:seed_dormancy_class_physiological_dormancy
-    dcterms:description "Seeds exhibit physiological dormancy."@en ;
+    dcterms:description "Seeds exhibit physiological dormancy, whereby chemical changes are required within the seed to break dormancy, including temperature stratification and after-ripening."@en ;
     dcterms:identifier "seed_dormancy_class_physiological_dormancy" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "physiological_dormancy"@en ;
     rdfs:subClassOf APD:trait_0030530 ;
     skos:broader APD:trait_0030530 ;
-    skos:definition "Seeds exhibit physiological dormancy."@en ;
+    skos:definition "Seeds exhibit physiological dormancy, whereby chemical changes are required within the seed to break dormancy, including temperature stratification and after-ripening."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "physiological_dormancy"@en .
 
@@ -14016,38 +14195,60 @@ APD:seed_longevity_categorical_widely_dispersed
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "widely_dispersed"@en .
 
-APD:seed_release_gradual_release
-    dcterms:description "Seeds maturing and released gradually from parent."@en ;
-    dcterms:identifier "seed_release_gradual_release" ;
+APD:seed_release_timing_en_masse_release_at_maturity
+    dcterms:description "Plant releases its seeds en masse when or soon after they mature (eg annually)."@en ;
+    dcterms:identifier "seed_release_timing_en_masse_release_at_maturity" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "en_masse_release_at_maturity"@en ;
+    rdfs:subClassOf APD:trait_0030516 ;
+    skos:broader APD:trait_0030516 ;
+    skos:definition "Plant releases its seeds en masse when or soon after they mature (eg annually)."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "en_masse_release_at_maturity"@en .
+
+APD:seed_release_timing_en_masse_release_canopy_seedbank
+    dcterms:description "Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)"@en ;
+    dcterms:identifier "seed_release_timing_en_masse_release_canopy_seedbank" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "en_masse_release_canopy_seedbank"@en ;
+    rdfs:subClassOf APD:trait_0030516 ;
+    skos:broader APD:trait_0030516 ;
+    skos:definition "Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "en_masse_release_canopy_seedbank"@en .
+
+APD:seed_release_timing_gradual_release
+    dcterms:description "Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity."@en ;
+    dcterms:identifier "seed_release_timing_gradual_release" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "gradual_release"@en ;
     rdfs:subClassOf APD:trait_0030516 ;
     skos:broader APD:trait_0030516 ;
-    skos:definition "Seeds maturing and released gradually from parent."@en ;
+    skos:definition "Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "gradual_release"@en .
 
-APD:seed_release_mature_en_mass
-    dcterms:description "Seeds released en masse when mature (eg annually)."@en ;
-    dcterms:identifier "seed_release_mature_en_mass" ;
+APD:seed_release_timing_gradual_release_at_maturity
+    dcterms:description "Plant releases its seeds gradually as they mature."@en ;
+    dcterms:identifier "seed_release_timing_gradual_release_at_maturity" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "mature_en_mass"@en ;
+    rdfs:label "gradual_release_at_maturity"@en ;
     rdfs:subClassOf APD:trait_0030516 ;
     skos:broader APD:trait_0030516 ;
-    skos:definition "Seeds released en masse when mature (eg annually)."@en ;
+    skos:definition "Plant releases its seeds gradually as they mature."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "mature_en_mass"@en .
+    skos:prefLabel "gradual_release_at_maturity"@en .
 
-APD:seed_release_serotinous
-    dcterms:description "Plant releases its seeds following an environmental trigger (usually fire)."@en ;
-    dcterms:identifier "seed_release_serotinous" ;
+APD:seed_release_timing_gradual_release_canopy_seedbank
+    dcterms:description "Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event."@en ;
+    dcterms:identifier "seed_release_timing_gradual_release_canopy_seedbank" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "serotinous"@en ;
+    rdfs:label "gradual_release_canopy_seedbank"@en ;
     rdfs:subClassOf APD:trait_0030516 ;
     skos:broader APD:trait_0030516 ;
-    skos:definition "Plant releases its seeds following an environmental trigger (usually fire)."@en ;
+    skos:definition "Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "serotinous"@en .
+    skos:prefLabel "gradual_release_canopy_seedbank"@en .
 
 APD:seed_shape_comma-shaped
     dcterms:description "A seed displaying a single arc of curvature, such that it bilaterally symmetrical. (Synonyms, comma-shaped, falcate, sickle-shaped scimitar-shaped)"@en ;
@@ -14313,16 +14514,27 @@ APD:seed_shape_winged
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "winged"@en .
 
-APD:seed_storage_location_canopy
+APD:seed_storage_location_canopy_seedbank
     dcterms:description "Seeds stored in the canopy, usually still within a woody cone."@en ;
-    dcterms:identifier "seed_storage_location_canopy" ;
+    dcterms:identifier "seed_storage_location_canopy_seedbank" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "canopy"@en ;
+    rdfs:label "canopy_seedbank"@en ;
     rdfs:subClassOf APD:trait_0030511 ;
     skos:broader APD:trait_0030511 ;
     skos:definition "Seeds stored in the canopy, usually still within a woody cone."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "canopy"@en .
+    skos:prefLabel "canopy_seedbank"@en .
+
+APD:seed_storage_location_canopy_seedbank_absent
+    dcterms:description "Seed explicitly not stored in the canopy."@en ;
+    dcterms:identifier "seed_storage_location_canopy_seedbank_absent" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "canopy_seedbank_absent"@en ;
+    rdfs:subClassOf APD:trait_0030511 ;
+    skos:broader APD:trait_0030511 ;
+    skos:definition "Seed explicitly not stored in the canopy."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "canopy_seedbank_absent"@en .
 
 APD:seed_storage_location_none
     dcterms:description "Seeds are not stored."@en ;
@@ -14335,27 +14547,38 @@ APD:seed_storage_location_none
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "none"@en .
 
-APD:seed_storage_location_not_canopy
-    dcterms:description "Seed explicitly not stored in the canopy; other storage locations unknown."@en ;
-    dcterms:identifier "seed_storage_location_not_canopy" ;
+APD:seed_storage_location_seedbank
+    dcterms:description "A seedbank exists, but its locations is not specified."@en ;
+    dcterms:identifier "seed_storage_location_seedbank" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "not_canopy"@en ;
+    rdfs:label "seedbank"@en ;
     rdfs:subClassOf APD:trait_0030511 ;
     skos:broader APD:trait_0030511 ;
-    skos:definition "Seed explicitly not stored in the canopy; other storage locations unknown."@en ;
+    skos:definition "A seedbank exists, but its locations is not specified."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "not_canopy"@en .
+    skos:prefLabel "seedbank"@en .
 
-APD:seed_storage_location_soil
+APD:seed_storage_location_soil_seedbank
     dcterms:description "Seeds stored in the soil."@en ;
-    dcterms:identifier "seed_storage_location_soil" ;
+    dcterms:identifier "seed_storage_location_soil_seedbank" ;
     a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "soil"@en ;
+    rdfs:label "soil_seedbank"@en ;
     rdfs:subClassOf APD:trait_0030511 ;
     skos:broader APD:trait_0030511 ;
     skos:definition "Seeds stored in the soil."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "soil"@en .
+    skos:prefLabel "soil_seedbank"@en .
+
+APD:seed_storage_location_soil_seedbank_absent
+    dcterms:description "Seed explicitly not stored in the soil."@en ;
+    dcterms:identifier "seed_storage_location_soil_seedbank_absent" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "soil_seedbank_absent"@en ;
+    rdfs:subClassOf APD:trait_0030511 ;
+    skos:broader APD:trait_0030511 ;
+    skos:definition "Seed explicitly not stored in the soil."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "soil_seedbank_absent"@en .
 
 APD:seed_surface_hairs_glabrous
     dcterms:description "Seed surface lacks trichomes or bristles."@en ;
@@ -14433,6 +14656,17 @@ APD:seed_surface_texture_bumpy
     skos:definition "Seed surface covered with minute, rounded protuberances. (Synonyms, colliculate, verrucate, papillate, tuberculate, undulate)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "bumpy"@en .
+
+APD:seed_surface_texture_grooved
+    dcterms:description "Seed surface covered with grooves."@en ;
+    dcterms:identifier "seed_surface_texture_grooved" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "grooved"@en ;
+    rdfs:subClassOf APD:trait_0012620 ;
+    skos:broader APD:trait_0012620 ;
+    skos:definition "Seed surface covered with grooves."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "grooved"@en .
 
 APD:seed_surface_texture_netted
     dcterms:description "Seed surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate, honey-combed)"@en ;
@@ -14688,35 +14922,35 @@ APD:serotiny_serotinous
     skos:prefLabel "serotinous"@en .
 
 APD:serotiny_serotiny_high
-    dcterms:description "Plant displays a high level of serotiny."@en ;
+    dcterms:description "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."@en ;
     dcterms:identifier "serotiny_serotiny_high" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "serotiny_high"@en ;
     rdfs:subClassOf APD:trait_0030517 ;
     skos:broader APD:trait_0030517 ;
-    skos:definition "Plant displays a high level of serotiny."@en ;
+    skos:definition "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "serotiny_high"@en .
 
 APD:serotiny_serotiny_low
-    dcterms:description "Plant displays a low level of serotiny."@en ;
+    dcterms:description "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."@en ;
     dcterms:identifier "serotiny_serotiny_low" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "serotiny_low"@en ;
     rdfs:subClassOf APD:trait_0030517 ;
     skos:broader APD:trait_0030517 ;
-    skos:definition "Plant displays a low level of serotiny."@en ;
+    skos:definition "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "serotiny_low"@en .
 
 APD:serotiny_serotiny_moderate
-    dcterms:description "Plant displays a moderate level of serotiny."@en ;
+    dcterms:description "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."@en ;
     dcterms:identifier "serotiny_serotiny_moderate" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "serotiny_moderate"@en ;
     rdfs:subClassOf APD:trait_0030517 ;
     skos:broader APD:trait_0030517 ;
-    skos:definition "Plant displays a moderate level of serotiny."@en ;
+    skos:definition "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "serotiny_moderate"@en .
 
@@ -14851,28 +15085,6 @@ APD:sex_type_unknown
     skos:definition "Inadequate information to assign a sex type."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "unknown"@en .
-
-APD:soil_seedbank_soil_seedbank_absent
-    dcterms:description "Seeds not present in soil seedbank."@en ;
-    dcterms:identifier "soil_seedbank_soil_seedbank_absent" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "soil_seedbank_absent"@en ;
-    rdfs:subClassOf APD:trait_0030513 ;
-    skos:broader APD:trait_0030513 ;
-    skos:definition "Seeds not present in soil seedbank."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "soil_seedbank_absent"@en .
-
-APD:soil_seedbank_soil_seedbank_present
-    dcterms:description "Seeds present in soil seedbank."@en ;
-    dcterms:identifier "soil_seedbank_soil_seedbank_present" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "soil_seedbank_present"@en ;
-    rdfs:subClassOf APD:trait_0030513 ;
-    skos:broader APD:trait_0030513 ;
-    skos:definition "Seeds present in soil seedbank."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "soil_seedbank_present"@en .
 
 APD:stem_growth_habit_arborescent
     dcterms:description "Tree-like growth habit."@en ;
@@ -15182,6 +15394,17 @@ APD:storage_organ_no_storage_organ
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "no_storage_organ"@en .
 
+APD:storage_organ_pseudobulb
+    dcterms:description "An above ground storage organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes."@en ;
+    dcterms:identifier "storage_organ_pseudobulb" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "pseudobulb"@en ;
+    rdfs:subClassOf APD:trait_0030312 ;
+    skos:broader APD:trait_0030312 ;
+    skos:definition "An above ground storage organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "pseudobulb"@en .
+
 APD:storage_organ_rhizome
     dcterms:description "A type of continually growing or creeping underground stem, but it is not specified if the rhizome is woody or non-woody."@en ;
     dcterms:identifier "storage_organ_rhizome" ;
@@ -15193,17 +15416,6 @@ APD:storage_organ_rhizome
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "rhizome"@en .
 
-APD:storage_organ_rhizome_felshy
-    dcterms:description "A type of continually growing or creeping fleshy, non-woody underground stem."@en ;
-    dcterms:identifier "storage_organ_rhizome_felshy" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "rhizome_felshy"@en ;
-    rdfs:subClassOf APD:trait_0030312 ;
-    skos:broader APD:trait_0030312 ;
-    skos:definition "A type of continually growing or creeping fleshy, non-woody underground stem."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "rhizome_felshy"@en .
-
 APD:storage_organ_rhizome_fibrous
     dcterms:description "A type of continually growing or creeping fibrous, non-woody underground stem."@en ;
     dcterms:identifier "storage_organ_rhizome_fibrous" ;
@@ -15214,6 +15426,17 @@ APD:storage_organ_rhizome_fibrous
     skos:definition "A type of continually growing or creeping fibrous, non-woody underground stem."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "rhizome_fibrous"@en .
+
+APD:storage_organ_rhizome_fleshy
+    dcterms:description "A type of continually growing or creeping fleshy, non-woody underground stem."@en ;
+    dcterms:identifier "storage_organ_rhizome_fleshy" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "rhizome_fleshy"@en ;
+    rdfs:subClassOf APD:trait_0030312 ;
+    skos:broader APD:trait_0030312 ;
+    skos:definition "A type of continually growing or creeping fleshy, non-woody underground stem."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "rhizome_fleshy"@en .
 
 APD:storage_organ_rhizome_woody
     dcterms:description "A type of continually growing or creeping woody underground stem."@en ;
@@ -15227,13 +15450,13 @@ APD:storage_organ_rhizome_woody
     skos:prefLabel "rhizome_woody"@en .
 
 APD:storage_organ_root_tuber
-    dcterms:description "A swollen root the stores nutrients, carbohydrates and water; synonym, taproot tuber"@en ;
+    dcterms:description "A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)"@en ;
     dcterms:identifier "storage_organ_root_tuber" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "root_tuber"@en ;
     rdfs:subClassOf APD:trait_0030312 ;
     skos:broader APD:trait_0030312 ;
-    skos:definition "A swollen root the stores nutrients, carbohydrates and water; synonym, taproot tuber"@en ;
+    skos:definition "A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "root_tuber"@en .
 
@@ -15258,6 +15481,17 @@ APD:storage_organ_storage_organ
     skos:definition "Plant has a storage organ, but the type is unknown."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "storage_organ"@en .
+
+APD:storage_organ_tuber
+    dcterms:description "A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue."@en ;
+    dcterms:identifier "storage_organ_tuber" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "tuber"@en ;
+    rdfs:subClassOf APD:trait_0030312 ;
+    skos:broader APD:trait_0030312 ;
+    skos:definition "A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "tuber"@en .
 
 APD:trait_0000000
     a owl:Class, skos:Concept ;
@@ -19419,7 +19653,7 @@ APD:trait_0011311
     skos:closeMatch obo:TO_0000492, "Leaf form [TOP225] (https://top-thesaurus.org/index)", "Leaf shape [TRY:154] (https://www.try-db.org/de/de.php)" ;
     skos:definition "Shapes of a leaf or leaflet."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_shape_acicular, APD:leaf_shape_cordate, APD:leaf_shape_deltate, APD:leaf_shape_elliptical, APD:leaf_shape_falcate, APD:leaf_shape_filiform, APD:leaf_shape_lanceolate, APD:leaf_shape_linear, APD:leaf_shape_linear_elliptical, APD:leaf_shape_narrowly_elliptical, APD:leaf_shape_narrowly_oblanceolate, APD:leaf_shape_narrowly_oblong, APD:leaf_shape_narrowly_obovate, APD:leaf_shape_narrowly_obtrullate, APD:leaf_shape_narrowly_ovate, APD:leaf_shape_narrowly_rhomboidal, APD:leaf_shape_narrowly_triangular, APD:leaf_shape_obcordate, APD:leaf_shape_oblanceolate, APD:leaf_shape_oblate, APD:leaf_shape_oblong, APD:leaf_shape_obovate, APD:leaf_shape_obtriangular, APD:leaf_shape_obtrullate, APD:leaf_shape_orbicular, APD:leaf_shape_ovate, APD:leaf_shape_peltate, APD:leaf_shape_reniform, APD:leaf_shape_rhomboidal, APD:leaf_shape_spathulate, APD:leaf_shape_subulate, APD:leaf_shape_terete, APD:leaf_shape_triangular, APD:leaf_shape_trullate, APD:leaf_shape_widely_elliptical, APD:leaf_shape_widely_obovate, APD:leaf_shape_widely_obtrullate, APD:leaf_shape_widely_ovate ;
+    skos:narrower APD:leaf_shape_acicular, APD:leaf_shape_cordate, APD:leaf_shape_deltate, APD:leaf_shape_elliptical, APD:leaf_shape_ensiform, APD:leaf_shape_falcate, APD:leaf_shape_filiform, APD:leaf_shape_lanceolate, APD:leaf_shape_linear, APD:leaf_shape_linear_elliptical, APD:leaf_shape_narrowly_elliptical, APD:leaf_shape_narrowly_lanceolate, APD:leaf_shape_narrowly_oblanceolate, APD:leaf_shape_narrowly_oblong, APD:leaf_shape_narrowly_obovate, APD:leaf_shape_narrowly_obtrullate, APD:leaf_shape_narrowly_ovate, APD:leaf_shape_narrowly_rhomboidal, APD:leaf_shape_narrowly_triangular, APD:leaf_shape_obcordate, APD:leaf_shape_oblanceolate, APD:leaf_shape_oblate, APD:leaf_shape_oblong, APD:leaf_shape_obovate, APD:leaf_shape_obtriangular, APD:leaf_shape_obtrullate, APD:leaf_shape_orbicular, APD:leaf_shape_ovate, APD:leaf_shape_peltate, APD:leaf_shape_reniform, APD:leaf_shape_rhomboidal, APD:leaf_shape_spathulate, APD:leaf_shape_strap-shaped, APD:leaf_shape_subulate, APD:leaf_shape_terete, APD:leaf_shape_triangular, APD:leaf_shape_trullate, APD:leaf_shape_widely_elliptical, APD:leaf_shape_widely_obovate, APD:leaf_shape_widely_obtrullate, APD:leaf_shape_widely_ovate ;
     skos:prefLabel "Leaf shape"@en ;
     skos:scopeNote "Plants with leaves."@en ;
     ont:hasContextObject obo:PO_0025034 .
@@ -19441,7 +19675,7 @@ APD:trait_0011312
     skos:broader APD:trait_group_0011304 ;
     skos:definition "The shape of the basal margin of a leaf."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_base_shape_attenuate, APD:leaf_base_shape_auriculate, APD:leaf_base_shape_cuneate, APD:leaf_base_shape_hastate, APD:leaf_base_shape_sagittate ;
+    skos:narrower APD:leaf_base_shape_acute, APD:leaf_base_shape_attenuate, APD:leaf_base_shape_auriculate, APD:leaf_base_shape_cordate, APD:leaf_base_shape_cuneate, APD:leaf_base_shape_hastate, APD:leaf_base_shape_oblique, APD:leaf_base_shape_obtuse, APD:leaf_base_shape_rounded, APD:leaf_base_shape_sagittate, APD:leaf_base_shape_sheathing, APD:leaf_base_shape_truncate ;
     skos:prefLabel "Leaf base shape"@en ;
     skos:scopeNote "Plants with leaves."@en ;
     ont:hasContextObject obo:PO_0025034 .
@@ -19488,7 +19722,7 @@ APD:trait_0011314
     skos:broader APD:trait_group_0011304 ;
     skos:definition "The posture (curvature or curling) of the leaf margin."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_margin_posture_flat, APD:leaf_margin_posture_recurved, APD:leaf_margin_posture_revolute, APD:leaf_margin_posture_undulate ;
+    skos:narrower APD:leaf_margin_posture_flat, APD:leaf_margin_posture_involute, APD:leaf_margin_posture_recurved, APD:leaf_margin_posture_revolute, APD:leaf_margin_posture_undulate ;
     skos:prefLabel "Leaf margin posture"@en ;
     skos:scopeNote "Plants with leaves"@en ;
     ont:hasContextObject obo:PO_0025034 .
@@ -19738,7 +19972,7 @@ APD:trait_0011411
     skos:closeMatch "Leaf distribution along the shoot axis (arrangement type) [TRY:16] (https://www.try-db.org/de/de.php)", "leaf_arrangement [GIFT:4.15.1] (https://gift.uni-goettingen.de)" ;
     skos:definition "Leaf arrangement across stem nodes, indicating the 3-dimensional arrangement of leaves along the length of the stem."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_arrangement_crowded, APD:leaf_arrangement_decussate, APD:leaf_arrangement_distichous, APD:leaf_arrangement_fasciculate, APD:leaf_arrangement_spiral ;
+    skos:narrower APD:leaf_arrangement_clustered, APD:leaf_arrangement_clustered_basal, APD:leaf_arrangement_crowded, APD:leaf_arrangement_decussate, APD:leaf_arrangement_distichous, APD:leaf_arrangement_fasciculate, APD:leaf_arrangement_imbricate, APD:leaf_arrangement_scattered, APD:leaf_arrangement_spiral ;
     skos:prefLabel "Leaf arrangement"@en ;
     skos:scopeNote "Plants with leaves."@en ;
     ont:hasContextObject obo:PO_0025034 .
@@ -21372,7 +21606,7 @@ APD:trait_0012418
 APD:trait_0012419
     oboecore:MeasuredCharacteristic obo:PATO_0000122 ;
     dcterms:created "19/05/2023"^^<xsd:date> ;
-    dcterms:description "A floral organ morphology trait [TO:0000862] which is the length [PATO:0000122] of the flower [PO:0009046]."@en, "The length of the flower."@en ;
+    dcterms:description "A floral organ morphology trait [TO:0000862] which is the length [PATO:0000122] of the flower [PO:0009046] from the base of the receptable [PO:0009064] or the base of an inferior ovary [PO:0009072] to the tip of the flower, measured at anthesis [PO:0009068]. It excludes the length of the pedicel [PO:0030112]."@en, "The length of the flower."@en ;
     dcterms:identifier "trait_0012419" ;
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009031, obo:PO_0009032, obo:PO_0009058, obo:PO_0009059, obo:PO_0009060 ;
     ets:expectedUnit "cm" ;
@@ -21393,7 +21627,7 @@ APD:trait_0012419
 APD:trait_0012420
     oboecore:MeasuredCharacteristic obo:PATO_0001334 ;
     dcterms:created "19/05/2023"^^<xsd:date> ;
-    dcterms:description "A floral organ morphology trait [TO:0000862] which is the diameter [PATO:0001334] of the flower [PO:0009046]."@en, "The diameter of the flower."@en ;
+    dcterms:description "A floral organ morphology trait [TO:0000862] which is the maximum diameter [PATO:0001334] of the flower [PO:0009046] at anthesis [PO:0009068], considering all floral organs, but most commonly the diameter from petal  [PO:0009032] tip to petal tip."@en, "The maximum diameter of the flower at anthesis, considering all floral organs, but most commonly the diameter from petal  tip to petal tip."@en ;
     dcterms:identifier "trait_0012420" ;
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009031, obo:PO_0009032, obo:PO_0009058, obo:PO_0009059, obo:PO_0009060 ;
     ets:expectedUnit "cm" ;
@@ -21405,7 +21639,7 @@ APD:trait_0012420
     rdfs:subClassOf APD:trait_group_0012406 ;
     skos:altLabel "flower_diameter" ;
     skos:broader APD:trait_group_0012406 ;
-    skos:definition "The diameter of the flower."@en ;
+    skos:definition "The maximum diameter of the flower at anthesis, considering all floral organs, but most commonly the diameter from petal  tip to petal tip."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Flower diameter"@en ;
     ont:hasContextObject obo:PO_0009046, obo:PO_0025082 ;
@@ -22455,7 +22689,7 @@ APD:trait_0012620
     skos:changeNote "seed_texture" ;
     skos:definition "Surface texture of a mature seed, including descriptions of configuration (overall surface patterns of the epidermal cells) and epidermal excrescence (surface patterns caused by structural outgrowths of the epidermis)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:seed_surface_texture_bumpy, APD:seed_surface_texture_netted, APD:seed_surface_texture_papery, APD:seed_surface_texture_pitted, APD:seed_surface_texture_ribbed, APD:seed_surface_texture_rough, APD:seed_surface_texture_scaly, APD:seed_surface_texture_smooth, APD:seed_surface_texture_spiny, APD:seed_surface_texture_wrinkled ;
+    skos:narrower APD:seed_surface_texture_bumpy, APD:seed_surface_texture_grooved, APD:seed_surface_texture_netted, APD:seed_surface_texture_papery, APD:seed_surface_texture_pitted, APD:seed_surface_texture_ribbed, APD:seed_surface_texture_rough, APD:seed_surface_texture_scaly, APD:seed_surface_texture_smooth, APD:seed_surface_texture_spiny, APD:seed_surface_texture_wrinkled ;
     skos:prefLabel "Seed surface texture"@en ;
     ont:hasContextObject obo:PO_0009010, obo:PO_0025082 .
 
@@ -22541,7 +22775,7 @@ APD:trait_0012624
     skos:definition "Broad terms indicating the plant structure involved in dispersal, distinguishing between taxonomic groups whose main dispersal units are spores, seeds, or fruit."@en ;
     skos:exactMatch "Diaspore [BROT:24] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:dispersal_unit_fruit, APD:dispersal_unit_seed, APD:dispersal_unit_spore ;
+    skos:narrower APD:dispersal_unit_fruit, APD:dispersal_unit_seed, APD:dispersal_unit_seedling, APD:dispersal_unit_spore ;
     skos:prefLabel "Dispersal unit"@en ;
     ont:hasContextObject obo:PO_0009001, obo:PO_0009010, obo:PO_0025082 .
 
@@ -22616,7 +22850,7 @@ APD:trait_0013013
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "This trait records the length of all orders of leaf lamina veins, while the trait `leaf_major_vein_density` records only the length of major veins (primary, secondary and tertiary veins)."@en ;
-    rdfs:label "Length of all minor and major leaf lamina veins per unit area."@en ;
+    rdfs:label "Length of all minor and major leaf lamina veins per unit area"@en ;
     rdfs:subClassOf APD:trait_group_0011202, APD:trait_group_0013006, APD:trait_group_0021002 ;
     skos:altLabel "leaf_total_vein_density" ;
     skos:broader APD:trait_group_0011202, APD:trait_group_0013006, APD:trait_group_0021002 ;
@@ -22624,7 +22858,7 @@ APD:trait_0013013
     skos:closeMatch "Leaf vein density [TRY:740] (https://www.try-db.org/de/de.php)" ;
     skos:definition "The length of all minor and major leaf lamina veins per unit leaf area."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Length of all minor and major leaf lamina veins per unit area."@en ;
+    skos:prefLabel "Length of all minor and major leaf lamina veins per unit area"@en ;
     skos:relatedMatch obo:TO_0000820 ;
     skos:scopeNote "Vascular plants with leaves."@en ;
     ont:hasContextObject obo:PO_0025034 ;
@@ -24516,7 +24750,7 @@ APD:trait_0021013
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), multiplied by the path length measured (m)."@en, "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the stem segment, multiplied by the stem length (m)."@en ;
+    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), multiplied by the path length measured (m)."@en, "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the stem segment, multiplied by the stem length (m)."@en ;
     dcterms:identifier "trait_0021013" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:PO_0004513, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24525,13 +24759,13 @@ APD:trait_0021013
     ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the decrease in water potential across the stem segment, but IS NOT normalised to the path length and has units kg/MPa/s."@en ;
+    rdfs:comment "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the water potential gradient across the stem segment, but IS NOT normalised to the path length and has units kg/MPa/s."@en ;
     rdfs:label "Stem hydraulic conductivity (Kh)"@en ;
     rdfs:subClassOf APD:trait_group_0021002 ;
     skos:altLabel "stem_hydraulic_conductivity" ;
     skos:broader APD:trait_group_0021002 ;
     skos:closeMatch "Branch hydraulic conductance [TRY:3392] (https://www.try-db.org/de/de.php)" ;
-    skos:definition "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the stem segment, multiplied by the stem length (m)."@en ;
+    skos:definition "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the stem segment, multiplied by the stem length (m)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Stem hydraulic conductivity (Kh)"@en ;
     ont:hasContextObject obo:PO_0009047 ;
@@ -24541,7 +24775,7 @@ APD:trait_0021014
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001035, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22004> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."@en, "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
+    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."@en, "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
     dcterms:identifier "trait_0021014" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:PO_0004513, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24554,7 +24788,7 @@ APD:trait_0021014
     rdfs:subClassOf APD:trait_group_0021002 ;
     skos:altLabel "sapwood_specific_hydraulic_conductivity" ;
     skos:broader APD:trait_group_0021002 ;
-    skos:definition "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
+    skos:definition "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Sapwood specific hydraulic conductivity (Ks)"@en ;
     ont:hasContextObject obo:PO_0009047 ;
@@ -24587,7 +24821,7 @@ APD:trait_0021016
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001035, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22004> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."@en, "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
+    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."@en, "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
     dcterms:identifier "trait_0021016" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:PO_0004513, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24601,7 +24835,7 @@ APD:trait_0021016
     skos:altLabel "stem_specific_hydraulic_conductivity" ;
     skos:broader APD:trait_group_0021002 ;
     skos:changeNote "transverse_branch_area_specific_conductivity" ;
-    skos:definition "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
+    skos:definition "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Stem specific hydraulic conductivity (Ks)"@en ;
     ont:hasContextObject obo:PO_0009047 ;
@@ -24611,7 +24845,7 @@ APD:trait_0021017
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001035, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A leaf [PO:0025034] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a leaf under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the leaf area [PATO:0001323]. It is calculated as the ratio [PATO:0001470] of the water flow rate through the leaf (mmol/s)  to the decrease in water potential gradient from the petiole [PO:0020038] to mesophyll [PO:0006070] substomatal cavities (MPa), divided by the leaf area (m2)."@en, "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the decrease in water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."@en ;
+    dcterms:description "A leaf [PO:0025034] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a leaf under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the leaf area [PATO:0001323]. It is calculated as the ratio [PATO:0001470] of the water flow rate through the leaf (mmol/s)  to the water potential gradient gradient from the petiole [PO:0020038] to mesophyll [PO:0006070] substomatal cavities (MPa), divided by the leaf area (m2)."@en, "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."@en ;
     dcterms:identifier "trait_0021017" ;
     dcterms:references <https://doi.org/10.1111/j.1469-8137.2010.03439.x>, <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:TO_0000131, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24626,7 +24860,7 @@ APD:trait_0021017
     skos:altLabel "leaf_specific_hydraulic_conductance" ;
     skos:broader APD:trait_group_0021002 ;
     skos:changeNote "leaf_hydraulic_conductivity" ;
-    skos:definition "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the decrease in water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."@en ;
+    skos:definition "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Leaf specific hydraulic conductance (kleaf)"@en ;
     skos:relatedMatch "Leaf hydraulic conductance [TRY:748] (https://www.try-db.org/de/de.php)" ;
@@ -24637,7 +24871,7 @@ APD:trait_0021018
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001035, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the branches' leaf [PO:0025034] area [PATO:0001323] and accounting for the path (stem) length [PATO:0000122]. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en, "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en ;
+    dcterms:description "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the branches' leaf [PO:0025034] area [PATO:0001323] and accounting for the path (stem) length [PATO:0000122]. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en, "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en ;
     dcterms:identifier "trait_0021018" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:TO_0000131, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24651,7 +24885,7 @@ APD:trait_0021018
     rdfs:subClassOf APD:trait_group_0021002 ;
     skos:altLabel "leaf_specific_hydraulic_conductivity" ;
     skos:broader APD:trait_group_0021002 ;
-    skos:definition "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en ;
+    skos:definition "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."@en ;
     skos:exactMatch "Leaf area-specific conductivity (leaf specific conductivity) [TRY:928] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Leaf specific hydraulic conductivity (Kl)"@en ;
@@ -24662,7 +24896,7 @@ APD:trait_0021021
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "20/05/2023"^^<xsd:date> ;
-    dcterms:description "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the decrease in water potential across the root segment (MPa), multiplied by the path length measured (m)."@en, "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the root segment, multiplied by the root length (m)."@en ;
+    dcterms:description "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the water potential gradient across the root segment (MPa), multiplied by the path length measured (m)."@en, "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the root segment, multiplied by the root length (m)."@en ;
     dcterms:identifier "trait_0021021" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:PO_0004513, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24671,13 +24905,13 @@ APD:trait_0021021
     ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the decrease in water potential across the root segment, but IS NOT normalised to the path length and has units kg/MPa/s."@en ;
+    rdfs:comment "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the water potential gradient across the root segment, but IS NOT normalised to the path length and has units kg/MPa/s."@en ;
     rdfs:label "Root hydraulic conductivity (Kh)"@en ;
     rdfs:subClassOf APD:trait_group_0021002 ;
     skos:altLabel "root_hydraulic_conductivity" ;
     skos:broader APD:trait_group_0021002 ;
     skos:closeMatch "Branch hydraulic conductance [TRY:3392] (https://www.try-db.org/de/de.php)" ;
-    skos:definition "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the root segment, multiplied by the root length (m)."@en ;
+    skos:definition "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the root segment, multiplied by the root length (m)."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Root hydraulic conductivity (Kh)"@en ;
     ont:hasContextObject obo:PO_0009005 ;
@@ -24712,7 +24946,7 @@ APD:trait_0021031
     oboecore:MeasuredCharacteristic obo:PATO_0001035, obo:PATO_0002284 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The average water potential [EnvThes:22311] of a plant's  leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."@en, "The water potential of a plant's leaf or shoot photosynthetic tissue during maximum midday transpiration, the time of day when the plant is most water stressed and has the lowest (most negative) water potential."@en ;
+    dcterms:description "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."@en, "The water potential of a plant's leaf or shoot photosynthetic tissue during maximum midday transpiration, the time of day when the plant is most water stressed and has the lowest (most negative) water potential."@en ;
     dcterms:identifier "trait_0021031" ;
     dcterms:references <http://doi.org/10.1071/BT12225> ;
     SIO:SIO_000147 obo:PO_0009006, obo:TO_0000131, obo:TO_0000237, obo:TO_0000276, <http://vocabs.lter-europe.net/EnvThes/22311> ;
@@ -24736,7 +24970,7 @@ APD:trait_0021032
     oboecore:MeasuredCharacteristic obo:PATO_0002205 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "22/05/2023"^^<xsd:date> ;
-    dcterms:description "The ratio of"@en, "The ratio of the change in tissue water volume to the change in tissue water potential"@en ;
+    dcterms:description "The ratio  [PATO:0001470] of the change in tissue [CARO:0000043] water [CHEBI:15377] volume to the change in tissue water potential [EnvThes:22311]."@en, "The ratio of the change in tissue water volume to the change in tissue water potential."@en ;
     dcterms:identifier "trait_0021032" ;
     dcterms:references <https://doi.org/10.1007/978-94-007-1242-3_13> ;
     SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:PATO_0001620, obo:TO_0000237, obo:TO_0000701 ;
@@ -24749,7 +24983,7 @@ APD:trait_0021032
     rdfs:subClassOf APD:trait_group_0021002 ;
     skos:altLabel "whole_plant_intrinsic_capacitance" ;
     skos:broader APD:trait_group_0021002 ;
-    skos:definition "The ratio of"@en ;
+    skos:definition "The ratio of the change in tissue water volume to the change in tissue water potential."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Whole plant intrinsic capacitance (C)"@en ;
     skos:relatedMatch "Leaf water capacitance [TRY:711] (https://www.try-db.org/de/de.php)" ;
@@ -24908,7 +25142,7 @@ APD:trait_0021056
     oboecore:MeasuredCharacteristic obo:PATO_0001035, obo:PATO_0002284, obo:STATO_0000034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is the leaf water potential [EnvThes:22311] at which the mean turgor pressure [TO:0000701] of cells [CL:0000000] in the leaf/terminal shoot drop to zero. This is the point at which the plant wilts."@en, "A parameter calculated from a pressure-volume curve which is the water potential at which the mean cell turgor pressure in the leaf/shoot declines to zero."@en ;
+    dcterms:description "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is the leaf water potential [EnvThes:22311] at which the mean turgor pressure [TO:0000701] of cells [CL:0000000] in the leaf/terminal shoot drops to zero. This is the point at which the plant wilts."@en, "A parameter calculated from a pressure-volume curve which is the water potential at which the mean cell turgor pressure in the leaf/shoot declines to zero."@en ;
     dcterms:identifier "trait_0021056" ;
     SIO:SIO_000147 obo:TO_0000131, obo:TO_0000237, obo:TO_0000276, obo:TO_0000701, <http://vocabs.lter-europe.net/EnvThes/22311> ;
     ets:expectedUnit uom:MPa, "MPa" ;
@@ -25694,21 +25928,20 @@ APD:trait_0030213
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "19/05/2023"^^<xsd:date> ;
-    dcterms:description "The season during which seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] occurs."@en, "The season during which seed germination and seedling establishment occurs."@en ;
+    dcterms:description "The months [UO:0000035] during which seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] occurs."@en, "The months during which seed germination and seedling establishment occurs."@en ;
     dcterms:identifier "trait_0030213" ;
     dcterms:references <https://doi.org/10.1071/BT9900255> ;
     SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment>, obo:GO_0000003, obo:GO_0009845, <http://vocabs.lter-europe.net/EnvThes/20410>, <http://vocabs.lter-europe.net/EnvThes/20698> ;
     ets:valueType obo:STATO_0000252 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "This trait is relevant for a population's fire response."@en ;
-    rdfs:label "Seedling recruitment season"@en ;
+    rdfs:comment "Trait keyed as a sequences of 12 Ns (not flowering) and Ys (flowering), representing the 12 months, starting with January."@en ;
+    rdfs:label "Seedling recruitment time, by month"@en ;
     rdfs:subClassOf APD:trait_group_0030008, APD:trait_group_0030602, APD:trait_group_0030704 ;
-    skos:altLabel "recruitment_season" ;
+    skos:altLabel "recruitment_time" ;
     skos:broader APD:trait_group_0030008, APD:trait_group_0030602, APD:trait_group_0030704 ;
-    skos:definition "The season during which seed germination and seedling establishment occurs."@en ;
+    skos:definition "The months during which seed germination and seedling establishment occurs."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:recruitment_season_autumn, APD:recruitment_season_spring, APD:recruitment_season_summer, APD:recruitment_season_winter ;
-    skos:prefLabel "Seedling recruitment season"@en ;
+    skos:prefLabel "Seedling recruitment time, by month"@en ;
     ont:hasContextObject obo:PO_0000003, obo:PO_0009010 .
 
 APD:trait_0030214
@@ -25750,7 +25983,7 @@ APD:trait_0030260
     skos:definition "For a given taxon, the biotic vectors (including explicit taxa) or abiotic mechanisms that are most likely to pollinate its flowers, based on the taxon's flower morphology."@en ;
     skos:exactMatch "Flower pollination syndrome [TOP333] (https://top-thesaurus.org/index)", "flower pollination syndrome [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "pollination syndrome [TRY:29] (https://www.try-db.org/de/de.php)", "pollination_syndrom [GIFT:3.6] (https://gift.uni-goettingen.de)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:pollination_syndrome_abiotic, APD:pollination_syndrome_animal, APD:pollination_syndrome_bat, APD:pollination_syndrome_bee, APD:pollination_syndrome_beetle, APD:pollination_syndrome_biotic, APD:pollination_syndrome_bird, APD:pollination_syndrome_butterfly, APD:pollination_syndrome_fly, APD:pollination_syndrome_insect, APD:pollination_syndrome_mammal, APD:pollination_syndrome_moth, APD:pollination_syndrome_pollination_rare, APD:pollination_syndrome_self, APD:pollination_syndrome_thrip, APD:pollination_syndrome_vertebrate, APD:pollination_syndrome_wasp, APD:pollination_syndrome_water, APD:pollination_syndrome_wind ;
+    skos:narrower APD:pollination_syndrome_abiotic, APD:pollination_syndrome_animal, APD:pollination_syndrome_ballistic, APD:pollination_syndrome_bat, APD:pollination_syndrome_bee, APD:pollination_syndrome_beetle, APD:pollination_syndrome_biotic, APD:pollination_syndrome_bird, APD:pollination_syndrome_butterfly, APD:pollination_syndrome_fly, APD:pollination_syndrome_insect, APD:pollination_syndrome_mammal, APD:pollination_syndrome_moth, APD:pollination_syndrome_pollination_rare, APD:pollination_syndrome_self, APD:pollination_syndrome_thrip, APD:pollination_syndrome_vertebrate, APD:pollination_syndrome_wasp, APD:pollination_syndrome_water, APD:pollination_syndrome_wind ;
     skos:prefLabel "Pollination syndrome"@en ;
     skos:scopeNote "applicable to seed plants (gymnosperms and angiosperms)"@en ;
     ont:hasContextObject obo:PO_0009046, obo:PO_0025082 .
@@ -25774,7 +26007,7 @@ APD:trait_0030261
     skos:closeMatch "pollination syndrome [TRY:29] (https://www.try-db.org/de/de.php)", "self_fertilization_1 [GIFT:3.1.1] (https://gift.uni-goettingen.de)" ;
     skos:definition "For a given taxon, the biotic vectors (including explicit taxa) or abiotic mechanisms that are most likely to pollinate its flowers, based on explicit field studies of pollination in the taxon's native range (preferred) or else a combination of possible pollinators observed visiting a taxon's flowers and the taxon's flower morphology."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:pollination_system_abiotic, APD:pollination_system_animal, APD:pollination_system_bat, APD:pollination_system_bee, APD:pollination_system_beetle, APD:pollination_system_biotic_specialised, APD:pollination_system_biotic_unspecialised, APD:pollination_system_bird, APD:pollination_system_butterfly, APD:pollination_system_fly, APD:pollination_system_insect, APD:pollination_system_mammal, APD:pollination_system_moth, APD:pollination_system_self, APD:pollination_system_thrip, APD:pollination_system_vertebrate, APD:pollination_system_wasp, APD:pollination_system_water, APD:pollination_system_wind ;
+    skos:narrower APD:pollination_system_abiotic, APD:pollination_system_animal, APD:pollination_system_ballistic, APD:pollination_system_bat, APD:pollination_system_bee, APD:pollination_system_beetle, APD:pollination_system_biotic_specialised, APD:pollination_system_biotic_unspecialised, APD:pollination_system_bird, APD:pollination_system_butterfly, APD:pollination_system_fly, APD:pollination_system_insect, APD:pollination_system_mammal, APD:pollination_system_moth, APD:pollination_system_self, APD:pollination_system_thrip, APD:pollination_system_vertebrate, APD:pollination_system_wasp, APD:pollination_system_water, APD:pollination_system_wind ;
     skos:prefLabel "Pollination system"@en ;
     skos:scopeNote "applicable to seed plants (gymnosperms and angiosperms)"@en ;
     ont:hasContextObject obo:PO_0009046, obo:PO_0025082 .
@@ -25788,7 +26021,7 @@ APD:trait_0030310
     SIO:SIO_000147 obo:GO_0000003, obo:GO_0019954, <http://vocabs.lter-europe.net/EnvThes/21032>, <http://vocabs.lter-europe.net/EnvThes/21034>, <http://vocabs.lter-europe.net/EnvThes/21064> ;
     ets:valueType obo:STATO_0000252 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "For plants able to reproduce vegetatively, more detailed information about the mechanisms and structures that allow clonal spread is provided in the trait `clonal_spread_mechanism`."@en ;
+    rdfs:comment "For plants able to reproduce vegetatively, more detailed information about the mechanisms and structures that allow clonal spread is provided in the trait `clonal_spread_mechanism`. The trait `dispersal_unit` captures information on plants that never produce by seed."@en ;
     rdfs:label "Vegetative reproduction ability"@en ;
     rdfs:subClassOf APD:trait_group_0030006 ;
     skos:altLabel "vegetative_reproduction_ability" ;
@@ -25798,7 +26031,7 @@ APD:trait_0030310
     skos:definition "A binary trait, indicating whether a plant taxon is able to reproduce and spread through the growth and division of vegetative material."@en ;
     skos:exactMatch <http://vocabs.lter-europe.net/EnvThes/21034>, "Plant reproduction type [TOP123] (https://top-thesaurus.org/index)", "Plant vegetative regeneration capacity [TRY:344] (https://www.try-db.org/de/de.php)", "Reproduction_asexual_1 [GIFT:3.5.1] (https://gift.uni-goettingen.de)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:vegetative_reproduction_ability_not_vegetative, APD:vegetative_reproduction_ability_vegetative ;
+    skos:narrower APD:vegetative_reproduction_ability_not_vegetative, APD:vegetative_reproduction_ability_vegetative, APD:vegetative_reproduction_ability_vegetative_obligate ;
     skos:prefLabel "Vegetative reproduction ability"@en ;
     ont:hasContextObject obo:PO_0000003 .
 
@@ -25828,7 +26061,7 @@ APD:trait_0030312
     oboecore:MeasuredCharacteristic obo:NCIT_C25518, obo:PATO_0000141 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A plant structure morphology trait [TO:0000839] which is the type [NCIT:C25284] of storage organ [EFO:0000997] a plant has, where a storage organ is a plant part (organ [PO:0009008], tissue [PO:0009007], or other plant structure [PO:0009011]) whose function [NCIT:C25518] is carbohydrate [CHEBI:16646] (energy [PATO:0001021]) storage."@en, "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
+    dcterms:description "A plant structure morphology trait [TO:0000839] which is the type [NCIT:C25284] of storage organ [EFO:0000997] a plant has, where a storage organ is a plant part (organ [PO:0009008], tissue [PO:0009007], or other plant structure [PO:0009011]) whose function [NCIT:C25518] is carbohydrate [CHEBI:16646] (energy [PATO:0001021]) storage."@en, "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration or another disturbance event that causes leaf loss). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
     dcterms:identifier "trait_0030312" ;
     dcterms:references <http://doi.org/10.1038/sdata.2018.135>, <http://doi.org/10.1071/BT20048>, <http://doi.org/10.1111/nph.14982> ;
     SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/fire#PlantResprout>, obo:CHEBI_16646, obo:PATO_0001021, obo:PO_0009008, <http://vocabs.lter-europe.net/EnvThes/21064>, EFO:EFO_0000997 ;
@@ -25839,10 +26072,10 @@ APD:trait_0030312
     rdfs:subClassOf APD:trait_group_0011001, APD:trait_group_0030001 ;
     skos:altLabel "storage_organ" ;
     skos:broader APD:trait_group_0011001, APD:trait_group_0030001 ;
-    skos:definition "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
+    skos:definition "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration or another disturbance event that causes leaf loss). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
     skos:exactMatch EFO:EFO_0000997, "Plant storage organ [TOP166] (https://top-thesaurus.org/index)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:storage_organ_bulb, APD:storage_organ_caudex, APD:storage_organ_corm, APD:storage_organ_fleshy_underground_organ, APD:storage_organ_lignotuber, APD:storage_organ_no_storage_organ, APD:storage_organ_rhizome, APD:storage_organ_rhizome_felshy, APD:storage_organ_rhizome_fibrous, APD:storage_organ_rhizome_woody, APD:storage_organ_root_tuber, APD:storage_organ_stem_tuber, APD:storage_organ_storage_organ ;
+    skos:narrower APD:storage_organ_bulb, APD:storage_organ_caudex, APD:storage_organ_corm, APD:storage_organ_fleshy_underground_organ, APD:storage_organ_lignotuber, APD:storage_organ_no_storage_organ, APD:storage_organ_pseudobulb, APD:storage_organ_rhizome, APD:storage_organ_rhizome_fibrous, APD:storage_organ_rhizome_fleshy, APD:storage_organ_rhizome_woody, APD:storage_organ_root_tuber, APD:storage_organ_stem_tuber, APD:storage_organ_storage_organ, APD:storage_organ_tuber ;
     skos:prefLabel "Storage organ"@en ;
     ont:hasContextObject obo:PO_0000003, obo:PO_0009005, obo:PO_0009047 .
 
@@ -25850,21 +26083,21 @@ APD:trait_0030313
     oboecore:MeasuredCharacteristic obo:NCIT_C25341, obo:PATO_0000060, obo:PATO_0000140 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en, "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373]. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."@en ;
+    dcterms:description "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en, "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."@en ;
     dcterms:identifier "trait_0030313" ;
     dcterms:references <http://doi.org/10.1038/sdata.2018.135>, <http://doi.org/10.1071/BT20048>, <http://doi.org/10.1111/nph.14982>, <https://doi.org/10.1111/nph.12001> ;
     SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/fire#PlantResprout>, obo:ENVO_01000786, obo:GO_0031099, obo:PO_0006079, <http://vocabs.lter-europe.net/EnvThes/20373>, <http://vocabs.lter-europe.net/EnvThes/21064> ;
     ets:valueType obo:STATO_0000252 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "There are two other traits with overlapping trait values, but that are distinct trait concepts: `clonal_spread_mechanism` indicates mechanisms and structures a plant actually uses for vegetative spread; not all energy storage organs also allow vegetative spread; `storage_organ` indicates the plant structures where a plant stores excess carbohydrates. See Pausus, Lamont et al. 2018 (doi.org/10.1111/nph.14982) for detailed descriptions of recolonization ability and level of fire protection provided by each regeneration strategy."@en ;
+    rdfs:comment "There are two other traits with overlapping trait values, but that are distinct trait concepts: `clonal_spread_mechanism` indicates mechanisms and structures a plant actually uses for vegetative spread; not all energy storage organs also allow vegetative spread; `storage_organ` indicates the plant structures where a plant stores excess carbohydrates. See Pausus, Lamont et al. 2018 (doi.org/10.1111/nph.14982) for detailed descriptions of recolonization ability and level of fire protection provided by each regeneration strategy. If specific bud banks only survive some types of disturbance, the disturbance should be specified as a context property."@en ;
     rdfs:label "Bud bank location"@en ;
     rdfs:subClassOf APD:trait_group_0030006 ;
     skos:altLabel "bud_bank_location" ;
     skos:broader APD:trait_group_0030006 ;
-    skos:definition "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
+    skos:definition "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en ;
     skos:exactMatch "Bud source [BROT:30] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:bud_bank_location_apical_buds, APD:bud_bank_location_basal_burl, APD:bud_bank_location_basal_stem_buds, APD:bud_bank_location_bud-bearing_root, APD:bud_bank_location_epicormic_buds, APD:bud_bank_location_fleshy_underground_organ, APD:bud_bank_location_none, APD:bud_bank_location_rhizome, APD:bud_bank_location_rhizome_non_woody, APD:bud_bank_location_rhizome_woody, APD:bud_bank_location_root_crown, APD:bud_bank_location_stem_buds, APD:bud_bank_location_stem_tuber, APD:bud_bank_location_stolon, APD:bud_bank_location_underground_buds ;
+    skos:narrower APD:bud_bank_location_apical_buds, APD:bud_bank_location_basal_buds, APD:bud_bank_location_basal_stem_buds, APD:bud_bank_location_bud-bearing_root, APD:bud_bank_location_epicormic_buds, APD:bud_bank_location_fleshy_underground_organ, APD:bud_bank_location_none, APD:bud_bank_location_rhizome, APD:bud_bank_location_rhizome_non_woody, APD:bud_bank_location_rhizome_woody, APD:bud_bank_location_root_crown, APD:bud_bank_location_stem_buds, APD:bud_bank_location_stem_tuber, APD:bud_bank_location_stolon, APD:bud_bank_location_underground_buds ;
     skos:prefLabel "Bud bank location"@en ;
     ont:hasContextObject obo:PO_0000003, obo:PO_0000055 .
 
@@ -25947,7 +26180,7 @@ APD:trait_0030511
     SIO:SIO_000147 MESH:D000068098, obo:ENVO_00001998, obo:ENVO_01001242, obo:GO_0000003, obo:GO_0009845, obo:GO_0010162, obo:TO_0000345 ;
     ets:valueType obo:STATO_0000252 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "Related traits include `seed_longevity`, `soil_seedbank`, `canopy_seedbank`, and `serotiny`."@en ;
+    rdfs:comment "Related traits include `seed_longevity`, and `serotiny`."@en ;
     rdfs:label "Seed storage location"@en ;
     rdfs:subClassOf APD:trait_group_0030008, APD:trait_group_0030504, APD:trait_group_0030602 ;
     skos:altLabel "seed_storage_location" ;
@@ -25956,53 +26189,9 @@ APD:trait_0030511
     skos:definition "Location of a plant's seedbank, the location where mature seeds are stored and viable until germinating."@en ;
     skos:exactMatch "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:seed_storage_location_canopy, APD:seed_storage_location_none, APD:seed_storage_location_not_canopy, APD:seed_storage_location_soil ;
+    skos:narrower APD:seed_storage_location_canopy_seedbank, APD:seed_storage_location_canopy_seedbank_absent, APD:seed_storage_location_none, APD:seed_storage_location_seedbank, APD:seed_storage_location_soil_seedbank, APD:seed_storage_location_soil_seedbank_absent ;
     skos:prefLabel "Seed storage location"@en ;
     ont:hasContextObject obo:PO_0000003, obo:PO_0009001, obo:PO_0009010 .
-
-APD:trait_0030512
-    oboecore:MeasuredCharacteristic obo:PATO_0000140, obo:PATO_0001995 ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
-    dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A binary trait which is whether mature seeds are retained in the plant canopy and remain viable in the plant canopy, acting as an aerial seedbank until an environmental cue triggers their release; germination occurs only after the seeds are released."@en, "A binary trait which is whether there is a canopy [ENVO:01001242] seedbank [MESH:D000068098], indicating that a plant's [PO:0000003] mature [PATO:0001701] seeds [PO:0009010] are retained in the plant canopy and remain viable [PATO:0000169] stored in the canopy until an environmental cue triggers their release; germination [GO:0009845] occurs only after the seeds are released."@en ;
-    dcterms:identifier "trait_0030512" ;
-    dcterms:references <https://doi.org/10.1007/BF02858770>, <https://doi.org/10.1080/07352689.2020.1768465> ;
-    SIO:SIO_000147 MESH:D000068098, obo:ENVO_01001242, obo:GO_0000003, obo:GO_0009845, obo:GO_0010162, obo:TO_0000345 ;
-    ets:valueType obo:STATO_0000252 ;
-    a owl:Class, skos:Concept ;
-    rdfs:comment "Related traits include `seed_storage_location`, `seed_longevity`, `soil_seedbank`, and `serotiny`."@en ;
-    rdfs:label "Canopy seedbank"@en ;
-    rdfs:subClassOf APD:trait_group_0030008, APD:trait_group_0030504, APD:trait_group_0030602 ;
-    skos:altLabel "canopy_seedbank" ;
-    skos:broader APD:trait_group_0030008, APD:trait_group_0030504, APD:trait_group_0030602 ;
-    skos:closeMatch "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)" ;
-    skos:definition "A binary trait which is whether mature seeds are retained in the plant canopy and remain viable in the plant canopy, acting as an aerial seedbank until an environmental cue triggers their release; germination occurs only after the seeds are released."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:canopy_seedbank_canopy_seedbank_absent, APD:canopy_seedbank_canopy_seedbank_present ;
-    skos:prefLabel "Canopy seedbank"@en ;
-    ont:hasContextObject obo:PO_0000003, obo:PO_0009001, obo:PO_0009010 .
-
-APD:trait_0030513
-    oboecore:MeasuredCharacteristic obo:PATO_0000140, obo:PATO_0001995 ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
-    dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A binary trait which is whether mature seeds are retained in the soil and remain viable in the soil until germination occurs."@en, "A binary trait which is whether there is a soil [ENVO:00001998] seedbank [MESH:D000068098], indicating that a plant's [PO:0000003] seeds [PO:0009010] are present in the soil and remain viable [PATO:0000169] stored in the soil until germination [GO:0009845] occurs."@en ;
-    dcterms:identifier "trait_0030513" ;
-    dcterms:references <https://doi.org/10.1080/07352689.2020.1768465> ;
-    SIO:SIO_000147 MESH:D000068098, obo:ENVO_00001998, obo:GO_0000003, obo:GO_0009845, obo:GO_0010162, obo:TO_0000345 ;
-    ets:valueType obo:STATO_0000252 ;
-    a owl:Class, skos:Concept ;
-    rdfs:comment "Related traits include `seed_storage_location`, `seed_longevity`, `canopy_seedbank`, and `serotiny`."@en ;
-    rdfs:label "Soil seedbank"@en ;
-    rdfs:subClassOf APD:trait_group_0030008, APD:trait_group_0030504, APD:trait_group_0030602 ;
-    skos:altLabel "soil_seedbank" ;
-    skos:broader APD:trait_group_0030008, APD:trait_group_0030504, APD:trait_group_0030602 ;
-    skos:closeMatch "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)" ;
-    skos:definition "A binary trait which is whether mature seeds are retained in the soil and remain viable in the soil until germination occurs."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:soil_seedbank_soil_seedbank_absent, APD:soil_seedbank_soil_seedbank_present ;
-    skos:prefLabel "Soil seedbank"@en ;
-    ont:hasContextObject obo:PO_0000003, obo:PO_0009010 .
 
 APD:trait_0030514
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309 ;
@@ -26059,14 +26248,14 @@ APD:trait_0030516
     SIO:SIO_000147 MESH:D000068098, obo:ENVO_01000203, obo:ENVO_01000786, obo:GO_0000003, obo:GO_0010162, obo:TO_0002661 ;
     ets:valueType obo:STATO_0000252 ;
     a owl:Class, skos:Concept ;
-    rdfs:comment "Related traits include  'seed_longevity', 'seed_storage_location', 'soil_seedbank', 'canopy_seedbank', and 'serotiny'"@en ;
+    rdfs:comment "Related traits include  'seed_longevity', 'seed_storage_location', and 'serotiny'"@en ;
     rdfs:label "Seed maturation and release, timing"@en ;
     rdfs:subClassOf APD:trait_group_0030504, APD:trait_group_0030602 ;
-    skos:altLabel "seed_release" ;
+    skos:altLabel "seed_release_timing" ;
     skos:broader APD:trait_group_0030504, APD:trait_group_0030602 ;
     skos:definition "A life history trait which indicates the pattern and timing of seed maturation and release from the parent plant, including if seeds are only released in response to an environmental trigger, such as fire or flood."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:seed_release_gradual_release, APD:seed_release_mature_en_mass, APD:seed_release_serotinous ;
+    skos:narrower APD:seed_release_timing_en_masse_release_at_maturity, APD:seed_release_timing_en_masse_release_canopy_seedbank, APD:seed_release_timing_gradual_release, APD:seed_release_timing_gradual_release_at_maturity, APD:seed_release_timing_gradual_release_canopy_seedbank ;
     skos:prefLabel "Seed maturation and release, timing"@en ;
     ont:hasContextObject obo:PO_0009001, obo:PO_0009010, obo:PO_0025082 .
 
@@ -26074,7 +26263,7 @@ APD:trait_0030517
     oboecore:MeasuredCharacteristic obo:NCIT_C25652, obo:PATO_0000077, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786]."@en, "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, triggers it to release its seeds."@en ;
+    dcterms:description "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786], but possibly also drought or extreme heat."@en, "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."@en ;
     dcterms:identifier "trait_0030517" ;
     SIO:SIO_000147 MESH:D000068098, obo:ENVO_01000203, obo:ENVO_01000786, obo:ENVO_01001242, obo:GO_0000003, obo:GO_0010162, obo:TO_0000345, obo:TO_0002661 ;
     ets:valueType obo:STATO_0000252 ;
@@ -26084,7 +26273,7 @@ APD:trait_0030517
     skos:altLabel "serotiny" ;
     skos:broader APD:trait_group_0030504, APD:trait_group_0030602 ;
     skos:closeMatch "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)" ;
-    skos:definition "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, triggers it to release its seeds."@en ;
+    skos:definition "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."@en ;
     skos:exactMatch "Serotiny level [BROT:39] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:serotiny_not_serotinous, APD:serotiny_serotinous, APD:serotiny_serotiny_high, APD:serotiny_serotiny_low, APD:serotiny_serotiny_moderate ;
@@ -26095,7 +26284,7 @@ APD:trait_0030530
     oboecore:MeasuredCharacteristic obo:NCIT_C25343, obo:NCIT_C25652, obo:PATO_0000077, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating  [GO:0009845] until they are exposed to specific [NCIT:C38024] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] ."@en, "Mechanisms that inhibit mature seeds from germinating and the environmental or experimental cues that allow a seed to break dormancy and germinate."@en ;
+    dcterms:description "Mechanisms that inhibit mature seeds from germinating and the environmental or experimental cues that allow a seed to break dormancy and germinate."@en, "Physical [PATO:0002079], physiological [NCIT:C16990], and morphological [PATO:0000051] mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating<U+FFFD> [GO:0009845]."@en ;
     dcterms:identifier "trait_0030530" ;
     dcterms:references <http://doi.org/10.1079/SSR2003150> ;
     SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment>, obo:ENVO_01000203, obo:GO_0000003, obo:GO_0009845, obo:GO_0010162, obo:XCO_0000000 ;
@@ -26109,7 +26298,7 @@ APD:trait_0030530
     skos:closeMatch "Chemical germination cues [BROT:35]; Heat-stimulated germination [BROT:36]; Other germination cues [BROT:37] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:definition "Mechanisms that inhibit mature seeds from germinating and the environmental or experimental cues that allow a seed to break dormancy and germinate."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:seed_dormancy_class_morphophysiological_dormancy, APD:seed_dormancy_class_non_dormant, APD:seed_dormancy_class_physical_dormancy, APD:seed_dormancy_class_physiological_dormancy ;
+    skos:narrower APD:seed_dormancy_class_morphological_dormancy, APD:seed_dormancy_class_morphophysiological_dormancy, APD:seed_dormancy_class_non_dormant, APD:seed_dormancy_class_physical_dormancy, APD:seed_dormancy_class_physiological_dormancy ;
     skos:prefLabel "Dormancy type"@en ;
     ont:hasContextObject obo:PO_0009010, obo:PO_0025082 .
 
@@ -26229,7 +26418,7 @@ APD:trait_0030561
     skos:closeMatch "Dispersal syndrome [TRY:28] (https://www.try-db.org/de/de.php)", "Plant dispersal syndrome [TOP346] (https://top-thesaurus.org/index)" ;
     skos:definition "Dominant diaspore dispersal agents, including both biotic agents (specific taxa) or abiotic mechanisms responsible for dispersing seeds (or other dispersal units) away from the parent plant."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:dispersers_ants, APD:dispersers_bats, APD:dispersers_birds, APD:dispersers_cassowaries, APD:dispersers_floods, APD:dispersers_flying_foxes, APD:dispersers_flying_vertebrates, APD:dispersers_garden_refuse, APD:dispersers_indigenous_people, APD:dispersers_insects, APD:dispersers_invertebrates, APD:dispersers_mammals, APD:dispersers_non-flying_vertebrates, APD:dispersers_passive, APD:dispersers_rain, APD:dispersers_rodents, APD:dispersers_vehicles, APD:dispersers_vertebrates, APD:dispersers_water, APD:dispersers_water_currents, APD:dispersers_wind ;
+    skos:narrower APD:dispersers_abiotic, APD:dispersers_animals, APD:dispersers_ants, APD:dispersers_bats, APD:dispersers_birds, APD:dispersers_cassowaries, APD:dispersers_fish, APD:dispersers_floods, APD:dispersers_flying_foxes, APD:dispersers_flying_vertebrates, APD:dispersers_garden_refuse, APD:dispersers_indigenous_people, APD:dispersers_insects, APD:dispersers_invertebrates, APD:dispersers_mammals, APD:dispersers_mammals_domestic, APD:dispersers_non-flying_vertebrates, APD:dispersers_passive, APD:dispersers_rain, APD:dispersers_rodents, APD:dispersers_vehicles, APD:dispersers_vertebrates, APD:dispersers_water, APD:dispersers_water_currents, APD:dispersers_wind ;
     skos:prefLabel "Diaspore dispersal agents"@en ;
     ont:hasContextObject obo:PO_0009001, obo:PO_0009010, obo:PO_0025082 .
 
@@ -26416,24 +26605,6 @@ APD:trait_0030617
     skos:prefLabel "Fire exposure level"@en ;
     ont:hasContextObject obo:PO_0000003 .
 
-APD:trait_0030619
-    oboecore:MeasuredCharacteristic obo:PATO_0000077, obo:PATO_0001995 ;
-    dcterms:created "23/02/2023"^^<xsd:date> ;
-    dcterms:description "Indication of how the presence of a taxon in a given location changes the risk of fire in that location."@en ;
-    dcterms:identifier "trait_0030619" ;
-    SIO:SIO_000147 odo:ECSO_00000310, obo:ENVO_01000786, <http://vocabs.lter-europe.net/EnvThes/20535>, <http://vocabs.lter-europe.net/EnvThes/21064> ;
-    ets:valueType obo:STATO_0000252 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Plants' influence on fire risk"@en ;
-    rdfs:subClassOf APD:trait_group_0030602 ;
-    skos:altLabel "plant_influence_on_fire_risk" ;
-    skos:broader APD:trait_group_0030602 ;
-    skos:definition "Indication of how the presence of a taxon in a given location changes the risk of fire in that location."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:plant_influence_on_fire_risk_fire_risk_decreased, APD:plant_influence_on_fire_risk_fire_risk_increased, APD:plant_influence_on_fire_risk_fire_risk_unchanged ;
-    skos:prefLabel "Plants' influence on fire risk"@en ;
-    ont:hasContextObject obo:PO_0000003 .
-
 APD:trait_0030621
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25652, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
@@ -26452,7 +26623,7 @@ APD:trait_0030621
     skos:definition "A trait indicating the magnitude of seed germination and seedling establishment following a fire."@en ;
     skos:exactMatch "Post-fire seedling emergence [BROT:43] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:post_fire_recruitment_no_post_fire_recruitment, APD:post_fire_recruitment_post_fire_recruitment ;
+    skos:narrower APD:post_fire_recruitment_post_fire_recruitment, APD:post_fire_recruitment_post_fire_recruitment_absent ;
     skos:prefLabel "Post-fire recruitment"@en ;
     skos:relatedMatch "Post-fire seedling survival [BROT:44] (http://doi.org/10.1038/sdata.2018.135)" ;
     ont:hasContextObject obo:PO_0000003, obo:PO_0009010 .
@@ -26959,7 +27130,7 @@ APD:trait_0030718
     skos:broader APD:trait_group_0030602 ;
     skos:definition "Classification scheme of plant fire tolerance, indicating morphological characteristics plants use to survive fire."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:plant_tolerance_fire_fire_retardant, APD:plant_tolerance_fire_thick_bark ;
+    skos:narrower APD:plant_tolerance_fire_fire_retardant, APD:plant_tolerance_fire_fire_retardant_bark, APD:plant_tolerance_fire_thick_bark ;
     skos:prefLabel "Plant fire tolerance strategy"@en ;
     ont:hasContextObject obo:PO_0000003 .
 
@@ -27765,7 +27936,7 @@ APD:trait_group_0030008
     skos:definition "A growth and development trait [TO:0000357] which is the timing of the occurrence of plant structure development stages [PO:0009012] and the relevant biological processes [GO:0008150]."@en ;
     skos:exactMatch obo:TO_0000933 ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0030110, APD:trait_0030111, APD:trait_0030210, APD:trait_0030211, APD:trait_0030212, APD:trait_0030213, APD:trait_0030214, APD:trait_0030410, APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030590, APD:trait_0030591, APD:trait_0030622, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030628 ;
+    skos:narrower APD:trait_0030110, APD:trait_0030111, APD:trait_0030210, APD:trait_0030211, APD:trait_0030212, APD:trait_0030213, APD:trait_0030214, APD:trait_0030410, APD:trait_0030511, APD:trait_0030590, APD:trait_0030591, APD:trait_0030622, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030628 ;
     skos:prefLabel "plant phenological trait"@en .
 
 APD:trait_group_0030009
@@ -27801,7 +27972,7 @@ APD:trait_group_0030504
     skos:broader APD:trait_group_0030001 ;
     skos:definition "A plant life history trait pertaining to a plants reproductive structures [UBERON:0005156]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030530, APD:trait_0030531, APD:trait_0030532, APD:trait_0030533, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627, APD:trait_0030628 ;
+    skos:narrower APD:trait_0030511, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030530, APD:trait_0030531, APD:trait_0030532, APD:trait_0030533, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627, APD:trait_0030628 ;
     skos:prefLabel "reproductive structure life history trait"@en .
 
 APD:trait_group_0030602
@@ -27813,7 +27984,7 @@ APD:trait_group_0030602
     skos:broader APD:trait_group_0030001 ;
     skos:definition "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0002822, APD:trait_0002824, APD:trait_0030013, APD:trait_0030213, APD:trait_0030214, APD:trait_0030314, APD:trait_0030511, APD:trait_0030512, APD:trait_0030513, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030610, APD:trait_0030612, APD:trait_0030613, APD:trait_0030614, APD:trait_0030616, APD:trait_0030617, APD:trait_0030619, APD:trait_0030621, APD:trait_0030622, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627, APD:trait_0030628, APD:trait_0030631, APD:trait_0030632, APD:trait_0030633, APD:trait_0030634, APD:trait_0030635, APD:trait_0030636, APD:trait_0030637, APD:trait_0030718 ;
+    skos:narrower APD:trait_0002822, APD:trait_0002824, APD:trait_0030013, APD:trait_0030213, APD:trait_0030214, APD:trait_0030314, APD:trait_0030511, APD:trait_0030514, APD:trait_0030515, APD:trait_0030516, APD:trait_0030517, APD:trait_0030610, APD:trait_0030612, APD:trait_0030613, APD:trait_0030614, APD:trait_0030616, APD:trait_0030617, APD:trait_0030621, APD:trait_0030622, APD:trait_0030623, APD:trait_0030624, APD:trait_0030625, APD:trait_0030626, APD:trait_0030627, APD:trait_0030628, APD:trait_0030631, APD:trait_0030632, APD:trait_0030633, APD:trait_0030634, APD:trait_0030635, APD:trait_0030636, APD:trait_0030637, APD:trait_0030718 ;
     skos:prefLabel "fire response trait"@en .
 
 APD:trait_group_0030702
@@ -27862,6 +28033,17 @@ APD:vegetative_reproduction_ability_vegetative
     skos:definition "Plant taxa that can regenerate and spread through the growth and division of vegetative material, not just from seed; examples include runners, rhizomes, and bulbs."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "vegetative"@en .
+
+APD:vegetative_reproduction_ability_vegetative_obligate
+    dcterms:description "Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material."@en ;
+    dcterms:identifier "vegetative_reproduction_ability_vegetative_obligate" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "vegetative_obligate"@en ;
+    rdfs:subClassOf APD:trait_0030310 ;
+    skos:broader APD:trait_0030310 ;
+    skos:definition "Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material."@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "vegetative_obligate"@en .
 
 APD:woodiness_detailed_herbaceous
     dcterms:description "Plant with non-lignified stems."@en ;

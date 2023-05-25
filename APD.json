@@ -9354,6 +9354,23 @@
       }
     },
     {
+      "@id": "http://purl.obolibrary.org/obo/PO_0009064",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A cardinal organ part (PO:0025001) that is the region at the distal end of either a peduncle or a pedicel where the floral appendages (e.g.: sepals, petals, stamens and pistils) are attached. The fleshy part of a strawberry develops from a receptacle."
+      },
+      "http://purl.org/dc/terms/identifier": "PO_0009064",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "receptacle"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "receptacle"
+      }
+    },
+    {
       "@id": "http://purl.obolibrary.org/obo/PO_0009066",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "http://purl.org/dc/terms/description": {
@@ -10422,6 +10439,23 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "spine petiole"
+      }
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/PO_0030112",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A shoot axis (PO:0025029) that bears only a flower (PO:0009046) or a fruit (PO:0009001). A pedicel has a single internode, determinate growth, and is the ultimate shoot axis (PO:0025029) in a plant. When annotating to this term, use the most specific subclass of pedicel: flower pedicel (PO:0030113), inflorescence flower pedicel (PO:0009052), fruit pedicel (PO:0030114), or infructescence fruit pedicel (PO:0004536)."
+      },
+      "http://purl.org/dc/terms/identifier": "PO_0030112",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "pedicel"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "pedicel"
       }
     },
     {
@@ -16973,7 +17007,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus."
+        "@value": "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)"
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_apical_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -16988,7 +17022,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus."
+        "@value": "Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -16999,19 +17033,19 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/bud_bank_location_basal_burl",
+      "@id": "https://w3id.org/APD/traits/bud_bank_location_basal_buds",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being on the `basal_burl` are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."
+        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"
       },
-      "http://purl.org/dc/terms/identifier": "bud_bank_location_basal_burl",
+      "http://purl.org/dc/terms/identifier": "bud_bank_location_basal_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "basal_burl"
+        "@value": "basal_buds"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030313"
@@ -17021,14 +17055,14 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being on the `basal_burl` are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."
+        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "basal_burl"
+        "@value": "basal_buds"
       }
     },
     {
@@ -17039,7 +17073,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from the base of the stem following a fire. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
+        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_basal_stem_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17054,7 +17088,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from the base of the stem following a fire. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
+        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17072,7 +17106,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Root buds produce vertical suckers (from root crown) or adventitious roots following a fire."
+        "@value": "Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)"
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_bud-bearing_root",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17087,7 +17121,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Root buds produce vertical suckers (from root crown) or adventitious roots following a fire."
+        "@value": "Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17105,7 +17139,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from the stem or trunk following a fire."
+        "@value": "Plants resprout from the stem or trunk."
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_epicormic_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17120,7 +17154,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from the stem or trunk following a fire."
+        "@value": "Plants resprout from the stem or trunk."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17138,7 +17172,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex."
+        "@value": "Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)"
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_fleshy_underground_organ",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17153,7 +17187,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex."
+        "@value": "Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17336,7 +17370,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from stem buds; this trait value is separate to epicormic buds."
+        "@value": "Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)"
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_stem_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17351,7 +17385,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from stem buds; this trait value is separate to epicormic buds."
+        "@value": "Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17458,72 +17492,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "underground_buds"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/canopy_seedbank_canopy_seedbank_absent",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seeds not present in canopy seedbank."
-      },
-      "http://purl.org/dc/terms/identifier": "canopy_seedbank_canopy_seedbank_absent",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "canopy_seedbank_absent"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030512"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030512"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seeds not present in canopy seedbank."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "canopy_seedbank_absent"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/canopy_seedbank_canopy_seedbank_present",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seeds present in canopy seedbank."
-      },
-      "http://purl.org/dc/terms/identifier": "canopy_seedbank_canopy_seedbank_present",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "canopy_seedbank_present"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030512"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030512"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seeds present in canopy seedbank."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "canopy_seedbank_present"
       }
     },
     {
@@ -19151,7 +19119,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted)"
+        "@value": "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted, passive)"
       },
       "http://purl.org/dc/terms/identifier": "dispersal_syndrome_barochory",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -19166,7 +19134,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted)"
+        "@value": "Diaspores are dispersed without assistance. (Synonyms, gravity, mobile, unassisted, passive)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -19474,6 +19442,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/dispersal_unit_seedling",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Dispersal unit is a seedling. (Synonyms, viviparous)"
+      },
+      "http://purl.org/dc/terms/identifier": "dispersal_unit_seedling",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "seedling"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0012624"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0012624"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Dispersal unit is a seedling. (Synonyms, viviparous)"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "seedling"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/dispersal_unit_spore",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -19504,6 +19505,72 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "spore"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/dispersers_abiotic",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Fruits are dispersed by unspecified abiotic mechanisms."
+      },
+      "http://purl.org/dc/terms/identifier": "dispersers_abiotic",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "abiotic"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Fruits are dispersed by unspecified abiotic mechanisms."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "abiotic"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/dispersers_animals",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Animals are an important fruit dispersal agent."
+      },
+      "http://purl.org/dc/terms/identifier": "dispersers_animals",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "animals"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Animals are an important fruit dispersal agent."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "animals"
       }
     },
     {
@@ -19636,6 +19703,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "cassowaries"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/dispersers_fish",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Fish are an important fruit dispersal agent."
+      },
+      "http://purl.org/dc/terms/identifier": "dispersers_fish",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "fish"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Fish are an important fruit dispersal agent."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "fish"
       }
     },
     {
@@ -19778,7 +19878,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Indigenous people disperse the fruit through traditional practises."
+        "@value": "Indigenous people disperse the fruit through traditional practices."
       },
       "http://purl.org/dc/terms/identifier": "dispersers_indigenous_people",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -19793,7 +19893,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Indigenous people disperse the fruit through traditional practises."
+        "@value": "Indigenous people disperse the fruit through traditional practices."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -19900,6 +20000,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "mammals"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/dispersers_mammals_domestic",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Domesticated ammals are an important fruit dispersal agent."
+      },
+      "http://purl.org/dc/terms/identifier": "dispersers_mammals_domestic",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "mammals_domestic"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030561"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Domesticated ammals are an important fruit dispersal agent."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "mammals_domestic"
       }
     },
     {
@@ -25579,6 +25712,72 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_arrangement_clustered",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_arrangement_clustered",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "clustered"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "clustered"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_arrangement_clustered_basal",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_arrangement_clustered_basal",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "clustered_basal"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "clustered_basal"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_arrangement_crowded",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -25586,7 +25785,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "When internode length varies considerably along a stem, such that leaves appear crowded or tufted."
+        "@value": "When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_arrangement_crowded",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -25601,7 +25800,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "When internode length varies considerably along a stem, such that leaves appear crowded or tufted."
+        "@value": "When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -25685,7 +25884,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes."
+        "@value": "A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_arrangement_fasciculate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -25700,7 +25899,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes."
+        "@value": "A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -25708,6 +25907,72 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "fasciculate"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_arrangement_imbricate",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "When leaves lay tightly against the stem and are overlapping."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_arrangement_imbricate",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "imbricate"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "When leaves lay tightly against the stem and are overlapping."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "imbricate"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_arrangement_scattered",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "When leaves are attached along the entire length of stem."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_arrangement_scattered",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "scattered"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011411"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "When leaves are attached along the entire length of stem."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "scattered"
       }
     },
     {
@@ -25741,6 +26006,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "spiral"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_acute",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Two sides of the leaf meet at an angle that is less than 90<U+00B0>."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_acute",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "acute"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Two sides of the leaf meet at an angle that is less than 90<U+00B0>."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "acute"
       }
     },
     {
@@ -25810,6 +26108,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_cordate",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_cordate",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "cordate"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "cordate"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_base_shape_cuneate",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -25876,6 +26207,105 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_oblique",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_oblique",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "oblique"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "oblique"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_obtuse",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Two sides of the leaf meet at an angle that is greater than 90<U+00B0>."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_obtuse",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "obtuse"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Two sides of the leaf meet at an angle that is greater than 90<U+00B0>."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "obtuse"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_rounded",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Basal leaf margin is rounded."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_rounded",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "rounded"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Basal leaf margin is rounded."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "rounded"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_base_shape_sagittate",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -25906,6 +26336,72 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "sagittate"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_sheathing",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_sheathing",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "sheathing"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "sheathing"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_base_shape_truncate",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_base_shape_truncate",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "truncate"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "XXX"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "truncate"
       }
     },
     {
@@ -26998,6 +27494,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_margin_posture_involute",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_margin_posture_involute",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "involute"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011314"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011314"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "involute"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_margin_posture_recurved",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -27757,6 +28286,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_shape_ensiform",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_shape_ensiform",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "ensiform"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "ensiform"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_shape_falcate",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -27764,7 +28326,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform)"
+        "@value": "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_shape_falcate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -27779,7 +28341,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform)"
+        "@value": "A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -27952,6 +28514,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "narrowly_elliptical"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_shape_narrowly_lanceolate",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is very narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The petiole attaches near the wide, curved portion of the leaf lamina."
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_shape_narrowly_lanceolate",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "narrowly_lanceolate"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is very narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The petiole attaches near the wide, curved portion of the leaf lamina."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "narrowly_lanceolate"
       }
     },
     {
@@ -28160,7 +28755,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular; wedge-shaped)"
+        "@value": "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_shape_narrowly_triangular",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -28175,7 +28770,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular; wedge-shaped)"
+        "@value": "A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -28589,7 +29184,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped)"
+        "@value": "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_shape_spathulate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -28604,7 +29199,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped)"
+        "@value": "A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -28612,6 +29207,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "spathulate"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/leaf_shape_strap-shaped",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_shape_strap-shaped",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "strap-shaped"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011311"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "strap-shaped"
       }
     },
     {
@@ -28655,7 +29283,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip."
+        "@value": "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_shape_terete",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -28670,7 +29298,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip."
+        "@value": "A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -28688,7 +29316,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf. (Synonyms, wedge-shaped)"
+        "@value": "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf."
       },
       "http://purl.org/dc/terms/identifier": "leaf_shape_triangular",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -28703,7 +29331,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf. (Synonyms, wedge-shaped)"
+        "@value": "A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -31823,7 +32451,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominately elevated above the ground surface."
+        "@value": "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface."
       },
       "http://purl.org/dc/terms/identifier": "plant_growth_form_tree",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -31838,7 +32466,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominately elevated above the ground surface."
+        "@value": "A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -32110,105 +32738,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "terrestrial"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_decreased",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Presence of plant decreases the local fire risk."
-      },
-      "http://purl.org/dc/terms/identifier": "plant_influence_on_fire_risk_fire_risk_decreased",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "fire_risk_decreased"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Presence of plant decreases the local fire risk."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "fire_risk_decreased"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_increased",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Presence of plant increases the local fire risk."
-      },
-      "http://purl.org/dc/terms/identifier": "plant_influence_on_fire_risk_fire_risk_increased",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "fire_risk_increased"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Presence of plant increases the local fire risk."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "fire_risk_increased"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_unchanged",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Presence of plant has no effect on the local fire risk."
-      },
-      "http://purl.org/dc/terms/identifier": "plant_influence_on_fire_risk_fire_risk_unchanged",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "fire_risk_unchanged"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030619"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Presence of plant has no effect on the local fire risk."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "fire_risk_unchanged"
       }
     },
     {
@@ -33034,6 +33563,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "fire_retardant"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/plant_tolerance_fire_fire_retardant_bark",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Plants protected from fire by fire retardant in their bark."
+      },
+      "http://purl.org/dc/terms/identifier": "plant_tolerance_fire_fire_retardant_bark",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "fire_retardant_bark"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030718"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030718"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Plants protected from fire by fire retardant in their bark."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "fire_retardant_bark"
       }
     },
     {
@@ -34060,6 +34622,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/pollination_syndrome_ballistic",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Floral syndrome suggests pollen is launched away from the plant by explosion."
+      },
+      "http://purl.org/dc/terms/identifier": "pollination_syndrome_ballistic",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "ballistic"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030260"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030260"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Floral syndrome suggests pollen is launched away from the plant by explosion."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "ballistic"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/pollination_syndrome_bat",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -34687,6 +35282,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/pollination_system_ballistic",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Pollen is observed to be launched away from the plant by explosion."
+      },
+      "http://purl.org/dc/terms/identifier": "pollination_system_ballistic",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "ballistic"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030261"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030261"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Pollen is observed to be launched away from the plant by explosion."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "ballistic"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/pollination_system_bat",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -35255,7 +35883,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants only flower after a fire, usually within the first 1-2 growing seasons following the fire."
+        "@value": "Plants predominantly flower after a fire, usually within the first 1-4 growing seasons following the fire."
       },
       "http://purl.org/dc/terms/identifier": "post_fire_flowering_fire_dependent_flowering",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -35270,7 +35898,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants only flower after a fire, usually within the first 1-2 growing seasons following the fire."
+        "@value": "Plants predominantly flower after a fire, usually within the first 1-4 growing seasons following the fire."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -35288,7 +35916,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-2 growing seasons following the fire."
+        "@value": "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire."
       },
       "http://purl.org/dc/terms/identifier": "post_fire_flowering_fire_enhanced_flowering",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -35303,7 +35931,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-2 growing seasons following the fire."
+        "@value": "Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -35354,7 +35982,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-2 growing seasons following the fire."
+        "@value": "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire."
       },
       "http://purl.org/dc/terms/identifier": "post_fire_flowering_fire_suppressed_flowering",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -35369,7 +35997,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-2 growing seasons following the fire."
+        "@value": "Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -35377,39 +36005,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "fire_suppressed_flowering"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/post_fire_recruitment_no_post_fire_recruitment",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Plants where there is no germination and seedling establishment post-fire."
-      },
-      "http://purl.org/dc/terms/identifier": "post_fire_recruitment_no_post_fire_recruitment",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "no_post_fire_recruitment"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030621"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030621"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Plants where there is no germination and seedling establishment post-fire."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "no_post_fire_recruitment"
       }
     },
     {
@@ -35446,135 +36041,36 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/recruitment_season_autumn",
+      "@id": "https://w3id.org/APD/traits/post_fire_recruitment_post_fire_recruitment_absent",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in autumn."
+        "@value": "Plants that do not show increased seeding following fire."
       },
-      "http://purl.org/dc/terms/identifier": "recruitment_season_autumn",
+      "http://purl.org/dc/terms/identifier": "post_fire_recruitment_post_fire_recruitment_absent",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "autumn"
+        "@value": "post_fire_recruitment_absent"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
+        "@id": "https://w3id.org/APD/traits/trait_0030621"
       },
       "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
+        "@id": "https://w3id.org/APD/traits/trait_0030621"
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in autumn."
+        "@value": "Plants that do not show increased seeding following fire."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "autumn"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/recruitment_season_spring",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in spring."
-      },
-      "http://purl.org/dc/terms/identifier": "recruitment_season_spring",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "spring"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in spring."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "spring"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/recruitment_season_summer",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in summer."
-      },
-      "http://purl.org/dc/terms/identifier": "recruitment_season_summer",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "summer"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in summer."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "summer"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/recruitment_season_winter",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in winter."
-      },
-      "http://purl.org/dc/terms/identifier": "recruitment_season_winter",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "winter"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030213"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seed germination and seedling establishment occurs in winter."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "winter"
+        "@value": "post_fire_recruitment_absent"
       }
     },
     {
@@ -36898,6 +37394,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/seed_dormancy_class_morphological_dormancy",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Seeds exhibit morphological dormancy, generally because an underdeveloped embryo needs to grow."
+      },
+      "http://purl.org/dc/terms/identifier": "seed_dormancy_class_morphological_dormancy",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "morphological_dormancy"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030530"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030530"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Seeds exhibit morphological dormancy, generally because an underdeveloped embryo needs to grow."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "morphological_dormancy"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/seed_dormancy_class_morphophysiological_dormancy",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -36905,7 +37434,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seeds exhibit morphophysiological dormancy."
+        "@value": "Seeds exhibit morphophysiological dormancy, with both morphological and physiological dormancy mechanisms that must be overcome."
       },
       "http://purl.org/dc/terms/identifier": "seed_dormancy_class_morphophysiological_dormancy",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -36920,7 +37449,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seeds exhibit morphophysiological dormancy."
+        "@value": "Seeds exhibit morphophysiological dormancy, with both morphological and physiological dormancy mechanisms that must be overcome."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -36971,7 +37500,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seeds exhibit physical dormancy."
+        "@value": "Seeds exhibit physical dormancy, due to one or more water-impermeable layers in the seed coat."
       },
       "http://purl.org/dc/terms/identifier": "seed_dormancy_class_physical_dormancy",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -36986,7 +37515,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seeds exhibit physical dormancy."
+        "@value": "Seeds exhibit physical dormancy, due to one or more water-impermeable layers in the seed coat."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -37004,7 +37533,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seeds exhibit physiological dormancy."
+        "@value": "Seeds exhibit physiological dormancy, whereby chemical changes are required within the seed to break dormancy, including temperature stratification and after-ripening."
       },
       "http://purl.org/dc/terms/identifier": "seed_dormancy_class_physiological_dormancy",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -37019,7 +37548,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seeds exhibit physiological dormancy."
+        "@value": "Seeds exhibit physiological dormancy, whereby chemical changes are required within the seed to break dormancy, including temperature stratification and after-ripening."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -37822,16 +38351,82 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_release_gradual_release",
+      "@id": "https://w3id.org/APD/traits/seed_release_timing_en_masse_release_at_maturity",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seeds maturing and released gradually from parent."
+        "@value": "Plant releases its seeds en masse when or soon after they mature (eg annually)."
       },
-      "http://purl.org/dc/terms/identifier": "seed_release_gradual_release",
+      "http://purl.org/dc/terms/identifier": "seed_release_timing_en_masse_release_at_maturity",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "en_masse_release_at_maturity"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030516"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030516"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Plant releases its seeds en masse when or soon after they mature (eg annually)."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "en_masse_release_at_maturity"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/seed_release_timing_en_masse_release_canopy_seedbank",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)"
+      },
+      "http://purl.org/dc/terms/identifier": "seed_release_timing_en_masse_release_canopy_seedbank",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "en_masse_release_canopy_seedbank"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030516"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030516"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "en_masse_release_canopy_seedbank"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity."
+      },
+      "http://purl.org/dc/terms/identifier": "seed_release_timing_gradual_release",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
         "@value": "gradual_release"
@@ -37844,7 +38439,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seeds maturing and released gradually from parent."
+        "@value": "Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -37855,19 +38450,19 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_release_mature_en_mass",
+      "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release_at_maturity",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seeds released en masse when mature (eg annually)."
+        "@value": "Plant releases its seeds gradually as they mature."
       },
-      "http://purl.org/dc/terms/identifier": "seed_release_mature_en_mass",
+      "http://purl.org/dc/terms/identifier": "seed_release_timing_gradual_release_at_maturity",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "mature_en_mass"
+        "@value": "gradual_release_at_maturity"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030516"
@@ -37877,30 +38472,30 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seeds released en masse when mature (eg annually)."
+        "@value": "Plant releases its seeds gradually as they mature."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "mature_en_mass"
+        "@value": "gradual_release_at_maturity"
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_release_serotinous",
+      "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release_canopy_seedbank",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant releases its seeds following an environmental trigger (usually fire)."
+        "@value": "Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event."
       },
-      "http://purl.org/dc/terms/identifier": "seed_release_serotinous",
+      "http://purl.org/dc/terms/identifier": "seed_release_timing_gradual_release_canopy_seedbank",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "serotinous"
+        "@value": "gradual_release_canopy_seedbank"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030516"
@@ -37910,14 +38505,14 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant releases its seeds following an environmental trigger (usually fire)."
+        "@value": "Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "serotinous"
+        "@value": "gradual_release_canopy_seedbank"
       }
     },
     {
@@ -38713,7 +39308,7 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy",
+      "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy_seedbank",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -38722,10 +39317,10 @@
         "@language": "en",
         "@value": "Seeds stored in the canopy, usually still within a woody cone."
       },
-      "http://purl.org/dc/terms/identifier": "seed_storage_location_canopy",
+      "http://purl.org/dc/terms/identifier": "seed_storage_location_canopy_seedbank",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "canopy"
+        "@value": "canopy_seedbank"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030511"
@@ -38742,7 +39337,40 @@
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "canopy"
+        "@value": "canopy_seedbank"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy_seedbank_absent",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Seed explicitly not stored in the canopy."
+      },
+      "http://purl.org/dc/terms/identifier": "seed_storage_location_canopy_seedbank_absent",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "canopy_seedbank_absent"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030511"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030511"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Seed explicitly not stored in the canopy."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "canopy_seedbank_absent"
       }
     },
     {
@@ -38779,19 +39407,19 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_storage_location_not_canopy",
+      "@id": "https://w3id.org/APD/traits/seed_storage_location_seedbank",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seed explicitly not stored in the canopy; other storage locations unknown."
+        "@value": "A seedbank exists, but its locations is not specified."
       },
-      "http://purl.org/dc/terms/identifier": "seed_storage_location_not_canopy",
+      "http://purl.org/dc/terms/identifier": "seed_storage_location_seedbank",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "not_canopy"
+        "@value": "seedbank"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030511"
@@ -38801,18 +39429,18 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seed explicitly not stored in the canopy; other storage locations unknown."
+        "@value": "A seedbank exists, but its locations is not specified."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "not_canopy"
+        "@value": "seedbank"
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/seed_storage_location_soil",
+      "@id": "https://w3id.org/APD/traits/seed_storage_location_soil_seedbank",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -38821,10 +39449,10 @@
         "@language": "en",
         "@value": "Seeds stored in the soil."
       },
-      "http://purl.org/dc/terms/identifier": "seed_storage_location_soil",
+      "http://purl.org/dc/terms/identifier": "seed_storage_location_soil_seedbank",
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "soil"
+        "@value": "soil_seedbank"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_0030511"
@@ -38841,7 +39469,40 @@
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "soil"
+        "@value": "soil_seedbank"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/seed_storage_location_soil_seedbank_absent",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Seed explicitly not stored in the soil."
+      },
+      "http://purl.org/dc/terms/identifier": "seed_storage_location_soil_seedbank_absent",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "soil_seedbank_absent"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030511"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030511"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Seed explicitly not stored in the soil."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "soil_seedbank_absent"
       }
     },
     {
@@ -39073,6 +39734,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "bumpy"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/seed_surface_texture_grooved",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Seed surface covered with grooves."
+      },
+      "http://purl.org/dc/terms/identifier": "seed_surface_texture_grooved",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "grooved"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0012620"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0012620"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Seed surface covered with grooves."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "grooved"
       }
     },
     {
@@ -39842,7 +40536,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_high",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -39857,7 +40551,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -39875,7 +40569,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a low level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_low",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -39890,7 +40584,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a low level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -39908,7 +40602,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a moderate level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_moderate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -39923,7 +40617,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a moderate level of serotiny."
+        "@value": "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -40327,72 +41021,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "unknown"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/soil_seedbank_soil_seedbank_absent",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seeds not present in soil seedbank."
-      },
-      "http://purl.org/dc/terms/identifier": "soil_seedbank_soil_seedbank_absent",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "soil_seedbank_absent"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030513"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030513"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seeds not present in soil seedbank."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "soil_seedbank_absent"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/soil_seedbank_soil_seedbank_present",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Seeds present in soil seedbank."
-      },
-      "http://purl.org/dc/terms/identifier": "soil_seedbank_soil_seedbank_present",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "soil_seedbank_present"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030513"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030513"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Seeds present in soil seedbank."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "soil_seedbank_present"
       }
     },
     {
@@ -41320,6 +41948,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/storage_organ_pseudobulb",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "An above ground storage organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes."
+      },
+      "http://purl.org/dc/terms/identifier": "storage_organ_pseudobulb",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "pseudobulb"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "An above ground storage organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "pseudobulb"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/storage_organ_rhizome",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -41353,39 +42014,6 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_felshy",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A type of continually growing or creeping fleshy, non-woody underground stem."
-      },
-      "http://purl.org/dc/terms/identifier": "storage_organ_rhizome_felshy",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "rhizome_felshy"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0030312"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0030312"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A type of continually growing or creeping fleshy, non-woody underground stem."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "rhizome_felshy"
-      }
-    },
-    {
       "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_fibrous",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -41416,6 +42044,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "rhizome_fibrous"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_fleshy",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A type of continually growing or creeping fleshy, non-woody underground stem."
+      },
+      "http://purl.org/dc/terms/identifier": "storage_organ_rhizome_fleshy",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "rhizome_fleshy"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "A type of continually growing or creeping fleshy, non-woody underground stem."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "rhizome_fleshy"
       }
     },
     {
@@ -41459,7 +42120,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A swollen root the stores nutrients, carbohydrates and water; synonym, taproot tuber"
+        "@value": "A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)"
       },
       "http://purl.org/dc/terms/identifier": "storage_organ_root_tuber",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -41474,7 +42135,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A swollen root the stores nutrients, carbohydrates and water; synonym, taproot tuber"
+        "@value": "A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -41548,6 +42209,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "storage_organ"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/storage_organ_tuber",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue."
+      },
+      "http://purl.org/dc/terms/identifier": "storage_organ_tuber",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "tuber"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030312"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "tuber"
       }
     },
     {
@@ -56618,6 +57312,12 @@
           "@id": "https://w3id.org/APD/traits/leaf_shape_subulate"
         },
         {
+          "@id": "https://w3id.org/APD/traits/leaf_shape_ensiform"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_shape_strap-shaped"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/leaf_shape_spathulate"
         },
         {
@@ -56694,6 +57394,9 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_shape_lanceolate"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_shape_narrowly_lanceolate"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_shape_oblate"
@@ -56843,7 +57546,22 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_truncate"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_sheathing"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/leaf_base_shape_sagittate"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_rounded"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_obtuse"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_oblique"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_base_shape_hastate"
@@ -56852,10 +57570,16 @@
           "@id": "https://w3id.org/APD/traits/leaf_base_shape_cuneate"
         },
         {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_cordate"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/leaf_base_shape_auriculate"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_base_shape_attenuate"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_base_shape_acute"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -57139,6 +57863,9 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_margin_posture_revolute"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_margin_posture_involute"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -58552,13 +59279,25 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
+          "@id": "https://w3id.org/APD/traits/leaf_arrangement_imbricate"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/leaf_arrangement_crowded"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_arrangement_clustered_basal"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_arrangement_clustered"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_arrangement_fasciculate"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_arrangement_spiral"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/leaf_arrangement_scattered"
         },
         {
           "@id": "https://w3id.org/APD/traits/leaf_arrangement_distichous"
@@ -64624,6 +65363,9 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
+          "@id": "https://w3id.org/APD/traits/flower_anther_dehiscence_circular"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/flower_anther_dehiscence_common_stomium_confluent_thecae"
         },
         {
@@ -64646,9 +65388,6 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/flower_anther_dehiscence_h_valvate"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/flower_anther_dehiscence_circular"
         },
         {
           "@id": "https://w3id.org/APD/traits/flower_anther_dehiscence_pores_many"
@@ -65034,7 +65773,7 @@
         },
         {
           "@language": "en",
-          "@value": "A floral organ morphology trait [TO:0000862] which is the length [PATO:0000122] of the flower [PO:0009046]."
+          "@value": "A floral organ morphology trait [TO:0000862] which is the length [PATO:0000122] of the flower [PO:0009046] from the base of the receptable [PO:0009064] or the base of an inferior ovary [PO:0009072] to the tip of the flower, measured at anthesis [PO:0009068]. It excludes the length of the pedicel [PO:0030112]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012419",
@@ -65110,11 +65849,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The diameter of the flower."
+          "@value": "The maximum diameter of the flower at anthesis, considering all floral organs, but most commonly the diameter from petal  tip to petal tip."
         },
         {
           "@language": "en",
-          "@value": "A floral organ morphology trait [TO:0000862] which is the diameter [PATO:0001334] of the flower [PO:0009046]."
+          "@value": "A floral organ morphology trait [TO:0000862] which is the maximum diameter [PATO:0001334] of the flower [PO:0009046] at anthesis [PO:0009068], considering all floral organs, but most commonly the diameter from petal  [PO:0009032] tip to petal tip."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012420",
@@ -65157,7 +65896,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The diameter of the flower."
+        "@value": "The maximum diameter of the flower at anthesis, considering all floral organs, but most commonly the diameter from petal  tip to petal tip."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -70301,6 +71040,9 @@
           "@id": "https://w3id.org/APD/traits/seed_surface_texture_netted"
         },
         {
+          "@id": "https://w3id.org/APD/traits/seed_surface_texture_grooved"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/seed_surface_texture_bumpy"
         }
       ],
@@ -70859,6 +71601,9 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
+          "@id": "https://w3id.org/APD/traits/dispersal_unit_seedling"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/dispersal_unit_spore"
         },
         {
@@ -71295,7 +72040,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "Length of all minor and major leaf lamina veins per unit area."
+        "@value": "Length of all minor and major leaf lamina veins per unit area"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
         {
@@ -71329,7 +72074,7 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "Length of all minor and major leaf lamina veins per unit area."
+        "@value": "Length of all minor and major leaf lamina veins per unit area"
       },
       "http://www.w3.org/2004/02/skos/core#relatedMatch": {
         "@id": "http://purl.obolibrary.org/obo/TO_0000820"
@@ -79479,11 +80224,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the stem segment, multiplied by the stem length (m)."
+          "@value": "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the stem segment, multiplied by the stem length (m)."
         },
         {
           "@language": "en",
-          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), multiplied by the path length measured (m)."
+          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), multiplied by the path length measured (m)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021013",
@@ -79521,7 +80266,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the decrease in water potential across the stem segment, but IS NOT normalised to the path length and has units kg/MPa/s."
+        "@value": "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the water potential gradient across the stem segment, but IS NOT normalised to the path length and has units kg/MPa/s."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -79537,7 +80282,7 @@
       "http://www.w3.org/2004/02/skos/core#closeMatch": "Branch hydraulic conductance [TRY:3392] (https://www.try-db.org/de/de.php)",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the stem segment, multiplied by the stem length (m)."
+        "@value": "Kh; Measure of the efficiency of water flow through a stem segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the stem segment, multiplied by the stem length (m)."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -79590,11 +80335,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."
+          "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."
         },
         {
           "@language": "en",
-          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."
+          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021014",
@@ -79648,7 +80393,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."
+        "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the sapwood cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the sapwood cross sectional area (1/m2), then multiplied by the stem length (m)."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -79816,11 +80561,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."
+          "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."
         },
         {
           "@language": "en",
-          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."
+          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the stem length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the stem segment (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021016",
@@ -79875,7 +80620,7 @@
       "http://www.w3.org/2004/02/skos/core#changeNote": "transverse_branch_area_specific_conductivity",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."
+        "@value": "Ks; Measure of the efficiency of water flow through a stem segment normalised to the stem (sapwood + bark) cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the stem cross sectional area (1/m2), then multiplied by the stem length (m)."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -79928,11 +80673,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the decrease in water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."
+          "@value": "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."
         },
         {
           "@language": "en",
-          "@value": "A leaf [PO:0025034] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a leaf under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the leaf area [PATO:0001323]. It is calculated as the ratio [PATO:0001470] of the water flow rate through the leaf (mmol/s)  to the decrease in water potential gradient from the petiole [PO:0020038] to mesophyll [PO:0006070] substomatal cavities (MPa), divided by the leaf area (m2)."
+          "@value": "A leaf [PO:0025034] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a leaf under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the leaf area [PATO:0001323]. It is calculated as the ratio [PATO:0001470] of the water flow rate through the leaf (mmol/s)  to the water potential gradient gradient from the petiole [PO:0020038] to mesophyll [PO:0006070] substomatal cavities (MPa), divided by the leaf area (m2)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021017",
@@ -79996,7 +80741,7 @@
       "http://www.w3.org/2004/02/skos/core#changeNote": "leaf_hydraulic_conductivity",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the decrease in water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."
+        "@value": "kleaf; Measure of how efficiently water is transported through a leaf. It is calculated as the ratio of water flow rate through the leaf (mmol/s) to the water potential gradient from the petiole to mesophyll substomatal cavities (MPa), divided by the leaf area (1/m2). As this is a measure of 'conductance' not 'conductivity' the measurement is not normalised to the path length (the leaf length)."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -80050,11 +80795,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
+          "@value": "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
         },
         {
           "@language": "en",
-          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the branches' leaf [PO:0025034] area [PATO:0001323] and accounting for the path (stem) length [PATO:0000122]. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
+          "@value": "A stem [PO:0009047] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a stem under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the branches' leaf [PO:0025034] area [PATO:0001323] and accounting for the path (stem) length [PATO:0000122]. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021018",
@@ -80107,7 +80852,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
+        "@value": "Kl; Measure of the efficiency of water flow through a stem segment, normalised to the total leaf area distil to the stem segment.  It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the stem segment (MPa), divided by the total leaf area (1/m2), then multiplied by the stem length (m)."
       },
       "http://www.w3.org/2004/02/skos/core#exactMatch": "Leaf area-specific conductivity (leaf specific conductivity) [TRY:928] (https://www.try-db.org/de/de.php)",
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
@@ -80163,11 +80908,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the root segment, multiplied by the root length (m)."
+          "@value": "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the root segment, multiplied by the root length (m)."
         },
         {
           "@language": "en",
-          "@value": "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the decrease in water potential across the root segment (MPa), multiplied by the path length measured (m)."
+          "@value": "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the water potential gradient across the root segment (MPa), multiplied by the path length measured (m)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021021",
@@ -80205,7 +80950,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the decrease in water potential across the root segment, but IS NOT normalised to the path length and has units kg/MPa/s."
+        "@value": "This trait should not be confused with hydraulic conductance (kh),  which is the ratio of water flow flow rate to the water potential gradient across the root segment, but IS NOT normalised to the path length and has units kg/MPa/s."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -80221,7 +80966,7 @@
       "http://www.w3.org/2004/02/skos/core#closeMatch": "Branch hydraulic conductance [TRY:3392] (https://www.try-db.org/de/de.php)",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the decrease in water potential (MPa) across the root segment, multiplied by the root length (m)."
+        "@value": "Kh; Measure of the efficiency of water flow through a root segment. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient (MPa) across the root segment, multiplied by the root length (m)."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -80372,7 +81117,7 @@
         },
         {
           "@language": "en",
-          "@value": "The average water potential [EnvThes:22311] of a plant's  leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."
+          "@value": "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021031",
@@ -80462,11 +81207,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The ratio of"
+          "@value": "The ratio of the change in tissue water volume to the change in tissue water potential."
         },
         {
           "@language": "en",
-          "@value": "The ratio of the change in tissue water volume to the change in tissue water potential"
+          "@value": "The ratio  [PATO:0001470] of the change in tissue [CARO:0000043] water [CHEBI:15377] volume to the change in tissue water potential [EnvThes:22311]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021032",
@@ -80514,7 +81259,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The ratio of"
+        "@value": "The ratio of the change in tissue water volume to the change in tissue water potential."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -81195,7 +81940,7 @@
         },
         {
           "@language": "en",
-          "@value": "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is the leaf water potential [EnvThes:22311] at which the mean turgor pressure [TO:0000701] of cells [CL:0000000] in the leaf/terminal shoot drop to zero. This is the point at which the plant wilts."
+          "@value": "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is the leaf water potential [EnvThes:22311] at which the mean turgor pressure [TO:0000701] of cells [CL:0000000] in the leaf/terminal shoot drops to zero. This is the point at which the plant wilts."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021056",
@@ -85682,11 +86427,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The season during which seed germination and seedling establishment occurs."
+          "@value": "The months during which seed germination and seedling establishment occurs."
         },
         {
           "@language": "en",
-          "@value": "The season during which seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] occurs."
+          "@value": "The months [UO:0000035] during which seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] occurs."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030213",
@@ -85715,11 +86460,11 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "This trait is relevant for a population's fire response."
+        "@value": "Trait keyed as a sequences of 12 Ns (not flowering) and Ys (flowering), representing the 12 months, starting with January."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "Seedling recruitment season"
+        "@value": "Seedling recruitment time, by month"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
         {
@@ -85732,7 +86477,7 @@
           "@id": "https://w3id.org/APD/traits/trait_group_0030008"
         }
       ],
-      "http://www.w3.org/2004/02/skos/core#altLabel": "recruitment_season",
+      "http://www.w3.org/2004/02/skos/core#altLabel": "recruitment_time",
       "http://www.w3.org/2004/02/skos/core#broader": [
         {
           "@id": "https://w3id.org/APD/traits/trait_group_0030602"
@@ -85746,26 +86491,12 @@
       ],
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The season during which seed germination and seedling establishment occurs."
+        "@value": "The months during which seed germination and seedling establishment occurs."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/recruitment_season_winter"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/recruitment_season_autumn"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/recruitment_season_summer"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/recruitment_season_spring"
-        }
-      ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "Seedling recruitment season"
+        "@value": "Seedling recruitment time, by month"
       },
       "https://w3id.org/iadopt/ont/hasContextObject": [
         {
@@ -86070,6 +86801,9 @@
           "@id": "https://w3id.org/APD/traits/pollination_syndrome_bat"
         },
         {
+          "@id": "https://w3id.org/APD/traits/pollination_syndrome_ballistic"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/pollination_syndrome_animal"
         },
         {
@@ -86236,6 +86970,9 @@
           "@id": "https://w3id.org/APD/traits/pollination_system_bat"
         },
         {
+          "@id": "https://w3id.org/APD/traits/pollination_system_ballistic"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/pollination_system_animal"
         },
         {
@@ -86340,7 +87077,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "For plants able to reproduce vegetatively, more detailed information about the mechanisms and structures that allow clonal spread is provided in the trait `clonal_spread_mechanism`."
+        "@value": "For plants able to reproduce vegetatively, more detailed information about the mechanisms and structures that allow clonal spread is provided in the trait `clonal_spread_mechanism`. The trait `dispersal_unit` captures information on plants that never produce by seed."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -86369,6 +87106,9 @@
       ],
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
+        {
+          "@id": "https://w3id.org/APD/traits/vegetative_reproduction_ability_vegetative_obligate"
+        },
         {
           "@id": "https://w3id.org/APD/traits/vegetative_reproduction_ability_vegetative"
         },
@@ -86616,7 +87356,7 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
+          "@value": "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration or another disturbance event that causes leaf loss). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
         },
         {
           "@language": "en",
@@ -86685,7 +87425,7 @@
       ],
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
+        "@value": "Plant structures  (tissues, organs, or other structures) where a plant stores excess carbohydrates (energy). The stored energy may be used for future growth, including clonal spread and regrowth following an annual unfavourable season, or for regrowth following a disturbance event (including post-fire regeneration or another disturbance event that causes leaf loss). Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
       },
       "http://www.w3.org/2004/02/skos/core#exactMatch": [
         "Plant storage organ [TOP166] (https://top-thesaurus.org/index)",
@@ -86697,6 +87437,9 @@
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
           "@id": "https://w3id.org/APD/traits/storage_organ_no_storage_organ"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/storage_organ_tuber"
         },
         {
           "@id": "https://w3id.org/APD/traits/storage_organ_storage_organ"
@@ -86711,13 +87454,16 @@
           "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_fibrous"
         },
         {
-          "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_felshy"
+          "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_fleshy"
         },
         {
           "@id": "https://w3id.org/APD/traits/storage_organ_rhizome_woody"
         },
         {
           "@id": "https://w3id.org/APD/traits/storage_organ_rhizome"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/storage_organ_pseudobulb"
         },
         {
           "@id": "https://w3id.org/APD/traits/storage_organ_lignotuber"
@@ -86804,11 +87550,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
+          "@value": "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
         },
         {
           "@language": "en",
-          "@value": "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373]. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."
+          "@value": "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030313",
@@ -86851,7 +87597,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "There are two other traits with overlapping trait values, but that are distinct trait concepts: `clonal_spread_mechanism` indicates mechanisms and structures a plant actually uses for vegetative spread; not all energy storage organs also allow vegetative spread; `storage_organ` indicates the plant structures where a plant stores excess carbohydrates. See Pausus, Lamont et al. 2018 (doi.org/10.1111/nph.14982) for detailed descriptions of recolonization ability and level of fire protection provided by each regeneration strategy."
+        "@value": "There are two other traits with overlapping trait values, but that are distinct trait concepts: `clonal_spread_mechanism` indicates mechanisms and structures a plant actually uses for vegetative spread; not all energy storage organs also allow vegetative spread; `storage_organ` indicates the plant structures where a plant stores excess carbohydrates. See Pausus, Lamont et al. 2018 (doi.org/10.1111/nph.14982) for detailed descriptions of recolonization ability and level of fire protection provided by each regeneration strategy. If specific bud banks only survive some types of disturbance, the disturbance should be specified as a context property."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -86866,7 +87612,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
+        "@value": "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."
       },
       "http://www.w3.org/2004/02/skos/core#exactMatch": "Bud source [BROT:30] (http://doi.org/10.1038/sdata.2018.135)",
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
@@ -86911,7 +87657,7 @@
           "@id": "https://w3id.org/APD/traits/bud_bank_location_basal_stem_buds"
         },
         {
-          "@id": "https://w3id.org/APD/traits/bud_bank_location_basal_burl"
+          "@id": "https://w3id.org/APD/traits/bud_bank_location_basal_buds"
         },
         {
           "@id": "https://w3id.org/APD/traits/bud_bank_location_apical_buds"
@@ -87360,7 +88106,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "Related traits include `seed_longevity`, `soil_seedbank`, `canopy_seedbank`, and `serotiny`."
+        "@value": "Related traits include `seed_longevity`, and `serotiny`."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -87398,16 +88144,22 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
-          "@id": "https://w3id.org/APD/traits/seed_storage_location_not_canopy"
+          "@id": "https://w3id.org/APD/traits/seed_storage_location_seedbank"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/seed_storage_location_soil_seedbank_absent"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy_seedbank_absent"
         },
         {
           "@id": "https://w3id.org/APD/traits/seed_storage_location_none"
         },
         {
-          "@id": "https://w3id.org/APD/traits/seed_storage_location_soil"
+          "@id": "https://w3id.org/APD/traits/seed_storage_location_soil_seedbank"
         },
         {
-          "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy"
+          "@id": "https://w3id.org/APD/traits/seed_storage_location_canopy_seedbank"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -87418,298 +88170,6 @@
         {
           "@id": "http://purl.obolibrary.org/obo/PO_0009001"
         },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0000003"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0009010"
-        }
-      ]
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0030512",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001995"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000140"
-        }
-      ],
-      "http://purl.org/datacite/v4.4/IsReviewedBy": [
-        {
-          "@id": "https://orcid.org/0000-0001-7328-345X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-2120-0071"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-9353-0067"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-8766-2829"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-9277-5142"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-0962-5117"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-0360-8321"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-4680-8115"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-5640-5910"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "14/07/2021"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "A binary trait which is whether mature seeds are retained in the plant canopy and remain viable in the plant canopy, acting as an aerial seedbank until an environmental cue triggers their release; germination occurs only after the seeds are released."
-        },
-        {
-          "@language": "en",
-          "@value": "A binary trait which is whether there is a canopy [ENVO:01001242] seedbank [MESH:D000068098], indicating that a plant's [PO:0000003] mature [PATO:0001701] seeds [PO:0009010] are retained in the plant canopy and remain viable [PATO:0000169] stored in the canopy until an environmental cue triggers their release; germination [GO:0009845] occurs only after the seeds are released."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0030512",
-      "http://purl.org/dc/terms/references": [
-        {
-          "@id": "https://doi.org/10.1080/07352689.2020.1768465"
-        },
-        {
-          "@id": "https://doi.org/10.1007/BF02858770"
-        }
-      ],
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0010162"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/ENVO_01001242"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000345"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0000003"
-        },
-        {
-          "@id": "http://purl.bioontology.org/ontology/MESH/D000068098"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0009845"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#comment": {
-        "@language": "en",
-        "@value": "Related traits include `seed_storage_location`, `seed_longevity`, `soil_seedbank`, and `serotiny`."
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Canopy seedbank"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030008"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#altLabel": "canopy_seedbank",
-      "http://www.w3.org/2004/02/skos/core#broader": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030008"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#closeMatch": "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)",
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A binary trait which is whether mature seeds are retained in the plant canopy and remain viable in the plant canopy, acting as an aerial seedbank until an environmental cue triggers their release; germination occurs only after the seeds are released."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/canopy_seedbank_canopy_seedbank_present"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/canopy_seedbank_canopy_seedbank_absent"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Canopy seedbank"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0009001"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0000003"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0009010"
-        }
-      ]
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0030513",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001995"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000140"
-        }
-      ],
-      "http://purl.org/datacite/v4.4/IsReviewedBy": [
-        {
-          "@id": "https://orcid.org/0000-0001-7328-345X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-2120-0071"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-9353-0067"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-8766-2829"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-9277-5142"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-0962-5117"
-        },
-        {
-          "@id": "https://orcid.org/0000-0003-0360-8321"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-4680-8115"
-        },
-        {
-          "@id": "https://orcid.org/0000-0001-5640-5910"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "14/07/2021"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "A binary trait which is whether mature seeds are retained in the soil and remain viable in the soil until germination occurs."
-        },
-        {
-          "@language": "en",
-          "@value": "A binary trait which is whether there is a soil [ENVO:00001998] seedbank [MESH:D000068098], indicating that a plant's [PO:0000003] seeds [PO:0009010] are present in the soil and remain viable [PATO:0000169] stored in the soil until germination [GO:0009845] occurs."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0030513",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1080/07352689.2020.1768465"
-      },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0010162"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/ENVO_00001998"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000345"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0000003"
-        },
-        {
-          "@id": "http://purl.bioontology.org/ontology/MESH/D000068098"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0009845"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#comment": {
-        "@language": "en",
-        "@value": "Related traits include `seed_storage_location`, `seed_longevity`, `canopy_seedbank`, and `serotiny`."
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Soil seedbank"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030008"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#altLabel": "soil_seedbank",
-      "http://www.w3.org/2004/02/skos/core#broader": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030008"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#closeMatch": "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)",
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A binary trait which is whether mature seeds are retained in the soil and remain viable in the soil until germination occurs."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/soil_seedbank_soil_seedbank_present"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/soil_seedbank_soil_seedbank_absent"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Soil seedbank"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": [
         {
           "@id": "http://purl.obolibrary.org/obo/PO_0000003"
         },
@@ -88085,7 +88545,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "Related traits include  'seed_longevity', 'seed_storage_location', 'soil_seedbank', 'canopy_seedbank', and 'serotiny'"
+        "@value": "Related traits include  'seed_longevity', 'seed_storage_location', and 'serotiny'"
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -88099,7 +88559,7 @@
           "@id": "https://w3id.org/APD/traits/trait_group_0030602"
         }
       ],
-      "http://www.w3.org/2004/02/skos/core#altLabel": "seed_release",
+      "http://www.w3.org/2004/02/skos/core#altLabel": "seed_release_timing",
       "http://www.w3.org/2004/02/skos/core#broader": [
         {
           "@id": "https://w3id.org/APD/traits/trait_group_0030504"
@@ -88115,13 +88575,19 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
-          "@id": "https://w3id.org/APD/traits/seed_release_gradual_release"
+          "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release"
         },
         {
-          "@id": "https://w3id.org/APD/traits/seed_release_mature_en_mass"
+          "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release_at_maturity"
         },
         {
-          "@id": "https://w3id.org/APD/traits/seed_release_serotinous"
+          "@id": "https://w3id.org/APD/traits/seed_release_timing_en_masse_release_at_maturity"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/seed_release_timing_gradual_release_canopy_seedbank"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/seed_release_timing_en_masse_release_canopy_seedbank"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -88193,11 +88659,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, triggers it to release its seeds."
+          "@value": "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786]."
+          "@value": "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786], but possibly also drought or extreme heat."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030517",
@@ -88254,7 +88720,7 @@
       "http://www.w3.org/2004/02/skos/core#closeMatch": "Seedbank type [TRY:159] (https://www.try-db.org/de/de.php)",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, triggers it to release its seeds."
+        "@value": "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."
       },
       "http://www.w3.org/2004/02/skos/core#exactMatch": "Serotiny level [BROT:39] (http://doi.org/10.1038/sdata.2018.135)",
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
@@ -88351,7 +88817,7 @@
         },
         {
           "@language": "en",
-          "@value": "Mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating  [GO:0009845] until they are exposed to specific [NCIT:C38024] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] ."
+          "@value": "Physical [PATO:0002079], physiological [NCIT:C16990], and morphological [PATO:0000051] mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating<U+FFFD> [GO:0009845]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030530",
@@ -88408,6 +88874,9 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/seed_dormancy_class_non_dormant"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/seed_dormancy_class_morphological_dormancy"
         },
         {
           "@id": "https://w3id.org/APD/traits/seed_dormancy_class_morphophysiological_dormancy"
@@ -89247,6 +89716,9 @@
           "@id": "https://w3id.org/APD/traits/dispersers_non-flying_vertebrates"
         },
         {
+          "@id": "https://w3id.org/APD/traits/dispersers_mammals_domestic"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/dispersers_mammals"
         },
         {
@@ -89268,6 +89740,9 @@
           "@id": "https://w3id.org/APD/traits/dispersers_floods"
         },
         {
+          "@id": "https://w3id.org/APD/traits/dispersers_fish"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/dispersers_cassowaries"
         },
         {
@@ -89277,7 +89752,13 @@
           "@id": "https://w3id.org/APD/traits/dispersers_bats"
         },
         {
+          "@id": "https://w3id.org/APD/traits/dispersers_animals"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/dispersers_ants"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/dispersers_abiotic"
         },
         {
           "@id": "https://w3id.org/APD/traits/dispersers_indigenous_people"
@@ -90279,81 +90760,6 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/trait_0030619",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000077"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001995"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "23/02/2023"
-      },
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Indication of how the presence of a taxon in a given location changes the risk of fire in that location."
-      },
-      "http://purl.org/dc/terms/identifier": "trait_0030619",
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.dataone.org/odo/ECSO_00000310"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/20535"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/21064"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/ENVO_01000786"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Plants' influence on fire risk"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "plant_influence_on_fire_risk",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0030602"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Indication of how the presence of a taxon in a given location changes the risk of fire in that location."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_unchanged"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_increased"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/plant_influence_on_fire_risk_fire_risk_decreased"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Plants' influence on fire risk"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0000003"
-      }
-    },
-    {
       "@id": "https://w3id.org/APD/traits/trait_0030621",
       "@type": [
         "http://www.w3.org/2002/07/owl#Class",
@@ -90471,7 +90877,7 @@
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
-          "@id": "https://w3id.org/APD/traits/post_fire_recruitment_no_post_fire_recruitment"
+          "@id": "https://w3id.org/APD/traits/post_fire_recruitment_post_fire_recruitment_absent"
         },
         {
           "@id": "https://w3id.org/APD/traits/post_fire_recruitment_post_fire_recruitment"
@@ -93163,6 +93569,9 @@
       "http://www.w3.org/2004/02/skos/core#narrower": [
         {
           "@id": "https://w3id.org/APD/traits/plant_tolerance_fire_thick_bark"
+        },
+        {
+          "@id": "https://w3id.org/APD/traits/plant_tolerance_fire_fire_retardant_bark"
         },
         {
           "@id": "https://w3id.org/APD/traits/plant_tolerance_fire_fire_retardant"
@@ -97386,12 +97795,6 @@
           "@id": "https://w3id.org/APD/traits/trait_0030590"
         },
         {
-          "@id": "https://w3id.org/APD/traits/trait_0030513"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030512"
-        },
-        {
           "@id": "https://w3id.org/APD/traits/trait_0030511"
         },
         {
@@ -97596,12 +97999,6 @@
           "@id": "https://w3id.org/APD/traits/trait_0030514"
         },
         {
-          "@id": "https://w3id.org/APD/traits/trait_0030513"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030512"
-        },
-        {
           "@id": "https://w3id.org/APD/traits/trait_0030511"
         }
       ],
@@ -97639,9 +98036,6 @@
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030619"
-        },
         {
           "@id": "https://w3id.org/APD/traits/trait_0030718"
         },
@@ -97719,12 +98113,6 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0030514"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030513"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030512"
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0030511"
@@ -97947,6 +98335,39 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "vegetative"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/traits/vegetative_reproduction_ability_vegetative_obligate",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material."
+      },
+      "http://purl.org/dc/terms/identifier": "vegetative_reproduction_ability_vegetative_obligate",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "vegetative_obligate"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0030310"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0030310"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "vegetative_obligate"
       }
     },
     {
