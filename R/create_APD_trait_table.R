@@ -162,11 +162,13 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   # keywords
     keywords_tmp <- trait_i %>% filter(property == "keyword")
     
-    output <-
-      add_row(output, 
-              keywords_tmp$property_link[1],
-              print_list2(keywords_tmp$value_link)
-              ) 
+    if (nrow(keywords_tmp >0)) {
+      output <-
+        add_row(output, 
+                keywords_tmp$property_link[1],
+                print_list2(keywords_tmp$value_link)
+                ) 
+    }
   
   # scope
     scope_tmp <- trait_i %>% filter(property == "scope note")
@@ -336,22 +338,25 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
   # traits within group (has narrower)
     narrower_tmp <- trait_i %>% filter(property == "has narrower")
     
+    if (nrow(narrower_tmp > 0)) {
     output <-
       add_row(output, 
               narrower_tmp$property_link[1],
               print_list2(narrower_tmp$value_link)
               ) 
+    }
     
   
   # trait grouping (has broader)
     grouping <- trait_i %>% filter(property == "has broader")
     
+    if (nrow(grouping > 0)) {
     output <-
       add_row(output, 
               grouping$property_link[1],
               print_list2(grouping$value_link)
               ) 
-  
+    }
   
   # in scheme
     scheme_tmp <- trait_i %>% filter(property == "is in scheme")
