@@ -1,4 +1,5 @@
 
+*.rmarkdown
 *.docx
 *.pdf
 *_files

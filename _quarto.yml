@@ -35,7 +35,6 @@ website:
     page-footer:
       - right: "This blog is built with [Quarto](https://quarto.org/)."
 
-
 format:
   html:
     theme: cosmo
