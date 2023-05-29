@@ -174,11 +174,12 @@ This section of the ontology expresses allowed categorical trait values for each
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 categorical_allowed <- 
   triples_with_labels %>% 
-  filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
   filter(!stringr::str_detect(Subject, "trait_[:digit:]")) %>%
   filter(!stringr::str_detect(Subject, "trait_group")) %>%
   filter(stringr::str_detect(Subject, "APD\\/traits\\/[:alpha:]")) %>%
-  select(identifier = Subject)
+  filter(Predicate == "http://www.w3.org/2004/02/skos/core#broader") %>%
+  select(identifier = Subject, Object) %>%
+  arrange(Object)
 
   to_match_tmp <- triples_with_labels %>% 
     filter(Subject_stripped %in% categorical_allowed$identifier) %>%
