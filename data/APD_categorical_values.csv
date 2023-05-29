@@ -321,10 +321,11 @@ leaf_arrangement_decussate,decussate,When sequential pairs of opposite leaves at
 leaf_arrangement_distichous,distichous,When alternate or opposite leaves are arranged in two opposite rows.,leaf_arrangement
 leaf_arrangement_scattered,scattered,When leaves are attached along the entire length of stem.,leaf_arrangement
 leaf_arrangement_spiral,spiral,When alternate leaves are attached in a progressive spiral pattern along the stem.,leaf_arrangement
-leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attached to the stem in a single location, generally due to the shortening of internodes. (Synonym, clustered)",leaf_arrangement
+leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes. (Synonym, tufted)",leaf_arrangement
 leaf_arrangement_clustered,clustered,"When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided.",leaf_arrangement
 leaf_arrangement_clustered_basal,clustered_basal,"When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)",leaf_arrangement
 leaf_arrangement_crowded,crowded,"When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)",leaf_arrangement
+leaf_arrangement_rosette,rosette,When leaves radiate from a central point at or near ground level.,leaf_arrangement
 leaf_arrangement_imbricate,imbricate,When leaves lay tightly against the stem and are overlapping.,leaf_arrangement
 leaf_phyllotaxis_alternate,alternate,A single leaf is attached at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_opposite,opposite,A pair of leaves are attached opposite to one another at each stem node.,leaf_phyllotaxis
@@ -399,7 +400,7 @@ leaf_shape_widely_obovate,widely_obovate,A 2-dimensional shape that is broadly e
 leaf_shape_narrowly_triangular,narrowly_triangular,"A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)",leaf_shape
 leaf_shape_triangular,triangular,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf.",leaf_shape
 leaf_shape_deltate,deltate,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio of 1:1 and the petiole attaching along one of the broad sides.",leaf_shape
-leaf_shape_obtriangular,obtriangular,"A 2-dimensional shape that is triangular to fan-shaped or wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the narrowest portion of the leaf. (Synonyms, flabelliform, fan-shaped, wedge-shaped)",leaf_shape
+leaf_shape_obtriangular,obtriangular,"A 2-dimensional shape that is triangular to fan-shaped or wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the narrowest portion of the leaf. (Synonyms, flabelliform, fan-shaped, wedge-shaped, cuneate)",leaf_shape
 leaf_shape_narrowly_rhomboidal,narrowly_rhomboidal,"A 2-dimensional shape that is like a narrow diamond, with approximately straight edges, widest near the middle, and a length:width ratio 6:1 to 3:1. The petiole attaches near one of the points.",leaf_shape
 leaf_shape_rhomboidal,rhomboidal,"A 2-dimensional shape that is approximately diamond or parallelogram-shaped, with approximately straight edges, widest near the middle, and a length:width ratio 2:1 to 3:2. The petiole attaches near one of the points. (Synonyms, rhombic, diamond)",leaf_shape
 leaf_shape_trullate,trullate,"A 2-dimensional shape that is approximately parallelogram-shaped, widest near where the petiole attaches (base), and with a length:width ratio 2:1 to 3:2.",leaf_shape
@@ -424,12 +425,12 @@ leaf_base_shape_auriculate,auriculate,Basal leaf margin with two rounded lobes. 
 leaf_base_shape_cordate,cordate,Basal leaf margin with two rounded lobes and the petiole attaches in the incised region between the lobes. The leaf margin above the lobes is rounded.,leaf_base_shape
 leaf_base_shape_cuneate,cuneate,"Basal leaf margin approximately straight, the two sides intersecting at an angle between 45° to 90°.",leaf_base_shape
 leaf_base_shape_hastate,hastate,"Basal leaf margin with two lobes oriented outward, such that they are at approximately 90° relative to the central axis and the leaf margin is fairly flat at the base.",leaf_base_shape
-leaf_base_shape_oblique,oblique,XXX,leaf_base_shape
+leaf_base_shape_oblique,oblique,"The leaf base is asymmetrical, with the midrib not lying in the middle of the leaf where it attaches to the petiole.",leaf_base_shape
 leaf_base_shape_obtuse,obtuse,Two sides of the leaf meet at an angle that is greater than 90°.,leaf_base_shape
 leaf_base_shape_rounded,rounded,Basal leaf margin is rounded.,leaf_base_shape
 leaf_base_shape_sagittate,sagittate,"Basal leaf margin with two lobes oriented downward, away from apex. The petiole attaches in the concave region between the lobes.",leaf_base_shape
-leaf_base_shape_sheathing,sheathing,XXX,leaf_base_shape
-leaf_base_shape_truncate,truncate,XXX,leaf_base_shape
+leaf_base_shape_sheathing,sheathing,The leaf base is broad and envelops the stem.,leaf_base_shape
+leaf_base_shape_truncate,truncate,The basal leaf margin is cut straight across with the two sides intersecting at approximately 180°.,leaf_base_shape
 plant_photosynthetic_organ_leaf,leaf,"A true leaf, including both laminar and needle-shaped leaves.",plant_photosynthetic_organ
 plant_photosynthetic_organ_cladode,cladode,"A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)",plant_photosynthetic_organ
 plant_photosynthetic_organ_phyllode,phyllode,"A flattened bladelike petiole. (Synonyms, switch plant)",plant_photosynthetic_organ
@@ -624,7 +625,9 @@ storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutr
 storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
 storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
 storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
-regeneration_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,Fire-killed plants that have the ability to resprout following a disturbance other than fire.,regeneration_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,"Plants that are known to be fire-killed, but have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.",resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_after_cyclone,resprouts_after_cyclone,Plants are able to resprout following 100% leaf loss in a cyclone.,resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_after_drought,resprouts_after_drought,Plants are able to resprout following 100% leaf loss during a drought.,resprouting_capacity_non_fire_disturbance
 clonal_spread_mechanism_aboveground_clonal,aboveground_clonal,"Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions).",clonal_spread_mechanism
 clonal_spread_mechanism_adventitious_roots,adventitious_roots,Adventitious roots can form at nodes on the main roots or aboveground from nodes on stems.,clonal_spread_mechanism
 clonal_spread_mechanism_bulb,bulb,"Below ground storage organ derived from stem (and sometimes leaf) tissue, that divides into new individuals.",clonal_spread_mechanism
@@ -709,29 +712,23 @@ seed_surface_texture_grooved,grooved,Seed surface covered with grooves.,seed_sur
 seed_surface_texture_netted,netted,"Seed surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate, honey-combed)",seed_surface_texture
 seed_surface_texture_papery,papery,"Seed surface with a thin and papery texture. (Synonyms, chartaceous)",seed_surface_texture
 seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, foveate, dimpled, punctate, lacunose)",seed_surface_texture
-seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigate, lineolate, scalariform, ridged)",seed_surface_texture
+seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigose, lineolate, scalariform, ridged)",seed_surface_texture
 seed_surface_texture_rough,rough,"Seed surface rough with no organisation of markings, resembling sandpaper. (Synonyms, scabrous)",seed_surface_texture
 seed_surface_texture_scaly,scaly,"Seed surface rough with loose scales differing in direction or not parallel in direction. (Synonyms, scurfy, squarrose)",seed_surface_texture
 seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture.",seed_surface_texture
 seed_surface_texture_spiny,spiny,"Seed surface with spines. (Synonyms, echinulate)",seed_surface_texture
 seed_surface_texture_wrinkled,wrinkled,"Seed surface with a wrinkled, rugose texture. (Synonyms, rugose, rugulose, bullate)",seed_surface_texture
-seed_storage_location_canopy_seedbank,canopy_seedbank,"Seeds stored in the canopy, usually still within a woody cone.",seed_storage_location
-seed_storage_location_soil_seedbank,soil_seedbank,Seeds stored in the soil.,seed_storage_location
-seed_storage_location_none,none,Seeds are not stored.,seed_storage_location
-seed_storage_location_canopy_seedbank_absent,canopy_seedbank_absent,Seed explicitly not stored in the canopy.,seed_storage_location
-seed_storage_location_soil_seedbank_absent,soil_seedbank_absent,Seed explicitly not stored in the soil.,seed_storage_location
-seed_storage_location_seedbank,seedbank,"A seedbank exists, but its locations is not specified.",seed_storage_location
-seed_longevity_categorical_transient,transient,"Propagule transient, lasting in the seedbank for only weeks to months.",seed_longevity_categorical
-seed_longevity_categorical_intermediate_longevity,intermediate_longevity,"Propagule survives for approximately months to less than a year, although cutoff varies by study.",seed_longevity_categorical
-seed_longevity_categorical_persistent,persistent,"Propagule persistent, time not specified.",seed_longevity_categorical
-seed_longevity_categorical_short_persistent,short_persistent,"Propagule is persistent for approximately 1 to 5 years, although cutoff varies by study.",seed_longevity_categorical
-seed_longevity_categorical_long_persistent,long_persistent,"Propagule is persistent for more than 5 years, although cutoff varies by study.",seed_longevity_categorical
-seed_longevity_categorical_widely_dispersed,widely_dispersed,"Seed longevity not important, as seeds are widely dispersed and always available for germination.",seed_longevity_categorical
-seed_release_timing_en_masse_release_canopy_seedbank,en_masse_release_canopy_seedbank,"Plant has a canopy seedbank that it only releases following an environmental trigger (usually fire, but sometimes heat or drought). (Synonym, serotinous)",seed_release_timing
-seed_release_timing_gradual_release_canopy_seedbank,gradual_release_canopy_seedbank,"Plant has a canopy seedbank that it releases gradually over time, with few to no seeds being retained in the canopy until a disturbance event.",seed_release_timing
-seed_release_timing_en_masse_release_at_maturity,en_masse_release_at_maturity,Plant releases its seeds en masse when or soon after they mature (eg annually).,seed_release_timing
-seed_release_timing_gradual_release_at_maturity,gradual_release_at_maturity,Plant releases its seeds gradually as they mature.,seed_release_timing
-seed_release_timing_gradual_release,gradual_release,"Plant releases its seeds gradually, but it is not specified if they are released gradually at maturity or after maturity.",seed_release_timing
+seedbank_location_seedbank,seedbank,"A seedbank exists, but its locations is not specified.",seedbank_location
+seedbank_location_canopy_seedbank,canopy_seedbank,"Seeds stored in the canopy, usually still within a woody cone.",seedbank_location
+seedbank_location_soil_seedbank,soil_seedbank,Seeds stored in the soil.,seedbank_location
+seedbank_location_canopy_seedbank_absent,canopy_seedbank_absent,Seed explicitly not stored in the canopy.,seedbank_location
+seedbank_location_soil_seedbank_absent,soil_seedbank_absent,Seed explicitly not stored in the soil.,seedbank_location
+seedbank_location_none,none,Seeds are not stored.,seedbank_location
+seedbank_longevity_class_transient,transient,"Seed that survives in the seedbank until its first annual germination season, but not until its second annual germination season. Some transient seeds will germinate within weeks to months, while others may remain in the seedbank for slightly over a year, depending on how the annual recruitment season aligns with seed maturation. Transient seeds are non-dormant, remaining in the seedbank until environmental conditions are appropriate for germination.",seedbank_longevity_class
+seedbank_longevity_class_persistent,persistent,Seed that survives in the seedbank until at least its second germination season.,seedbank_longevity_class
+seedbank_longevity_class_short_persistent,short_persistent,"Seed that persists in the seedbank for approximately 1 to 5 years, although the time interval varies by study.",seedbank_longevity_class
+seedbank_longevity_class_long_persistent,long_persistent,"Seed that persists in the seedbank for more than 5 years, although the time interval varies by study.",seedbank_longevity_class
+seedbank_longevity_class_widely_dispersed,widely_dispersed,"Seed longevity not important, as seeds are widely dispersed and always available for germination.",seedbank_longevity_class
 serotiny_not_serotinous,not_serotinous,Plant does not display serotiny.,serotiny
 serotiny_serotinous,serotinous,"Plant serotinous, level not specified.",serotiny
 serotiny_serotiny_low,serotiny_low,"Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank.",serotiny
