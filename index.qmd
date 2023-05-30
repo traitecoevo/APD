@@ -190,7 +190,9 @@ categorical_allowed <-
     filter(Subject_stripped %in% to_match_tmp$Subject_stripped) %>%
     filter(property == "has broader") %>%
     select(Subject_stripped, trait_name = value) %>%
-    left_join(to_match_tmp)
+    left_join(to_match_tmp) %>%
+    left_join(categorical_allowed %>% rename(Subject_stripped = identifier)) %>%
+    arrange(Object)
  
   traits_names_tmp <- tmp_categorical2 %>%
     distinct(trait_name)
