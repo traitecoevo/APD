@@ -94,7 +94,7 @@ fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,Plants
 fire_exposure_level_fire_avoidance_near_water,fire_avoidance_near_water,Plants rarely or never experience fires because their habitat is close to a body of water.,fire_exposure_level
 fire_exposure_level_fire_avoidance_in_swamp,fire_avoidance_in_swamp,"Plants rarely experience fires because their habitat is usually saturated, but populations can be catastrophically impacted during severe droughts when the swamps dry out.",fire_exposure_level
 fire_exposure_level_seasonal_fire_avoidance,seasonal_fire_avoidance,"Plants avoid fire by only have above-ground parts during seasons when fire is rare or absent, but populations can be catastrophically impacted if fire occurs during an atypical season.",fire_exposure_level
-resprouting_capacity_fire_killed,fire_killed,Fewer than 30% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
+resprouting_capacity_fire_killed,fire_killed,"Fewer than 30% of plants resprout following a fire with 100% leaf scorch. (Synonym, fire-sensitive)",resprouting_capacity
 resprouting_capacity_resprouts,resprouts,More than 70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
 resprouting_capacity_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
 resprouting_capacity_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
