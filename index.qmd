@@ -36,7 +36,7 @@ format:
   [Ruby Stephens](https://orcid.org/0000-0002-3767-2690),
   [Peter Vesk](https://orcid.org/0000-0003-2008-7062),
   [Matthew White](https://orcid.org/0000-0003-2120-0071),
-  [Ian J. Wright](https://orcid.org/0000-0001-8338-914),
+  [Ian J. Wright](https://orcid.org/0000-0001-8338-9143),
   [Sophie Yang](https://orcid.org/0000-0001-7328-345X)</dd>
 
 <dt>Download serialization:</dt> <dd>
@@ -74,19 +74,6 @@ source("R/create_APD_trait_table.R")
 triples_with_labels <- 
   read_csv("APD.csv")
 
-traits_csv <- 
-  read_csv("data/APD_traits.csv") %>%
-  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
-categorical_values_csv <- 
-  read_csv("data/APD_categorical_values.csv") %>%
-  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
-hierarchy_csv <- 
-  read_csv("data/APD_trait_hierarchy.csv") %>%
-  mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
-glossary_csv <- 
-  read_csv("data/APD_glossary.csv") %>%
-  mutate(Entity = paste0("https://w3id.org/APD/glossary/", identifier))
-
 base_url_traits <- "https://w3id.org/APD/traits/"
 base_url_glossary <- "https://w3id.org/APD/glossary/"
 
@@ -122,14 +109,18 @@ The APD is a community resource and we welcome any suggestions for edits, includ
 The APD Trait groups express broad trait groupings, with each trait concept mapped into one or more trait groups as `narrower` concepts.
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-trait_groupings <- hierarchy_csv$identifier %>% paste0(base_url_traits, .)
+trait_groupings <- 
+  triples_with_labels %>% 
+    filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+    filter(stringr::str_detect(Subject, "trait_group_")) %>%
+    select(identifier = Subject)
 
 to_match_tmp <- triples_with_labels %>%
-  filter(Subject_stripped %in% trait_groupings) %>%
+  filter(Subject_stripped %in% trait_groupings$identifier) %>%
   filter(property == "label") %>%
   select(Subject_stripped, value)
  
-for (thistrait in trait_groupings) {
+for (thistrait in trait_groupings$identifier) {
   
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   
@@ -150,14 +141,18 @@ for (thistrait in trait_groupings) {
 The APD Trait concepts express the traits defined by the APT.
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-list_of_traits <- traits_csv$identifier %>% paste0(base_url_traits, .)
+list_of_traits <- 
+  triples_with_labels %>% 
+    filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+    filter(stringr::str_detect(Subject, "trait_[:digit:]")) %>%
+    select(identifier = Subject)
 
 to_match_tmp <- triples_with_labels %>%
-  filter(Subject_stripped %in% list_of_traits) %>%
+  filter(Subject_stripped %in% list_of_traits$identifier) %>%
   filter(property == "label") %>%
   select(Subject_stripped, value)
  
-for (thistrait in list_of_traits) {
+for (thistrait in list_of_traits[[1]]) {
   
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   
@@ -177,10 +172,17 @@ for (thistrait in list_of_traits) {
 This section of the ontology expresses allowed categorical trait values for each trait concept. These terms are each defined and linked to a single trait concept to reduce ambiguity.
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-categorical_allowed <- categorical_values_csv$identifier %>% paste0(base_url_traits, . ) 
+categorical_allowed <- 
+  triples_with_labels %>% 
+  filter(!stringr::str_detect(Subject, "trait_[:digit:]")) %>%
+  filter(!stringr::str_detect(Subject, "trait_group")) %>%
+  filter(stringr::str_detect(Subject, "APD\\/traits\\/[:alpha:]")) %>%
+  filter(Predicate == "http://www.w3.org/2004/02/skos/core#broader") %>%
+  select(identifier = Subject, Object) %>%
+  arrange(Object)
 
   to_match_tmp <- triples_with_labels %>% 
-    filter(Subject_stripped %in% categorical_allowed) %>%
+    filter(Subject_stripped %in% categorical_allowed$identifier) %>%
     filter(property == "label") %>%
     select(Subject_stripped, value)
   
@@ -188,7 +190,9 @@ categorical_allowed <- categorical_values_csv$identifier %>% paste0(base_url_tra
     filter(Subject_stripped %in% to_match_tmp$Subject_stripped) %>%
     filter(property == "has broader") %>%
     select(Subject_stripped, trait_name = value) %>%
-    left_join(to_match_tmp)
+    left_join(to_match_tmp) %>%
+    left_join(categorical_allowed %>% rename(Subject_stripped = identifier)) %>%
+    arrange(Object)
  
   traits_names_tmp <- tmp_categorical2 %>%
     distinct(trait_name)
@@ -200,9 +204,9 @@ for (thistrait in traits_names_tmp$trait_name) {
   tmp_cat_select <- tmp_categorical2 %>% 
     filter(trait_name == thistrait)
   
-  cat_for_trait <- as.data.frame(categorical_allowed) %>% filter(categorical_allowed %in% tmp_cat_select$Subject_stripped)
+  cat_for_trait <- as.data.frame(categorical_allowed) %>% filter(categorical_allowed$identifier %in% tmp_cat_select$Subject_stripped)
   
-  for (cat_val in cat_for_trait$categorical_allowed) {
+  for (cat_val in cat_for_trait$identifier) {
   
   term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
   
@@ -226,12 +230,16 @@ This section of the ontology includes terminology used within trait concept desc
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 
-glossary_terms <- glossary_csv$identifier %>% paste0(base_url_glossary, . )
+glossary_terms <- 
+  triples_with_labels %>% 
+  filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+  filter(stringr::str_detect(Subject, "glossary_")) %>%
+  select(identifier = Subject)
 
-for (thistrait in glossary_terms) {
+for (thistrait in glossary_terms$identifier) {
   
   to_match_tmp <- triples_with_labels %>% 
-    filter(Subject_stripped %in% glossary_terms) %>%
+    filter(Subject_stripped %in% glossary_terms$identifier) %>%
     filter(property == "label") %>%
     select(Subject_stripped, value)
   
