@@ -16681,7 +16681,7 @@
         "@value": "AusTraits Plant Dictionary traits"
       },
       "http://www.w3.org/2004/02/skos/core#hasTopConcept": {
-        "@id": "https://w3id.org/APD/traits/trait_0000000"
+        "@id": "https://w3id.org/APD/traits/trait_group_0000000"
       },
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -17026,7 +17026,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"
+        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_basal_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17041,7 +17041,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` or `basal burl` rather than `basal stem buds` or `lignotuber`. (Synonym, rootstock, lignotuberous resprouter)"
+        "@value": "Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -17059,7 +17059,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
+        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`. (Synonym, rootstock, lignotuberous resprouter)"
       },
       "http://purl.org/dc/terms/identifier": "bud_bank_location_basal_stem_buds",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -17074,7 +17074,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`."
+        "@value": "Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`. (Synonym, rootstock, lignotuberous resprouter)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -36100,7 +36100,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Fewer than 30% of plants resprout following a fire with 100% leaf scorch."
+        "@value": "Fewer than 30% of plants resprout following a fire with 100% leaf scorch. (Synonym, fire-sensitive)"
       },
       "http://purl.org/dc/terms/identifier": "resprouting_capacity_fire_killed",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -36115,7 +36115,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Fewer than 30% of plants resprout following a fire with 100% leaf scorch."
+        "@value": "Fewer than 30% of plants resprout following a fire with 100% leaf scorch. (Synonym, fire-sensitive)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -40423,7 +40423,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
+        "@value": "Plant displays a strong level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_high",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -40438,7 +40438,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
+        "@value": "Plant displays a strong level of serotiny, indicating all seeds are retained as a canopy seedbank until an environmental cue triggers their release."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -40456,7 +40456,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
+        "@value": "Plant displays a weak level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_low",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -40471,7 +40471,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
+        "@value": "Plant displays a weak level of serotiny, indicating it releases most of its seeds gradually, with only a small proportion of the seeds retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -40489,7 +40489,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
+        "@value": "Plant displays a moderate level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://purl.org/dc/terms/identifier": "serotiny_serotiny_moderate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -40504,7 +40504,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Plant displays a high level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
+        "@value": "Plant displays a moderate level of serotiny, indicating it releases some of its seeds gradually, with the remainder retained as a canopy seedbank until an environmental cue triggers the release of the entire seedbank."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -42129,16 +42129,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "tuber"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0000000",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
-        "@id": "https://w3id.org/APD/traits"
       }
     },
     {
@@ -43847,6 +43837,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000125"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0002-6012-8458"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -50680,6 +50673,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000125"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0002-6012-8458"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -50749,6 +50745,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000125"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0002-6012-8458"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -50824,6 +50823,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000125"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0002-6012-8458"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -53713,6 +53715,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -53731,9 +53736,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0010023",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/S0169-5347(03)00061-2"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/S0169-5347(03)00061-2"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -54008,6 +54018,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -54018,7 +54031,7 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "Degree to which a plant is defended by spines, thorns and/or prickles, as defined by P<U+00E9>rez-Harguindeguy et al. 2013."
+          "@value": "Degree to which a plant is defended by spines, thorns and/or prickles, as defined by P<U+00C3><U+00A9>rez-Harguindeguy et al. 2013."
         },
         {
           "@language": "en",
@@ -54026,6 +54039,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0010070",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -54058,7 +54074,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "The values for this trait are exactly those defined by P<U+00E9>rez-Harguindeguy et al. 2013 (doi:10.1071/BT12225). See the trait `plant_physical_defence` for individual plant structures a plant uses for physical defence."
+        "@value": "The values for this trait are exactly those defined by P<U+00C3><U+00A9>rez-Harguindeguy et al. 2013 (doi:10.1071/BT12225). See the trait `plant_physical_defence` for individual plant structures a plant uses for physical defence."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -54095,7 +54111,7 @@
       ],
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Degree to which a plant is defended by spines, thorns and/or prickles, as defined by P<U+00E9>rez-Harguindeguy et al. 2013."
+        "@value": "Degree to which a plant is defended by spines, thorns and/or prickles, as defined by P<U+00C3><U+00A9>rez-Harguindeguy et al. 2013."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#narrower": [
@@ -54875,6 +54891,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -54893,6 +54912,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011211",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55091,6 +55113,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55109,6 +55134,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011213",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55221,6 +55249,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -55341,6 +55372,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55359,6 +55393,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011215",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55454,6 +55491,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55472,6 +55512,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011216",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55642,6 +55685,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55660,6 +55706,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011218",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55776,6 +55825,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55794,9 +55846,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011230",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1038/nature02403"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1038/nature02403"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -55929,6 +55986,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -55947,6 +56007,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011231",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -56151,6 +56214,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -56458,6 +56524,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -56476,6 +56545,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011263",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -57016,6 +57088,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -57034,9 +57109,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011310",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1086/319579"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1086/319579"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -57143,6 +57223,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -57393,6 +57476,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -57549,6 +57635,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -57692,6 +57781,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -57827,6 +57919,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -57971,6 +58066,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -58018,7 +58116,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "See also the trait <U+2018>leaf_division' for more detailed leaf compoundness trait values. Note that there might be some species that grade from deeply lobed simple leaves (see trait `leaf_lobation`)  to compound leaves."
+        "@value": "See also the trait <U+00E2><U+20AC><U+02DC>leaf_division' for more detailed leaf compoundness trait values. Note that there might be some species that grade from deeply lobed simple leaves (see trait `leaf_lobation`)  to compound leaves."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -58103,6 +58201,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -58297,6 +58398,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -58413,6 +58517,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -58533,6 +58640,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -58676,6 +58786,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -58815,6 +58928,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -58957,6 +59073,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -59089,6 +59208,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -59249,6 +59371,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -59374,6 +59499,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -59507,6 +59635,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -64737,6 +64868,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -64752,6 +64886,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012410",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -64828,6 +64965,9 @@
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
       },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -64843,6 +64983,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012411",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -64931,6 +65074,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -64946,6 +65092,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012412",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -65022,6 +65171,9 @@
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
       },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -65037,6 +65189,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012413",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -65134,6 +65289,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000141"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -65149,6 +65307,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012414",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -65246,6 +65407,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000141"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -65261,6 +65425,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012415",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -65379,6 +65546,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -65394,6 +65564,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012416",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -65479,6 +65652,9 @@
       ],
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000014"
+      },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
       },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
@@ -65595,6 +65771,9 @@
       ],
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000014"
+      },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
       },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
@@ -65721,6 +65900,9 @@
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000122"
       },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "19/05/2023"
@@ -65804,6 +65986,9 @@
       ],
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0001334"
+      },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
       },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
@@ -65897,6 +66082,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "19/05/2023"
@@ -65999,6 +66187,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66080,6 +66271,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66095,6 +66289,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012431",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66168,6 +66365,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000052"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66183,6 +66383,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012432",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66296,6 +66499,9 @@
           "@id": "http://purl.obolibrary.org/obo/STATO_0000300"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66311,6 +66517,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012433",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66389,6 +66598,9 @@
           "@id": "http://purl.obolibrary.org/obo/STATO_0000300"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66404,6 +66616,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012434",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66494,6 +66709,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66509,6 +66727,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012441",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66598,6 +66819,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000141"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66613,6 +66837,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012442",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66713,6 +66940,9 @@
           "@id": "http://purl.obolibrary.org/obo/STATO_0000300"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66728,6 +66958,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012443",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66807,6 +67040,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66822,6 +67058,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012444",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -66910,6 +67149,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -66925,6 +67167,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012445",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67004,6 +67249,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000141"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67019,6 +67267,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012461",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67132,6 +67383,9 @@
           "@id": "http://purl.obolibrary.org/obo/STATO_0000300"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67147,6 +67401,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012462",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67228,6 +67485,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67243,6 +67503,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012463",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67331,6 +67594,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67346,6 +67612,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012464",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67424,6 +67693,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67439,6 +67711,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012465",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67533,6 +67808,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000060"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67548,6 +67826,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012466",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67652,6 +67933,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67667,6 +67951,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012467",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67758,6 +68045,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000052"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67773,6 +68063,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012471",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67882,6 +68175,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -67897,6 +68193,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012472",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -67975,6 +68274,9 @@
       ],
       "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
         "@id": "http://purl.obolibrary.org/obo/PATO_0000122"
+      },
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
       },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
@@ -68062,6 +68364,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0001555"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -68077,6 +68382,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012481",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -68146,6 +68454,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000141"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -68161,6 +68472,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012482",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -68249,6 +68563,9 @@
           "@id": "http://purl.obolibrary.org/obo/PATO_0000052"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -68264,6 +68581,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012483",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -68364,6 +68684,9 @@
           "@id": "http://purl.obolibrary.org/obo/STATO_0000300"
         }
       ],
+      "http://purl.org/datacite/v4.4/IsReviewedBy": {
+        "@id": "https://orcid.org/0000-0001-8305-3236"
+      },
       "http://purl.org/dc/terms/created": {
         "@type": "xsd:date",
         "@value": "14/07/2021"
@@ -68379,6 +68702,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012484",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1002/ajb2.1538"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "24/05/2023"
@@ -68469,6 +68795,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -68487,9 +68816,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012511",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://data.kew.org/sid/sidsearch.html"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -68580,6 +68914,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -68598,9 +68935,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012512",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://data.kew.org/sid/sidsearch.html"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -68693,6 +69035,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -68711,9 +69056,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012513",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://data.kew.org/sid/sidsearch.html"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -68805,6 +69155,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -68823,9 +69176,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012514",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://data.kew.org/sid/sidsearch.html"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -68909,6 +69267,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -69033,6 +69394,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -69227,6 +69591,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -69346,6 +69713,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -69459,6 +69829,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -69617,6 +69990,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -69641,6 +70017,9 @@
         },
         {
           "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -69663,7 +70042,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "Standard methods people will have used to dry seeds include, 'fresh' (at dispersal, mature); 'air dried' (at local ambient conditions); 'seed bank air dried' (to 15% relative humidity); and 'oven dried' (>100 deg C for a set number of hours; e.g. seed bank standard is 103 deg C for 17 hours). It is expected that some observations in AusTraits mapped onto <U+2018>seed_dry_mass' will actually include both the seed and some dispersal tissue, if the two cannot easily be separated; these should be mapped to 'diaspore_dry_mass'."
+        "@value": "Standard methods people will have used to dry seeds include, 'fresh' (at dispersal, mature); 'air dried' (at local ambient conditions); 'seed bank air dried' (to 15% relative humidity); and 'oven dried' (>100 deg C for a set number of hours; e.g. seed bank standard is 103 deg C for 17 hours). It is expected that some observations in AusTraits mapped onto <U+00E2><U+20AC><U+02DC>seed_dry_mass' will actually include both the seed and some dispersal tissue, if the two cannot easily be separated; these should be mapped to 'diaspore_dry_mass'."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -69736,6 +70115,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -69754,9 +70136,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012611",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://data.kew.org/sid/sidsearch.html"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -69853,6 +70240,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -69984,6 +70374,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70008,6 +70401,9 @@
         },
         {
           "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70106,6 +70502,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70130,6 +70529,9 @@
         },
         {
           "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70227,6 +70629,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70251,6 +70656,9 @@
         },
         {
           "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70351,6 +70759,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70375,6 +70786,9 @@
         },
         {
           "@id": "https://data.kew.org/sid/sidsearch.html"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70548,6 +70962,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70572,6 +70989,9 @@
         },
         {
           "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70733,6 +71153,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70757,6 +71180,9 @@
         },
         {
           "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -70858,6 +71284,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -70882,6 +71311,9 @@
         },
         {
           "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -71076,6 +71508,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71220,6 +71655,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71247,6 +71685,9 @@
         },
         {
           "@id": "https://doi.org/10.1111/nph.15502"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -71421,6 +71862,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71439,6 +71883,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0012624",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -71553,6 +72000,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71571,9 +72021,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0013011",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1111/nph.12253"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1111/nph.12253"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -71702,6 +72157,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71720,9 +72178,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0013012",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1111/nph.12253"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1111/nph.12253"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -71855,6 +72318,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -71873,9 +72339,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0013013",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1111/nph.12253"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1111/nph.12253"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -71999,6 +72470,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -72023,6 +72497,9 @@
         },
         {
           "@id": "https://doi.org/10.1111/nph.12253"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -73141,7 +73618,7 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The ratio of a stem<U+FFFD>s average xylem vessel diameter to the stem<U+FFFD>s xylem vessel density, an index of sap conductance and xylem vessel susceptibility to vessel cavitation."
+          "@value": "The ratio of a stem<U+00EF><U+00BF><U+00BD>s average xylem vessel diameter to the stem<U+00EF><U+00BF><U+00BD>s xylem vessel density, an index of sap conductance and xylem vessel susceptibility to vessel cavitation."
         },
         {
           "@language": "en",
@@ -73204,7 +73681,7 @@
       "http://www.w3.org/2004/02/skos/core#changeNote": "vulnerability_index",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The ratio of a stem<U+FFFD>s average xylem vessel diameter to the stem<U+FFFD>s xylem vessel density, an index of sap conductance and xylem vessel susceptibility to vessel cavitation."
+        "@value": "The ratio of a stem<U+00EF><U+00BF><U+00BD>s average xylem vessel diameter to the stem<U+00EF><U+00BF><U+00BD>s xylem vessel density, an index of sap conductance and xylem vessel susceptibility to vessel cavitation."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -74920,9 +75397,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020240",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -75033,9 +75515,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020241",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -75146,9 +75633,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020242",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -75256,9 +75748,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020243",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -75372,6 +75869,9 @@
         },
         {
           "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -75487,6 +75987,9 @@
         },
         {
           "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -77401,9 +77904,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020510",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -77501,9 +78009,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020511",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -77604,9 +78117,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020512",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/j.ecoinf.2021.101232"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -79850,7 +80368,7 @@
       "http://purl.org/dc/terms/identifier": "trait_0020813",
       "http://purl.org/dc/terms/references": [
         {
-          "@id": "https://www.indexdatabase.de/"
+          "@id": "https://doi.org/10.1080/014311697217387"
         },
         {
           "@id": "https://doi.org/10.1007/s004420050337"
@@ -79964,6 +80482,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020814",
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://www.indexdatabase.de/"
+        },
+        {
+          "@id": "https://doi.org/10.1080/014311697217387"
+        }
+      ],
       "http://semanticscience.org/resource/SIO_000147": [
         {
           "@id": "http://purl.obolibrary.org/obo/CHEBI_15377"
@@ -80167,9 +80693,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020816",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1016/S0034-4257(02)00010-X"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1016/S0034-4257(02)00010-X"
+        },
+        {
+          "@id": "https://www.indexdatabase.de/"
+        }
+      ],
       "http://semanticscience.org/resource/SIO_000147": [
         {
           "@id": "http://purl.obolibrary.org/obo/CHEBI_28966"
@@ -81086,6 +81617,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021030",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -81193,6 +81727,9 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021031",
+      "http://purl.org/dc/terms/references": {
+        "@id": "https://doi.org/10.1071/BT12225"
+      },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/05/2023"
@@ -82872,6 +83409,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -82896,6 +83436,9 @@
         },
         {
           "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -83085,6 +83628,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -83104,6 +83650,9 @@
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030011",
       "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        },
         {
           "@id": "https://uol.de/en/landeco/research/leda/standards"
         },
@@ -83268,6 +83817,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -83286,9 +83838,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030012",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://uol.de/en/landeco/research/leda/standards"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://uol.de/en/landeco/research/leda/standards"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -83583,6 +84140,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -83601,9 +84161,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030015",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://books.google.com/books?vid=ISBN9780128126288"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -83733,6 +84298,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -83751,9 +84319,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030016",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1086/319579"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1086/319579"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -83973,6 +84546,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -83987,7 +84563,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait which indicates whether the plant stem [PO:0009047] (the vegetative shoot system [PO:0025607]) is woody, with <U+201C>woody<U+201D> defined to include both plant stems with secondary xylem (true wood) [PO:0005848] and those with wood-like lignification [CHEBI:6457] (woodiness in monocots and ferns)."
+          "@value": "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait which indicates whether the plant stem [PO:0009047] (the vegetative shoot system [PO:0025607]) is woody, with <U+00E2><U+20AC><U+0153>woody<U+00E2><U+20AC><U+009D> defined to include both plant stems with secondary xylem (true wood) [PO:0005848] and those with wood-like lignification [CHEBI:6457] (woodiness in monocots and ferns)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030018",
@@ -84131,6 +84707,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -84317,6 +84896,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -84372,7 +84954,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "This trait identifies explicit physical defence structures on a plant. The trait `plant_spinescence` indicates the degree of defence afforded to plants, with values defined by P<U+00E9>rez-Harguindeguy et al. 2013 (doi:10.1071/BT12225)."
+        "@value": "This trait identifies explicit physical defence structures on a plant. The trait `plant_spinescence` indicates the degree of defence afforded to plants, with values defined by P<U+00C3><U+00A9>rez-Harguindeguy et al. 2013 (doi:10.1071/BT12225)."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -84503,6 +85085,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -84660,6 +85245,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -84684,6 +85272,9 @@
         },
         {
           "@id": "https://books.google.com/books?vid=ISBN9780128126288"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -84852,6 +85443,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -85063,6 +85657,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -85211,6 +85808,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -85229,9 +85829,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030025",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1046/j.1365-2435.2001.00522.x"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1046/j.1365-2435.2001.00522.x"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "31/10/2022"
@@ -85694,6 +86299,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -86600,6 +87208,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -86630,6 +87241,9 @@
         },
         {
           "@id": "https://doi.org/10.1111/nph.15502"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -86789,6 +87403,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -86819,6 +87436,9 @@
         },
         {
           "@id": "https://doi.org/10.1111/nph.15502"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT12225"
         }
       ],
       "http://purl.org/dc/terms/reviewed": {
@@ -87117,6 +87737,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -87242,6 +87865,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -88199,7 +88825,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "Seedbank longevity classes are a feature of a `population` (sample) of seeds, not an individual seed. See as well the traits `seedbank_longevity` (numeric trait), `seed_dormancy_class` and the trait `seed_recruitment_timing`."
+        "@value": "Seedbank longevity classes are a feature of a `population` (sample) of seeds, not an individual seed. Also see the traits `seedbank_longevity` (numeric trait), `seed_dormancy_class` and the trait `seed_recruitment_timing`."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -88360,7 +88986,7 @@
       },
       "http://www.w3.org/2000/01/rdf-schema#comment": {
         "@language": "en",
-        "@value": "Seedbank longevity can only be measured on a `population` (sample) of seeds, not on an individual seed. See as well the traits `seedbank_longevity_class`,  `seed_dormancy_class` and `seed_recruitment_timing`."
+        "@value": "Seedbank longevity can only be measured on a `population` (sample) of seeds, not on an individual seed. Also see the traits `seedbank_longevity_class`,  `seed_dormancy_class` and `seed_recruitment_timing`."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -88467,7 +89093,7 @@
         },
         {
           "@language": "en",
-          "@value": "Physical [PATO:0002079], physiological [NCIT:C16990], and morphological [PATO:0000051] mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating<U+FFFD> [GO:0009845]."
+          "@value": "Physical [PATO:0002079], physiological [NCIT:C16990], and morphological [PATO:0000051] mechanisms [NCIT:C25343] that inhibit mature [PATO:0001701] seeds [PO:0009010] from germinating [GO:0009845]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030415",
@@ -88600,6 +89226,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -88618,9 +89247,14 @@
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030416",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1071/BT06106"
-      },
+      "http://purl.org/dc/terms/references": [
+        {
+          "@id": "https://doi.org/10.1111/jvs.12375"
+        },
+        {
+          "@id": "https://doi.org/10.1071/BT06106"
+        }
+      ],
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
         "@value": "30/11/2021"
@@ -88782,6 +89416,9 @@
           "@id": "https://orcid.org/0000-0003-0360-8321"
         },
         {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
+        },
+        {
           "@id": "https://orcid.org/0000-0001-5640-5910"
         }
       ],
@@ -88914,6 +89551,9 @@
         },
         {
           "@id": "https://orcid.org/0000-0003-0360-8321"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8305-3236"
         },
         {
           "@id": "https://orcid.org/0000-0001-5640-5910"
@@ -89386,6 +90026,9 @@
       "http://purl.org/dc/terms/identifier": "trait_0030512",
       "http://purl.org/dc/terms/references": [
         {
+          "@id": "https://doi.org/10.1038/sdata.2018.135"
+        },
+        {
           "@id": "https://doi.org/10.1071/BT20048"
         },
         {
@@ -89582,6 +90225,9 @@
       "http://purl.org/dc/terms/references": [
         {
           "@id": "https://doi.org/10.1111/nph.12001"
+        },
+        {
+          "@id": "https://doi.org/10.1038/sdata.2018.135"
         },
         {
           "@id": "https://doi.org/10.1071/BT20048"
@@ -91267,7 +91913,7 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The time interval from a fire until 50% of the individuals in a population produce mature fruit."
+          "@value": "The time interval from a fire until 50% of the individuals in a population produce flowers."
         },
         {
           "@language": "en",
@@ -91361,7 +92007,7 @@
       "http://www.w3.org/2004/02/skos/core#closeMatch": "Age at maturity of resprouts [BROT:41] (http://doi.org/10.1038/sdata.2018.135)",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The time interval from a fire until 50% of the individuals in a population produce mature fruit."
+        "@value": "The time interval from a fire until 50% of the individuals in a population produce flowers."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -92516,6 +93162,10 @@
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
+      "http://www.w3.org/2000/01/rdf-schema#comment": {
+        "@language": "en",
+        "@value": "In wildland environments it will be difficult to measure this trait on an individual taxon; it will instead be a 'community level' trait. Therefore, this trait will generally be used to document rates of fire spread in experimental situations."
+      },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
         "@value": "Leaf smoulder duration"
@@ -92630,6 +93280,10 @@
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#comment": {
+        "@language": "en",
+        "@value": "In wildland environments it will be difficult to measure this trait on an individual taxon; it will instead be a 'community level' trait. Therefore, this trait will generally be used to document rates of fire spread in experimental situations."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -92749,6 +93403,10 @@
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
+      "http://www.w3.org/2000/01/rdf-schema#comment": {
+        "@language": "en",
+        "@value": "In wildland environments it will be difficult to measure this trait on an individual taxon; it will instead be a 'community level' trait. Therefore, this trait will generally be used to document rates of fire spread in experimental situations."
+      },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
         "@value": "Leaf flame and smoulder duration"
@@ -92866,6 +93524,10 @@
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#comment": {
+        "@language": "en",
+        "@value": "In wildland environments it will be difficult to measure this trait on an individual taxon; it will instead be a 'community level' trait. Therefore, this trait will generally be used to document rates of fire spread in experimental situations."
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
@@ -93938,6 +94600,9 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "plant trait"
+      },
+      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
+        "@id": "https://w3id.org/APD/traits"
       }
     },
     {
