@@ -152,7 +152,7 @@ to_match_tmp <- triples_with_labels %>%
   filter(property == "label") %>%
   select(Subject_stripped, value)
  
-for (thistrait in list_of_traits[[1]][1:nrow(list_of_traits)]) {
+for (thistrait in list_of_traits[[1]]) {
   
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   
