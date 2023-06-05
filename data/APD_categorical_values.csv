@@ -715,7 +715,7 @@ seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, f
 seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigose, lineolate, scalariform, ridged)",seed_surface_texture
 seed_surface_texture_rough,rough,"Seed surface rough with no organisation of markings, resembling sandpaper. (Synonyms, scabrous)",seed_surface_texture
 seed_surface_texture_scaly,scaly,"Seed surface rough with loose scales differing in direction or not parallel in direction. (Synonyms, scurfy, squarrose)",seed_surface_texture
-seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture.",seed_surface_texture
+seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture. (Synonym, glabrous)",seed_surface_texture
 seed_surface_texture_spiny,spiny,"Seed surface with spines. (Synonyms, echinulate)",seed_surface_texture
 seed_surface_texture_wrinkled,wrinkled,"Seed surface with a wrinkled, rugose texture. (Synonyms, rugose, rugulose, bullate)",seed_surface_texture
 seedbank_location_seedbank,seedbank,"A seedbank exists, but its locations is not specified.",seedbank_location
