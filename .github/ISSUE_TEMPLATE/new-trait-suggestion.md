@@ -1,10 +1,10 @@
 ---
 name: New trait suggestion
-description: Suggest a new trait to add to the AusTraits Plant Dictionary (APD)
-title: ["Trait suggestion"]
-labels: ["new_trait"]
-assignees:
-  - ehwenk
+about: Make a suggestion for a new trait
+title: '["Trait suggestion"]'
+labels: ''
+assignees: ehwenk
+
 ---
 
 body:
@@ -81,7 +81,4 @@ body:
     description: If you have additional information to provide about this trait, please do so here. This may include keywords, mentions of the trait in other databases, or allowable ranges (for numeric traits).
     value: "value range should be 1-100"
   validations:
-    required: false  
-
-
-  
+    required: false
