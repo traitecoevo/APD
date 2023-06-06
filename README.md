@@ -57,4 +57,28 @@ The code in `build.qmd` builds the APD from the data files in `data/`, including
   - uses the `quarto` package for R, with instructions on formating from <https://quarto.org/docs/reference/projects/websites.html
   - we were inspired by <https://i-adopt.github.io> with code from <https://github.com/i-adopt/i-adopt.github.io>
 
-The APD is accessible via <https://w3id.org/APD/> and <https://w3id.org/APD/traits/>. These links redirect to the site generated here. To enable the links, we sent a pull request to the [w3id.org repo](https://github.com/perma-id/w3id.org/), like this example from <https://github.com/perma-id/w3id.org/blob/master/iadopt/>.
+The APD is accessible via <https://w3id.org/APD/>, <https://w3id.org/APD/traits/>, and <https://w3id.org/APD/glossary/>. These links redirect to the site generated here. To enable the links, we sent a pull request to the [w3id.org repo](https://github.com/perma-id/w3id.org/), like this example from <https://github.com/perma-id/w3id.org/blob/master/iadopt/>.
+
+Redirect syntax can be tested at <https://htaccess.madewithlove.com>.
+## Testing w3id.org access
+
+To test the redirects via <w3id.org/APD> try the following
+
+```
+curl -sH "Accept: text/turtle" -L https://w3id.org/APD > temp.ttl
+curl -sH "Accept: text/turtle" -L https://w3id.org/APD/traits > temp2.ttl
+curl -sH "Accept: text/turtle" -L https://w3id.org/APD/traits\#trait_0001 > temp3.ttl
+
+curl -sH "Accept: application/n-triples" -L https://w3id.org/APD > temp.nt
+curl -sH "Accept: application/n-triples" -L https://w3id.org/APD/traits > temp2.nt
+curl -sH "Accept: application/n-triples" -L https://w3id.org/APD/traits\#trait_0001 > temp3.nt
+
+curl -sH "Accept: text/html" -L https://w3id.org/APD > temp.html
+curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
+curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
+```
+
+## Acknowledgements
+
+We are grateful to S Cox, J Smillie, K Levett, M Barlow, and C Brady for useful conversations. The AusTraits project received investment (<https://doi.org/10.47486/TD044>, <https://doi.org/10.47486/DP720>) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). 
+
