@@ -343,11 +343,21 @@ leaf_margin_toothed,toothed,"Leaf margin has small projections or lobes along th
 leaf_margin_toothed_serrate,toothed_serrate,"Type of toothed leaf margin with sharp teeth that are angled toward the tip of the leaf. (Synonyms, saw-toothed)",leaf_margin
 leaf_margin_toothed_dentate,toothed_dentate,Type of toothed leaf margin with sharp teeth that point outwards at right angles to the leaf margin.,leaf_margin
 leaf_margin_toothed_crenate,toothed_crenate,"Type of toothed leaf margin with teeth that are rounded or obtuse, rather than having a sharp apex. [PO:0025519]",leaf_margin
-leaf_margin_posture_involute,involute,"Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)",leaf_margin_posture
-leaf_margin_posture_revolute,revolute,Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963],leaf_margin_posture
+leaf_margin_posture_involute,involute,"Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)",leaf_margin_posture
+leaf_margin_posture_revolute,revolute,"Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963]",leaf_margin_posture
 leaf_margin_posture_recurved,recurved,Leaf tip is curved outward or downward. [PATO:0002211],leaf_margin_posture
-leaf_margin_posture_flat,flat,"Leaf lamina, including margins, is a flat plane. [PATO:0000407]",leaf_margin_posture
-leaf_margin_posture_undulate,undulate,Leaf margins wavy in a vertical plane.,leaf_margin_posture
+leaf_margin_posture_flat,flat,"Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]",leaf_margin_posture
+leaf_margin_posture_undulate,undulate,"Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)",leaf_margin_posture
+leaf_lamina_posture_concave,concave,A longitudinal posture term indicating the leaf lamina is curved upward along the central axis.,leaf_lamina_posture
+leaf_lamina_posture_conduplicate,conduplicate,"A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)",leaf_lamina_posture
+leaf_lamina_posture_convex,convex,"A longitudinal posture term indicating the leaf lamina is curved downward along the central axis. (Synonym, concavoconvex, planoconvex)",leaf_lamina_posture
+leaf_lamina_posture_convolute,convolute,"Leaf lamina is contorted. (Synonym, twisted)",leaf_lamina_posture
+leaf_lamina_posture_flat,flat,The leaf lamina is a 2-dimensional plane.,leaf_lamina_posture
+leaf_lamina_posture_involute,involute,A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward.,leaf_lamina_posture
+leaf_lamina_posture_plicate,plicate,"Leaf margin is pleated, with a series of longitudinal folds.",leaf_lamina_posture
+leaf_lamina_posture_recurved,recurved,"A transverse posture term indicating the leaf tip curved outward to downward. (Synonym, squarrose)",leaf_lamina_posture
+leaf_lamina_posture_revolute,revolute,A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward.,leaf_lamina_posture
+leaf_lamina_posture_undulate,undulate,"The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)",leaf_lamina_posture
 leaf_lobation_unlobed,unlobed,Leaf margin lacks projections or indentations that extend more than 1/8 of the distance to the midrib.,leaf_lobation
 leaf_lobation_lobed,lobed,"Leaf margin has incisions, either rounded or sharp-tipped, that extend more than 1/8 of the distance to the midrib.",leaf_lobation
 leaf_lobation_lobed_deep,lobed_deep,"Leaf margin with lobes that extend more than halfway to the midrib. (Synonyms, parted, divided)",leaf_lobation
