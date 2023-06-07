@@ -13,7 +13,8 @@ format:
 <!-- <dt> **This version**:</dt> <dd><https://w3id.org/APD/2023-05-1/APD.html>  </dd> -->
 <dt>**Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
 <!-- <dt> **Previous version**:</dt> <dd> <https://w3id.org/APD/2023-02-1/APD.html> </dd> -->
-<dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
+<dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
+
 <dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
   [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
   [Timothy Brodribb](https://orcid.org/0000-0002-4964-6107),
@@ -22,7 +23,6 @@ format:
   [Félix de Tombeur](https://orcid.org/0000-0002-6012-8458),
   [Lily Dun](https://orcid.org/0000-0002-0712-5143),
   [David Ellsworth](https://orcid.org/0000-0002-9699-2272),
-  [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115),
   [Carl Gosper](https://orcid.org/0000-0002-0962-5117),
   [Lydia Guja](https://orcid.org/0000-0001-5945-438X),
   [Gregory J. Jordan](https://orcid.org/0000-0002-6033-2766),
