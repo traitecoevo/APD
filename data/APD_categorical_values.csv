@@ -348,9 +348,9 @@ leaf_margin_posture_revolute,revolute,"Leaf margins along the side of the leaf a
 leaf_margin_posture_recurved,recurved,Leaf tip is curved outward or downward. [PATO:0002211],leaf_margin_posture
 leaf_margin_posture_flat,flat,"Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]",leaf_margin_posture
 leaf_margin_posture_undulate,undulate,"Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)",leaf_margin_posture
-leaf_lamina_posture_concave,concave,A longitudinal posture term indicating the leaf lamina is curved upward along the central axis.,leaf_lamina_posture
+leaf_lamina_posture_concave,concave,"A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave.",leaf_lamina_posture
 leaf_lamina_posture_conduplicate,conduplicate,"A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)",leaf_lamina_posture
-leaf_lamina_posture_convex,convex,"A longitudinal posture term indicating the leaf lamina is curved downward along the central axis. (Synonym, concavoconvex, planoconvex)",leaf_lamina_posture
+leaf_lamina_posture_convex,convex,"A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)",leaf_lamina_posture
 leaf_lamina_posture_convolute,convolute,"Leaf lamina is contorted. (Synonym, twisted)",leaf_lamina_posture
 leaf_lamina_posture_flat,flat,The leaf lamina is a 2-dimensional plane.,leaf_lamina_posture
 leaf_lamina_posture_involute,involute,A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward.,leaf_lamina_posture
