@@ -1,5 +1,8 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
+params:
+  version: 1.0.0
+  previous_version: 1.0.0
 format: 
   html:
     smooth-scroll: true
@@ -8,14 +11,18 @@ format:
     embed-resources: true
 ---
 
-# Release `r Sys.Date()`
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+version <- params$version
+
+link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/APD.html>", v)
+```
+## Release `r version`
 
 <dl>
-<!-- <dt> **This version**:</dt> <dd><https://w3id.org/APD/2023-05-1/APD.html>  </dd> -->
-<dt>**Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
-<!-- <dt> **Previous version**:</dt> <dd> <https://w3id.org/APD/2023-02-1/APD.html> </dd> -->
+<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
+<dt> **This version**:</dt> <dd>`r link_version(params$version)`  </dd>
+<dt> **Previous version**:</dt> <dd>`r link_version(params$previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
-
 <dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
   [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
   [Timothy Brodribb](https://orcid.org/0000-0002-4964-6107),
@@ -126,7 +133,7 @@ for (thistrait in trait_groupings$identifier) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
@@ -155,7 +162,7 @@ for (thistrait in list_of_traits[[1]]) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
@@ -209,7 +216,7 @@ for (thistrait in traits_names_tmp$trait_name) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", cat_val, fixed = TRUE)    
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
       create_APD_categorical_values_table(anchor, triples_with_labels)
@@ -243,7 +250,7 @@ for (thistrait in glossary_terms$identifier) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID  
   term_to_display <- to_match_tmp$value[match(thistrait, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_glossary, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
