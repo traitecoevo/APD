@@ -14,12 +14,12 @@ format:
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 version <- params$version
 
-link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/APD.html>", v)
+link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html>", v)
 ```
 ## Release `r version`
 
 <dl>
-<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
+<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/index.html> </dd>
 <dt> **This version**:</dt> <dd>`r link_version(params$version)`  </dd>
 <dt> **Previous version**:</dt> <dd>`r link_version(params$previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
@@ -56,7 +56,7 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/APD.html>"
 <dt>License: </dt> <dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0"></a> </dd>
 <!-- <dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl"></a></dd> -->
 
-<dt>Cite as:</dt> <dd>Wenk et al, APD ontology, Retrieved from: https://w3id.org/APD/0.1.0</dd> </dl>
+<dt>Cite as:</dt> <dd>Wenk et al, APD ontology, Retrieved from: https://w3id.org/APD/ </dd> </dl>
 
 <!-- Examples:
 https://i-adopt.github.io/index.html
