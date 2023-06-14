@@ -5841,23 +5841,6 @@
       }
     },
     {
-      "@id": "http://purl.obolibrary.org/obo/PATO_0000617",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A shape quality inhering in a bearer by virtue of the bearer's having one or more angle(s) in its length."
-      },
-      "http://purl.org/dc/terms/identifier": "PATO_0000617",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "bent"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "bent"
-      }
-    },
-    {
       "@id": "http://purl.obolibrary.org/obo/PATO_0000892",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "http://purl.org/dc/terms/description": {
@@ -7045,23 +7028,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "velocity"
-      }
-    },
-    {
-      "@id": "http://purl.obolibrary.org/obo/PATO_0002266",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A shape that inheres in a 3 dimensional entity."
-      },
-      "http://purl.org/dc/terms/identifier": "PATO_0002266",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "3-D shape"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "3-D shape"
       }
     },
     {
@@ -16080,7 +16046,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A bark mass trait [APD:trait_group_0012006] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."
+        "@value": "A bark mass trait [APD:xxxxxxx] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."
       },
       "http://purl.org/dc/terms/identifier": "glossary_40014",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -16089,7 +16055,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A bark mass trait [APD:trait_group_0012006] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."
+        "@value": "A bark mass trait [APD:xxxxxxx] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -16276,7 +16242,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD_glossary:glossary_40106], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."
+        "@value": "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD:xxxxxxx], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."
       },
       "http://purl.org/dc/terms/identifier": "glossary_40062",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -16285,7 +16251,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD_glossary:glossary_40106], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."
+        "@value": "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD:xxxxxxx], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -27349,369 +27315,6 @@
       }
     },
     {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_concave",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_concave",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "concave"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "concave"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_conduplicate",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)"
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_conduplicate",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "conduplicate"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "conduplicate"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_convex",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)"
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_convex",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "convex"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "convex"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_convolute",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Leaf lamina is contorted. (Synonym, twisted)"
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_convolute",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "convolute"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Leaf lamina is contorted. (Synonym, twisted)"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "convolute"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_flat",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "The leaf lamina is a 2-dimensional plane."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_flat",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "flat"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The leaf lamina is a 2-dimensional plane."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "flat"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_incurved",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Leaf tip is curved upward."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_incurved",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "incurved"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Leaf tip is curved upward."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "incurved"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_involute",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_involute",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "involute"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "involute"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_plicate",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Leaf margin is pleated, with a series of longitudinal folds."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_plicate",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "plicate"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Leaf margin is pleated, with a series of longitudinal folds."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "plicate"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_recurved",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Leaf tip is curved outward or downward. [PATO:0002211]"
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_recurved",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "recurved"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Leaf tip is curved outward or downward. [PATO:0002211]"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "recurved"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_revolute",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward."
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_revolute",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "revolute"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "revolute"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_undulate",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#NamedIndividual",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)"
-      },
-      "http://purl.org/dc/terms/identifier": "leaf_lamina_posture_undulate",
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "undulate"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_0011319"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)"
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": {
-        "@id": "https://w3id.org/APD/traits"
-      },
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "undulate"
-      }
-    },
-    {
       "@id": "https://w3id.org/APD/traits/leaf_lobation_lobed",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -27884,7 +27487,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]"
+        "@value": "Leaf lamina, including margins, is a flat plane. [PATO:0000407]"
       },
       "http://purl.org/dc/terms/identifier": "leaf_margin_posture_flat",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -27899,7 +27502,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]"
+        "@value": "Leaf lamina, including margins, is a flat plane. [PATO:0000407]"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -27917,7 +27520,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)"
+        "@value": "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"
       },
       "http://purl.org/dc/terms/identifier": "leaf_margin_posture_involute",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -27932,7 +27535,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)"
+        "@value": "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -27943,6 +27546,39 @@
       }
     },
     {
+      "@id": "https://w3id.org/APD/traits/leaf_margin_posture_recurved",
+      "@type": [
+        "http://www.w3.org/2002/07/owl#NamedIndividual",
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Leaf tip is curved outward or downward. [PATO:0002211]"
+      },
+      "http://purl.org/dc/terms/identifier": "leaf_margin_posture_recurved",
+      "http://www.w3.org/2000/01/rdf-schema#label": {
+        "@language": "en",
+        "@value": "recurved"
+      },
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
+        "@id": "https://w3id.org/APD/traits/trait_0011314"
+      },
+      "http://www.w3.org/2004/02/skos/core#broader": {
+        "@id": "https://w3id.org/APD/traits/trait_0011314"
+      },
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Leaf tip is curved outward or downward. [PATO:0002211]"
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": {
+        "@id": "https://w3id.org/APD/traits"
+      },
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "recurved"
+      }
+    },
+    {
       "@id": "https://w3id.org/APD/traits/leaf_margin_posture_revolute",
       "@type": [
         "http://www.w3.org/2002/07/owl#NamedIndividual",
@@ -27950,7 +27586,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonym, recurved)"
+        "@value": "Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963]"
       },
       "http://purl.org/dc/terms/identifier": "leaf_margin_posture_revolute",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -27965,7 +27601,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonym, recurved)"
+        "@value": "Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963]"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -27983,7 +27619,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)"
+        "@value": "Leaf margins wavy in a vertical plane."
       },
       "http://purl.org/dc/terms/identifier": "leaf_margin_posture_undulate",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -27998,7 +27634,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)"
+        "@value": "Leaf margins wavy in a vertical plane."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -39863,7 +39499,7 @@
       ],
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Seed surface smooth, lacking texture. (Synonym, glabrous)"
+        "@value": "Seed surface smooth, lacking texture."
       },
       "http://purl.org/dc/terms/identifier": "seed_surface_texture_smooth",
       "http://www.w3.org/2000/01/rdf-schema#label": {
@@ -39878,7 +39514,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Seed surface smooth, lacking texture. (Synonym, glabrous)"
+        "@value": "Seed surface smooth, lacking texture."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -44705,8 +44341,8 @@
         },
         "g/g"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -49330,8 +48966,8 @@
         },
         "g/g"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "0.5",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "50",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "5",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -49414,8 +49050,8 @@
         },
         "g/g"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "0.3",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "30",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "5",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -52649,8 +52285,8 @@
         },
         "g/g"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -52734,8 +52370,8 @@
         },
         "g/g"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -54322,7 +53958,6 @@
       "http://www.w3.org/2004/02/skos/core#broader": {
         "@id": "https://w3id.org/APD/traits/trait_group_0011802"
       },
-      "http://www.w3.org/2004/02/skos/core#changeNote": "stem_count_categorical",
       "http://www.w3.org/2004/02/skos/core#closeMatch": [
         "Plant biomass and allometry: Shoots per plant [TRY:1034] (https://www.try-db.org/de/de.php)",
         {
@@ -56142,132 +55777,6 @@
       "https://w3id.org/uom/UCUM_code": "mg"
     },
     {
-      "@id": "https://w3id.org/APD/traits/trait_0011219",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000117"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000122"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "31/05/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "Length of the petiole from the leaf base to the leaf axil."
-        },
-        {
-          "@language": "en",
-          "@value": "Length [PATO:0000122] of the petiole [PO:0020038]), from the leaf base [PO:0020040] to the leaf axil [PO:0009023]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0011219",
-      "http://semanticscience.org/resource/SIO_000147": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0020038"
-      },
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "cm",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Petiole length"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011204"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "petiole_length",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011204"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Length of the petiole from the leaf base to the leaf axil."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Petiole length"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0025034"
-      },
-      "https://w3id.org/uom/UCUM_code": "cm"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0011220",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000117"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000921"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "31/05/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "Width of the petiole."
-        },
-        {
-          "@language": "en",
-          "@value": "Width [PATO:0000921] of the petiole [PO:0020038]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0011220",
-      "http://semanticscience.org/resource/SIO_000147": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0020038"
-      },
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "cm",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "200",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Petiole width"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011204"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "petiole_width",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011204"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Width of the petiole."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Petiole width"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0025034"
-      },
-      "https://w3id.org/uom/UCUM_code": "cm"
-    },
-    {
       "@id": "https://w3id.org/APD/traits/trait_0011230",
       "@type": [
         "http://www.w3.org/2002/07/owl#Class",
@@ -56369,7 +55878,7 @@
         },
         "g/m2"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "3000",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "2000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -58348,6 +57857,9 @@
           "@id": "https://w3id.org/APD/traits/leaf_margin_posture_flat"
         },
         {
+          "@id": "https://w3id.org/APD/traits/leaf_margin_posture_recurved"
+        },
+        {
           "@id": "https://w3id.org/APD/traits/leaf_margin_posture_revolute"
         },
         {
@@ -58919,14 +58431,9 @@
         "@type": "xsd:date",
         "@value": "31/10/2022"
       },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0020039"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000492"
-        }
-      ],
+      "http://semanticscience.org/resource/SIO_000147": {
+        "@id": "http://purl.obolibrary.org/obo/TO_0000492"
+      },
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": [
         {
           "@id": "https://w3id.org/uom/mm"
@@ -58971,112 +58478,6 @@
         "@id": "http://purl.obolibrary.org/obo/PO_0025034"
       },
       "https://w3id.org/uom/UCUM_code": "mm"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0011319",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001710"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0002266"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000052"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "7/6/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "The 3-dimension shape of the surface of the leaf lamina, including its degree of curvature and bending."
-        },
-        {
-          "@language": "en",
-          "@value": "A leaf shape trait [TO:0000492] which is the 3-D shape [PATO:0002266] of the surface [NCIT:C25245] of the leaf lamina [PO:0020039], including its degree of curvature [PATO:0001591] and whether it is bent [PATO:0000617]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0011319",
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0020039"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000492"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Leaf lamina posture (leaf 3-dimensional shape)"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011304"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "leaf_lamina_posture",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0011304"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The 3-dimension shape of the surface of the leaf lamina, including its degree of curvature and bending."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_undulate"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_revolute"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_recurved"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_plicate"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_involute"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_incurved"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_flat"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_convolute"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_convex"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_conduplicate"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/leaf_lamina_posture_concave"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Leaf lamina posture (leaf 3-dimensional shape)"
-      },
-      "http://www.w3.org/2004/02/skos/core#scopeNote": {
-        "@language": "en",
-        "@value": "Plants with leaves"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0025034"
-      }
     },
     {
       "@id": "https://w3id.org/APD/traits/trait_0011360",
@@ -63818,7 +63219,7 @@
         },
         "mm"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "200",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "50",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -66543,7 +65944,7 @@
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "cm",
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "200",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -66630,7 +66031,7 @@
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "cm",
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "200",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -76153,7 +75554,7 @@
         "umol{CO2}/m2/s"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "65",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "2",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "5",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -76270,7 +75671,7 @@
         },
         "umol{CO2}/m2/s"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "50",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "40",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -77345,7 +76746,7 @@
         "umol/m2/s"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "800",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "50",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -77471,7 +76872,7 @@
         "umol/m2/s"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "800",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "35",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "50",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -80967,9 +80368,6 @@
       "http://purl.org/dc/terms/identifier": "trait_0020813",
       "http://purl.org/dc/terms/references": [
         {
-          "@id": "https://www.indexdatabase.de/"
-        },
-        {
           "@id": "https://doi.org/10.1080/014311697217387"
         },
         {
@@ -82183,121 +81581,6 @@
       "https://w3id.org/uom/UCUM_code": "kg.m/MPa/s"
     },
     {
-      "@id": "https://w3id.org/APD/traits/trait_0021022",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001029"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001035"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0000161"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001470"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/22004"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001585"
-        }
-      ],
-      "http://purl.org/datacite/v4.4/IsReviewedBy": [
-        {
-          "@id": "https://orcid.org/0000-0002-9105-640X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-4964-6107"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "14/07/2021"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "Measure of the efficiency of water flow through a root segment normalised to the root cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the root segment (MPa), divided by the root cross sectional area (1/m2), then multiplied by the root length (m)."
-        },
-        {
-          "@language": "en",
-          "@value": "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the water potential gradient across the root segment (MPa), divided by the root [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0021022",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/"
-      },
-      "http://purl.org/dc/terms/reviewed": {
-        "@type": "xsd:date",
-        "@value": "31/05/2023"
-      },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000237"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0004513"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/22133"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/NCIT_C70693"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/22311"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/CHEBI_15377"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0006833"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": [
-        {
-          "@id": "https://w3id.org/uom/kg.m-1.MPa-1.s-1"
-        },
-        "kg/m/MPa/s"
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "500",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Root specific hydraulic conductivity"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "root_specific_hydraulic_conductivity",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Measure of the efficiency of water flow through a root segment normalised to the root cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the root segment (MPa), divided by the root cross sectional area (1/m2), then multiplied by the root length (m)."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Root specific hydraulic conductivity"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0009005"
-      },
-      "https://w3id.org/uom/UCUM_code": "kg/m/MPa/s"
-    },
-    {
       "@id": "https://w3id.org/APD/traits/trait_0021030",
       "@type": [
         "http://www.w3.org/2002/07/owl#Class",
@@ -82534,11 +81817,11 @@
       "http://purl.org/dc/terms/description": [
         {
           "@language": "en",
-          "@value": "The ratio of the change in stem tissue water volume to the change in stem tissue water potential."
+          "@value": "The ratio of the change in tissue water volume to the change in tissue water potential."
         },
         {
           "@language": "en",
-          "@value": "The ratio  [PATO:0001470] of the change in stem [PO:0009047] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in stem tissue water potential [EnvThes:22311]."
+          "@value": "The ratio  [PATO:0001470] of the change in tissue [CARO:0000043] water [CHEBI:15377] volume to the change in tissue water potential [EnvThes:22311]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021032",
@@ -82547,7 +81830,7 @@
       },
       "http://purl.org/dc/terms/reviewed": {
         "@type": "xsd:date",
-        "@value": "14/06/2023"
+        "@value": "31/05/2023"
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
@@ -82570,33 +81853,34 @@
         {
           "@id": "https://w3id.org/uom/kg.m-3.MPa-1"
         },
-        "kg{H20}/m3/MPa"
+        "kg/m3/MPa"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "700",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "5",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "-5",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
       "http://www.w3.org/2000/01/rdf-schema#label": {
         "@language": "en",
-        "@value": "Stem sapwood capacitance (C)"
+        "@value": "Whole plant intrinsic capacitance (C)"
       },
       "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
         "@id": "https://w3id.org/APD/traits/trait_group_0021002"
       },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "stem_sapwood_capacitance",
+      "http://www.w3.org/2004/02/skos/core#altLabel": "whole_plant_intrinsic_capacitance",
       "http://www.w3.org/2004/02/skos/core#broader": {
         "@id": "https://w3id.org/APD/traits/trait_group_0021002"
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "The ratio of the change in stem tissue water volume to the change in stem tissue water potential."
+        "@value": "The ratio of the change in tissue water volume to the change in tissue water potential."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
-        "@value": "Stem sapwood capacitance (C)"
+        "@value": "Whole plant intrinsic capacitance (C)"
       },
+      "http://www.w3.org/2004/02/skos/core#relatedMatch": "Leaf water capacitance [TRY:711] (https://www.try-db.org/de/de.php)",
       "https://w3id.org/iadopt/ont/hasContextObject": [
         {
           "@id": "http://purl.obolibrary.org/obo/PO_0009047"
@@ -82605,193 +81889,6 @@
           "@id": "http://purl.obolibrary.org/obo/PO_0000003"
         }
       ],
-      "https://w3id.org/uom/UCUM_code": "kg/m3/MPa"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0021033",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
-        "@id": "http://purl.obolibrary.org/obo/PATO_0002205"
-      },
-      "http://purl.org/datacite/v4.4/IsReviewedBy": [
-        {
-          "@id": "https://orcid.org/0000-0002-9105-640X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-4964-6107"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "22/05/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "The ratio of the change in leaf tissue water volume to the change in leaf tissue water potential."
-        },
-        {
-          "@language": "en",
-          "@value": "The ratio  [PATO:0001470] of the change in leaf [PO:0025034] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in leaf tissue water potential [EnvThes:22311]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0021033",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1007/978-94-007-1242-3_13"
-      },
-      "http://purl.org/dc/terms/reviewed": {
-        "@type": "xsd:date",
-        "@value": "14/06/2023"
-      },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "https://w3id.org/APD/glossary/glossary_40124"
-        },
-        {
-          "@id": "http://purl.jp/bio/4/id/200906064703668091"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000701"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000237"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001620"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/CHEBI_15377"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "1/MPa",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "70",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#comment": {
-        "@language": "en",
-        "@value": "This trait is derived from pressure-volume curves."
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Leaf capacitance (Cleaf)"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "leaf_capacitance",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The ratio of the change in leaf tissue water volume to the change in leaf tissue water potential."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Leaf capacitance (Cleaf)"
-      },
-      "http://www.w3.org/2004/02/skos/core#relatedMatch": "Leaf water capacitance [TRY:711] (https://www.try-db.org/de/de.php)",
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0025034"
-      },
-      "https://w3id.org/uom/UCUM_code": "1/MPa"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0021034",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
-        "@id": "http://purl.obolibrary.org/obo/PATO_0002205"
-      },
-      "http://purl.org/datacite/v4.4/IsReviewedBy": [
-        {
-          "@id": "https://orcid.org/0000-0002-9105-640X"
-        },
-        {
-          "@id": "https://orcid.org/0000-0002-4964-6107"
-        }
-      ],
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "22/05/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "The ratio of the change in root tissue water volume to the change in root tissue water potential."
-        },
-        {
-          "@language": "en",
-          "@value": "The ratio  [PATO:0001470] of the change in root [PO:0009005] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in root tissue water potential [EnvThes:22311]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0021034",
-      "http://purl.org/dc/terms/references": {
-        "@id": "https://doi.org/10.1007/978-94-007-1242-3_13"
-      },
-      "http://purl.org/dc/terms/reviewed": {
-        "@type": "xsd:date",
-        "@value": "14/06/2023"
-      },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.jp/bio/4/id/200906064703668091"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000701"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000237"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001620"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/CHEBI_15377"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": [
-        {
-          "@id": "https://w3id.org/uom/kg.m-3.MPa-1"
-        },
-        "kg{H20}/m3/MPa"
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "700",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Root sapwood capacitance (C)"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "root_sapwood_capacitance",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The ratio of the change in root tissue water volume to the change in root tissue water potential."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Root sapwood capacitance (C)"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0009005"
-      },
       "https://w3id.org/uom/UCUM_code": "kg/m3/MPa"
     },
     {
@@ -84104,104 +83201,6 @@
         "@id": "http://purl.obolibrary.org/obo/PO_0025034"
       },
       "https://w3id.org/uom/UCUM_code": "g/g"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0021062",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0001035"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PATO_0002284"
-        }
-      ],
-      "http://purl.org/datacite/v4.4/IsReviewedBy": {
-        "@id": "https://orcid.org/0000-0002-9105-640X"
-      },
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "14/06/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "Root xylem water pressure value at which root hydraulic conductivity has declined by 50% from the mean maximum rate of hydraulic conductivity."
-        },
-        {
-          "@language": "en",
-          "@value": "The tension [PATO:0002284] (water pressure) (water potential [EnvThes:22311]) in root [PO:0009005] xylem vessels [PO:0025417] at which the hydraulic conductivity [EnvThes:22133] has declined by 50% from the mean maximum [NCIT:C25564] rate [PATO:0000161]."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0021062",
-      "http://purl.org/dc/terms/references": [
-        {
-          "@id": "https://doi.org/10.1111/jipb.12534"
-        },
-        {
-          "@id": "https://prometheusprotocols.net/function/water-relations/xylem-vulnerability-curves/"
-        }
-      ],
-      "http://purl.org/dc/terms/reviewed": {
-        "@type": "xsd:date",
-        "@value": "14/06/2023"
-      },
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000276"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/TO_0000237"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/22133"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0005352"
-        },
-        {
-          "@id": "http://vocabs.lter-europe.net/EnvThes/22311"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": [
-        {
-          "@id": "https://w3id.org/uom/MPa"
-        },
-        "MPa"
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "0",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "-20",
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Root xylem pressure, 50% lost conductivity"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "root_water_potential_50percent_lost_conductivity",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0021002"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Root xylem water pressure value at which root hydraulic conductivity has declined by 50% from the mean maximum rate of hydraulic conductivity."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Root xylem pressure, 50% lost conductivity"
-      },
-      "http://www.w3.org/2004/02/skos/core#relatedMatch": "Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism vulnerability, (P20, P50, P88) [TRY:719] (https://www.try-db.org/de/de.php)",
-      "https://w3id.org/iadopt/ont/hasContextObject": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0009005"
-      },
-      "https://w3id.org/uom/UCUM_code": "MPa"
     },
     {
       "@id": "https://w3id.org/APD/traits/trait_0022012",
@@ -90654,86 +89653,6 @@
         }
       ],
       "https://w3id.org/uom/UCUM_code": "{count}/{count}"
-    },
-    {
-      "@id": "https://w3id.org/APD/traits/trait_0030419",
-      "@type": [
-        "http://www.w3.org/2002/07/owl#Class",
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic": {
-        "@id": "http://purl.obolibrary.org/obo/PATO_0001309"
-      },
-      "http://purl.org/dc/terms/created": {
-        "@type": "xsd:date",
-        "@value": "10/6/2023"
-      },
-      "http://purl.org/dc/terms/description": [
-        {
-          "@language": "en",
-          "@value": "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."
-        },
-        {
-          "@language": "en",
-          "@value": "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."
-        }
-      ],
-      "http://purl.org/dc/terms/identifier": "trait_0030419",
-      "http://semanticscience.org/resource/SIO_000147": [
-        {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
-        },
-        {
-          "@id": "http://purl.bioontology.org/ontology/MESH/D000068098"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/XCO_0000000"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/ENVO_01000203"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/GO_0009845"
-        }
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/expectedUnit": [
-        {
-          "@id": "https://w3id.org/uom/d"
-        },
-        "d"
-      ],
-      "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#label": {
-        "@language": "en",
-        "@value": "Seed germination time"
-      },
-      "http://www.w3.org/2000/01/rdf-schema#subClassOf": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-      },
-      "http://www.w3.org/2004/02/skos/core#altLabel": "seed_germination_time",
-      "http://www.w3.org/2004/02/skos/core#broader": {
-        "@id": "https://w3id.org/APD/traits/trait_group_0030504"
-      },
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/traits",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "Seed germination time"
-      },
-      "https://w3id.org/iadopt/ont/hasContextObject": [
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0009010"
-        },
-        {
-          "@id": "http://purl.obolibrary.org/obo/PO_0025082"
-        }
-      ],
-      "https://w3id.org/uom/UCUM_code": "d"
     },
     {
       "@id": "https://w3id.org/APD/traits/trait_0030510",
@@ -97314,12 +96233,6 @@
           "@id": "https://w3id.org/APD/traits/trait_0011230"
         },
         {
-          "@id": "https://w3id.org/APD/traits/trait_0011220"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0011219"
-        },
-        {
           "@id": "https://w3id.org/APD/traits/trait_0011215"
         },
         {
@@ -97458,9 +96371,6 @@
         "@id": "https://w3id.org/APD/traits"
       },
       "http://www.w3.org/2004/02/skos/core#narrower": [
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0011319"
-        },
         {
           "@id": "https://w3id.org/APD/traits/trait_0011318"
         },
@@ -99484,9 +98394,6 @@
           "@id": "https://w3id.org/APD/traits/trait_0020814"
         },
         {
-          "@id": "https://w3id.org/APD/traits/trait_0021062"
-        },
-        {
           "@id": "https://w3id.org/APD/traits/trait_0021061"
         },
         {
@@ -99523,12 +98430,6 @@
           "@id": "https://w3id.org/APD/traits/trait_0021050"
         },
         {
-          "@id": "https://w3id.org/APD/traits/trait_0021034"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0021033"
-        },
-        {
           "@id": "https://w3id.org/APD/traits/trait_0021032"
         },
         {
@@ -99536,9 +98437,6 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0021030"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0021022"
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0021021"
@@ -100054,9 +98952,6 @@
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0030654"
-        },
-        {
-          "@id": "https://w3id.org/APD/traits/trait_0030419"
         },
         {
           "@id": "https://w3id.org/APD/traits/trait_0030418"

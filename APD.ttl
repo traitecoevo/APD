@@ -2433,13 +2433,6 @@ obo:PATO_0000600
     rdfs:label "increased width"@en ;
     skos:prefLabel "increased width"@en .
 
-obo:PATO_0000617
-    dcterms:description "A shape quality inhering in a bearer by virtue of the bearer's having one or more angle(s) in its length."@en ;
-    dcterms:identifier "PATO_0000617" ;
-    a owl:Class ;
-    rdfs:label "bent"@en ;
-    skos:prefLabel "bent"@en .
-
 obo:PATO_0000892
     dcterms:description "A female fertility quality inhering in a female by virtue of the bearer's being incapable of initiating, sustaining, or supporting reproduction."@en ;
     dcterms:identifier "PATO_0000892" ;
@@ -2929,13 +2922,6 @@ obo:PATO_0002242
     a owl:Class ;
     rdfs:label "velocity"@en ;
     skos:prefLabel "velocity"@en .
-
-obo:PATO_0002266
-    dcterms:description "A shape that inheres in a 3 dimensional entity."@en ;
-    dcterms:identifier "PATO_0002266" ;
-    a owl:Class ;
-    rdfs:label "3-D shape"@en ;
-    skos:prefLabel "3-D shape"@en .
 
 obo:PATO_0002267
     dcterms:description "[no definition]"@en ;
@@ -6757,11 +6743,11 @@ APD_glossary:glossary_40006
     skos:topConceptOf <https://w3id.org/APD/glossary> .
 
 APD_glossary:glossary_40014
-    dcterms:description "A bark mass trait [APD:trait_group_0012006] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."@en ;
+    dcterms:description "A bark mass trait [APD:xxxxxxx] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."@en ;
     dcterms:identifier "glossary_40014" ;
     a owl:Class, skos:Concept ;
     rdfs:label "bark water content"@en ;
-    skos:definition "A bark mass trait [APD:trait_group_0012006] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."@en ;
+    skos:definition "A bark mass trait [APD:xxxxxxx] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518]."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "bark water content"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
@@ -6827,11 +6813,11 @@ APD_glossary:glossary_40060
     skos:topConceptOf <https://w3id.org/APD/glossary> .
 
 APD_glossary:glossary_40062
-    dcterms:description "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD_glossary:glossary_40106], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."@en ;
+    dcterms:description "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD:xxxxxxx], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."@en ;
     dcterms:identifier "glossary_40062" ;
     a owl:Class, skos:Concept ;
     rdfs:label "non-structural carbohydrates"@en ;
-    skos:definition "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD_glossary:glossary_40106], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."@en ;
+    skos:definition "Carbohydrates [CHEBI:16646], including starches [CHEBI:28017] and sugars [APD:xxxxxxx], that are relatively easy to metabolise [NCIT:C19536] by both plants and animals."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "non-structural carbohydrates"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
@@ -10528,127 +10514,6 @@ APD:leaf_lamina_division_tripinnate
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "tripinnate"@en .
 
-APD:leaf_lamina_posture_concave
-    dcterms:description "A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave."@en ;
-    dcterms:identifier "leaf_lamina_posture_concave" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "concave"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "concave"@en .
-
-APD:leaf_lamina_posture_conduplicate
-    dcterms:description "A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)"@en ;
-    dcterms:identifier "leaf_lamina_posture_conduplicate" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "conduplicate"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)"@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "conduplicate"@en .
-
-APD:leaf_lamina_posture_convex
-    dcterms:description "A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)"@en ;
-    dcterms:identifier "leaf_lamina_posture_convex" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "convex"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)"@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "convex"@en .
-
-APD:leaf_lamina_posture_convolute
-    dcterms:description "Leaf lamina is contorted. (Synonym, twisted)"@en ;
-    dcterms:identifier "leaf_lamina_posture_convolute" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "convolute"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "Leaf lamina is contorted. (Synonym, twisted)"@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "convolute"@en .
-
-APD:leaf_lamina_posture_flat
-    dcterms:description "The leaf lamina is a 2-dimensional plane."@en ;
-    dcterms:identifier "leaf_lamina_posture_flat" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "flat"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "The leaf lamina is a 2-dimensional plane."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "flat"@en .
-
-APD:leaf_lamina_posture_incurved
-    dcterms:description "Leaf tip is curved upward."@en ;
-    dcterms:identifier "leaf_lamina_posture_incurved" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "incurved"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "Leaf tip is curved upward."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "incurved"@en .
-
-APD:leaf_lamina_posture_involute
-    dcterms:description "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward."@en ;
-    dcterms:identifier "leaf_lamina_posture_involute" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "involute"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "involute"@en .
-
-APD:leaf_lamina_posture_plicate
-    dcterms:description "Leaf margin is pleated, with a series of longitudinal folds."@en ;
-    dcterms:identifier "leaf_lamina_posture_plicate" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "plicate"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "Leaf margin is pleated, with a series of longitudinal folds."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "plicate"@en .
-
-APD:leaf_lamina_posture_recurved
-    dcterms:description "Leaf tip is curved outward or downward. [PATO:0002211]"@en ;
-    dcterms:identifier "leaf_lamina_posture_recurved" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "recurved"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "Leaf tip is curved outward or downward. [PATO:0002211]"@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "recurved"@en .
-
-APD:leaf_lamina_posture_revolute
-    dcterms:description "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward."@en ;
-    dcterms:identifier "leaf_lamina_posture_revolute" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "revolute"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward."@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "revolute"@en .
-
-APD:leaf_lamina_posture_undulate
-    dcterms:description "The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)"@en ;
-    dcterms:identifier "leaf_lamina_posture_undulate" ;
-    a owl:NamedIndividual, skos:Concept ;
-    rdfs:label "undulate"@en ;
-    rdfs:subClassOf APD:trait_0011319 ;
-    skos:broader APD:trait_0011319 ;
-    skos:definition "The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)"@en ;
-    skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:prefLabel "undulate"@en .
-
 APD:leaf_lobation_lobed
     dcterms:description "Leaf margin has incisions, either rounded or sharp-tipped, that extend more than 1/8 of the distance to the midrib."@en ;
     dcterms:identifier "leaf_lobation_lobed" ;
@@ -10705,46 +10570,57 @@ APD:leaf_margin_entire
     skos:prefLabel "entire"@en .
 
 APD:leaf_margin_posture_flat
-    dcterms:description "Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]"@en ;
+    dcterms:description "Leaf lamina, including margins, is a flat plane. [PATO:0000407]"@en ;
     dcterms:identifier "leaf_margin_posture_flat" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "flat"@en ;
     rdfs:subClassOf APD:trait_0011314 ;
     skos:broader APD:trait_0011314 ;
-    skos:definition "Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]"@en ;
+    skos:definition "Leaf lamina, including margins, is a flat plane. [PATO:0000407]"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "flat"@en .
 
 APD:leaf_margin_posture_involute
-    dcterms:description "Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)"@en ;
+    dcterms:description "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"@en ;
     dcterms:identifier "leaf_margin_posture_involute" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "involute"@en ;
     rdfs:subClassOf APD:trait_0011314 ;
     skos:broader APD:trait_0011314 ;
-    skos:definition "Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)"@en ;
+    skos:definition "Leaf margins along the side of the leaf are rolled upward. (Synonym, inrolled, incurved)"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "involute"@en .
 
+APD:leaf_margin_posture_recurved
+    dcterms:description "Leaf tip is curved outward or downward. [PATO:0002211]"@en ;
+    dcterms:identifier "leaf_margin_posture_recurved" ;
+    a owl:NamedIndividual, skos:Concept ;
+    rdfs:label "recurved"@en ;
+    rdfs:subClassOf APD:trait_0011314 ;
+    skos:broader APD:trait_0011314 ;
+    skos:definition "Leaf tip is curved outward or downward. [PATO:0002211]"@en ;
+    skos:inScheme <https://w3id.org/APD/traits> ;
+    skos:prefLabel "recurved"@en .
+
 APD:leaf_margin_posture_revolute
-    dcterms:description "Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonym, recurved)"@en ;
+    dcterms:description "Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963]"@en ;
     dcterms:identifier "leaf_margin_posture_revolute" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "revolute"@en ;
     rdfs:subClassOf APD:trait_0011314 ;
     skos:broader APD:trait_0011314 ;
-    skos:definition "Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonym, recurved)"@en ;
+    skos:definition "Leaf margins along the side of the leaf are rolled under or downward. [PATO:0001963]"@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "revolute"@en .
 
 APD:leaf_margin_posture_undulate
-    dcterms:description "Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)"@en ;
+    dcterms:description "Leaf margins wavy in a vertical plane."@en ;
     dcterms:identifier "leaf_margin_posture_undulate" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "undulate"@en ;
     rdfs:subClassOf APD:trait_0011314 ;
     skos:broader APD:trait_0011314 ;
-    skos:definition "Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)"@en ;
+    skos:definition "Leaf margins wavy in a vertical plane."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "undulate"@en .
 
@@ -14698,13 +14574,13 @@ APD:seed_surface_texture_scaly
     skos:prefLabel "scaly"@en .
 
 APD:seed_surface_texture_smooth
-    dcterms:description "Seed surface smooth, lacking texture. (Synonym, glabrous)"@en ;
+    dcterms:description "Seed surface smooth, lacking texture."@en ;
     dcterms:identifier "seed_surface_texture_smooth" ;
     a owl:NamedIndividual, skos:Concept ;
     rdfs:label "smooth"@en ;
     rdfs:subClassOf APD:trait_0012620 ;
     skos:broader APD:trait_0012620 ;
-    skos:definition "Seed surface smooth, lacking texture. (Synonym, glabrous)"@en ;
+    skos:definition "Seed surface smooth, lacking texture."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "smooth"@en .
 
@@ -16231,8 +16107,8 @@ APD:trait_0000116
     dcterms:identifier "trait_0000116" ;
     SIO:SIO_000147 obo:CHEBI_27594, obo:ENVO_01000628, obo:PATO_0001487 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
-    ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "0.1" ;
+    ets:maxAllowedValue "100" ;
+    ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "Includes measurements on leaf analogs, including cladodes and phylloclades."@en ;
@@ -17560,8 +17436,8 @@ APD:trait_0001513
     dcterms:identifier "trait_0001513" ;
     SIO:SIO_000147 MESH:D012273, obo:CHEBI_25555, obo:CHEBI_33937, obo:CHEBI_36080, obo:CL_0000000, obo:GO_0009507 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
-    ets:maxAllowedValue "0.5" ;
-    ets:minAllowedValue "0.05" ;
+    ets:maxAllowedValue "50" ;
+    ets:minAllowedValue "5" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "This trait is most commonly measured on leaf tissue. If the Rubisco concentration of a different tissue is measured, this should be explicitly noted in the methods or as a method context."@en ;
@@ -17583,8 +17459,8 @@ APD:trait_0001514
     dcterms:identifier "trait_0001514" ;
     SIO:SIO_000147 obo:CHEBI_25555, obo:CHEBI_33937, obo:CHEBI_36080, obo:CL_0000000, obo:GO_0009507, obo:GO_0009579 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
-    ets:maxAllowedValue "0.3" ;
-    ets:minAllowedValue "0.05" ;
+    ets:maxAllowedValue "30" ;
+    ets:minAllowedValue "5" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "This trait is most commonly measured on leaf tissue. If the Rubisco concentration of a different tissue is measured, this should be explicitly noted in the methods or as a method context."@en ;
@@ -18560,8 +18436,8 @@ APD:trait_0002822
     dcterms:identifier "trait_0002822" ;
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
-    ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:maxAllowedValue "100" ;
+    ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "Includes measurements on leaf analogs, including cladodes and phylloclades."@en ;
@@ -18583,8 +18459,8 @@ APD:trait_0002824
     dcterms:identifier "trait_0002824" ;
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
-    ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:maxAllowedValue "100" ;
+    ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:label "Bark ash content per unit bark dry mass"@en ;
@@ -19020,7 +18896,6 @@ APD:trait_0010025
     rdfs:subClassOf APD:trait_group_0011802 ;
     skos:altLabel "stem_count" ;
     skos:broader APD:trait_group_0011802 ;
-    skos:changeNote "stem_count_categorical" ;
     skos:closeMatch obo:TO_0000953, "Plant biomass and allometry: Shoots per plant [TRY:1034] (https://www.try-db.org/de/de.php)" ;
     skos:definition "Count of stems on multi-stemmed plants."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
@@ -19410,48 +19285,6 @@ APD:trait_0011218
     ont:hasContextObject obo:PO_0025034 ;
     uom:UCUM_code "mg" .
 
-APD:trait_0011219
-    oboecore:MeasuredCharacteristic obo:PATO_0000117, obo:PATO_0000122 ;
-    dcterms:created "31/05/2023"^^<xsd:date> ;
-    dcterms:description "Length [PATO:0000122] of the petiole [PO:0020038]), from the leaf base [PO:0020040] to the leaf axil [PO:0009023]."@en, "Length of the petiole from the leaf base to the leaf axil."@en ;
-    dcterms:identifier "trait_0011219" ;
-    SIO:SIO_000147 obo:PO_0020038 ;
-    ets:expectedUnit "cm" ;
-    ets:maxAllowedValue "1000" ;
-    ets:minAllowedValue "0" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Petiole length"@en ;
-    rdfs:subClassOf APD:trait_group_0011204 ;
-    skos:altLabel "petiole_length" ;
-    skos:broader APD:trait_group_0011204 ;
-    skos:definition "Length of the petiole from the leaf base to the leaf axil."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Petiole length"@en ;
-    ont:hasContextObject obo:PO_0025034 ;
-    uom:UCUM_code "cm" .
-
-APD:trait_0011220
-    oboecore:MeasuredCharacteristic obo:PATO_0000117, obo:PATO_0000921 ;
-    dcterms:created "31/05/2023"^^<xsd:date> ;
-    dcterms:description "Width [PATO:0000921] of the petiole [PO:0020038]."@en, "Width of the petiole."@en ;
-    dcterms:identifier "trait_0011220" ;
-    SIO:SIO_000147 obo:PO_0020038 ;
-    ets:expectedUnit "cm" ;
-    ets:maxAllowedValue "200" ;
-    ets:minAllowedValue "0" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Petiole width"@en ;
-    rdfs:subClassOf APD:trait_group_0011204 ;
-    skos:altLabel "petiole_width" ;
-    skos:broader APD:trait_group_0011204 ;
-    skos:definition "Width of the petiole."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Petiole width"@en ;
-    ont:hasContextObject obo:PO_0025034 ;
-    uom:UCUM_code "cm" .
-
 APD:trait_0011230
     oboecore:MeasuredCharacteristic obo:PATO_0000125, obo:PATO_0001323, obo:PATO_0001351, obo:PATO_0001470, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-8305-3236>, <https://orcid.org/0000-0001-8338-9143>, <https://orcid.org/0000-0002-0712-5143>, <https://orcid.org/0000-0002-1773-6597>, <https://orcid.org/0000-0002-6033-2766>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-1116-9402>, <https://orcid.org/0000-0003-2008-7062>, <https://orcid.org/0000-0003-3568-2606> ;
@@ -19462,7 +19295,7 @@ APD:trait_0011230
     dcterms:reviewed "31/10/2022"^^<xsd:date> ;
     SIO:SIO_000147 obo:PO_0020038, obo:PO_0020039, obo:TO_0000505, <http://vocabs.lter-europe.net/EnvThes/21360> ;
     ets:expectedUnit <https://w3id.org/uom/g.m-2>, "g/m2" ;
-    ets:maxAllowedValue "3000" ;
+    ets:maxAllowedValue "2000" ;
     ets:minAllowedValue "1" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
@@ -19855,7 +19688,7 @@ APD:trait_0011314
     skos:broader APD:trait_group_0011304 ;
     skos:definition "The posture (curvature or curling) of the leaf margin."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_margin_posture_flat, APD:leaf_margin_posture_involute, APD:leaf_margin_posture_revolute, APD:leaf_margin_posture_undulate ;
+    skos:narrower APD:leaf_margin_posture_flat, APD:leaf_margin_posture_involute, APD:leaf_margin_posture_recurved, APD:leaf_margin_posture_revolute, APD:leaf_margin_posture_undulate ;
     skos:prefLabel "Leaf margin posture"@en ;
     skos:scopeNote "Plants with leaves"@en ;
     ont:hasContextObject obo:PO_0025034 .
@@ -19941,7 +19774,7 @@ APD:trait_0011318
     dcterms:identifier "trait_0011318" ;
     dcterms:references <https://books.google.com/books?vid=ISBN9780128126288>, <https://doi.org/10.1111/oik.03886> ;
     dcterms:reviewed "31/10/2022"^^<xsd:date> ;
-    SIO:SIO_000147 obo:PO_0020039, obo:TO_0000492 ;
+    SIO:SIO_000147 obo:TO_0000492 ;
     ets:expectedUnit uom:mm, "mm" ;
     ets:maxAllowedValue "100" ;
     ets:minAllowedValue "0" ;
@@ -19959,25 +19792,6 @@ APD:trait_0011318
     skos:scopeNote "Plants with leaves"@en ;
     ont:hasContextObject obo:PO_0025034 ;
     uom:UCUM_code "mm" .
-
-APD:trait_0011319
-    oboecore:MeasuredCharacteristic obo:PATO_0000052, obo:PATO_0001710, obo:PATO_0002266 ;
-    dcterms:created "7/6/2023"^^<xsd:date> ;
-    dcterms:description "A leaf shape trait [TO:0000492] which is the 3-D shape [PATO:0002266] of the surface [NCIT:C25245] of the leaf lamina [PO:0020039], including its degree of curvature [PATO:0001591] and whether it is bent [PATO:0000617]."@en, "The 3-dimension shape of the surface of the leaf lamina, including its degree of curvature and bending."@en ;
-    dcterms:identifier "trait_0011319" ;
-    SIO:SIO_000147 obo:PO_0020039, obo:TO_0000492 ;
-    ets:valueType obo:STATO_0000252 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Leaf lamina posture (leaf 3-dimensional shape)"@en ;
-    rdfs:subClassOf APD:trait_group_0011304 ;
-    skos:altLabel "leaf_lamina_posture" ;
-    skos:broader APD:trait_group_0011304 ;
-    skos:definition "The 3-dimension shape of the surface of the leaf lamina, including its degree of curvature and bending."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:narrower APD:leaf_lamina_posture_concave, APD:leaf_lamina_posture_conduplicate, APD:leaf_lamina_posture_convex, APD:leaf_lamina_posture_convolute, APD:leaf_lamina_posture_flat, APD:leaf_lamina_posture_incurved, APD:leaf_lamina_posture_involute, APD:leaf_lamina_posture_plicate, APD:leaf_lamina_posture_recurved, APD:leaf_lamina_posture_revolute, APD:leaf_lamina_posture_undulate ;
-    skos:prefLabel "Leaf lamina posture (leaf 3-dimensional shape)"@en ;
-    skos:scopeNote "Plants with leaves"@en ;
-    ont:hasContextObject obo:PO_0025034 .
 
 APD:trait_0011360
     oboecore:MeasuredCharacteristic obo:PATO_0000014, obo:PATO_0000150 ;
@@ -21133,7 +20947,7 @@ APD:trait_0012011
     dcterms:description "A bark morphology trait which is the thickness [PATO:0000915] of the bark [PO:0004518]. The corresponding stem [PO:0009047] diameter [PATO:0001334] should also be recorded so that a scaled measure, the bark thickness to stem diameter ratio, can also be calculated."@en, "Thickness of the bark on the stem."@en ;
     dcterms:identifier "trait_0012011" ;
     ets:expectedUnit uom:mm, "mm" ;
-    ets:maxAllowedValue "200" ;
+    ets:maxAllowedValue "50" ;
     ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
@@ -21783,7 +21597,7 @@ APD:trait_0012419
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009031, obo:PO_0009032, obo:PO_0009058, obo:PO_0009059, obo:PO_0009060 ;
     ets:expectedUnit "cm" ;
     ets:maxAllowedValue "200" ;
-    ets:minAllowedValue "0.01" ;
+    ets:minAllowedValue "0.1" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:label "Flower length"@en ;
@@ -21806,7 +21620,7 @@ APD:trait_0012420
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009031, obo:PO_0009032, obo:PO_0009058, obo:PO_0009059, obo:PO_0009060 ;
     ets:expectedUnit "cm" ;
     ets:maxAllowedValue "200" ;
-    ets:minAllowedValue "0.01" ;
+    ets:minAllowedValue "0.1" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:label "Flower diameter"@en ;
@@ -23783,7 +23597,7 @@ APD:trait_0020241
     SIO:SIO_000147 obo:CHEBI_16526, obo:ENVO_01001864, obo:GO_0009521, obo:NCIT_C19899, obo:TO_0001015, APD_glossary:glossary_40058 ;
     ets:expectedUnit <https://w3id.org/uom/umol.m-2.s-1>, "umol{CO2}/m2/s" ;
     ets:maxAllowedValue "65" ;
-    ets:minAllowedValue "2" ;
+    ets:minAllowedValue "5" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "Leaf temperature and leaf-to-air vapour pressure deficit should be recorded as context properties. If Tleaf and VPD are not reported, it is assumed measurements are made at typical temperature and VPD conditions for the plant."@en ;
@@ -23810,7 +23624,7 @@ APD:trait_0020242
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_16526, obo:ENVO_01001864, obo:GO_0009521, obo:NCIT_C19899, obo:TO_0001015, APD_glossary:glossary_40092 ;
     ets:expectedUnit <https://w3id.org/uom/umol.m-2.s-1>, "umol{CO2}/m2/s" ;
-    ets:maxAllowedValue "50" ;
+    ets:maxAllowedValue "40" ;
     ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
@@ -24081,7 +23895,7 @@ APD:trait_0020410
     SIO:SIO_000147 MESH:D008962, obo:CHEBI_16526, obo:GO_0015979, obo:MOP_0000591, obo:NCIT_C19899 ;
     ets:expectedUnit <https://w3id.org/uom/umol.m-2.s-1>, "umol/m2/s" ;
     ets:maxAllowedValue "800" ;
-    ets:minAllowedValue "10" ;
+    ets:minAllowedValue "50" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "This trait is explicitly for Jmax per leaf area measurements made at a temperature other than 25 deg C. It is essential to record measurement temperature as a context property as Jmax is very sensitive to changes in temperature. Measurements made at 25 deg C should be mapped to `leaf_photosynthesis_Jmax_per_area_25C`"@en ;
@@ -24108,7 +23922,7 @@ APD:trait_0020411
     SIO:SIO_000147 MESH:D008962, obo:CHEBI_16526, obo:GO_0015979, obo:MOP_0000591, obo:NCIT_C19899 ;
     ets:expectedUnit <https://w3id.org/uom/umol.m-2.s-1>, "umol/m2/s" ;
     ets:maxAllowedValue "800" ;
-    ets:minAllowedValue "35" ;
+    ets:minAllowedValue "50" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
     rdfs:comment "This trait is explicitly for Jmax per leaf area measurements made at a temperature of 25 deg C.  Measurements made at other temperatures should be mapped to `leaf_photosynthesis_Jmax_per_area`"@en ;
@@ -24930,7 +24744,7 @@ APD:trait_0020813
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of the efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically active radiation [ENVO:01001864], calculated from the reflectance [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 531 nm (a xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and a higher value indicates a higher radiation use efficiency."@en, "Photochemical reflectance index measures plant responses to stress and the efficiency with which it uses photosynthetically active radiation, by indicating changes in carotenoid pigments in live foliage.  It is calculated from the reflectance of radiation off the plant canopy at 531 nm (a xanthophyll band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570), with a higher value indicating higher radiation use efficiency."@en ;
     dcterms:identifier "trait_0020813" ;
-    dcterms:references <https://doi.org/10.1007/s004420050337>, <https://doi.org/10.1080/014311697217387>, <https://www.indexdatabase.de/> ;
+    dcterms:references <https://doi.org/10.1007/s004420050337>, <https://doi.org/10.1080/014311697217387> ;
     SIO:SIO_000147 odo:MOSAIC_00000974, obo:CHEBI_23044, obo:CHEBI_27325, obo:ENVO_01001023, obo:ENVO_01001242, obo:ENVO_01001864, <http://vocabs.lter-europe.net/EnvThes/10118>, <http://vocabs.lter-europe.net/EnvThes/21762> ;
     ets:expectedUnit "{dimensionless}" ;
     ets:maxAllowedValue "1" ;
@@ -25194,30 +25008,6 @@ APD:trait_0021021
     ont:hasContextObject obo:PO_0009005 ;
     uom:UCUM_code "kg.m/MPa/s" .
 
-APD:trait_0021022
-    oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001035, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22004> ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
-    dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A root [PO:0009005] water transport [GO:0006833] trait which is a measure of the rate [PATO:0000161] of water [CHEBI:15377] movement [NCIT:C37994] through a root under a specific [NCIT:C38024] driving force [PATO:0001035] (water potential [EnvThes:22311] gradient [NCIT:C70693]), normalised to the diameter [PATO:0001334] of water transport tissues [CARO:0000043] and accounting for the root length [PATO:0000122]. It is calculated as the ratio [PATO:0001470] of the water flow [NCIT:C41141] rate through the root segment (kg/s) to the water potential gradient across the root segment (MPa), divided by the root [PO:0004513] cross-sectional [NCIT:C63795] area [PATO:0001323] (m2), then multiplied by the path length measured (m)."@en, "Measure of the efficiency of water flow through a root segment normalised to the root cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the root segment (MPa), divided by the root cross sectional area (1/m2), then multiplied by the root length (m)."@en ;
-    dcterms:identifier "trait_0021022" ;
-    dcterms:references <https://prometheusprotocols.net/function/water-relations/hydraulic-conductance-and-conductivity/> ;
-    dcterms:reviewed "31/05/2023"^^<xsd:date> ;
-    SIO:SIO_000147 obo:CHEBI_15377, obo:GO_0006833, obo:NCIT_C70693, obo:PO_0004513, obo:TO_0000237, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
-    ets:expectedUnit <https://w3id.org/uom/kg.m-1.MPa-1.s-1>, "kg/m/MPa/s" ;
-    ets:maxAllowedValue "500" ;
-    ets:minAllowedValue "0.01" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Root specific hydraulic conductivity"@en ;
-    rdfs:subClassOf APD:trait_group_0021002 ;
-    skos:altLabel "root_specific_hydraulic_conductivity" ;
-    skos:broader APD:trait_group_0021002 ;
-    skos:definition "Measure of the efficiency of water flow through a root segment normalised to the root cross-sectional area across which the flow is measured. It is calculated as the ratio of the water flow rate (kg/s) to the water potential gradient across the root segment (MPa), divided by the root cross sectional area (1/m2), then multiplied by the root length (m)."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Root specific hydraulic conductivity"@en ;
-    ont:hasContextObject obo:PO_0009005 ;
-    uom:UCUM_code "kg/m/MPa/s" .
-
 APD:trait_0021030
     oboecore:MeasuredCharacteristic obo:PATO_0001035, obo:PATO_0002284 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
@@ -25273,74 +25063,25 @@ APD:trait_0021032
     oboecore:MeasuredCharacteristic obo:PATO_0002205 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "22/05/2023"^^<xsd:date> ;
-    dcterms:description "The ratio  [PATO:0001470] of the change in stem [PO:0009047] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in stem tissue water potential [EnvThes:22311]."@en, "The ratio of the change in stem tissue water volume to the change in stem tissue water potential."@en ;
+    dcterms:description "The ratio  [PATO:0001470] of the change in tissue [CARO:0000043] water [CHEBI:15377] volume to the change in tissue water potential [EnvThes:22311]."@en, "The ratio of the change in tissue water volume to the change in tissue water potential."@en ;
     dcterms:identifier "trait_0021032" ;
     dcterms:references <https://doi.org/10.1007/978-94-007-1242-3_13> ;
-    dcterms:reviewed "14/06/2023"^^<xsd:date> ;
+    dcterms:reviewed "31/05/2023"^^<xsd:date> ;
     SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:PATO_0001620, obo:TO_0000237, obo:TO_0000701 ;
-    ets:expectedUnit <https://w3id.org/uom/kg.m-3.MPa-1>, "kg{H20}/m3/MPa" ;
-    ets:maxAllowedValue "700" ;
-    ets:minAllowedValue "0" ;
+    ets:expectedUnit <https://w3id.org/uom/kg.m-3.MPa-1>, "kg/m3/MPa" ;
+    ets:maxAllowedValue "5" ;
+    ets:minAllowedValue "-5" ;
     ets:valueType obo:STATO_0000251 ;
     a owl:Class, skos:Concept ;
-    rdfs:label "Stem sapwood capacitance (C)"@en ;
+    rdfs:label "Whole plant intrinsic capacitance (C)"@en ;
     rdfs:subClassOf APD:trait_group_0021002 ;
-    skos:altLabel "stem_sapwood_capacitance" ;
+    skos:altLabel "whole_plant_intrinsic_capacitance" ;
     skos:broader APD:trait_group_0021002 ;
-    skos:definition "The ratio of the change in stem tissue water volume to the change in stem tissue water potential."@en ;
+    skos:definition "The ratio of the change in tissue water volume to the change in tissue water potential."@en ;
     skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Stem sapwood capacitance (C)"@en ;
-    ont:hasContextObject obo:PO_0000003, obo:PO_0009047 ;
-    uom:UCUM_code "kg/m3/MPa" .
-
-APD:trait_0021033
-    oboecore:MeasuredCharacteristic obo:PATO_0002205 ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
-    dcterms:created "22/05/2023"^^<xsd:date> ;
-    dcterms:description "The ratio  [PATO:0001470] of the change in leaf [PO:0025034] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in leaf tissue water potential [EnvThes:22311]."@en, "The ratio of the change in leaf tissue water volume to the change in leaf tissue water potential."@en ;
-    dcterms:identifier "trait_0021033" ;
-    dcterms:references <https://doi.org/10.1007/978-94-007-1242-3_13> ;
-    dcterms:reviewed "14/06/2023"^^<xsd:date> ;
-    SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:PATO_0001620, obo:TO_0000237, obo:TO_0000701, APD_glossary:glossary_40124 ;
-    ets:expectedUnit "1/MPa" ;
-    ets:maxAllowedValue "70" ;
-    ets:minAllowedValue "0" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:comment "This trait is derived from pressure-volume curves."@en ;
-    rdfs:label "Leaf capacitance (Cleaf)"@en ;
-    rdfs:subClassOf APD:trait_group_0021002 ;
-    skos:altLabel "leaf_capacitance" ;
-    skos:broader APD:trait_group_0021002 ;
-    skos:definition "The ratio of the change in leaf tissue water volume to the change in leaf tissue water potential."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Leaf capacitance (Cleaf)"@en ;
+    skos:prefLabel "Whole plant intrinsic capacitance (C)"@en ;
     skos:relatedMatch "Leaf water capacitance [TRY:711] (https://www.try-db.org/de/de.php)" ;
-    ont:hasContextObject obo:PO_0025034 ;
-    uom:UCUM_code "1/MPa" .
-
-APD:trait_0021034
-    oboecore:MeasuredCharacteristic obo:PATO_0002205 ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
-    dcterms:created "22/05/2023"^^<xsd:date> ;
-    dcterms:description "The ratio  [PATO:0001470] of the change in root [PO:0009005] tissue [CARO:0000043] water [CHEBI:15377] volume to the change in root tissue water potential [EnvThes:22311]."@en, "The ratio of the change in root tissue water volume to the change in root tissue water potential."@en ;
-    dcterms:identifier "trait_0021034" ;
-    dcterms:references <https://doi.org/10.1007/978-94-007-1242-3_13> ;
-    dcterms:reviewed "14/06/2023"^^<xsd:date> ;
-    SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:PATO_0001620, obo:TO_0000237, obo:TO_0000701 ;
-    ets:expectedUnit <https://w3id.org/uom/kg.m-3.MPa-1>, "kg{H20}/m3/MPa" ;
-    ets:maxAllowedValue "700" ;
-    ets:minAllowedValue "0" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Root sapwood capacitance (C)"@en ;
-    rdfs:subClassOf APD:trait_group_0021002 ;
-    skos:altLabel "root_sapwood_capacitance" ;
-    skos:broader APD:trait_group_0021002 ;
-    skos:definition "The ratio of the change in root tissue water volume to the change in root tissue water potential."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Root sapwood capacitance (C)"@en ;
-    ont:hasContextObject obo:PO_0009005 ;
+    ont:hasContextObject obo:PO_0000003, obo:PO_0009047 ;
     uom:UCUM_code "kg/m3/MPa" .
 
 APD:trait_0021050
@@ -25643,31 +25384,6 @@ APD:trait_0021061
     skos:relatedMatch "Leaf relative water content [TOP47] (https://top-thesaurus.org/index)" ;
     ont:hasContextObject obo:PO_0025034 ;
     uom:UCUM_code "g/g" .
-
-APD:trait_0021062
-    oboecore:MeasuredCharacteristic obo:PATO_0001035, obo:PATO_0002284 ;
-    datacite:IsReviewedBy <https://orcid.org/0000-0002-9105-640X> ;
-    dcterms:created "14/06/2023"^^<xsd:date> ;
-    dcterms:description "Root xylem water pressure value at which root hydraulic conductivity has declined by 50% from the mean maximum rate of hydraulic conductivity."@en, "The tension [PATO:0002284] (water pressure) (water potential [EnvThes:22311]) in root [PO:0009005] xylem vessels [PO:0025417] at which the hydraulic conductivity [EnvThes:22133] has declined by 50% from the mean maximum [NCIT:C25564] rate [PATO:0000161]."@en ;
-    dcterms:identifier "trait_0021062" ;
-    dcterms:references <https://doi.org/10.1111/jipb.12534>, <https://prometheusprotocols.net/function/water-relations/xylem-vulnerability-curves/> ;
-    dcterms:reviewed "14/06/2023"^^<xsd:date> ;
-    SIO:SIO_000147 obo:PO_0005352, obo:TO_0000237, obo:TO_0000276, <http://vocabs.lter-europe.net/EnvThes/22133>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
-    ets:expectedUnit uom:MPa, "MPa" ;
-    ets:maxAllowedValue "0" ;
-    ets:minAllowedValue "-20" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Root xylem pressure, 50% lost conductivity"@en ;
-    rdfs:subClassOf APD:trait_group_0021002 ;
-    skos:altLabel "root_water_potential_50percent_lost_conductivity" ;
-    skos:broader APD:trait_group_0021002 ;
-    skos:definition "Root xylem water pressure value at which root hydraulic conductivity has declined by 50% from the mean maximum rate of hydraulic conductivity."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Root xylem pressure, 50% lost conductivity"@en ;
-    skos:relatedMatch "Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism vulnerability, (P20, P50, P88) [TRY:719] (https://www.try-db.org/de/de.php)" ;
-    ont:hasContextObject obo:PO_0009005 ;
-    uom:UCUM_code "MPa" .
 
 APD:trait_0022012
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470, obo:STATO_0000300 ;
@@ -26715,25 +26431,6 @@ APD:trait_0030418
     skos:prefLabel "Seed viability"@en ;
     ont:hasContextObject obo:PO_0009010, obo:PO_0025082 ;
     uom:UCUM_code "{count}/{count}" .
-
-APD:trait_0030419
-    oboecore:MeasuredCharacteristic obo:PATO_0001309 ;
-    dcterms:created "10/6/2023"^^<xsd:date> ;
-    dcterms:description "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."@en, "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."@en ;
-    dcterms:identifier "trait_0030419" ;
-    SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment>, MESH:D000068098, obo:ENVO_01000203, obo:GO_0009845, obo:XCO_0000000 ;
-    ets:expectedUnit uom:d, "d" ;
-    ets:valueType obo:STATO_0000251 ;
-    a owl:Class, skos:Concept ;
-    rdfs:label "Seed germination time"@en ;
-    rdfs:subClassOf APD:trait_group_0030504 ;
-    skos:altLabel "seed_germination_time" ;
-    skos:broader APD:trait_group_0030504 ;
-    skos:definition "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."@en ;
-    skos:inScheme "https://w3id.org/APD/traits" ;
-    skos:prefLabel "Seed germination time"@en ;
-    ont:hasContextObject obo:PO_0009010, obo:PO_0025082 ;
-    uom:UCUM_code "d" .
 
 APD:trait_0030510
     oboecore:MeasuredCharacteristic obo:PATO_0001995 ;
@@ -27900,7 +27597,7 @@ APD:trait_group_0011204
     skos:definition "Refer to size [PATO:0000117]: A morphology quality inhering in a bearer by virtue of the bearers physical magnitude."@en ;
     skos:exactMatch obo:TO_0002637 ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0011211, APD:trait_0011212, APD:trait_0011213, APD:trait_0011214, APD:trait_0011215, APD:trait_0011219, APD:trait_0011220, APD:trait_0011230, APD:trait_0011231, APD:trait_0011260, APD:trait_0011263 ;
+    skos:narrower APD:trait_0011211, APD:trait_0011212, APD:trait_0011213, APD:trait_0011214, APD:trait_0011215, APD:trait_0011230, APD:trait_0011231, APD:trait_0011260, APD:trait_0011263 ;
     skos:prefLabel "leaf size trait"@en .
 
 APD:trait_group_0011206
@@ -27926,7 +27623,7 @@ APD:trait_group_0011304
     skos:definition "A leaf morphology trait [TO:0000748] which is the variation in shapes and forms of a leaf [PO:0025034]. Refer to shape [PATO:0000052]: A morphological quality inhering in a bearer by virtue of the bearers ratios of distances between its features [points, edges, surfaces and also holes etc]."@en ;
     skos:exactMatch obo:TO_0000492 ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0010070, APD:trait_0011310, APD:trait_0011311, APD:trait_0011312, APD:trait_0011313, APD:trait_0011314, APD:trait_0011315, APD:trait_0011316, APD:trait_0011317, APD:trait_0011318, APD:trait_0011319 ;
+    skos:narrower APD:trait_0010070, APD:trait_0011310, APD:trait_0011311, APD:trait_0011312, APD:trait_0011313, APD:trait_0011314, APD:trait_0011315, APD:trait_0011316, APD:trait_0011317, APD:trait_0011318 ;
     skos:prefLabel "leaf shape trait"@en .
 
 APD:trait_group_0011402
@@ -28334,7 +28031,7 @@ APD:trait_group_0021002
     skos:broader APD:trait_group_0020001 ;
     skos:definition "A plant physiological process trait [TO:0000283] pertaining to the movement [NCIT:C37994] of water [CHEBI:15377] through a plants vascular system [PO:0000034], including water stress traits [TO:0000237]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0013011, APD:trait_0013012, APD:trait_0013013, APD:trait_0013014, APD:trait_0013111, APD:trait_0013112, APD:trait_0013113, APD:trait_0013114, APD:trait_0013115, APD:trait_0013116, APD:trait_0013117, APD:trait_0013118, APD:trait_0013119, APD:trait_0013120, APD:trait_0013161, APD:trait_0013162, APD:trait_0013163, APD:trait_0013164, APD:trait_0013165, APD:trait_0020814, APD:trait_0021013, APD:trait_0021014, APD:trait_0021015, APD:trait_0021016, APD:trait_0021017, APD:trait_0021018, APD:trait_0021021, APD:trait_0021022, APD:trait_0021030, APD:trait_0021031, APD:trait_0021032, APD:trait_0021033, APD:trait_0021034, APD:trait_0021050, APD:trait_0021051, APD:trait_0021052, APD:trait_0021053, APD:trait_0021054, APD:trait_0021055, APD:trait_0021056, APD:trait_0021057, APD:trait_0021058, APD:trait_0021059, APD:trait_0021060, APD:trait_0021061, APD:trait_0021062 ;
+    skos:narrower APD:trait_0013011, APD:trait_0013012, APD:trait_0013013, APD:trait_0013014, APD:trait_0013111, APD:trait_0013112, APD:trait_0013113, APD:trait_0013114, APD:trait_0013115, APD:trait_0013116, APD:trait_0013117, APD:trait_0013118, APD:trait_0013119, APD:trait_0013120, APD:trait_0013161, APD:trait_0013162, APD:trait_0013163, APD:trait_0013164, APD:trait_0013165, APD:trait_0020814, APD:trait_0021013, APD:trait_0021014, APD:trait_0021015, APD:trait_0021016, APD:trait_0021017, APD:trait_0021018, APD:trait_0021021, APD:trait_0021030, APD:trait_0021031, APD:trait_0021032, APD:trait_0021050, APD:trait_0021051, APD:trait_0021052, APD:trait_0021053, APD:trait_0021054, APD:trait_0021055, APD:trait_0021056, APD:trait_0021057, APD:trait_0021058, APD:trait_0021059, APD:trait_0021060, APD:trait_0021061 ;
     skos:prefLabel "water transport trait, hydraulic trait"@en .
 
 APD:trait_group_0022002
@@ -28419,7 +28116,7 @@ APD:trait_group_0030504
     skos:broader APD:trait_group_0030001 ;
     skos:definition "A plant life history trait pertaining to a plants reproductive structures [UBERON:0005156]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
-    skos:narrower APD:trait_0030411, APD:trait_0030412, APD:trait_0030413, APD:trait_0030414, APD:trait_0030415, APD:trait_0030416, APD:trait_0030417, APD:trait_0030418, APD:trait_0030419, APD:trait_0030654, APD:trait_0030655, APD:trait_0030656, APD:trait_0030657, APD:trait_0030658, APD:trait_0030659 ;
+    skos:narrower APD:trait_0030411, APD:trait_0030412, APD:trait_0030413, APD:trait_0030414, APD:trait_0030415, APD:trait_0030416, APD:trait_0030417, APD:trait_0030418, APD:trait_0030654, APD:trait_0030655, APD:trait_0030656, APD:trait_0030657, APD:trait_0030658, APD:trait_0030659 ;
     skos:prefLabel "reproductive structure life history trait"@en .
 
 APD:trait_group_0030602
