@@ -5,6 +5,7 @@ format:
     smooth-scroll: true
     toc: true
     toc-expand: 1
+    embed-resources: true
 ---
 
 # Release `r Sys.Date()`
