@@ -126,7 +126,7 @@ for (thistrait in trait_groupings$identifier) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
@@ -155,7 +155,7 @@ for (thistrait in list_of_traits[[1]]) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
@@ -209,7 +209,7 @@ for (thistrait in traits_names_tmp$trait_name) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", cat_val, fixed = TRUE)    
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
       create_APD_categorical_values_table(anchor, triples_with_labels)
@@ -243,7 +243,7 @@ for (thistrait in glossary_terms$identifier) {
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID  
   term_to_display <- to_match_tmp$value[match(thistrait, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_glossary, "", thistrait, fixed = TRUE)
-  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
