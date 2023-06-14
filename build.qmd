@@ -131,9 +131,24 @@ rdf_query(true_triples, sparql)
 
 # Build docs
 
+Build the website
 ```{r}
-# Build the website
 quarto::quarto_render()
 ```
+
+Put a copy of latest in release folder:
+```{r}
+version <- rmarkdown::yaml_front_matter("index.qmd")$params$version
+
+files <- c(list.files("docs", pattern = "APD"), "index.html")
+
+for(p in c("release", "docs/release")) {
+  to_path <- file.path(p, version)
+  dir.create(to_path, FALSE, TRUE)
+  purrr::walk(files, ~file.copy(file.path("docs", .x), file.path(to_path, .x)))
+}
+```
+
+
 
 

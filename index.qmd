@@ -1,5 +1,8 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
+params:
+  version: 1.0.0
+  previous_version: 1.0.0
 format: 
   html:
     smooth-scroll: true
@@ -8,12 +11,17 @@ format:
     embed-resources: true
 ---
 
-# Release `r Sys.Date()`
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+version <- params$version
+
+link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/APD.html>", v)
+```
+## Release `r version`
 
 <dl>
-<!-- <dt> **This version**:</dt> <dd><https://w3id.org/APD/2023-05-1/APD.html>  </dd> -->
-<dt>**Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
-<!-- <dt> **Previous version**:</dt> <dd> <https://w3id.org/APD/2023-02-1/APD.html> </dd> -->
+<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/APD.html> </dd>
+<dt> **This version**:</dt> <dd>`r link_version(params$version)`  </dd>
+<dt> **Previous version**:</dt> <dd>`r link_version(params$previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
 <dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
   [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
