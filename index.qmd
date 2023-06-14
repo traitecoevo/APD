@@ -122,13 +122,10 @@ to_match_tmp <- triples_with_labels %>%
  
 for (thistrait in trait_groupings$identifier) {
   
+  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
-  
- 
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  ## A header of form  ## [header1](#trait_0011212) will act as both a header
-  ## and an anchor using traitid
-  writeLines(paste0("\n## [", term_to_display, "](#",anchor,")\n\n"))
+  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
 
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
@@ -154,10 +151,10 @@ to_match_tmp <- triples_with_labels %>%
  
 for (thistrait in list_of_traits[[1]]) {
   
+  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
-  
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
-  writeLines(paste0("\n## [", term_to_display, "](#",anchor,")\n\n"))
+  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
 
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
@@ -208,12 +205,11 @@ for (thistrait in traits_names_tmp$trait_name) {
   
   for (cat_val in cat_for_trait$identifier) {
   
+  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
-  
   anchor <- gsub(base_url_traits, "", cat_val, fixed = TRUE)    
-    
-  writeLines(paste0("\n### [", term_to_display, "](#", anchor, ")\n\n"))
-  
+  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+
   out <- 
       create_APD_categorical_values_table(anchor, triples_with_labels)
   
@@ -242,12 +238,12 @@ for (thistrait in glossary_terms$identifier) {
     filter(Subject_stripped %in% glossary_terms$identifier) %>%
     filter(property == "label") %>%
     select(Subject_stripped, value)
-  
+
+  # creating header makes anchor using header name. Aslo create an anchor using trait_ID  
   term_to_display <- to_match_tmp$value[match(thistrait, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_glossary, "", thistrait, fixed = TRUE)
-  
-  writeLines(paste0("\n## [", term_to_display, "](#", anchor, ")\n\n"))
-  
+  writeLines(sprintf('\n\n## %s \n <span id="%s"> </span>', term_to_display, anchor))
+
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
 
