@@ -145,7 +145,7 @@ files <- c(list.files("docs", pattern = "APD"), "index.html")
 for(p in c("release", "docs/release")) {
   to_path <- file.path(p, version)
   dir.create(to_path, FALSE, TRUE)
-  purrr::walk(files, ~file.copy(file.path("docs", .x), file.path(to_path, .x)))
+  purrr::walk(files, ~ file.copy(file.path("docs", .x), file.path(to_path, .x), overwrite = TRUE))
 }
 ```
 
