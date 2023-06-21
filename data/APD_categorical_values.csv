@@ -492,6 +492,8 @@ parasitic_not_parasitic,not_parasitic,"In the context of this trait, a plant tha
 parasitic_root_parasitic,root_parasitic,Parasitic plant whose haustoria penetrate the root of a host plant.,parasitic
 parasitic_stem_parasitic,stem_parasitic,Parasitic plant whose haustoria penetrate the stem of a host plant.,parasitic
 plant_alternative_energy_and_nutrient_acquisition_strategy_saprophyte,saprophyte,Plant that acquires nutrients from decaying biomass.,plant_alternative_energy_and_nutrient_acquisition_strategy
+plant_alternative_energy_and_nutrient_acquisition_strategy_carnivorous,carnivorous,Plant that acquires some or most of its nutrients from animals or protozoa.,plant_alternative_energy_and_nutrient_acquisition_strategy
+plant_alternative_energy_and_nutrient_acquisition_strategy_nutrient_mining,nutrient_mining,"Plant that uses a specialised root structure, such as cluster roots, to mine nutrients inaccessible to other plant taxa.",plant_alternative_energy_and_nutrient_acquisition_strategy
 bark_photosynthetic_status_non_photosynthetic_bark,non_photosynthetic_bark,Plant's bark is not photosynthetic.,bark_photosynthetic_status
 bark_photosynthetic_status_photosynthetic_bark,photosynthetic_bark,Plant's bark is photosynthetic.,bark_photosynthetic_status
 photosynthetic_pathway_c3,c3,"Plant using the 'standard' photosynthetic pathway, where a 3-carbon compound is produced after the first stage in the photosynthetic pathway.",photosynthetic_pathway
