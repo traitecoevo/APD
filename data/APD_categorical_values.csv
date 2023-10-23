@@ -7,7 +7,7 @@ bark_morphology_eucalyptus_eucalypt_peppermint,eucalypt_peppermint,"Eucalyptus, 
 bark_morphology_eucalyptus_eucalypt_stringybark,eucalypt_stringybark,"Eucalyptus, Corymbia or Angophora taxa with ""Stringy"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_ribbonbark,eucalypt_ribbonbark,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark that sheds in ribbons.",bark_morphology_eucalyptus
 plant_tolerance_calcicole_calcicole,calcicole,"Plants are tolerant of basic soils, such as calcareous sands and limestone derived soils.",plant_tolerance_calcicole
-plant_tolerance_calcicole_calcifuge,calcifuge,"Plants are intolerant of basic soils (Synonyms, acidophilous).",plant_tolerance_calcicole
+plant_tolerance_calcicole_calcifuge,calcifuge,"Plants are intolerant of basic soils. (Synonyms, acidophilous)",plant_tolerance_calcicole
 competitive_stratum_ground,ground,"Graminoids, herbs and ferns reaching maximum heights of c. 0.2-1 m.",competitive_stratum
 competitive_stratum_mid,mid,Shrubs reaching maximum heights of c. 1-2 m.,competitive_stratum
 competitive_stratum_upper,upper,Tall shrubs reaching maximum heights of c. 3-5 m.,competitive_stratum
@@ -424,9 +424,9 @@ leaf_shape_obcordate,obcordate,"A 2-dimensional heart shape, approximately ovate
 leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)",leaf_shape
 leaf_shape_reniform,reniform,"A 2-dimensional shape that is roughly kidney-shaped, wider than long with a rounded apex and two rounded, basal lobes that are smoothly concave at their intersection. (Synonyms, kidney-shaped)",leaf_shape
 leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)",leaf_shape
-leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1,leaf_shape
-leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)",leaf_shape
-leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped).",leaf_shape
+leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1.,leaf_shape
+leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1. (Synonyms, sword-shaped)",leaf_shape
+leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped)",leaf_shape
 leaf_shape_peltate,peltate,"A 2-dimensional orbicular shape, distinguished by the petiole attaching near the center of the leaf lamina.",leaf_shape
 leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous.",leaf_shape
 leaf_base_shape_acute,acute,Two sides of the leaf meet at an angle that is less than 90°.,leaf_base_shape
