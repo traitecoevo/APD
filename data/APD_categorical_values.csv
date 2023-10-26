@@ -7,7 +7,7 @@ bark_morphology_eucalyptus_eucalypt_peppermint,eucalypt_peppermint,"Eucalyptus, 
 bark_morphology_eucalyptus_eucalypt_stringybark,eucalypt_stringybark,"Eucalyptus, Corymbia or Angophora taxa with ""Stringy"" type bark.",bark_morphology_eucalyptus
 bark_morphology_eucalyptus_eucalypt_ribbonbark,eucalypt_ribbonbark,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark that sheds in ribbons.",bark_morphology_eucalyptus
 plant_tolerance_calcicole_calcicole,calcicole,"Plants are tolerant of basic soils, such as calcareous sands and limestone derived soils.",plant_tolerance_calcicole
-plant_tolerance_calcicole_calcifuge,calcifuge,"Plants are intolerant of basic soils (Synonyms, acidophilous).",plant_tolerance_calcicole
+plant_tolerance_calcicole_calcifuge,calcifuge,"Plants are intolerant of basic soils. (Synonyms, acidophilous)",plant_tolerance_calcicole
 competitive_stratum_ground,ground,"Graminoids, herbs and ferns reaching maximum heights of c. 0.2-1 m.",competitive_stratum
 competitive_stratum_mid,mid,Shrubs reaching maximum heights of c. 1-2 m.,competitive_stratum
 competitive_stratum_upper,upper,Tall shrubs reaching maximum heights of c. 3-5 m.,competitive_stratum
@@ -424,9 +424,9 @@ leaf_shape_obcordate,obcordate,"A 2-dimensional heart shape, approximately ovate
 leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)",leaf_shape
 leaf_shape_reniform,reniform,"A 2-dimensional shape that is roughly kidney-shaped, wider than long with a rounded apex and two rounded, basal lobes that are smoothly concave at their intersection. (Synonyms, kidney-shaped)",leaf_shape
 leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)",leaf_shape
-leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1,leaf_shape
-leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1 (Synonyms, sword-shaped)",leaf_shape
-leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped).",leaf_shape
+leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1.,leaf_shape
+leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1. (Synonyms, sword-shaped)",leaf_shape
+leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped)",leaf_shape
 leaf_shape_peltate,peltate,"A 2-dimensional orbicular shape, distinguished by the petiole attaching near the center of the leaf lamina.",leaf_shape
 leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous.",leaf_shape
 leaf_base_shape_acute,acute,Two sides of the leaf meet at an angle that is less than 90°.,leaf_base_shape
@@ -613,7 +613,7 @@ bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base
 bud_bank_location_epicormic_buds,epicormic_buds,Plants resprout from the stem or trunk.,bud_bank_location
 bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)",bud_bank_location
 bud_bank_location_root_crown,root_crown,"Plants resprout from the root crown, the root tissue at the root-stem transition.",bud_bank_location
-bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter; adventitious buds)",bud_bank_location
+bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter, adventitious buds)",bud_bank_location
 bud_bank_location_rhizome,rhizome,"Plants resprout from buds on a rhizome, where it is not specified if the rhizome is woody or non-woody.",bud_bank_location
 bud_bank_location_rhizome_woody,rhizome_woody,Plants resprout from buds on a woody rhizome.,bud_bank_location
 bud_bank_location_rhizome_non_woody,rhizome_non_woody,"Plants resprout from buds on a fleshy rhizome, rhizophore, or fibrous rhizome.",bud_bank_location
@@ -704,7 +704,7 @@ seed_shape_hemispheric_flattened,hemispheric_flattened,"A 3-dimensional shape th
 seed_shape_lenticular,lenticular,Shaped like a biconvex lens and circular in cross section; shaped like a lentil.,seed_shape
 seed_shape_orbicular,orbicular,A poorly defined term that remains in AusTraits only as a placeholder; it appears to be used as both globoid (spherical) and lenticular by different authors.,seed_shape
 seed_shape_ovoid,ovoid,"A 3-dimensional shape that is egg-shaped in long section and circular in cross section. Term as used in AusTraits includes variants on egg-shaped including pyriform (pear-shaped) and obovoid (inversely egg-shaped) (Synonyms, pyriform, obovoid)",seed_shape
-seed_shape_ovoid_elongated,ovoid_elongated,"A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform; tear-shaped; lachrymiform; clavate; obclavate; club-shaped)",seed_shape
+seed_shape_ovoid_elongated,ovoid_elongated,"A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate; obclavate, club-shaped)",seed_shape
 seed_shape_ovoid_flattened,ovoid_flattened,A 3-dimensional shape that is egg-shaped in long section and laterally compressed/flattened such that is non-circular in cross section.,seed_shape
 seed_shape_polyhedral,polyhedral,"A 3-dimensional shape with distinct, fairly flat faces and edges; includes prisms and tetrahedral shaped seeds. (Synonyms, rhomboid, prismatic, pyramidal, rectangular, square)",seed_shape
 seed_shape_polyhedral_elongated,polyhedral_elongated,"A 3-dimensional shape with distinct, fairly flat faces and edges, where the length dimension is much longer than the width/height dimensions; includes elongate prisms and elongate tetrahedral shaped seeds.",seed_shape
