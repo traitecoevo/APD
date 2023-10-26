@@ -80,7 +80,7 @@ source("R/helpers.R")
 source("R/create_APD_trait_table.R")
 
 triples_with_labels <- 
-  read_csv("APD.csv")
+  read_csv("APD_triples.csv")
 
 base_url_traits <- "https://w3id.org/APD/traits/"
 base_url_glossary <- "https://w3id.org/APD/glossary/"
