@@ -1,7 +1,7 @@
 library(readr)
 library(tidyr)
 library(dplyr)
-library(gt)
+#library(gt)
 library(purrr)
 
 source("R/table.R")
@@ -15,36 +15,27 @@ APD_traits_input <- read_csv("data/APD_traits.csv")
 
 APD_reviewers <- read_csv("data/APD_reviewers.csv")
 APD_references <- read_csv("data/APD_references.csv")
+APD_hierarchy <- read_csv("data/APD_trait_hierarchy.csv")
 published_classes <- read_csv("data/published_classes.csv")
 categorical <- read_csv("data/APD_categorical_values.csv")
 
 triples_with_labels <-   read_csv("APD.csv")
 
-# information extracted from triples file
-list_of_traits <- 
-  triples_with_labels %>% 
-  filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
-  filter(stringr::str_detect(Subject, "trait_[:digit:]")) %>%
-  select(identifier = Subject)
-
-traits_table <- triples_with_labels %>%
-  filter(Subject_stripped %in% list_of_traits$identifier) %>%
-  filter(property == "alternative label") %>%
-  dplyr::select(Subject_stripped, value) %>%
-  dplyr::rename(
-    Entity = Subject_stripped,
-    trait = value)
-
 # information direct from traits table
 core_traits <- APD_traits_input %>%
-  dplyr::select(dplyr::all_of(c("trait", "label", "description_encoded", "description", "comments", "type_x", "min", "max", "units", "constraints", 
+  dplyr::select(dplyr::all_of(c("trait", "label", "description_encoded", "description", "comments", "type", "min", "max", "units", "constraints", 
                                 "created", "reviewed", "deprecated_trait_name", "identifier", "inScheme"))) %>%
   dplyr::rename(dplyr::all_of(c(
-        "trait_type" = "type_x",
         "allowed_values_min" = "min",
         "allowed_values_max" = "max",
-        "modified" = "reviewed"
-      )))
+        "modified" = "reviewed",
+        "trait_type" = "type"
+      ))) %>%
+# add label to trait type
+  dplyr::mutate(
+    Entity = paste0(inScheme,"/traits/", identifier),
+    trait_type = paste0(published_classes$label[match(trait_type, published_classes$identifier)], " [", trait_type, "]")
+  )
 
 # collapse traits table to include a single column for each property
 
@@ -54,7 +45,7 @@ reviewers <- APD_traits_input %>%
   tidyr::pivot_longer(cols = 2:11) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
-    value = ifelse(!is.na(value), paste0(value, " (", APD_reviewers$Entity[match(value, APD_reviewers$label)], ")"), NA)
+    value = ifelse(!is.na(value), paste0(value, " [", APD_reviewers$Entity[match(value, APD_reviewers$label)], "]"), NA)
     ) %>%
   group_by(trait) %>%
     dplyr::mutate(reviewers = paste(value, collapse = "; ")) %>%
@@ -68,7 +59,7 @@ references <- APD_traits_input %>%
   tidyr::pivot_longer(cols = 2:6) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
-    value = ifelse(!is.na(value), paste0(value, " (", APD_references$Entity[match(value, APD_references$label)], ")"), NA)
+    value = ifelse(!is.na(value), paste0(value, " [", APD_references$Entity[match(value, APD_references$label)], "]"), NA)
   ) %>%
   dplyr::group_by(trait) %>%
     dplyr::mutate(references = paste(value, collapse = "; ")) %>%
@@ -81,6 +72,10 @@ hierarchy <- APD_traits_input %>%
   dplyr::select(trait, c(category_1:category_4)) %>%
   tidyr::pivot_longer(cols = 2:5) %>%
   dplyr::filter(!is.na(value)) %>%
+  dplyr::mutate(
+    value = stringr::str_replace(value, "APD\\:", ""),
+    value = ifelse(!is.na(value), paste0(APD_hierarchy$label[match(value, APD_hierarchy$identifier)], " [", value, "]"), NA)
+  ) %>%
   dplyr::group_by(trait) %>%
   dplyr::mutate(trait_groupings = paste(value, collapse = "; ")) %>%
   dplyr::ungroup() %>%
@@ -91,9 +86,9 @@ hierarchy <- APD_traits_input %>%
 structure_measured <- APD_traits_input %>%
   dplyr::select(trait, c(structure_1:structure_4)) %>%
   tidyr::pivot_longer(cols = 2:5) %>%
-  dplyr::filter(!is.na(APD_traits_input)) %>%
+  dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
-    value = ifelse(!is.na(value), published_classes$label[match(value, published_classes$identifier)], NA)
+    value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
   ) %>%
   dplyr::group_by(trait) %>%
     dplyr::mutate(structure_measured = paste(value, collapse = "; ")) %>%
@@ -107,7 +102,7 @@ characteristic_measured <- APD_traits_input %>%
   tidyr::pivot_longer(cols = 2:7) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
-    value = ifelse(!is.na(value), published_classes$label[match(value, published_classes$identifier)], NA)
+    value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
   ) %>%
   dplyr::group_by(trait) %>%
     dplyr::mutate(characteristic_measured = paste(value, collapse = "; ")) %>%
@@ -121,7 +116,7 @@ keywords <- APD_traits_input %>%
   tidyr::pivot_longer(cols = 2:11) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
-    value = ifelse(!is.na(value), published_classes$label[match(value, published_classes$identifier)], NA)
+    value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
   ) %>%
   dplyr::group_by(trait) %>%
     dplyr::mutate(keywords = paste(value, collapse = "; ")) %>%
@@ -134,8 +129,8 @@ exact1 <- APD_traits_input %>%
   dplyr::select(trait, c(exact_other1)) %>%
   dplyr::filter(!is.na(exact_other1)) %>%
   dplyr::mutate(
-    exact_other1 = paste0(published_classes$label[match(exact_other1, published_classes$identifier)], " (",
-                          published_classes$Entity[match(exact_other1, published_classes$identifier)], ")")
+    exact_other1 = paste0(published_classes$label[match(exact_other1, published_classes$identifier)], " [",
+                          published_classes$Entity[match(exact_other1, published_classes$identifier)], "]")
   ) %>%
   dplyr::rename(value = exact_other1)
 
@@ -154,8 +149,8 @@ close1 <- APD_traits_input %>%
   dplyr::select(trait, c(close_other1)) %>%
   dplyr::filter(!is.na(close_other1)) %>%
   dplyr::mutate(
-    close_other1 = paste0(published_classes$label[match(close_other1, published_classes$identifier)], " (",
-                          published_classes$Entity[match(close_other1, published_classes$identifier)], ")")
+    close_other1 = paste0(published_classes$label[match(close_other1, published_classes$identifier)], " [",
+                          published_classes$Entity[match(close_other1, published_classes$identifier)], "]")
   ) %>%
   dplyr::rename(value = close_other1)
 
@@ -163,8 +158,8 @@ close2 <- APD_traits_input %>%
   dplyr::select(trait, c(close_other2)) %>%
   dplyr::filter(!is.na(close_other2)) %>%
   dplyr::mutate(
-    close_other2 = paste0(published_classes$label[match(close_other2, published_classes$identifier)], " (",
-                          published_classes$Entity[match(close_other2, published_classes$identifier)], ")")
+    close_other2 = paste0(published_classes$label[match(close_other2, published_classes$identifier)], " [",
+                          published_classes$Entity[match(close_other2, published_classes$identifier)], "]")
   ) %>%
   dplyr::rename(value = close_other2)
 
@@ -184,8 +179,8 @@ related1 <- APD_traits_input %>%
   dplyr::select(trait, c(related_other)) %>%
   dplyr::filter(!is.na(related_other)) %>%
   dplyr::mutate(
-    related_other = paste0(published_classes$label[match(related_other, published_classes$identifier)], " (",
-                          published_classes$Entity[match(related_other, published_classes$identifier)], ")")
+    related_other = paste0(published_classes$label[match(related_other, published_classes$identifier)], " [",
+                          published_classes$Entity[match(related_other, published_classes$identifier)], "]")
   ) %>%
   dplyr::rename(value = related_other)
 
@@ -218,8 +213,7 @@ categorical %>%
   write_csv("APD_categorical_trait_values_table.csv")
 
 # join together pieces
-traits_table %>%
-  dplyr::left_join(core_traits, by = c("trait")) %>%
+core_traits %>%
   dplyr::left_join(hierarchy, by = c("trait")) %>%
   dplyr::left_join(structure_measured, by = c("trait")) %>%
   dplyr::left_join(characteristic_measured, by = c("trait")) %>%
