@@ -39,7 +39,8 @@ Export various formats
 
 ```{r}
 triples_with_labels %>%
-  write_csv("APD.csv")
+  dplyr::select(Subject, property, Predicate, value, Object, graph) %>%
+  write_csv("APD_triples.csv")
 
 triples_df %>%
   write_delim("APD.nq", col_names=FALSE, escape="none", quote="none")

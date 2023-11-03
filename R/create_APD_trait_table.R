@@ -83,7 +83,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     units_tmp <- trait_i %>% filter(property == "unit")
     min_tmp <- trait_i %>% filter(property == "minAllowedValue")
     max_tmp <- trait_i %>% filter(property == "maxAllowedValue")
-    UCUM_tmp <- trait_i %>% filter(property == "UCUM code")
+    uom_tmp <- trait_i %>% filter(property == "units_uom")
     
     output <-
       add_row(output, 
@@ -179,12 +179,12 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
               scope_tmp$value_link
               ) 
   
-  # UCUM code
+  # units of measurement link
     if(value_type$value == "continuous variable") {
       output <-
         add_row(output, 
-                UCUM_tmp$property_link,
-                UCUM_tmp$value
+                uom_tmp$property_link,
+                uom_tmp$value
                 )
       
     }

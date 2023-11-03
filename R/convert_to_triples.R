@@ -257,10 +257,10 @@ reformatted_traits <-
     min = ifelse(!is.na(min), paste0("\"", min, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
     max = ifelse(!is.na(max), paste0("\"", max, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
     units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
-    units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\""), NA),
+    #units_UCUM = ifelse(!is.na(units_UCUM), paste0("\"", units_UCUM, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     across(c("category_1", "category_2", "category_3", "category_4"), 
-           ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$label)], ">"), NA)),
+           ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$identifier)], ">"), NA)),
     SubClassOf_1 = category_1,
     SubClassOf_2 = category_2,
     SubClassOf_3 = category_3,
@@ -310,7 +310,7 @@ reformatted_traits <-
     `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
     `<http://www.w3.org/2004/02/skos/core#definition>` = description
   ) %>%
-  select(-type_x, -keyword_10) %>%
+  select(-keyword_10) %>%
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
@@ -325,7 +325,6 @@ reformatted_traits <-
     `<http://terminologies.gfbio.org/terms/ETS/minAllowedValue>`= min,
     `<http://terminologies.gfbio.org/terms/ETS/maxAllowedValue>`= max,
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>`= units,
-    `<https://w3id.org/uom/UCUM_code>`= units_UCUM,
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>2`= units_uom,
     `<http://www.w3.org/2004/02/skos/core#broader>` = category_1,
     `<http://www.w3.org/2004/02/skos/core#broader>2` = category_2,
