@@ -5,9 +5,10 @@ project:
     - "APD.nt"
     - "APD.ttl"
     - "APD.json"
-    - "APD.csv"
+    - "APD_traits.csv"
+    - "APD_categorical_values.csv"
     - "406.html"
-    - releases
+    - release
   output-dir: docs
   render:
     - index.qmd

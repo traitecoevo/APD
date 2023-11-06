@@ -1,7 +1,7 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
 params:
-  version: 1.0.0
+  version: 1.1.0
   previous_version: 1.0.0
 format: 
   html:
@@ -47,7 +47,13 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
   [Ian J. Wright](https://orcid.org/0000-0001-8338-9143),
   [Sophie Yang](https://orcid.org/0000-0001-7328-345X)</dd>
 
-<dt>Download serialization:</dt> <dd>
+<dt>Human readable tables:</dt> <dd>
+<span><a href="APD_traits.csv" target="_blank"><img src="https://img.shields.io/badge/APD-traits-blue.svg" alt="Traits"></a> </span>
+<span><a href="APD_categorical_values.csv" target="_blank"><img src="https://img.shields.io/badge/APD-categorical_values-blue.svg" alt="categorical_values"></a> </span>
+
+</dd>
+
+<dt>Serializations:</dt> <dd>
 <span><a href="APD.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD"></a> </span>
 <span><a href="APD.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples"></a> </span>
 <span><a href="APD.nq" target="_blank"><img src="https://img.shields.io/badge/Format-N_Quads-blue.svg" alt="N-Quads"></a> </span>
@@ -55,8 +61,22 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
 
 <dt>License: </dt> <dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0"></a> </dd>
 <!-- <dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl"></a></dd> -->
+<dt>Vocabulary service:</dt> <dd> 
+<span><a href="https://vocabs.ardc.edu.au/viewById/649" target="_blank"><img src="https://img.shields.io/badge/ARDC-RVA-blue.svg" alt="JSON-LD"></a> </span> </dd>
 
-<dt>Cite as:</dt> <dd>Wenk et al, APD ontology, Retrieved from: https://w3id.org/APD/ </dd> </dl>
+<dt>Source:</dt> <dd>
+<span><a href="https://doi.org/10.5281/zenodo.8040789" target="_blank"><img src="https://img.shields.io/badge/DOI-10.5281/zenodo.8040789-blue.svg" alt="10.5281/zenodo.8040789"></a> </span>
+
+<span><a href="https://github.com/traitecoevo/APD" target="_blank"><img src="https://img.shields.io/badge/Github-traitecoevo/APD-blue.svg" alt="JSON-LD"></a> </span>
+</dd>
+
+
+<dt>Contributing:</dt> <dd>
+ [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/traitecoevo/APD/issues) </dd>
+
+<dt>Cite as:</dt> <dd> Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, Coleman D, Yang S, Auld T, Barrett RL, Brodribb T, Choat B, Dun L, Ellsworth D, Gosper C, Guja L, Jordan GJ, Breton T, Leigh A, Irving PMedlyn B, Nolan R, Ooi M, Sommerville KD, Vesk P, White M, Wright IJ & Falster DS (2023) The AusTraits Plant Dictionary. bioRxiv. DOI: [10.1101/2023.06.16.545047](http://doi.org/10.1101/2023.06.16.545047) </dd> 
+
+</dl>
 
 <!-- Examples:
 https://i-adopt.github.io/index.html
@@ -95,7 +115,7 @@ if (knitr::is_html_output()) {
 ```
 
 # Abstract
-This document describes the schema available from the APD namespace. The APD offers detailed descriptions for more than 500 plant trait concepts. It includes trait focused on plant morphology, plant nutrient concentrations, plant physiology, plant life history, and plant fire response. The definitions will be useful to researchers from diverse disciplines, including plant functional ecology, plant taxonomy, and conservation biology. All trait concepts are supported by comprehensive metadata including trait descriptions, allowable trait values, allowable ranges, preferred units, keywords, references, and links to matches in a selection of trait databases. The traits describe here also fully support the AusTraits plant trait database, doi.org/10.5281/zenodo.3568417.
+This document describes the schema available from the APD namespace. The APD offers detailed descriptions for more than 500 plant trait concepts. It includes trait focused on plant morphology, plant nutrient concentrations, plant physiology, plant life history, and plant fire response. The definitions will be useful to researchers from diverse disciplines, including plant functional ecology, plant taxonomy, and conservation biology. All trait concepts are supported by comprehensive metadata including trait descriptions, allowable trait values, allowable ranges, preferred units, keywords, references, and links to matches in a selection of trait databases. The traits describe here also fully support the AusTraits plant trait database, <doi.org/10.5281/zenodo.3568417>.
 
 # Table of Contents 
 
