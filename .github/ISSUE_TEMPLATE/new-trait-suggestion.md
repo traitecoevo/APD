@@ -24,10 +24,11 @@ assignees: ehwenk
 
     Categorical values:
 
-**If you are familiar with key references for this trait, please list them below by doi or citation. These may include trait handbooks, other trait databases where the trait is defined, the first publication to suggest this trait, or other references championing this trait or providing an outstanding summary of its relevance.**
+**Please list key references for this trait, by doi or citation. These may include trait handbooks, other trait databases where the trait is defined, the first publication to suggest this trait, or other references championing this trait or providing an outstanding summary of its relevance.**
 
     References:
 
-**If you have additional information to provide about this trait, please do so here. This may include keywords, mentions of the trait in other databases, or allowable ranges (for numeric traits).**
+**If you have additional information to provide about this trait, please do so here. This may include keywords, mentions of the trait in other databases, or allowable ranges (for numeric traits). We prioritise traits for which the trait concept is fully developed.**
 
     Additional comments, information:
+
