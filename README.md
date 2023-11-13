@@ -1,5 +1,11 @@
 # The AusTraits Plant Dictionary (APD)
 
+<!-- badges: start -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8040789.svg)](https://doi.org/10.5281/zenodo.8040789)
+<!-- badges: end -->
+
+![](inst/figures/logo.png)
+
 The AusTraits Plant Dictionary (APD) includes the trait definitions used by AusTraits, a database of Australian plant traits. Upon its release in 2023, the APD will include definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. Each trait definition has been reviewed by multiple people and includes references and links to identical/similar traits in other trait databases whenever possible. The APD includes machine-readable formats and endpoints, allowing the traits to be readily re-used by other databases.
 
 ## This repository
