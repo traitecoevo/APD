@@ -10,11 +10,10 @@ reformatted_references <-
     identifier = paste0("\"", identifier, "\""),
     citation = paste0("\"", citation, "\"", "@en"),
     title = paste0("\"", title, "\"", "@en"),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://purl.org/dc/terms/bibliographicCitation>` = citation,
     `<http://purl.org/dc/terms/title>` = title
@@ -32,11 +31,10 @@ reformatted_reviewers <-
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
     ORCID = paste0("\"", ORCID, "\""),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
   ) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.obolibrary.org/obo/IAO_0000708>` = ORCID
   ) %>%
   pivot_longer(cols = -Subject) %>% 
@@ -54,12 +52,11 @@ reformatted_units <-
     label = paste0("\"", label, "\"", "@en"),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     SI_code = ifelse(!is.na(SI_code), paste0("\"", SI_code, "\""), NA),
-    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\""), NA),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2002/07/owl#NamedIndividual>"
+    UCUM_code = ifelse(!is.na(UCUM_code), paste0("\"", UCUM_code, "\""), NA)
   ) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.org/dc/terms/description>` = description,
     `<https://w3id.org/uom/SI_code>` = SI_code,
     `<https://w3id.org/uom/UCUM_code>` = UCUM_code
@@ -83,21 +80,16 @@ reformatted_categorical <-
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits_csv$identifier[match(trait_name, traits_csv$trait)],
     Parent = paste0("<https://w3id.org/APD/traits/", Parent, ">"),
-    SubClassOf = Parent,
     `<http://www.w3.org/2004/02/skos/core#definition>` = description,
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#NamedIndividual>",
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
   ) %>%
   select(-trait_name) %>%
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>`= prefLabel,
     `<http://purl.org/dc/terms/description>` = description,
-    `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
-    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf
+    `<http://www.w3.org/2004/02/skos/core#broader>` = Parent
   ) %>%
   pivot_longer(cols = -Subject) %>% 
   rename(
@@ -116,21 +108,16 @@ reformatted_hierarchy <-
       prefLabel = label,
       description = paste0("\"", description, "\"", "@en"),
       Parent = ifelse(stringr::str_detect(Entity, "0000000"), NA, paste0("<", Parent, ">")),
-      SubClassOf = Parent,
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
       `<http://www.w3.org/2004/02/skos/core#definition>` = description,
-      `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
-      `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
       `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
     ) %>%
     rename(
       Subject = Entity,
       `<http://purl.org/dc/terms/identifier>` = identifier,
-      `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
       `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
       `<http://purl.org/dc/terms/description>` = description,
       `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
-      `<http://www.w3.org/2000/01/rdf-schema#subClassOf>` = SubClassOf,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
     pivot_longer(cols = -Subject) %>% 
@@ -163,14 +150,11 @@ reformatted_glossary <-
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary", "\""),
-    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>",
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
+    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>"
   ) %>%
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
     `<http://purl.org/dc/terms/description>` = description
   ) %>%
@@ -192,13 +176,11 @@ reformatted_published_classes <-
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
-    inScheme = ifelse(stringr::str_detect(prefix,"APD"), paste0("\"", inScheme, "\""), NA),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
+    inScheme = ifelse(stringr::str_detect(prefix,"APD"), paste0("\"", inScheme, "\""), NA)
   ) %>%
   select(-prefix) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/terms/identifier>` = identifier,
@@ -221,16 +203,14 @@ reformatted_annotation <-
     prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     issued = ifelse(!is.na(issued), paste0("\"", issued, "\"", "^^<xsd:date>"), NA),
-    comment = paste0("\"", comment, "\"", "@en"),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>"
+    comment = paste0("\"", comment, "\"", "@en")
   ) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/terms/created>`= issued,
-    `<http://www.w3.org/2000/01/rdf-schema#comment>`= comment
+    `<http://www.w3.org/2004/02/skos/core#note>`= comment
   ) %>%
   pivot_longer(cols = -Subject) %>% 
   rename(
@@ -261,10 +241,6 @@ reformatted_traits <-
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     across(c("category_1", "category_2", "category_3", "category_4"), 
            ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$identifier)], ">"), NA)),
-    SubClassOf_1 = category_1,
-    SubClassOf_2 = category_2,
-    SubClassOf_3 = category_3,
-    SubClassOf_4 = category_4,
     created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
     reviewed = ifelse(!is.na(reviewed), paste0("\"", reviewed, "\"", "^^<xsd:date>"), NA),
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
@@ -306,8 +282,6 @@ reformatted_traits <-
     related_BROT = ifelse(!is.na(related_BROT), paste0("\"", related_BROT, "\""), NA),
     PalmTraits_exact = ifelse(!is.na(PalmTraits_exact), paste0("\"", PalmTraits_exact, "\""), NA),
     PalmTraits_close = ifelse(!is.na(PalmTraits_close), paste0("\"", PalmTraits_close, "\""), NA),
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>",
-    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>2` = "<http://www.w3.org/2002/07/owl#Class>",
     `<http://www.w3.org/2004/02/skos/core#definition>` = description
   ) %>%
   select(-keyword_10) %>%
@@ -315,11 +289,10 @@ reformatted_traits <-
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#altLabel>`= trait,
-    `<http://www.w3.org/2000/01/rdf-schema#label>`= label,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>`= preflabel,
     `<http://purl.org/dc/terms/description>` = description_encoded,
     `<http://purl.org/dc/terms/description>2` = description,
-    `<http://www.w3.org/2000/01/rdf-schema#comment>`= comments,
+    `<http://www.w3.org/2004/02/skos/core#note>`= comments,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme,
     `<http://terminologies.gfbio.org/terms/ETS/valueType>`= type,
     `<http://terminologies.gfbio.org/terms/ETS/minAllowedValue>`= min,
@@ -330,10 +303,6 @@ reformatted_traits <-
     `<http://www.w3.org/2004/02/skos/core#broader>2` = category_2,
     `<http://www.w3.org/2004/02/skos/core#broader>3` = category_3,
     `<http://www.w3.org/2004/02/skos/core#broader>4` = category_4,
-    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>1` = SubClassOf_1,
-    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>2` = SubClassOf_2,
-    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>3` = SubClassOf_3,
-    `<http://www.w3.org/2000/01/rdf-schema#subClassOf>4` = SubClassOf_4,
     `<http://purl.org/dc/terms/created>`= created,
     `<http://purl.org/dc/terms/reviewed>`= reviewed,
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,

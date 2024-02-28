@@ -66,7 +66,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     
     output <-
       add_row(output, 
-              make_link("comments","http://www.w3.org/2000/01/rdf-schema#comment"), 
+              make_link("comments","http://www.w3.org/2004/02/skos/core#note"), 
               comments_tmp$value_link
               )
   
