@@ -125,7 +125,7 @@ classes/concepts to create from ancillary spreadsheets:
     keyword_8: http://semanticscience.org/resource/SIO_000147 [EntityIRI]
     keyword_9: http://semanticscience.org/resource/SIO_000147 [EntityIRI]
     keyword_10: http://semanticscience.org/resource/SIO_000147 [EntityIRI]
-    exact_other1: http://www.w3.org/2004/02/skos/core#exactMatch [EntityIRI]
+    exact_other: http://www.w3.org/2004/02/skos/core#exactMatch [EntityIRI]
     close_other1: http://www.w3.org/2004/02/skos/core#closeMatch [EntityIRI]
     close_other2: http://www.w3.org/2004/02/skos/core#closeMatch [EntityIRI]
     related_other: http://www.w3.org/2004/02/skos/core#relatedMatch [EntityIRI]

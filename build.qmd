@@ -72,6 +72,7 @@ rdflib::rdf_serialize(true_triples, "APD.ttl",
                                     xsd = "http://www.w3.org/2001/XMLSchema#",
                                     Cerrado = "http://cerrado.linkeddata.es/ecology/",
                                     CorVeg  = "http://linked.data.gov.au/def/corveg-cv/",
+                                    CO_357 = "https://cropontology.org/rdf/CO_357:",
                                     DCM = "http://dicom.nema.org/resources/ontology/DCM/",
                                     EDAM = "http://edamontology.org/",
                                     EFO = "http://www.ebi.ac.uk/efo/",
@@ -263,15 +264,20 @@ keywords <-
 #
 exact1 <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(exact_other1)) %>%
-  dplyr::filter(!is.na(exact_other1)) %>%
+  dplyr::select(trait, c(exact_other)) %>%
+  dplyr::filter(!is.na(exact_other)) %>%
   dplyr::mutate(
-    exact_other1 = paste0(
-      published_classes$label[match(exact_other1, published_classes$identifier)], " [",
-      published_classes$Entity[match(exact_other1, published_classes$identifier)], "]"
+    exact_other = stringr::str_replace(exact_other, CO:357:, ""),
+    exact_other = stringr::str_split(exact_other, "; ")
+    ) %>%
+  tidyr::unnest_longer(exact_other) %>%
+  dplyr::mutate(
+    exact_other = paste0(
+      published_classes$label[match(exact_other, published_classes$identifier)], " [",
+      published_classes$Entity[match(exact_other, published_classes$identifier)], "]"
     )
   ) %>%
-  dplyr::rename(value = exact_other1)
+  dplyr::rename(value = exact_other)
 
 exact <- 
   APD_traits_input %>%
@@ -290,6 +296,7 @@ close1 <-
   dplyr::select(trait, c(close_other1)) %>%
   dplyr::filter(!is.na(close_other1)) %>%
   dplyr::mutate(
+    close_other1 = stringr::str_replace(close_other1, CO:357:, ""),
     close_other1 = paste0(
       published_classes$label[match(close_other1, published_classes$identifier)], " [",
       published_classes$Entity[match(close_other1, published_classes$identifier)], "]"
@@ -302,6 +309,7 @@ close2 <-
   dplyr::select(trait, c(close_other2)) %>%
   dplyr::filter(!is.na(close_other2)) %>%
   dplyr::mutate(
+    close_other2 = stringr::str_replace(close_other1, CO:357:, ""),
     close_other2 = paste0(
       published_classes$label[match(close_other2, published_classes$identifier)], " [",
       published_classes$Entity[match(close_other2, published_classes$identifier)], "]"
@@ -327,6 +335,7 @@ related1 <-
   dplyr::select(trait, c(related_other)) %>%
   dplyr::filter(!is.na(related_other)) %>%
   dplyr::mutate(
+    related_other = stringr::str_replace(related_other, CO:357:, ""),
     related_other = paste0(
       published_classes$label[match(related_other, published_classes$identifier)], " [",
       published_classes$Entity[match(related_other, published_classes$identifier)], "]"

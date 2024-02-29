@@ -76,7 +76,6 @@ reformatted_categorical <-
     Entity = paste0("<", Entity, ">"),
     identifier = paste0("\"", identifier, "\""),
     label = paste0("\"", label, "\"", "@en"),
-    prefLabel = label,
     description = paste0("\"", description, "\"", "@en"),
     Parent = traits_csv$identifier[match(trait_name, traits_csv$trait)],
     Parent = paste0("<https://w3id.org/APD/traits/", Parent, ">"),
@@ -87,7 +86,7 @@ reformatted_categorical <-
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
-    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= prefLabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent
   ) %>%
@@ -105,7 +104,6 @@ reformatted_hierarchy <-
       Entity = paste0("<", Entity, ">"),
       identifier = paste0("\"", identifier, "\""),
       label = paste0("\"", label, "\"", "@en"),
-      prefLabel = label,
       description = paste0("\"", description, "\"", "@en"),
       Parent = ifelse(stringr::str_detect(Entity, "0000000"), NA, paste0("<", Parent, ">")),
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
@@ -115,7 +113,7 @@ reformatted_hierarchy <-
     rename(
       Subject = Entity,
       `<http://purl.org/dc/terms/identifier>` = identifier,
-      `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
+      `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
       `<http://purl.org/dc/terms/description>` = description,
       `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
@@ -146,7 +144,6 @@ reformatted_glossary <-
     Entity = paste0("<", Entity, ">"),
     identifier = paste0("\"", identifier, "\""),
     label = paste0("\"", label, "\"", "@en"),
-    prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary", "\""),
@@ -155,7 +152,7 @@ reformatted_glossary <-
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
-    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
     `<http://purl.org/dc/terms/description>` = description
   ) %>%
   pivot_longer(cols = -Subject) %>% 
@@ -172,7 +169,6 @@ reformatted_published_classes <-
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
-    prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
@@ -181,7 +177,7 @@ reformatted_published_classes <-
   select(-prefix) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme
@@ -200,14 +196,13 @@ reformatted_annotation <-
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
-    prefLabel = label,
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     issued = ifelse(!is.na(issued), paste0("\"", issued, "\"", "^^<xsd:date>"), NA),
     comment = paste0("\"", comment, "\"", "@en")
   ) %>%
   rename(
     Subject = Entity,
-    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = prefLabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
     `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/terms/created>`= issued,
     `<http://www.w3.org/2004/02/skos/core#note>`= comment
@@ -228,7 +223,6 @@ reformatted_traits <-
     identifier = paste0("\"", identifier, "\""),
     trait = paste0("\"", trait, "\""),
     label = paste0("\"", label, "\"", "@en"),
-    preflabel = label,
     description_encoded = ifelse(!is.na(description_encoded), paste0("\"", description_encoded, "\"", "@en"), NA),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
@@ -257,7 +251,7 @@ reformatted_traits <-
            ~ifelse(!is.na(.x), paste0("<", reviewers_csv$Entity[match(.x, reviewers_csv$label)], ">"), NA)),
     across(c("ref_1", "ref_2", "ref_3", "ref_4", "ref_5"), 
            ~ifelse(!is.na(.x), paste0("<", references_csv$Entity[match(.x, references_csv$label)], ">"), NA)),
-    exact_other1 = ifelse(!is.na(exact_other1), paste0("<", published_classes_csv$Entity[match(exact_other1, published_classes_csv$identifier)], ">"), NA),
+    exact_other = ifelse(!is.na(exact_other), paste0("<", published_classes_csv$Entity[match(exact_other, published_classes_csv$identifier)], ">"), NA),
     close_other1 = ifelse(!is.na(close_other1), paste0("<", published_classes_csv$Entity[match(close_other1, published_classes_csv$identifier)], ">"), NA),
     close_other2 = ifelse(!is.na(close_other2), paste0("<", published_classes_csv$Entity[match(close_other2, published_classes_csv$identifier)], ">"), NA),
     related_other = ifelse(!is.na(related_other), paste0("<", published_classes_csv$Entity[match(related_other, published_classes_csv$identifier)], ">"), NA),
@@ -289,7 +283,7 @@ reformatted_traits <-
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#altLabel>`= trait,
-    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= preflabel,
+    `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.org/dc/terms/description>` = description_encoded,
     `<http://purl.org/dc/terms/description>2` = description,
     `<http://www.w3.org/2004/02/skos/core#note>`= comments,
@@ -341,7 +335,7 @@ reformatted_traits <-
     `<http://semanticscience.org/resource/SIO_000147>7`= keyword_7,
     `<http://semanticscience.org/resource/SIO_000147>8`= keyword_8,
     `<http://semanticscience.org/resource/SIO_000147>9`= keyword_9,
-    `<http://www.w3.org/2004/02/skos/core#exactMatch>`= exact_other1,
+    `<http://www.w3.org/2004/02/skos/core#exactMatch>`= exact_other,
     `<http://www.w3.org/2004/02/skos/core#closeMatch>`= close_other1,
     `<http://www.w3.org/2004/02/skos/core#closeMatch>2`= close_other2,
     `<http://www.w3.org/2004/02/skos/core#relatedMatch>`= related_other,
