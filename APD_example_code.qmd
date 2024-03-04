@@ -1,0 +1,183 @@
+---
+title: "Using the APD - example code"
+author: "Elizabeth Wenk"
+editor: visual
+---
+
+The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, with each trait (and trait groupings) assigned its own URI.
+
+To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded at XXX.
+
+The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, or indeed reference.
+
+```{r}
+
+library(tidyverse)
+library(stringr)
+
+APD_traits <- read_csv("release/1.1.0/APD_traits.csv")
+
+APD_categorical_values <- read_csv("release/1.1.0/APD_categorical_values.csv")
+
+```
+
+---
+Metadata fields (annotation properties) documented for each trait include:
+---
+
+```{r}
+
+names(APD_traits)
+```
+
+---
+To determine the possible values for `structure_measured` run:
+---
+
+```{r}
+library(stringr)
+
+APD_traits %>%
+  dplyr::select(structure_measured) %>%
+  dplyr::mutate(structure_measured = (stringr::str_split(structure_measured, "; "))) %>%
+  tidyr::unnest_longer("structure_measured") %>%
+  dplyr::distinct()
+```
+
+You can then select the subset of traits that relate to a specific structure:
+
+```{r}
+
+seed_traits <- APD_traits %>%
+  dplyr::filter(stringr::str_detect(structure_measured, "seed"))
+```
+
+You could similarly extract all traits within one of the defined trait groupings:
+
+```{r}
+
+trait_groupings <- APD_traits %>%
+  dplyr::select(trait_groupings) %>%
+  dplyr::mutate(trait_groupings = (stringr::str_split(trait_groupings, "; "))) %>%
+  tidyr::unnest_longer("trait_groupings") %>%
+  dplyr::distinct()
+
+trait_groupings %>% dplyr::slice(20:29)
+
+stomatal_traits <- APD_traits %>%
+  dplyr::filter(stringr::str_detect(trait_groupings, "leaf stomatal complex morphology trait"))
+
+stomatal_traits
+```
+
+The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volum and is a ratio:
+
+```{r}
+
+APD_traits %>%
+  select(trait, label, characteristic_measured) %>%
+  filter(
+    str_detect(characteristic_measured, "volumne") &
+    str_detect(characteristic_measured, "ratio") 
+    )
+```
+
+Or all terms that measure a force:
+
+```{r}
+
+APD_traits %>%
+  select(trait, label, characteristic_measured) %>%
+  filter(
+    str_detect(characteristic_measured, "force") 
+    )
+```
+
+The allowed values for categorical traits are output in the second table, `APD_categorical_values`. For instance, for the trait `life_history` you might separately extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
+
+```{r}
+
+life_history_values <-
+  APD_categorical_values %>%
+    filter(trait == "life_history") %>%
+    select(-trait, -categorical_trait_identifier, -categorical_trait_synonyms) %>%
+    mutate(
+      term = "allowed_values_levels",
+      value = paste0(allowed_values_levels, ": ", categorical_trait_description)
+      ) %>%
+    select(term, value)
+
+life_history <- 
+  APD_traits %>% 
+    filter(trait == "life_history") %>%
+    mutate(across(c(1:ncol(APD_traits)), ~ as.character(.x))) %>%
+    pivot_longer(cols = 1:ncol(APD_traits)) %>%
+    rename(term = name) %>%
+    bind_rows(life_history_values) %>%
+    filter(!is.na(value))
+
+life_history
+```
+
+To identify all traits that are also in the TRY trait database:
+
+```{r}
+
+matches_to_TRY <- APD_traits %>%
+  select(trait, exact_match, close_match, related_match) %>%
+  pivot_longer(cols = 2:4) %>%
+  filter(!is.na(value)) %>%
+  mutate(value = stringr::str_split(value, "; ")) %>%
+  unnest_longer(value) %>%
+  filter(stringr::str_detect(value, "\\[TRY"))
+
+```
+
+To obtain matches to other ontologies, use the following patterns with str_detect:
+
+| Vocabulary / Database     | string to match to |
+|---------------------------|--------------------|
+| TRY Plant Trait Database  | \\\\\[TRY          |
+| TOP Thesaurus             | \\\\\[TOP          |
+| BIEN                      | \\\\\[BIEN         |
+| EnvThes                   | EnvThes            |
+| GIFT                      | \\\\\[GIFT         |
+| LEDA                      | \\\\\[LEDA         |
+| Plant Trait Ontology (TO) | obo\\\\/TO\_       |
+| Woody Plants Ontology     |                    |
+| BROT Database             | \\\\\[BROT         |
+|                           |                    |
+
+As appropriate, references are listed for each trait concept, under `references`.
+
+```{r}
+
+APD_traits %>%
+  select(trait, label, references) %>%
+  filter(str_detect(trait, "fluorescence"))
+```
+
+Alternatively, if you know the doi for a reference and wish to see which traits reference it, use:
+
+```{r}
+
+APD_traits %>%
+  select(trait, label, references) %>%
+  filter(str_detect(references, "doi.org/10.1071/BT12225"))
+```
+
+For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under `deprecated_trait_name`:
+
+```{r}
+
+# extract all trait names that have changed
+APD_traits %>%
+  select(trait, label, deprecated_trait_name) %>%
+  filter(!is.na(deprecated_trait_name))
+
+# look up a specific trait name that is no longer used
+APD_traits %>%
+  select(trait, label, deprecated_trait_name) %>%
+  filter(str_detect(deprecated_trait_name, "fire"))
+
+```
