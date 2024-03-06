@@ -218,8 +218,8 @@ reformatted_annotation <-
 reformatted_traits <- 
   traits_csv %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
-  mutate(across(c("exact_other", "close_other", "related_other"), \(x) stringr::str_split(x, "; "))) %>%
-  unnest_wider(col = c(exact_other, close_other, related_other), names_sep = "_") %>%
+  mutate(across(c("reviewers", "exact_match", "close_match", "related_match"), \(x) stringr::str_split(x, "; "))) %>%
+  unnest_wider(col = c(reviewers, exact_match, close_match, related_match), names_sep = "_") %>%
   mutate(
     Entity =  paste0("<", Entity, ">"),
     identifier = paste0("\"", identifier, "\""),
@@ -245,16 +245,26 @@ reformatted_traits <-
                                                paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), .x)),
     across(dplyr::contains("keyword"), ~ifelse(!is.na(.x) & stringr::str_detect(.x, "glossary\\_"), 
                                                paste0("<", glossary_csv$Entity[match(.x, glossary_csv$identifier)], ">"), .x)),
-    across(c("rev_01", "rev_02", "rev_03", "rev_04", "rev_05", "rev_06", "rev_07", "rev_08", "rev_09", "rev_10"), 
-           ~ifelse(!is.na(.x), paste0("<", reviewers_csv$Entity[match(.x, reviewers_csv$label)], ">"), NA)),
-    across(c("ref_1", "ref_2", "ref_3", "ref_4", "ref_5"), 
-           ~ifelse(!is.na(.x), paste0("<", references_csv$Entity[match(.x, references_csv$label)], ">"), NA)),
-    across(dplyr::contains("_other"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
-    across(dplyr::contains("exact") & !dplyr::contains("other"), \(x) ifelse(!is.na(x), paste0("\"exact match: ", x, "\""), NA)),
-    across(dplyr::contains("close") & !dplyr::contains("other"), \(x) ifelse(!is.na(x), paste0("\"close match: ", x, "\""), NA)),
-    across(dplyr::contains("related") & !dplyr::contains("other"), \(x) ifelse(!is.na(x), paste0("\"related match: ", x, "\""), NA)),
+    across(dplyr::contains("reviewers"), ~ifelse(!is.na(.x), paste0("<", reviewers_csv$Entity[match(.x, reviewers_csv$label)], ">"), NA)),
+    across(dplyr::contains("ref_"), ~ifelse(!is.na(.x), paste0("<", references_csv$Entity[match(.x, references_csv$label)], ">"), NA)),
+    across(dplyr::contains("_match"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
+    across(dplyr::contains("_exact"), \(x) ifelse(!is.na(x), paste0("\"exact match: ", x, "\""), NA)),
+    across(dplyr::contains("_close"), \(x) ifelse(!is.na(x), paste0("\"close match: ", x, "\""), NA)),
+    across(dplyr::contains("_related"), \(x) ifelse(!is.na(x), paste0("\"related match: ", x, "\""), NA)),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description
   ) %>%
+  rename_with(~ paste0("<http://semanticscience.org/resource/SIO_000147>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("keyword_")) %>%
+  rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#broader>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("category_")) %>%
+  rename_with(~ paste0("<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("meas_char_")) %>%
+  rename_with(~ paste0("<http://purl.obolibrary.org/obo/PO_0009011>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("structure_")) %>%
+  rename_with(~ paste0("<http://purl.org/datacite/v4.4/IsReviewedBy>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("reviewers_")) %>%
+  rename_with(~ paste0("<http://purl.org/dc/terms/references>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("ref_")) %>%
+  rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#exactMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("exact_match")) %>%
+  rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#closeMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("close_match")) %>%
+  rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#relatedMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("related_match")) %>%  
+  rename_with(
+    ~ paste0("<http://www.w3.org/2004/02/skos/core#example>", seq_along(1:length(traits_csv %>% select(dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related"))))), 
+    .cols = dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related")) %>%
   rename(
     Subject = Entity,
     `<http://purl.org/dc/terms/identifier>` = identifier,
@@ -269,78 +279,10 @@ reformatted_traits <-
     `<http://terminologies.gfbio.org/terms/ETS/maxAllowedValue>`= max,
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>`= units,
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>2`= units_uom,
-    `<http://www.w3.org/2004/02/skos/core#broader>` = category_1,
-    `<http://www.w3.org/2004/02/skos/core#broader>2` = category_2,
-    `<http://www.w3.org/2004/02/skos/core#broader>3` = category_3,
-    `<http://www.w3.org/2004/02/skos/core#broader>4` = category_4,
     `<http://purl.org/dc/terms/created>`= created,
     `<http://purl.org/dc/terms/reviewed>`= reviewed,
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,
-    `<http://www.w3.org/2004/02/skos/core#scopeNote>`= constraints,
-    `<http://purl.obolibrary.org/obo/PO_0009011>`= structure_1,
-    `<http://purl.obolibrary.org/obo/PO_0009011>2`= structure_2,
-    `<http://purl.obolibrary.org/obo/PO_0009011>3`= structure_3,
-    `<http://purl.obolibrary.org/obo/PO_0009011>4`= structure_4,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>`= meas_char_1,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>2`= meas_char_2,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>3`= meas_char_3,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>4`= meas_char_4,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>5`= meas_char_5,
-    `<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>6`= meas_char_6,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>`= rev_01,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>2`= rev_02,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>3`= rev_03,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>4`= rev_04,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>5`= rev_05,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>6`= rev_06,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>7`= rev_07,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>8`= rev_08,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>9`= rev_09,
-    `<http://purl.org/datacite/v4.4/IsReviewedBy>1`= rev_10,
-    `<http://purl.org/dc/terms/references>`= ref_1,
-    `<http://purl.org/dc/terms/references>2`= ref_2,
-    `<http://purl.org/dc/terms/references>3`= ref_3,
-    `<http://purl.org/dc/terms/references>4`= ref_4,
-    `<http://purl.org/dc/terms/references>5`= ref_5,
-    `<http://semanticscience.org/resource/SIO_000147>`= keyword_1,
-    `<http://semanticscience.org/resource/SIO_000147>2`= keyword_2,
-    `<http://semanticscience.org/resource/SIO_000147>3`= keyword_3,
-    `<http://semanticscience.org/resource/SIO_000147>4`= keyword_4,
-    `<http://semanticscience.org/resource/SIO_000147>5`= keyword_5,
-    `<http://semanticscience.org/resource/SIO_000147>6`= keyword_6,
-    `<http://semanticscience.org/resource/SIO_000147>7`= keyword_7,
-    `<http://semanticscience.org/resource/SIO_000147>8`= keyword_8,
-    `<http://semanticscience.org/resource/SIO_000147>9`= keyword_9,
-    `<http://www.w3.org/2004/02/skos/core#exactMatch>1`= exact_other_1,
-    `<http://www.w3.org/2004/02/skos/core#exactMatch>2`= exact_other_2,
-    `<http://www.w3.org/2004/02/skos/core#exactMatch>3`= exact_other_3,
-    `<http://www.w3.org/2004/02/skos/core#closeMatch>1`= close_other_1,
-    `<http://www.w3.org/2004/02/skos/core#closeMatch>2`= close_other_2,
-    `<http://www.w3.org/2004/02/skos/core#closeMatch>3`= close_other_3,
-    `<http://www.w3.org/2004/02/skos/core#relatedMatch>1`= related_other_1,
-    `<http://www.w3.org/2004/02/skos/core#relatedMatch>2`= related_other_2,
-    `<http://www.w3.org/2004/02/skos/core#relatedMatch>3`= related_other_3,
-    `<http://www.w3.org/2004/02/skos/core#example>02`= exact_TOP,
-    `<http://www.w3.org/2004/02/skos/core#example>13`= close_TOP,
-    `<http://www.w3.org/2004/02/skos/core#example>22`= related_TOP,
-    `<http://www.w3.org/2004/02/skos/core#example>23`= related_TOP2,
-    `<http://www.w3.org/2004/02/skos/core#example>03`= exact_TRY,
-    `<http://www.w3.org/2004/02/skos/core#example>14`= close_TRY,
-    `<http://www.w3.org/2004/02/skos/core#example>24`= related_TRY,
-    `<http://www.w3.org/2004/02/skos/core#example>04`= exact_LEDA,
-    `<http://www.w3.org/2004/02/skos/core#example>15`= close_LEDA,
-    `<http://www.w3.org/2004/02/skos/core#example>25`= related_LEDA,
-    `<http://www.w3.org/2004/02/skos/core#example>05`= exact_GIFT,
-    `<http://www.w3.org/2004/02/skos/core#example>16`= close_GIFT,
-    `<http://www.w3.org/2004/02/skos/core#example>26`= related_GIFT,
-    `<http://www.w3.org/2004/02/skos/core#example>06`= exact_BIEN,
-    `<http://www.w3.org/2004/02/skos/core#example>17`= close_BIEN,
-    `<http://www.w3.org/2004/02/skos/core#example>27`= related_BIEN,
-    `<http://www.w3.org/2004/02/skos/core#example>07`= exact_BROT,
-    `<http://www.w3.org/2004/02/skos/core#example>18`= close_BROT,
-    `<http://www.w3.org/2004/02/skos/core#example>28`= related_BROT,
-    `<http://www.w3.org/2004/02/skos/core#example>08`= PalmTraits_exact,
-    `<http://www.w3.org/2004/02/skos/core#example>19`= PalmTraits_close
+    `<http://www.w3.org/2004/02/skos/core#scopeNote>`= constraints
   ) %>%
   pivot_longer(cols = -Subject) %>% 
   rename(
