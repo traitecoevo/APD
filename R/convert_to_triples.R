@@ -218,8 +218,9 @@ reformatted_annotation <-
 reformatted_traits <- 
   traits_csv %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
-  mutate(across(c("reviewers", "exact_match", "close_match", "related_match"), \(x) stringr::str_split(x, "; "))) %>%
-  unnest_wider(col = c(reviewers, exact_match, close_match, related_match), names_sep = "_") %>%
+  mutate(across(c("reviewers", "exact_match", "close_match", "related_match", "measured_characteristic", "structure", "category", "keywords", "references"), 
+  \(x) stringr::str_split(x, "; "))) %>%
+  unnest_wider(col = c(reviewers, exact_match, close_match, related_match, measured_characteristic, structure, category, keywords, references), names_sep = "_") %>%
   mutate(
     Entity =  paste0("<", Entity, ">"),
     identifier = paste0("\"", identifier, "\""),
@@ -240,25 +241,25 @@ reformatted_traits <-
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
     across(dplyr::contains("structure"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
-    across(dplyr::contains("meas_char"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
+    across(dplyr::contains("measured_char"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
     across(dplyr::contains("keyword"), ~ifelse(!is.na(.x) & !stringr::str_detect(.x, "glossary\\_"), 
                                                paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), .x)),
-    across(dplyr::contains("keyword"), ~ifelse(!is.na(.x) & stringr::str_detect(.x, "glossary\\_"), 
+    across(dplyr::contains("keywords"), ~ifelse(!is.na(.x) & stringr::str_detect(.x, "glossary\\_"), 
                                                paste0("<", glossary_csv$Entity[match(.x, glossary_csv$identifier)], ">"), .x)),
     across(dplyr::contains("reviewers"), ~ifelse(!is.na(.x), paste0("<", reviewers_csv$Entity[match(.x, reviewers_csv$label)], ">"), NA)),
-    across(dplyr::contains("ref_"), ~ifelse(!is.na(.x), paste0("<", references_csv$Entity[match(.x, references_csv$label)], ">"), NA)),
+    across(dplyr::contains("references"), ~ifelse(!is.na(.x), paste0("<", references_csv$Entity[match(.x, references_csv$label)], ">"), NA)),
     across(dplyr::contains("_match"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),
     across(dplyr::contains("_exact"), \(x) ifelse(!is.na(x), paste0("\"exact match: ", x, "\""), NA)),
     across(dplyr::contains("_close"), \(x) ifelse(!is.na(x), paste0("\"close match: ", x, "\""), NA)),
     across(dplyr::contains("_related"), \(x) ifelse(!is.na(x), paste0("\"related match: ", x, "\""), NA)),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description
   ) %>%
-  rename_with(~ paste0("<http://semanticscience.org/resource/SIO_000147>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("keyword_")) %>%
+  rename_with(~ paste0("<http://semanticscience.org/resource/SIO_000147>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("keywords_")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#broader>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("category_")) %>%
-  rename_with(~ paste0("<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("meas_char_")) %>%
+  rename_with(~ paste0("<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("measured_char")) %>%
   rename_with(~ paste0("<http://purl.obolibrary.org/obo/PO_0009011>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("structure_")) %>%
   rename_with(~ paste0("<http://purl.org/datacite/v4.4/IsReviewedBy>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("reviewers_")) %>%
-  rename_with(~ paste0("<http://purl.org/dc/terms/references>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("ref_")) %>%
+  rename_with(~ paste0("<http://purl.org/dc/terms/references>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("references_")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#exactMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("exact_match")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#closeMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("close_match")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#relatedMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("related_match")) %>%  
