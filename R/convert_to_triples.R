@@ -164,12 +164,11 @@ reformatted_glossary <-
 
 reformatted_published_classes <- 
   published_classes_csv %>%
-  select(Entity, label, description, identifier, inScheme, prefix) %>%
+  select(Entity, label, identifier, inScheme, prefix) %>%
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
   mutate(
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
-    description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     identifier = str_replace(identifier, "^[:alpha:]+\\:", ""),
     identifier = paste0("\"", identifier, "\""),
     inScheme = ifelse(stringr::str_detect(prefix,"APD"), paste0("\"", inScheme, "\""), NA)
@@ -178,7 +177,6 @@ reformatted_published_classes <-
   rename(
     Subject = Entity,
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
-    `<http://purl.org/dc/terms/description>` = description,
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme
   ) %>%
