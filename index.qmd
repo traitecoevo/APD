@@ -139,13 +139,13 @@ The APD Trait groups express broad trait groupings, with each trait concept mapp
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 trait_groupings <- 
   triples_with_labels %>% 
-    filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+    filter(Predicate == "http://www.w3.org/2004/02/skos/core#prefLabel") %>%
     filter(stringr::str_detect(Subject, "trait_group_")) %>%
     select(identifier = Subject)
 
 to_match_tmp <- triples_with_labels %>%
   filter(Subject_stripped %in% trait_groupings$identifier) %>%
-  filter(property == "label") %>%
+  filter(property == "preferred label") %>%
   select(Subject_stripped, value)
  
 for (thistrait in trait_groupings$identifier) {
@@ -168,13 +168,13 @@ The APD Trait concepts express the traits defined by the APT.
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 list_of_traits <- 
   triples_with_labels %>% 
-    filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+    filter(Predicate == "http://www.w3.org/2004/02/skos/core#prefLabel") %>%
     filter(stringr::str_detect(Subject, "trait_[:digit:]")) %>%
     select(identifier = Subject)
 
 to_match_tmp <- triples_with_labels %>%
   filter(Subject_stripped %in% list_of_traits$identifier) %>%
-  filter(property == "label") %>%
+  filter(property == "preferred label") %>%
   select(Subject_stripped, value)
  
 for (thistrait in list_of_traits[[1]]) {
@@ -208,7 +208,7 @@ categorical_allowed <-
 
   to_match_tmp <- triples_with_labels %>% 
     filter(Subject_stripped %in% categorical_allowed$identifier) %>%
-    filter(property == "label") %>%
+    filter(property == "preferred label") %>%
     select(Subject_stripped, value)
   
   tmp_categorical2 <- triples_with_labels %>%
@@ -256,7 +256,7 @@ This section of the ontology includes terminology used within trait concept desc
 
 glossary_terms <- 
   triples_with_labels %>% 
-  filter(Predicate == "http://www.w3.org/2000/01/rdf-schema#label") %>%
+  filter(Predicate == "http://www.w3.org/2004/02/skos/core#prefLabel") %>%
   filter(stringr::str_detect(Subject, "glossary_")) %>%
   select(identifier = Subject)
 
@@ -264,7 +264,7 @@ for (thistrait in glossary_terms$identifier) {
   
   to_match_tmp <- triples_with_labels %>% 
     filter(Subject_stripped %in% glossary_terms$identifier) %>%
-    filter(property == "label") %>%
+    filter(property == "preferred label") %>%
     select(Subject_stripped, value)
 
   # creating header makes anchor using header name. Aslo create an anchor using trait_ID  
