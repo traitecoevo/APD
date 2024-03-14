@@ -115,10 +115,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Metadata fields (annotation properties) documented for each trait include:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(APD_traits) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">field =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(APD_traits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -211,12 +210,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>To determine the possible values for <code>structure_measured</code> run:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>structure_measured <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(structure_measured) <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">structure_measured =</span> (stringr<span class="sc">::</span><span class="fu">str_split</span>(structure_measured, <span class="st">"; "</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest_longer</span>(<span class="st">"structure_measured"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -262,23 +262,368 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>You can then select the subset of traits that relate to a specific structure:</p>
+<p>You can then select the subset of traits that relate to a specific structure.</p>
+<p>The first 10 traits on this list:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seed_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(structure_measured, <span class="st">"seed"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(structure_measured, <span class="st">"seed"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You could similarly extract all traits within one of the defined trait groupings:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 3%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 3%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 10%">
+<col style="width: 23%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">description</th>
+<th style="text-align: left;">comments</th>
+<th style="text-align: left;">trait_type</th>
+<th style="text-align: right;">allowed_values_min</th>
+<th style="text-align: right;">allowed_values_max</th>
+<th style="text-align: left;">units</th>
+<th style="text-align: left;">constraints</th>
+<th style="text-align: left;">trait_groupings</th>
+<th style="text-align: left;">structure_measured</th>
+<th style="text-align: left;">characteristic_measured</th>
+<th style="text-align: left;">keywords</th>
+<th style="text-align: left;">references</th>
+<th style="text-align: left;">reviewers</th>
+<th style="text-align: left;">created</th>
+<th style="text-align: left;">modified</th>
+<th style="text-align: left;">exact_match</th>
+<th style="text-align: left;">close_match</th>
+<th style="text-align: left;">related_match</th>
+<th style="text-align: left;">examples</th>
+<th style="text-align: left;">description_encoded</th>
+<th style="text-align: left;">deprecated_trait_name</th>
+<th style="text-align: left;">identifier</th>
+<th style="text-align: left;">inScheme</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001218</td>
+<td style="text-align: left;">seed_Ca_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed calcium (Ca) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of calcium in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e+00</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">calcium atom [CHEBI_22984]; micronutrient [CHEBI_27027]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed calcium content per seed dry mass [TOP566] (https://top-thesaurus.org/index)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_Ca_concentration</td>
+<td style="text-align: left;">trait_0001218</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001230</td>
+<td style="text-align: left;">seed_K_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed potassium (K) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of potassium in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e+00</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">potassium atom [CHEBI_26216]; macronutrient [CHEBI_33937]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed potassium content per seed dry mass [TOP579] (https://top-thesaurus.org/index)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_K_concentration</td>
+<td style="text-align: left;">trait_0001230</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001232</td>
+<td style="text-align: left;">seed_Mg_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed magnesium (Mg) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of magnesium in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-01</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">magnesium atom [CHEBI_25107]; micronutrient [CHEBI_27027]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed magnesium content per seed dry mass [TOP572] (https://top-thesaurus.org/index)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_Mg_concentration</td>
+<td style="text-align: left;">trait_0001232</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001238</td>
+<td style="text-align: left;">seed_N_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed nitrogen (N) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of nitrogen in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e+01</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">nitrogen atom [CHEBI_25555]; macronutrient [CHEBI_33937]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">concentration of nitrogen in seeds [http://vocabs.lter-europe.net/EnvThes/22087]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed nitrogen content per seed dry mass [TOP577] (https://top-thesaurus.org/index); exact match: Seed nitrogen (N) content per dry mass (or diaspore) [TRY:2945] (https://www.try-db.org/de/de.php)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_N_concentration</td>
+<td style="text-align: left;">trait_0001238</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001244</td>
+<td style="text-align: left;">seed_P_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed phosphorus (P) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of phosphorus in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e+00</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">phosphorus atom [CHEBI_28659]; macronutrient [CHEBI_33937]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">seed phosphorus content [http://purl.obolibrary.org/obo/TO_0002666]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed phosphorus content per seed dry mass [TOP578] (https://top-thesaurus.org/index); exact match: Seed phosphorus (P) content per dry mass (or diaspore) [TRY:3000] (https://www.try-db.org/de/de.php)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_P_concentration</td>
+<td style="text-align: left;">trait_0001244</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0001246</td>
+<td style="text-align: left;">seed_S_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed sulphur (S) content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of sulphur in seeds to seed dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-01</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">mg/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system mineral and ion content trait [trait_group_0001006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">sulfur atom [CHEBI_26833]; micronutrient [CHEBI_27027]; reproduction [GO_0000003]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed sulfur content per seed dry mass [TOP581] (https://top-thesaurus.org/index)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur [CHEBI:26833] in seeds [PO:0009010] to seed dry mass.</td>
+<td style="text-align: left;">seed_S_concentration</td>
+<td style="text-align: left;">trait_0001246</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0002534</td>
+<td style="text-align: left;">seed_protein_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed protein content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of protein in a seed to seed dry mass.</td>
+<td style="text-align: left;">It is best practice for the denominator to be seed dry mass. If data are reported on a <code>per seed fresh mass</code> basis, this should be explicitly noted in the methods or as a method context.</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-05</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">g/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">protein content trait [trait_group_0002009]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">protein [CHEBI_36080]; seed weight, seed mass [TO_0000181]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">seed protein content [http://purl.obolibrary.org/obo/TO_0000490]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed protein content per seed mass [TRY:97] (https://www.try-db.org/de/de.php)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of protein [CHEBI:36080] in a seed [PO:0009010] to seed dry mass [TO:0000181].</td>
+<td style="text-align: left;">seed_protein_content</td>
+<td style="text-align: left;">trait_0002534</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0002544</td>
+<td style="text-align: left;">seed_oil_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed oil content per unit seed dry mass</td>
+<td style="text-align: left;">The ratio of the mass of lipids in a seed to seed dry mass.</td>
+<td style="text-align: left;">It is best practice for the denominator to be seed dry mass. If data are reported on a <code>per seed fresh mass</code> basis, this should be explicitly noted in the methods or as a method context.</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-04</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">g/g</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">lipid content trait [trait_group_0002006]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]</td>
+<td style="text-align: left;">lipid [CHEBI_18059]; seed weight, seed mass [TO_0000181]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">exact match: Seed lipid content per seed dry mass [TOP880] (https://top-thesaurus.org/index); exact match: Seed oil content per seed mass [TRY:96] (https://www.try-db.org/de/de.php)</td>
+<td style="text-align: left;">The ratio [PATO:0001470] of the mass [PATO:0000125] of lipids [CHEBI:18059] in a seed [PO:0009010] to seed dry mass [TO:0000181].</td>
+<td style="text-align: left;">seed_oil_content</td>
+<td style="text-align: left;">trait_0002544</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0012221</td>
+<td style="text-align: left;">accessory_cost_fraction</td>
+<td style="text-align: left;">Seed accessory cost fraction</td>
+<td style="text-align: left;">The fraction of total reproductive investment required to mature a seed that is invested in non-seed tissues. It is calculated as one minus, the ratio of total biomass investment in seeds to total biomass investment in all reproductive tissues, including flower buds, flowers, fruits, dispersal tissues, aborted seeds, and successfully matured seeds.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-02</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">mg/mg</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system morphology trait [trait_group_0012202]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; flower [PO_0009046]; fruit [PO_0009001]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]</td>
+<td style="text-align: left;">biomass allocation [EnvThes:21360]; reproduction [GO_0000003]; NA [glossary_40004]</td>
+<td style="text-align: left;">Lord &amp; Westoby 2006 [https://doi.org/10.1007/s00442-006-0523-z]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">close match: Plant biomass and allometry: Reproductive dry mass per plant dry mass (reproductive weight fraction) [TRY:1046] (https://www.try-db.org/de/de.php)</td>
+<td style="text-align: left;">A reproductive shoot system [PO:0025082] biomass allocation [EnvThes:21360] trait which is one minus the ratio [PATO:0001470] of total plant seed [PO:0009010] dry [PATO:0001824] mass [PATO:0000125] to total plant reproductive shoot system tissue dry mass where reproductive tissues include all flower buds [PO:0000056], flowers [PO:0009046], fruits [PO:0009001], dispersal [EnvThes:21038] tissues, and seeds produced during the developmental process involved in reproduction [GO:0003006].</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">trait_0012221</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0012222</td>
+<td style="text-align: left;">accessory_cost_mass</td>
+<td style="text-align: left;">Seed accessory cost mass</td>
+<td style="text-align: left;">The mass of seed accessory costs, which is the total biomass investment in all reproductive tissues, excluding biomass invested in successfully matured seeds; it includes all biomass invested in flower buds, flowers, fruits, dispersal tissues and aborted seeds.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">continuous variable [STATO_0000251]</td>
+<td style="text-align: right;">1e-02</td>
+<td style="text-align: right;">10000</td>
+<td style="text-align: left;">mg</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">reproductive shoot system morphology trait [trait_group_0012202]</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; flower [PO_0009046]; fruit [PO_0009001]; seed [PO_0009010]</td>
+<td style="text-align: left;">mass [PATO_0000125]</td>
+<td style="text-align: left;">biomass allocation [EnvThes:21360]; reproduction [GO_0000003]; NA [glossary_40004]</td>
+<td style="text-align: left;">Lord &amp; Westoby 2006 [https://doi.org/10.1007/s00442-006-0523-z]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">14/07/2021</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">A reproductive shoot system [PO:0025082] biomass allocation [EnvThes:21360] trait which is the sum of the dry [PATO:0001824] mass [PATO:0000125] of all flower buds [PO:0000056], flowers [PO:0009046], fruits [PO:0009001], aborted seeds, and dispersal [EnvThes:21038] tissues produced during the developmental process involved in reproduction [GO:0003006], but excludes mature [PATO:0001701] seed [PO:0009010] dry mass.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">trait_0012222</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You could similarly extract all traits within one of the defined trait groupings.</p>
+<p>Generate list of <code>trait_grouping</code> terms used:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trait_groupings <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(trait_groupings) <span class="sc">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">trait_groupings =</span> (stringr<span class="sc">::</span><span class="fu">str_split</span>(trait_groupings, <span class="st">"; "</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest_longer</span>(<span class="st">"trait_groupings"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>trait_groupings <span class="sc">%&gt;%</span> </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">29</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -320,11 +665,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
+</div>
+<p>Display all <code>leaf stomatal complex morphology</code> traits:</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stomatal_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(trait_groupings, <span class="st">"leaf stomatal complex morphology trait"</span>))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>stomatal_traits  <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(trait_groupings, <span class="st">"leaf stomatal complex morphology trait"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -558,17 +905,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>The term <code>characteristic_measured</code> documents “what” is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volum and is a ratio:</p>
+<p>The term <code>characteristic_measured</code> documents “what” is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volume and is a ratio:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>volume_ratio_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, characteristic_measured) <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"volumne"</span>) <span class="sc">&amp;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"volume"</span>) <span class="sc">&amp;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"ratio"</span>) </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
-<table>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 66%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">trait</th>
@@ -577,18 +930,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td style="text-align: left;">wood_density</td>
+<td style="text-align: left;">Wood density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stem_density</td>
+<td style="text-align: left;">Herbaceous stem density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bark_density</td>
+<td style="text-align: left;">Bark density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">root_fine_root_coarse_root_ratio</td>
+<td style="text-align: left;">Fine root volume to coarse root volume ratio</td>
+<td style="text-align: left;">volume [PATO_0000918]; ratio; proportion [PATO_0001470]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">root_wood_density</td>
+<td style="text-align: left;">Root wood density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bulk_modulus_of_elasticity</td>
+<td style="text-align: left;">Bulk modulus of elasticity (e)</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]; volume [PATO_0000918]; ratio; proportion [PATO_0001470]; model parameter [STATO_0000034]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fire_fuel_bed_bulk_density</td>
+<td style="text-align: left;">Fuel bed bulk density</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]; volume density [PATO_0001353]; mass density, density [PATO_0001019]</td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 <p>Or all terms that measure a force:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>force_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, characteristic_measured) <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"force"</span>) </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -792,10 +1181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(APD_traits)) <span class="sc">%&gt;%</span></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">term =</span> name) <span class="sc">%&gt;%</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(life_history_values) <span class="sc">%&gt;%</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value))</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>life_history <span class="sc">%&gt;%</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -913,18 +1301,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>To identify all traits that are also in the TRY trait database:</p>
+<p>To identify all traits that are also in the TRY trait database, with the first 20 displayed:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>matches_to_TRY <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, examples) <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(examples)) <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">examples =</span> stringr<span class="sc">::</span><span class="fu">str_split</span>(examples, <span class="st">"; "</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(examples) <span class="sc">%&gt;%</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(examples, <span class="st">"</span><span class="sc">\\</span><span class="st">[TRY"</span>))</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>matches_to_TRY <span class="sc">%&gt;%</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(examples, <span class="st">"</span><span class="sc">\\</span><span class="st">[TRY"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -1061,7 +1447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Slightly different code is required to extract lists of formally published trait definitions that have been matched to:</p>
+<p>Slightly different code is required to extract lists of formally published trait definitions that have been matched to. The first 20 matches to the Woody Plants Ontology are:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>matches_to_WoodyPlants <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, exact_match, close_match, related_match) <span class="sc">%&gt;%</span></span>
@@ -1069,11 +1455,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">%&gt;%</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> stringr<span class="sc">::</span><span class="fu">str_split</span>(value, <span class="st">"; "</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(value) <span class="sc">%&gt;%</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(value, <span class="st">"CO_357"</span>))</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>matches_to_WoodyPlants <span class="sc">%&gt;%</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(value, <span class="st">"CO_357"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -1222,10 +1606,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>As appropriate, references are listed for each trait concept, under <code>references</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fluorescence <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, references) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(trait, <span class="st">"fluorescence"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(trait, <span class="st">"fluorescence"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -1255,13 +1640,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>Alternatively, if you know the doi for a reference and wish to see which traits reference it, use:</p>
+<p>Alternatively, if you know the doi for a reference andyou can search for traits that reference it.</p>
+<p>The first 15 traits referencing <code>Pérez-Harguindeguy 2013</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>BT12225 <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, references) <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(references, <span class="st">"doi.org/10.1071/BT12225"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(references, <span class="st">"doi.org/10.1071/BT12225"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -1356,14 +1742,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under <code>deprecated_trait_name</code>:</p>
+<p>For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under <code>deprecated_trait_name</code>.</p>
+<p>You can extract all trait names that have changed, with 10 of them displayed:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract all trait names that have changed</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(deprecated_trait_name)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">70</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>deprecated_trait_names <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(deprecated_trait_name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -1437,11 +1823,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># look up a specific trait name that is no longer used</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(deprecated_trait_name, <span class="st">"fire"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">format =</span> <span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Or look up a specific trait name that is no longer used:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deprecated_fire_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(deprecated_trait_name, <span class="st">"fire"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>

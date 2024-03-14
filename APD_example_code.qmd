@@ -24,7 +24,12 @@ APD_categorical_values <- read_csv("docs/APD_categorical_values.csv")
 
 Metadata fields (annotation properties) documented for each trait include:
 
-```{r}
+```{r, output=FALSE}
+
+names(APD_traits)
+```
+
+```{r, echo=FALSE}
 
 names(APD_traits) %>% 
   as.data.frame() %>% 
@@ -34,73 +39,110 @@ names(APD_traits) %>%
 
 To determine the possible values for `structure_measured` run:
 
-```{r}
-APD_traits %>%
+```{r, output=FALSE}
+
+structure_measured <- APD_traits %>%
   dplyr::select(structure_measured) %>%
   dplyr::mutate(structure_measured = (stringr::str_split(structure_measured, "; "))) %>%
   tidyr::unnest_longer("structure_measured") %>%
-  dplyr::distinct() %>%
+  dplyr::distinct()
+```
+
+```{r, echo=FALSE}
+
+structure_measured  %>%
   kableExtra::kable(format = "markdown")
 ```
 
-You can then select the subset of traits that relate to a specific structure:
+You can then select the subset of traits that relate to a specific structure.
 
-```{r}
+The first 10 traits on this list:
+
+```{r, output=FALSE}
 
 seed_traits <- APD_traits %>%
-  dplyr::filter(stringr::str_detect(structure_measured, "seed")) %>%
+  dplyr::filter(stringr::str_detect(structure_measured, "seed"))
+```
+
+```{r, echo=FALSE}
+
+seed_traits  %>%
+  slice(1:10) %>%
   kableExtra::kable(format = "markdown")
 ```
 
-You could similarly extract all traits within one of the defined trait groupings:
+You could similarly extract all traits within one of the defined trait groupings.
 
-```{r}
+Generate list of `trait_grouping` terms used:
+
+```{r, output=FALSE}
 
 trait_groupings <- APD_traits %>%
   dplyr::select(trait_groupings) %>%
   dplyr::mutate(trait_groupings = (stringr::str_split(trait_groupings, "; "))) %>%
   tidyr::unnest_longer("trait_groupings") %>%
   dplyr::distinct()
+```
+
+```{r, echo=FALSE}
 
 trait_groupings %>% 
   dplyr::slice(20:29) %>%
   kableExtra::kable(format = "markdown")
+```
+
+Display all `leaf stomatal complex morphology` traits:
+
+```{r, output=FALSE}
 
 stomatal_traits <- APD_traits %>%
   dplyr::filter(stringr::str_detect(trait_groupings, "leaf stomatal complex morphology trait"))
+```
+
+```{r, echo=FALSE}
 
 stomatal_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
-The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volum and is a ratio:
+The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volume and is a ratio:
 
-```{r}
+```{r, output=FALSE}
 
-APD_traits %>%
+volume_ratio_traits <- APD_traits %>%
   select(trait, label, characteristic_measured) %>%
   filter(
-    str_detect(characteristic_measured, "volumne") &
+    str_detect(characteristic_measured, "volume") &
     str_detect(characteristic_measured, "ratio") 
-    ) %>%
+    )
+```
+
+```{r, echo=FALSE}
+
+volume_ratio_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
 Or all terms that measure a force:
 
-```{r}
+```{r, output=FALSE}
 
-APD_traits %>%
+force_traits <- APD_traits %>%
   select(trait, label, characteristic_measured) %>%
   filter(
     str_detect(characteristic_measured, "force") 
-    ) %>%
+    )
+```
+
+```{r, echo=FALSE}
+
+force_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
 The allowed values for categorical traits are output in the second table, `APD_categorical_values`. For instance, for the trait `life_history` you might separately extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
 
-```{r}
+```{r, output=FALSE}
 
 life_history_values <-
   APD_categorical_values %>%
@@ -120,14 +162,17 @@ life_history <-
     rename(term = name) %>%
     bind_rows(life_history_values) %>%
     filter(!is.na(value))
+```
+
+```{r, echo=FALSE}
 
 life_history %>%
   kableExtra::kable(format = "markdown")
 ```
 
-To identify all traits that are also in the TRY trait database:
+To identify all traits that are also in the TRY trait database, with the first 20 displayed:
 
-```{r}
+```{r, output=FALSE}
 
 matches_to_TRY <- APD_traits %>%
   select(trait, examples) %>%
@@ -136,10 +181,13 @@ matches_to_TRY <- APD_traits %>%
   unnest_longer(examples) %>%
   filter(stringr::str_detect(examples, "\\[TRY"))
 
+```
+
+```{r, echo=FALSE}
+
 matches_to_TRY %>%
   slice(1:20) %>%
   kableExtra::kable(format = "markdown")
-
 ```
 
 To obtain matches to other informally published trait matches in dictionary and ontologies, use the following patterns with str_detect:
@@ -154,9 +202,9 @@ To obtain matches to other informally published trait matches in dictionary and 
 | BROT Database            | \\\\\[BROT         |
 | Palm Traits Database     | \\\\\[Palm         |
 
-Slightly different code is required to extract lists of formally published trait definitions that have been matched to:
+Slightly different code is required to extract lists of formally published trait definitions that have been matched to. The first 20 matches to the Woody Plants Ontology are:
 
-```{r}
+```{r, output=FALSE}
 
 matches_to_WoodyPlants <- APD_traits %>%
   select(trait, exact_match, close_match, related_match) %>%
@@ -165,6 +213,9 @@ matches_to_WoodyPlants <- APD_traits %>%
   mutate(value = stringr::str_split(value, "; ")) %>%
   unnest_longer(value) %>%
   filter(stringr::str_detect(value, "CO_357"))
+```
+
+```{r, echo=FALSE}
 
 matches_to_WoodyPlants %>%
   slice(1:20) %>%
@@ -182,40 +233,66 @@ To obtain matches to other formally published trait in ontologies, use the follo
 
 As appropriate, references are listed for each trait concept, under `references`.
 
-```{r}
+```{r, output=FALSE}
 
-APD_traits %>%
+fluorescence <- APD_traits %>%
   select(trait, label, references) %>%
-  filter(str_detect(trait, "fluorescence")) %>%
-  kableExtra::kable(format = "markdown")
+  filter(str_detect(trait, "fluorescence"))
 ```
 
-Alternatively, if you know the doi for a reference and wish to see which traits reference it, use:
+```{r, echo=FALSE}
 
-```{r}
+fluorescence %>% kableExtra::kable(format = "markdown")
+```
 
-APD_traits %>%
+Alternatively, if you know the doi for a reference andyou can search for traits that reference it.
+
+The first 15 traits referencing `Pérez-Harguindeguy 2013`:
+
+```{r, output=FALSE}
+
+BT12225 <- APD_traits %>%
   select(trait, label, references) %>%
-  filter(str_detect(references, "doi.org/10.1071/BT12225")) %>%
+  filter(str_detect(references, "doi.org/10.1071/BT12225"))
+```
+
+```{r, echo=FALSE}
+
+BT12225  %>%
   slice(1:15) %>%
   kableExtra::kable(format = "markdown")
 ```
 
-For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under `deprecated_trait_name`:
+For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under `deprecated_trait_name`.
 
-```{r}
+You can extract all trait names that have changed, with 10 of them displayed:
 
-# extract all trait names that have changed
-APD_traits %>%
+```{r, output=FALSE}
+
+deprecated_trait_names <- APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
-  filter(!is.na(deprecated_trait_name)) %>%
+  filter(!is.na(deprecated_trait_name))
+```
+
+```{r, echo=FALSE}
+
+deprecated_trait_names %>%
   slice(60:70) %>%
   kableExtra::kable(format = "markdown")
 
-# look up a specific trait name that is no longer used
-APD_traits %>%
-  select(trait, label, deprecated_trait_name) %>%
-  filter(str_detect(deprecated_trait_name, "fire")) %>%
-  kableExtra::kable(format = "markdown")
+```
 
+Or look up a specific trait name that is no longer used:
+
+```{r, output=FALSE}
+
+deprecated_fire_traits <- APD_traits %>%
+  select(trait, label, deprecated_trait_name) %>%
+  filter(str_detect(deprecated_trait_name, "fire"))
+```
+
+```{r, echo=FALSE}
+
+deprecated_fire_traits %>%
+  kableExtra::kable(format = "markdown")
 ```
