@@ -14,6 +14,7 @@ The examples below indicate how the definitions and metadata for specific traits
 
 library(tidyverse)
 library(stringr)
+library(kableExtra)
 
 APD_traits <- read_csv("docs/APD_traits.csv")
 
@@ -28,8 +29,7 @@ Metadata fields (annotation properties) documented for each trait include:
 names(APD_traits) %>% 
   as.data.frame() %>% 
   rename(field = 1) %>%
-  print()
-
+  kableExtra::kable(format = "markdown")
 ```
 
 To determine the possible values for `structure_measured` run:
@@ -40,7 +40,7 @@ APD_traits %>%
   dplyr::mutate(structure_measured = (stringr::str_split(structure_measured, "; "))) %>%
   tidyr::unnest_longer("structure_measured") %>%
   dplyr::distinct() %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 You can then select the subset of traits that relate to a specific structure:
@@ -49,7 +49,7 @@ You can then select the subset of traits that relate to a specific structure:
 
 seed_traits <- APD_traits %>%
   dplyr::filter(stringr::str_detect(structure_measured, "seed")) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 You could similarly extract all traits within one of the defined trait groupings:
@@ -64,13 +64,13 @@ trait_groupings <- APD_traits %>%
 
 trait_groupings %>% 
   dplyr::slice(20:29) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 
 stomatal_traits <- APD_traits %>%
   dplyr::filter(stringr::str_detect(trait_groupings, "leaf stomatal complex morphology trait"))
 
 stomatal_traits  %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volum and is a ratio:
@@ -83,7 +83,7 @@ APD_traits %>%
     str_detect(characteristic_measured, "volumne") &
     str_detect(characteristic_measured, "ratio") 
     ) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 Or all terms that measure a force:
@@ -95,7 +95,7 @@ APD_traits %>%
   filter(
     str_detect(characteristic_measured, "force") 
     ) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 The allowed values for categorical traits are output in the second table, `APD_categorical_values`. For instance, for the trait `life_history` you might separately extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
@@ -121,7 +121,8 @@ life_history <-
     bind_rows(life_history_values) %>%
     filter(!is.na(value))
 
-life_history %>% print()
+life_history %>%
+  kableExtra::kable(format = "markdown")
 ```
 
 To identify all traits that are also in the TRY trait database:
@@ -137,7 +138,7 @@ matches_to_TRY <- APD_traits %>%
 
 matches_to_TRY %>%
   slice(1:20) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 
 ```
 
@@ -167,7 +168,7 @@ matches_to_WoodyPlants <- APD_traits %>%
 
 matches_to_WoodyPlants %>%
   slice(1:20) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 To obtain matches to other formally published trait in ontologies, use the following patterns with str_detect:
@@ -186,7 +187,7 @@ As appropriate, references are listed for each trait concept, under `references`
 APD_traits %>%
   select(trait, label, references) %>%
   filter(str_detect(trait, "fluorescence")) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 ```
 
 Alternatively, if you know the doi for a reference and wish to see which traits reference it, use:
@@ -196,7 +197,8 @@ Alternatively, if you know the doi for a reference and wish to see which traits 
 APD_traits %>%
   select(trait, label, references) %>%
   filter(str_detect(references, "doi.org/10.1071/BT12225")) %>%
-  print()
+  slice(1:15) %>%
+  kableExtra::kable(format = "markdown")
 ```
 
 For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under `deprecated_trait_name`:
@@ -208,12 +210,12 @@ APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
   filter(!is.na(deprecated_trait_name)) %>%
   slice(60:70) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 
 # look up a specific trait name that is no longer used
 APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
   filter(str_detect(deprecated_trait_name, "fire")) %>%
-  print()
+  kableExtra::kable(format = "markdown")
 
 ```
