@@ -83,7 +83,16 @@ rdflib::rdf_serialize(true_triples, "APD.ttl",
                                     odo = "http://purl.dataone.org/odo/",
                                     ORCID = "https://orcid.org/",
                                     SIO = "http://semanticscience.org/resource/",
-                                    SWEET = "http://sweetontology.net/")
+                                    SWEET_phenSolid = "http://sweetontology.net/phenSolid/",
+                                    SWEET_phenSystem = "http://sweetontology.net/phenSystem/",
+                                    SWEET_procWave = "http://sweetontology.net/procWave/",
+                                    SWEET_prop = "http://sweetontology.net/prop/",
+                                    SWEET_propConductivity = "http://sweetontology.net/propConductivity",
+                                    SWEET_propPressure = "http://sweetontology.net/propPressure/",
+                                    SWEET_propTime = "http://sweetontology.net/propTime/",
+                                    SWEET_realmSoil = "http://sweetontology.net/realmSoil/",
+                                    SWEET_reprSciComponent = "http://sweetontology.net/reprSciComponent/",
+                                    SWEET_reprTimeDay = "http://sweetontology.net/reprTimeDay/")
                                     )
 rdflib::rdf_serialize(true_triples, "APD.json", format="jsonld")
 ```
