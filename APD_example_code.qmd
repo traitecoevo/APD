@@ -4,21 +4,20 @@ author: "Elizabeth Wenk"
 format: html
 ---
 
-The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, and each trait (and trait groupings) has its own URI.
+The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD/, and each trait (and trait groupings) has its own URI.
 
-To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [github.com/traitecoevo/APD/tree/master/docs](https://github.com/traitecoevo/APD/tree/master/docs).
+To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [github.com/traitecoevo/APD/tree/master/docs](https://github.com/traitecoevo/APD/tree/master/docs) or Zenodo at DOI: [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
 
 The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.
 
 ```{r, warning=FALSE, message=FALSE, echo=TRUE}
-
 library(tidyverse)
 library(stringr)
 library(kableExtra)
 
-APD_traits <- read_csv("docs/APD_traits.csv")
-
-APD_categorical_values <- read_csv("docs/APD_categorical_values.csv")
+# Todo: update links after branch merged in
+APD_traits <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_traits.csv", show_col_types = FALSE)
+APD_categorical_values <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_categorical_values.csv", show_col_types = FALSE)
 
 ```
 
@@ -37,13 +36,18 @@ names(APD_traits) %>%
   kableExtra::kable(format = "markdown")
 ```
 
+## Extracting terms based on specific fields
+
+The following examples show how to extract terms based on specific fields in the APD.
+
 ### Structure measured
 
 To determine the possible values for `structure_measured`:
 
 ```{r, output=FALSE}
 
-structure_measured <- APD_traits %>%
+structure_measured <- 
+  APD_traits %>%
   dplyr::select(structure_measured) %>%
   dplyr::mutate(structure_measured = (stringr::str_split(structure_measured, "; "))) %>%
   tidyr::unnest_longer("structure_measured") %>%
@@ -61,15 +65,14 @@ You can then select the subset of traits that relate to a specific structure.
 For instance, to extract traits relating to seeds:
 
 ```{r, output=FALSE}
-
-seed_traits <- APD_traits %>%
+seed_traits <- 
+  APD_traits %>%
   dplyr::filter(stringr::str_detect(structure_measured, "seed"))
 ```
 
 The first 10 traits on this list are: 
 
 ```{r, echo=FALSE}
-
 seed_traits  %>%
   slice(1:10) %>%
   kableExtra::kable(format = "markdown")
@@ -82,8 +85,8 @@ To extract all traits within one of the defined trait groupings.
 First, generate a list of `trait_grouping` terms:
 
 ```{r, output=FALSE}
-
-trait_groupings <- APD_traits %>%
+trait_groupings <- 
+  APD_traits %>%
   dplyr::select(trait_groupings) %>%
   dplyr::mutate(trait_groupings = (stringr::str_split(trait_groupings, "; "))) %>%
   tidyr::unnest_longer("trait_groupings") %>%
@@ -93,7 +96,6 @@ trait_groupings <- APD_traits %>%
 Items 20:29 on this list are: 
 
 ```{r, echo=FALSE}
-
 trait_groupings %>% 
   dplyr::slice(20:29) %>%
   kableExtra::kable(format = "markdown")
@@ -102,13 +104,12 @@ trait_groupings %>%
 Filter the APD for `leaf stomatal complex morphology` traits:
 
 ```{r, output=FALSE}
-
-stomatal_traits <- APD_traits %>%
+stomatal_traits <- 
+  APD_traits %>%
   dplyr::filter(stringr::str_detect(trait_groupings, "leaf stomatal complex morphology trait"))
 ```
 
 ```{r, echo=FALSE}
-
 stomatal_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
@@ -120,8 +121,8 @@ The term `characteristic_measured` documents "what" is being measured - a mass, 
 Multiple terms may be used, for instance to indicate a trait captures volume and is a ratio:
 
 ```{r, output=FALSE}
-
-volume_ratio_traits <- APD_traits %>%
+volume_ratio_traits <- 
+  APD_traits %>%
   select(trait, label, characteristic_measured) %>%
   filter(
     str_detect(characteristic_measured, "volume") &
@@ -139,7 +140,8 @@ Or all terms that measure a force:
 
 ```{r, output=FALSE}
 
-force_traits <- APD_traits %>%
+force_traits <-
+  APD_traits %>%
   select(trait, label, characteristic_measured) %>%
   filter(
     str_detect(characteristic_measured, "force") 
@@ -196,7 +198,8 @@ To identify all traits that are also in the TRY trait database:
 
 ```{r, output=FALSE}
 
-matches_to_TRY <- APD_traits %>%
+matches_to_TRY <- 
+  APD_traits %>%
   select(trait, examples) %>%
   filter(!is.na(examples)) %>%
   mutate(examples = stringr::str_split(examples, "; ")) %>%
@@ -230,7 +233,8 @@ Slightly different code is required to extract lists of formally published trait
 
 ```{r, output=FALSE}
 
-matches_to_WoodyPlants <- APD_traits %>%
+matches_to_WoodyPlants <- 
+  APD_traits %>%
   select(trait, exact_match, close_match, related_match) %>%
   pivot_longer(cols = 2:4) %>%
   filter(!is.na(value)) %>%
@@ -263,7 +267,8 @@ As appropriate, references are listed for each trait concept, under `references`
 
 ```{r, output=FALSE}
 
-fluorescence <- APD_traits %>%
+fluorescence <- 
+  APD_traits %>%
   select(trait, label, references) %>%
   filter(str_detect(trait, "fluorescence"))
 ```
@@ -276,8 +281,8 @@ fluorescence %>% kableExtra::kable(format = "markdown")
 Alternatively, if you know the doi for a reference andyou can search for traits that reference it.
 
 ```{r, output=FALSE}
-
-BT12225 <- APD_traits %>%
+BT12225 <- 
+  APD_traits %>%
   select(trait, label, references) %>%
   filter(str_detect(references, "doi.org/10.1071/BT12225"))
 ```
@@ -285,7 +290,6 @@ BT12225 <- APD_traits %>%
 The first 15 traits referencing `Pérez-Harguindeguy 2013`:
 
 ```{r, echo=FALSE}
-
 BT12225  %>%
   slice(1:15) %>%
   kableExtra::kable(format = "markdown")
@@ -298,14 +302,13 @@ For AusTraits users, if you have used an old version of AusTraits, previous name
 You can extract all trait names that have changed, with 10 of them displayed:
 
 ```{r, output=FALSE}
-
-deprecated_trait_names <- APD_traits %>%
+deprecated_trait_names <- 
+  APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
   filter(!is.na(deprecated_trait_name))
 ```
 
 ```{r, echo=FALSE}
-
 deprecated_trait_names %>%
   slice(60:70) %>%
   kableExtra::kable(format = "markdown")
@@ -315,8 +318,8 @@ deprecated_trait_names %>%
 Or look up a specific trait name that is no longer used:
 
 ```{r, output=FALSE}
-
-deprecated_fire_traits <- APD_traits %>%
+deprecated_fire_traits <- 
+  APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
   filter(str_detect(deprecated_trait_name, "fire"))
 ```
