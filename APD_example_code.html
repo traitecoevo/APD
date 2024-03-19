@@ -101,9 +101,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, with each trait (and trait groupings) assigned its own URI.</p>
+<p>The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, and each trait (and trait groupings) has its own URI.</p>
 <p>To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, <code>APD_traits.csv</code> and <code>APD_categorical_values</code>, which can be downloaded from <a href="https://github.com/traitecoevo/APD/tree/master/docs">github.com/traitecoevo/APD/tree/master/docs</a>.</p>
-<p>The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, or indeed reference.</p>
+<p>The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
@@ -208,7 +208,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>To determine the possible values for <code>structure_measured</code> run:</p>
+<section id="structure-measured" class="level3">
+<h3 class="anchored" data-anchor-id="structure-measured">Structure measured</h3>
+<p>To determine the possible values for <code>structure_measured</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>structure_measured <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(structure_measured) <span class="sc">%&gt;%</span></span>
@@ -263,11 +265,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>You can then select the subset of traits that relate to a specific structure.</p>
-<p>The first 10 traits on this list:</p>
+<p>For instance, to extract traits relating to seeds:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seed_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(structure_measured, <span class="st">"seed"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The first 10 traits on this list are:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -614,8 +617,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>You could similarly extract all traits within one of the defined trait groupings.</p>
-<p>Generate list of <code>trait_grouping</code> terms used:</p>
+</section>
+<section id="trait-groupings" class="level3">
+<h3 class="anchored" data-anchor-id="trait-groupings">Trait groupings</h3>
+<p>To extract all traits within one of the defined trait groupings.</p>
+<p>First, generate a list of <code>trait_grouping</code> terms:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trait_groupings <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(trait_groupings) <span class="sc">%&gt;%</span></span>
@@ -623,6 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest_longer</span>(<span class="st">"trait_groupings"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Items 20:29 on this list are:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -666,7 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>Display all <code>leaf stomatal complex morphology</code> traits:</p>
+<p>Filter the APD for <code>leaf stomatal complex morphology</code> traits:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stomatal_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(trait_groupings, <span class="st">"leaf stomatal complex morphology trait"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -905,7 +912,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>The term <code>characteristic_measured</code> documents “what” is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volume and is a ratio:</p>
+</section>
+<section id="characteristic-measured" class="level3">
+<h3 class="anchored" data-anchor-id="characteristic-measured">Characteristic measured</h3>
+<p>The term <code>characteristic_measured</code> documents “what” is being measured - a mass, length, etc.</p>
+<p>Multiple terms may be used, for instance to indicate a trait captures volume and is a ratio:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>volume_ratio_traits <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, characteristic_measured) <span class="sc">%&gt;%</span></span>
@@ -1162,7 +1173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>The allowed values for categorical traits are output in the second table, <code>APD_categorical_values</code>. For instance, for the trait <code>life_history</code> you might separately extract all metadata fields for the trait from <code>APD_traits</code>, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.</p>
+</section>
+<section id="categorical-values" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-values">Categorical values</h3>
+<p>The allowed values for categorical traits are output in the second table, <code>APD_categorical_values</code>.</p>
+<p>You can first extract all metadata fields for the trait from <code>APD_traits</code>, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.</p>
+<p>For <code>life_history</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>life_history_values <span class="ot">&lt;-</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  APD_categorical_values <span class="sc">%&gt;%</span></span>
@@ -1301,7 +1317,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<p>To identify all traits that are also in the TRY trait database, with the first 20 displayed:</p>
+</section>
+<section id="matches-to-other-databases-and-vocabularies" class="level3">
+<h3 class="anchored" data-anchor-id="matches-to-other-databases-and-vocabularies">Matches to other databases and vocabularies</h3>
+<p>Informal matches to traits included in databases and unpublished dictionaries are mapped in as <code>examples</code>, while matches to published vocabularies and ontologies and mapped using the formal terms, <code>exact_match</code>, <code>close_match</code>, and <code>related</code>_match`</p>
+<p>To identify all traits that are also in the TRY trait database:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>matches_to_TRY <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, examples) <span class="sc">%&gt;%</span></span>
@@ -1310,6 +1330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(examples) <span class="sc">%&gt;%</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(examples, <span class="st">"</span><span class="sc">\\</span><span class="st">[TRY"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The first 20 of many trait matches:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -1447,7 +1468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Slightly different code is required to extract lists of formally published trait definitions that have been matched to. The first 20 matches to the Woody Plants Ontology are:</p>
+<p>Slightly different code is required to extract lists of formally published trait definitions for which there are matches:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>matches_to_WoodyPlants <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, exact_match, close_match, related_match) <span class="sc">%&gt;%</span></span>
@@ -1457,6 +1478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(value) <span class="sc">%&gt;%</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(value, <span class="st">"CO_357"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The first 20 matches to the Woody Plants Ontology are:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -1604,6 +1626,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
 <p>As appropriate, references are listed for each trait concept, under <code>references</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fluorescence <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
@@ -1641,12 +1666,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Alternatively, if you know the doi for a reference andyou can search for traits that reference it.</p>
-<p>The first 15 traits referencing <code>Pérez-Harguindeguy 2013</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>BT12225 <span class="ot">&lt;-</span> APD_traits <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, references) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(references, <span class="st">"doi.org/10.1071/BT12225"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The first 15 traits referencing <code>Pérez-Harguindeguy 2013</code>:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -1742,6 +1767,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
+</section>
+<section id="deprecated-trait-names" class="level3">
+<h3 class="anchored" data-anchor-id="deprecated-trait-names">Deprecated trait names</h3>
 <p>For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under <code>deprecated_trait_name</code>.</p>
 <p>You can extract all trait names that have changed, with 10 of them displayed:</p>
 <div class="cell">
@@ -1885,6 +1913,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
+</section>
 
 </main>
 <!-- /main column -->

@@ -4,11 +4,11 @@ author: "Elizabeth Wenk"
 format: html
 ---
 
-The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, with each trait (and trait groupings) assigned its own URI.
+The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD, and each trait (and trait groupings) has its own URI.
 
 To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [github.com/traitecoevo/APD/tree/master/docs](https://github.com/traitecoevo/APD/tree/master/docs).
 
-The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, or indeed reference.
+The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.
 
 ```{r, warning=FALSE, message=FALSE, echo=TRUE}
 
@@ -37,7 +37,9 @@ names(APD_traits) %>%
   kableExtra::kable(format = "markdown")
 ```
 
-To determine the possible values for `structure_measured` run:
+### Structure measured
+
+To determine the possible values for `structure_measured`:
 
 ```{r, output=FALSE}
 
@@ -56,13 +58,15 @@ structure_measured  %>%
 
 You can then select the subset of traits that relate to a specific structure.
 
-The first 10 traits on this list:
+For instance, to extract traits relating to seeds:
 
 ```{r, output=FALSE}
 
 seed_traits <- APD_traits %>%
   dplyr::filter(stringr::str_detect(structure_measured, "seed"))
 ```
+
+The first 10 traits on this list are: 
 
 ```{r, echo=FALSE}
 
@@ -71,9 +75,11 @@ seed_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
-You could similarly extract all traits within one of the defined trait groupings.
+### Trait groupings
 
-Generate list of `trait_grouping` terms used:
+To extract all traits within one of the defined trait groupings.
+
+First, generate a list of `trait_grouping` terms:
 
 ```{r, output=FALSE}
 
@@ -84,6 +90,8 @@ trait_groupings <- APD_traits %>%
   dplyr::distinct()
 ```
 
+Items 20:29 on this list are: 
+
 ```{r, echo=FALSE}
 
 trait_groupings %>% 
@@ -91,7 +99,7 @@ trait_groupings %>%
   kableExtra::kable(format = "markdown")
 ```
 
-Display all `leaf stomatal complex morphology` traits:
+Filter the APD for `leaf stomatal complex morphology` traits:
 
 ```{r, output=FALSE}
 
@@ -105,7 +113,11 @@ stomatal_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
-The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. Multiple terms may be used, to indicate a trait captures volume and is a ratio:
+### Characteristic measured
+
+The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. 
+
+Multiple terms may be used, for instance to indicate a trait captures volume and is a ratio:
 
 ```{r, output=FALSE}
 
@@ -140,7 +152,13 @@ force_traits  %>%
   kableExtra::kable(format = "markdown")
 ```
 
-The allowed values for categorical traits are output in the second table, `APD_categorical_values`. For instance, for the trait `life_history` you might separately extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
+### Categorical values
+
+The allowed values for categorical traits are output in the second table, `APD_categorical_values`. 
+
+You can first extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
+
+For `life_history`:
 
 ```{r, output=FALSE}
 
@@ -170,7 +188,11 @@ life_history %>%
   kableExtra::kable(format = "markdown")
 ```
 
-To identify all traits that are also in the TRY trait database, with the first 20 displayed:
+### Matches to other databases and vocabularies
+
+Informal matches to traits included in databases and unpublished dictionaries are mapped in as `examples`, while matches to published vocabularies and ontologies and mapped using the formal terms, `exact_match`, `close_match`, and `related`_match`
+
+To identify all traits that are also in the TRY trait database:
 
 ```{r, output=FALSE}
 
@@ -182,6 +204,8 @@ matches_to_TRY <- APD_traits %>%
   filter(stringr::str_detect(examples, "\\[TRY"))
 
 ```
+
+The first 20 of many trait matches:
 
 ```{r, echo=FALSE}
 
@@ -202,7 +226,7 @@ To obtain matches to other informally published trait matches in dictionary and 
 | BROT Database            | \\\\\[BROT         |
 | Palm Traits Database     | \\\\\[Palm         |
 
-Slightly different code is required to extract lists of formally published trait definitions that have been matched to. The first 20 matches to the Woody Plants Ontology are:
+Slightly different code is required to extract lists of formally published trait definitions for which there are matches: 
 
 ```{r, output=FALSE}
 
@@ -214,6 +238,8 @@ matches_to_WoodyPlants <- APD_traits %>%
   unnest_longer(value) %>%
   filter(stringr::str_detect(value, "CO_357"))
 ```
+
+The first 20 matches to the Woody Plants Ontology are:
 
 ```{r, echo=FALSE}
 
@@ -231,6 +257,8 @@ To obtain matches to other formally published trait in ontologies, use the follo
 | Flora Phenotype Ontology (FLOPO) | obo\\\\/FLOPO\_    |
 | EnvThes                          | EnvThes            |
 
+### References
+
 As appropriate, references are listed for each trait concept, under `references`.
 
 ```{r, output=FALSE}
@@ -247,8 +275,6 @@ fluorescence %>% kableExtra::kable(format = "markdown")
 
 Alternatively, if you know the doi for a reference andyou can search for traits that reference it.
 
-The first 15 traits referencing `Pérez-Harguindeguy 2013`:
-
 ```{r, output=FALSE}
 
 BT12225 <- APD_traits %>%
@@ -256,12 +282,16 @@ BT12225 <- APD_traits %>%
   filter(str_detect(references, "doi.org/10.1071/BT12225"))
 ```
 
+The first 15 traits referencing `Pérez-Harguindeguy 2013`:
+
 ```{r, echo=FALSE}
 
 BT12225  %>%
   slice(1:15) %>%
   kableExtra::kable(format = "markdown")
 ```
+
+### Deprecated trait names
 
 For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under `deprecated_trait_name`.
 
