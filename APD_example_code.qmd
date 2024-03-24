@@ -70,10 +70,11 @@ seed_traits <-
   dplyr::filter(stringr::str_detect(structure_measured, "seed"))
 ```
 
-The first 10 traits on this list are: 
+The first 10 traits on this list are:
 
 ```{r, echo=FALSE}
 seed_traits  %>%
+  select(trait, label, structure_measured) %>%
   slice(1:10) %>%
   kableExtra::kable(format = "markdown")
 ```
@@ -93,7 +94,7 @@ trait_groupings <-
   dplyr::distinct()
 ```
 
-Items 20:29 on this list are: 
+Items 20:29 on this list are:
 
 ```{r, echo=FALSE}
 trait_groupings %>% 
@@ -111,12 +112,13 @@ stomatal_traits <-
 
 ```{r, echo=FALSE}
 stomatal_traits  %>%
+  select(trait, label, trait_groupings) %>%
   kableExtra::kable(format = "markdown")
 ```
 
 ### Characteristic measured
 
-The term `characteristic_measured` documents "what" is being measured - a mass, length, etc. 
+The term `characteristic_measured` documents "what" is being measured - a mass, length, etc.
 
 Multiple terms may be used, for instance to indicate a trait captures volume and is a ratio:
 
@@ -156,7 +158,7 @@ force_traits  %>%
 
 ### Categorical values
 
-The allowed values for categorical traits are output in the second table, `APD_categorical_values`. 
+The allowed values for categorical traits are output in the second table, `APD_categorical_values`.
 
 You can first extract all metadata fields for the trait from `APD_traits`, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.
 
@@ -192,7 +194,7 @@ life_history %>%
 
 ### Matches to other databases and vocabularies
 
-Informal matches to traits included in databases and unpublished dictionaries are mapped in as `examples`, while matches to published vocabularies and ontologies and mapped using the formal terms, `exact_match`, `close_match`, and `related`_match`
+Informal matches to traits included in databases and unpublished dictionaries are mapped in as `examples`, while matches to published vocabularies and ontologies and mapped using the formal terms, `exact_match`, `close_match`, and `related`\_match\`
 
 To identify all traits that are also in the TRY trait database:
 
@@ -229,7 +231,7 @@ To obtain matches to other informally published trait matches in dictionary and 
 | BROT Database            | \\\\\[BROT         |
 | Palm Traits Database     | \\\\\[Palm         |
 
-Slightly different code is required to extract lists of formally published trait definitions for which there are matches: 
+Slightly different code is required to extract lists of formally published trait definitions for which there are matches:
 
 ```{r, output=FALSE}
 
