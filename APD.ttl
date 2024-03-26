@@ -29,7 +29,16 @@
 @prefix odo: <http://purl.dataone.org/odo/> .
 @prefix ORCID: <https://orcid.org/> .
 @prefix SIO: <http://semanticscience.org/resource/> .
-@prefix SWEET: <http://sweetontology.net/> .
+@prefix SWEET_phenSolid: <http://sweetontology.net/phenSolid/> .
+@prefix SWEET_phenSystem: <http://sweetontology.net/phenSystem/> .
+@prefix SWEET_procWave: <http://sweetontology.net/procWave/> .
+@prefix SWEET_prop: <http://sweetontology.net/prop/> .
+@prefix SWEET_propConductivity: <http://sweetontology.net/propConductivity> .
+@prefix SWEET_propPressure: <http://sweetontology.net/propPressure/> .
+@prefix SWEET_propTime: <http://sweetontology.net/propTime/> .
+@prefix SWEET_realmSoil: <http://sweetontology.net/realmSoil/> .
+@prefix SWEET_reprSciComponent: <http://sweetontology.net/reprSciComponent/> .
+@prefix SWEET_reprTimeDay: <http://sweetontology.net/reprTimeDay/> .
 
 <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment>
     dcterms:identifier "Recruitment" ;
@@ -3135,43 +3144,43 @@ SIO:SIO_010418
     dcterms:identifier "SIO_010418" ;
     skos:prefLabel "solute"@en .
 
-<http://sweetontology.net/phenSolid/Bend>
+SWEET_phenSolid:Bend
     dcterms:identifier "Bend" ;
     skos:prefLabel "bend"@en .
 
-<http://sweetontology.net/phenSolid/Deform>
+SWEET_phenSolid:Deform
     dcterms:identifier "Deform" ;
     skos:prefLabel "deform"@en .
 
-<http://sweetontology.net/phenSolid/Fracture>
+SWEET_phenSolid:Fracture
     dcterms:identifier "Fracture" ;
     skos:prefLabel "fracture"@en .
 
-<http://sweetontology.net/phenSolid/Rip>
+SWEET_phenSolid:Rip
     dcterms:identifier "Rip" ;
     skos:prefLabel "rip, tear"@en .
 
-<http://sweetontology.net/phenSolid/Shear>
+SWEET_phenSolid:Shear
     dcterms:identifier "Shear" ;
     skos:prefLabel "shear"@en .
 
-<http://sweetontology.net/phenSystem/Inundation>
+SWEET_phenSystem:Inundation
     dcterms:identifier "Inundation" ;
     skos:prefLabel "inundation"@en .
 
-<http://sweetontology.net/procWave/Absorption>
+SWEET_procWave:Absorption
     dcterms:identifier "Absorption" ;
     skos:prefLabel "absorption"@en .
 
-<http://sweetontology.net/procWave/Reflection>
+SWEET_procWave:Reflection
     dcterms:identifier "Reflection" ;
     skos:prefLabel "reflection"@en .
 
-<http://sweetontology.net/procWave/Transmission>
+SWEET_procWave:Transmission
     dcterms:identifier "Transmission" ;
     skos:prefLabel "transmission"@en .
 
-<http://sweetontology.net/prop/ElectromagneticProperty>
+SWEET_prop:ElectromagneticProperty
     dcterms:identifier "ElectromagneticProperty" ;
     skos:prefLabel "electromagnetic property"@en .
 
@@ -3179,35 +3188,35 @@ SIO:SIO_010418
     dcterms:identifier "Resistance" ;
     skos:prefLabel "resistance"@en .
 
-<http://sweetontology.net/propPressure/CompressiveStrength>
+SWEET_propPressure:CompressiveStrength
     dcterms:identifier "CompressiveStrength" ;
     skos:prefLabel "compressive strength"@en .
 
-<http://sweetontology.net/propPressure/ModulusOfElasticity>
+SWEET_propPressure:ModulusOfElasticity
     dcterms:identifier "ModulusOfElasticity" ;
     skos:prefLabel "modulus of elasticity"@en .
 
-<http://sweetontology.net/propPressure/TensileStrength>
+SWEET_propPressure:TensileStrength
     dcterms:identifier "TensileStrength" ;
     skos:prefLabel "tensile strength"@en .
 
-<http://sweetontology.net/propPressure/YoungsModulus>
+SWEET_propPressure:YoungsModulus
     dcterms:identifier "YoungsModulus" ;
     skos:prefLabel "youngs modulus"@en .
 
-<http://sweetontology.net/propTime/TimeInterval>
+SWEET_propTime:TimeInterval
     dcterms:identifier "TimeInterval" ;
     skos:prefLabel "time interval"@en .
 
-<http://sweetontology.net/realmSoil/Ground>
+SWEET_realmSoil:Ground
     dcterms:identifier "Ground" ;
     skos:prefLabel "ground"@en .
 
-<http://sweetontology.net/reprSciComponent/Resource>
+SWEET_reprSciComponent:Resource
     dcterms:identifier "Resource" ;
     skos:prefLabel "resource"@en .
 
-<http://sweetontology.net/reprTimeDay/Dawn>
+SWEET_reprTimeDay:Dawn
     dcterms:identifier "Dawn" ;
     skos:prefLabel "dawn"@en .
 
@@ -15600,12 +15609,12 @@ APD:trait_0011615
     skos:relatedMatch obo:TO_0020107 .
 
 APD:trait_0011710
-    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, <http://sweetontology.net/prop/ElectromagneticProperty> ;
+    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, SWEET_prop:ElectromagneticProperty ;
     obo:PO_0009011 obo:PO_0025034 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming visible light [NCIT:C17732] that is transmitted [SWEET:procWave/Transmission] through a leaf."@en, "Proportion of incoming visible light (between 400-700 nm) that is transmitted through a leaf."@en ;
     dcterms:identifier "trait_0011710" ;
-    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, <http://sweetontology.net/procWave/Transmission> ;
+    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, SWEET_procWave:Transmission ;
     ets:expectedUnit <https://w3id.org/uom/umol.umol-1>, "umol/umol" ;
     ets:maxAllowedValue "1" ;
     ets:minAllowedValue "0.001" ;
@@ -15618,12 +15627,12 @@ APD:trait_0011710
     skos:prefLabel "Leaf visible light transmission"@en .
 
 APD:trait_0011711
-    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, <http://sweetontology.net/prop/ElectromagneticProperty> ;
+    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, SWEET_prop:ElectromagneticProperty ;
     obo:PO_0009011 obo:PO_0025034 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming visible light [NCIT:C17732] that is absorbed [SWEET:procWave/Absorption] by a leaf."@en, "Proportion of incoming visible light (between 400-700 nm) that is absorbed by a leaf."@en ;
     dcterms:identifier "trait_0011711" ;
-    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, <http://sweetontology.net/procWave/Absorption> ;
+    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, SWEET_procWave:Absorption ;
     ets:expectedUnit <https://w3id.org/uom/umol.umol-1>, "umol/umol" ;
     ets:maxAllowedValue "1" ;
     ets:minAllowedValue "0.01" ;
@@ -15636,12 +15645,12 @@ APD:trait_0011711
     skos:prefLabel "Leaf visible light absorption"@en .
 
 APD:trait_0011712
-    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, <http://sweetontology.net/prop/ElectromagneticProperty> ;
+    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, SWEET_prop:ElectromagneticProperty ;
     obo:PO_0009011 obo:PO_0025034 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming  visible light [NCIT:C17732] that is reflected [SWEET:procWave/Reflection] by a leaf."@en, "Proportion of incoming visible light (between 400-700 nm) that is reflected by a leaf."@en ;
     dcterms:identifier "trait_0011712" ;
-    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, <http://sweetontology.net/procWave/Reflection> ;
+    SIO:SIO_000147 obo:ENVO_01001864, obo:NCIT_C16940, obo:NCIT_C17732, SWEET_procWave:Reflection ;
     ets:expectedUnit <https://w3id.org/uom/umol.umol-1>, "umol/umol" ;
     ets:maxAllowedValue "1" ;
     ets:minAllowedValue "0.01" ;
@@ -15653,12 +15662,12 @@ APD:trait_0011712
     skos:prefLabel "Leaf visible light reflection"@en .
 
 APD:trait_0011713
-    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, <http://sweetontology.net/prop/ElectromagneticProperty> ;
+    oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, SWEET_prop:ElectromagneticProperty ;
     obo:PO_0009011 obo:PO_0025034 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO:21001214] that is reflected [SWEET:procWave/Reflection] by a leaf."@en, "Proportion of incoming near infra-red light (between 750-10500 nm) that is reflected by a leaf."@en ;
     dcterms:identifier "trait_0011713" ;
-    SIO:SIO_000147 obo:ENVO_01001023, obo:ENVO_21001214, obo:NCIT_C16940, <http://sweetontology.net/procWave/Reflection> ;
+    SIO:SIO_000147 obo:ENVO_01001023, obo:ENVO_21001214, obo:NCIT_C16940, SWEET_procWave:Reflection ;
     ets:expectedUnit <https://w3id.org/uom/umol.umol-1>, "umol/umol" ;
     ets:maxAllowedValue "1" ;
     ets:minAllowedValue "0.1" ;
@@ -17929,7 +17938,7 @@ APD:trait_0014011
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] compressive strength [SWEET:propPressure/CompressiveStrength; MESH:D019245]. It is the force [PATO:0001035] (work) required to punch a hole in a leaf lamina (fracture [SWEET:phenSolid/Fracture]) with a punch and die."@en, "The force (work) required to punch a hole through a leaf lamina, generally with a punch and die. This is a measure of leaf compressive strength or toughness."@en ;
     dcterms:identifier "trait_0014011" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Fracture>, APD_glossary:glossary_40088 ;
+    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Fracture, APD_glossary:glossary_40088 ;
     ets:expectedUnit <https://w3id.org/uom/N.m-1>, "N/m" ;
     ets:maxAllowedValue "10000" ;
     ets:minAllowedValue "0.5" ;
@@ -17949,7 +17958,7 @@ APD:trait_0014012
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] compressive strength [SWEET:propPressure/CompressiveStrength; MESH:D019245]. It is the force [PATO:0001035] (work) required to punch a hole in a leaf lamina (fracture [SWEET:phenSolid/Fracture]) with a punch and die, scaled by leaf thickness [PATO:0000915]."@en, "The force (work) required to punch a hole through a leaf lamina, generally with a punch and die, adjusted for leaf thickness. This is a measure of leaf compressive strength or toughness."@en ;
     dcterms:identifier "trait_0014012" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Fracture>, APD_glossary:glossary_40088 ;
+    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Fracture, APD_glossary:glossary_40088 ;
     ets:expectedUnit "N/m2" ;
     ets:maxAllowedValue "3e+07" ;
     ets:minAllowedValue "1000" ;
@@ -17969,7 +17978,7 @@ APD:trait_0014013
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] compressive strength [SWEET:propPressure/CompressiveStrength; MESH:D019245]. It is the force [PATO:0001035] required to shear [SWEET:phenSolid/Shear] a leaf lamina with a pair of scissors."@en, "The force (work) required to shear a leaf. This is a measure of leaf compressive strength or toughness that is equivalent to cutting a leaf with scissors."@en ;
     dcterms:identifier "trait_0014013" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Shear> ;
+    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Shear ;
     ets:expectedUnit uom:N, "N" ;
     ets:maxAllowedValue "10" ;
     ets:minAllowedValue "0.01" ;
@@ -17989,7 +17998,7 @@ APD:trait_0014014
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] compressive strength [SWEET:propPressure/CompressiveStrength; MESH:D019245]. It is the force [PATO:0001035] required to shear [SWEET:phenSolid/Shear] a leaf lamina with a pair of scissors, scaled by leaf thickness [PATO:0000915]."@en, "The force (work) required to shear a leaf, adjusted to leaf thickness; also referred to as 'fracture toughness'. This is a measure of leaf compressive strength or toughness that is equivalent to cutting a leaf with scissors."@en ;
     dcterms:identifier "trait_0014014" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Shear> ;
+    SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Shear ;
     ets:expectedUnit <https://w3id.org/uom/N.m-1>, "N/m" ;
     ets:maxAllowedValue "10000" ;
     ets:minAllowedValue "100" ;
@@ -18009,7 +18018,7 @@ APD:trait_0014015
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] tensile strength [SWEET:propPressure/TensileStrength; MESH:D013718]. It is the force [PATO:0001035] required to tear or rip [SWEET:phenSolid/Rip] a leaf lamina."@en, "The force (work) required to tear/rip a leaf. This is a measure of leaf tensile strength."@en ;
     dcterms:identifier "trait_0014015" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D013718, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Rip> ;
+    SIO:SIO_000147 MESH:D013718, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Rip ;
     ets:expectedUnit uom:N, "N" ;
     ets:maxAllowedValue "50" ;
     ets:minAllowedValue "0.01" ;
@@ -18029,7 +18038,7 @@ APD:trait_0014016
     dcterms:description "A leaf lamina [PO:0025060] strength [PATO:0001230] trait which is a measure of a leaf's [PO:0025034] tensile strength [SWEET:propPressure/TensileStrength; MESH:D013718]. It is the force [PATO:0001035] required to tear or rip [SWEET:phenSolid/Rip] a leaf lamina, scaled by leaf thickness [PATO:0000915]."@en, "The force (work) required to tear/rip a leaf, adjusted to leaf thickness. This is a measure of leaf tensile strength."@en ;
     dcterms:identifier "trait_0014016" ;
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
-    SIO:SIO_000147 MESH:D013718, obo:PATO_0001230, obo:PO_0020039, <http://sweetontology.net/phenSolid/Rip> ;
+    SIO:SIO_000147 MESH:D013718, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Rip ;
     ets:expectedUnit <https://w3id.org/uom/N.m-1>, "N/m" ;
     ets:maxAllowedValue "15000" ;
     ets:minAllowedValue "10" ;
@@ -18048,7 +18057,7 @@ APD:trait_0014017
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A bark [PO:0004518] physical quality [PATO:0002079] trait which is the bark's modulus of elasticity [SWEET:propPressure/ModulusOfElasticity], its resistance to being deformed [SWEET:phenSolid/Deform] elastically [PATO:0001031] (non-permanently) when a force [PATO:0001035] is applied.  It is calculated as the ratio of the force applied to bark per unit area (stress) to the bark's deformation (bending)."@en, "A measure of stem stiffness and elasticity, which is how much the bark is deformed elastically (bends) under stress. It is calculated as the ratio of the force applied to bark per unit area (stress) to the bark's deformation (bending). The trait is also called Young's modulus for bark."@en ;
     dcterms:identifier "trait_0014017" ;
-    SIO:SIO_000147 obo:PATO_0001031, <http://sweetontology.net/phenSolid/Deform>, <http://sweetontology.net/propPressure/ModulusOfElasticity> ;
+    SIO:SIO_000147 obo:PATO_0001031, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
     ets:maxAllowedValue "1e+05" ;
     ets:minAllowedValue "10" ;
@@ -18067,7 +18076,7 @@ APD:trait_0014018
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A measure of stem stiffness and elasticity, which is how much the stem is deformed elastically (bends) under stress. It is calculated as the ratio of the force applied to stem per unit area (stress) to the stem's deformation (bending).  This is the modulus of a compound tissue made up of bark and wood (or xylem) and potentially pith and could also be called structural modulus of elasticity. Trait is also called Young's modulus for a stem."@en, "A stem [PO:0009047] physical quality [PATO:0002079] trait which is the stem's modulus of elasticity [SWEET:propPressure/ModulusOfElasticity], its resistance to being deformed [SWEET:phenSolid/Deform] elastically [PATO:0001031] (non-permanently) when a force [PATO:0001035] is applied. It is calculated as the ratio of the force applied to wood per unit area (stress) to the stem's deformation (bending)."@en ;
     dcterms:identifier "trait_0014018" ;
-    SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005848, <http://sweetontology.net/phenSolid/Deform>, <http://sweetontology.net/propPressure/ModulusOfElasticity> ;
+    SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005848, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
     ets:maxAllowedValue "1e+05" ;
     ets:minAllowedValue "10" ;
@@ -18087,7 +18096,7 @@ APD:trait_0014019
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "A measure of wood stiffness and elasticity, which is how much wood (secondary xylem) is deformed elastically (bends) under stress. It is calculated as the ratio of the force applied to wood per unit area (stress) to the stem's deformation (bending).  This is the modulus of elasticity explicitly for xylem (wood). Trait is also called Young's modulus for xylem."@en, "A secondary xylem [PO:0005848] physical quality [PATO:0002079] trait which is the xylem's modulus of elasticity [SWEET:propPressure/ModulusOfElasticity], its resistance to being deformed [SWEET:phenSolid/Deform] elastically [PATO:0001031] (non-permanently) when a force [PATO:0001035] is applied."@en ;
     dcterms:identifier "trait_0014019" ;
-    SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005352, obo:PO_0005848, <http://sweetontology.net/phenSolid/Deform>, <http://sweetontology.net/propPressure/ModulusOfElasticity> ;
+    SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005352, obo:PO_0005848, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
     ets:maxAllowedValue "1e+05" ;
     ets:minAllowedValue "10" ;
@@ -19442,7 +19451,7 @@ APD:trait_0021030
     dcterms:identifier "trait_0021030" ;
     dcterms:references <https://doi.org/10.1071/BT12225> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
-    SIO:SIO_000147 obo:PO_0009006, obo:TO_0000131, obo:TO_0000237, <http://sweetontology.net/reprTimeDay/Dawn>, <http://vocabs.lter-europe.net/EnvThes/22283>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
+    SIO:SIO_000147 obo:PO_0009006, obo:TO_0000131, obo:TO_0000237, SWEET_reprTimeDay:Dawn, <http://vocabs.lter-europe.net/EnvThes/22283>, <http://vocabs.lter-europe.net/EnvThes/22311> ;
     ets:expectedUnit uom:MPa, "MPa" ;
     ets:maxAllowedValue "0" ;
     ets:minAllowedValue "-20" ;
@@ -19740,7 +19749,7 @@ APD:trait_0021059
     dcterms:identifier "trait_0021059" ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/pressure-volume-curves/leaf-pressure-volume-curve-parameters/> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
-    SIO:SIO_000147 obo:CL_0000000, obo:GO_0009505, obo:TO_0000237, obo:TO_0000276, obo:TO_0000701, <http://sweetontology.net/propPressure/ModulusOfElasticity>, APD_glossary:glossary_40124 ;
+    SIO:SIO_000147 obo:CL_0000000, obo:GO_0009505, obo:TO_0000237, obo:TO_0000276, obo:TO_0000701, SWEET_propPressure:ModulusOfElasticity, APD_glossary:glossary_40124 ;
     ets:expectedUnit uom:MPa, "MPa" ;
     ets:maxAllowedValue "100" ;
     ets:minAllowedValue "0.1" ;
@@ -19761,7 +19770,7 @@ APD:trait_0021060
     dcterms:description "Ratio of the mass of water in a fresh leaf collected pre-dawn to the mass of water in a fully saturated leaf. A fully saturated leaf is one which has been rehydrated to hold the maximum amount of water and is considered to have a relative water content of 100%."@en, "The ratio [PATO:0001470] of the mass [PATO:0000125] of water [CHEBI:15377] in a fresh [EnvThes:21976] leaf [PO:0025034] harvested pre-dawn [SWEET:reprTimeDay/Dawn] to the mass of water in a leaf at full hydration (saturated [NCIT:C61427]; relative water content = 100%)."@en ;
     dcterms:identifier "trait_0021060" ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
-    SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:TO_0000237, <http://sweetontology.net/reprTimeDay/Dawn>, APD_glossary:glossary_40050 ;
+    SIO:SIO_000147 <http://purl.jp/bio/4/id/200906064703668091>, obo:CHEBI_15377, obo:TO_0000237, SWEET_reprTimeDay:Dawn, APD_glossary:glossary_40050 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
     ets:maxAllowedValue "1.4" ;
     ets:minAllowedValue "0.1" ;
@@ -20921,7 +20930,7 @@ APD:trait_0030514
     dcterms:description "Depth below the soil surface (positive number) or height above ground (negative number) from which buds (meristematic tissue) resprout following a disturbance, such as a fire."@en, "The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground] surface or height [PATO:0000119] above the ground surface of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786]."@en ;
     dcterms:identifier "trait_0030514" ;
     dcterms:references <https://doi.org/10.1016/j.ppees.2019.125497> ;
-    SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/fire#PlantResprout>, obo:ENVO_00001998, obo:ENVO_01000786, obo:GO_0031099, obo:PO_0006079, <http://sweetontology.net/realmSoil/Ground> ;
+    SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/fire#PlantResprout>, obo:ENVO_00001998, obo:ENVO_01000786, obo:GO_0031099, obo:PO_0006079, SWEET_realmSoil:Ground ;
     ets:expectedUnit uom:mm, "mm" ;
     ets:maxAllowedValue "100" ;
     ets:minAllowedValue "-100" ;
@@ -21258,7 +21267,7 @@ APD:trait_0030710
     dcterms:identifier "trait_0030710" ;
     dcterms:references <https://doi.org/10.1111/oik.03886> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
-    SIO:SIO_000147 obo:CHEBI_33292, obo:ENVO_01000628, obo:ENVO_01000786, obo:XCO_0000000, <http://sweetontology.net/realmSoil/Ground> ;
+    SIO:SIO_000147 obo:CHEBI_33292, obo:ENVO_01000628, obo:ENVO_01000786, obo:XCO_0000000, SWEET_realmSoil:Ground ;
     ets:expectedUnit <https://w3id.org/uom/g.cm-3>, "g/cm3" ;
     ets:maxAllowedValue "1" ;
     ets:minAllowedValue "0.001" ;
@@ -21311,7 +21320,7 @@ APD:trait_0030712
     skos:prefLabel "Fire rate of spread"@en .
 
 APD:trait_0030713
-    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, <http://sweetontology.net/propTime/TimeInterval> ;
+    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     obo:PO_0009011 obo:PO_0025034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
@@ -21331,7 +21340,7 @@ APD:trait_0030713
     skos:prefLabel "Leaf smoulder duration"@en .
 
 APD:trait_0030714
-    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, <http://sweetontology.net/propTime/TimeInterval> ;
+    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     obo:PO_0009011 obo:PO_0025034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
@@ -21351,7 +21360,7 @@ APD:trait_0030714
     skos:prefLabel "Leaf flame duration"@en .
 
 APD:trait_0030715
-    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, <http://sweetontology.net/propTime/TimeInterval> ;
+    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     obo:PO_0009011 obo:PO_0025034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
@@ -21371,7 +21380,7 @@ APD:trait_0030715
     skos:prefLabel "Leaf flame and smoulder duration"@en .
 
 APD:trait_0030716
-    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, <http://sweetontology.net/propTime/TimeInterval> ;
+    oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     obo:PO_0009011 obo:PO_0025034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
@@ -21415,7 +21424,7 @@ APD:trait_0030811
     dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309] and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or respond to fluctuations in flooding [ENVO:01000710] and drying, including growth [GO:0040007] and seed germination [GO:0009845] responses."@en, "Classification scheme of plant flood regime requirements and tolerances, categorising taxa into seven groups based on their germination and growth responses to flood regimes."@en ;
     dcterms:identifier "trait_0030811" ;
     dcterms:references <https://doi.org/10.1023/A1009875226637>, <https://doi.org/10.13140/2.1.2761.5367> ;
-    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000203, obo:ENVO_01000710, obo:GO_0009845, obo:GO_0040007, <http://sweetontology.net/phenSystem/Inundation>, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/21497>, <http://vocabs.lter-europe.net/EnvThes/22281> ;
+    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000203, obo:ENVO_01000710, obo:GO_0009845, obo:GO_0040007, SWEET_phenSystem:Inundation, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/21497>, <http://vocabs.lter-europe.net/EnvThes/22281> ;
     ets:valueType obo:STATO_0000252 ;
     skos:altLabel "plant_flood_regime_classification" ;
     skos:broader APD:trait_group_0030704 ;
@@ -21432,7 +21441,7 @@ APD:trait_0030812
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions. Soil [ENVO:00001998] is considered water-logged if it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379]."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate water-logged soils."@en ;
     dcterms:identifier "trait_0030812" ;
-    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_00001998, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, <http://sweetontology.net/phenSystem/Inundation>, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/22281> ;
+    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_00001998, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, SWEET_phenSystem:Inundation, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/22281> ;
     ets:valueType obo:STATO_0000252 ;
     skos:altLabel "plant_tolerance_water_logged_soils" ;
     skos:broader APD:trait_group_0030704 ;
@@ -21448,7 +21457,7 @@ APD:trait_0030813
     dcterms:created "14/07/2021"^^<xsd:date> ;
     dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate being under water."@en ;
     dcterms:identifier "trait_0030813" ;
-    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, <http://sweetontology.net/phenSystem/Inundation>, <http://vocabs.lter-europe.net/EnvThes/21064> ;
+    SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, SWEET_phenSystem:Inundation, <http://vocabs.lter-europe.net/EnvThes/21064> ;
     ets:valueType obo:STATO_0000252 ;
     skos:altLabel "plant_tolerance_inundation" ;
     skos:broader APD:trait_group_0030704 ;
