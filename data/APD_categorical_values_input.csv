@@ -519,8 +519,8 @@ plant_growth_form_palmoid,palmoid,"Plant that bears a rosette-like canopy of typ
 plant_growth_form_climber,climber,"Plant that climbs up another plant's stem or branches, rather than being able to support itself. Term used only if datasets do not specify if a climbing plant is herbaceous (a vine) or woody (a liana).",plant_growth_form
 plant_growth_form_climber_herbaceous,climber_herbaceous,"Herbaceous plant that climbs up another plant's stem or branches, rather than being able to support itself. This is usually synonymous with `vine`. Types of climbers (scrambling, twining) are captured under the trait `plant_climbing_mechanism`. (Synonyms, vine)",plant_growth_form
 plant_growth_form_climber_woody,climber_woody,"Woody or thick-stemmed (>2 cm) plant that climbs up another plant's stem or branches, rather than being able to support itself. This is usually synonymous with `liana`. Woody climbers generally use hooks, tendrils, and/or adventitious roots to climb; the climbing mechanisms used by a taxon are captured under the trait `plant_climbing_mechanism`. (Synonyms, liana)",plant_growth_form
-plant_growth_form_fern,fern,A taxonomic grouping; ferns are vascular plants that reproduce via spores.,plant_growth_form
-plant_growth_form_lycophyte,lycophyte,"A taxonomic grouping that includes quillworts, clubmosses, and selaginella.",plant_growth_form
+plant_growth_form_fern,fern,A taxonomic grouping that includes acaulescent ferns; ferns are vascular plants that reproduce via spores and have neither seeds nor flowers.,plant_growth_form
+plant_growth_form_lycophyte,lycophyte,"A taxonomic grouping that includes quillworts, clubmosses, and spike mosses.",plant_growth_form
 plant_succulence_succulent_stems,succulent_stems,Stems are thick and fleshy.,plant_succulence
 plant_succulence_succulent_leaves,succulent_leaves,Leaves are thick and fleshy.,plant_succulence
 plant_succulence_succulent,succulent,A plant is designated as succulent but it is not specified which tissues are thick and fleshy.,plant_succulence
@@ -793,4 +793,4 @@ woodiness_detailed_woody_base,woody_base,"Plant where secondary xylem (true wood
 woodiness_detailed_woody_root,woody_root,Plant that has a woody rootstock but non-woody above-ground stems.,woodiness_detailed
 woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem shrub, soft shrub, soft wood)",woodiness_detailed
 woodiness_detailed_woody_like_stem,woody_like_stem,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified stems but do not produce secondary xylem.",woodiness_detailed
-woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
+woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
