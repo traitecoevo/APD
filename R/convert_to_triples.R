@@ -216,9 +216,12 @@ reformatted_annotation <-
 reformatted_traits <- 
   traits_csv %>% 
   mutate(across(where(is.character), \(x) stringr::str_replace_all(x, "\"", "'"))) %>%
-  mutate(across(c("reviewers", "exact_match", "close_match", "related_match", "measured_characteristic", "structure", "category", "keywords", "references"), 
+  mutate(across(c("reviewers", "exact_match", "close_match", "related_match", "measured_characteristic", "structure", "category", 
+  "keywords", "references", dplyr::contains("_exact"), dplyr::contains("_close"), dplyr::contains("_related")), 
   \(x) stringr::str_split(x, "; "))) %>%
-  unnest_wider(col = c(reviewers, exact_match, close_match, related_match, measured_characteristic, structure, category, keywords, references), names_sep = "_") %>%
+  unnest_wider(col = c(reviewers, exact_match, close_match, related_match, measured_characteristic, structure, category, 
+                        keywords, references, dplyr::contains("_exact"), dplyr::contains("_close"), dplyr::contains("_related")), 
+               names_sep = "_") %>%
   mutate(
     Entity =  paste0("<", Entity, ">"),
     identifier = paste0("\"", identifier, "\""),
@@ -251,7 +254,9 @@ reformatted_traits <-
     across(dplyr::contains("_close"), \(x) ifelse(!is.na(x), paste0("\"close match: ", x, "\""), NA)),
     across(dplyr::contains("_related"), \(x) ifelse(!is.na(x), paste0("\"related match: ", x, "\""), NA)),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description
-  ) %>%
+  )
+
+reformatted_traits <- reformatted_traits %>%
   rename_with(~ paste0("<http://semanticscience.org/resource/SIO_000147>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("keywords_")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#broader>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("category_")) %>%
   rename_with(~ paste0("<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("measured_char")) %>%
@@ -262,7 +267,7 @@ reformatted_traits <-
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#closeMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("close_match")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#relatedMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("related_match")) %>%  
   rename_with(
-    ~ paste0("<http://www.w3.org/2004/02/skos/core#example>", seq_along(1:length(traits_csv %>% select(dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related"))))), 
+    ~ paste0("<http://www.w3.org/2004/02/skos/core#example>", seq_along(1:length(reformatted_traits %>% select(dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related"))))), 
     .cols = dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related")) %>%
   rename(
     Subject = Entity,
