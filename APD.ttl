@@ -8705,10 +8705,10 @@ APD:plant_growth_form_climber_woody
     skos:prefLabel "climber_woody"@en .
 
 APD:plant_growth_form_fern
-    dcterms:description "A taxonomic grouping; ferns are vascular plants that reproduce via spores."@en ;
+    dcterms:description "A taxonomic grouping that includes acaulescent ferns; ferns are vascular plants that reproduce via spores and have neither seeds nor flowers."@en ;
     dcterms:identifier "plant_growth_form_fern" ;
     skos:broader APD:trait_0030010 ;
-    skos:definition "A taxonomic grouping; ferns are vascular plants that reproduce via spores."@en ;
+    skos:definition "A taxonomic grouping that includes acaulescent ferns; ferns are vascular plants that reproduce via spores and have neither seeds nor flowers."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "fern"@en .
 
@@ -8753,10 +8753,10 @@ APD:plant_growth_form_hummock
     skos:prefLabel "hummock"@en .
 
 APD:plant_growth_form_lycophyte
-    dcterms:description "A taxonomic grouping that includes quillworts, clubmosses, and selaginella."@en ;
+    dcterms:description "A taxonomic grouping that includes quillworts, clubmosses, and spike mosses."@en ;
     dcterms:identifier "plant_growth_form_lycophyte" ;
     skos:broader APD:trait_0030010 ;
-    skos:definition "A taxonomic grouping that includes quillworts, clubmosses, and selaginella."@en ;
+    skos:definition "A taxonomic grouping that includes quillworts, clubmosses, and spike mosses."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "lycophyte"@en .
 
@@ -14093,7 +14093,7 @@ APD:trait_0010023
     skos:closeMatch obo:TO_0000207 ;
     skos:definition "Maximum vertical height of the vegetative shoot system for a taxon in a given location."@en ;
     skos:exactMatch <http://vocabs.lter-europe.net/EnvThes/22192>, <https://cropontology.org/rdf/CO_357:0000048>, <https://cropontology.org/rdf/CO_357:0000111> ;
-    skos:example "exact match: Average height [BROT:10] (http://doi.org/10.1038/sdata.2018.135)", "exact match: MaxStemHeight_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Plant height vegetative [TOP69] (https://top-thesaurus.org/index)", "exact match: Plant height vegetative [TRY:3106] (https://www.try-db.org/de/de.php)", "exact match: maximum whole plant height; whole plant height [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: plant_height_max [GIFT:1.6.2] (https://gift.uni-goettingen.de)", "related match: minimum whole plant height [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "exact match: Average height [BROT:10] (http://doi.org/10.1038/sdata.2018.135)", "exact match: MaxStemHeight_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Plant height vegetative [TOP69] (https://top-thesaurus.org/index)", "exact match: Plant height vegetative [TRY:3106] (https://www.try-db.org/de/de.php)", "exact match: maximum whole plant height [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: plant_height_max [GIFT:1.6.2] (https://gift.uni-goettingen.de)", "exact match: whole plant height [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "related match: minimum whole plant height [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "This trait is not meant to document the height of all individuals sampled, but instead the maximum height for a typical mature individual within a population or across a taxon. The trait should only be scored for self-supporting plants, not climbers whose height is dependent on the surrounding vegetation. The documented height should be the maximum height achieved by vegetative shoots, not the height reached by reproductive shoots, as it represents the plant's access to light."@en ;
     skos:prefLabel "Plant vegetative height"@en ;
@@ -14116,7 +14116,7 @@ APD:trait_0010024
     skos:closeMatch obo:TO_0020083, <https://cropontology.org/rdf/CO_357:0000526> ;
     skos:definition "Maximum diameter at breast height (DBH) for a taxon in a given location. It is commonly referred to as 'DBH'."@en ;
     skos:exactMatch <http://vocabs.lter-europe.net/EnvThes/10031>, <https://cropontology.org/rdf/CO_357:0000022> ;
-    skos:example "exact match: DBH_max [GIFT:1.8.2 (https://gift.uni-goettingen.de)", "exact match: MaxStemDia_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Stem diameter [TRY:21] (https://www.try-db.org/de/de.php)", "exact match: diameter at breast height (1.3 m) [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "exact match: DBH_max [GIFT:1.8.2] (https://gift.uni-goettingen.de)", "exact match: MaxStemDia_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Stem diameter [TRY:21] (https://www.try-db.org/de/de.php)", "exact match: diameter at breast height (1.3 m) [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "This trait is always meant to be measured at 'breast height', 1.4 m above the ground surface. However, for short plants this will not always be the case, so it is advised to read the methods to confirm at what height plant diameters have been recorded. This trait is not meant to document the DBH of all individuals sampled, but instead the maximum DBH for a typical mature individual within a population or across a taxon."@en ;
     skos:prefLabel "Stem diameter at breast height"@en .
@@ -14352,7 +14352,7 @@ APD:trait_0011213
     skos:broader APD:trait_group_0011204 ;
     skos:definition "Length of a leaf or a leaf analogue, from the leaf apex to the leaf axil (base), including the petiole."@en ;
     skos:exactMatch obo:TO_0000135 ;
-    skos:example "close match: Max_Blade_Length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); Max_Rachis_Length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); Max_Petiole_length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: maximum leaf length; minimum leaf length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: Leaf length [GIFT:4.6] (https://gift.uni-goettingen.de)", "exact match: Leaf length [TOP13] (https://top-thesaurus.org/index)", "exact match: Leaf length [TRY:144] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Max_Blade_Length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: Max_Petiole_length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: Max_Rachis_Length_m [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: maximum leaf length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "close match: minimum leaf length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: Leaf length [GIFT:4.6] (https://gift.uni-goettingen.de)", "exact match: Leaf length [TOP13] (https://top-thesaurus.org/index)", "exact match: Leaf length [TRY:144] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "If a leaf analogue (leaflet, cladode, or phyllode) is measured instead of a true leaf, this should be noted as a `context` or under `measurement_remarks`."@en ;
     skos:prefLabel "Leaf length"@en ;
@@ -14376,7 +14376,7 @@ APD:trait_0011214
     skos:broader APD:trait_group_0011204 ;
     skos:definition "Maximum width axis of a leaf or a leaf analogue (a leaflet, cladode, or phyllode), measured perpendicular to the leaf length."@en ;
     skos:exactMatch obo:TO_0000370 ;
-    skos:example "close match: maximum leaf width; minimum leaf width [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: Leaf width [GIFT:4.7] (https://gift.uni-goettingen.de)", "exact match: Leaf width [TOP17] (https://top-thesaurus.org/index)", "exact match: Leaf width [TRY:145] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: maximum leaf width [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "close match: minimum leaf width [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: Leaf width [GIFT:4.7] (https://gift.uni-goettingen.de)", "exact match: Leaf width [TOP17] (https://top-thesaurus.org/index)", "exact match: Leaf width [TRY:145] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "This trait refers to the single line marking the maximum width of the leaf lamina. For a compound leaf the correct measure is the maximum width of the total leaf blade. It is the width measure that will be reported in taxonomic treatments. It is not the `effective_leaf_width`, a trait that records the diameter of the largest circle that can be drawn within the leaf lamina. If a leaf analogue (leaflet, cladode, or phyllode) is measured instead of a true leaf, this should be noted as a `context` or under `measurement_remarks`."@en ;
     skos:prefLabel "Leaf width"@en ;
@@ -14527,7 +14527,7 @@ APD:trait_0011230
     skos:changeNote "specific_leaf_area" ;
     skos:definition "The ratio of leaf dry mass to leaf area, measured on an entire leaf including the petiole; LMA. (The inverse of specific leaf area, SLA.)"@en ;
     skos:exactMatch obo:TO_0000562, <https://cropontology.org/rdf/CO_357:0000255> ;
-    skos:example "close match: Leaf size SLA, leaf mass & LDMC [LEDA:2.1] (https://uol.de/en/landeco/research/leda/standards)", "close match: Specific leaf area [TOP50] (https://top-thesaurus.org/index)", "exact match: Average specific leaf area [BROT:8] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or exclu [TRY:3117]; Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included [TRY:3116] (https://www.try-db.org/de/de.php)", "exact match: Leaf mass per area [TOP53] (https://top-thesaurus.org/index)", "exact match: Specific Leaf Area (SLA) [GIFT:4.1] (https://gift.uni-goettingen.de)", "exact match: leaf area per leaf dry mass [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "close match: Leaf size SLA, leaf mass & LDMC [LEDA:2.1] (https://uol.de/en/landeco/research/leda/standards)", "close match: Specific leaf area [TOP50] (https://top-thesaurus.org/index)", "exact match: Average specific leaf area [BROT:8] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included [TRY:3116] (https://www.try-db.org/de/de.php)", "exact match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or exclu [TRY:3117] (https://www.try-db.org/de/de.php)", "exact match: Leaf mass per area [TOP53] (https://top-thesaurus.org/index)", "exact match: Specific Leaf Area (SLA) [GIFT:4.1] (https://gift.uni-goettingen.de)", "exact match: leaf area per leaf dry mass [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "Leaf mass per area includes measurements submitted as `specific_leaf_area` (SLA); they are simply inverted. Leaf mass per area is explicitly measured on an entire leaf, including the petiole. Measurements made on a piece of the leaf lamina, excluding petiole and midrib, are a separate trait `leaf_lamina_mass_per_area`. If measurements are made on the entire leaf lamina, but the petiole is excluded, this should be noted in the methods or under `measurement_remarks`."@en ;
     skos:prefLabel "Leaf mass per area"@en .
@@ -14549,7 +14549,7 @@ APD:trait_0011231
     skos:altLabel "leaf_lamina_mass_per_area" ;
     skos:broader APD:trait_group_0011204, APD:trait_group_0011206 ;
     skos:definition "The ratio of leaf dry mass to leaf area, measured on a piece of the leaf lamina that does not include the petiole or major veins."@en ;
-    skos:example "close match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole excluded [TRY:3115] (https://www.try-db.org/de/de.php)", "exact match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA) petiole, rhachis and midrib excluded [TRY:3086] (https://www.try-db.org/de/de.php)", "related match: Leaf mass per area [TOP53] (https://top-thesaurus.org/index)", "related match: Leaf size SLA, leaf mass & LDMC [LEDA:2.1] (https://uol.de/en/landeco/research/leda/standards)", "related match: Specific leaf area [TOP50] (https://top-thesaurus.org/index)", "related match: specific leaf area [TO:0000562] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA) petiole, rhachis and midrib excluded [TRY:3086] (https://www.try-db.org/de/de.php)", "exact match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole excluded [TRY:3115] (https://www.try-db.org/de/de.php)", "related match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): petiole included [TRY:3116] (https://www.try-db.org/de/de.php)", "related match: Leaf area per leaf dry mass (specific leaf area, SLA or 1/LMA): undefined if petiole is in- or exclu [TRY:3117] (https://www.try-db.org/de/de.php)", "related match: Leaf mass per area [TOP53] (https://top-thesaurus.org/index)", "related match: Leaf size SLA, leaf mass & LDMC [LEDA:2.1] (https://uol.de/en/landeco/research/leda/standards)", "related match: Specific leaf area [TOP50] (https://top-thesaurus.org/index)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "This trait only includes data made on subsamples of a leaf, usually a leaf punch sample associated with leaf strength measurements or from the herbivory literature. For whole-leaf LMA/SLA data, see the trait `leaf_mass_per_area`"@en ;
     skos:prefLabel "Leaf lamina mass per area"@en ;
@@ -14594,7 +14594,7 @@ APD:trait_0011260
     skos:closeMatch <https://cropontology.org/rdf/CO_357:0000257> ;
     skos:definition "The ratio of total plant leaf area to total plant dry mass; LAR."@en ;
     skos:exactMatch <http://vocabs.lter-europe.net/EnvThes/22158> ;
-    skos:example "exact match: Leaf area per plant dry mass (leaf area ratio; LAR) [TRY:109] (https://www.try-db.org/de/de.php)", "exact match: Leaf area ratio [TOP88] (https://top-thesaurus.org/index)" ;
+    skos:example "exact match: Leaf area per plant dry mass (leaf area ratio, LAR) [TRY:109] (https://www.try-db.org/de/de.php)", "exact match: Leaf area ratio [TOP88] (https://top-thesaurus.org/index)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "Since the total plant dry mass is required for leaf area ratio measurements, this is standardly measured only on young plants or plants grown for experiments where the entire plant can be harvested. It is best practice for leaf area measurements to include the petiole."@en ;
     skos:prefLabel "Leaf area ratio (LAR)"@en ;
@@ -15488,7 +15488,7 @@ APD:trait_0011526
     skos:altLabel "cell_cross-sectional_area" ;
     skos:broader APD:trait_group_0011503 ;
     skos:definition "Cell cross-sectional area."@en ;
-    skos:example "close match: Leaf epidermis cell area; Leaf mesophyll cell area [TRY:338; 573] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Leaf epidermis cell area  [TRY:338] (https://www.try-db.org/de/de.php)", "close match: Leaf mesophyll cell area [TRY:573] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "This trait can be used to map the area of cell types that are not already explicitly listed as their own trait. The cell type and tissue/organ being measured needs to be specified under `measurement_remarks` or as a `method_context`."@en ;
     skos:prefLabel "Cell cross-sectional area"@en .
@@ -15952,7 +15952,7 @@ APD:trait_0012011
     skos:broader APD:trait_group_0012002 ;
     skos:definition "Thickness of the bark on the stem."@en ;
     skos:exactMatch <https://cropontology.org/rdf/CO_357:0000007> ;
-    skos:example "exact match: Average bark thickness [BROT:9] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Bark thickness [TOP283] (https://top-thesaurus.org/index)", "exact match: Bark thickness [TRY:24, TRY:3355, TRY:3356] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Average bark thickness [BROT:9] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Bark thickness (inner bark) [TRY:3355] (https://www.try-db.org/de/de.php)", "exact match: Bark thickness (outer bark) [TRY:3356] (https://www.try-db.org/de/de.php)", "exact match: Bark thickness [TOP283] (https://top-thesaurus.org/index)", "exact match: Bark thickness [TRY:24] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "The corresponding stem diameter should also be recorded so that a scaled measure, the bark thickness to stem diameter ratio, can also be calculated."@en ;
     skos:prefLabel "Bark thickness"@en .
@@ -15972,7 +15972,7 @@ APD:trait_0012012
     skos:altLabel "bark_thickness_index" ;
     skos:broader APD:trait_group_0012002 ;
     skos:definition "The ratio of two times a single bark thickness measure to stem diameter, to adjust for increasing bark thickness with increasing stem diameter."@en ;
-    skos:example "close match: Bark thickness [TOP283] (https://top-thesaurus.org/index)", "close match: Bark thickness [TRY:24, 3355, 3356] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Bark thickness (inner bark) [TRY:3355] (https://www.try-db.org/de/de.php)", "close match: Bark thickness (outer bark) [TRY:3356] (https://www.try-db.org/de/de.php)", "close match: Bark thickness [TOP283] (https://top-thesaurus.org/index)", "close match: Bark thickness [TRY:24] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Scaled bark thickness"@en .
 
@@ -16245,7 +16245,7 @@ APD:trait_0012121
     skos:altLabel "root_dry_matter_content" ;
     skos:broader APD:trait_group_0012104 ;
     skos:definition "The ratio of root dry mass to root fresh mass; root dry matter content, RDMC."@en ;
-    skos:example "exact match: Root dry mass per root fresh mass (root dry matter content; RDMC) [TRY:785] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Root dry mass per root fresh mass (root dry matter content, RDMC) [TRY:785] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Root dry matter content (RDMC)"@en .
 
@@ -17077,7 +17077,7 @@ APD:trait_0012512
     skos:broader APD:trait_group_0012504 ;
     skos:definition "Linear dimension from the base to the apex of a fresh fruit, even if this is not the longest dimension."@en ;
     skos:exactMatch obo:TO_0002626 ;
-    skos:example "close match: maximum fruit length; minimum fruit length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: AverageFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); MinFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); MaxFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Fruit length [TOP92] (https://top-thesaurus.org/index)", "exact match: Fruit length [TRY:918] (https://www.try-db.org/de/de.php)", "exact match: fruit_length [GIFT:3.13] (https://gift.uni-goettingen.de)" ;
+    skos:example "close match: maximum fruit length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "close match: minimum fruit length [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)", "exact match: AverageFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Fruit length [TOP92] (https://top-thesaurus.org/index)", "exact match: Fruit length [TRY:918] (https://www.try-db.org/de/de.php)", "exact match: MaxFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: MinFruitLength_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: fruit_length [GIFT:3.13] (https://gift.uni-goettingen.de)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Fruit length"@en .
 
@@ -17099,7 +17099,7 @@ APD:trait_0012513
     skos:broader APD:trait_group_0012504 ;
     skos:definition "Greatest linear width dimension of a fresh fruit, sometimes referred to as 'diameter' in fruits where the width and height are identical; orthogonal to the fruit length, the base-to-apex dimension."@en ;
     skos:exactMatch obo:TO_0002627 ;
-    skos:example "exact match: AverageFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); MinFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0); MaxFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Fruit diameter [TRY:917] (https://www.try-db.org/de/de.php)", "exact match: Fruit width [TOP96] (https://top-thesaurus.org/index)", "exact match: fruit_width [GIFT:3.14] (https://gift.uni-goettingen.de)" ;
+    skos:example "exact match: AverageFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: Fruit diameter [TRY:917] (https://www.try-db.org/de/de.php)", "exact match: Fruit width [TOP96] (https://top-thesaurus.org/index)", "exact match: MaxFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: MinFruitWidth_cm [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "exact match: fruit_width [GIFT:3.14] (https://gift.uni-goettingen.de)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Fruit width"@en .
 
@@ -17653,7 +17653,7 @@ APD:trait_0013111
     skos:broader APD:trait_group_0011802, APD:trait_group_0013102, APD:trait_group_0021002 ;
     skos:changeNote "vessel_density" ;
     skos:definition "The ratio of the count of xylem vessels in a stem cross-section to stem cross-sectional area."@en ;
-    skos:example "exact match: Wood vessel density [TRY:1237]; Branch vessel density [TRY:3390] (https://www.try-db.org/de/de.php)", "exact match: vessel number [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "exact match: Branch vessel density [TRY:3390] (https://www.try-db.org/de/de.php)", "exact match: Wood vessel density [TRY:1237] (https://www.try-db.org/de/de.php)", "exact match: vessel number [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Stem xylem vessel density"@en .
 
@@ -17696,7 +17696,7 @@ APD:trait_0013113
     skos:changeNote "vessel_diameter" ;
     skos:definition "Diameter of xylem vessels in a stem."@en ;
     skos:exactMatch <https://cropontology.org/rdf/CO_357:0000151> ;
-    skos:example "exact match: Wood vessel diameter [TRY:1238]; Branch vessel diameter [TRY:3391] (https://www.try-db.org/de/de.php)", "exact match: vessel lumen area [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "exact match: Branch vessel diameter [TRY:3391] (https://www.try-db.org/de/de.php)", "exact match: Wood vessel diameter [TRY:1238] (https://www.try-db.org/de/de.php)", "exact match: vessel lumen area [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "As the adjacent vessels in an individual stem vary notably in size, this trait should never document a single vessel diameter from an individual, but instead the mean (or possibly maximum) vessel diameter from a much larger sample size. Note as well, that vessel diameters increase from a growing tip to the base of a plant and the location sampled should be specified in either the methods or as a context property."@en ;
     skos:prefLabel "Stem xylem vessel diameter"@en .
@@ -18626,7 +18626,7 @@ APD:trait_0020417
     skos:broader APD:trait_group_0020812 ;
     skos:closeMatch obo:TO_0012009, <https://cropontology.org/rdf/CO_357:0000539> ;
     skos:definition "A trait that indicates the health of photosystem II in a dark adapted leaf. Quantum yield is calculated as the ratio of variable fluorescence (Fv) to maximum fluorescence (Fm), with a higher value indicating a healthier leaf. Variable fluorescence (Fv) is calculated as the difference in fluorescence between a leaf where all photsystems have been saturated by light (Fm) and a leaf in a dark-adapted state (minimum fluorescence; Fo)."@en ;
-    skos:example "exact match: Leaf photosynthesis: quantum efficiency of photosystem II (maximum potential; FvFm) [TRY:3393] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Leaf photosynthesis: quantum efficiency of photosystem II (maximum potential, FvFm) [TRY:3393] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Leaf maximum quantum yield (Fv/Fm)"@en .
 
@@ -18648,7 +18648,7 @@ APD:trait_0020418
     skos:broader APD:trait_group_0020812 ;
     skos:closeMatch obo:TO_0012009, <https://cropontology.org/rdf/CO_357:0000539> ;
     skos:definition "A trait that indicates the health of photosystem II in a light adapted leaf. Quantum yield is calculated as the ratio of (maximum fluorescence under ambient conditions)-(fluorescence under ambient conditions)/(maximum fluorescence under ambient conditions)."@en ;
-    skos:example "exact match: Leaf photosynthesis: quantum efficiency of photosystem II (maximum potential; FvFm) [TRY:3393] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Leaf photosynthesis: quantum efficiency of photosystem II (maximum potential, FvFm) [TRY:3393] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Leaf ambient quantum yield"@en .
 
@@ -20007,7 +20007,7 @@ APD:trait_0030012
     skos:broader APD:trait_group_0030006 ;
     skos:definition "Categorical description of the duration of a plant's lifespan, from germination to death."@en ;
     skos:exactMatch obo:TO_0002725 ;
-    skos:example "close match: plant lifespan and age of first flowering [LEDA:1.3] (https://www.try-db.org/de/de.php)", "exact match: Plant lifespan (longevity) [TRY:59] (https://www.try-db.org/de/de.php)", "exact match: lifecycle [GIFT:2.1.1] (https://gift.uni-goettingen.de)", "related match: Growth form [BROT:1] (http://doi.org/10.1038/sdata.2018.135) (http://doi.org/10.1038/sdata.2018.135)" ;
+    skos:example "close match: plant lifespan and age of first flowering [LEDA:1.3] (https://uol.de/en/landeco/research/leda/standards)", "exact match: Plant lifespan (longevity) [TRY:59] (https://www.try-db.org/de/de.php)", "exact match: lifecycle [GIFT:2.1.1] (https://gift.uni-goettingen.de)", "related match: Growth form [BROT:1] (http://doi.org/10.1038/sdata.2018.135) (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:life_history_annual, APD:life_history_biennial, APD:life_history_ephemeral, APD:life_history_perennial, APD:life_history_short_lived_perennial ;
     skos:note "Studies will differ in the subset of terms they use to describe a plant's life history, such that some researchers will distinguish between ephemeral and annual species, and other researchers will group these life history categories together under `annual`. In addition, only a subset of studies will use the term `short-lived perennial`; the majority will score all perennial plants as `perennial`. Rangeland studies and post-fire studies are those most likely to score species as `ephemeral` or `short-lived perennial`, as these are environments where perennial species' lifespans are often divided into those that are short-lived due to environmental conditions and those that are able to persist through the environmentally unfavourable period."@en ;
@@ -20043,7 +20043,7 @@ APD:trait_0030014
     skos:altLabel "lifespan" ;
     skos:broader APD:trait_group_0030006 ;
     skos:definition "Plant lifespan, the duration from germination to death. Lifespan refers to the death of both aboveground and belowground biomass, indicating the death of the genetic individual."@en ;
-    skos:example "close match: Lifespan [BROT:17] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Plant life span [TOP255] (https://top-thesaurus.org/index)", "exact match: Plant lifespan (longevity) [TRY:59] (https://www.try-db.org/de/de.php)", "exact match: lifespan_1 [GIFT:2.2.1] (https://gift.uni-goettingen.de)", "exact match: longest whole plant longevity; maximum whole plant longevity  [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
+    skos:example "close match: Lifespan [BROT:17] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Plant life span [TOP255] (https://top-thesaurus.org/index)", "exact match: Plant lifespan (longevity) [TRY:59] (https://www.try-db.org/de/de.php)", "exact match: lifespan_1 [GIFT:2.2.1] (https://gift.uni-goettingen.de)", "exact match: longest whole plant longevity, maximum whole plant longevity  [BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Lifespan"@en ;
     skos:relatedMatch obo:TO_0002725 .
@@ -20062,7 +20062,7 @@ APD:trait_0030015
     skos:altLabel "plant_growth_substrate" ;
     skos:broader APD:trait_group_0030001 ;
     skos:definition "Trait broadly indicating where a plant is usually found, referencing the habitat in which a plant grows, the substrate to which a plant is attached, or a plant's growth medium."@en ;
-    skos:example "close match: epiphyte_2 [GIFT:1.3.2];  aquatic_1 [GIFT:1.7.1] (https://gift.uni-goettingen.de)", "related match: Plant growth form [TRY:42] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match:  aquatic_1 [GIFT:1.7.1] (https://gift.uni-goettingen.de)", "close match: epiphyte_2 [GIFT:1.3.2] (https://gift.uni-goettingen.de)", "related match: Plant growth form [TRY:42] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:plant_growth_substrate_aquatic, APD:plant_growth_substrate_epiphyte, APD:plant_growth_substrate_hemiepiphyte, APD:plant_growth_substrate_lithophyte, APD:plant_growth_substrate_marine, APD:plant_growth_substrate_semiaquatic, APD:plant_growth_substrate_terrestrial ;
     skos:note "Although the majority of vascular plants are `terrestrial`, for most taxonomic groups `plant growth substrate` is only recorded if a plant is not terrestrial. The exceptions are ferns and orchids, where both floras and individual researchers tend to specifically indicate which taxa are terrestrial. The values under this trait are recorded as part of `plant growth form` by many researchers, trait handbooks, and databases; they have been split out here, as the terms capturing what a plant is attached to do not generally describe the form of a plant."@en ;
@@ -20169,7 +20169,7 @@ APD:trait_0030020
     skos:changeNote "physical_defence" ;
     skos:closeMatch <http://vocabs.lter-europe.net/EnvThes/21109> ;
     skos:definition "The presence (or explicit absence) of specific physical defence structures on a plant, including spines, thorns, prickles, and sharp-tipped leaves."@en ;
-    skos:example "close match: Armature [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: Shoot emergences (pubescence, hairs, spines, thorns) [TRY:677]; Shoot emergences (pubescence, hairs, spines, thorns) [TRY:1255]; Shoot emergences (pubescence, hairs, spines, thorns) [TRY:1256] (https://www.try-db.org/de/de.php)", "close match: leaf_spines_1 [GIFT:4.13.1]; leaf_thorns_1 [GIFT:4:14.1]; defence [GIFT:6.5] (https://gift.uni-goettingen.de)", "related match: Basic leaf shape [BROT:5] (http://doi.org/10.1038/sdata.2018.135)" ;
+    skos:example "close match: Armature [PalmTraits] (https://doi.org/10.1038/s41597-019-0189-0)", "close match: Shoot emergences (pubescence, hairs, spines, thorns) [TRY:1255] (https://www.try-db.org/de/de.php)", "close match: Shoot emergences (pubescence, hairs, spines, thorns) [TRY:1256] (https://www.try-db.org/de/de.php)", "close match: Shoot emergences (pubescence, hairs, spines, thorns) [TRY:677] (https://www.try-db.org/de/de.php)", "close match: defence [GIFT:6.5] (https://gift.uni-goettingen.de)", "close match: leaf_spines_1 [GIFT:4.13.1] (https://www.try-db.org/de/de.php)", "close match: leaf_thorns_1 [GIFT:4:14.1] (https://www.try-db.org/de/de.php)", "related match: Basic leaf shape [BROT:5] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:plant_physical_defence_structures_absent, APD:plant_physical_defence_structures_prickle, APD:plant_physical_defence_structures_pungent_leaf_apex, APD:plant_physical_defence_structures_sharp_pointed_defence, APD:plant_physical_defence_structures_spine, APD:plant_physical_defence_structures_stinging_or_irritant_hairs, APD:plant_physical_defence_structures_thorn ;
     skos:note "This trait identifies explicit physical defence structures on a plant. The trait `plant_spinescence` indicates the degree of defence afforded to plants, with values defined by P<U+00C3><U+00A9>rez-Harguindeguy et al. 2013 (doi:10.1071/BT12225)."@en ;
@@ -20234,7 +20234,7 @@ APD:trait_0030023
     skos:broader APD:trait_group_0011802, APD:trait_group_0030006 ;
     skos:changeNote "growth_habit" ;
     skos:definition "Trait characterising a stem's structure and 3-dimensional extent, including the position of stems, degree of branchiness, density of branches, and branch angles relative to other branches and the ground surface."@en ;
-    skos:example "exact match: shoot_orientation [GIFT:1.9.1] (https://gift.uni-goettingen.de)", "related match: Shoot growth form [LEDA:3.2] (https://uol.de/en/landeco/research/leda/standards); Leaf distribution along the stem [LEDA:3.3] (https://uol.de/en/landeco/research/leda/standards)", "related match: climber_2 [GIFT:1.4.2] (https://gift.uni-goettingen.de)" ;
+    skos:example "exact match: shoot_orientation [GIFT:1.9.1] (https://gift.uni-goettingen.de)", "related match: Leaf distribution along the stem [LEDA:3.3] (https://uol.de/en/landeco/research/leda/standards)", "related match: Shoot growth form [LEDA:3.2] (https://uol.de/en/landeco/research/leda/standards)", "related match: climber_2 [GIFT:1.4.2] (https://gift.uni-goettingen.de)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:stem_growth_habit_arborescent, APD:stem_growth_habit_bushy, APD:stem_growth_habit_caespitose, APD:stem_growth_habit_climbing, APD:stem_growth_habit_compact, APD:stem_growth_habit_creeping, APD:stem_growth_habit_cushion-forming, APD:stem_growth_habit_decumbent, APD:stem_growth_habit_dense, APD:stem_growth_habit_erect, APD:stem_growth_habit_floating, APD:stem_growth_habit_mat-forming, APD:stem_growth_habit_open, APD:stem_growth_habit_prostrate, APD:stem_growth_habit_rhizomatous, APD:stem_growth_habit_rosette, APD:stem_growth_habit_spindly, APD:stem_growth_habit_sprawling, APD:stem_growth_habit_spreading, APD:stem_growth_habit_stoloniferous, APD:stem_growth_habit_submerged, APD:stem_growth_habit_tufted ;
     skos:note "This trait captures how a plant explores 3-dimensional space, with trait values predominantly adjectives that modify the core plant growth forms."@en ;
@@ -20705,7 +20705,7 @@ APD:trait_0030413
     skos:closeMatch obo:TO_0000435 ;
     skos:definition "Categorical groupings indicating the length of time (duration) a mature seed remains in the seedbank, viable and able to germinate."@en ;
     skos:exactMatch <http://vocabs.lter-europe.net/EnvThes/22228> ;
-    skos:example "close match: Canopy seed bank longevity [BROT:38]; Soil seed bank longevity [BROT:40] (http://doi.org/10.1038/sdata.2018.135)" ;
+    skos:example "close match: Canopy seed bank longevity [BROT:38] (http://doi.org/10.1038/sdata.2018.135)", "close match: Soil seed bank longevity [BROT:40] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:seedbank_longevity_class_long_persistent, APD:seedbank_longevity_class_persistent, APD:seedbank_longevity_class_short_persistent, APD:seedbank_longevity_class_transient, APD:seedbank_longevity_class_widely_dispersed ;
     skos:note "Seedbank longevity classes are a feature of a `population` (sample) of seeds, not an individual seed. Also see the traits `seedbank_longevity` (numeric trait), `seed_dormancy_class` and the trait `seed_recruitment_timing`."@en ;
@@ -20730,7 +20730,7 @@ APD:trait_0030414
     skos:changeNote "seed_longevity_numeric" ;
     skos:definition "The half-life of the seedbank, which is the length of time (duration) from when seeds in a seedbank mature until more than half the seeds in a seedbank are no longer able to germinate."@en ;
     skos:exactMatch obo:TO_0000435, <http://vocabs.lter-europe.net/EnvThes/22228> ;
-    skos:example "close match: Canopy seed bank longevity [BROT:38]; Soil seed bank longevity [BROT:40] (http://doi.org/10.1038/sdata.2018.135)" ;
+    skos:example "close match: Canopy seed bank longevity [BROT:38] (http://doi.org/10.1038/sdata.2018.135)", "close match: Soil seed bank longevity [BROT:40] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:note "Seedbank longevity can only be measured on a `population` (sample) of seeds, not on an individual seed. Also see the traits `seedbank_longevity_class`,  `seed_dormancy_class` and `seed_recruitment_timing`."@en ;
     skos:prefLabel "Seedbank longevity"@en .
@@ -20750,7 +20750,7 @@ APD:trait_0030415
     skos:broader APD:trait_group_0030504 ;
     skos:changeNote "dormancy_type" ;
     skos:definition "Mechanisms that inhibit mature seeds from germinating and the environmental or experimental cues that allow a seed to break dormancy and germinate."@en ;
-    skos:example "close match: Chemical germination cues [BROT:35]; Heat-stimulated germination [BROT:36]; Other germination cues [BROT:37] (http://doi.org/10.1038/sdata.2018.135)" ;
+    skos:example "close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135)", "close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135)", "close match: Other germination cues [BROT:37] (http://doi.org/10.1038/sdata.2018.135)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:seed_dormancy_class_morphological_dormancy, APD:seed_dormancy_class_morphophysiological_dormancy, APD:seed_dormancy_class_non_dormant, APD:seed_dormancy_class_physical_dormancy, APD:seed_dormancy_class_physiological_dormancy ;
     skos:prefLabel "Dormancy type"@en ;
@@ -20771,7 +20771,7 @@ APD:trait_0030416
     skos:broader APD:trait_group_0030504 ;
     skos:changeNote "germination_treatment" ;
     skos:definition "Treatment required for seed to display high germination rates. The data included in AusTraits are mostly from seed banks that have recorded the protocols they use to encourage seeds to germinate. The treatments may therefore be only loosely connected to the cues required for a species' to break dormancy."@en ;
-    skos:example "close match: Chemical germination cues [BROT:35]; Heat-stimulated germination [BROT:36]; Other germination cues [BROT:37] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Seed germination stimulation [TRY:34] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135)", "close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135)", "close match: Other germination cues [BROT:37] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Seed germination stimulation [TRY:34] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:seed_germination_treatment_after_ripening, APD:seed_germination_treatment_chemical_treatment, APD:seed_germination_treatment_cold, APD:seed_germination_treatment_dark, APD:seed_germination_treatment_heat, <https://w3id.org/APD/traits/seed_germination_treatment_heat+smoke>, APD:seed_germination_treatment_heat_lethal, APD:seed_germination_treatment_imbibe_hot, APD:seed_germination_treatment_leaching, APD:seed_germination_treatment_light, APD:seed_germination_treatment_mycorrhizae, APD:seed_germination_treatment_none, APD:seed_germination_treatment_rain, APD:seed_germination_treatment_scarify, APD:seed_germination_treatment_smoke, APD:seed_germination_treatment_stratification, APD:seed_germination_treatment_stratification_cold, APD:seed_germination_treatment_stratification_warm ;
     skos:prefLabel "Seed germination treatment"@en .
@@ -20957,7 +20957,7 @@ APD:trait_0030610
     skos:broader APD:trait_group_0030602 ;
     skos:changeNote "fire_response" ;
     skos:definition "Trait indicating whether mature individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to fire that causes 100% leaf scorch.  Species where at least 70% of plants resprout are designated `resprouters`, while those where fewer than 30% of plants resprout are designated as `fire killed`. Species with an intermediate response have a mixed fire response, and are coded as `fire_killed resprouts`."@en ;
-    skos:example "exact match: Resprouting capacity after fire [BROT:34] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Species tolerance to fire [TRY:318]; Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)", "exact match: Resprouting capacity after fire [BROT:34] (http://doi.org/10.1038/sdata.2018.135)", "exact match: Species tolerance to fire [TRY:318] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:resprouting_capacity_fire_killed, APD:resprouting_capacity_partial_resprouting, APD:resprouting_capacity_resprouts ;
     skos:note "This trait is narrowly applicable only to taxa that experience fire; see the trait `fire_exposure_level` for trait values related to species whose strategy is to avoid fire."@en ;
@@ -20981,7 +20981,7 @@ APD:trait_0030611
     skos:broader APD:trait_group_0030602 ;
     skos:changeNote "fire_response_numeric" ;
     skos:definition "Proportion of mature individuals in a population that survive a fire and resprout following a fire."@en ;
-    skos:example "exact match: Species tolerance to fire [TRY:318]; Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)" ;
+    skos:example "exact match: Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)", "exact match: Species tolerance to fire [TRY:318] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:prefLabel "Post-fire proportion resprouting individuals"@en ;
     skos:scopeNote "applicable to plants that experience fire"@en .
@@ -21001,7 +21001,7 @@ APD:trait_0030612
     skos:broader APD:trait_group_0030602 ;
     skos:changeNote "fire_response_juvenile" ;
     skos:definition "Trait indicating whether juvenile phase individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to a fire with 100% leaf scorch."@en ;
-    skos:example "close match: Species tolerance to fire [TRY:318]; Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Plant resprouting capacity [TRY:819] (https://www.try-db.org/de/de.php)", "close match: Species tolerance to fire [TRY:318] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:resprouting_capacity_juvenile_juvenile_fire_killed, APD:resprouting_capacity_juvenile_juvenile_moderate_fire_killed, APD:resprouting_capacity_juvenile_juvenile_resprout ;
     skos:prefLabel "Post-fire resprouting capacity of juvenile plants"@en ;
@@ -21412,7 +21412,7 @@ APD:trait_0030810
     skos:broader APD:trait_group_0030704 ;
     skos:changeNote "plant_type_by_resource_use" ;
     skos:definition "Classification scheme of plant resource requirements and tolerances, categorising taxa based on their water, soil nutrient, and soil salinity requirements and tolerances."@en ;
-    skos:example "close match: Species tolerance to salt [TRY:1254];  Species tolerance to drought [TRY:595] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match:  Species tolerance to drought [TRY:595] (https://www.try-db.org/de/de.php)", "close match: Species tolerance to salt [TRY:1254] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:plant_type_by_resource_use_hydrohalophyte, APD:plant_type_by_resource_use_phreatophyte, APD:plant_type_by_resource_use_psammophile, APD:plant_type_by_resource_use_weedy, APD:plant_type_by_resource_use_xerohalophyte, APD:plant_type_by_resource_use_xerophyte ;
     skos:prefLabel "Plant resource requirements and tolerance"@en .
@@ -22253,10 +22253,10 @@ APD:woodiness_detailed_woody_base
     skos:prefLabel "woody_base"@en .
 
 APD:woodiness_detailed_woody_like_inflorescence
-    dcterms:description "Taxa, including monocots and ferns, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody."@en ;
+    dcterms:description "Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody."@en ;
     dcterms:identifier "woodiness_detailed_woody_like_inflorescence" ;
     skos:broader APD:trait_0030019 ;
-    skos:definition "Taxa, including monocots and ferns, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody."@en ;
+    skos:definition "Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:prefLabel "woody_like_inflorescence"@en .
 

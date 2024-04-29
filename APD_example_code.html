@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elizabeth Wenk">
+
+<title>Exploring the APD and extracting trait definitions and metadata</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="APD_example_code_files/libs/clipboard/clipboard.min.js"></script>
+<script src="APD_example_code_files/libs/quarto-html/quarto.js"></script>
+<script src="APD_example_code_files/libs/quarto-html/popper.min.js"></script>
+<script src="APD_example_code_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="APD_example_code_files/libs/quarto-html/anchor.min.js"></script>
+<link href="APD_example_code_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="APD_example_code_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="APD_example_code_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="APD_example_code_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="APD_example_code_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Exploring the APD and extracting trait definitions and metadata</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elizabeth Wenk </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD/, and each trait (and trait groupings) has its own URI.</p>
+<p>To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, <code>APD_traits.csv</code> and <code>APD_categorical_values</code>, which can be downloaded from <a href="https://github.com/traitecoevo/APD/tree/master/docs">github.com/traitecoevo/APD/tree/master/docs</a> or Zenodo at DOI: <a href="https://doi.org/10.5281/zenodo.8040789">10.5281/zenodo.8040789</a>.</p>
+<p>The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Todo: update links after branch merged in</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>APD_traits <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_traits.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>APD_categorical_values <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_categorical_values.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>Metadata fields (annotation properties) documented for each trait include:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(APD_traits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">field</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Entity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trait</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">label</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">description</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">comments</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trait_type</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">allowed_values_min</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">allowed_values_max</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">units</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">constraints</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trait_groupings</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">structure_measured</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">characteristic_measured</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">keywords</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">references</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">reviewers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">created</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modified</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">exact_match</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">close_match</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">related_match</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">description_encoded</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">deprecated_trait_name</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">identifier</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">inScheme</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<section id="extracting-terms-based-on-specific-fields" class="level2">
+<h2 class="anchored" data-anchor-id="extracting-terms-based-on-specific-fields">Extracting terms based on specific fields</h2>
+<p>The following examples show how to extract terms based on specific fields in the APD.</p>
+<section id="structure-measured" class="level3">
+<h3 class="anchored" data-anchor-id="structure-measured">Structure measured</h3>
+<p>To determine the possible values for <code>structure_measured</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>structure_measured <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(structure_measured) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">structure_measured =</span> (stringr<span class="sc">::</span><span class="fu">str_split</span>(structure_measured, <span class="st">"; "</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest_longer</span>(<span class="st">"structure_measured"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">structure_measured</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf [PO_0025034]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stem [PO_0009047]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wood, secondary xylem [PO_0005848]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bark [PO_0004518]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">root [PO_0009005]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">reproductive shoot system [PO_0025082]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">flower [PO_0009046]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fruit [PO_0009001]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">whole plant [PO_0000003]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bud [PO_0000055]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You can then select the subset of traits that relate to a specific structure.</p>
+<p>For instance, to extract traits relating to seeds:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seed_traits <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(structure_measured, <span class="st">"seed"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first 10 traits on this list are:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 28%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">structure_measured</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">seed_Ca_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed calcium (Ca) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seed_K_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed potassium (K) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seed_Mg_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed magnesium (Mg) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seed_N_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed nitrogen (N) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seed_P_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed phosphorus (P) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seed_S_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed sulphur (S) content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seed_protein_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed protein content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seed_oil_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed oil content per unit seed dry mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; seed [PO_0009010]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">accessory_cost_fraction</td>
+<td style="text-align: left;">Seed accessory cost fraction</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; flower [PO_0009046]; fruit [PO_0009001]; seed [PO_0009010]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">accessory_cost_mass</td>
+<td style="text-align: left;">Seed accessory cost mass</td>
+<td style="text-align: left;">reproductive shoot system [PO_0025082]; flower [PO_0009046]; fruit [PO_0009001]; seed [PO_0009010]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="trait-groupings" class="level3">
+<h3 class="anchored" data-anchor-id="trait-groupings">Trait groupings</h3>
+<p>To extract all traits within one of the defined trait groupings.</p>
+<p>First, generate a list of <code>trait_grouping</code> terms:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>trait_groupings <span class="ot">&lt;-</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(trait_groupings) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">trait_groupings =</span> (stringr<span class="sc">::</span><span class="fu">str_split</span>(trait_groupings, <span class="st">"; "</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">unnest_longer</span>(<span class="st">"trait_groupings"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Items 20:29 on this list are:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait_groupings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">whole plant phenotype trait [trait_group_0030006]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">plant structure morphology trait [trait_group_0011001]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant embryo morphology trait [trait_group_0010104]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf morphology trait [trait_group_0011202]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf size trait [trait_group_0011204]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf mass trait [trait_group_0011206]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf position trait [trait_group_0011402]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">portion of plant tissue morphology trait [trait_group_0011502]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant cell morphology trait [trait_group_0011503]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Filter the APD for <code>leaf stomatal complex morphology</code> traits:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stomatal_traits <span class="ot">&lt;-</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(trait_groupings, <span class="st">"leaf stomatal complex morphology trait"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 36%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">trait_groupings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_stomatal_density_abaxial</td>
+<td style="text-align: left;">Stomatal density on the lower leaf surface</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_stomatal_density_adaxial</td>
+<td style="text-align: left;">Stomatal density on the upper leaf surface</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_stomatal_density_average</td>
+<td style="text-align: left;">Stomatal density averaged across both leaf surfaces</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_stomatal_distribution</td>
+<td style="text-align: left;">Stomatal distribution</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_stomatal_hairs</td>
+<td style="text-align: left;">Stomatal hairiness</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_guard_cell_length</td>
+<td style="text-align: left;">Guard cell length</td>
+<td style="text-align: left;">leaf stomatal complex morphology trait [trait_group_0011602]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="characteristic-measured" class="level3">
+<h3 class="anchored" data-anchor-id="characteristic-measured">Characteristic measured</h3>
+<p>The term <code>characteristic_measured</code> documents “what” is being measured - a mass, length, etc.</p>
+<p>Multiple terms may be used, for instance to indicate a trait captures volume and is a ratio:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>volume_ratio_traits <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, characteristic_measured) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"volume"</span>) <span class="sc">&amp;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"ratio"</span>) </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">characteristic_measured</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">wood_density</td>
+<td style="text-align: left;">Wood density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stem_density</td>
+<td style="text-align: left;">Herbaceous stem density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bark_density</td>
+<td style="text-align: left;">Bark density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">root_fine_root_coarse_root_ratio</td>
+<td style="text-align: left;">Fine root volume to coarse root volume ratio</td>
+<td style="text-align: left;">volume [PATO_0000918]; ratio; proportion [PATO_0001470]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">root_wood_density</td>
+<td style="text-align: left;">Root wood density</td>
+<td style="text-align: left;">mass [PATO_0000125]; volume density [PATO_0001353]; ratio; proportion [PATO_0001470]; mass density, density [PATO_0001019]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bulk_modulus_of_elasticity</td>
+<td style="text-align: left;">Bulk modulus of elasticity (e)</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]; volume [PATO_0000918]; ratio; proportion [PATO_0001470]; model parameter [STATO_0000034]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fire_fuel_bed_bulk_density</td>
+<td style="text-align: left;">Fuel bed bulk density</td>
+<td style="text-align: left;">mass [PATO_0000125]; mass fraction [ECSO_00000619]; ratio; proportion [PATO_0001470]; volume density [PATO_0001353]; mass density, density [PATO_0001019]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Or all terms that measure a force:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>force_traits <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, characteristic_measured) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(characteristic_measured, <span class="st">"force"</span>) </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">characteristic_measured</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_work_to_punch</td>
+<td style="text-align: left;">Leaf work to punch</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_work_to_punch_adjusted</td>
+<td style="text-align: left;">Leaf specific work to punch</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]; ratio; proportion [PATO_0001470]; thickness [PATO_0000915]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_work_to_shear</td>
+<td style="text-align: left;">Leaf work to shear</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_work_to_shear_adjusted</td>
+<td style="text-align: left;">Leaf specific work to shear (fracture toughness)</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]; ratio; proportion [PATO_0001470]; thickness [PATO_0000915]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_work_to_tear</td>
+<td style="text-align: left;">Leaf work to tear</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_work_to_tear_adjusted</td>
+<td style="text-align: left;">Leaf specific work to tear</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]; ratio; proportion [PATO_0001470]; thickness [PATO_0000915]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bark_modulus_of_elasticity</td>
+<td style="text-align: left;">Bark modulus of elasticity</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stem_modulus_of_elasticity</td>
+<td style="text-align: left;">Stem modulus of elasticity</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">xylem_modulus_of_elasticity</td>
+<td style="text-align: left;">Xylem modulus of elasticity</td>
+<td style="text-align: left;">work [PATO_0001026]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">modulus_of_rupture</td>
+<td style="text-align: left;">Modulus of rupture</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]; strength [PATO_0001230]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sapwood_specific_hydraulic_conductivity</td>
+<td style="text-align: left;">Sapwood specific hydraulic conductivity (Ks)</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit length [EnvThes:22004]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sapwood_specific_hydraulic_conductivity_theoretical</td>
+<td style="text-align: left;">Theoretical sapwood specific hydraulic conductivity (Ks)</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit area [EnvThes:22003]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stem_specific_hydraulic_conductivity</td>
+<td style="text-align: left;">Stem specific hydraulic conductivity (Ks)</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit length [EnvThes:22004]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_specific_hydraulic_conductance</td>
+<td style="text-align: left;">Leaf specific hydraulic conductance (kleaf)</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit area [EnvThes:22003]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_specific_hydraulic_conductivity</td>
+<td style="text-align: left;">Leaf specific hydraulic conductivity (Kl)</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit area [EnvThes:22003]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">root_specific_hydraulic_conductivity</td>
+<td style="text-align: left;">Root specific hydraulic conductivity</td>
+<td style="text-align: left;">conductivity [PATO_0001585]; per unit length [EnvThes:22004]; ratio; proportion [PATO_0001470]; rate [PATO_0000161]; force [PATO_0001035]; efficiency [PATO_0001029]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">water_potential_predawn</td>
+<td style="text-align: left;">Pre-dawn water potential</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">water_potential_midday</td>
+<td style="text-align: left;">Midday water potential</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_hydraulic_vulnerability</td>
+<td style="text-align: left;">Leaf xylem pressure, 50% lost conductance (P50)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">water_potential_12percent_lost_conductivity</td>
+<td style="text-align: left;">Stem xylem pressure, 12% lost conductivity (P12)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">water_potential_50percent_lost_conductivity</td>
+<td style="text-align: left;">Stem xylem pressure, 50% lost conductivity (P50)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">water_potential_88percent_lost_conductivity</td>
+<td style="text-align: left;">Stem xylem pressure, 88% lost conductivity (P88)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hydraulic_safety_margin_50</td>
+<td style="text-align: left;">Hydraulic safety margin, 50%</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hydraulic_safety_margin_88</td>
+<td style="text-align: left;">Hydraulic safety margin, 88%</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_turgor_loss_point</td>
+<td style="text-align: left;">Leaf turgor loss point</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]; model parameter [STATO_0000034]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">osmotic_potential</td>
+<td style="text-align: left;">Osmotic potential</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">osmotic_potential_at_full_turgor</td>
+<td style="text-align: left;">Osmotic potential at full tugor</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]; model parameter [STATO_0000034]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bulk_modulus_of_elasticity</td>
+<td style="text-align: left;">Bulk modulus of elasticity (e)</td>
+<td style="text-align: left;">pressure [PATO_0001025]; force [PATO_0001035]; volume [PATO_0000918]; ratio; proportion [PATO_0001470]; model parameter [STATO_0000034]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">root_water_potential_50percent_lost_conductivity</td>
+<td style="text-align: left;">Root xylem pressure, 50% lost conductivity (P50)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">root_water_potential_12percent_lost_conductivity</td>
+<td style="text-align: left;">Root xylem pressure, 12% lost conductivity (P12)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">root_water_potential_88percent_lost_conductivity</td>
+<td style="text-align: left;">Root xylem pressure, 88% lost conductivity (P88)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_water_potential_12percent_lost_conductivity</td>
+<td style="text-align: left;">Leaf xylem pressure, 12% lost conductance (P12)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_water_potential_88percent_lost_conductivity</td>
+<td style="text-align: left;">Leaf xylem pressure, 88% lost conductance (P88)</td>
+<td style="text-align: left;">tension [PATO_0002284]; force [PATO_0001035]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="categorical-values" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-values">Categorical values</h3>
+<p>The allowed values for categorical traits are output in the second table, <code>APD_categorical_values</code>.</p>
+<p>You can first extract all metadata fields for the trait from <code>APD_traits</code>, then merge in the allowed categorical trait values. Researchers might use this information either when merging together disparate datasets or databases, or to acquire a list of trait values to use when scoring study plants.</p>
+<p>For <code>life_history</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>life_history_values <span class="ot">&lt;-</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  APD_categorical_values <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(trait <span class="sc">==</span> <span class="st">"life_history"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>trait, <span class="sc">-</span>categorical_trait_identifier, <span class="sc">-</span>categorical_trait_synonyms) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">term =</span> <span class="st">"allowed_values_levels"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">value =</span> <span class="fu">paste0</span>(allowed_values_levels, <span class="st">": "</span>, categorical_trait_description)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(term, value)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>life_history <span class="ot">&lt;-</span> </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span> </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(trait <span class="sc">==</span> <span class="st">"life_history"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(APD_traits)), <span class="sc">~</span> <span class="fu">as.character</span>(.x))) <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(APD_traits)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">term =</span> name) <span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(life_history_values) <span class="sc">%&gt;%</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 96%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">https://w3id.org/APD/traits/trait_0030012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trait</td>
+<td style="text-align: left;">life_history</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">label</td>
+<td style="text-align: left;">Life history</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">description</td>
+<td style="text-align: left;">Categorical description of the duration of a plant’s lifespan, from germination to death.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">comments</td>
+<td style="text-align: left;">Studies will differ in the subset of terms they use to describe a plant’s life history, such that some researchers will distinguish between ephemeral and annual species, and other researchers will group these life history categories together under <code>annual</code>. In addition, only a subset of studies will use the term <code>short-lived perennial</code>; the majority will score all perennial plants as <code>perennial</code>. Rangeland studies and post-fire studies are those most likely to score species as <code>ephemeral</code> or <code>short-lived perennial</code>, as these are environments where perennial species’ lifespans are often divided into those that are short-lived due to environmental conditions and those that are able to persist through the environmentally unfavourable period.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trait_type</td>
+<td style="text-align: left;">categorical variable [STATO_0000252]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">constraints</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trait_groupings</td>
+<td style="text-align: left;">whole plant phenotype trait [trait_group_0030006]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">structure_measured</td>
+<td style="text-align: left;">whole plant [PO_0000003]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">characteristic_measured</td>
+<td style="text-align: left;">organismal quality [PATO_0001995]; duration [PATO_0001309]; time [PATO_0000165]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">death [GO_0016265]; longevity [NCIT_C153298]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">references</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; LEDA Data Standards 2005 [https://uol.de/en/landeco/research/leda/standards]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">reviewers</td>
+<td style="text-align: left;">Elizabeth Wenk [https://orcid.org/0000-0001-5640-5910]; Hervé Sauquet [https://orcid.org/0000-0001-8305-3236]; Russell Barrett [https://orcid.org/0000-0003-0360-8321]; Ian J. Wright [https://orcid.org/0000-0001-8338-9143]; Peter Vesk [https://orcid.org/0000-0003-2008-7062]; Gregory J. Jordan [https://orcid.org/0000-0002-6033-2766]; Andy Leigh [https://orcid.org/0000-0003-3568-2606]; Patricia Lu-Irving [https://orcid.org/0000-0003-1116-9402]; Lily Dun [https://orcid.org/0000-0002-0712-5143]; David Coleman [https://orcid.org/0000-0002-1773-6597]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">created</td>
+<td style="text-align: left;">14/07/2021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">modified</td>
+<td style="text-align: left;">31/10/2022</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">life cycle habit [http://purl.obolibrary.org/obo/TO_0002725]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">examples</td>
+<td style="text-align: left;">exact match: Plant lifespan (longevity) [TRY:59] (https://www.try-db.org/de/de.php); exact match: lifecycle [GIFT:2.1.1] (https://gift.uni-goettingen.de); related match: Growth form [BROT:1] (http://doi.org/10.1038/sdata.2018.135) (http://doi.org/10.1038/sdata.2018.135); close match: plant lifespan and age of first flowering [LEDA:1.3] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">description_encoded</td>
+<td style="text-align: left;">Categorical description of the duration [PATO:0001309] of a plant’s lifespan (longevity [NCIT:C153298]), from seed germination [GO:0009845] to death [GO:0016265].</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">identifier</td>
+<td style="text-align: left;">trait_0030012</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">inScheme</td>
+<td style="text-align: left;">https://w3id.org/APD</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">allowed_values_levels</td>
+<td style="text-align: left;">ephemeral: A very short-lived plant, generally with a lifespan of only a few months and the exact length of lifespan quite variable and determined by environmental conditions.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">allowed_values_levels</td>
+<td style="text-align: left;">annual: A plant that lives for up to one year after germinating, completing its life cycle in a single growing season.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">allowed_values_levels</td>
+<td style="text-align: left;">biennial: A plant that lives for up to two years after germinating, requiring two growing seasons to complete its life cycle and dying following the second growing season.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">allowed_values_levels</td>
+<td style="text-align: left;">perennial: A plant that lives for three or more growing seasons, with an exact lifespan that is indeterminate.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">allowed_values_levels</td>
+<td style="text-align: left;">short_lived_perennial: A perennial whose lifespan is less than approximately five years, with the exact lifespan generally dependent on environmental conditions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="matches-to-other-databases-and-vocabularies" class="level3">
+<h3 class="anchored" data-anchor-id="matches-to-other-databases-and-vocabularies">Matches to other databases and vocabularies</h3>
+<p>Informal matches to traits included in databases and unpublished dictionaries are mapped in as <code>examples</code>, while matches to published vocabularies and ontologies and mapped using the formal terms, <code>exact_match</code>, <code>close_match</code>, and <code>related</code>_match`</p>
+<p>To identify all traits that are also in the TRY trait database:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>matches_to_TRY <span class="ot">&lt;-</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, examples) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(examples)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">examples =</span> stringr<span class="sc">::</span><span class="fu">str_split</span>(examples, <span class="st">"; "</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(examples) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(examples, <span class="st">"</span><span class="sc">\\</span><span class="st">[TRY"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first 20 of many trait matches:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_Al_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf aluminium (Al) content per leaf dry mass [TRY:249] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_B_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf boron (B) content per leaf dry mass [TRY:250] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_C_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf carbon (C) content per leaf dry mass [TRY:13] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Ca_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf calcium (Ca) content per leaf dry mass [TRY:252] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_Cl_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf chlorine (Cl) content per leaf dry mass [TRY:539] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Cr_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf chromium (Cr) content per leaf dry mass [TRY:254] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_Co_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf cobalt (Co) content per leaf dry mass [TRY:253] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Cu_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf copper (Cu) content per leaf dry mass [TRY:255] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_Fe_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf iron (Fe) content per leaf dry mass [TRY:256] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_K_per_area</td>
+<td style="text-align: left;">exact match: Leaf potassium (K) content per leaf area [TRY:52] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_K_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf potassium (K) content per leaf dry mass [TRY:44] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Mg_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf magnesium (Mg) content per leaf dry mass [TRY:257] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_Mn_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf manganese (Mn) content per leaf dry mass [TRY:258] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Mo_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf molybdenum (Mo) content per leaf dry mass [TRY:259] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_N_per_area</td>
+<td style="text-align: left;">exact match: Leaf nitrogen (N) content per leaf area [TRY:50] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_N_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf nitrogen (N) content per leaf dry mass [TRY:14] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_Na_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf sodium (Na) content per leaf dry mass [TRY:260] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_Ni_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf nickel (Ni) content per leaf dry mass [TRY:261] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_P_per_area</td>
+<td style="text-align: left;">exact match: Leaf phosphorus (P) content per leaf area [TRY:51] (https://www.try-db.org/de/de.php)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_P_per_dry_mass</td>
+<td style="text-align: left;">exact match: Leaf phosphorus (P) content per leaf dry mass [TRY:15] (https://www.try-db.org/de/de.php)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>To obtain matches to other informally published trait matches in dictionary and ontologies, use the following patterns with str_detect:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Vocabulary / Database</th>
+<th>string to match to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TRY Plant Trait Database</td>
+<td>\\[TRY</td>
+</tr>
+<tr class="even">
+<td>TOP Thesaurus</td>
+<td>\\[TOP</td>
+</tr>
+<tr class="odd">
+<td>BIEN</td>
+<td>\\[BIEN</td>
+</tr>
+<tr class="even">
+<td>GIFT</td>
+<td>\\[GIFT</td>
+</tr>
+<tr class="odd">
+<td>LEDA</td>
+<td>\\[LEDA</td>
+</tr>
+<tr class="even">
+<td>BROT Database</td>
+<td>\\[BROT</td>
+</tr>
+<tr class="odd">
+<td>Palm Traits Database</td>
+<td>\\[Palm</td>
+</tr>
+</tbody>
+</table>
+<p>Slightly different code is required to extract lists of formally published trait definitions for which there are matches:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>matches_to_WoodyPlants <span class="ot">&lt;-</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, exact_match, close_match, related_match) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> stringr<span class="sc">::</span><span class="fu">str_split</span>(value, <span class="st">"; "</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_longer</span>(value) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stringr<span class="sc">::</span><span class="fu">str_detect</span>(value, <span class="st">"CO_357"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first 20 matches to the Woody Plants Ontology are:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 9%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_C_per_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf carbon content [https://cropontology.org/rdf/CO_357:0000086]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_N_per_area</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf nitrogen content [https://cropontology.org/rdf/CO_357:0000159]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_N_per_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf nitrogen content [https://cropontology.org/rdf/CO_357:0000159]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_CN_ratio</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Ratio leaf nitrogen to leaf carbon [https://cropontology.org/rdf/CO_357:0000287]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_CN_ratio</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">C/N [https://cropontology.org/rdf/CO_357:0000512]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_soluble_protein_per_area</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf soluble protein content [https://cropontology.org/rdf/CO_357:0000281]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_per_area</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf chlorophyll content [https://cropontology.org/rdf/CO_357:0000249]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_chlorophyll_per_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf chlorophyll content [https://cropontology.org/rdf/CO_357:0000250]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_A_per_area</td>
+<td style="text-align: left;">close_match</td>
+<td style="text-align: left;">Chlorophyll a [https://cropontology.org/rdf/CO_357:0000514]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_chlorophyll_A_per_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Chlorophyll a [https://cropontology.org/rdf/CO_357:0000514]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_B_per_area</td>
+<td style="text-align: left;">close_match</td>
+<td style="text-align: left;">Chlorophyll b [https://cropontology.org/rdf/CO_357:0000515]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_chlorophyll_B_per_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Chlorophyll b [https://cropontology.org/rdf/CO_357:0000515]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_A_B_ratio</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Chlorophyll a to b ratio [https://cropontology.org/rdf/CO_357:0000516]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_rubisco_per_leaf_dry_mass</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Leaf rubisco content [https://cropontology.org/rdf/CO_357:0000273]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_delta13C</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Delta C13 [https://cropontology.org/rdf/CO_357:0000085]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wood_delta13C</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Wood Carbon content [https://cropontology.org/rdf/CO_357:0000113]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_delta15N</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Delta 15N [https://cropontology.org/rdf/CO_357:0000513]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">plant_width</td>
+<td style="text-align: left;">close_match</td>
+<td style="text-align: left;">Crown size [https://cropontology.org/rdf/CO_357:0000101]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant_height</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Tree height [https://cropontology.org/rdf/CO_357:0000111]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">plant_height</td>
+<td style="text-align: left;">exact_match</td>
+<td style="text-align: left;">Tree height [https://cropontology.org/rdf/CO_357:0000048]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>To obtain matches to other formally published trait in ontologies, use the following patterns with str_detect:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Vocabulary / Database</th>
+<th>string to match to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Woody Plants Ontology</td>
+<td>CO_357</td>
+</tr>
+<tr class="even">
+<td>Plant Trait Ontology (TO)</td>
+<td>obo\\/TO_</td>
+</tr>
+<tr class="odd">
+<td>Flora Phenotype Ontology (FLOPO)</td>
+<td>obo\\/FLOPO_</td>
+</tr>
+<tr class="even">
+<td>EnvThes</td>
+<td>EnvThes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<p>As appropriate, references are listed for each trait concept, under <code>references</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fluorescence <span class="ot">&lt;-</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, references) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(trait, <span class="st">"fluorescence"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_fluorescence_fv_over_fm</td>
+<td style="text-align: left;">Leaf maximum quantum yield (Fv/Fm)</td>
+<td style="text-align: left;">Maxwell &amp; Johnson 2000 [https://doi.org/10.1093/jexbot/51.345.659]; Long 1993 [https://doi.org/10.1007/BF00195081]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_fluorescence_quantum_yield</td>
+<td style="text-align: left;">Leaf ambient quantum yield</td>
+<td style="text-align: left;">Maxwell &amp; Johnson 2000 [https://doi.org/10.1093/jexbot/51.345.659]; Long 1993 [https://doi.org/10.1007/BF00195081]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Alternatively, if you know the doi for a reference andyou can search for traits that reference it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>BT12225 <span class="ot">&lt;-</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, references) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(references, <span class="st">"doi.org/10.1071/BT12225"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first 15 traits referencing <code>Pérez-Harguindeguy 2013</code>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">plant_height</td>
+<td style="text-align: left;">Plant vegetative height</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Falster 2003a [https://doi.org/10.1016/S0169-5347(03)00061-2]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">plant_spinescence</td>
+<td style="text-align: left;">Plant spinescence</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_area</td>
+<td style="text-align: left;">Leaf area</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_length</td>
+<td style="text-align: left;">Leaf length</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_thickness</td>
+<td style="text-align: left;">Leaf thickness</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_dry_mass</td>
+<td style="text-align: left;">Leaf dry mass</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_fresh_mass</td>
+<td style="text-align: left;">Leaf fresh mass</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_mass_per_area</td>
+<td style="text-align: left;">Leaf mass per area</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Wright 2004 [https://doi.org/10.1038/nature02403]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_lamina_mass_per_area</td>
+<td style="text-align: left;">Leaf lamina mass per area</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_fresh_mass_per_area</td>
+<td style="text-align: left;">Leaf fresh mass per leaf area</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_type</td>
+<td style="text-align: left;">Leaf type</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Burrows 2001 [https://doi.org/10.1086/319579]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fruit_dry_mass</td>
+<td style="text-align: left;">Fruit dry mass</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Kew Seed Information Database 2022 [https://data.kew.org/sid/sidsearch.html]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fruit_length</td>
+<td style="text-align: left;">Fruit length</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Kew Seed Information Database 2022 [https://data.kew.org/sid/sidsearch.html]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fruit_width</td>
+<td style="text-align: left;">Fruit width</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Kew Seed Information Database 2022 [https://data.kew.org/sid/sidsearch.html]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fruit_height</td>
+<td style="text-align: left;">Fruit breadth</td>
+<td style="text-align: left;">Pérez-Harguindeguy 2013 [https://doi.org/10.1071/BT12225]; Kew Seed Information Database 2022 [https://data.kew.org/sid/sidsearch.html]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="deprecated-trait-names" class="level3">
+<h3 class="anchored" data-anchor-id="deprecated-trait-names">Deprecated trait names</h3>
+<p>For AusTraits users, if you have used an old version of AusTraits, previous names used for trait concepts are documented under <code>deprecated_trait_name</code>.</p>
+<p>You can extract all trait names that have changed, with 10 of them displayed:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>deprecated_trait_names <span class="ot">&lt;-</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(deprecated_trait_name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 51%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">deprecated_trait_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_B_per_area</td>
+<td style="text-align: left;">Leaf chlorophyll B content per unit leaf area</td>
+<td style="text-align: left;">chlorophyll_B_per_area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_chlorophyll_B_per_dry_mass</td>
+<td style="text-align: left;">Leaf chlorophyll B content per unit leaf dry mass</td>
+<td style="text-align: left;">chlorophyll_B_per_dry_mass</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_chlorophyll_A_B_ratio</td>
+<td style="text-align: left;">Ratio of leaf chlorophyll A content to leaf chlorophyll B content</td>
+<td style="text-align: left;">chlorophyll_A_B_ratio</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leaf_rubisco_per_leaf_dry_mass</td>
+<td style="text-align: left;">Leaf rubisco content per unit leaf dry mass</td>
+<td style="text-align: left;">cell_rubisco_concentration</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seed_protein_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed protein content per unit seed dry mass</td>
+<td style="text-align: left;">seed_protein_content</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seed_oil_per_seed_dry_mass</td>
+<td style="text-align: left;">Seed oil content per unit seed dry mass</td>
+<td style="text-align: left;">seed_oil_content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">leaf_ash_per_dry_mass</td>
+<td style="text-align: left;">Leaf ash content per unit leaf dry mass</td>
+<td style="text-align: left;">leaf_ash_content_per_dry_mass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bark_ash_per_dry_mass</td>
+<td style="text-align: left;">Bark ash content per unit bark dry mass</td>
+<td style="text-align: left;">bark_ash_content_per_dry_mass</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant_diameter_breast_height</td>
+<td style="text-align: left;">Stem diameter at breast height</td>
+<td style="text-align: left;">basal_diameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">stem_count</td>
+<td style="text-align: left;">Stem count</td>
+<td style="text-align: left;">stem_count_categorical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant_spinescence</td>
+<td style="text-align: left;">Plant spinescence</td>
+<td style="text-align: left;">spinescence</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Or look up a specific trait name that is no longer used:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>deprecated_fire_traits <span class="ot">&lt;-</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  APD_traits <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(trait, label, deprecated_trait_name) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(deprecated_trait_name, <span class="st">"fire"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 42%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">trait</th>
+<th style="text-align: left;">label</th>
+<th style="text-align: left;">deprecated_trait_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">resprouting_capacity</td>
+<td style="text-align: left;">Post-fire resprouting capacity</td>
+<td style="text-align: left;">fire_response</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">resprouting_capacity_proportion_individuals</td>
+<td style="text-align: left;">Post-fire proportion resprouting individuals</td>
+<td style="text-align: left;">fire_response_numeric</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">resprouting_capacity_juvenile</td>
+<td style="text-align: left;">Post-fire resprouting capacity of juvenile plants</td>
+<td style="text-align: left;">fire_response_juvenile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">resprouting_capacity_stem_ratio</td>
+<td style="text-align: left;">Post-fire to pre-fire stem ratio</td>
+<td style="text-align: left;">fire_response_stem_ratio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">resprouting_capacity_non_fire_disturbance</td>
+<td style="text-align: left;">Plant vegetative response to disturbances other than fire</td>
+<td style="text-align: left;">regeneration_non_fire_disturbance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">post_fire_recruitment</td>
+<td style="text-align: left;">Post-fire recruitment</td>
+<td style="text-align: left;">fire_and_establishing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fire_time_from_fire_to_fruiting</td>
+<td style="text-align: left;">Time from fire to fruiting</td>
+<td style="text-align: left;">time_from_fire_to_fruit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
