@@ -163,12 +163,11 @@ core_traits <-
   APD_traits_input %>%
   dplyr::select(dplyr::all_of(c(
     "trait", "label", "description_encoded", "description", "comments", "type", "min", "max", "units", "constraints",
-    "created", "reviewed", "deprecated_trait_name", "identifier", "inScheme"
+    "created", "modified", "reviewed", "deprecated_trait_name", "identifier", "inScheme"
   ))) %>%
   dplyr::rename(dplyr::all_of(c(
     "allowed_values_min" = "min",
     "allowed_values_max" = "max",
-    "modified" = "reviewed",
     "trait_type" = "type"
   ))) %>%
   # add label to trait type
