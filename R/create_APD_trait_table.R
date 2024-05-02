@@ -247,6 +247,15 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
             make_link("date created","http://purl.org/dc/terms/created"),
             date_created$value_link
             )
+
+  # date modified
+  date_modified <- trait_i %>% filter(property == "date modified")
+  
+  output <-
+    add_row(output,
+            make_link("date modified","http://purl.org/dc/terms/modified"),
+            date_modified$value_link
+            )
   
   # date reviewed
   date_reviewed <- trait_i %>% filter(property == "date reviewed")

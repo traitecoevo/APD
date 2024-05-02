@@ -238,6 +238,7 @@ reformatted_traits <-
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     across(dplyr::contains("category"), ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$identifier)], ">"), NA)),
     created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
+    modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
     reviewed = ifelse(!is.na(reviewed), paste0("\"", reviewed, "\"", "^^<xsd:date>"), NA),
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
@@ -260,7 +261,7 @@ reformatted_traits <- reformatted_traits %>%
   rename_with(~ paste0("<http://semanticscience.org/resource/SIO_000147>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("keywords_")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#broader>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("category_")) %>%
   rename_with(~ paste0("<http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("measured_char")) %>%
-  rename_with(~ paste0("<http://purl.obolibrary.org/obo/PO_0009011>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("structure_")) %>%
+  rename_with(~ paste0("<https://w3id.org/iadopt/ont/hasContextObject>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("structure_")) %>%
   rename_with(~ paste0("<http://purl.org/datacite/v4.4/IsReviewedBy>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("reviewers_")) %>%
   rename_with(~ paste0("<http://purl.org/dc/terms/references>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("references_")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#exactMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("exact_match")) %>%
@@ -284,6 +285,7 @@ reformatted_traits <- reformatted_traits %>%
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>`= units,
     `<http://terminologies.gfbio.org/terms/ETS/expectedUnit>2`= units_uom,
     `<http://purl.org/dc/terms/created>`= created,
+    `<http://purl.org/dc/terms/modified>`= modified,
     `<http://purl.org/dc/terms/reviewed>`= reviewed,
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,
     `<http://www.w3.org/2004/02/skos/core#scopeNote>`= constraints
