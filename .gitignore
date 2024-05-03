@@ -4,6 +4,7 @@
 *.tex
 *.pdf
 *_files
+build.html
 factsheets
 ignore
 .Rproj.user
