@@ -1,6 +1,7 @@
 
 *.rmarkdown
 *.docx
+*.tex
 *.pdf
 *_files
 factsheets

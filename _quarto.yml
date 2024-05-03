@@ -12,6 +12,7 @@ project:
   output-dir: docs
   render:
     - index.qmd
+    - using_APD.qmd
 
 website:
   title: "APD"
@@ -23,10 +24,12 @@ website:
 
   navbar:
     left:
-      - href: index.qmd
+      - href: index.html
         text: Home
-      # - href: index.qmd
-      #   text: ARDC RVA endpoint
+      - href: using_APD.html
+        text: Using the APD
+      - href: https://vocabs.ardc.edu.au/viewById/649
+        text: ARDC RVA endpoint
 
     right:
       - icon: github
