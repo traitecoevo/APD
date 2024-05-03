@@ -16,8 +16,8 @@ library(stringr)
 library(kableExtra)
 
 # Todo: update links after branch merged in
-APD_traits <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_traits.csv", show_col_types = FALSE)
-APD_categorical_values <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/post_review_edits/docs/APD_categorical_values.csv", show_col_types = FALSE)
+APD_traits <- read_csv("https://github.com/traitecoevo/APD/blob/master/APD_traits.csv", show_col_types = FALSE)
+APD_categorical_values <- read_csv("https://github.com/traitecoevo/APD/blob/master/APD_categorical_values.csv", show_col_types = FALSE)
 
 ```
 

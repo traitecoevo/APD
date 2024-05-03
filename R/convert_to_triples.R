@@ -80,7 +80,8 @@ reformatted_categorical <-
     Parent = traits_csv$identifier[match(trait_name, traits_csv$trait)],
     Parent = paste0("<https://w3id.org/APD/traits/", Parent, ">"),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description,
-    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
+    `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>",
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>"
   ) %>%
   select(-trait_name) %>%
   rename(
@@ -108,7 +109,8 @@ reformatted_hierarchy <-
       Parent = ifelse(stringr::str_detect(Entity, "0000000"), NA, paste0("<", Parent, ">")),
       exactMatch = ifelse(!is.na(exactMatch), paste0("<", exactMatch, ">"), NA),
       `<http://www.w3.org/2004/02/skos/core#definition>` = description,
-      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>"
+      `<http://www.w3.org/2004/02/skos/core#inScheme>` = "<https://w3id.org/APD/traits>",
+      `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>"
     ) %>%
     rename(
       Subject = Entity,
@@ -147,7 +149,8 @@ reformatted_glossary <-
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     `<http://www.w3.org/2004/02/skos/core#definition>` = description,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = paste0("\"", "https://w3id.org/APD/glossary", "\""),
-    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>"
+    `<http://www.w3.org/2004/02/skos/core#topConceptOf>` = "<https://w3id.org/APD/glossary>",
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>"
   ) %>%
   rename(
     Subject = Entity,
@@ -254,7 +257,8 @@ reformatted_traits <-
     across(dplyr::contains("_exact"), \(x) ifelse(!is.na(x), paste0("\"exact match: ", x, "\""), NA)),
     across(dplyr::contains("_close"), \(x) ifelse(!is.na(x), paste0("\"close match: ", x, "\""), NA)),
     across(dplyr::contains("_related"), \(x) ifelse(!is.na(x), paste0("\"related match: ", x, "\""), NA)),
-    `<http://www.w3.org/2004/02/skos/core#definition>` = description
+    `<http://www.w3.org/2004/02/skos/core#definition>` = description,
+    `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>` = "<http://www.w3.org/2004/02/skos/core#Concept>"
   )
 
 reformatted_traits <- reformatted_traits %>%
@@ -298,8 +302,9 @@ reformatted_traits <- reformatted_traits %>%
 
 reformatted_traits_x <- 
   reformatted_traits %>%
-  filter(Predicate %in% c("<http://www.w3.org/2004/02/skos/core#broader>", "<http://www.w3.org/2004/02/skos/core#broader>2",
-                          "<http://www.w3.org/2004/02/skos/core#broader>3", "<http://www.w3.org/2004/02/skos/core#broader>4")) %>%
+  filter(stringr::str_detect(Predicate, "broader")) %>% 
+  filter(!is.na(Object)) %>% 
+  distinct(Subject, Object, .keep_all = TRUE) %>%
   mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
   rename(Object2 = Subject, Subject = Object) %>%
   rename(Object = Object2) %>%
