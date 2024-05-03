@@ -423,12 +423,15 @@ core_traits %>%
   write_csv("APD_traits.csv")
 ```
 
-# Build the website
+# STOP HERE FOR INDIVIDUAL BRANCHES
+#   REMAINING CODE JUST FOR RELEASES
+
+# Build the website - only do this for releases
 ```{r}
 quarto::quarto_render()
 ```
 
-# Website
+# Website - only do this for releases
 
 Put a copy of latest in release folder in both `release` and `docs/release` folders
 
