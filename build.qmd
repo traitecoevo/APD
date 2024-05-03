@@ -72,6 +72,7 @@ rdflib::rdf_serialize(true_triples, "APD.ttl",
                                     xsd = "http://www.w3.org/2001/XMLSchema#",
                                     Cerrado = "http://cerrado.linkeddata.es/ecology/",
                                     CorVeg  = "http://linked.data.gov.au/def/corveg-cv/",
+                                    CO = "https://cropontology.org/rdf/",
                                     DCM = "http://dicom.nema.org/resources/ontology/DCM/",
                                     EDAM = "http://edamontology.org/",
                                     EFO = "http://www.ebi.ac.uk/efo/",
@@ -82,7 +83,16 @@ rdflib::rdf_serialize(true_triples, "APD.ttl",
                                     odo = "http://purl.dataone.org/odo/",
                                     ORCID = "https://orcid.org/",
                                     SIO = "http://semanticscience.org/resource/",
-                                    SWEET = "http://sweetontology.net/")
+                                    SWEET_phenSolid = "http://sweetontology.net/phenSolid/",
+                                    SWEET_phenSystem = "http://sweetontology.net/phenSystem/",
+                                    SWEET_procWave = "http://sweetontology.net/procWave/",
+                                    SWEET_prop = "http://sweetontology.net/prop/",
+                                    SWEET_propConductivity = "http://sweetontology.net/propConductivity",
+                                    SWEET_propPressure = "http://sweetontology.net/propPressure/",
+                                    SWEET_propTime = "http://sweetontology.net/propTime/",
+                                    SWEET_realmSoil = "http://sweetontology.net/realmSoil/",
+                                    SWEET_reprSciComponent = "http://sweetontology.net/reprSciComponent/",
+                                    SWEET_reprTimeDay = "http://sweetontology.net/reprTimeDay/")
                                     )
 rdflib::rdf_serialize(true_triples, "APD.json", format="jsonld")
 ```
@@ -99,9 +109,9 @@ rdf_query(true_triples, sparql)
 
 # how many unique reviewers are in the data?
 sparql <-
-'SELECT DISTINCT ?orcid ?label
+'SELECT DISTINCT ?orcid ?prefLabel
  WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid .
-         ?orcid <http://www.w3.org/2000/01/rdf-schema#label> ?label
+         ?orcid <http://www.w3.org/2004/02/skos/core#prefLabel> ?prefLabel
        }
 '
 
@@ -110,7 +120,7 @@ unescape_unicode <- function(x) {
 }
 
 rdf_query(true_triples, sparql) %>%
-  mutate(label = unescape_unicode(label))
+  mutate(prefLabel = unescape_unicode(prefLabel))
 
 
 # how many unique references are in the data?
@@ -124,7 +134,7 @@ rdf_query(true_triples, sparql)
 
 sparql <-
   'SELECT DISTINCT ?s
- WHERE { ?s <http://www.w3.org/2000/01/rdf-schema#label> "plant trait" .
+ WHERE { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> "plant trait" .
        }
 '
 rdf_query(true_triples, sparql)
@@ -153,12 +163,11 @@ core_traits <-
   APD_traits_input %>%
   dplyr::select(dplyr::all_of(c(
     "trait", "label", "description_encoded", "description", "comments", "type", "min", "max", "units", "constraints",
-    "created", "reviewed", "deprecated_trait_name", "identifier", "inScheme"
+    "created", "modified", "reviewed", "deprecated_trait_name", "identifier", "inScheme"
   ))) %>%
   dplyr::rename(dplyr::all_of(c(
     "allowed_values_min" = "min",
     "allowed_values_max" = "max",
-    "modified" = "reviewed",
     "trait_type" = "type"
   ))) %>%
   # add label to trait type
@@ -172,8 +181,12 @@ core_traits <-
 # collapse reviews, add ORCIDs
 reviewers <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(rev_01:rev_10)) %>%
-  tidyr::pivot_longer(cols = 2:11) %>%
+  dplyr::select(trait, reviewers) %>%
+  dplyr::mutate(reviewers = stringr::str_split(reviewers, "; ")) %>%
+  tidyr::unnest_wider(col = reviewers, names_sep = "_") 
+
+reviewers <- reviewers %>%
+  tidyr::pivot_longer(cols = 2:ncol(reviewers)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = ifelse(!is.na(value), paste0(value, " [", APD_reviewers$Entity[match(value, APD_reviewers$label)], "]"), NA)
@@ -187,8 +200,12 @@ reviewers <-
 # collapse references, add DOIs
 references <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(ref_1:ref_5)) %>%
-  tidyr::pivot_longer(cols = 2:6) %>%
+  dplyr::select(trait, references) %>%
+  dplyr::mutate(references = stringr::str_split(references, "; ")) %>%
+  tidyr::unnest_wider(col = references, names_sep = "_") 
+  
+references <- references %>%  
+  tidyr::pivot_longer(cols = 2:ncol(references)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = ifelse(!is.na(value), paste0(value, " [", APD_references$Entity[match(value, APD_references$label)], "]"), NA)
@@ -202,8 +219,12 @@ references <-
 # collapse broader groupings
 hierarchy <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(category_1:category_4)) %>%
-  tidyr::pivot_longer(cols = 2:5) %>%
+  dplyr::select(trait, category) %>%
+  dplyr::mutate(category = stringr::str_split(category, "; ")) %>%
+  tidyr::unnest_wider(col = category, names_sep = "_") 
+
+hierarchy <- hierarchy %>%
+  tidyr::pivot_longer(cols = 2:ncol(hierarchy)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = stringr::str_replace(value, "APD\\:", ""),
@@ -218,8 +239,12 @@ hierarchy <-
 # collapse structures measured; replace class identifiers with labels
 structure_measured <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(structure_1:structure_4)) %>%
-  tidyr::pivot_longer(cols = 2:5) %>%
+  dplyr::select(trait, structure) %>%
+  dplyr::mutate(structure = stringr::str_split(structure, "; ")) %>%
+  tidyr::unnest_wider(col = structure, names_sep = "_") 
+  
+structure_measured <- structure_measured %>%
+  tidyr::pivot_longer(cols = 2:ncol(structure_measured)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
@@ -233,8 +258,12 @@ structure_measured <-
 # collapse characteristics measured; replace class identifiers with labels
 characteristic_measured <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(meas_char_1:meas_char_6)) %>%
-  tidyr::pivot_longer(cols = 2:7) %>%
+  dplyr::select(trait, measured_characteristic) %>%
+  dplyr::mutate(measured_characteristic = stringr::str_split(measured_characteristic, "; ")) %>%
+  tidyr::unnest_wider(col = measured_characteristic, names_sep = "_") 
+  
+characteristic_measured <- characteristic_measured %>%  
+  tidyr::pivot_longer(cols = 2:ncol(characteristic_measured)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
@@ -248,8 +277,12 @@ characteristic_measured <-
 # collapse keywords; replace class identifiers with labels
 keywords <- 
   APD_traits_input %>%
-  dplyr::select(trait, c(keyword_1:keyword_10)) %>%
-  tidyr::pivot_longer(cols = 2:11) %>%
+  dplyr::select(trait, keywords) %>%
+  dplyr::mutate(keywords = stringr::str_split(keywords, "; ")) %>%
+  tidyr::unnest_wider(col = keywords, names_sep = "_") 
+  
+keywords <- keywords %>%  
+  tidyr::pivot_longer(cols = 2:ncol(keywords)) %>%
   dplyr::filter(!is.na(value)) %>%
   dplyr::mutate(
     value = ifelse(!is.na(value), paste0(published_classes$label[match(value, published_classes$identifier)], " [", value, "]"), NA)
@@ -260,88 +293,92 @@ keywords <-
   dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
   dplyr::distinct()
 
-#
-exact1 <- 
-  APD_traits_input %>%
-  dplyr::select(trait, c(exact_other1)) %>%
-  dplyr::filter(!is.na(exact_other1)) %>%
-  dplyr::mutate(
-    exact_other1 = paste0(
-      published_classes$label[match(exact_other1, published_classes$identifier)], " [",
-      published_classes$Entity[match(exact_other1, published_classes$identifier)], "]"
-    )
-  ) %>%
-  dplyr::rename(value = exact_other1)
-
+# exact matches to published vocabularies
 exact <- 
   APD_traits_input %>%
-  dplyr::select(trait, exact_TOP, exact_TRY, exact_LEDA, exact_GIFT, exact_BIEN, exact_BROT, PalmTraits_exact) %>%
-  tidyr::pivot_longer(cols = 2:8) %>%
-  filter(!is.na(value)) %>%
-  bind_rows(exact1) %>%
+  dplyr::select(trait, exact_match) %>%
+  dplyr::mutate(exact_match = stringr::str_split(exact_match, "; ")) %>%
+  tidyr::unnest_wider(col = exact_match, names_sep = "_") 
+  
+exact <- exact %>% 
+  tidyr::pivot_longer(cols = 2:ncol(exact)) %>%
+  dplyr::filter(!is.na(value)) %>%
+  dplyr::mutate(
+    exact_match = paste0(
+      published_classes$label[match(value, published_classes$identifier)], " [",
+      published_classes$Entity[match(value, published_classes$identifier)], "]"
+    )
+  ) %>%
   dplyr::group_by(trait) %>%
-  dplyr::mutate(exact_match = paste(value, collapse = "; ")) %>%
+  dplyr::mutate(exact_match = paste(exact_match, collapse = "; ")) %>%
   dplyr::ungroup() %>%
   dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
   dplyr::distinct()
 
-close1 <- 
-  APD_traits_input %>%
-  dplyr::select(trait, c(close_other1)) %>%
-  dplyr::filter(!is.na(close_other1)) %>%
-  dplyr::mutate(
-    close_other1 = paste0(
-      published_classes$label[match(close_other1, published_classes$identifier)], " [",
-      published_classes$Entity[match(close_other1, published_classes$identifier)], "]"
-    )
-  ) %>%
-  dplyr::rename(value = close_other1)
-
-close2 <- 
-  APD_traits_input %>%
-  dplyr::select(trait, c(close_other2)) %>%
-  dplyr::filter(!is.na(close_other2)) %>%
-  dplyr::mutate(
-    close_other2 = paste0(
-      published_classes$label[match(close_other2, published_classes$identifier)], " [",
-      published_classes$Entity[match(close_other2, published_classes$identifier)], "]"
-    )
-  ) %>%
-  dplyr::rename(value = close_other2)
-
+# close matches to published vocabularies
 close <- 
   APD_traits_input %>%
-  dplyr::select(trait, close_TOP, close_TRY, close_LEDA, close_GIFT, close_BIEN, close_BROT, PalmTraits_close) %>%
-  tidyr::pivot_longer(cols = 2:8) %>%
+  dplyr::select(trait, close_match) %>%
+  dplyr::mutate(close_match = stringr::str_split(close_match, "; ")) %>%
+  tidyr::unnest_wider(col = close_match, names_sep = "_") 
+  
+close <- close %>% 
+  tidyr::pivot_longer(cols = 2:ncol(close)) %>%
   dplyr::filter(!is.na(value)) %>%
-  bind_rows(close1) %>%
-  bind_rows(close2) %>%
+  dplyr::mutate(
+    close_match = paste0(
+      published_classes$label[match(value, published_classes$identifier)], " [",
+      published_classes$Entity[match(value, published_classes$identifier)], "]"
+    )
+  ) %>%
   dplyr::group_by(trait) %>%
-  dplyr::mutate(close_match = paste(value, collapse = "; ")) %>%
+  dplyr::mutate(close_match = paste(close_match, collapse = "; ")) %>%
   dplyr::ungroup() %>%
   dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
   dplyr::distinct()
 
-related1 <- 
-  APD_traits_input %>%
-  dplyr::select(trait, c(related_other)) %>%
-  dplyr::filter(!is.na(related_other)) %>%
-  dplyr::mutate(
-    related_other = paste0(
-      published_classes$label[match(related_other, published_classes$identifier)], " [",
-      published_classes$Entity[match(related_other, published_classes$identifier)], "]"
-    )
-  ) %>%
-  dplyr::rename(value = related_other)
 
+# close matches to published vocabularies
 related <- 
   APD_traits_input %>%
-  dplyr::select(trait, related_TOP, related_TOP2, related_TRY, related_LEDA, related_GIFT, related_BIEN, related_BROT) %>%
-  tidyr::pivot_longer(cols = 2:8) %>%
+  dplyr::select(trait, related_match) %>%
+  dplyr::mutate(related_match = stringr::str_split(related_match, "; ")) %>%
+  tidyr::unnest_wider(col = related_match, names_sep = "_") 
+  
+related <- related %>% 
+  tidyr::pivot_longer(cols = 2:ncol(related)) %>%
   dplyr::filter(!is.na(value)) %>%
-  bind_rows(related1) %>%
+  dplyr::mutate(
+    related_match = paste0(
+      published_classes$label[match(value, published_classes$identifier)], " [",
+      published_classes$Entity[match(value, published_classes$identifier)], "]"
+    )
+  ) %>%
   dplyr::group_by(trait) %>%
-  dplyr::mutate(related_match = paste(value, collapse = "; ")) %>%
+  dplyr::mutate(related_match = paste(related_match, collapse = "; ")) %>%
+  dplyr::ungroup() %>%
+  dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
+  dplyr::distinct()
+
+
+examples <- 
+  APD_traits_input %>%
+  dplyr::select(trait, dplyr::contains("_exact"), dplyr::contains("_related"), dplyr::contains("_close"))
+
+examples <- examples %>%
+  mutate(across(c(2:ncol(examples)), ~ stringr::str_split(.x, "; "))) %>%
+  tidyr::unnest_wider(col = c(2:ncol(examples)), names_sep = "_") %>%
+  mutate(
+    across(dplyr::contains("_exact"), \(x) ifelse(!is.na(x), paste0("exact match: ", x), NA)),
+    across(dplyr::contains("_close"), \(x) ifelse(!is.na(x), paste0("close match: ", x), NA)),
+    across(dplyr::contains("_related"), \(x) ifelse(!is.na(x), paste0("related match: ", x), NA))
+  )
+
+examples <- examples %>%
+  tidyr::pivot_longer(cols = 2:ncol(examples)) %>%
+  filter(!is.na(value)) %>%
+  dplyr::group_by(trait) %>%
+  dplyr::mutate(examples = paste(value, collapse = "; ")) %>%
   dplyr::ungroup() %>%
   dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
   dplyr::distinct()
@@ -374,23 +411,27 @@ core_traits %>%
   dplyr::left_join(exact, by = c("trait")) %>%
   dplyr::left_join(close, by = c("trait")) %>%
   dplyr::left_join(related, by = c("trait")) %>%
+  dplyr::left_join(examples, by = c("trait")) %>%
   # sort columns
   dplyr::select(dplyr::all_of(c(
     "Entity", "trait", "label", "description", "comments", "trait_type", "allowed_values_min", "allowed_values_max", "units",
     "constraints", "trait_groupings", "structure_measured", "characteristic_measured", "keywords",
     "references", "reviewers", "created", "modified",
-    "exact_match", "close_match", "related_match",
+    "exact_match", "close_match", "related_match", "examples",
     "description_encoded", "deprecated_trait_name", "identifier", "inScheme"
   ))) %>%
   write_csv("APD_traits.csv")
 ```
 
-# Build the website
+# STOP HERE FOR INDIVIDUAL BRANCHES
+#   REMAINING CODE JUST FOR RELEASES
+
+# Build the website - only do this for releases
 ```{r}
 quarto::quarto_render()
 ```
 
-# Website
+# Website - only do this for releases
 
 Put a copy of latest in release folder in both `release` and `docs/release` folders
 

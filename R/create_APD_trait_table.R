@@ -66,7 +66,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     
     output <-
       add_row(output, 
-              make_link("comments","http://www.w3.org/2000/01/rdf-schema#comment"), 
+              make_link("comments","http://www.w3.org/2004/02/skos/core#note"), 
               comments_tmp$value_link
               )
   
@@ -141,13 +141,13 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
             print_list2(grouping$value_link)
             ) 
   
-  # measured entity (has context object)
-    context_object <- trait_i %>% filter(property == "has context object")
+  # measured entity (plant structure)
+    plant_structure <- trait_i %>% filter(property == "plant structure")
     
     output <-
       add_row(output, 
-              context_object$property_link,
-              print_list2(context_object$value_link)
+              plant_structure$property_link,
+              print_list2(plant_structure$value_link)
               ) 
   
   # measured characteristic
@@ -216,6 +216,15 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
             print_list2(related_match$value_link)
             )
   
+  # examples (matches that are literals/strings)
+  examples <- trait_i %>% filter(property == "example")
+  
+  output <-
+    add_row(output,
+            make_link("examples", "http://www.w3.org/2004/02/skos/core#example"),
+            print_list2(examples$value_link)
+    )
+  
   # references
   references_tmp <- trait_i %>% filter(property == "references")
   
@@ -237,6 +246,15 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     add_row(output,
             make_link("date created","http://purl.org/dc/terms/created"),
             date_created$value_link
+            )
+
+  # date modified
+  date_modified <- trait_i %>% filter(property == "date modified")
+  
+  output <-
+    add_row(output,
+            make_link("date modified","http://purl.org/dc/terms/modified"),
+            date_modified$value_link
             )
   
   # date reviewed
