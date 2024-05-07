@@ -8,12 +8,16 @@
 
 The AusTraits Plant Dictionary (APD) includes the trait definitions used by AusTraits, a database of Australian plant traits. Upon its release in 2023, the APD will include definitions for nearly 500 traits pertaining to plant functional ecology and plant morphology. Each trait definition has been reviewed by multiple people and includes references and links to identical/similar traits in other trait databases whenever possible. The APD includes machine-readable formats and endpoints, allowing the traits to be readily re-used by other databases.
 
+The APD is described in the following citation:
+
+> Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, Coleman D, Yang S, Auld T, Barrett RL, Brodribb T, Choat B, Dun L, Ellsworth D, Gosper C, Guja L, Jordan GJ, Breton T, Leigh A, Irving P, Medlyn B, Nolan R, Ooi M, Sommerville KD, Vesk P, White M, Wright IJ, Falster DS (2024) The AusTraits Plant Dictionary. *Scientific Data* (in press) (preprint: [10.1101/2023.06.16.545047](http://doi.org/10.1101/2023.06.16.545047)]).
+
 ## This repository
 
 This repository is the original source for the APD. It includes
 
 - data files 
-- code for building machine readable representations of the APD
+- code for building machine-readable representations of the APD
 - code for generating human-readable access points to the APD
 - website files for the APD website
 
@@ -68,6 +72,7 @@ The code in `build.qmd` builds the APD from the data files in `data/`, including
 The APD is accessible via <https://w3id.org/APD/>, <https://w3id.org/APD/traits/>, and <https://w3id.org/APD/glossary/>. These links redirect to the site generated here. To enable the links, we sent a pull request to the [w3id.org repo](https://github.com/perma-id/w3id.org/), like this example from <https://github.com/perma-id/w3id.org/blob/master/iadopt/>.
 
 Redirect syntax can be tested at <https://htaccess.madewithlove.com>.
+
 ## Testing w3id.org access
 
 To test the redirects via <w3id.org/APD> try the following
