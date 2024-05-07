@@ -12,7 +12,8 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - using_APD.qmd
+    - using_the_APD.qmd
+    - news.md
 
 website:
   title: "APD"
@@ -26,12 +27,14 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: using_APD.html
+      - href: using_the_APD.html
         text: Using the APD
       - href: https://vocabs.ardc.edu.au/viewById/649
         text: ARDC RVA endpoint
 
     right:
+      - text: News
+        href: news.html
       - icon: github
         href: https://github.com/traitecoevo/APD/
       - href: http://austraits.org

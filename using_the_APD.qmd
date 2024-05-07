@@ -1,7 +1,12 @@
 ---
 title: "Using the APD: exploring and extracting trait definitions and metadata"
 author: "Elizabeth Wenk"
-format: html
+format: 
+  html:
+    smooth-scroll: true
+    toc: true
+    toc-expand: 1
+    embed-resources: true
 ---
 
 The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD/, and each trait (and trait groupings) has its own URI.
