@@ -74,7 +74,7 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
 <dt>Contributing:</dt> <dd>
  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/traitecoevo/APD/issues) </dd>
 
-<dt>Cite as:</dt> <dd> Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, Coleman D, Yang S, Auld T, Barrett RL, Brodribb T, Choat B, Dun L, Ellsworth D, Gosper C, Guja L, Jordan GJ, Breton T, Leigh A, Irving PMedlyn B, Nolan R, Ooi M, Sommerville KD, Vesk P, White M, Wright IJ & Falster DS (2023) The AusTraits Plant Dictionary. bioRxiv. DOI: [10.1101/2023.06.16.545047](http://doi.org/10.1101/2023.06.16.545047) </dd> 
+<dt>Cite as:</dt> <dd> Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, Coleman D, Yang S, Auld T, Barrett RL, Brodribb T, Choat B, Dun L, Ellsworth D, Gosper C, Guja L, Jordan GJ, Breton T, Leigh A, Irving PMedlyn B, Nolan R, Ooi M, Sommerville KD, Vesk P, White M, Wright IJ & Falster DS (2024) The AusTraits Plant Dictionary. Scientific Data 11, 537. DOI: [10.1038/s41597-024-03368-z](http://doi.org/10.1038/s41597-024-03368-z) </dd> 
 
 </dl>
 
