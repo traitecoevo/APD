@@ -156,7 +156,14 @@ APD_reviewers <- read_csv("data/APD_reviewers.csv", show_col_types = FALSE)
 APD_references <- read_csv("data/APD_references.csv", show_col_types = FALSE)
 APD_hierarchy <- read_csv("data/APD_trait_hierarchy.csv", show_col_types = FALSE)
 published_classes <- read_csv("data/published_classes.csv", show_col_types = FALSE)
+glossary <- read_csv("data/APD_glossary.csv", show_col_types = FALSE)
 categorical <- read_csv("data/APD_categorical_values_input.csv", show_col_types = FALSE)
+
+# merge terms from APD glossary into published classes so they get linked to keywords
+published_classes <- 
+  published_classes %>%
+    bind_rows(glossary)
+
 
 # information direct from traits table
 core_traits <- 

@@ -62,7 +62,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
               )
 
   # comments
-    comments_tmp <- trait_i %>% filter(property == "comment")
+    comments_tmp <- trait_i %>% filter(property == "note")
     
     output <-
       add_row(output, 
@@ -133,13 +133,13 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     }
   
   # trait grouping (has broader)
-  grouping <- trait_i %>% filter(property == "has broader")
+    grouping <- trait_i %>% filter(property == "has broader")
   
-  output <-
-    add_row(output, 
-            grouping$property_link[1],
-            print_list2(grouping$value_link)
-            ) 
+    output <-
+      add_row(output, 
+              grouping$property_link[1],
+              print_list2(grouping$value_link)
+              ) 
   
   # measured entity (plant structure)
     plant_structure <- trait_i %>% filter(property == "plant structure")
