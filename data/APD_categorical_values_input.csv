@@ -794,3 +794,17 @@ woodiness_detailed_woody_root,woody_root,Plant that has a woody rootstock but no
 woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem shrub, soft shrub, soft wood)",woodiness_detailed
 woodiness_detailed_woody_like_stem,woody_like_stem,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified stems but do not produce secondary xylem.",woodiness_detailed
 woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
+seed_colour_pink,pink,Fruit's exocarp is pink.,seed_colour
+seed_colour_red,red,Fruit's exocarp is red.,seed_colour
+seed_colour_orange,orange,Fruit's exocarp is orange.,seed_colour
+seed_colour_yellow,yellow,Fruit's exocarp is yellow.,seed_colour
+seed_colour_green,green,Fruit's exocarp is green.,seed_colour
+seed_colour_blue,blue,Fruit's exocarp is blue.,seed_colour
+seed_colour_purple,purple,Fruit's exocarp is purple.,seed_colour
+seed_colour_white,white,Fruit's exocarp is white.,seed_colour
+seed_colour_cream,cream,Fruit's exocarp is cream.,seed_colour
+seed_colour_brown,brown,Fruit's exocarp is brown.,seed_colour
+seed_colour_black,black,Fruit's exocarp is black.,seed_colour
+seed_colour_grey,grey,Fruit's exocarp is grey.,seed_colour
+stem_hairs_glabrous,glabrous,Adult plant stems do not have hairs (trichomes).,stem_hairs
+stem_hairs_hairy,hairy,Adult plant stems have hairs (trichomes).,stem_hairs
