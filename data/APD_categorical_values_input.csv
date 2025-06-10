@@ -816,7 +816,5 @@ leaf_surface_reflectivity_dull,dull,"Leaf surface appears dull, indicating it ha
 leaf_surface_reflectivity_shiny,shiny,"Leaf surface appears shiny or glossy, indicating it has a high reflectivity. (Synonyms, glossy, lustrous, polished)",leaf_surface_reflectivity
 fruit_surface_hairs_glabrous,glabrous,Mature fruit do not have hairs (trichomes).,fruit_surface_hairs
 fruit_surface_hairs_hairy,hairy,Mature fruit have hairs (trichomes).,fruit_surface_hairs
-root_vascular_anatomy,cord_roots,"A root anatomy found within three genera of Mirbelieae (Daviesia, Euchilopsis, Phyllota) wherein networks of interlinking vascular strands exist (Crisp 2003; Pate and Dixon 1996).",bark_colour
-root_vascular_anatomy,unistelar_roots,"The commonly observed root anatomy, wherein there is a single vascular strand which displays secondary thickening.",bark_texture
-,,,fruit_surface_texture
-,,,inflorescence_type
+root_vascular_anatomy_cord_roots,cord_roots,"A root anatomy found within three genera of Mirbelieae (Daviesia, Euchilopsis, Phyllota) wherein networks of interlinking vascular strands exist (Crisp 2003; Pate and Dixon 1996).",root_vascular_anatomy
+root_vascular_anatomy_unistelar_roots,unistelar_roots,"The commonly observed root anatomy, wherein there is a single vascular strand which displays secondary thickening.",root_vascular_anatomy
