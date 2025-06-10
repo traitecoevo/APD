@@ -1,11 +1,12 @@
 Type: Compendium
+Type: Bundle
 Package: APD
 Title: Repository used to build the AusTraits Plant Dictionary (APD) vocabulary
-Version: 0.9.0
-Maintainer: Daniel Falster <daniel.falster@unsw.edu.au>
+Version: 2.0.0
+Maintainer: Elizabeth Wenk <ehwenk@gmail.com>
 Authors@R: c(
-    person(given = "Daniel", family = "Falster", role = c("cre", "aut"), email = "daniel.falster@unsw.edu.au", comment = c(ORCID = "0000-0002-9814-092X")),
-    person(given = "Elizabeth", family = "Wenk", role = c("cre", "aut"),  comment = c(ORCID = "0000-0001-5640-5910")),
+    person(given = "Elizabeth", family = "Wenk", role = c("cre", "aut"), email = "ehwenk@gmail.com", comment = c(ORCID = "0000-0001-5640-5910")),
+    person(given = "Daniel", family = "Falster", role = c("aut"), email = "daniel.falster@unsw.edu.au", comment = c(ORCID = "0000-0002-9814-092X")),
     person("ARDC", role = c("fnd")),
     person("ARC", role = c("fnd"))
     )
