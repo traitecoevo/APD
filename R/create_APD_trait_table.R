@@ -1,18 +1,24 @@
 
 
+#' Add a Row to a Data Frame with Trait Name and Description
+#'
+#' Adds a new row to the provided data frame, containing the specified trait name and its description.
+#'
+#' @param data A data frame to which the new row will be added.
+#' @param name A character string specifying the name of the trait.
+#' @param description A character string providing a description of the trait.
+#'
+#' @return A data frame with the new row appended.
+#' @export
 add_row <- function(data, name, description) {
   if(!("html" %in% class(name)))
     name <- gt::html(name)
   if (!("html" %in% class(description))) {
     description <- gt::html(description)
   }
- # i <- nrow(data)
-#  data[["name"]][[i + 1]] <- name
- # data[["description"]][[i + 1]] <- description
-
-  bind_rows(
+  dplyr::bind_rows(
     data, 
-    tibble(name = list(name), description = list(description))
+    dplyr::tibble(name = list(name), description = list(description))
   )
 }
 

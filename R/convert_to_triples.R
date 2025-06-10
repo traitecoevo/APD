@@ -1,4 +1,21 @@
 
+#' Convert Data to Triples Format
+#'
+#' Converts various Austraits data tables into a triples format suitable for semantic web applications.
+#'
+#' @param annotation_properties_csv Path to the annotation properties CSV file.
+#' @param traits_csv Path to the traits CSV file.
+#' @param glossary_csv Path to the glossary CSV file.
+#' @param published_classes_csv Path to the published classes CSV file.
+#' @param reviewers_csv Path to the reviewers CSV file.
+#' @param references_csv Path to the references CSV file.
+#' @param units_csv Path to the units CSV file.
+#' @param hierarchy_csv Path to the hierarchy CSV file.
+#' @param categorical_values_csv Path to the categorical values CSV file.
+#' @param APD_resource_csv Path to the APD resource CSV file.
+#'
+#' @return A data frame or list containing the data in triples format.
+#' @export
 convert_to_triples <- function(annotation_properties_csv, traits_csv, glossary_csv, published_classes_csv, reviewers_csv, references_csv, units_csv, hierarchy_csv, categorical_values_csv, APD_resource_csv) {
   
 reformatted_references <- 
