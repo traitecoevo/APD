@@ -1,0 +1,31 @@
+Type: Compendium
+Type: Bundle
+Package: APD
+Title: Repository used to build the AusTraits Plant Dictionary (APD) vocabulary
+Version: 2.0.0
+Maintainer: Elizabeth Wenk <ehwenk@gmail.com>
+Authors@R: c(
+    person(given = "Elizabeth", family = "Wenk", role = c("cre", "aut"), email = "ehwenk@gmail.com", comment = c(ORCID = "0000-0001-5640-5910")),
+    person(given = "Daniel", family = "Falster", role = c("aut"), email = "daniel.falster@unsw.edu.au", comment = c(ORCID = "0000-0002-9814-092X")),
+    person("ARDC", role = c("fnd")),
+    person("ARC", role = c("fnd"))
+    )
+Description: This compendium builds the AusTraits Plant Dictionary (APD) vocabulary, a formal vocabulary for more than 500 plants traits that is simultaneously released in human-friendly and machine-readable formats (see Wenk et al 2024, <doi: 10.1038/s41597-024-03368-z>). For more information on the APD go to http://traitecoevo.github.io/APD/.
+BugReports: https://github.com/traitecoevo/APD/issues
+URL: http://traitecoevo.github.io/APD/
+License: BSD_2_clause + file LICENCE
+Depends:
+    R (>= 4.2.0),
+    base,
+    dplyr,
+    tidyr,
+    readr,
+    stringr,
+    rdflib,
+    knitr,
+    purrr,
+    gt
+Encoding: UTF-8
+VignetteBuilder: knitr
+RoxygenNote: 7.2.3
+Config/testthat/edition: 3
