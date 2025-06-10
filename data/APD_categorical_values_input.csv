@@ -794,3 +794,29 @@ woodiness_detailed_woody_root,woody_root,Plant that has a woody rootstock but no
 woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem shrub, soft shrub, soft wood)",woodiness_detailed
 woodiness_detailed_woody_like_stem,woody_like_stem,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified stems but do not produce secondary xylem.",woodiness_detailed
 woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
+seed_colour_blue_purple,blue_purple,Seed coat is pink.,seed_colour
+seed_colour_green,green,Seed coat is red.,seed_colour
+seed_colour_pink,pink,Seed coat is orange.,seed_colour
+seed_colour_red_brown,red_brown,Seed coat is yellow.,seed_colour
+seed_colour_white_cream,white_cream,Seed coat is green.,seed_colour
+seed_colour_yellow_orange,yellow_orange,Seed coat is blue.,seed_colour
+seed_colour_grey,grey,Seed coat is purple.,seed_colour
+seed_colour_black,black,Seed coat is white.,seed_colour
+stem_hairs_glabrous,glabrous,Adult plant stems do not have hairs (trichomes).,stem_hairs
+stem_hairs_hairy,hairy,Adult plant stems have hairs (trichomes).,stem_hairs
+leaf_surface_colour_green,green,Leaf lamina surface is green.,leaf_surface_colour
+leaf_surface_colour_grey_green,grey_green,Leaf lamina surface is grey-green.,leaf_surface_colour
+leaf_surface_colour_dark_green,dark_green,Leaf lamina surface is dark green.,leaf_surface_colour
+leaf_surface_colour_pale_green,pale_green,Leaf lamina surface is pale green.,leaf_surface_colour
+leaf_surface_colour_pale_grey_green,pale_grey_green,Leaf lamina surface is pale grey-green.,leaf_surface_colour
+leaf_surface_colour_dark_grey_green,dark_grey_green,Leaf lamina surface is dark grey-green.,leaf_surface_colour
+leaf_surface_colour_red,red,Leaf lamina surface is red.,leaf_surface_colour
+leaf_surface_colour_purple,purple,Leaf lamina surface is purple.,leaf_surface_colour
+leaf_surface_reflectivity_dull,dull,"Leaf surface appears dull, indicating it has a low reflectivity.",leaf_surface_reflectivity
+leaf_surface_reflectivity_shiny,shiny,"Leaf surface appears shiny or glossy, indicating it has a high reflectivity. (Synonyms, glossy, lustrous, polished)",leaf_surface_reflectivity
+fruit_surface_hairs_glabrous,glabrous,Mature fruit do not have hairs (trichomes).,fruit_surface_hairs
+fruit_surface_hairs_hairy,hairy,Mature fruit have hairs (trichomes).,fruit_surface_hairs
+root_vascular_anatomy,cord_roots,"A root anatomy found within three genera of Mirbelieae (Daviesia, Euchilopsis, Phyllota) wherein networks of interlinking vascular strands exist (Crisp 2003; Pate and Dixon 1996).",bark_colour
+root_vascular_anatomy,unistelar_roots,"The commonly observed root anatomy, wherein there is a single vascular strand which displays secondary thickening.",bark_texture
+,,,fruit_surface_texture
+,,,inflorescence_type
