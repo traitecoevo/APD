@@ -18,7 +18,7 @@ print_list <- function(vals, title = NA, empty_text = NA) {
   }
 }
 
-print_list2 <- function(vals, title = NA, empty_text = NA) {
+print_list3 <- function(vals, title = NA, empty_text = NA) {
   
   out <- c()
   if (!is.na(title)) 
@@ -30,5 +30,18 @@ print_list2 <- function(vals, title = NA, empty_text = NA) {
   } else if (!is.na(empty_text)) {
     out <- c(out, empty_text)
   }
+  out
+}
+
+print_list2 <- function(vals) {
+  
+  out <- c()
+  
+  vals <- vals[!is.na(vals)]
+  
+  if (length(vals) > 0) {
+    out <- c(out, paste0(vals, collapse = "<br>\n"))
+  } 
+  
   out
 }

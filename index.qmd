@@ -1,8 +1,8 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
 params:
-  version: 2.0.0
-  previous_version: 1.1.0
+  version: 2.1.0
+  previous_version: 2.0.0
 format: 
   html:
     smooth-scroll: true
@@ -150,7 +150,7 @@ to_match_tmp <- triples_with_labels %>%
  
 for (thistrait in trait_groupings$identifier) {
   
-  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
+  # creating header makes anchor using header name. Also create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
   writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
@@ -158,12 +158,12 @@ for (thistrait in trait_groupings$identifier) {
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
 
-  out %>% print_table()#150, 500)
+  out %>% print_table()
 }
 ```
 # 3. Trait concepts
 
-The APD Trait concepts express the traits defined by the APT.
+The APD Trait concepts express the traits defined by the APD.
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 list_of_traits <- 
@@ -187,7 +187,7 @@ for (thistrait in list_of_traits[[1]]) {
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
 
-  out %>% print_table()#150, 600)
+  out %>% print_table()
 }
 ```
 
@@ -241,7 +241,7 @@ for (thistrait in traits_names_tmp$trait_name) {
   out <- 
       create_APD_categorical_values_table(anchor, triples_with_labels)
   
-  out %>% print_table()#150, 500)
+  out %>% print_table()
   }
   
 }
