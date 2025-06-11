@@ -12,6 +12,7 @@ source("R/convert_to_triples.R")
 ```
 
 Load data and create triples
+
 ```{r}
 annotation_properties_csv <- read_csv("data/APD_annotation_properties.csv", show_col_types = FALSE)
 traits_csv <- read_csv("data/APD_traits_input.csv", show_col_types = FALSE) %>%
@@ -97,47 +98,47 @@ rdflib::rdf_serialize(true_triples, "APD.ttl",
 rdflib::rdf_serialize(true_triples, "APD.json", format="jsonld")
 ```
 
-
 # Smoke-tests / example sparql queries
+
 ```{r}
 # how many unique predicates?
-sparql <-
-'SELECT DISTINCT ?p
- WHERE { ?s ?p ?c . }
-'
-rdf_query(true_triples, sparql)
-
-# how many unique reviewers are in the data?
-sparql <-
-'SELECT DISTINCT ?orcid ?prefLabel
- WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid .
-         ?orcid <http://www.w3.org/2004/02/skos/core#prefLabel> ?prefLabel
-       }
-'
-
-unescape_unicode <- function(x) {
-  stringi::stri_unescape_unicode(gsub("<U\\+(....)>", "\\\\u\\1", x))
-}
-
-rdf_query(true_triples, sparql) %>%
-  mutate(prefLabel = unescape_unicode(prefLabel))
-
-
-# how many unique references are in the data?
-sparql <-
-  'SELECT DISTINCT ?id
- WHERE { ?s <http://purl.org/dc/terms/references> ?id .
-       }
-'
-rdf_query(true_triples, sparql)
-
-
-sparql <-
-  'SELECT DISTINCT ?s
- WHERE { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> "plant trait" .
-       }
-'
-rdf_query(true_triples, sparql)
+# sparql <-
+# 'SELECT DISTINCT ?p
+#  WHERE { ?s ?p ?c . }
+# '
+# rdf_query(true_triples, sparql)
+# 
+# # how many unique reviewers are in the data?
+# sparql <-
+# 'SELECT DISTINCT ?orcid ?prefLabel
+#  WHERE { ?s <http://purl.org/datacite/v4.4/IsReviewedBy> ?orcid .
+#          ?orcid <http://www.w3.org/2004/02/skos/core#prefLabel> ?prefLabel
+#        }
+# '
+# 
+# unescape_unicode <- function(x) {
+#   stringi::stri_unescape_unicode(gsub("<U\\+(....)>", "\\\\u\\1", x))
+# }
+# 
+# rdf_query(true_triples, sparql) %>%
+#   mutate(prefLabel = unescape_unicode(prefLabel))
+# 
+# 
+# # how many unique references are in the data?
+# sparql <-
+#   'SELECT DISTINCT ?id
+#  WHERE { ?s <http://purl.org/dc/terms/references> ?id .
+#        }
+# '
+# rdf_query(true_triples, sparql)
+# 
+# 
+# sparql <-
+#   'SELECT DISTINCT ?s
+#  WHERE { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> "plant trait" .
+#        }
+# '
+# rdf_query(true_triples, sparql)
 ```
 
 # Create a version of ouput for human access
@@ -431,9 +432,11 @@ core_traits %>%
 ```
 
 # STOP HERE FOR INDIVIDUAL BRANCHES
-#   REMAINING CODE JUST FOR RELEASES
+
+# REMAINING CODE JUST FOR RELEASES
 
 # Build the website - only do this for releases
+
 ```{r}
 quarto::quarto_render()
 ```
@@ -453,6 +456,3 @@ for(p in c("release", "docs/release")) {
   purrr::walk(files, ~ file.copy(file.path("docs", .x), file.path(to_path, .x), overwrite = TRUE))
 }
 ```
-
-
-
