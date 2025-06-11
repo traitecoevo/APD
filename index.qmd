@@ -158,7 +158,7 @@ for (thistrait in trait_groupings$identifier) {
   out <- 
     create_APD_trait_hierarchy_table(thistrait, triples_with_labels)
 
-  out %>% print_table()#150, 500)
+  out %>% print_table()
 }
 ```
 # 3. Trait concepts
@@ -187,7 +187,7 @@ for (thistrait in list_of_traits[[1]]) {
   out <- 
     create_APD_trait_table(thistrait, triples_with_labels)
 
-  out %>% print_table()#150, 600)
+  out %>% print_table()
 }
 ```
 
@@ -241,7 +241,7 @@ for (thistrait in traits_names_tmp$trait_name) {
   out <- 
       create_APD_categorical_values_table(anchor, triples_with_labels)
   
-  out %>% print_table()#150, 500)
+  out %>% print_table()
   }
   
 }
