@@ -9,13 +9,14 @@ library(readr)
 library(stringr)
 library(rdflib)
 source("R/convert_to_triples.R")
+source("R/convert_between_csv_yml.R")
 ```
 
 Load data and create triples
 
 ```{r}
 annotation_properties_csv <- read_csv("data/APD_annotation_properties.csv", show_col_types = FALSE)
-traits_csv <- read_csv("data/APD_traits_input.csv", show_col_types = FALSE) %>%
+traits_csv <- yaml::read_yaml("data/APD_traits_input.yml") %>% convert_APD_traits_input_yml_to_csv() %>%
   mutate(Entity = paste0("https://w3id.org/APD/traits/", identifier))
 glossary_csv <- read_csv("data/APD_glossary.csv", show_col_types = FALSE) %>%
   mutate(Entity = paste0("https://w3id.org/APD/glossary/", identifier))
@@ -152,7 +153,7 @@ base_url_traits <- "https://w3id.org/APD/traits/"
 base_url_glossary <- "https://w3id.org/APD/glossary/"
 
 # todo - these files already read in above, update to reuse objects()
-APD_traits_input <- read_csv("data/APD_traits_input.csv", show_col_types = FALSE)
+APD_traits_input <- yaml::read_yaml("data/APD_traits_input.yml") %>% convert_APD_traits_input_yml_to_csv() %>%
 APD_reviewers <- read_csv("data/APD_reviewers.csv", show_col_types = FALSE)
 APD_references <- read_csv("data/APD_references.csv", show_col_types = FALSE)
 APD_hierarchy <- read_csv("data/APD_trait_hierarchy.csv", show_col_types = FALSE)
