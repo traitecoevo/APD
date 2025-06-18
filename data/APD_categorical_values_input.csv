@@ -136,6 +136,7 @@ flower_orientation_up,up,"Flower orientation is vertical, with the floral entran
 flower_orientation_lateral,lateral,"Flower orientation is horizontal, with the floral entrance perpendicular to main vertical axis.",flower_orientation
 flower_orientation_down,down,"Flower orientation is pendant, with the floral entrance pointing down.",flower_orientation
 flower_orientation_mixed,mixed,"Flower orientation is mixed, with different flowers exhibiting different orientations.",flower_orientation
+flowering_cues_disturbance,disturbance,Plants increase flowering in response to disturbance.,flowering_cues
 flowering_cues_rain,rain,"Plants increase flowering in response to rain, but the time of year is not specified.",flowering_cues
 flowering_cues_rain_obligate,rain_obligate,Plants only flower following rain events.,flowering_cues
 flowering_cues_rain_all_year,rain_all_year,Plants increase flowering in response to rain at any time of the year.,flowering_cues
@@ -145,6 +146,8 @@ flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to 
 flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
 flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
 flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
+flowering_cues_fire_independent,fire_independent,Plant do not require disturbance to flower.,flowering_cues
+flowering_cues_disturbance_independent,disturbance_independent,Plant do not require fire to flower.,flowering_cues
 flower_structural_sex_type_bisexual,bisexual,Hermaphrodite; flowers with both male and female reproductive organs.,flower_structural_sex_type
 flower_structural_sex_type_incompletely_unisexual,incompletely_unisexual,Male flowers with pistillodes and/or female flowers with staminodes.,flower_structural_sex_type
 flower_structural_sex_type_unisexual,unisexual,Flowers with either male or female reproductive organs.,flower_structural_sex_type
@@ -445,6 +448,7 @@ plant_photosynthetic_organ_leaf,leaf,"A true leaf, including both laminar and ne
 plant_photosynthetic_organ_cladode,cladode,"A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)",plant_photosynthetic_organ
 plant_photosynthetic_organ_phyllode,phyllode,"A flattened bladelike petiole. (Synonyms, switch plant)",plant_photosynthetic_organ
 plant_photosynthetic_organ_non-photosynthetic_plant,non-photosynthetic_plant,A plant that lacks any photosynthetic organs.,plant_photosynthetic_organ
+plant_photosynthetic_organ_photosynthetic_roots,photosynthetic_roots,"A plant has aboveground, photosynthetic roots.",plant_photosynthetic_organ
 leaf_type_broadleaf,broadleaf,"Flat leaf lamina, regardless of whether the leaves are or are not toothed, lobed, or compound.",leaf_type
 leaf_type_needle,needle,Needle or awl-shaped leaf that is generally 3-dimensional.,leaf_type
 leaf_type_scale,scale,Leaf reduced to a small scale.,leaf_type
@@ -537,7 +541,7 @@ stem_growth_habit_decumbent,decumbent,"Stems whose bases lie flat on the ground 
 stem_growth_habit_prostrate,prostrate,"Stems lie flat on the ground but do not root at nodes. (Synonyms, procumbent, reclining, trailing)",stem_growth_habit
 stem_growth_habit_rosette,rosette,"Plants whose leaves radiate from a central point at or near ground level. (Synonyms, acaulescent, rosulate)",stem_growth_habit
 stem_growth_habit_climbing,climbing,"Stem that does not have a self-supporting structure and ascends by leaning on or attaching itself to surrounding vegetation or another substrate. Climbing mechanisms include tendrils, petioles, adventitious roots, scrambling, and twining and are distinguished between in the trait `plant_climbing_mechanism`.",stem_growth_habit
-stem_growth_habit_sprawling,sprawling,"Stem that sprawls across other plants or objects but lacks specialised climbing structures or mechanisms. (Synonyms, clambering, scandent)",stem_growth_habit
+stem_growth_habit_sprawling,sprawling,"Stem that sprawls across other plants or objects but lacks specialised climbing structures or mechanisms. (Synonyms, clambering, scandent, straggling)",stem_growth_habit
 stem_growth_habit_rhizomatous,rhizomatous,Plants with short horizontal underground stems from which shoots emerge.,stem_growth_habit
 stem_growth_habit_stoloniferous,stoloniferous,"Plants with long horizontal branches either slightly belowground or aboveground, that root at their nodes or tips, producing new plants. (Synonyms, sarmentose)",stem_growth_habit
 stem_growth_habit_spreading,spreading,"Plants with a notable horizontal extent, referring either to a broad tree canopy or a shrub or herb that spreads across the ground.",stem_growth_habit
@@ -548,6 +552,7 @@ stem_growth_habit_compact,compact,Plant with closely packed branches.,stem_growt
 stem_growth_habit_bushy,bushy,"Plant with much-branched branches. (Synonyms, shrubby)",stem_growth_habit
 stem_growth_habit_open,open,Plant with an open architecture of branches.,stem_growth_habit
 stem_growth_habit_spindly,spindly,"Plants with weak, skinny branches.",stem_growth_habit
+stem_growth_habit_pendulous,pendulous,Plants with drooping or downward hanging branches.,stem_growth_habit
 plant_climbing_mechanism_adventitious_roots,adventitious_roots,Roots arising from stem nodes which cling to a host plant.,plant_climbing_mechanism
 plant_climbing_mechanism_hooks,hooks,Curved stem outgrowths which allow climbers to cling to a host plant.,plant_climbing_mechanism
 plant_climbing_mechanism_spines,spines,Straight stem outgrowths (including true spines as well as thorns and prickles) which allow climbers to cling to a host plant.,plant_climbing_mechanism
@@ -607,6 +612,7 @@ pollination_system_wasp,wasp,Flowers are observed to be wasp-pollinated.,pollina
 pollination_system_water,water,Flowers are observed to be water-pollinated.,pollination_system
 pollination_system_wind,wind,Flowers are observed to be wind-pollinated.,pollination_system
 pollination_system_self,self,Flowers are self-pollinated.,pollination_system
+bud_bank_location_aboveground_buds,aboveground_buds,"Plants that resprout from underground organ, but the type of organ isn't specified.",bud_bank_location
 bud_bank_location_apical_buds,apical_buds,"Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)",bud_bank_location
 bud_bank_location_basal_buds,basal_buds,"Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`. ",bud_bank_location
 bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`. (Synonym, rootstock, lignotuberous resprouter)",bud_bank_location
@@ -614,6 +620,7 @@ bud_bank_location_epicormic_buds,epicormic_buds,Plants resprout from the stem or
 bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)",bud_bank_location
 bud_bank_location_root_crown,root_crown,"Plants resprout from the root crown, the root tissue at the root-stem transition.",bud_bank_location
 bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter, adventitious buds)",bud_bank_location
+bud_bank_location_pseudobulb,pseudobulb,Plant resprouts from an organ present in many terrestrial and epiphytic orchids created throough the thickening of the stem between leaf nodes.,bud_bank_location
 bud_bank_location_rhizome,rhizome,"Plants resprout from buds on a rhizome, where it is not specified if the rhizome is woody or non-woody.",bud_bank_location
 bud_bank_location_rhizome_woody,rhizome_woody,Plants resprout from buds on a woody rhizome.,bud_bank_location
 bud_bank_location_rhizome_non_woody,rhizome_non_woody,"Plants resprout from buds on a fleshy rhizome, rhizophore, or fibrous rhizome.",bud_bank_location
@@ -636,6 +643,7 @@ storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carboh
 storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutrients, carbohydrates and water.",storage_organ
 storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
 storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
+storage_organ_roots_woody,roots_woody,Plant have woody roots.,storage_organ
 storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
 resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,"Plants that are known to be fire-killed, but have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.",resprouting_capacity_non_fire_disturbance
 resprouting_capacity_non_fire_disturbance_resprouts_after_cyclone,resprouts_after_cyclone,Plants are able to resprout following 100% leaf loss in a cyclone.,resprouting_capacity_non_fire_disturbance
