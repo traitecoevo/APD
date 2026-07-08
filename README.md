@@ -91,6 +91,18 @@ curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
 ```
 
+## AusTraits family
+
+`APD` is part of the **AusTraits family** of packages maintained by the
+[AusTraits](https://austraits.org) team. See **[austraits.org](https://austraits.org)** for the
+project, the data, and the people behind it.
+
+Contributing? Issues across the family are tracked on one board,
+[AusTraits #9](https://github.com/orgs/traitecoevo/projects/9), and new issues are auto-added. Please
+read the [issue & labelling guide](https://github.com/traitecoevo/austraits-meta/blob/main/governance/issue-guide.md)
+in [`austraits-meta`](https://github.com/traitecoevo/austraits-meta) — the family's cross-package
+knowledge and governance hub — before filing.
+
 ## Acknowledgements
 
 We are grateful to S Cox, J Smillie, K Levett, M Barlow, and C Brady for useful conversations. The AusTraits project received investment (<https://doi.org/10.47486/TD044>, <https://doi.org/10.47486/DP720>) from the Australian Research Data Commons (ARDC). The ARDC is funded by the National Collaborative Research Infrastructure Strategy (NCRIS). 
