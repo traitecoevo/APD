@@ -8,17 +8,14 @@ APD_BASE <- "https://w3id.org/APD/"
 #' such a URI onto a local target instead. Non-APD URIs return `NA`, so callers
 #' leave them absolute.
 #'
+#' The dictionary is published as one document, so every entity is a fragment of
+#' it. Stage 1 gave this function a `mode` argument in anticipation of per-entity
+#' pages; those were tried in stage 4 and reverted, so there is one mode and no
+#' argument. Restoring it means restoring one branch, not redesigning this.
+#'
 #' @param url A URI, or `NA`.
-#' @param mode `"anchors"` for a same-page fragment (`#trait_0000012`);
-#'   `"pages"` for a per-entity page (`traits/trait_0000012.html`). Defaults to
-#'   option `apd.link_mode`.
-#' @param rel Path prefix from the page being written back to the site root;
-#'   `""` at the root, `"../"` one level down. Only used by `"pages"`. Defaults
-#'   to option `apd.rel_prefix`.
-#' @return A site-local href, or `NA_character_` if `url` is not an APD URI.
-apd_local_target <- function(url,
-                             mode = getOption("apd.link_mode", "anchors"),
-                             rel = getOption("apd.rel_prefix", "")) {
+#' @return A same-page fragment, or `NA_character_` if `url` is not an APD URI.
+apd_local_target <- function(url) {
   if (length(url) != 1L || is.na(url) || !startsWith(url, APD_BASE)) {
     return(NA_character_)
   }
@@ -36,22 +33,13 @@ apd_local_target <- function(url,
     return(NA_character_)
   }
 
-  if (identical(mode, "anchors")) {
-    if (nzchar(slug)) {
-      return(paste0("#", slug))
-    }
-    return(if (kind == "traits") "#trait-concepts" else "#glossary")
-  }
-
   if (nzchar(slug)) {
-    return(paste0(rel, kind, "/", slug, ".html"))
+    return(paste0("#", slug))
   }
 
-  # A bare scheme URI (`.../APD/traits`, `.../APD/glossary`) names the whole
-  # vocabulary rather than an entity, so there is no entity page for it. Send it
-  # to the browse index; `rel` + "traits/" would be a directory with nothing in
-  # it, which is how this was found.
-  paste0(rel, "index.html")
+  # A bare scheme URI (`.../APD/traits`) names the whole vocabulary, not an
+  # entity, so it goes to that section's heading.
+  if (kind == "traits") "#trait-concepts" else "#glossary"
 }
 
 #' Build a link, resolving APD URIs to local targets

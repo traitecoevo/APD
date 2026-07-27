@@ -4,13 +4,17 @@
 # calls functions in R/ -- there is no chunk of a notebook you have to know to
 # skip.
 #
+# Seven targets, one per thing you'd actually want to do. Two of them exist only
+# because trait definitions get edited in a spreadsheet; if that stops being true,
+# they go.
+#
 # Targets always run: the data build takes about 8 seconds, so tracking which
 # outputs are stale would cost more in surprise than it saves in time. The one
-# slow step is `make site`, which renders the Quarto website.
+# slow step is `make site`, which renders the website.
 
 R := Rscript
 
-.PHONY: help data check check-pages site pages release export-csv import-csv clean
+.PHONY: help data check site release export-csv import-csv clean
 
 help:  ## Show this help
 	@echo "APD -- make targets:"
@@ -27,19 +31,8 @@ data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSV
 check: data  ## Validate the built dictionary and run the tests
 	$(R) scripts/check.R
 
-# Depends on `site` on purpose. This target green-lights repointing 1,473
-# published identifiers, so it must not be possible to pass it against a docs/
-# left over from an earlier build. To check a directory you already have, call the
-# script directly: Rscript scripts/check_pages.R <dir>
-check-pages: site  ## Confirm every published identifier has a page (gate for stage 5)
-	$(R) scripts/check_pages.R
-
-site: data  ## Render the website into docs/, then the per-entity pages (needs network)
+site: data  ## Render the website into docs/ (slow; needs network)
 	$(R) scripts/build_site.R
-	$(R) scripts/build_pages.R
-
-pages: data  ## Write just the per-entity pages into docs/ (quarto empties docs/, so run after `site`)
-	$(R) scripts/build_pages.R
 
 release: check site  ## Check the version, then snapshot into release/<version>/
 	$(R) scripts/release.R

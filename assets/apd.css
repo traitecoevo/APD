@@ -1,127 +1,73 @@
-:root {
-  --apd-text: #1a1a1a;
-  --apd-muted: #5c5c5c;
-  --apd-rule: #d8d8d8;
-  --apd-link: #1552b5;
-  --apd-surface: #ffffff;
-  --apd-accent-surface: #f4f6f9;
-}
+/* Styling for the property/value pairs on each entity in the dictionary.
+ *
+ * Each entity's properties are emitted as a <dl> by apd_definition_list()
+ * (R/table.R). They used to be a `gt` table, which cost 6.03 MB of the 9.00 MB
+ * page; a <dl> says what they are and is half the markup. But a bare <dl> renders
+ * as an unaligned run of lines, which loses the two-column structure the <table>
+ * gave for free -- so these rules put it back, and do it better: the old tables
+ * had all their styling stripped by remove_css() anyway, so they were relying on
+ * the browser's default table rendering.
+ *
+ * Loaded via `css:` in _quarto.yml, so it lands after the Bootstrap theme and
+ * wins. Colours come from Bootstrap's variables, with fallbacks, so light and
+ * dark both follow the theme rather than being hardcoded here. */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --apd-text: #e8e8e8;
-    --apd-muted: #a8a8a8;
-    --apd-rule: #3a3a3a;
-    --apd-link: #8ab4f8;
-    --apd-surface: #171717;
-    --apd-accent-surface: #202020;
-  }
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 0 1.25rem 3rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--apd-text);
-  background: var(--apd-surface);
-}
-
-header, main, footer { max-width: 52rem; margin: 0 auto; }
-
-header {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--apd-rule);
-  margin-bottom: 2rem;
-}
-
-a { color: var(--apd-link); }
-
-.apd-home { font-weight: 600; text-decoration: none; }
-.apd-home:hover { text-decoration: underline; }
-
-.apd-kicker {
-  margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--apd-muted);
-}
-
-h1 { margin: 0.25rem 0 0.5rem; font-size: 1.75rem; line-height: 1.25; }
-
-/* The canonical, citable URI. Shown as text, not a link: it is the
-   identifier, and clicking it would take you through a w3id redirect back
-   to the page you are already on. */
-.apd-uri {
-  margin: 0 0 2rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8125rem;
-  color: var(--apd-muted);
-  overflow-wrap: anywhere;
-}
-
-/* Property/value pairs. Two columns where there is room, stacked below;
-   `dt` and `dd` are siblings, so a grid is what pairs them up. */
 .apd-properties {
   display: grid;
-  grid-template-columns: minmax(9rem, 14rem) 1fr;
-  gap: 0 1.5rem;
-  margin: 0;
+  /* Wide enough for "characteristic measured" unwrapped, but it gives way on
+   * narrow screens. */
+  grid-template-columns: minmax(9rem, 15rem) 1fr;
+  gap: 0;
+  margin: 0 0 2.5rem;
 }
 
 .apd-properties > dt {
-  padding: 0.6rem 0;
+  padding: 0.5rem 1.25rem 0.5rem 0;
   font-weight: 600;
-  border-top: 1px solid var(--apd-rule);
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
 }
 
 .apd-properties > dd {
   margin: 0;
-  padding: 0.6rem 0;
-  border-top: 1px solid var(--apd-rule);
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
+  /* URIs and long identifiers must not force the page to scroll sideways. */
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 34rem) {
-  .apd-properties { grid-template-columns: 1fr; gap: 0; }
-  .apd-properties > dt { padding-bottom: 0; border-bottom: 0; }
-  .apd-properties > dd { padding-top: 0.15rem; border-top: 0; }
+/* Multi-valued properties -- keywords, references, matches in other databases --
+ * arrive as <br>-separated runs. Give them air so they read as a list rather
+ * than a wrapped paragraph. */
+.apd-properties > dd br {
+  line-height: 2;
 }
 
-footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--apd-rule);
-  font-size: 0.875rem;
-  color: var(--apd-muted);
+/* The first row is always the URI: the citable identifier. Monospace, because
+ * reading it character by character is what you do when you copy one. */
+.apd-properties > dt:first-of-type + dd {
+  font-family: var(--bs-font-monospace, ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace);
+  font-size: 0.875em;
 }
 
-/* Browse table on the index page. Wide content scrolls inside its own box
-   rather than making the whole page scroll sideways. */
-.apd-browse-wrap { overflow-x: auto; }
-
-table.apd-browse { width: 100%; border-collapse: collapse; }
-table.apd-browse th, table.apd-browse td {
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid var(--apd-rule);
+@media (max-width: 45rem) {
+  .apd-properties {
+    grid-template-columns: 1fr;
+  }
+  .apd-properties > dt {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .apd-properties > dd {
+    padding-top: 0.15rem;
+    border-top: 0;
+  }
 }
-table.apd-browse th { background: var(--apd-accent-surface); }
 
-#apd-filter {
-  width: 100%;
-  max-width: 28rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
-  color: var(--apd-text);
-  background: var(--apd-surface);
-  border: 1px solid var(--apd-rule);
-  border-radius: 0.25rem;
+/* Each entity is an <h2>, and there are 1,590 of them on one page. A rule above
+ * each breaks it into scannable blocks; without one the entities run together. */
+main h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--bs-border-color, #dee2e6);
 }

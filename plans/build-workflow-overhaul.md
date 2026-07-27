@@ -1,7 +1,8 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** stages 0-4 landed on `refactor/build-workflow` — see the notes under stages 2, 3 and 4.
-> Stage 5 (the w3id redirect PR) is next, and `make check-pages` is its gate. Everything below describes
+> **Status:** stages 0-4 landed on `refactor/build-workflow`. **Stage 4's per-entity pages were tried
+> and reverted** — the dictionary stays one document; see "Where stage 4 got to". Stage 5 (the w3id
+> redirect PR) is next. Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
 > Written 2026-07-27 from an audit of the repo at `862164d`,
@@ -450,14 +451,34 @@ Also: `.nojekyll` becomes mandatory once `site_libs/` exists; drop `release` fro
 `index.html#trait_0000012` bookmarks to the new pages. Google has indexed those fragments for years, so
 this matters.
 
-**Where stage 4 got to.** Landed in 18c0d29 and 12c8482. Measured, against the plan's targets:
+**Where stage 4 got to.** Landed in 18c0d29 and 12c8482, then **partly reverted**: the per-entity
+pages and the browse index are gone and the dictionary is a single document again. What was kept is
+the optimisation of that document.
 
-| Artefact | Plan | Actual |
+**Decision: the site stays one page.** Reverted on review. The hybrid the plan specified worked and
+hit its size targets, but per-entity pages traded away structure the single document has, and split
+one artefact into 1,475 that all have to stay in step. Kept from the attempt: the `<dl>` emitter, the
+`preferred label` fix, `.nojekyll`, the rewritten `406.html`, the un-nested `page-footer`.
+
+Measured on the single document, before and after:
+
+| | Before | After |
 |---|---|---|
-| `docs/index.html` | ~250 KB | **144 KB** (22 KB gzipped), from 9.00 MB |
-| `docs/traits/<slug>.html` | ~17 KB each | median **2.0 KB**, largest 17.9 KB |
-| search index | 34 KB gzipped | **20 KB gzipped**, from 1.9 MB |
-| `docs/full.html` | ~7 MB | 6.1 MB |
+| `docs/index.html` | 8,996,205 bytes | **6,140,407** (−32%) |
+| DOM elements | 123,334 | **79,673** (−35%) |
+| Table cells | 42,620 | **0** |
+| `make site` | ~7 min | **73 s** |
+
+Gzipped it is 984 KB either way, which is the point worth remembering: **the win is DOM size, not
+bytes over the wire.** The plan said as much — "the real cost is not bandwidth but 39,674 table cells
+and 31,000 anchors in one DOM" — and that is what came down.
+
+Against the plan's original targets:
+
+the split did hit them — a 144 KB landing page (22 KB gzipped), entity pages with a median size of
+2.0 KB, and a 20 KB gzipped search index — and they are recorded here because they show the ceiling
+if the question is ever reopened. The `mode = "pages"` branch of `apd_local_target()` was removed with
+the rest; restoring it is one branch, not a redesign.
 
 Four things worth recording:
 
@@ -477,6 +498,20 @@ Four things worth recording:
   ~100 MB per render. Doing so makes `w3id.org/APD/release/<version>/index.html` 404 on the next
   deploy, because Pages serves those permalinks from `master:/docs`. It belongs in stage 6 behind the
   verification gate, which is what that gate is for.
+- **`embed-resources` has to stay on the single document.** Dropping it would save ~2.4 MB, but the
+  copy archived in `release/<version>/` is served from a subpath and deposited at Zenodo, so it must
+  open standalone with no `site_libs/` beside it.
+- **The sidebar TOC is 1,598 entries, 3,206 elements, 263 KB — 4.3% of the page.** Setting
+  `toc-depth: 1` would cut it to the six numbered sections. Measured but not done: 4% of the DOM is
+  not worth losing per-trait navigation.
+
+**Consequence for stage 5.** The redirect rule below sends every slug to a per-entity page. With one
+document it should send them to a fragment instead, which still fixes the 819 categorical URIs (gap
+C1) — they fail today only because the rule matches `trait_` and nothing else:
+
+```apache
+RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/APD/index.html#$1 [R=303,NE,L]
+```
 
 ### Stage 5 — w3id redirect change
 

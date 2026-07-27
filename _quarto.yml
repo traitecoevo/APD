@@ -21,7 +21,6 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - full.qmd
     - using_the_APD.qmd
     - NEWS.md
 
@@ -37,8 +36,6 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: full.html
-        text: Full dictionary
       - href: using_the_APD.html
         text: Using the APD
       - href: https://vocabs.ardc.edu.au/viewById/649
@@ -62,4 +59,9 @@ format:
   html:
     theme: cosmo
     toc: true
+    # The property/value pairs on every entity are a <dl>, and Bootstrap renders
+    # a bare <dl> as an unaligned run of lines. This is what pairs them into two
+    # columns with a rule between rows -- i.e. the structure the old <table>
+    # markup used to give for free.
+    css: assets/apd.css
 

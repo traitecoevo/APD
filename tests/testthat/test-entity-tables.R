@@ -14,7 +14,9 @@ APD_ENTITY_TABLE_DIGEST <- "f53f2c8acc0cffe907a32134265534dd"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
-# base URI itself (create_APD_trait_table.R:395).
+# base URI itself (create_APD_trait_table.R:395). Mirrored here rather than shared
+# with index.qmd, because the .qmd is the only production caller and a helper in
+# R/ existing solely for a test is worse than eight lines of duplication.
 apd_entity_builder <- function(subject) {
   slug <- sub("^https://w3id\\.org/APD/(traits|glossary)/?", "", subject)
 
