@@ -131,6 +131,19 @@ curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
 ```
 
+## Licensing
+
+Two licences, split by content versus machinery rather than by directory:
+
+* **The dictionary is [CC BY 4.0](LICENSE)** — the trait definitions and metadata,
+  in `data/` and everything generated from them in `export/`. This is what the
+  paper states and what you are citing when you use the APD.
+* **The software is [BSD 2-clause](LICENSE-CODE)** — the R code, scripts, tests,
+  Quarto sources and stylesheet that build and present it.
+
+A rendered page in `docs/` contains both, plus third-party assets that Quarto
+embeds (Bootstrap and its JavaScript), which stay under their own licences.
+
 ## AusTraits family
 
 `APD` is part of the **AusTraits family** of packages maintained by the

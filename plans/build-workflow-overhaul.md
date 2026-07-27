@@ -1,8 +1,14 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** stages 0-4 landed on `refactor/build-workflow`. **Stage 4's per-entity pages were tried
-> and reverted** — the dictionary stays one document; see "Where stage 4 got to". Stage 5 (the w3id
-> redirect PR) is next. Everything below describes
+> **Status:** stages 0-4 landed on `refactor/build-workflow`, plus the repo-tidy and licensing work
+> below. **Stage 4's per-entity pages were tried and reverted** — the dictionary stays one document.
+>
+> **Stage 5 is blocked on merge and deploy, not on more work here.** It repoints w3id at the *live*
+> site, so the new `index.html` has to be on `master` and served by Pages first. That makes merging
+> this branch the next step, not an afterthought. Stage 6 (CI) is what makes the deploy repeatable, so
+> it may be worth doing before stage 5 rather than after.
+>
+> Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
 > Written 2026-07-27 from an audit of the repo at `862164d`,
@@ -122,6 +128,15 @@ every render.
 `.../APD_categorical_values.csv` and `.../data/APD_trait_hierarchy.csv`. **Those paths on `master` must
 keep resolving**, which constrains what can stop being committed.
 
+> **Resolved, and it was the wrong constraint.** Reading another repo's working tree pinned two build
+> products to APD's top level *and* handed downstream whatever was on `master` — the Pages branch, not
+> a release. Both consumers now read APD's published URLs
+> (`traitecoevo.github.io/APD/release/<version>/<file>`), which already existed and already worked.
+> [austraits.build#850](https://github.com/traitecoevo/austraits.build/pull/850) merged first, so
+> nothing was ever broken; then the artefacts moved to `export/` here. C12 in `COMMITMENTS.md` now
+> names URLs rather than paths. `data/APD_trait_hierarchy.csv` is the one remaining repo-path
+> dependency, recorded as C13.
+
 ---
 
 ## Decisions taken
@@ -193,7 +208,7 @@ against the live service. Four are not currently being kept.
 | p.8 — "Each term defined within the APD requires a unique and stable URI… **This includes not just the trait concepts, but also the allowable categorical trait values**, the trait groupings within the trait hierarchy, and the… glossary" | ❌ **Broken for one of the four named classes.** Traits, trait groups and glossary terms all redirect to a fragment; all 819 categorical values redirect to the top of `index.html` with no fragment. |
 | p.8 — "`APD_namespace_declaration.csv` … **serves as the namespace declaration when compiling the RDF representation**" | ❌ **Not true.** No code reads that file. The real namespace map is hardcoded in `build.qmd:59-97` and the two have diverged (only 23 of 38 URIs shared). |
 | p.13 Technical Validation — "The APD.ttl file … was run through a **skos validator** to confirm that all relationships were consistent, all URIs were unique, and that all concepts have labels" | ⚠️ **One-off, not reproducible.** No validator exists anywhere in the repo, so this claim decays with every release. |
-| p.12 — "The data are available under a **CC-BY 4.0 license**" | ⚠️ **Unenforceable.** `index.qmd:62` advertises CC BY 4.0, `DESCRIPTION:16` says `BSD_2_clause + file LICENCE`, and no licence file exists at all. |
+| p.12 — "The data are available under a **CC-BY 4.0 license**" | ⚠️ **Unenforceable.** `index.qmd:62` advertises CC BY 4.0, `DESCRIPTION:16` says `BSD_2_clause + file LICENCE`, and no licence file exists at all. **Now fixed** — see "Licensing" below. |
 | Fig. 4 — "Copy of APD.ttl archived and discoverable at **Research Vocabularies Australia**" | ⚠️ **Stale.** ARDC RVA (`viewById/649`) serves **2.0.1**; the repo is at 2.1.0. |
 | Fig. 4 / p.8 — "Input data — **11 csv files** with all metadata to build various outputs" | ⚠️ **Now inaccurate**, and the YAML-only decision widens the gap. Mitigation below. |
 | p.12 — "`index.html` offers a **human-readable compiled version** of the information contained in `APD_triples.csv`" | ✅ Today. The restructure must preserve it — which is exactly why `full.html` is in the plan. |
@@ -513,18 +528,70 @@ C1) — they fail today only because the rule matches `trait_` and nothing else:
 RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/APD/index.html#$1 [R=303,NE,L]
 ```
 
+### Repo layout and licensing (out of stage order, done on review)
+
+Neither was a numbered stage; both came out of reviewing the branch.
+
+**Generated artefacts moved to `export/`.** Seven build products sat at the top level among the dozen
+files a contributor edits. Top level is 22 entries, down from 30. They are still published at the site
+root — `scripts/build_site.R` copies them into `docs/` after the render — so no URL moved. They are
+deliberately *not* quarto resources: a resource keeps its relative path, so listing `export/APD.ttl`
+would publish it at `/APD/export/APD.ttl` and break every link and w3id rule pointing at it. `406.html`
+moved to `assets/` and is published the same way.
+
+**The `.qmd` files cannot move, and this was tested rather than assumed.** In a Quarto *website*
+project the output path mirrors the input path, so `site/index.qmd` renders to `docs/site/index.html`.
+Quarto does also emit a root `docs/index.html`, but it is a 237-byte `meta http-equiv="refresh"` stub —
+and a meta-refresh to a URL without a fragment **drops the fragment**. Every one of the 1,473 published
+trait URIs is `index.html#<slug>`, so moving `index.qmd` would land all of them at the top of the page:
+precisely the bug stage 5 exists to fix, reintroduced for every identifier instead of 819 of them. Same
+argument applies to `using_the_APD.qmd`, whose URL is linked from the navbar and README and is
+commitment C10. Both stay at the root, and now for a recorded reason.
+
+What is left at the top level is either tool convention (`Makefile`, `_quarto.yml`, `DESCRIPTION`,
+`APD.Rproj`, `README.md`, `LICENSE`), read by tooling at a fixed path (`AGENTS.md`), or a file whose
+render path is a published URL (`index.qmd`, `using_the_APD.qmd`, `NEWS.md` → `news.html`).
+
+**Licensing: two files that contradicted each other.** Stage 0 was supposed to add licence files and
+did not; stage 3 added them and got the boundary wrong. `LICENSE` claimed `docs/` was CC BY 4.0 while
+`LICENSE-CODE` claimed "the Quarto sources for the website" were BSD-2 — so `index.qmd` was BSD-2 and
+`docs/index.html`, its direct output, was CC BY 4.0. A derived work under a different licence from its
+source.
+
+Worse, `embed-resources: true` inlines Bootstrap and Quarto's JavaScript into that file. Those are
+third-party MIT/BSD; claiming the whole file as CC BY 4.0 asserted a right we do not have.
+
+The line is now **content versus machinery**, not directory versus directory:
+
+| | Licence | What |
+|---|---|---|
+| The dictionary | CC BY 4.0 (`LICENSE`) | Trait definitions and metadata: `data/`, and everything generated from them in `export/`. This is the paper's claim (C4) and what a citation covers. |
+| The software | BSD-2 (`LICENSE-CODE`) | `R/`, `scripts/`, `Makefile`, `tests/`, the `.qmd` sources, `assets/`. |
+| Embedded third-party assets | their own | Bootstrap and Quarto's JS, inlined into the rendered pages. Not relicensed by either file. |
+
+`DESCRIPTION` said `CC BY 4.0 (the vocabulary, see LICENSE) + BSD_2_clause (...)`, which no R tool can
+parse; it is now `License: file LICENSE`, which is valid and defers to the file that explains the
+split. README gained a short Licensing section, since neither licence file is somewhere a reader looks
+first.
+
 ### Stage 5 — w3id redirect change
 
 A target-only change; the URIs themselves never change. One rule replaces three and fixes the 819
-categorical URIs:
+categorical URIs. **Updated for the single-document decision** — the target is a fragment, not a page:
 
 ```apache
-RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/APD/traits/$1.html [R=303,NE,L]
+RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/APD/index.html#$1 [R=303,NE,L]
 ```
 
+The 819 categorical values fail today only because the existing rule matches `trait_` and nothing
+else; widening the pattern is the whole fix.
+
 Content negotiation and the versioned `release/X.Y.Z/` rules are untouched. **This PR to
-`perma-id/w3id.org` goes last**, only after the new pages are live and a script has confirmed all 1,473
-return 200 — otherwise every identifier in the published paper 404s.
+`perma-id/w3id.org` goes last** — and "last" now has a concrete meaning: the rule points at the live
+site, so the rewritten `index.html` must be merged to `master` and served by Pages *before* the PR
+opens. Until then the anchors it targets are the old page's, which happen to be the same slugs, so the
+change is safe either way for traits — but the 819 categorical anchors only exist once the new page is
+deployed. Verify against the deployed site, not a local build.
 
 ### Stage 6 — CI and deployment
 
@@ -606,15 +673,19 @@ Two audiences, currently served by neither:
 - **Golden fixtures** — after every `R/` refactor, the four generated files must match byte-for-byte.
 - **`make check`** — validation report must be clean; deliberately break a `keywords` identifier and
   confirm it fails loudly rather than silently emitting `<NA>`.
-- **Locally serve `docs/`** and run a script asserting all 1,473 entity pages return 200, *before* the
-  w3id PR.
+- **Check every anchor exists** in the deployed `index.html` — all 1,473 slugs, including the 819
+  categorical values — *before* the w3id PR. (The per-entity-page version of this check,
+  `make check-pages`, was removed with the pages; the equivalent for one document is a grep for
+  `id="<slug>"` per entity.)
 - **Redirect matrix** — capture the full `curl -H "Accept: ..."` matrix from `README.md:80-94` before
   any change; every content-negotiation line must be byte-identical afterwards, and the HTML lines must
   show the new per-page targets.
-- **Page weight** — landing page under ~250 KB; a trait page under ~30 KB warm; `full.html` still opens
-  standalone from `file://` with all anchors working.
-- **Downstream** — confirm the three `raw.githubusercontent.com/.../master/` URLs still return 200 and
-  re-run `austraits.build/scripts/build_traits_yml_from_APD.R`.
+- **Page weight** — measured at 6.14 MB and 79,673 DOM elements, down from 9.00 MB and 123,334. Still
+  opens standalone from `file://` with all anchors working, which `embed-resources` is there for.
+- **Downstream** — confirm the published URLs return 200 (done: `traitecoevo.github.io/APD/APD_traits.csv`
+  and the pinned `release/2.1.0/` equivalents) and re-run
+  `austraits.build/scripts/build_traits_yml_from_APD.R`. Its `apd_version` constant needs bumping at
+  each APD release.
 - **CI** — confirm a PR that reintroduces the `build.qmd:156` dangling pipe now fails.
 - **Paper commitments** — after the w3id PR, re-run the p.8 URI check across all four entity classes.
   The one that must flip from broken to working: `w3id.org/APD/traits/plant_growth_form_tree` and the

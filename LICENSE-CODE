@@ -3,10 +3,14 @@ BSD 2-Clause License
 Copyright (c) 2021-2026, The AusTraits Plant Dictionary contributors
 All rights reserved.
 
-This licence covers the **build code** in this repository -- the R functions in
-`R/`, the scripts in `scripts/`, the `Makefile`, the tests in `tests/`, and the
-Quarto sources for the website. The dictionary itself is licensed under CC BY
-4.0; see `LICENSE`.
+This licence covers the **software** in this repository: the R code in `R/`, the
+scripts in `scripts/`, the `Makefile`, the tests in `tests/`, the Quarto sources
+(`index.qmd`, `using_the_APD.qmd`, `_quarto.yml`) and the stylesheet in
+`assets/`.
+
+It does not cover the dictionary these build, which is CC BY 4.0 -- see
+`LICENSE`, which sets out the boundary in full. Nor does it cover third-party
+assets that Quarto embeds in the rendered pages; those keep their own licences.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

@@ -12,7 +12,7 @@ Authors@R: c(
 Description: This compendium builds the AusTraits Plant Dictionary (APD) vocabulary, a formal vocabulary for more than 500 plants traits that is simultaneously released in human-friendly and machine-readable formats (see Wenk et al 2024, <doi: 10.1038/s41597-024-03368-z>). For more information on the APD go to http://traitecoevo.github.io/APD/.
 BugReports: https://github.com/traitecoevo/APD/issues
 URL: http://traitecoevo.github.io/APD/
-License: CC BY 4.0 (the vocabulary, see LICENSE) + BSD_2_clause (the build code, see LICENSE-CODE)
+License: file LICENSE
 Depends:
     R (>= 4.5.0),
     dplyr,
