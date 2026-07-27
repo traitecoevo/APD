@@ -1,7 +1,7 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** stages 0-3 landed on `refactor/build-workflow` — see "Where stage 3 got to" below.
-> Stage 4 is next. Everything below describes
+> **Status:** stages 0-4 landed on `refactor/build-workflow` — see the notes under stages 2, 3 and 4.
+> Stage 5 (the w3id redirect PR) is next, and `make check-pages` is its gate. Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
 > Written 2026-07-27 from an audit of the repo at `862164d`,
@@ -449,6 +449,34 @@ Also: `.nojekyll` becomes mandatory once `site_libs/` exists; drop `release` fro
 **Backwards compatibility.** A synchronous JS shim on `index.html` maps legacy
 `index.html#trait_0000012` bookmarks to the new pages. Google has indexed those fragments for years, so
 this matters.
+
+**Where stage 4 got to.** Landed in 18c0d29 and 12c8482. Measured, against the plan's targets:
+
+| Artefact | Plan | Actual |
+|---|---|---|
+| `docs/index.html` | ~250 KB | **144 KB** (22 KB gzipped), from 9.00 MB |
+| `docs/traits/<slug>.html` | ~17 KB each | median **2.0 KB**, largest 17.9 KB |
+| search index | 34 KB gzipped | **20 KB gzipped**, from 1.9 MB |
+| `docs/full.html` | ~7 MB | 6.1 MB |
+
+Four things worth recording:
+
+- **`gt` was the render bottleneck, not pandoc.** The plan had table construction at 0.023 s each and
+  pandoc as the expensive step. Removing `gt` took `make site` from about 7 minutes to 70 seconds, so
+  the estimate had it backwards. The `<dl>` markup is also 51% smaller than `gt`'s over all 1,473
+  entities (6,286,176 → 3,079,159 bytes), about half from `gt`'s bookkeeping and half from empty rows.
+- **No custom search index was needed.** `search.json` was 1.9 MB because 1,590 of its 1,596 entries
+  were fragments of the single page. Setting `search: false` on `full.qmd` and letting Quarto index the
+  browse page instead gets to 20 KB gzipped, beating the hand-built `apd-index.json` the plan specified,
+  with nothing to maintain.
+- **A label that had never been published.** All four table builders filtered `property == "label"`.
+  There is no such property — it is `preferred label` — so the row meant to carry each entity's
+  human-readable name was blank in every release, and no trait's own name appeared in its own table.
+  Confirmed against the committed `docs/index.html`, where the string `preferred label` does not occur.
+- **`release` stays in `_quarto.yml` resources for now.** The plan drops it to stop quarto copying
+  ~100 MB per render. Doing so makes `w3id.org/APD/release/<version>/index.html` 404 on the next
+  deploy, because Pages serves those permalinks from `master:/docs`. It belongs in stage 6 behind the
+  verification gate, which is what that gate is for.
 
 ### Stage 5 — w3id redirect change
 
