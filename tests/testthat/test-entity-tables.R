@@ -32,12 +32,12 @@ apd_entity_builder <- function(subject) {
 }
 
 test_that("every entity renders a table, and the markup has not changed", {
-  skip_if_not(file.exists(file.path(APD_ROOT, "APD_triples.csv")),
+  skip_if_not(file.exists(apd_export_path("APD_triples.csv")),
               "APD_triples.csv is not built")
   skip_if_not_installed("digest")
 
   withr::local_dir(APD_ROOT)
-  triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
+  triples <- readr::read_csv(apd_export_path("APD_triples.csv"), show_col_types = FALSE)
 
   # The two resource URIs (APD/traits, APD/glossary) describe the scheme rather
   # than an entity, and index.qmd does not render a table for either.
@@ -80,11 +80,11 @@ test_that("Subject and Subject_stripped are still interchangeable", {
   # Two builders filter on Subject and two on Subject_stripped. That only works
   # because the columns are identical for every row in APD_triples.csv -- so if
   # they ever diverge, half the site's tables silently come back empty.
-  skip_if_not(file.exists(file.path(APD_ROOT, "APD_triples.csv")),
+  skip_if_not(file.exists(apd_export_path("APD_triples.csv")),
               "APD_triples.csv is not built")
 
   withr::local_dir(APD_ROOT)
-  triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
+  triples <- readr::read_csv(apd_export_path("APD_triples.csv"), show_col_types = FALSE)
 
   expect_identical(triples$Subject, triples$Subject_stripped)
 })
@@ -121,11 +121,11 @@ test_that("rendering drops only empty rows, across every entity", {
   #
   # 3,034 empty rows, down from 4,507: fixing the dead `property == "label"`
   # filter moved exactly one row per entity (1,473) from empty to populated.
-  skip_if_not(file.exists(file.path(APD_ROOT, "APD_triples.csv")),
+  skip_if_not(file.exists(apd_export_path("APD_triples.csv")),
               "APD_triples.csv is not built")
 
   withr::local_dir(APD_ROOT)
-  triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
+  triples <- readr::read_csv(apd_export_path("APD_triples.csv"), show_col_types = FALSE)
   subjects <- setdiff(sort(unique(triples$Subject)),
                       c("https://w3id.org/APD/traits",
                         "https://w3id.org/APD/glossary"))
@@ -169,11 +169,11 @@ test_that("no gt stylesheet reaches the page", {
   # remove_css() used to strip gt's <style> block with a greedy regex to stop it
   # bloating index.html -- which silently made the cols_width()/cols_align()/
   # cols_label() calls dead code. Nothing emits a stylesheet now.
-  skip_if_not(file.exists(file.path(APD_ROOT, "APD_triples.csv")),
+  skip_if_not(file.exists(apd_export_path("APD_triples.csv")),
               "APD_triples.csv is not built")
 
   withr::local_dir(APD_ROOT)
-  triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
+  triples <- readr::read_csv(apd_export_path("APD_triples.csv"), show_col_types = FALSE)
 
   html <- apd_definition_list(
     create_APD_trait_table("https://w3id.org/APD/traits/trait_0000012", triples)

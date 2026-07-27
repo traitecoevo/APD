@@ -6,6 +6,13 @@
 APD_TRAITS_BASE <- "https://w3id.org/APD/traits/"
 APD_GLOSSARY_BASE <- "https://w3id.org/APD/glossary/"
 
+# Where the generated artefacts go. They used to sit at the repo root, which put
+# seven build products among the dozen files a contributor actually edits. They
+# are still published at the site root -- scripts/build_site.R copies them into
+# docs/ -- so every URL anyone has ever fetched is unchanged. See COMMITMENTS.md
+# C12: what is promised is the published URL, not the path inside this repo.
+APD_EXPORT_DIR <- "export"
+
 # What `apd_build_data()` writes, relative to `out_dir`.
 APD_OUTPUTS <- c(
   "APD_triples.csv", "APD.nq", "APD.nt", "APD.ttl", "APD.json",
@@ -77,7 +84,8 @@ apd_build_triples <- function(inputs) {
 #' @param namespaces Prefix -> URI map for the Turtle output, from
 #'   `apd_namespaces()`.
 #' @return The parsed RDF graph, invisibly.
-apd_write_rdf <- function(triples, out_dir = ".", namespaces = apd_namespaces()) {
+apd_write_rdf <- function(triples, out_dir = APD_EXPORT_DIR,
+                          namespaces = apd_namespaces()) {
 
   nq <- file.path(out_dir, "APD.nq")
 
@@ -108,7 +116,9 @@ apd_write_rdf <- function(triples, out_dir = ".", namespaces = apd_namespaces())
 #' @param data_dir Directory holding the input tables.
 #' @param out_dir Directory to write outputs into.
 #' @return A named list of the row counts written, invisibly.
-apd_build_data <- function(data_dir = "data", out_dir = ".") {
+apd_build_data <- function(data_dir = "data", out_dir = APD_EXPORT_DIR) {
+
+  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
   message("Reading inputs from ", data_dir, "/")
   inputs <- apd_read_inputs(data_dir)

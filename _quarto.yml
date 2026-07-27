@@ -1,12 +1,12 @@
 project:
   type: website
   resources:
-    - "APD.nq"
-    - "APD.nt"
-    - "APD.ttl"
-    - "APD.json"
-    - "APD_traits.csv"
-    - "APD_categorical_values.csv"
+    # The generated artefacts (APD.ttl/.nq/.nt/.json, the two flat CSVs,
+    # APD_triples.csv) are NOT listed here. They live in export/ but are published
+    # at the site *root*, because https://traitecoevo.github.io/APD/APD.ttl and the
+    # w3id content-negotiation rules pointing at it are a published interface.
+    # A quarto resource keeps its relative path, so listing "export/APD.ttl" would
+    # move the URL. scripts/build_site.R copies them in after the render instead.
     - "406.html"
     # Mandatory now that docs/ has directories quarto/jekyll would otherwise
     # treat as special, and site_libs/ leading with an underscore.

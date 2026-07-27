@@ -38,7 +38,16 @@ Additional constraint, not from the paper but equally binding:
 
 | # | Commitment | Source |
 |---|---|---|
-| C12 | `APD_traits.csv`, `APD_categorical_values.csv` and `data/APD_trait_hierarchy.csv` remain fetchable from `raw.githubusercontent.com/traitecoevo/APD/master/`. | `austraits.build/scripts/build_traits_yml_from_APD.R` reads them from there |
+| C12 | The generated artefacts remain fetchable at their published URLs — `https://traitecoevo.github.io/APD/<file>` for the latest release and `.../APD/release/<version>/<file>` for a pinned one — for `APD.ttl`, `APD.nq`, `APD.nt`, `APD.json`, `APD_traits.csv` and `APD_categorical_values.csv`. | `austraits.build/scripts/build_traits_yml_from_APD.R`; `using_the_APD.qmd`; the w3id content-negotiation rules |
+| C13 | `data/APD_trait_hierarchy.csv` remains fetchable from `raw.githubusercontent.com/traitecoevo/APD/master/data/`. | `austraits.build` reads it from there. It is an input table, not a build product, so it has no published copy yet; `make release` now snapshots one, and C12 can absorb it after the next release. |
+
+**C12 used to name repo paths, not URLs**, and that was the mistake. It read
+"`APD_traits.csv` … remain fetchable from `raw.githubusercontent.com/.../master/`", which pinned two
+build products to this repository's top level and meant tidying the repo broke `austraits.build`.
+Reading another repository's working tree also gave downstream whatever happened to be on `master`
+rather than a release. Both consumers now read the published URLs, which is APD's actual interface:
+the artefacts live in `export/` and `scripts/build_site.R` publishes them at the site root, so the
+URLs are unchanged and the repo layout is free to move again.
 
 ---
 

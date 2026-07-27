@@ -15,6 +15,12 @@ APD_ROOT <- local({
 
 APD_DATA <- file.path(APD_ROOT, "data")
 
+# The generated artefacts live in export/, not at the repo root.
+APD_EXPORT <- file.path(APD_ROOT, "export")
+
+#' Absolute path to a generated artefact
+apd_export_path <- function(file) file.path(APD_EXPORT, file)
+
 withr::with_dir(APD_ROOT, source("scripts/setup.R"))
 
 .apd_cache <- new.env(parent = emptyenv())

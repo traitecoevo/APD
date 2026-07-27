@@ -82,7 +82,7 @@ make import-csv  # write the edits back to the YAML and print what changed
 make check
 ```
 
-`make data` builds from the data files in `data/`, producing:
+`make data` builds from the data files in `data/` into `export/`, producing:
 
 - machine-readable representations of the APD, including
   - RDF Turtle: `APD.ttl`,
@@ -91,6 +91,17 @@ make check
   - JSON Linked Data format: `APD.json`
 - the two flat tables downstream packages read: `APD_traits.csv` and
   `APD_categorical_values.csv`
+
+All of these are published at the site root, so they are fetchable at stable URLs
+regardless of where they sit in this repository:
+
+```
+https://traitecoevo.github.io/APD/APD_traits.csv               # latest release
+https://traitecoevo.github.io/APD/release/2.1.0/APD_traits.csv  # pinned
+```
+
+Use those rather than `raw.githubusercontent.com` paths — the repo layout can
+change, the published URLs do not.
 
 `make site` creates the APD website, saved in `docs/`
   - hosting via Github pages at <https://traitecoevo.github.io/APD/>

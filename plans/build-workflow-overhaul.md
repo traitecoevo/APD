@@ -547,8 +547,34 @@ committed `docs/` is redundant churn, so:
 |---|---|
 | `docs/` (incl. `docs/release/`, ~129 MB) | **gitignored and deleted** — CI renders and deploys it |
 | `release/<version>/` (~100 MB) | **kept, as the single home** for versioned snapshots; CI copies it into the deploy |
-| root `APD_traits.csv`, `APD_categorical_values.csv` | **kept committed** — `austraits.build` reads them from `raw.githubusercontent.com/.../master/`, and all three URLs return 200 today |
+| root `APD_traits.csv`, `APD_categorical_values.csv` | ~~kept committed because `austraits.build` reads them from `raw.githubusercontent.com/.../master/`~~ — **superseded**, see below |
 | root `APD.ttl/.nq/.nt/.json`, `APD_triples.csv` | gitignored; published as GitHub Release assets instead (the `v2.1.0` release currently has **zero** assets) |
+
+**Superseded: all seven artefacts moved to `export/`, and C12 was redefined.** The constraint above
+was real but the wrong shape. C12 named *repo paths* — "fetchable from
+`raw.githubusercontent.com/.../master/`" — which pinned two build products to the top level and meant
+tidying the repo broke `austraits.build`. Reading another repo's working tree also handed downstream
+whatever was on `master`, which is the Pages branch, not a release.
+
+Both consumers now read the published URLs, which already existed and already worked:
+
+    https://traitecoevo.github.io/APD/APD_traits.csv                # latest
+    https://traitecoevo.github.io/APD/release/2.1.0/APD_traits.csv  # pinned
+
+`austraits.build` went first (`de1816d1`), since those URLs work today, so there was never a window
+where anything was broken. Verified byte-identical between `master` and `release/2.1.0` before
+switching. `using_the_APD.qmd` now reads the local build instead of fetching over HTTP, which also
+fixes the offline-reproducibility bug noted under "Blockers and drift" — it had a
+`# Todo: update links after branch merged in` comment on it.
+
+The artefacts are still published at the **site root**: `scripts/build_site.R` copies them into
+`docs/` after the render. They are deliberately *not* quarto resources, because a resource keeps its
+relative path and would publish them under `export/`, moving every URL. That distinction is the whole
+reason the move is safe.
+
+Gitignoring `export/` is still stage 6's call, and it now has one more consequence to weigh:
+`tests/testthat/test-golden.R` uses the committed artefacts as its fixtures, so gitignoring them needs
+a different fixture mechanism.
 
 Working tree drops from 249 MB to roughly 110 MB, and the noisiest churn — a 9 MB `index.html` in every
 data PR — disappears entirely.

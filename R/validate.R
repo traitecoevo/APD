@@ -121,7 +121,7 @@ new_problem <- function(id, message, details = character()) {
 #' @param out_dir Directory holding the build outputs.
 #' @return An `apd_validation` object: a list of problems, each with `id`,
 #'   `message`, `details` and `severity` (`"error"` or `"known gap"`).
-validate_apd <- function(data_dir = "data", out_dir = ".") {
+validate_apd <- function(data_dir = "data", out_dir = APD_EXPORT_DIR) {
 
   problems <- list()
   add <- function(...) problems[[length(problems) + 1]] <<- new_problem(...)

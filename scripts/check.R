@@ -45,7 +45,8 @@ section <- function(title) cat(sprintf("\n%s\n", title))
 
 section("Outputs")
 
-present <- file.exists(APD_OUTPUTS)
+output_paths <- file.path(APD_EXPORT_DIR, APD_OUTPUTS)
+present <- file.exists(output_paths)
 check(paste("all", length(APD_OUTPUTS), "outputs exist"),
       all(present),
       paste("missing:", paste(APD_OUTPUTS[!present], collapse = ", ")))
@@ -55,7 +56,7 @@ if (!all(present)) {
   quit(status = 1)
 }
 
-empty <- file.size(APD_OUTPUTS) == 0
+empty <- file.size(output_paths) == 0
 check("no output is empty",
       !any(empty),
       paste("empty:", paste(APD_OUTPUTS[empty], collapse = ", ")))
@@ -71,11 +72,12 @@ section("RDF")
 # the malformation itself, and the statement counts below show what it costs.
 parseable <- list(c("APD.nq", "nquads"), c("APD.ttl", "turtle"),
                   c("APD.json", "jsonld"))
+in_export <- function(file) file.path(APD_EXPORT_DIR, file)
 
 statements <- list()
 for (spec in parseable) {
   file <- spec[[1]]
-  result <- tryCatch(length(rdflib::rdf_parse(file, format = spec[[2]])),
+  result <- tryCatch(length(rdflib::rdf_parse(in_export(file), format = spec[[2]])),
                      error = function(e) conditionMessage(e))
   ok <- is.numeric(result) && result > 0
   statements[[file]] <- if (ok) result else NA_integer_
@@ -140,7 +142,7 @@ in_git_repo <- system2("git", c("rev-parse", "--is-inside-work-tree"),
 if (!in_git_repo) {
   cat("[ info ] not a git checkout; skipping the git comparison\n")
 } else {
-  rebuilt <- system2("git", c("diff", "HEAD", "--name-only", "--", APD_OUTPUTS),
+  rebuilt <- system2("git", c("diff", "HEAD", "--name-only", "--", output_paths),
                      stdout = TRUE)
   if (length(rebuilt) == 0) {
     report("ok", "the committed artefacts match this build")

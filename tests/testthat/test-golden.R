@@ -14,7 +14,7 @@ test_that("the build reproduces every committed artefact byte for byte", {
   built <- apd_test_build()
 
   for (file in APD_OUTPUTS) {
-    committed <- file.path(APD_ROOT, file)
+    committed <- file.path(APD_ROOT, APD_EXPORT_DIR, file)
     skip_if_not(file.exists(committed),
                 paste(file, "is not committed; nothing to compare against"))
 

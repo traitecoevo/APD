@@ -52,7 +52,7 @@ test_that("every namespace in the RDF either has a prefix or is a known gap", {
   # The anti-drift check the plan asks for. It passes only because the
   # namespaces still missing a prefix are on the register in R/validate.R; adding
   # a vocabulary without declaring it will fail here.
-  problems <- validate_apd(data_dir = APD_DATA, out_dir = APD_ROOT)
+  problems <- validate_apd(data_dir = APD_DATA, out_dir = APD_EXPORT)
   undeclared <- Filter(function(p) p$id == "namespace-undeclared", problems)
 
   for (problem in undeclared) {

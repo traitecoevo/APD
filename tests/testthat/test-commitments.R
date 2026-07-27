@@ -111,7 +111,7 @@ test_that("C4: the advertised licence matches a licence file", {
 test_that("the known-gaps register only lists problems that still exist", {
   # A register that outlives its problems is worse than none: it silences checks
   # for things that were fixed. Every id on it must still be firing.
-  problems <- validate_apd(data_dir = APD_DATA, out_dir = APD_ROOT)
+  problems <- validate_apd(data_dir = APD_DATA, out_dir = APD_EXPORT)
   firing <- unique(vapply(problems, function(p) p$id, character(1)))
 
   stale <- setdiff(names(APD_KNOWN_GAPS), firing)

@@ -22,10 +22,13 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   namespaces, and annotation properties. `APD_namespace_declaration.csv` is the **only** namespace map
   the build reads — don't add a second one in `R/`.
 - **Build:** a `Makefile` at the root drives small scripts in `scripts/`, which call the functions in
-  `R/`. `make data` builds the APD from `data/`, emitting the machine-readable representations at the
-  repo root — RDF Turtle (`APD.ttl`), N-Quad (`APD.nq`), N-Triple (`APD.nt`), JSON-LD (`APD.json`) —
-  plus the derived `APD_traits.csv` and `APD_categorical_values.csv`. Nothing in the build writes to
-  `data/`, and `make check` enforces that.
+  `R/`. `make data` builds the APD from `data/` into **`export/`** — RDF Turtle (`APD.ttl`), N-Quad
+  (`APD.nq`), N-Triple (`APD.nt`), JSON-LD (`APD.json`), plus the derived `APD_traits.csv` and
+  `APD_categorical_values.csv`. Nothing in the build writes to `data/`, and `make check` enforces that.
+- **Published URLs are the contract, not repo paths.** `export/` artefacts are copied to the *site
+  root* by `scripts/build_site.R`, so `https://traitecoevo.github.io/APD/APD.ttl` and the w3id rules
+  pointing at it never move. Don't list them as quarto resources — a resource keeps its relative path,
+  which would publish them under `export/` and break every existing link. See COMMITMENTS.md C12.
 - **Website:** a Quarto website (`_quarto.yml`, `index.qmd`, `using_the_APD.qmd`, `news.md`) rendered
   to `docs/` and published via GitHub Pages at <https://traitecoevo.github.io/APD/>. The dictionary
   is also resolvable via <https://w3id.org/APD/>.
@@ -42,16 +45,15 @@ Run `make` for the list of targets:
 | `make release` | `check` + `site` + version checks + snapshot into `release/<version>/` |
 | `make export-csv` | trait YAML → CSV, for spreadsheet editing |
 | `make import-csv` | CSV → trait YAML, printing the per-trait diff |
-| `make clean` | delete the generated root artefacts |
+| `make clean` | delete `export/` and the Quarto cache |
 
 `Rscript scripts/sparql_examples.R` runs example SPARQL queries against `APD.nq`.
 
 This is a **Compendium/Bundle**, not an R package — there is no `devtools::check()` workflow.
 Default branch is `develop`; GitHub Pages deploys from `master:/docs`.
 
-> Heads-up: the root `APD.ttl`/`.nq`/`.nt`/`.json` and the two root CSVs are **generated** by
-> `make data` — edit the inputs in `data/`, then rebuild; don't hand-edit the generated files. The
-> `docs/` site is likewise built output, not hand-maintained.
+> Heads-up: everything in `export/` is **generated** by `make data` — edit the inputs in `data/`, then
+> rebuild; don't hand-edit them. The `docs/` site is likewise built output, not hand-maintained.
 
 ---
 

@@ -43,9 +43,12 @@ convert_APD_traits_input_yml_to_csv()
 # into docs/ by quarto, so the root copy is the one to take; index.html only
 # exists once rendered.
 RELEASE_FILES <- c(
-  setdiff(APD_OUTPUTS, "APD_triples.csv"),
-  "index.html" = file.path("docs", "index.html"),
-  TRAITS_CSV
+  file.path(APD_EXPORT_DIR, setdiff(APD_OUTPUTS, "APD_triples.csv")),
+  file.path("docs", "index.html"),
+  TRAITS_CSV,
+  # An input table rather than a build product, but austraits.build reads it and
+  # the paper names it, so the snapshot should carry a pinned copy.
+  file.path("data", "APD_trait_hierarchy.csv")
 )
 names(RELEASE_FILES) <- basename(RELEASE_FILES)
 

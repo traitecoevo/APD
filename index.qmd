@@ -107,12 +107,15 @@ library(dplyr)
 library(gt)
 library(purrr)
 
+source("R/build.R")
 source("R/table.R")
 source("R/helpers.R")
 source("R/create_APD_trait_table.R")
 
-triples_with_labels <- 
-  read_csv("APD_triples.csv")
+# The generated artefacts live in export/ rather than at the repo root; they are
+# still published at the site root, so the download links below are unchanged.
+triples_with_labels <-
+  read_csv(file.path(APD_EXPORT_DIR, "APD_triples.csv"), show_col_types = FALSE)
 
 base_url_traits <- "https://w3id.org/APD/traits/"
 base_url_glossary <- "https://w3id.org/APD/glossary/"
