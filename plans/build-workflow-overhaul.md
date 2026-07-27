@@ -1,7 +1,7 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** stages 0-2 landed on `refactor/build-workflow`, and stage 3 all but one item — see
-> "Where stage 3 got to" below. Everything below describes
+> **Status:** stages 0-3 landed on `refactor/build-workflow` — see "Where stage 3 got to" below.
+> Stage 4 is next. Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
 > Written 2026-07-27 from an audit of the repo at `862164d`,
@@ -400,12 +400,14 @@ Two departures from the plan as written:
   a reason; anything *not* on the register fails, and a test fails if a register entry outlives its
   problem. The register is the deliverable — see `COMMITMENTS.md`.
 
-**Still outstanding: the CSV-as-editing-view change.** `make export-csv` / `make import-csv` work and
-round-trip losslessly, but `data/APD_traits_input.csv` is still tracked rather than a gitignored
-checkout in `data/edit/`, and `min`/`max` are still unquoted doubles in the YAML rather than text. The
-`options(scipen = 999)` that formats them is now scoped to the one `as.character()` call that needs it
-(stage 2), so the *bug* is contained; what remains is the normalisation commit and the move to
-`data/edit/`.
+**The CSV-as-editing-view change landed in 9d4b235.** `data/edit/` is gitignored, the tracked CSV is
+deleted, `make release` regenerates it into the snapshot so the artefact the paper names still exists,
+and 878 `min`/`max` scalars are normalised to quoted text. `options(scipen)` is gone from the codebase.
+
+One correction to the diagnosis above: the round trip was described as "not idempotent". Measured, it
+was *already* byte-stable — the 31 differing cells are a disagreement between the YAML text and the CSV
+text, not instability in the round trip. The fix is the same either way, but the mechanism named above
+is wrong.
 
 **Stage 3 surfaced more than the audit predicted**, and it is all in `COMMITMENTS.md` under known gaps:
 five RDF syntax defects in the published 2.1.0 artefacts, including 878 allowed-value ranges that no
