@@ -1,6 +1,7 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** stages 0-2 landed on `refactor/build-workflow`; stage 3 next. Everything below describes
+> **Status:** stages 0-2 landed on `refactor/build-workflow`, and stage 3 all but one item — see
+> "Where stage 3 got to" below. Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
 > Written 2026-07-27 from an audit of the repo at `862164d`,
@@ -382,6 +383,35 @@ Three things came out of doing it that the audit had not separated out:
   `convert_to_triples.R`, the four duplicated preambles in `create_APD_trait_table.R`, fix
   `seq_along(1:nrow(x))` (4×) and `nrow(x > 0)` (3×), and delete the three dead functions in
   `helpers.R`.
+
+**Where stage 3 got to.** Landed in 98ceeb4, 39773c3, eb3327f. Done: golden regression tests,
+`validate_apd()`, the SKOS label/uniqueness checks, `test-commitments.R`, namespace single-sourcing,
+version single-sourcing, and the `R/` arithmetic fixes and dead-code removal. The licence files that
+stage 0 was supposed to add but didn't are in too.
+
+Two departures from the plan as written:
+
+- **The golden fixtures are the committed artefacts, not copies under `tests/`.** `apd_build_data()`
+  already took an `out_dir`, so a test builds into a temp directory and compares against the artefacts
+  at the repo root. Same guarantee without committing a second ~10 MB of identical bytes.
+- **Validation reports at two severities instead of only failing.** Every data problem that exists
+  today changes published output when fixed, so failing on all of them would have meant a `make check`
+  that is red on arrival and therefore ignored. `APD_KNOWN_GAPS` in `R/validate.R` enumerates them with
+  a reason; anything *not* on the register fails, and a test fails if a register entry outlives its
+  problem. The register is the deliverable — see `COMMITMENTS.md`.
+
+**Still outstanding: the CSV-as-editing-view change.** `make export-csv` / `make import-csv` work and
+round-trip losslessly, but `data/APD_traits_input.csv` is still tracked rather than a gitignored
+checkout in `data/edit/`, and `min`/`max` are still unquoted doubles in the YAML rather than text. The
+`options(scipen = 999)` that formats them is now scoped to the one `as.character()` call that needs it
+(stage 2), so the *bug* is contained; what remains is the normalisation commit and the move to
+`data/edit/`.
+
+**Stage 3 surfaced more than the audit predicted**, and it is all in `COMMITMENTS.md` under known gaps:
+five RDF syntax defects in the published 2.1.0 artefacts, including 878 allowed-value ranges that no
+conforming parser reads as numbers, and 1,371 dates typed with a relative URI. Those need a maintainer
+decision, not just a code change — the dates are `M/D/YYYY`, so fixing the datatype URI alone would
+make them invalidly typed.
 
 ### Stage 4 — The website: per-trait pages + a downloadable full document
 
