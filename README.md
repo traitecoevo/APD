@@ -40,7 +40,7 @@ This repository is the original source for the APD. It includes
 * `APD_reviewers.csv`: Table of people who have reviewed trait definitions for the APD, identified by their ORCIDs.
 * `APD_units.csv`: Table of units used in the APD, including links in the Units of Measurement ontology.
 * `APD_annotation_properties.csv`: Table of annotation properties that come from a published ontology and are used in the APD. 
-* `APD_namespace_declaration.csv`: Table of all ontologies used within APD. These may be ontologies with annotation properties used by the APD (and listed in annotation_properties.csv) or with terms (classes) used by the APD (and listed in ontology_links.csv) .
+* `APD_namespace_declaration.csv`: Prefix → URI for every ontology the APD draws on. This is the namespace declaration the build actually reads when serialising the RDF, so editing it changes how `APD.ttl` abbreviates URIs.
 * `APD_resource.csv`: Information about the two APD resources, APD/traits and APD/glossary
 * `published_classes.csv`: List of published terms referenced as keywords (or similar) within the APD.
 
@@ -103,6 +103,14 @@ https://traitecoevo.github.io/APD/release/2.1.0/APD_traits.csv  # pinned
 Use those rather than `raw.githubusercontent.com` paths — the repo layout can
 change, the published URLs do not.
 
+`make check` rebuilds and validates: it parses each RDF serialisation, confirms
+the formats agree on the size of the graph, runs `validate_apd()` and runs the
+test suite. It reports at two severities — a regression fails, while a problem
+already present in the published dictionary is listed as a known gap with a
+reason. Those are enumerated in `APD_KNOWN_GAPS` (`R/validate.R`) and explained in
+[`COMMITMENTS.md`](COMMITMENTS.md); anything *not* on that register fails, so new
+breakage cannot hide behind existing debt.
+
 `make site` creates the APD website, saved in `docs/`
   - hosting via Github pages at <https://traitecoevo.github.io/APD/>
   - created from files `index.qmd` and configured with `_quarto.yml`
@@ -130,6 +138,19 @@ curl -sH "Accept: text/html" -L https://w3id.org/APD > temp.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
 ```
+
+## Before you change something
+
+The APD is described in a published paper, and that paper is a specification —
+several of its claims are promises this repository has to keep.
+**[`COMMITMENTS.md`](COMMITMENTS.md)** records them, which are machine-checked and
+where, and which are currently unmet. Read it before changing a URI scheme, an
+output format, the licence, the set of published input tables, or where the site
+deploys.
+
+[`AGENTS.md`](AGENTS.md) is the working guide — architecture, gotchas, and the
+cross-package context. [`plans/`](plans/) holds design documents for work in
+progress.
 
 ## Licensing
 
