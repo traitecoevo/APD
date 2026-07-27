@@ -1,0 +1,41 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2021-2026 The AusTraits Plant Dictionary contributors
+
+This licence covers the **AusTraits Plant Dictionary itself** -- the vocabulary
+and the data that define it. That is:
+
+  - the input tables in `data/`
+  - the RDF serialisations `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json`
+  - the derived tables `APD_traits.csv`, `APD_categorical_values.csv` and
+    `APD_triples.csv`
+  - the published website in `docs/` and the versioned snapshots in `release/`
+
+The R code that builds them is licensed separately, under the 2-clause BSD
+licence -- see `LICENSE-CODE`.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the licence, and
+indicate if changes were made.
+
+The full legal code is at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+A plain-language summary is at:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+Attribution
+-----------
+
+Please cite the paper describing the dictionary:
+
+    Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, et al. (2024)
+    The AusTraits Plant Dictionary. Scientific Data 11:537.
+    https://doi.org/10.1038/s41597-024-03368-z
+
+and, where you depend on a specific version, the Zenodo deposit for that
+version under the concept DOI:
+
+    https://doi.org/10.5281/zenodo.8040789

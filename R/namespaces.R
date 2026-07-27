@@ -1,55 +1,61 @@
-#' Namespace prefixes used when serialising the APD to RDF
+# Namespace prefixes, read from data/APD_namespace_declaration.csv.
+#
+# Wenk et al. 2024 (p.8) says that file "serves as the namespace declaration when
+# compiling the RDF representation". Until now it did not: no code read it, the
+# real map was hardcoded in build.qmd, and the two had drifted -- 29 entries
+# against 39, only 23 URIs shared, plus a malformed `xsd` URI ending in `>`, a
+# duplicated `obo` prefix, and trailing whitespace on six schemes and one prefix.
+#
+# The file is now the single source, so the paper's claim holds. It was rewritten
+# from the hardcoded map rather than the other way round, because the hardcoded
+# map is what produced the published APD.ttl 2.1.0 -- so where the two disagreed
+# on a prefix spelling (`dwc` not `attributes`, `datacite` not `v4`, `oboecore`
+# not `oboe-core`, `SIO` not `resource`), the published spelling wins.
+
+NAMESPACE_CSV <- "data/APD_namespace_declaration.csv"
+
+#' The namespace prefixes used when serialising the APD to RDF
 #'
-#' Passed to `rdflib::rdf_serialize()` so that Turtle output carries short
-#' prefixes (`APD:trait_0000012`) instead of full URIs.
+#' Passed to `rdflib::rdf_serialize()` so Turtle output carries short prefixes
+#' (`APD:trait_0000012`) instead of full URIs.
 #'
-#' Three namespace maps exist in this repo and they have diverged. This one is
-#' the only one the build reads. The others are
-#' `data/APD_namespace_declaration.csv` -- which Wenk et al. 2024 (p.8) describes
-#' as "the namespace declaration when compiling the RDF representation", but
-#' which no code reads -- and seven base URIs hardcoded in
-#' `convert_to_triples.R`. Only 23 of the 38 URIs are shared. Stage 3 of
-#' `plans/build-workflow-overhaul.md` collapses all three onto the CSV, which is
-#' what makes the paper's claim true; until then, treat this vector as
-#' authoritative and edit it here.
-APD_NAMESPACES <- c(
-  APD = "https://w3id.org/APD/traits/",
-  APD_glossary = "https://w3id.org/APD/glossary/",
-  dc = "http://purl.org/dc/elements/1.1/",
-  skos = "http://www.w3.org/2004/02/skos/core#",
-  dwc = "http://rs.tdwg.org/dwc/terms/attributes/",
-  dcam = "http://purl.org/dc/dcam/",
-  dcterms = "http://purl.org/dc/terms/",
-  ets = "http://terminologies.gfbio.org/terms/ETS/",
-  obo = "http://purl.obolibrary.org/obo/",
-  oboecore = "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#",
-  ont = "https://w3id.org/iadopt/ont/",
-  owl = "http://www.w3.org/2002/07/owl#",
-  rdfs = "http://www.w3.org/2000/01/rdf-schema#",
-  uom = "https://w3id.org/uom/",
-  datacite = "http://purl.org/datacite/v4.4/",
-  xsd = "http://www.w3.org/2001/XMLSchema#",
-  Cerrado = "http://cerrado.linkeddata.es/ecology/",
-  CorVeg = "http://linked.data.gov.au/def/corveg-cv/",
-  CO = "https://cropontology.org/rdf/",
-  DCM = "http://dicom.nema.org/resources/ontology/DCM/",
-  EDAM = "http://edamontology.org/",
-  EFO = "http://www.ebi.ac.uk/efo/",
-  EnvThes = "http://vocabs.lter-europe.net/EnvThes/",
-  hupson = "http://scai.fraunhofer.de/HuPSON#",
-  IOBC = "http://purl.jp/bio/4/id/",
-  MESH = "http://purl.bioontology.org/ontology/MESH/",
-  odo = "http://purl.dataone.org/odo/",
-  ORCID = "https://orcid.org/",
-  SIO = "http://semanticscience.org/resource/",
-  SWEET_phenSolid = "http://sweetontology.net/phenSolid/",
-  SWEET_phenSystem = "http://sweetontology.net/phenSystem/",
-  SWEET_procWave = "http://sweetontology.net/procWave/",
-  SWEET_prop = "http://sweetontology.net/prop/",
-  SWEET_propConductivity = "http://sweetontology.net/propConductivity",
-  SWEET_propPressure = "http://sweetontology.net/propPressure/",
-  SWEET_propTime = "http://sweetontology.net/propTime/",
-  SWEET_realmSoil = "http://sweetontology.net/realmSoil/",
-  SWEET_reprSciComponent = "http://sweetontology.net/reprSciComponent/",
-  SWEET_reprTimeDay = "http://sweetontology.net/reprTimeDay/"
-)
+#' Row order is significant: librdf emits `@prefix` lines in the order it is
+#' given them, so reordering the CSV reorders the head of `APD.ttl`.
+#'
+#' @param path Path to the namespace declaration table.
+#' @return A named character vector of prefix -> URI.
+apd_namespaces <- function(path = NAMESPACE_CSV) {
+
+  declarations <- readr::read_csv(path, show_col_types = FALSE)
+
+  stopifnot(
+    "the namespace table needs `prefix` and `scheme` columns" =
+      all(c("prefix", "scheme") %in% names(declarations))
+  )
+
+  repeated <- unique(declarations$prefix[duplicated(declarations$prefix)])
+  if (length(repeated) > 0) {
+    stop("Duplicated namespace prefix(es) in ", path, ": ",
+         paste(repeated, collapse = ", "), call. = FALSE)
+  }
+
+  # The old file carried a stray `>` on the `xsd` URI, trailing spaces on six
+  # schemes, and a trailing space in the `CorVeg ` prefix. Any of those silently
+  # changes every URI built from the entry, so reject them here rather than
+  # letting them reach the serialiser.
+  malformed <- with(declarations, c(
+    prefix[grepl("[[:space:]<>]", prefix)],
+    scheme[grepl("[[:space:]<>]", scheme)]
+  ))
+  if (length(malformed) > 0) {
+    stop("Namespace entries in ", path,
+         " contain whitespace or angle brackets: ",
+         paste(sQuote(malformed), collapse = ", "), call. = FALSE)
+  }
+
+  # Whether every URI ends in a delimiter is checked by validate_apd() rather
+  # than here: `SWEET_propConductivity` does not, and correcting it changes
+  # published Turtle, so it needs its own reviewed change.
+
+  stats::setNames(declarations$scheme, declarations$prefix)
+}

@@ -46,7 +46,9 @@ apd_read_inputs <- function(data_dir = "data") {
     categorical_values =
       read_input("APD_categorical_values_input.csv") %>%
       dplyr::mutate(Entity = paste0(APD_TRAITS_BASE, identifier)),
-    resource = read_input("APD_resource.csv")
+    resource = read_input("APD_resource.csv"),
+    namespaces = apd_namespaces(file.path(data_dir,
+                                          basename(NAMESPACE_CSV)))
   )
 }
 
@@ -72,8 +74,10 @@ apd_build_triples <- function(inputs) {
 #'
 #' @param triples `triples_df` from `apd_build_triples()`.
 #' @param out_dir Directory to write into.
+#' @param namespaces Prefix -> URI map for the Turtle output, from
+#'   `apd_namespaces()`.
 #' @return The parsed RDF graph, invisibly.
-apd_write_rdf <- function(triples, out_dir = ".") {
+apd_write_rdf <- function(triples, out_dir = ".", namespaces = apd_namespaces()) {
 
   nq <- file.path(out_dir, "APD.nq")
 
@@ -90,7 +94,7 @@ apd_write_rdf <- function(triples, out_dir = ".") {
   graph <- rdflib::rdf_parse(nq, format = "nquads")
 
   rdflib::rdf_serialize(graph, file.path(out_dir, "APD.ttl"),
-                        namespace = APD_NAMESPACES)
+                        namespace = namespaces)
   rdflib::rdf_serialize(graph, file.path(out_dir, "APD.json"), format = "jsonld")
 
   invisible(graph)
@@ -119,7 +123,7 @@ apd_build_data <- function(data_dir = "data", out_dir = ".") {
     readr::write_csv(file.path(out_dir, "APD_triples.csv"))
 
   message("Serialising RDF (nq, nt, ttl, json)")
-  apd_write_rdf(triples$triples_df, out_dir)
+  apd_write_rdf(triples$triples_df, out_dir, inputs$namespaces)
 
   message("Writing APD_categorical_values.csv")
   categorical_values <- apd_categorical_values_table(inputs)

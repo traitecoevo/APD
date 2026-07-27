@@ -1,9 +1,6 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
-params:
-  version: 2.1.0
-  previous_version: 2.0.0
-format: 
+format:
   html:
     smooth-scroll: true
     toc: true
@@ -12,7 +9,14 @@ format:
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-version <- params$version
+# The version comes from DESCRIPTION and the previous one from NEWS.md, rather
+# than from `params` here. They used to be recorded in both places and had
+# drifted: DESCRIPTION said 2.0.0 while these params said 2.1.0 and drove the
+# release path.
+source("R/version.R")
+
+version <- apd_version()
+previous_version <- apd_previous_version(version)
 
 link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html>", v)
 ```
@@ -20,8 +24,8 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
 
 <dl>
 <dt> **Latest version**:</dt> <dd><https://w3id.org/APD/index.html> </dd>
-<dt> **This version**:</dt> <dd>`r link_version(params$version)`  </dd>
-<dt> **Previous version**:</dt> <dd>`r link_version(params$previous_version)` </dd>
+<dt> **This version**:</dt> <dd>`r link_version(version)`  </dd>
+<dt> **Previous version**:</dt> <dd>`r link_version(previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
 <dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
   [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
