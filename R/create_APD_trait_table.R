@@ -21,7 +21,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     mutate(property_link = NA, value_link = NA)
   
   
-  for (i in seq_along(1:nrow(trait_i))) {
+  for (i in seq_len(nrow(trait_i))) {
     trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
     trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
   }
@@ -163,7 +163,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
 
     plant_structure$value_link <- print_list2(plant_structure$value_link)
     
-    if (nrow(keywords_tmp >0)) {
+    if (nrow(keywords_tmp) > 0) {
       output <-
         add_row(output,
                 keywords_tmp$property_link[1],
@@ -313,7 +313,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
     mutate(property_link = NA, value_link = NA)
   
   
-  for (i in seq_along(1:nrow(trait_i))) {
+  for (i in seq_len(nrow(trait_i))) {
     trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
     trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
   }
@@ -346,7 +346,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
   # traits within group (has narrower)
     narrower_tmp <- trait_i %>% filter(property == "has narrower")
     
-    if (nrow(narrower_tmp > 0)) {
+    if (nrow(narrower_tmp) > 0) {
     output <-
       add_row(output, 
               narrower_tmp$property_link[1],
@@ -358,7 +358,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
   # trait grouping (has broader)
     grouping <- trait_i %>% filter(property == "has broader")
     
-    if (nrow(grouping > 0)) {
+    if (nrow(grouping) > 0) {
     output <-
       add_row(output, 
               grouping$property_link[1],
@@ -400,7 +400,7 @@ create_APD_categorical_values_table <- function(thistrait, triples_with_labels) 
     mutate(property_link = NA, value_link = NA)
   
   
-  for (i in seq_along(1:nrow(trait_i))) {
+  for (i in seq_len(nrow(trait_i))) {
     trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
     trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
   }
@@ -470,7 +470,7 @@ create_APD_trait_glossary_table <- function(thistrait, triples_with_labels) {
     mutate(property_link = NA, value_link = NA)
   
   
-  for (i in seq_along(1:nrow(trait_i))) {
+  for (i in seq_len(nrow(trait_i))) {
     trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
     trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
   }
