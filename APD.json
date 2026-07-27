@@ -32157,7 +32157,7 @@
         },
         "mg/kg"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -34017,7 +34017,7 @@
         "mg/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -37544,7 +37544,7 @@
         "mg/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "10",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -39694,7 +39694,7 @@
         "mg/mg"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-05",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.00001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -39916,7 +39916,7 @@
         "g/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-05",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.00001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -39999,7 +39999,7 @@
         "g/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -40085,7 +40085,7 @@
         "g/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -40168,7 +40168,7 @@
         "g/g"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -42955,7 +42955,7 @@
         },
         "mm2"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+07",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "10000000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -43051,7 +43051,7 @@
         },
         "mm2"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -43172,7 +43172,7 @@
         },
         "mm"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.1",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -43293,7 +43293,7 @@
         },
         "mm"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.01",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -50888,7 +50888,7 @@
         "mm2{sapwood}/mm2{leaf}"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "0.2",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-06",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.000001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -55047,7 +55047,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "{count}",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -55971,7 +55971,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "{count}",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -57608,8 +57608,8 @@
         },
         "mg"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -58848,8 +58848,8 @@
         },
         "mg"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.00001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -58979,8 +58979,8 @@
         },
         "mg"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.00001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -59108,8 +59108,8 @@
         },
         "mg"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.00001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
@@ -59592,7 +59592,7 @@
         },
         "mm3"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -59664,7 +59664,7 @@
         "@id": "http://purl.obolibrary.org/obo/GO_0000003"
       },
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "{count}",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -63221,7 +63221,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "N/m2",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "3e+07",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "30000000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1000",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -63655,7 +63655,7 @@
         },
         "MPa"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -63736,7 +63736,7 @@
         },
         "MPa"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -63821,7 +63821,7 @@
         },
         "MPa"
       ],
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+05",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "100000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -67612,7 +67612,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "s/m",
-      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1e+06",
+      "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "1000000",
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "10",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
@@ -68255,7 +68255,7 @@
         "mmol{H2O}/m2/s"
       ],
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": "10",
-      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "1e-04",
+      "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": "0.0001",
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
       },
