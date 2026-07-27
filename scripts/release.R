@@ -31,7 +31,23 @@ message("Releasing version ", version,
 # copy written here as well; it is now populated on render instead, because
 # _quarto.yml lists `release` as a site resource.
 
-RELEASE_FILES <- c(APD_OUTPUTS[APD_OUTPUTS != "APD_triples.csv"], "index.html")
+# APD_traits_input.csv is no longer tracked in git -- the YAML is the source of
+# truth and a second tracked copy is a second source of truth. But Wenk et al.
+# 2024 documents it by name, with its columns in Tables S2-S12, so the artefact
+# the paper describes has to keep existing and being citable. Regenerate it here
+# so every release and Zenodo deposit carries it.
+message("Exporting ", basename(TRAITS_CSV), " for the release")
+convert_APD_traits_input_yml_to_csv()
+
+# Where each release file is found. Everything built at the root is also copied
+# into docs/ by quarto, so the root copy is the one to take; index.html only
+# exists once rendered.
+RELEASE_FILES <- c(
+  setdiff(APD_OUTPUTS, "APD_triples.csv"),
+  "index.html" = file.path("docs", "index.html"),
+  TRAITS_CSV
+)
+names(RELEASE_FILES) <- basename(RELEASE_FILES)
 
 to_path <- file.path("release", version)
 
@@ -48,14 +64,12 @@ if (dir.exists(to_path) && length(list.files(to_path)) > 0 &&
 
 dir.create(to_path, showWarnings = FALSE, recursive = TRUE)
 
-for (file in RELEASE_FILES) {
-  # index.html only exists once rendered; everything else is built at the root
-  # and copied into docs/ by quarto, so take the root copy where there is one.
-  from <- if (file.exists(file)) file else file.path("docs", file)
+for (name in names(RELEASE_FILES)) {
+  from <- RELEASE_FILES[[name]]
   if (!file.exists(from)) {
-    stop("Missing ", file, " -- run `make site` first.", call. = FALSE)
+    stop("Missing ", from, " -- run `make site` first.", call. = FALSE)
   }
-  file.copy(from, file.path(to_path, file), overwrite = TRUE)
+  file.copy(from, file.path(to_path, name), overwrite = TRUE)
 }
 
 message("Snapshotted ", length(RELEASE_FILES), " files into ", to_path, "/")

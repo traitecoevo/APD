@@ -12,3 +12,6 @@ ignore
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Spreadsheet checkout of data/APD_traits_input.yml -- see `make export-csv`
+data/edit/

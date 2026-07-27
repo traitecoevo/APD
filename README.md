@@ -28,9 +28,11 @@ This repository is the original source for the APD. It includes
 11 files are stored in `data/` and are used to generate the APD. These files are:
 
 * `APD_traits_input.yml`: The core table of trait definitions, and the source of
-  truth for them. `APD_traits_input.csv` is a spreadsheet-friendly view of the
-  same 559 traits, produced by `make export-csv` and read back by
-  `make import-csv`.
+  truth for them. `make export-csv` checks out a spreadsheet-friendly view of the
+  same 559 traits as `data/edit/APD_traits_input.csv`, and `make import-csv`
+  writes your edits back. That CSV is **not** tracked in git — a second tracked
+  copy of the same data would be a second source of truth — but it is still
+  published, as part of each release snapshot.
 * `APD_trait_hierarchy.csv`: Table documenting a trait hierarchy into which traits in the APD are mapped.
 * `APD_categorical_values_input.csv`: Table of allowable categorical trait values for categorical traits within the APD.
 * `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies.
@@ -74,7 +76,7 @@ Each target runs a script in `scripts/`, which calls functions in `R/`. To edit
 trait definitions in a spreadsheet rather than in the YAML:
 
 ```bash
-make export-csv  # data/APD_traits_input.yml -> data/APD_traits_input.csv
+make export-csv  # data/APD_traits_input.yml -> data/edit/APD_traits_input.csv
                  # edit the CSV in Excel or similar
 make import-csv  # write the edits back to the YAML and print what changed
 make check

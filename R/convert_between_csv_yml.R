@@ -1,12 +1,22 @@
 # Trait definitions live in `data/APD_traits_input.yml`, which is the source of
-# truth. `data/APD_traits_input.csv` is a spreadsheet-friendly view of the same
-# 559 traits, produced by `make export-csv` and read back by `make import-csv`.
+# truth. `data/edit/APD_traits_input.csv` is a spreadsheet-friendly checkout of
+# the same 559 traits: `make export-csv` writes it, `make import-csv` reads it
+# back. It is gitignored, so it is an explicit checkout rather than a second
+# tracked copy the build could silently rewrite.
+#
+# Every field is text on both sides of the round trip, which is what makes it
+# lossless. `min`/`max` used to be YAML doubles, and `yaml::as.yaml()` and
+# `readr::write_csv()` format doubles differently -- `1.0e-05` against
+# `0.00001` -- so the two files parsed to the same numbers but could never
+# converge textually. These values only ever end up inside an RDF literal or a
+# CSV cell, so text is the honest representation, and neither formatter gets a
+# say in it.
 #
 # The build itself reads the YAML and writes nothing to `data/` -- see
 # `apd_read_traits_yml()`.
 
 TRAITS_YML <- "data/APD_traits_input.yml"
-TRAITS_CSV <- "data/APD_traits_input.csv"
+TRAITS_CSV <- "data/edit/APD_traits_input.csv"
 
 # The 46 trait fields, in the order they appear in the spreadsheet view.
 TRAITS_COLUMNS <- c(
@@ -28,16 +38,11 @@ convert_list_to_df3 <- function(my_list, as_character = TRUE, on_empty = NA) {
     return(on_empty)
 
   if (as_character) {
-    # `min`/`max` arrive from the YAML as doubles, and this is where they become
-    # the text that ends up in an RDF literal: without scipen, as.character(1e5)
-    # gives "1e+05" rather than the "100000" the published dictionary carries.
-    # It used to be set globally here and never restored, so every later
-    # write_csv() in the build inherited it. Stage 3 of
-    # plans/build-workflow-overhaul.md removes the need for it by quoting those
-    # scalars in the YAML.
-    old_options <- options(scipen = 999)
-    on.exit(options(old_options), add = TRUE)
-
+    # Every scalar in the YAML is quoted text, so this is a no-op for `min`/`max`
+    # rather than a formatting decision. It used to be the point at which doubles
+    # became text, which made the published RDF literals depend on
+    # `options(scipen = 999)` -- set here and never restored, so every later
+    # write_csv() in the build inherited it too.
     my_list <- lapply(my_list, lapply, as.character)
   }
 
@@ -83,6 +88,7 @@ convert_APD_traits_input_yml_to_csv <- function(yml_file = TRAITS_YML, csv_file 
 
   traits <- apd_read_traits_yml(yml_file)
 
+  dir.create(dirname(csv_file), showWarnings = FALSE, recursive = TRUE)
   readr::write_csv(traits, csv_file, na = "")
 
   invisible(traits)
@@ -98,11 +104,14 @@ convert_APD_traits_input_yml_to_csv <- function(yml_file = TRAITS_YML, csv_file 
 #' @return The path written, invisibly.
 convert_APD_traits_input_csv_to_yml <- function(csv_file = TRAITS_CSV, yml_file = TRAITS_YML) {
 
-  # Column types are guessed, which is what produced the numeric `min: 0.01`
-  # scalars already in the YAML. Reading them as text instead would be more
-  # faithful but would requote every numeric in the file; that normalisation is
-  # Stage 3's, along with the fix for the min/max formatting drift.
-  traits_input <- readr::read_csv(csv_file, show_col_types = FALSE)
+  # Read every column as text, so the round trip is a fixed point. Guessing types
+  # instead is what used to make it lossy: readr parsed `0.00001` as a double and
+  # yaml::as.yaml() wrote it back as `1.0e-05`, so YAML and CSV agreed on the
+  # number but could never agree on the text.
+  traits_input <- readr::read_csv(
+    csv_file,
+    col_types = readr::cols(.default = readr::col_character())
+  )
 
   traits_list <- traits_input %>%
     split(traits_input$identifier) %>%

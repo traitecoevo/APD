@@ -11,11 +11,16 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   described in a published paper (Wenk et al. 2024), and that paper is a specification — several of its
   claims are promises this repo has to keep, and some are currently broken.
 - **Source data:** `data/` holds the inputs that define the dictionary. **Trait definitions live in
-  `APD_traits_input.yml`, which is the source of truth** — `APD_traits_input.csv` is a derived
-  spreadsheet-friendly view of the same 559 traits (YAML was adopted in #43 because CSV diffs were
-  unreviewable). The remaining inputs are CSVs: allowable categorical values
+  `APD_traits_input.yml`, which is the source of truth** — YAML was adopted in #43 because CSV diffs
+  were unreviewable. `make export-csv` checks out a spreadsheet view at `data/edit/APD_traits_input.csv`
+  (gitignored) and `make import-csv` writes it back; the round trip is byte-lossless and tested. Every
+  scalar in the YAML is quoted text, including `min`/`max` — they end up in RDF literals, so text is
+  what they are, and storing them as doubles made the published values depend on `options(scipen)`.
+
+  The remaining inputs are CSVs: allowable categorical values
   (`APD_categorical_values_input.csv`), the trait hierarchy, glossary, units, references, reviewers,
-  namespaces, and annotation properties.
+  namespaces, and annotation properties. `APD_namespace_declaration.csv` is the **only** namespace map
+  the build reads — don't add a second one in `R/`.
 - **Build:** a `Makefile` at the root drives small scripts in `scripts/`, which call the functions in
   `R/`. `make data` builds the APD from `data/`, emitting the machine-readable representations at the
   repo root — RDF Turtle (`APD.ttl`), N-Quad (`APD.nq`), N-Triple (`APD.nt`), JSON-LD (`APD.json`) —
