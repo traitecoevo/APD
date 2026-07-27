@@ -43,7 +43,15 @@ apd_local_target <- function(url,
     return(if (kind == "traits") "#trait-concepts" else "#glossary")
   }
 
-  if (nzchar(slug)) paste0(rel, kind, "/", slug, ".html") else paste0(rel, kind, "/")
+  if (nzchar(slug)) {
+    return(paste0(rel, kind, "/", slug, ".html"))
+  }
+
+  # A bare scheme URI (`.../APD/traits`, `.../APD/glossary`) names the whole
+  # vocabulary rather than an entity, so there is no entity page for it. Send it
+  # to the browse index; `rel` + "traits/" would be a directory with nothing in
+  # it, which is how this was found.
+  paste0(rel, "index.html")
 }
 
 #' Build a link, resolving APD URIs to local targets

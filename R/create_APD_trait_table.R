@@ -32,7 +32,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
     add_row(output, "URI", trait_i$Subject[1])
   
   # label
-    label <- trait_i %>% filter(property == "label")
+    label <- trait_i %>% filter(property == "preferred label")
     
     output <-
       add_row(output,
@@ -324,7 +324,7 @@ create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
     add_row(output, "URI", trait_i$Subject[1])
   
   # label
-    label_tmp <- trait_i %>% filter(property == "label")
+    label_tmp <- trait_i %>% filter(property == "preferred label")
     
     output <-
       add_row(output,
@@ -411,7 +411,7 @@ create_APD_categorical_values_table <- function(thistrait, triples_with_labels) 
     add_row(output, "URI", trait_i$Subject[1])
   
   # label
-  label_tmp <- trait_i %>% filter(property == "label")
+  label_tmp <- trait_i %>% filter(property == "preferred label")
   
   output <-
     add_row(output,
@@ -481,7 +481,7 @@ create_APD_trait_glossary_table <- function(thistrait, triples_with_labels) {
     add_row(output, "URI", trait_i$Subject[1])
   
   # label
-  label_tmp <- trait_i %>% filter(property == "label")
+  label_tmp <- trait_i %>% filter(property == "preferred label")
   
   output <-
     add_row(output,

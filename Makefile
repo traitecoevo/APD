@@ -10,7 +10,7 @@
 
 R := Rscript
 
-.PHONY: help data check site release export-csv import-csv clean
+.PHONY: help data check site pages release export-csv import-csv clean
 
 help:  ## Show this help
 	@echo "APD -- make targets:"
@@ -27,13 +27,17 @@ data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSV
 check: data  ## Validate the built dictionary and run the tests
 	$(R) scripts/check.R
 
-site: data  ## Render the website into docs/ (slow; needs network)
+site: data  ## Render the website into docs/, then the per-entity pages (needs network)
 	$(R) scripts/build_site.R
+	$(R) scripts/build_pages.R
+
+pages: data  ## Write just the per-entity pages into docs/ (quarto empties docs/, so run after `site`)
+	$(R) scripts/build_pages.R
 
 release: check site  ## Check the version, then snapshot into release/<version>/
 	$(R) scripts/release.R
 
-export-csv:  ## Export trait definitions to data/APD_traits_input.csv for editing
+export-csv:  ## Export trait definitions to data/edit/ for spreadsheet editing
 	$(R) scripts/export_csv.R
 
 import-csv:  ## Import edited CSV back into data/APD_traits_input.yml
