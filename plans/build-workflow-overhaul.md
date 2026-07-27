@@ -8,6 +8,17 @@
 > this branch the next step, not an afterthought. Stage 6 (CI) is what makes the deploy repeatable, so
 > it may be worth doing before stage 5 rather than after.
 >
+> **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
+> asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
+> `1e+05` to `100000`, numerically identical, with no trait, URI, label, description or allowable value
+> touched. So `develop` → `master` is a plain merge. `docs/` is committed on the branch (`3a773c6`)
+> because Pages serves `master:/docs` and there is no Actions deploy yet — that is stage 6.
+>
+> One artefact of skipping the release: afterwards the *latest* URLs carry `100000` where the *pinned*
+> `release/2.1.0/` URLs still carry `1e+05`, both labelled 2.1.0. Nothing downstream is affected
+> (`austraits.build` reads the pinned URL), and the next release closes it. `release/2.1.0/` is
+> deliberately untouched so the snapshot Zenodo archived stays as published.
+>
 > Everything below describes
 > the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
 > longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
