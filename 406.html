@@ -1,10 +1,33 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>406 Not Acceptable</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>406 Not Acceptable — AusTraits Plant Dictionary</title>
+<link rel="stylesheet" href="apd.css">
 </head>
 <body>
-<h1>Not Acceptable</h1>
-<p>An appropriate representation of the requested resource could not be found on this server.</p>
- Available variants:<ul><li><a href="index-en.html">html</a></li><li><a href="ontology.json">JSON-LD</a></li><li><a href="ontology.xml">RDF/XML</a></li><li><a href="ontology.nt">N-Triples</a></li><li><a href="ontology.ttl">TTL</a></li></ul>
-
-</body></html>
+<header>
+<a class="apd-home" href="index.html">AusTraits Plant Dictionary</a>
+</header>
+<main>
+<p class="apd-kicker">406 Not Acceptable</p>
+<h1>No representation matched your request</h1>
+<p>Content negotiation against <code>https://w3id.org/APD/</code> could not find a
+representation matching the <code>Accept</code> header you sent. The dictionary is
+published in these formats:</p>
+<dl class="apd-properties">
+<dt><a href="index.html">HTML</a></dt><dd>Browse the traits, or read the <a href="full.html">full dictionary</a> as one document. <code>text/html</code></dd>
+<dt><a href="APD.ttl">Turtle</a></dt><dd><code>text/turtle</code></dd>
+<dt><a href="APD.nt">N-Triples</a></dt><dd><code>application/n-triples</code></dd>
+<dt><a href="APD.nq">N-Quads</a></dt><dd><code>application/n-quads</code></dd>
+<dt><a href="APD.json">JSON-LD</a></dt><dd><code>application/ld+json</code></dd>
+<dt><a href="APD_traits.csv">Trait table</a></dt><dd>CSV. See also <a href="APD_categorical_values.csv">categorical values</a>.</dd>
+</dl>
+<p><a href="using_the_APD.html">Using the APD</a> has worked examples for each.</p>
+</main>
+<footer>
+<p>Definitions licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+</footer>
+</body>
+</html>

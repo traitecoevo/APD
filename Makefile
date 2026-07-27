@@ -10,7 +10,7 @@
 
 R := Rscript
 
-.PHONY: help data check site pages release export-csv import-csv clean
+.PHONY: help data check check-pages site pages release export-csv import-csv clean
 
 help:  ## Show this help
 	@echo "APD -- make targets:"
@@ -26,6 +26,9 @@ data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSV
 
 check: data  ## Validate the built dictionary and run the tests
 	$(R) scripts/check.R
+
+check-pages:  ## Confirm every published identifier has a page (gate for stage 5)
+	$(R) scripts/check_pages.R
 
 site: data  ## Render the website into docs/, then the per-entity pages (needs network)
 	$(R) scripts/build_site.R

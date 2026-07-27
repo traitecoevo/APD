@@ -8,10 +8,20 @@ project:
     - "APD_traits.csv"
     - "APD_categorical_values.csv"
     - "406.html"
+    # Mandatory now that docs/ has directories quarto/jekyll would otherwise
+    # treat as special, and site_libs/ leading with an underscore.
+    - ".nojekyll"
+    # Copying the ~100 MB snapshot tree on every render is wasteful, and stage 6
+    # of plans/build-workflow-overhaul.md moves it to the deploy step. It has to
+    # stay here until then: w3id.org/APD/release/<version>/index.html is a live
+    # published permalink, Pages serves it from master:/docs, and dropping this
+    # line makes every versioned permalink 404 on the next deploy. That change
+    # needs the verification gate stage 6 describes, not a quiet edit here.
     - release
   output-dir: docs
   render:
     - index.qmd
+    - full.qmd
     - using_the_APD.qmd
     - NEWS.md
 
@@ -27,6 +37,8 @@ website:
     left:
       - href: index.html
         text: Home
+      - href: full.html
+        text: Full dictionary
       - href: using_the_APD.html
         text: Using the APD
       - href: https://vocabs.ardc.edu.au/viewById/649
@@ -39,9 +51,12 @@ website:
         href: https://github.com/traitecoevo/APD/
       - href: http://austraits.org
         text: AusTraits Project
-    
-    page-footer:
-      - right: "This blog is built with [Quarto](https://quarto.org/)."
+
+  page-footer:
+    center: |
+      Built with [Quarto](https://quarto.org/). Definitions licensed
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 
 format:
   html:
