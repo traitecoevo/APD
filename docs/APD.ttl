@@ -13142,7 +13142,7 @@ APD:trait_0000142
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28112, obo:ENVO_01000628, obo:PATO_0001487 ;
     ets:expectedUnit <https://w3id.org/uom/mg.kg-1>, "mg/kg" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -13617,7 +13617,7 @@ APD:trait_0000626
     SIO:SIO_000147 obo:CHEBI_27027, obo:CHEBI_28694 ;
     ets:expectedUnit <https://w3id.org/uom/mg.g-1>, "mg/g" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "bark_Cu_per_dry_mass" ;
@@ -14547,7 +14547,7 @@ APD:trait_0001671
     SIO:SIO_000147 obo:CHEBI_28659, obo:CHEBI_33937, obo:NCIT_C61154 ;
     ets:expectedUnit <https://w3id.org/uom/mg.g-1>, "mg/g" ;
     ets:maxAllowedValue "10" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "leaf_metabolite_P_per_dry_mass" ;
@@ -15156,7 +15156,7 @@ APD:trait_0002255
     SIO:SIO_000147 obo:CHEBI_26195, obo:CHEBI_26848 ;
     ets:expectedUnit <https://w3id.org/uom/mg.mg-1>, "mg/mg" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-05" ;
+    ets:minAllowedValue "0.00001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "bark_tannin_per_dry_mass" ;
@@ -15216,7 +15216,7 @@ APD:trait_0002534
     SIO:SIO_000147 obo:CHEBI_36080, obo:TO_0000181 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-05" ;
+    ets:minAllowedValue "0.00001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "seed_protein_per_seed_dry_mass" ;
@@ -15239,7 +15239,7 @@ APD:trait_0002544
     SIO:SIO_000147 obo:CHEBI_18059, obo:TO_0000181 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "seed_oil_per_seed_dry_mass" ;
@@ -15261,7 +15261,7 @@ APD:trait_0002822
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "leaf_ash_per_dry_mass" ;
@@ -15283,7 +15283,7 @@ APD:trait_0002824
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
     ets:expectedUnit <https://w3id.org/uom/g.g-1>, "g/g" ;
     ets:maxAllowedValue "1" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "bark_ash_per_dry_mass" ;
@@ -15946,7 +15946,7 @@ APD:trait_0011211
     dcterms:reviewed "31/10/2022"^^<xsd:date> ;
     SIO:SIO_000147 obo:PO_0020038, obo:PO_0020039, obo:PO_0020049, obo:PO_0025335, obo:PO_0025354 ;
     ets:expectedUnit uom:mm2, "mm2" ;
-    ets:maxAllowedValue "1e+07" ;
+    ets:maxAllowedValue "10000000" ;
     ets:minAllowedValue "0.1" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -15970,7 +15970,7 @@ APD:trait_0011212
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:PO_0020039, obo:PO_0020049 ;
     ets:expectedUnit uom:mm2, "mm2" ;
-    ets:maxAllowedValue "1e+06" ;
+    ets:maxAllowedValue "1000000" ;
     ets:minAllowedValue "0.1" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -15995,7 +15995,7 @@ APD:trait_0011213
     dcterms:reviewed "31/10/2022"^^<xsd:date> ;
     SIO:SIO_000147 obo:PO_0020038, obo:PO_0020039, obo:PO_0020040, obo:PO_0020137 ;
     ets:expectedUnit uom:mm, "mm" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "0.1" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -16021,7 +16021,7 @@ APD:trait_0011214
     dcterms:reviewed "31/10/2022"^^<xsd:date> ;
     SIO:SIO_000147 obo:PO_0020039 ;
     ets:expectedUnit uom:mm, "mm" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "0.01" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -17740,7 +17740,7 @@ APD:trait_0011911
     SIO:SIO_000147 obo:PO_0004513, <http://vocabs.lter-europe.net/EnvThes/21360> ;
     ets:expectedUnit <https://w3id.org/uom/mm2.mm-2>, "mm2{sapwood}/mm2{leaf}" ;
     ets:maxAllowedValue "0.2" ;
-    ets:minAllowedValue "1e-06" ;
+    ets:minAllowedValue "0.000001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "huber_value" ;
@@ -18749,7 +18749,7 @@ APD:trait_0012422
     dcterms:reviewed "24/05/2023"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009058, obo:PO_0009059 ;
     ets:expectedUnit "{count}" ;
-    ets:maxAllowedValue "1e+06" ;
+    ets:maxAllowedValue "1000000" ;
     ets:minAllowedValue "0" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -18956,7 +18956,7 @@ APD:trait_0012445
     dcterms:reviewed "24/05/2023"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003, obo:PO_0009030, obo:PO_0009062, obo:PO_0009072, obo:PO_0020003 ;
     ets:expectedUnit "{count}" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "0" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -19316,8 +19316,8 @@ APD:trait_0012511
     dcterms:reviewed "30/11/2021"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003 ;
     ets:expectedUnit uom:mg, "mg" ;
-    ets:maxAllowedValue "1e+06" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:maxAllowedValue "1000000" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "fruit_dry_mass" ;
@@ -19542,8 +19542,8 @@ APD:trait_0012610
     dcterms:reviewed "30/11/2021"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003 ;
     ets:expectedUnit uom:mg, "mg" ;
-    ets:maxAllowedValue "1e+06" ;
-    ets:minAllowedValue "1e-05" ;
+    ets:maxAllowedValue "1000000" ;
+    ets:minAllowedValue "0.00001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "seed_dry_mass" ;
@@ -19568,8 +19568,8 @@ APD:trait_0012611
     dcterms:reviewed "30/11/2021"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003, <http://vocabs.lter-europe.net/EnvThes/21038>, <http://vocabs.lter-europe.net/EnvThes/21042> ;
     ets:expectedUnit uom:mg, "mg" ;
-    ets:maxAllowedValue "1e+06" ;
-    ets:minAllowedValue "1e-05" ;
+    ets:maxAllowedValue "1000000" ;
+    ets:minAllowedValue "0.00001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "diaspore_dry_mass" ;
@@ -19593,8 +19593,8 @@ APD:trait_0012612
     dcterms:reviewed "30/11/2021"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003, obo:PATO_0001021, obo:PO_0009009, obo:PO_0009089, <http://vocabs.lter-europe.net/EnvThes/20698>, EFO:EFO_0000997 ;
     ets:expectedUnit uom:mg, "mg" ;
-    ets:maxAllowedValue "1e+05" ;
-    ets:minAllowedValue "1e-05" ;
+    ets:maxAllowedValue "100000" ;
+    ets:minAllowedValue "0.00001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "seed_dry_mass_reserve" ;
@@ -19692,7 +19692,7 @@ APD:trait_0012616
     dcterms:reviewed "30/11/2021"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003 ;
     ets:expectedUnit uom:mm3, "mm3" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "0.001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -19713,7 +19713,7 @@ APD:trait_0012617
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0000003 ;
     ets:expectedUnit "{count}" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "0" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -20434,7 +20434,7 @@ APD:trait_0014012
     dcterms:references <https://doi.org/10.1046/j.1442-9993.2001.01154.x> ;
     SIO:SIO_000147 MESH:D019245, obo:PATO_0001230, obo:PO_0020039, SWEET_phenSolid:Fracture, APD_glossary:glossary_40088 ;
     ets:expectedUnit "N/m2" ;
-    ets:maxAllowedValue "3e+07" ;
+    ets:maxAllowedValue "30000000" ;
     ets:minAllowedValue "1000" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -20543,7 +20543,7 @@ APD:trait_0014017
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:PATO_0001031, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -20564,7 +20564,7 @@ APD:trait_0014018
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005848, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -20586,7 +20586,7 @@ APD:trait_0014019
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:PATO_0001031, obo:PO_0005352, obo:PO_0005848, SWEET_phenSolid:Deform, SWEET_propPressure:ModulusOfElasticity ;
     ets:expectedUnit uom:MPa, "MPa" ;
-    ets:maxAllowedValue "1e+05" ;
+    ets:maxAllowedValue "100000" ;
     ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -21483,7 +21483,7 @@ APD:trait_0020630
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000451, obo:NCIT_C82333, obo:PO_0008032, <http://vocabs.lter-europe.net/EnvThes/21211>, APD_glossary:glossary_40006 ;
     ets:expectedUnit "s/m" ;
-    ets:maxAllowedValue "1e+06" ;
+    ets:maxAllowedValue "1000000" ;
     ets:minAllowedValue "10" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
@@ -21634,7 +21634,7 @@ APD:trait_0020663
     SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_02500035, obo:NCIT_C63390, obo:PATO_0000327, obo:PO_0008032 ;
     ets:expectedUnit <https://w3id.org/uom/umol.m-2.s-1>, "mmol{H2O}/m2/s" ;
     ets:maxAllowedValue "10" ;
-    ets:minAllowedValue "1e-04" ;
+    ets:minAllowedValue "0.0001" ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "leaf_dark_transpiration_per_area" ;
