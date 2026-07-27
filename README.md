@@ -27,7 +27,10 @@ This repository is the original source for the APD. It includes
 
 11 files are stored in `data/` and are used to generate the APD. These files are:
 
-* `APD_traits_input.csv`: The core table of trait definitions.
+* `APD_traits_input.yml`: The core table of trait definitions, and the source of
+  truth for them. `APD_traits_input.csv` is a spreadsheet-friendly view of the
+  same 559 traits, produced by `make export-csv` and read back by
+  `make import-csv`.
 * `APD_trait_hierarchy.csv`: Table documenting a trait hierarchy into which traits in the APD are mapped.
 * `APD_categorical_values_input.csv`: Table of allowable categorical trait values for categorical traits within the APD.
 * `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies.
@@ -58,14 +61,36 @@ Each trait includes the following fields:
 
 ## Instructions for building the APD
 
-The code in `build.qmd` builds the APD from the data files in `data/`, including:
+Everything runs through `make`. Run `make` on its own for the list of targets.
 
-- generated machine-readable representations of the APD, including
+```bash
+make data        # build the dictionary from data/
+make check       # validate the built dictionary
+make site        # render the website into docs/
+make release     # check the version, then snapshot into release/<version>/
+```
+
+Each target runs a script in `scripts/`, which calls functions in `R/`. To edit
+trait definitions in a spreadsheet rather than in the YAML:
+
+```bash
+make export-csv  # data/APD_traits_input.yml -> data/APD_traits_input.csv
+                 # edit the CSV in Excel or similar
+make import-csv  # write the edits back to the YAML and print what changed
+make check
+```
+
+`make data` builds from the data files in `data/`, producing:
+
+- machine-readable representations of the APD, including
   - RDF Turtle: `APD.ttl`,
   - N-Quad: `APD.nq`, 
   - N-Triple: `APD.nt`, 
   - JSON Linked Data format: `APD.json`
-- create the APD website, saved in `docs/`
+- the two flat tables downstream packages read: `APD_traits.csv` and
+  `APD_categorical_values.csv`
+
+`make site` creates the APD website, saved in `docs/`
   - hosting via Github pages at <https://traitecoevo.github.io/APD/>
   - created from files `index.qmd` and configured with `_quarto.yml`
   - uses the `quarto` package for R, with instructions on formatting from <https://quarto.org/docs/reference/projects/websites.html

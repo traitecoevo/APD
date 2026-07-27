@@ -26,7 +26,7 @@ for the downstream ripple when the vocabulary itself changes.
 | C2 | `data/APD_namespace_declaration.csv` is the namespace declaration used when compiling the RDF representation. | p.8 | `test-namespaces.R` *(planned)* |
 | C3 | `APD.ttl` passes SKOS validation: relationships consistent, all URIs unique, all concepts labelled. | p.13 | `make check` *(planned)* |
 | C4 | The data are available under **CC BY 4.0**. | p.12 | manual — see gap below |
-| C5 | The dictionary is published simultaneously in human-readable and machine-readable form: a compiled human-readable HTML document, plus `APD.ttl`, `APD.nt`, `APD.nq` and `APD.json`. | p.11-12 | `make site` *(planned)* |
+| C5 | The dictionary is published simultaneously in human-readable and machine-readable form: a compiled human-readable HTML document, plus `APD.ttl`, `APD.nt`, `APD.nq` and `APD.json`. | p.11-12 | `make check` — each serialisation parses and holds the same number of statements. See gap below. |
 | C6 | The derived tables `APD_traits.csv` and `APD_categorical_values.csv` are published, with the columns documented in Tables 5 and 6. | p.12 | golden fixtures *(planned)* |
 | C7 | The input tables named in the paper are published and citable. | p.8, Fig. 4 | release artefacts *(planned)* |
 | C8 | A copy of `APD.ttl` is archived and discoverable at ARDC Research Vocabularies Australia. | Fig. 4 | release checklist |
@@ -60,12 +60,18 @@ Audited against the live service. Tracked by epic
   ```
 
 - **C2 — not true.** No code reads `data/APD_namespace_declaration.csv`. The namespace map actually
-  used is hardcoded in `build.qmd`, and the two have diverged: 38 entries vs 29, only 23 URIs shared.
-  The unused file also contains a malformed URI (`http://www.w3.org/2001/XMLSchema#>`) and a duplicated
-  `obo` prefix.
+  used is `APD_NAMESPACES` in `R/namespaces.R`, and the two have diverged: 38 entries vs 29, only 23
+  URIs shared. The unused file also contains a malformed URI (`http://www.w3.org/2001/XMLSchema#>`)
+  and a duplicated `obo` prefix.
 
 - **C3 — not reproducible.** The SKOS validation described in the paper was a one-off. No validator
   exists in the repo, so the claim decays with every release.
+
+- **C5 — `APD.nt` is malformed.** Every one of its 27,523 statements is missing the closing `.` that
+  N-Triples requires. `APD.nt` is written by dropping the `graph` column from the N-Quads table, and
+  that column was doubling as the statement terminator. librdf is lenient enough to recover 26,625
+  statements, so the file looks usable, but it silently loses 878 of the 27,503 in `APD.nq`. Found by
+  the new `make check`; the fix changes published output, so it needs its own PR and a `NEWS.md` entry.
 
 - **C4 — unenforceable.** `index.qmd` advertises CC BY 4.0 and the paper states it, but **no licence
   file exists in the repo** and `DESCRIPTION` says `BSD_2_clause + file LICENCE` (referencing a file

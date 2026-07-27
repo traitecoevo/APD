@@ -4,10 +4,11 @@
 *.tex
 *.pdf
 *_files
-build.html
 factsheets
 ignore
 .Rproj.user
 .Rhistory
 .RData
 /.quarto/
+
+**/*.quarto_ipynb

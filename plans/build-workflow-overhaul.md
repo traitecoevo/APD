@@ -1,6 +1,9 @@
 # APD: streamline the dictionary build & publishing workflow
 
-> **Status:** approved, not yet started. Written 2026-07-27 from an audit of the repo at `862164d`,
+> **Status:** stages 0-2 landed on `refactor/build-workflow`; stage 3 next. Everything below describes
+> the repo **as audited**, so file/line references from Stage 0 onwards are historical — `build.qmd` no
+> longer exists, and the pipeline it describes now lives in `Makefile` + `scripts/` + `R/`.
+> Written 2026-07-27 from an audit of the repo at `862164d`,
 > the live site, the live [w3id.org redirect config](https://github.com/perma-id/w3id.org/blob/master/APD/.htaccess),
 > and Wenk et al. 2024 (*Sci Data* 11:537, [doi:10.1038/s41597-024-03368-z](https://doi.org/10.1038/s41597-024-03368-z)).
 > All measurements below were taken directly, not estimated.
@@ -296,6 +299,28 @@ Layout: `Makefile` at the root driving small scripts in `scripts/`, with the log
 over `{targets}` — the expensive step is the Quarto render, which `targets` does not help with, and the
 maintainers are a domain scientist and a developer, not a targets user. `build.qmd` becomes a thin
 narrative document that calls the same functions, or is deleted.
+
+**Landed.** `build.qmd` was deleted rather than kept as narrative: a second entry point that calls the
+same functions is a second thing to keep in sync, and the Makefile's `help` target now serves that
+purpose. Its commented-out SPARQL queries were preserved, and made runnable, as
+`scripts/sparql_examples.R`.
+
+Three things came out of doing it that the audit had not separated out:
+
+- **`options(scipen = 999)` was load-bearing.** It was set globally by
+  `convert_APD_traits_input_yml_to_csv()` and never restored, and the audit read that as a stray side
+  effect. It is not: `min`/`max` become text in `convert_list_to_df3()`'s `as.character()` call, and
+  without `scipen` the published RDF carries `"1e+05"` where it currently carries `"100000"`. It now
+  lives, restored on exit, next to the `as.character()` it governs. Verified by the seven outputs coming
+  out byte-identical.
+- **`APD.nt` is malformed** — every statement is missing its terminating `.`, because `.nt` is written
+  by dropping the `graph` column, which was doubling as the terminator. Recorded as a gap against C5 in
+  `COMMITMENTS.md`; fixing it changes published output, so it belongs in Stage 3.
+- **Duplicate keys in two input tables.** `data/APD_units.csv` has `[ppm]` on two rows with different
+  labels and different URIs (the second should be `[ppth]`, parts per thousand), so the published RDF
+  asserts the wrong identifier for that unit. `published_classes.csv` has four duplicated identifiers,
+  two of them on rows that disagree. `make check` reports all of these as warnings today; Stage 3
+  promotes them.
 
 ### Stage 3 — Validation, tests, and single-sourcing
 
