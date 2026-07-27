@@ -1,5 +1,9 @@
 ---
 title:  Change log for the AusTraits Plant Dictionary (APD) Ontology
+# Keep the published URL at news.html: the tracked file is NEWS.md (rendering
+# `news.md` only worked on case-insensitive filesystems), but docs/news.html is
+# linked from the navbar and indexed externally.
+output-file: news.html
 format: 
   html:
     smooth-scroll: true

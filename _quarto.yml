@@ -13,7 +13,7 @@ project:
   render:
     - index.qmd
     - using_the_APD.qmd
-    - news.md
+    - NEWS.md
 
 website:
   title: "APD"

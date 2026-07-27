@@ -6,10 +6,16 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
 
 ## Repo-local guidance
 
-- **Source data:** `data/` holds the ~11 input CSVs that define the dictionary — trait definitions
-  (`APD_traits_input.csv`), allowable categorical values (`APD_categorical_values_input.csv`), the
-  trait hierarchy, glossary, units, references, reviewers, namespaces, and annotation properties.
-  These are the source of truth.
+- **⚠️ Read [`COMMITMENTS.md`](COMMITMENTS.md) first** if you are about to change a URI scheme, an
+  output format, the licence, the set of published input tables, or where the site deploys. The APD is
+  described in a published paper (Wenk et al. 2024), and that paper is a specification — several of its
+  claims are promises this repo has to keep, and some are currently broken.
+- **Source data:** `data/` holds the inputs that define the dictionary. **Trait definitions live in
+  `APD_traits_input.yml`, which is the source of truth** — `APD_traits_input.csv` is a derived
+  spreadsheet-friendly view of the same 559 traits (YAML was adopted in #43 because CSV diffs were
+  unreviewable). The remaining inputs are CSVs: allowable categorical values
+  (`APD_categorical_values_input.csv`), the trait hierarchy, glossary, units, references, reviewers,
+  namespaces, and annotation properties.
 - **Build:** `build.qmd` builds the APD from `data/`, emitting the machine-readable representations
   at the repo root — RDF Turtle (`APD.ttl`), N-Quad (`APD.nq`), N-Triple (`APD.nt`), JSON-LD
   (`APD.json`) — plus the derived `APD_traits.csv` and `APD_categorical_values.csv`.

@@ -49,7 +49,8 @@ CI, single-sourced).
 `data/APD_traits_input.csv` (559 traits × 46 fields) and `data/APD_traits_input.yml` are two copies of
 the same data. The build reads the YAML; `README.md:30` and `AGENTS.md` still say the CSV is the source
 of truth. The round trip is not idempotent — 31 cells differ, all scientific-notation drift in
-`min`/`max`, and `options(scipen = 999)` is set globally and never restored. The CSV→YAML direction,
+`min`/`max`, because `readr` and `yaml` format doubles differently (see Stage 3). `options(scipen = 999)`
+is also set globally and never restored. The CSV→YAML direction,
 `convert_APD_traits_input_csv_to_yml()`, **is never called from anywhere**.
 
 Namespaces are declared in **three** places that have diverged: `build.qmd:59-97` (38 entries),
@@ -335,12 +336,19 @@ narrative document that calls the same functions, or is deleted.
   - **`convert_APD_traits_input_yml_to_csv()` must stop writing to `data/`** as a side effect
     (`R/convert_between_csv_yml.R:62`). CI enforces it: `git diff --exit-code -- data/` after
     `make data`.
-  - **The round trip must be lossless.** It currently is not — 31 `min`/`max` cells drift between
-    `0.00001` and `1e-05`, and the `options(scipen = 999)` guard against it became inert when R 4.3
-    changed `as.character()` on doubles. Fix it by construction: read YAML scalars as text and store
-    `min`/`max` quoted (`min: "0.00001"`). They only ever end up inside an RDF literal, so text is the
-    honest representation, and it cannot drift when R's float formatter changes again. One-time
-    normalisation commit, then `test-roundtrip.R` keeps it green.
+  - **The round trip must be lossless.** It currently is not: 31 `min`/`max` cells are written as
+    `0.00001` in the CSV and `1.0e-05` in the YAML. The cause is an asymmetry between two different
+    formatters, not an R version issue — `options(scipen = 999)` at
+    `R/convert_between_csv_yml.R:58` does still work (verified on R 4.6.0:
+    `as.character(1e-05)` gives `0.00001` under `scipen = 999`, `1e-05` without), but
+    `yaml::as.yaml()` applies its own formatting and emits `1.0e-05` regardless of `scipen`. The two
+    files therefore parse to identical numbers but can never converge textually.
+
+    Fix it by construction rather than by fighting formatters: read YAML scalars as text and store
+    `min`/`max` quoted (`min: "0.00001"`). These values only ever end up inside an RDF literal, so
+    text is the honest representation, and it cannot drift when either formatter changes. One-time
+    normalisation commit, then `test-roundtrip.R` keeps it green and `options(scipen = 999)` can be
+    dropped along with its global side effect.
 
   `APD_traits_input.csv` still gets published as a release artefact (the paper documents it by name),
   just not tracked in git. Update `README.md:30` and `AGENTS.md`, which both still call it the source
