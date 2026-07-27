@@ -37,10 +37,16 @@ if (!all(copied)) {
        call. = FALSE)
 }
 
-# The 406 page the w3id content-negotiation rules fall back to. Its source lives
-# in assets/ but it is served from the site root, so it is copied rather than
-# listed as a resource, for the same reason as the artefacts above.
-if (!file.copy(file.path("assets", "406.html"), file.path("docs", "406.html"),
-               overwrite = TRUE)) {
-  stop("Could not publish 406.html", call. = FALSE)
+# The 406 page the w3id content-negotiation rules fall back to, plus the
+# stylesheet it links. Both live in assets/ but are served from the site root, so
+# they are copied rather than listed as resources, for the same reason as the
+# artefacts above. The rendered Quarto pages inline this stylesheet via `css:` in
+# _quarto.yml; 406.html is static and links it, so the file has to be there.
+STATIC <- c("406.html", "apd.css")
+
+copied <- file.copy(file.path("assets", STATIC), file.path("docs", STATIC),
+                    overwrite = TRUE)
+if (!all(copied)) {
+  stop("Could not publish: ", paste(STATIC[!copied], collapse = ", "),
+       call. = FALSE)
 }

@@ -8,8 +8,8 @@ project:
     # A quarto resource keeps its relative path, so listing "export/APD.ttl" would
     # move the URL. scripts/build_site.R copies them in after the render instead --
     # and the same goes for assets/406.html, which is published at /406.html.
-    # Mandatory now that docs/ has directories quarto/jekyll would otherwise
-    # treat as special, and site_libs/ leading with an underscore.
+    # Tells GitHub Pages not to run the site through Jekyll, which would
+    # otherwise skip any path beginning with an underscore.
     - ".nojekyll"
     # Copying the ~100 MB snapshot tree on every render is wasteful, and stage 6
     # of plans/build-workflow-overhaul.md moves it to the deploy step. It has to
