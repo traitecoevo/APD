@@ -113,3 +113,37 @@ test_that("apd_local_target() maps a URI to a page in pages mode", {
   # Not an APD URI, so it stays absolute.
   expect_true(is.na(apd_local_target("http://purl.obolibrary.org/obo/PO_0025034")))
 })
+
+test_that("the stage 5 gate fails closed on a partly-built site", {
+  # It reported "Full dictionary: NA MB" and then "safe to open" when full.html
+  # had never been rendered -- file.size() returns NA for a missing file, and NA
+  # was printed straight out. A gate for an irreversible change has to fail
+  # closed: the w3id PR repoints 1,473 published identifiers, and a missing page
+  # is a permanent 404 for anyone who cited it.
+  skip_if_not(file.exists(file.path(APD_ROOT, "APD_triples.csv")),
+              "APD_triples.csv is not built")
+  skip_on_os("windows")
+
+  withr::local_dir(APD_ROOT)
+
+  # A docs/ holding every entity page but nothing else: exactly what `make pages`
+  # produces on its own.
+  half_built <- withr::local_tempdir()
+  triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
+  apd_write_entity_pages(triples, out_dir = half_built, version = "2.1.0")
+
+  result <- suppressWarnings(system2(
+    "Rscript", c("scripts/check_pages.R", shQuote(half_built)),
+    stdout = TRUE, stderr = TRUE
+  ))
+  status <- attr(result, "status")
+  output <- paste(result, collapse = "\n")
+
+  expect_true(!is.null(status) && status != 0)
+  expect_match(output, "Do NOT open the w3id redirect PR", fixed = TRUE)
+  expect_match(output, "full.html", fixed = TRUE)
+  # Never a bare NA where a measurement should be.
+  expect_false(grepl("NA MB", output, fixed = TRUE))
+  expect_false(grepl("NA KB", output, fixed = TRUE))
+  expect_false(grepl("safe to open", output, fixed = TRUE))
+})

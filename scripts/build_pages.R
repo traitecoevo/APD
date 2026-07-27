@@ -14,6 +14,16 @@ if (!file.exists("APD_triples.csv")) {
   stop("APD_triples.csv does not exist. Run `make data` first.", call. = FALSE)
 }
 
+# Writing pages into a docs/ whose index.html came from an earlier build leaves a
+# half-built site that looks finished. Say so rather than letting the next person
+# find out from `make check-pages`.
+index <- file.path("docs", "index.html")
+if (file.exists(index) &&
+      !any(grepl('id="apd-browse"', readr::read_lines(index), fixed = TRUE))) {
+  warning("docs/index.html is from an older build -- run `make site` to render ",
+          "the whole site, not just these pages.", call. = FALSE)
+}
+
 triples <- readr::read_csv("APD_triples.csv", show_col_types = FALSE)
 
 message("Writing entity pages into docs/")

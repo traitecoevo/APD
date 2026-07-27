@@ -27,7 +27,11 @@ data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSV
 check: data  ## Validate the built dictionary and run the tests
 	$(R) scripts/check.R
 
-check-pages:  ## Confirm every published identifier has a page (gate for stage 5)
+# Depends on `site` on purpose. This target green-lights repointing 1,473
+# published identifiers, so it must not be possible to pass it against a docs/
+# left over from an earlier build. To check a directory you already have, call the
+# script directly: Rscript scripts/check_pages.R <dir>
+check-pages: site  ## Confirm every published identifier has a page (gate for stage 5)
 	$(R) scripts/check_pages.R
 
 site: data  ## Render the website into docs/, then the per-entity pages (needs network)
