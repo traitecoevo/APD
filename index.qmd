@@ -1,9 +1,15 @@
 ---
 title:  The AusTraits Plant Dictionary (APD) Ontology
-params:
-  version: 2.1.0
-  previous_version: 2.0.0
-format: 
+# One document holding the whole dictionary. Wenk et al. 2024 (p.12) commits to
+# "a human-readable compiled version of the information contained in
+# APD_triples.csv", so this page is part of the published contract, and every
+# trait URI published since 2024 resolves to a fragment of it -- see
+# COMMITMENTS.md C1 and C5.
+#
+# `embed-resources` stays: the copy archived in release/<version>/ is served at
+# w3id.org/APD/release/<version>/index.html and deposited at Zenodo, and it has
+# to open standalone without site_libs/ beside it.
+format:
   html:
     smooth-scroll: true
     toc: true
@@ -12,7 +18,14 @@ format:
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-version <- params$version
+# The version comes from DESCRIPTION and the previous one from NEWS.md, rather
+# than from `params` here. They used to be recorded in both places and had
+# drifted: DESCRIPTION said 2.0.0 while these params said 2.1.0 and drove the
+# release path.
+source("R/version.R")
+
+version <- apd_version()
+previous_version <- apd_previous_version(version)
 
 link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html>", v)
 ```
@@ -20,8 +33,8 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
 
 <dl>
 <dt> **Latest version**:</dt> <dd><https://w3id.org/APD/index.html> </dd>
-<dt> **This version**:</dt> <dd>`r link_version(params$version)`  </dd>
-<dt> **Previous version**:</dt> <dd>`r link_version(params$previous_version)` </dd>
+<dt> **This version**:</dt> <dd>`r link_version(version)`  </dd>
+<dt> **Previous version**:</dt> <dd>`r link_version(previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
 <dt>**Contributors**:</dt> <dd> [Tony Auld](https://orcid.org/0000-0002-8766-2829),
   [Russell Barrett](https://orcid.org/0000-0003-0360-8321),
@@ -60,7 +73,6 @@ link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html
 <span><a href="APD.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL"></a> </span></dd>
 
 <dt>License: </dt> <dd><a href="http://purl.org/NET/rdflicense/cc-by4.0" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by4.0"></a> </dd>
-<!-- <dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl"></a></dd> -->
 <dt>Vocabulary service:</dt> <dd> 
 <span><a href="https://vocabs.ardc.edu.au/viewById/649" target="_blank"><img src="https://img.shields.io/badge/ARDC-RVA-blue.svg" alt="JSON-LD"></a> </span> </dd>
 
@@ -95,12 +107,15 @@ library(dplyr)
 library(gt)
 library(purrr)
 
+source("R/build.R")
 source("R/table.R")
 source("R/helpers.R")
 source("R/create_APD_trait_table.R")
 
-triples_with_labels <- 
-  read_csv("APD_triples.csv")
+# The generated artefacts live in export/ rather than at the repo root; they are
+# still published at the site root, so the download links below are unchanged.
+triples_with_labels <-
+  read_csv(file.path(APD_EXPORT_DIR, "APD_triples.csv"), show_col_types = FALSE)
 
 base_url_traits <- "https://w3id.org/APD/traits/"
 base_url_glossary <- "https://w3id.org/APD/glossary/"

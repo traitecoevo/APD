@@ -6476,7 +6476,7 @@ https://w3id.org/APD/traits/trait_0000142,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0000142,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0000142
 https://w3id.org/APD/traits/trait_0000142,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0000142
 https://w3id.org/APD/traits/trait_0000142,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0000142
-https://w3id.org/APD/traits/trait_0000142,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0000142
+https://w3id.org/APD/traits/trait_0000142,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0000142
 https://w3id.org/APD/traits/trait_0000142,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/kg,NA,.,https://w3id.org/APD/traits/trait_0000142
 https://w3id.org/APD/traits/trait_0000142,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per kilogram,https://w3id.org/uom/mg.kg-1,.,https://w3id.org/APD/traits/trait_0000142
 https://w3id.org/APD/traits/trait_0000142,has broader,http://www.w3.org/2004/02/skos/core#broader,senesced leaf mineral and ion content trait,https://w3id.org/APD/traits/trait_group_0000108,.,https://w3id.org/APD/traits/trait_0000142
@@ -6572,58 +6572,6 @@ https://w3id.org/APD/traits/trait_0000152,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0000152,example,http://www.w3.org/2004/02/skos/core#example,exact match: Litter zinc content per litter dry mass [TOP601] (https://top-thesaurus.org/index),NA,.,https://w3id.org/APD/traits/trait_0000152
 https://w3id.org/APD/traits/trait_0000152,example,http://www.w3.org/2004/02/skos/core#example,exact match: Litter (leaf) zinc (Zn) content per leaf litter dry mass [TRY:962] (https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0000152
 https://w3id.org/APD/traits/trait_0000152,definition,http://www.w3.org/2004/02/skos/core#definition,The ratio of the mass of zinc in a senescent leaf (leaf litter) to the senescent leaf dry mass.,NA,.,https://w3id.org/APD/traits/trait_0000152
-https://w3id.org/APD/traits/trait_0022012,identifier,http://purl.org/dc/terms/identifier,trait_0022012,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,leaf_N_resorption,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Leaf nitrogen resorption efficiency,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,description,http://purl.org/dc/terms/description,"A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,description,http://purl.org/dc/terms/description,"A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,-1.1,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/mg,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per milligram,https://w3id.org/uom/mg.mg-1,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,has broader,http://www.w3.org/2004/02/skos/core#broader,nutrient recycling trait,https://w3id.org/APD/traits/trait_group_0022002,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,date modified,http://purl.org/dc/terms/modified,05/02/2024,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,change note,http://www.w3.org/2004/02/skos/core#changeNote,resorption_leaf_N,NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,has context object,https://w3id.org/iadopt/ont/hasContextObject,leaf,http://purl.obolibrary.org/obo/PO_0025034,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass,http://purl.obolibrary.org/obo/PATO_0000125,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass fraction,http://purl.dataone.org/odo/ECSO_00000619,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,ratio; proportion,http://purl.obolibrary.org/obo/PATO_0001470,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,dimensionless ratio,http://purl.obolibrary.org/obo/STATO_0000300,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,nitrogen atom,http://purl.obolibrary.org/obo/CHEBI_25555,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,senescent,http://purl.obolibrary.org/obo/PATO_0001487,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,resorption,http://purl.obolibrary.org/obo/NCIT_C93204,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,plant litter,http://purl.obolibrary.org/obo/ENVO_01000628,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,macronutrient,http://purl.obolibrary.org/obo/CHEBI_33937,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022012,definition,http://www.w3.org/2004/02/skos/core#definition,"A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
-https://w3id.org/APD/traits/trait_0022013,identifier,http://purl.org/dc/terms/identifier,trait_0022013,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,leaf_P_resorption,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Leaf phosphorus resorption efficiency,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,description,http://purl.org/dc/terms/description,"A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,description,http://purl.org/dc/terms/description,"A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,-1.1,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/mg,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per milligram,https://w3id.org/uom/mg.mg-1,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,has broader,http://www.w3.org/2004/02/skos/core#broader,nutrient recycling trait,https://w3id.org/APD/traits/trait_group_0022002,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,date modified,http://purl.org/dc/terms/modified,05/02/2024,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,change note,http://www.w3.org/2004/02/skos/core#changeNote,resorption_leaf_P,NA,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,has context object,https://w3id.org/iadopt/ont/hasContextObject,leaf,http://purl.obolibrary.org/obo/PO_0025034,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass,http://purl.obolibrary.org/obo/PATO_0000125,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass fraction,http://purl.dataone.org/odo/ECSO_00000619,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,ratio; proportion,http://purl.obolibrary.org/obo/PATO_0001470,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,dimensionless ratio,http://purl.obolibrary.org/obo/STATO_0000300,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,phosphorus atom,http://purl.obolibrary.org/obo/CHEBI_28659,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,senescent,http://purl.obolibrary.org/obo/PATO_0001487,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,resorption,http://purl.obolibrary.org/obo/NCIT_C93204,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,plant litter,http://purl.obolibrary.org/obo/ENVO_01000628,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,macronutrient,http://purl.obolibrary.org/obo/CHEBI_33937,.,https://w3id.org/APD/traits/trait_0022013
-https://w3id.org/APD/traits/trait_0022013,definition,http://www.w3.org/2004/02/skos/core#definition,"A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
 https://w3id.org/APD/traits/trait_0000216,identifier,http://purl.org/dc/terms/identifier,trait_0000216,NA,.,https://w3id.org/APD/traits/trait_0000216
 https://w3id.org/APD/traits/trait_0000216,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,stem_C_per_dry_mass,NA,.,https://w3id.org/APD/traits/trait_0000216
 https://w3id.org/APD/traits/trait_0000216,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Stem carbon (C) content per unit stem dry mass,NA,.,https://w3id.org/APD/traits/trait_0000216
@@ -7114,7 +7062,7 @@ https://w3id.org/APD/traits/trait_0000626,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0000626,description,http://purl.org/dc/terms/description,The ratio of the mass of copper in bark to bark dry mass.,NA,.,https://w3id.org/APD/traits/trait_0000626
 https://w3id.org/APD/traits/trait_0000626,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0000626
 https://w3id.org/APD/traits/trait_0000626,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0000626
-https://w3id.org/APD/traits/trait_0000626,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0000626
+https://w3id.org/APD/traits/trait_0000626,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0000626
 https://w3id.org/APD/traits/trait_0000626,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0000626
 https://w3id.org/APD/traits/trait_0000626,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/g,NA,.,https://w3id.org/APD/traits/trait_0000626
 https://w3id.org/APD/traits/trait_0000626,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per gram,https://w3id.org/uom/mg.g-1,.,https://w3id.org/APD/traits/trait_0000626
@@ -8215,7 +8163,7 @@ https://w3id.org/APD/traits/trait_0001671,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0001671,note,http://www.w3.org/2004/02/skos/core#note,"Includes measurements on leaf analogs, including cladodes and phylloclades.",NA,.,https://w3id.org/APD/traits/trait_0001671
 https://w3id.org/APD/traits/trait_0001671,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0001671
 https://w3id.org/APD/traits/trait_0001671,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0001671
-https://w3id.org/APD/traits/trait_0001671,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0001671
+https://w3id.org/APD/traits/trait_0001671,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0001671
 https://w3id.org/APD/traits/trait_0001671,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0001671
 https://w3id.org/APD/traits/trait_0001671,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/g,NA,.,https://w3id.org/APD/traits/trait_0001671
 https://w3id.org/APD/traits/trait_0001671,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per gram,https://w3id.org/uom/mg.g-1,.,https://w3id.org/APD/traits/trait_0001671
@@ -8903,7 +8851,7 @@ https://w3id.org/APD/traits/trait_0002255,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0002255,note,http://www.w3.org/2004/02/skos/core#note,Tannins are a specific class of polyphenolic compounds found in plants.,NA,.,https://w3id.org/APD/traits/trait_0002255
 https://w3id.org/APD/traits/trait_0002255,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0002255
 https://w3id.org/APD/traits/trait_0002255,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0002255
-https://w3id.org/APD/traits/trait_0002255,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-05,NA,.,https://w3id.org/APD/traits/trait_0002255
+https://w3id.org/APD/traits/trait_0002255,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.00001,NA,.,https://w3id.org/APD/traits/trait_0002255
 https://w3id.org/APD/traits/trait_0002255,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0002255
 https://w3id.org/APD/traits/trait_0002255,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/mg,NA,.,https://w3id.org/APD/traits/trait_0002255
 https://w3id.org/APD/traits/trait_0002255,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per milligram,https://w3id.org/uom/mg.mg-1,.,https://w3id.org/APD/traits/trait_0002255
@@ -8973,7 +8921,7 @@ https://w3id.org/APD/traits/trait_0002534,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0002534,note,http://www.w3.org/2004/02/skos/core#note,"It is best practice for the denominator to be seed dry mass. If data are reported on a `per seed fresh mass` basis, this should be explicitly noted in the methods or as a method context.",NA,.,https://w3id.org/APD/traits/trait_0002534
 https://w3id.org/APD/traits/trait_0002534,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0002534
 https://w3id.org/APD/traits/trait_0002534,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0002534
-https://w3id.org/APD/traits/trait_0002534,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-05,NA,.,https://w3id.org/APD/traits/trait_0002534
+https://w3id.org/APD/traits/trait_0002534,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.00001,NA,.,https://w3id.org/APD/traits/trait_0002534
 https://w3id.org/APD/traits/trait_0002534,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0002534
 https://w3id.org/APD/traits/trait_0002534,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,g/g,NA,.,https://w3id.org/APD/traits/trait_0002534
 https://w3id.org/APD/traits/trait_0002534,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,gram per gram,https://w3id.org/uom/g.g-1,.,https://w3id.org/APD/traits/trait_0002534
@@ -8999,7 +8947,7 @@ https://w3id.org/APD/traits/trait_0002544,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0002544,note,http://www.w3.org/2004/02/skos/core#note,"It is best practice for the denominator to be seed dry mass. If data are reported on a `per seed fresh mass` basis, this should be explicitly noted in the methods or as a method context.",NA,.,https://w3id.org/APD/traits/trait_0002544
 https://w3id.org/APD/traits/trait_0002544,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0002544
 https://w3id.org/APD/traits/trait_0002544,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0002544
-https://w3id.org/APD/traits/trait_0002544,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0002544
+https://w3id.org/APD/traits/trait_0002544,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0002544
 https://w3id.org/APD/traits/trait_0002544,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0002544
 https://w3id.org/APD/traits/trait_0002544,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,g/g,NA,.,https://w3id.org/APD/traits/trait_0002544
 https://w3id.org/APD/traits/trait_0002544,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,gram per gram,https://w3id.org/uom/g.g-1,.,https://w3id.org/APD/traits/trait_0002544
@@ -9025,7 +8973,7 @@ https://w3id.org/APD/traits/trait_0002822,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0002822,note,http://www.w3.org/2004/02/skos/core#note,"Includes measurements on leaf analogs, including cladodes and phylloclades.",NA,.,https://w3id.org/APD/traits/trait_0002822
 https://w3id.org/APD/traits/trait_0002822,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0002822
 https://w3id.org/APD/traits/trait_0002822,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0002822
-https://w3id.org/APD/traits/trait_0002822,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0002822
+https://w3id.org/APD/traits/trait_0002822,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0002822
 https://w3id.org/APD/traits/trait_0002822,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0002822
 https://w3id.org/APD/traits/trait_0002822,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,g/g,NA,.,https://w3id.org/APD/traits/trait_0002822
 https://w3id.org/APD/traits/trait_0002822,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,gram per gram,https://w3id.org/uom/g.g-1,.,https://w3id.org/APD/traits/trait_0002822
@@ -9050,7 +8998,7 @@ https://w3id.org/APD/traits/trait_0002824,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0002824,description,http://purl.org/dc/terms/description,The ratio of the mass of bark ash remaining after a combustion process to the bark dry mass before the combustion process.,NA,.,https://w3id.org/APD/traits/trait_0002824
 https://w3id.org/APD/traits/trait_0002824,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0002824
 https://w3id.org/APD/traits/trait_0002824,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0002824
-https://w3id.org/APD/traits/trait_0002824,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0002824
+https://w3id.org/APD/traits/trait_0002824,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0002824
 https://w3id.org/APD/traits/trait_0002824,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0002824
 https://w3id.org/APD/traits/trait_0002824,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,g/g,NA,.,https://w3id.org/APD/traits/trait_0002824
 https://w3id.org/APD/traits/trait_0002824,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,gram per gram,https://w3id.org/uom/g.g-1,.,https://w3id.org/APD/traits/trait_0002824
@@ -9864,7 +9812,7 @@ https://w3id.org/APD/traits/trait_0011211,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0011211,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0011211
 https://w3id.org/APD/traits/trait_0011211,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0011211
 https://w3id.org/APD/traits/trait_0011211,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.1,NA,.,https://w3id.org/APD/traits/trait_0011211
-https://w3id.org/APD/traits/trait_0011211,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+07,NA,.,https://w3id.org/APD/traits/trait_0011211
+https://w3id.org/APD/traits/trait_0011211,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,10000000,NA,.,https://w3id.org/APD/traits/trait_0011211
 https://w3id.org/APD/traits/trait_0011211,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm2,NA,.,https://w3id.org/APD/traits/trait_0011211
 https://w3id.org/APD/traits/trait_0011211,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,square millimetre,https://w3id.org/uom/mm2,.,https://w3id.org/APD/traits/trait_0011211
 https://w3id.org/APD/traits/trait_0011211,has broader,http://www.w3.org/2004/02/skos/core#broader,leaf size trait,https://w3id.org/APD/traits/trait_group_0011204,.,https://w3id.org/APD/traits/trait_0011211
@@ -9910,7 +9858,7 @@ https://w3id.org/APD/traits/trait_0011212,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0011212,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0011212
 https://w3id.org/APD/traits/trait_0011212,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0011212
 https://w3id.org/APD/traits/trait_0011212,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.1,NA,.,https://w3id.org/APD/traits/trait_0011212
-https://w3id.org/APD/traits/trait_0011212,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0011212
+https://w3id.org/APD/traits/trait_0011212,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0011212
 https://w3id.org/APD/traits/trait_0011212,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm2,NA,.,https://w3id.org/APD/traits/trait_0011212
 https://w3id.org/APD/traits/trait_0011212,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,square millimetre,https://w3id.org/uom/mm2,.,https://w3id.org/APD/traits/trait_0011212
 https://w3id.org/APD/traits/trait_0011212,has broader,http://www.w3.org/2004/02/skos/core#broader,leaf size trait,https://w3id.org/APD/traits/trait_group_0011204,.,https://w3id.org/APD/traits/trait_0011212
@@ -9936,7 +9884,7 @@ https://w3id.org/APD/traits/trait_0011213,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0011213,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0011213
 https://w3id.org/APD/traits/trait_0011213,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0011213
 https://w3id.org/APD/traits/trait_0011213,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.1,NA,.,https://w3id.org/APD/traits/trait_0011213
-https://w3id.org/APD/traits/trait_0011213,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0011213
+https://w3id.org/APD/traits/trait_0011213,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0011213
 https://w3id.org/APD/traits/trait_0011213,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm,NA,.,https://w3id.org/APD/traits/trait_0011213
 https://w3id.org/APD/traits/trait_0011213,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,millimetre,https://w3id.org/uom/mm,.,https://w3id.org/APD/traits/trait_0011213
 https://w3id.org/APD/traits/trait_0011213,has broader,http://www.w3.org/2004/02/skos/core#broader,leaf size trait,https://w3id.org/APD/traits/trait_group_0011204,.,https://w3id.org/APD/traits/trait_0011213
@@ -9982,7 +9930,7 @@ https://w3id.org/APD/traits/trait_0011214,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0011214,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0011214
 https://w3id.org/APD/traits/trait_0011214,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0011214
 https://w3id.org/APD/traits/trait_0011214,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.01,NA,.,https://w3id.org/APD/traits/trait_0011214
-https://w3id.org/APD/traits/trait_0011214,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0011214
+https://w3id.org/APD/traits/trait_0011214,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0011214
 https://w3id.org/APD/traits/trait_0011214,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm,NA,.,https://w3id.org/APD/traits/trait_0011214
 https://w3id.org/APD/traits/trait_0011214,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,millimetre,https://w3id.org/uom/mm,.,https://w3id.org/APD/traits/trait_0011214
 https://w3id.org/APD/traits/trait_0011214,has broader,http://www.w3.org/2004/02/skos/core#broader,leaf size trait,https://w3id.org/APD/traits/trait_group_0011204,.,https://w3id.org/APD/traits/trait_0011214
@@ -12211,7 +12159,7 @@ https://w3id.org/APD/traits/trait_0011911,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0011911,description,http://purl.org/dc/terms/description,"For a single branch, the ratio of sapwood cross-sectional area at the base of the branch to the branch's total leaf area.",NA,.,https://w3id.org/APD/traits/trait_0011911
 https://w3id.org/APD/traits/trait_0011911,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0011911
 https://w3id.org/APD/traits/trait_0011911,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0011911
-https://w3id.org/APD/traits/trait_0011911,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-06,NA,.,https://w3id.org/APD/traits/trait_0011911
+https://w3id.org/APD/traits/trait_0011911,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.000001,NA,.,https://w3id.org/APD/traits/trait_0011911
 https://w3id.org/APD/traits/trait_0011911,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,0.2,NA,.,https://w3id.org/APD/traits/trait_0011911
 https://w3id.org/APD/traits/trait_0011911,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm2{sapwood}/mm2{leaf},NA,.,https://w3id.org/APD/traits/trait_0011911
 https://w3id.org/APD/traits/trait_0011911,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,square millimetre per square millimetre,https://w3id.org/uom/mm2.mm-2,.,https://w3id.org/APD/traits/trait_0011911
@@ -13416,7 +13364,7 @@ https://w3id.org/APD/traits/trait_0012422,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012422,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012422
 https://w3id.org/APD/traits/trait_0012422,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012422
 https://w3id.org/APD/traits/trait_0012422,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0,NA,.,https://w3id.org/APD/traits/trait_0012422
-https://w3id.org/APD/traits/trait_0012422,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0012422
+https://w3id.org/APD/traits/trait_0012422,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0012422
 https://w3id.org/APD/traits/trait_0012422,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,{count},NA,.,https://w3id.org/APD/traits/trait_0012422
 https://w3id.org/APD/traits/trait_0012422,has broader,http://www.w3.org/2004/02/skos/core#broader,floral organ morphology trait,https://w3id.org/APD/traits/trait_group_0012404,.,https://w3id.org/APD/traits/trait_0012422
 https://w3id.org/APD/traits/trait_0012422,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0012422
@@ -13661,7 +13609,7 @@ https://w3id.org/APD/traits/trait_0012445,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0012445,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012445
 https://w3id.org/APD/traits/trait_0012445,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012445
 https://w3id.org/APD/traits/trait_0012445,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0,NA,.,https://w3id.org/APD/traits/trait_0012445
-https://w3id.org/APD/traits/trait_0012445,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0012445
+https://w3id.org/APD/traits/trait_0012445,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0012445
 https://w3id.org/APD/traits/trait_0012445,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,{count},NA,.,https://w3id.org/APD/traits/trait_0012445
 https://w3id.org/APD/traits/trait_0012445,has broader,http://www.w3.org/2004/02/skos/core#broader,gynoecium morphology trait,https://w3id.org/APD/traits/trait_group_0012409,.,https://w3id.org/APD/traits/trait_0012445
 https://w3id.org/APD/traits/trait_0012445,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0012445
@@ -14099,8 +14047,8 @@ https://w3id.org/APD/traits/trait_0012511,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012511,description,http://purl.org/dc/terms/description,"Fruit dry mass, including seeds. Fruits will generally be oven-dried.",NA,.,https://w3id.org/APD/traits/trait_0012511
 https://w3id.org/APD/traits/trait_0012511,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012511
 https://w3id.org/APD/traits/trait_0012511,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012511
-https://w3id.org/APD/traits/trait_0012511,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0012511
-https://w3id.org/APD/traits/trait_0012511,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0012511
+https://w3id.org/APD/traits/trait_0012511,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0012511
+https://w3id.org/APD/traits/trait_0012511,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0012511
 https://w3id.org/APD/traits/trait_0012511,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg,NA,.,https://w3id.org/APD/traits/trait_0012511
 https://w3id.org/APD/traits/trait_0012511,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram,https://w3id.org/uom/mg,.,https://w3id.org/APD/traits/trait_0012511
 https://w3id.org/APD/traits/trait_0012511,has broader,http://www.w3.org/2004/02/skos/core#broader,fruit morphology trait,https://w3id.org/APD/traits/trait_group_0012504,.,https://w3id.org/APD/traits/trait_0012511
@@ -14441,8 +14389,8 @@ https://w3id.org/APD/traits/trait_0012610,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012610,note,http://www.w3.org/2004/02/skos/core#note,"Standard methods people will have used to dry seeds include, 'fresh' (at dispersal, mature); 'air dried' (at local ambient conditions); 'seed bank air dried' (to 15% relative humidity); and 'oven dried' (>100 deg C for a set number of hours; e.g. seed bank standard is 103 deg C for 17 hours). It is expected that some observations in AusTraits mapped onto 'seed_dry_mass' will actually include both the seed and some dispersal tissue, if the two cannot easily be separated; these should be mapped to 'diaspore_dry_mass'.",NA,.,https://w3id.org/APD/traits/trait_0012610
 https://w3id.org/APD/traits/trait_0012610,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012610
 https://w3id.org/APD/traits/trait_0012610,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012610
-https://w3id.org/APD/traits/trait_0012610,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-05,NA,.,https://w3id.org/APD/traits/trait_0012610
-https://w3id.org/APD/traits/trait_0012610,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0012610
+https://w3id.org/APD/traits/trait_0012610,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.00001,NA,.,https://w3id.org/APD/traits/trait_0012610
+https://w3id.org/APD/traits/trait_0012610,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0012610
 https://w3id.org/APD/traits/trait_0012610,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg,NA,.,https://w3id.org/APD/traits/trait_0012610
 https://w3id.org/APD/traits/trait_0012610,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram,https://w3id.org/uom/mg,.,https://w3id.org/APD/traits/trait_0012610
 https://w3id.org/APD/traits/trait_0012610,has broader,http://www.w3.org/2004/02/skos/core#broader,seed morphology trait,https://w3id.org/APD/traits/trait_group_0012604,.,https://w3id.org/APD/traits/trait_0012610
@@ -14483,8 +14431,8 @@ https://w3id.org/APD/traits/trait_0012611,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012611,note,http://www.w3.org/2004/02/skos/core#note,"Data mapped onto this trait have been very explicitly defined as a 'diaspore'. There will be additional values mapped as either 'seed_dry_mass' or 'fruit_dry_mass' that are also diaspores, but have identified only as being a 'seed' or 'fruit'. In addition, it is expected that some observations in AusTraits mapped onto 'seed_dry_mass' will actually include both the seed and some dispersal tissue, if the two cannot easily be separated.",NA,.,https://w3id.org/APD/traits/trait_0012611
 https://w3id.org/APD/traits/trait_0012611,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012611
 https://w3id.org/APD/traits/trait_0012611,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012611
-https://w3id.org/APD/traits/trait_0012611,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-05,NA,.,https://w3id.org/APD/traits/trait_0012611
-https://w3id.org/APD/traits/trait_0012611,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0012611
+https://w3id.org/APD/traits/trait_0012611,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.00001,NA,.,https://w3id.org/APD/traits/trait_0012611
+https://w3id.org/APD/traits/trait_0012611,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0012611
 https://w3id.org/APD/traits/trait_0012611,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg,NA,.,https://w3id.org/APD/traits/trait_0012611
 https://w3id.org/APD/traits/trait_0012611,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram,https://w3id.org/uom/mg,.,https://w3id.org/APD/traits/trait_0012611
 https://w3id.org/APD/traits/trait_0012611,has broader,http://www.w3.org/2004/02/skos/core#broader,seed morphology trait,https://w3id.org/APD/traits/trait_group_0012604,.,https://w3id.org/APD/traits/trait_0012611
@@ -14520,8 +14468,8 @@ https://w3id.org/APD/traits/trait_0012612,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012612,description,http://purl.org/dc/terms/description,"Dry mass of a seed's embryo and endosperm (if present), the components of a seed that provide energy to a seedling. These tissues are distinct from a seed's dispersal structures or protective tissues.",NA,.,https://w3id.org/APD/traits/trait_0012612
 https://w3id.org/APD/traits/trait_0012612,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012612
 https://w3id.org/APD/traits/trait_0012612,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012612
-https://w3id.org/APD/traits/trait_0012612,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-05,NA,.,https://w3id.org/APD/traits/trait_0012612
-https://w3id.org/APD/traits/trait_0012612,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0012612
+https://w3id.org/APD/traits/trait_0012612,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.00001,NA,.,https://w3id.org/APD/traits/trait_0012612
+https://w3id.org/APD/traits/trait_0012612,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0012612
 https://w3id.org/APD/traits/trait_0012612,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg,NA,.,https://w3id.org/APD/traits/trait_0012612
 https://w3id.org/APD/traits/trait_0012612,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram,https://w3id.org/uom/mg,.,https://w3id.org/APD/traits/trait_0012612
 https://w3id.org/APD/traits/trait_0012612,has broader,http://www.w3.org/2004/02/skos/core#broader,seed morphology trait,https://w3id.org/APD/traits/trait_group_0012604,.,https://w3id.org/APD/traits/trait_0012612
@@ -14676,7 +14624,7 @@ https://w3id.org/APD/traits/trait_0012616,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0012616,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012616
 https://w3id.org/APD/traits/trait_0012616,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012616
 https://w3id.org/APD/traits/trait_0012616,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.001,NA,.,https://w3id.org/APD/traits/trait_0012616
-https://w3id.org/APD/traits/trait_0012616,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0012616
+https://w3id.org/APD/traits/trait_0012616,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0012616
 https://w3id.org/APD/traits/trait_0012616,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mm3,NA,.,https://w3id.org/APD/traits/trait_0012616
 https://w3id.org/APD/traits/trait_0012616,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,cubic millimetre,https://w3id.org/uom/mm3,.,https://w3id.org/APD/traits/trait_0012616
 https://w3id.org/APD/traits/trait_0012616,has broader,http://www.w3.org/2004/02/skos/core#broader,seed morphology trait,https://w3id.org/APD/traits/trait_group_0012604,.,https://w3id.org/APD/traits/trait_0012616
@@ -14715,7 +14663,7 @@ https://w3id.org/APD/traits/trait_0012617,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0012617,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0012617
 https://w3id.org/APD/traits/trait_0012617,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0012617
 https://w3id.org/APD/traits/trait_0012617,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0,NA,.,https://w3id.org/APD/traits/trait_0012617
-https://w3id.org/APD/traits/trait_0012617,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0012617
+https://w3id.org/APD/traits/trait_0012617,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0012617
 https://w3id.org/APD/traits/trait_0012617,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,{count},NA,.,https://w3id.org/APD/traits/trait_0012617
 https://w3id.org/APD/traits/trait_0012617,has broader,http://www.w3.org/2004/02/skos/core#broader,seed morphology trait,https://w3id.org/APD/traits/trait_group_0012604,.,https://w3id.org/APD/traits/trait_0012617
 https://w3id.org/APD/traits/trait_0012617,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0012617
@@ -15714,7 +15662,7 @@ https://w3id.org/APD/traits/trait_0014012,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0014012,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0014012
 https://w3id.org/APD/traits/trait_0014012,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0014012
 https://w3id.org/APD/traits/trait_0014012,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1000,NA,.,https://w3id.org/APD/traits/trait_0014012
-https://w3id.org/APD/traits/trait_0014012,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,3e+07,NA,.,https://w3id.org/APD/traits/trait_0014012
+https://w3id.org/APD/traits/trait_0014012,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,30000000,NA,.,https://w3id.org/APD/traits/trait_0014012
 https://w3id.org/APD/traits/trait_0014012,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,N/m2,NA,.,https://w3id.org/APD/traits/trait_0014012
 https://w3id.org/APD/traits/trait_0014012,has broader,http://www.w3.org/2004/02/skos/core#broader,plant structure strength trait,https://w3id.org/APD/traits/trait_group_0014001,.,https://w3id.org/APD/traits/trait_0014012
 https://w3id.org/APD/traits/trait_0014012,has broader,http://www.w3.org/2004/02/skos/core#broader,leaf morphology trait,https://w3id.org/APD/traits/trait_group_0011202,.,https://w3id.org/APD/traits/trait_0014012
@@ -15850,7 +15798,7 @@ https://w3id.org/APD/traits/trait_0014017,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0014017,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0014017
 https://w3id.org/APD/traits/trait_0014017,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0014017
 https://w3id.org/APD/traits/trait_0014017,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0014017
-https://w3id.org/APD/traits/trait_0014017,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0014017
+https://w3id.org/APD/traits/trait_0014017,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0014017
 https://w3id.org/APD/traits/trait_0014017,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,MPa,NA,.,https://w3id.org/APD/traits/trait_0014017
 https://w3id.org/APD/traits/trait_0014017,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,megapascal,https://w3id.org/uom/MPa,.,https://w3id.org/APD/traits/trait_0014017
 https://w3id.org/APD/traits/trait_0014017,has broader,http://www.w3.org/2004/02/skos/core#broader,plant structure strength trait,https://w3id.org/APD/traits/trait_group_0014001,.,https://w3id.org/APD/traits/trait_0014017
@@ -15874,7 +15822,7 @@ https://w3id.org/APD/traits/trait_0014018,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0014018,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0014018
 https://w3id.org/APD/traits/trait_0014018,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0014018
 https://w3id.org/APD/traits/trait_0014018,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0014018
-https://w3id.org/APD/traits/trait_0014018,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0014018
+https://w3id.org/APD/traits/trait_0014018,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0014018
 https://w3id.org/APD/traits/trait_0014018,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,MPa,NA,.,https://w3id.org/APD/traits/trait_0014018
 https://w3id.org/APD/traits/trait_0014018,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,megapascal,https://w3id.org/uom/MPa,.,https://w3id.org/APD/traits/trait_0014018
 https://w3id.org/APD/traits/trait_0014018,has broader,http://www.w3.org/2004/02/skos/core#broader,plant structure strength trait,https://w3id.org/APD/traits/trait_group_0014001,.,https://w3id.org/APD/traits/trait_0014018
@@ -15900,7 +15848,7 @@ https://w3id.org/APD/traits/trait_0014019,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0014019,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0014019
 https://w3id.org/APD/traits/trait_0014019,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0014019
 https://w3id.org/APD/traits/trait_0014019,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0014019
-https://w3id.org/APD/traits/trait_0014019,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+05,NA,.,https://w3id.org/APD/traits/trait_0014019
+https://w3id.org/APD/traits/trait_0014019,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100000,NA,.,https://w3id.org/APD/traits/trait_0014019
 https://w3id.org/APD/traits/trait_0014019,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,MPa,NA,.,https://w3id.org/APD/traits/trait_0014019
 https://w3id.org/APD/traits/trait_0014019,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,megapascal,https://w3id.org/uom/MPa,.,https://w3id.org/APD/traits/trait_0014019
 https://w3id.org/APD/traits/trait_0014019,has broader,http://www.w3.org/2004/02/skos/core#broader,plant structure strength trait,https://w3id.org/APD/traits/trait_group_0014001,.,https://w3id.org/APD/traits/trait_0014019
@@ -17064,7 +17012,7 @@ https://w3id.org/APD/traits/trait_0020630,note,http://www.w3.org/2004/02/skos/co
 https://w3id.org/APD/traits/trait_0020630,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0020630
 https://w3id.org/APD/traits/trait_0020630,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0020630
 https://w3id.org/APD/traits/trait_0020630,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0020630
-https://w3id.org/APD/traits/trait_0020630,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1e+06,NA,.,https://w3id.org/APD/traits/trait_0020630
+https://w3id.org/APD/traits/trait_0020630,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1000000,NA,.,https://w3id.org/APD/traits/trait_0020630
 https://w3id.org/APD/traits/trait_0020630,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,s/m,NA,.,https://w3id.org/APD/traits/trait_0020630
 https://w3id.org/APD/traits/trait_0020630,has broader,http://www.w3.org/2004/02/skos/core#broader,gas exchange trait,https://w3id.org/APD/traits/trait_group_0020204,.,https://w3id.org/APD/traits/trait_0020630
 https://w3id.org/APD/traits/trait_0020630,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0020630
@@ -17262,7 +17210,7 @@ https://w3id.org/APD/traits/trait_0020663,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0020663,description,http://purl.org/dc/terms/description,"The rate of water loss from a leaf in the dark (no photosynthetically active radiation) and ambient carbon dioxide concentrations, recorded per unit leaf area.",NA,.,https://w3id.org/APD/traits/trait_0020663
 https://w3id.org/APD/traits/trait_0020663,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0020663
 https://w3id.org/APD/traits/trait_0020663,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0020663
-https://w3id.org/APD/traits/trait_0020663,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,1e-04,NA,.,https://w3id.org/APD/traits/trait_0020663
+https://w3id.org/APD/traits/trait_0020663,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.0001,NA,.,https://w3id.org/APD/traits/trait_0020663
 https://w3id.org/APD/traits/trait_0020663,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,10,NA,.,https://w3id.org/APD/traits/trait_0020663
 https://w3id.org/APD/traits/trait_0020663,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mmol{H2O}/m2/s,NA,.,https://w3id.org/APD/traits/trait_0020663
 https://w3id.org/APD/traits/trait_0020663,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,micromole per square metre second,https://w3id.org/uom/umol.m-2.s-1,.,https://w3id.org/APD/traits/trait_0020663
@@ -18728,6 +18676,58 @@ https://w3id.org/APD/traits/trait_0021066,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0021066,has related match,http://www.w3.org/2004/02/skos/core#relatedMatch,leaf water potential,http://purl.obolibrary.org/obo/TO_0000131,.,https://w3id.org/APD/traits/trait_0021066
 https://w3id.org/APD/traits/trait_0021066,example,http://www.w3.org/2004/02/skos/core#example,"exact match: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)",NA,.,https://w3id.org/APD/traits/trait_0021066
 https://w3id.org/APD/traits/trait_0021066,definition,http://www.w3.org/2004/02/skos/core#definition,"A measure of leaf hydraulic vulnerability, which is the leaf xylem water pressure at which leaf hydraulic conductance has declined by 88% from the mean maximum rate of hydraulic conductance.",NA,.,https://w3id.org/APD/traits/trait_0021066
+https://w3id.org/APD/traits/trait_0022012,identifier,http://purl.org/dc/terms/identifier,trait_0022012,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,leaf_N_resorption,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Leaf nitrogen resorption efficiency,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,description,http://purl.org/dc/terms/description,"A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,description,http://purl.org/dc/terms/description,"A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,-1.1,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/mg,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per milligram,https://w3id.org/uom/mg.mg-1,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,has broader,http://www.w3.org/2004/02/skos/core#broader,nutrient recycling trait,https://w3id.org/APD/traits/trait_group_0022002,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,date modified,http://purl.org/dc/terms/modified,05/02/2024,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,change note,http://www.w3.org/2004/02/skos/core#changeNote,resorption_leaf_N,NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,has context object,https://w3id.org/iadopt/ont/hasContextObject,leaf,http://purl.obolibrary.org/obo/PO_0025034,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass,http://purl.obolibrary.org/obo/PATO_0000125,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass fraction,http://purl.dataone.org/odo/ECSO_00000619,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,ratio; proportion,http://purl.obolibrary.org/obo/PATO_0001470,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,dimensionless ratio,http://purl.obolibrary.org/obo/STATO_0000300,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,nitrogen atom,http://purl.obolibrary.org/obo/CHEBI_25555,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,senescent,http://purl.obolibrary.org/obo/PATO_0001487,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,resorption,http://purl.obolibrary.org/obo/NCIT_C93204,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,plant litter,http://purl.obolibrary.org/obo/ENVO_01000628,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,keyword,http://semanticscience.org/resource/SIO_000147,macronutrient,http://purl.obolibrary.org/obo/CHEBI_33937,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022012,definition,http://www.w3.org/2004/02/skos/core#definition,"A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022012
+https://w3id.org/APD/traits/trait_0022013,identifier,http://purl.org/dc/terms/identifier,trait_0022013,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,leaf_P_resorption,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Leaf phosphorus resorption efficiency,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,description,http://purl.org/dc/terms/description,"A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,description,http://purl.org/dc/terms/description,"A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,-1.1,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,1,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,mg/mg,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,milligram per milligram,https://w3id.org/uom/mg.mg-1,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,has broader,http://www.w3.org/2004/02/skos/core#broader,nutrient recycling trait,https://w3id.org/APD/traits/trait_group_0022002,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,date created,http://purl.org/dc/terms/created,14/07/2021,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,date modified,http://purl.org/dc/terms/modified,05/02/2024,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,change note,http://www.w3.org/2004/02/skos/core#changeNote,resorption_leaf_P,NA,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,has context object,https://w3id.org/iadopt/ont/hasContextObject,leaf,http://purl.obolibrary.org/obo/PO_0025034,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass,http://purl.obolibrary.org/obo/PATO_0000125,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,mass fraction,http://purl.dataone.org/odo/ECSO_00000619,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,ratio; proportion,http://purl.obolibrary.org/obo/PATO_0001470,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,measured characteristic,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic,dimensionless ratio,http://purl.obolibrary.org/obo/STATO_0000300,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,phosphorus atom,http://purl.obolibrary.org/obo/CHEBI_28659,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,senescent,http://purl.obolibrary.org/obo/PATO_0001487,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,resorption,http://purl.obolibrary.org/obo/NCIT_C93204,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,plant litter,http://purl.obolibrary.org/obo/ENVO_01000628,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,keyword,http://semanticscience.org/resource/SIO_000147,macronutrient,http://purl.obolibrary.org/obo/CHEBI_33937,.,https://w3id.org/APD/traits/trait_0022013
+https://w3id.org/APD/traits/trait_0022013,definition,http://www.w3.org/2004/02/skos/core#definition,"A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed.",NA,.,https://w3id.org/APD/traits/trait_0022013
 https://w3id.org/APD/traits/trait_0030010,identifier,http://purl.org/dc/terms/identifier,trait_0030010,NA,.,https://w3id.org/APD/traits/trait_0030010
 https://w3id.org/APD/traits/trait_0030010,alternative label,http://www.w3.org/2004/02/skos/core#altLabel,plant_growth_form,NA,.,https://w3id.org/APD/traits/trait_0030010
 https://w3id.org/APD/traits/trait_0030010,preferred label,http://www.w3.org/2004/02/skos/core#prefLabel,Plant growth form,NA,.,https://w3id.org/APD/traits/trait_0030010
@@ -22611,8 +22611,6 @@ https://w3id.org/APD/traits/trait_group_0000108,has narrower,http://www.w3.org/2
 https://w3id.org/APD/traits/trait_group_0000108,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Senesced leaf phosphorus (P) content per unit leaf dry mass,https://w3id.org/APD/traits/trait_0000144,.,https://w3id.org/APD/traits/trait_group_0000108
 https://w3id.org/APD/traits/trait_group_0000108,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Senesced leaf sulphur (S) content per unit leaf dry mass,https://w3id.org/APD/traits/trait_0000146,.,https://w3id.org/APD/traits/trait_group_0000108
 https://w3id.org/APD/traits/trait_group_0000108,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Senesced leaf zinc (Zn) content per unit leaf dry mass,https://w3id.org/APD/traits/trait_0000152,.,https://w3id.org/APD/traits/trait_group_0000108
-https://w3id.org/APD/traits/trait_group_0022002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Leaf nitrogen resorption efficiency,https://w3id.org/APD/traits/trait_0022012,.,https://w3id.org/APD/traits/trait_group_0022002
-https://w3id.org/APD/traits/trait_group_0022002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Leaf phosphorus resorption efficiency,https://w3id.org/APD/traits/trait_0022013,.,https://w3id.org/APD/traits/trait_group_0022002
 https://w3id.org/APD/traits/trait_group_0000206,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Stem carbon (C) content per unit stem dry mass,https://w3id.org/APD/traits/trait_0000216,.,https://w3id.org/APD/traits/trait_group_0000206
 https://w3id.org/APD/traits/trait_group_0000206,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Stem nitrogen (N) content per unit stem dry mass,https://w3id.org/APD/traits/trait_0000238,.,https://w3id.org/APD/traits/trait_group_0000206
 https://w3id.org/APD/traits/trait_group_0000408,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Wood carbon (C) content per unit wood dry mass,https://w3id.org/APD/traits/trait_0000416,.,https://w3id.org/APD/traits/trait_group_0000408
@@ -23137,6 +23135,8 @@ https://w3id.org/APD/traits/trait_group_0021002,has narrower,http://www.w3.org/2
 https://w3id.org/APD/traits/trait_group_0021002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,"Root xylem pressure, 88% lost conductivity (P88",https://w3id.org/APD/traits/trait_0021064,.,https://w3id.org/APD/traits/trait_group_0021002
 https://w3id.org/APD/traits/trait_group_0021002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,"Leaf xylem pressure, 12% lost conductance (P12",https://w3id.org/APD/traits/trait_0021065,.,https://w3id.org/APD/traits/trait_group_0021002
 https://w3id.org/APD/traits/trait_group_0021002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,"Leaf xylem pressure, 88% lost conductance (P88",https://w3id.org/APD/traits/trait_0021066,.,https://w3id.org/APD/traits/trait_group_0021002
+https://w3id.org/APD/traits/trait_group_0022002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Leaf nitrogen resorption efficiency,https://w3id.org/APD/traits/trait_0022012,.,https://w3id.org/APD/traits/trait_group_0022002
+https://w3id.org/APD/traits/trait_group_0022002,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Leaf phosphorus resorption efficiency,https://w3id.org/APD/traits/trait_0022013,.,https://w3id.org/APD/traits/trait_group_0022002
 https://w3id.org/APD/traits/trait_group_0030006,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Plant growth form,https://w3id.org/APD/traits/trait_0030010,.,https://w3id.org/APD/traits/trait_group_0030006
 https://w3id.org/APD/traits/trait_group_0010004,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Plant growth form,https://w3id.org/APD/traits/trait_0030010,.,https://w3id.org/APD/traits/trait_group_0010004
 https://w3id.org/APD/traits/trait_group_0011802,has narrower,http://www.w3.org/2004/02/skos/core#narrower,Plant growth form,https://w3id.org/APD/traits/trait_0030010,.,https://w3id.org/APD/traits/trait_group_0011802

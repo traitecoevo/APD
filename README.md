@@ -27,7 +27,12 @@ This repository is the original source for the APD. It includes
 
 11 files are stored in `data/` and are used to generate the APD. These files are:
 
-* `APD_traits_input.csv`: The core table of trait definitions.
+* `APD_traits_input.yml`: The core table of trait definitions, and the source of
+  truth for them. `make export-csv` checks out a spreadsheet-friendly view of the
+  same 559 traits as `data/edit/APD_traits_input.csv`, and `make import-csv`
+  writes your edits back. That CSV is **not** tracked in git — a second tracked
+  copy of the same data would be a second source of truth — but it is still
+  published, as part of each release snapshot.
 * `APD_trait_hierarchy.csv`: Table documenting a trait hierarchy into which traits in the APD are mapped.
 * `APD_categorical_values_input.csv`: Table of allowable categorical trait values for categorical traits within the APD.
 * `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies.
@@ -35,7 +40,7 @@ This repository is the original source for the APD. It includes
 * `APD_reviewers.csv`: Table of people who have reviewed trait definitions for the APD, identified by their ORCIDs.
 * `APD_units.csv`: Table of units used in the APD, including links in the Units of Measurement ontology.
 * `APD_annotation_properties.csv`: Table of annotation properties that come from a published ontology and are used in the APD. 
-* `APD_namespace_declaration.csv`: Table of all ontologies used within APD. These may be ontologies with annotation properties used by the APD (and listed in annotation_properties.csv) or with terms (classes) used by the APD (and listed in ontology_links.csv) .
+* `APD_namespace_declaration.csv`: Prefix → URI for every ontology the APD draws on. This is the namespace declaration the build actually reads when serialising the RDF, so editing it changes how `APD.ttl` abbreviates URIs.
 * `APD_resource.csv`: Information about the two APD resources, APD/traits and APD/glossary
 * `published_classes.csv`: List of published terms referenced as keywords (or similar) within the APD.
 
@@ -58,14 +63,55 @@ Each trait includes the following fields:
 
 ## Instructions for building the APD
 
-The code in `build.qmd` builds the APD from the data files in `data/`, including:
+Everything runs through `make`. Run `make` on its own for the list of targets.
 
-- generated machine-readable representations of the APD, including
+```bash
+make data        # build the dictionary from data/
+make check       # validate the built dictionary
+make site        # render the website into docs/
+make release     # check the version, then snapshot into release/<version>/
+```
+
+Each target runs a script in `scripts/`, which calls functions in `R/`. To edit
+trait definitions in a spreadsheet rather than in the YAML:
+
+```bash
+make export-csv  # data/APD_traits_input.yml -> data/edit/APD_traits_input.csv
+                 # edit the CSV in Excel or similar
+make import-csv  # write the edits back to the YAML and print what changed
+make check
+```
+
+`make data` builds from the data files in `data/` into `export/`, producing:
+
+- machine-readable representations of the APD, including
   - RDF Turtle: `APD.ttl`,
   - N-Quad: `APD.nq`, 
   - N-Triple: `APD.nt`, 
   - JSON Linked Data format: `APD.json`
-- create the APD website, saved in `docs/`
+- the two flat tables downstream packages read: `APD_traits.csv` and
+  `APD_categorical_values.csv`
+
+All of these are published at the site root, so they are fetchable at stable URLs
+regardless of where they sit in this repository:
+
+```
+https://traitecoevo.github.io/APD/APD_traits.csv               # latest release
+https://traitecoevo.github.io/APD/release/2.1.0/APD_traits.csv  # pinned
+```
+
+Use those rather than `raw.githubusercontent.com` paths — the repo layout can
+change, the published URLs do not.
+
+`make check` rebuilds and validates: it parses each RDF serialisation, confirms
+the formats agree on the size of the graph, runs `validate_apd()` and runs the
+test suite. It reports at two severities — a regression fails, while a problem
+already present in the published dictionary is listed as a known gap with a
+reason. Those are enumerated in `APD_KNOWN_GAPS` (`R/validate.R`) and explained in
+[`COMMITMENTS.md`](COMMITMENTS.md); anything *not* on that register fails, so new
+breakage cannot hide behind existing debt.
+
+`make site` creates the APD website, saved in `docs/`
   - hosting via Github pages at <https://traitecoevo.github.io/APD/>
   - created from files `index.qmd` and configured with `_quarto.yml`
   - uses the `quarto` package for R, with instructions on formatting from <https://quarto.org/docs/reference/projects/websites.html
@@ -92,6 +138,32 @@ curl -sH "Accept: text/html" -L https://w3id.org/APD > temp.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
 curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
 ```
+
+## Before you change something
+
+The APD is described in a published paper, and that paper is a specification —
+several of its claims are promises this repository has to keep.
+**[`COMMITMENTS.md`](COMMITMENTS.md)** records them, which are machine-checked and
+where, and which are currently unmet. Read it before changing a URI scheme, an
+output format, the licence, the set of published input tables, or where the site
+deploys.
+
+[`AGENTS.md`](AGENTS.md) is the working guide — architecture, gotchas, and the
+cross-package context. [`plans/`](plans/) holds design documents for work in
+progress.
+
+## Licensing
+
+Two licences, split by content versus machinery rather than by directory:
+
+* **The dictionary is [CC BY 4.0](LICENSE)** — the trait definitions and metadata,
+  in `data/` and everything generated from them in `export/`. This is what the
+  paper states and what you are citing when you use the APD.
+* **The software is [BSD 2-clause](LICENSE-CODE)** — the R code, scripts, tests,
+  Quarto sources and stylesheet that build and present it.
+
+A rendered page in `docs/` contains both, plus third-party assets that Quarto
+embeds (Bootstrap and its JavaScript), which stay under their own licences.
 
 ## AusTraits family
 

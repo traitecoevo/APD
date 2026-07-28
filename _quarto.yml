@@ -1,19 +1,28 @@
 project:
   type: website
   resources:
-    - "APD.nq"
-    - "APD.nt"
-    - "APD.ttl"
-    - "APD.json"
-    - "APD_traits.csv"
-    - "APD_categorical_values.csv"
-    - "406.html"
+    # The generated artefacts (APD.ttl/.nq/.nt/.json, the two flat CSVs,
+    # APD_triples.csv) are NOT listed here. They live in export/ but are published
+    # at the site *root*, because https://traitecoevo.github.io/APD/APD.ttl and the
+    # w3id content-negotiation rules pointing at it are a published interface.
+    # A quarto resource keeps its relative path, so listing "export/APD.ttl" would
+    # move the URL. scripts/build_site.R copies them in after the render instead --
+    # and the same goes for assets/406.html, which is published at /406.html.
+    # Tells GitHub Pages not to run the site through Jekyll, which would
+    # otherwise skip any path beginning with an underscore.
+    - ".nojekyll"
+    # Copying the ~100 MB snapshot tree on every render is wasteful, and stage 6
+    # of plans/build-workflow-overhaul.md moves it to the deploy step. It has to
+    # stay here until then: w3id.org/APD/release/<version>/index.html is a live
+    # published permalink, Pages serves it from master:/docs, and dropping this
+    # line makes every versioned permalink 404 on the next deploy. That change
+    # needs the verification gate stage 6 describes, not a quiet edit here.
     - release
   output-dir: docs
   render:
     - index.qmd
     - using_the_APD.qmd
-    - news.md
+    - NEWS.md
 
 website:
   title: "APD"
@@ -39,12 +48,20 @@ website:
         href: https://github.com/traitecoevo/APD/
       - href: http://austraits.org
         text: AusTraits Project
-    
-    page-footer:
-      - right: "This blog is built with [Quarto](https://quarto.org/)."
+
+  page-footer:
+    center: |
+      Built with [Quarto](https://quarto.org/). Definitions licensed
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 
 format:
   html:
     theme: cosmo
     toc: true
+    # The property/value pairs on every entity are a <dl>, and Bootstrap renders
+    # a bare <dl> as an unaligned run of lines. This is what pairs them into two
+    # columns with a rule between rows -- i.e. the structure the old <table>
+    # markup used to give for free.
+    css: assets/apd.css
 

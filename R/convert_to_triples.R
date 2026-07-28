@@ -1,4 +1,8 @@
 
+# The datatype for an allowed-value range. Named so the two uses below cannot
+# drift, and so the "^^" is impossible to lose again.
+XSD_DOUBLE <- "^^<http://www.w3.org/2001/XMLSchema#double>"
+
 convert_to_triples <- function(annotation_properties_csv, traits_csv, glossary_csv, published_classes_csv, reviewers_csv, references_csv, units_csv, hierarchy_csv, categorical_values_csv, APD_resource_csv) {
   
 reformatted_references <- 
@@ -235,8 +239,14 @@ reformatted_traits <-
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
     inScheme = paste0("\"", "https://w3id.org/APD/traits", "\""),
     type = paste0("<", published_classes_csv$Entity[match(type, published_classes_csv$identifier)], ">"),
-    min = ifelse(!is.na(min), paste0("\"", min, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
-    max = ifelse(!is.na(max), paste0("\"", max, "\"", "<https://www.w3.org/2001/XMLSchema#double>"), NA),
+    # A typed literal is "value"^^<datatype>. These were missing the "^^" and used
+    # https:// for the XMLSchema namespace, which is http://. Without the "^^" a
+    # conforming N-Triples parser cannot read the statement at all, and the
+    # N-Quads parser silently takes the datatype URI as a graph label -- which is
+    # why APD.ttl published every allowed-value range as a plain string instead of
+    # a number. 878 statements.
+    min = ifelse(!is.na(min), paste0("\"", min, "\"", XSD_DOUBLE), NA),
+    max = ifelse(!is.na(max), paste0("\"", max, "\"", XSD_DOUBLE), NA),
     units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     across(dplyr::contains("category"), ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$identifier)], ">"), NA)),
@@ -420,7 +430,11 @@ triples_with_labels <-
                         published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
          value = ifelse(property %in% c("keyword") & stringr::str_detect(Object, "glossary\\_"),
                         glossary_csv$label[match(Object_stripped, glossary_csv$Entity)], value),
-         value = stringr::str_replace(value, "https\\:\\/\\/www\\.w3\\.org\\/2001\\/XMLSchema\\#double",""),
+         # Strip the datatype off the displayed value. Matches the XSD namespace on
+         # either scheme: the literals used to be built with https:// (and without
+         # a "^^"), and the released artefacts still are, so this has to read both.
+         value = stringr::str_replace(
+           value, "\\^{0,2}<?https?://www\\.w3\\.org/2001/XMLSchema#double>?", ""),
          value = stringr::str_replace(value, "\\@en", ""),
          value = stringr::str_replace(value, "\\^\\^\\<xsd\\:date\\>",""),
          value = stringr::str_replace(value, "\\^\\^\\<xsd\\:anyURI\\>",""),

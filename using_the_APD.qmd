@@ -15,15 +15,29 @@ To faciliate use of this formal vocabulary by researchers, the content is also o
 
 The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.
 
-```{r, warning=FALSE, message=FALSE, echo=TRUE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE, eval=FALSE}
 library(tidyverse)
 library(stringr)
 library(kableExtra)
 
-# Todo: update links after branch merged in
-APD_traits <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/master/APD_traits.csv", show_col_types = FALSE)
-APD_categorical_values <- read_csv("https://raw.githubusercontent.com/traitecoevo/APD/master/APD_categorical_values.csv", show_col_types = FALSE)
+# The published, version-pinned tables. Pin the version so your analysis is
+# reproducible; drop `release/2.1.0/` for the latest release instead.
+apd <- "https://w3id.org/APD/release/2.1.0"
 
+APD_traits <- read_csv(file.path(apd, "APD_traits.csv"), show_col_types = FALSE)
+APD_categorical_values <- read_csv(file.path(apd, "APD_categorical_values.csv"), show_col_types = FALSE)
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Same tables, read from this build rather than over the network, so the examples
+# below describe the version being released rather than the previous one -- and so
+# the site renders without network access. The chunk above is what a reader runs.
+library(tidyverse)
+library(stringr)
+library(kableExtra)
+
+APD_traits <- read_csv(file.path("export", "APD_traits.csv"), show_col_types = FALSE)
+APD_categorical_values <- read_csv(file.path("export", "APD_categorical_values.csv"), show_col_types = FALSE)
 ```
 
 Metadata fields (annotation properties) documented for each trait include:

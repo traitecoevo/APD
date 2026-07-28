@@ -7,8 +7,8 @@ trait_0000012:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 12000.0
+  min: '0.01'
+  max: '12000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -29,8 +29,8 @@ trait_0000014:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -51,8 +51,8 @@ trait_0000016:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 750.0
+  min: '50'
+  max: '750'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -75,8 +75,8 @@ trait_0000018:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -97,8 +97,8 @@ trait_0000020:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 10000.0
+  min: '10'
+  max: '10000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -119,8 +119,8 @@ trait_0000022:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 150.0
+  min: '0.01'
+  max: '150'
   units: ppm
   units_uom: parts per million
   category: trait_group_0000008
@@ -140,8 +140,8 @@ trait_0000024:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 150.0
+  min: '0.01'
+  max: '150'
   units: ppm
   units_uom: parts per million
   category: trait_group_0000008
@@ -162,8 +162,8 @@ trait_0000026:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 150.0
+  min: '0.01'
+  max: '150'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -184,8 +184,8 @@ trait_0000028:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -206,8 +206,8 @@ trait_0000029:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0000008
@@ -229,8 +229,8 @@ trait_0000030:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -252,8 +252,8 @@ trait_0000032:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10000.0
+  min: '0.01'
+  max: '10000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -274,8 +274,8 @@ trait_0000034:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 20000.0
+  min: '1'
+  max: '20000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -296,8 +296,8 @@ trait_0000036:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -318,8 +318,8 @@ trait_0000037:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.08
-  max: 50.0
+  min: '0.08'
+  max: '50'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0000008
@@ -342,8 +342,8 @@ trait_0000038:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.4
-  max: 100.0
+  min: '0.4'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -367,8 +367,8 @@ trait_0000040:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 20000.0
+  min: '1'
+  max: '20000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -389,8 +389,8 @@ trait_0000042:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -411,8 +411,8 @@ trait_0000043:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.005
-  max: 1.2
+  min: '0.005'
+  max: '1.2'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0000008
@@ -435,8 +435,8 @@ trait_0000044:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.03
-  max: 12.0
+  min: '0.03'
+  max: '12'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -459,8 +459,8 @@ trait_0000046:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 50000.0
+  min: '50'
+  max: '50000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -481,8 +481,8 @@ trait_0000048:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: ppm
   units_uom: parts per million
   category: trait_group_0000008
@@ -504,8 +504,8 @@ trait_0000050:
     is mostly found as hydrated amorphous silica (SiO2 , nH2O).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -529,8 +529,8 @@ trait_0000052:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000008
@@ -553,8 +553,8 @@ trait_0000090:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0000008
@@ -578,8 +578,8 @@ trait_0000091:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0000008
@@ -601,8 +601,8 @@ trait_0000112:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -625,8 +625,8 @@ trait_0000114:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -648,8 +648,8 @@ trait_0000116:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0000108
@@ -672,8 +672,8 @@ trait_0000118:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -697,8 +697,8 @@ trait_0000126:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -722,8 +722,8 @@ trait_0000128:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -746,8 +746,8 @@ trait_0000130:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -771,8 +771,8 @@ trait_0000132:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -796,8 +796,8 @@ trait_0000134:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -821,8 +821,8 @@ trait_0000136:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 30.0
+  min: '0'
+  max: '30'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -845,8 +845,8 @@ trait_0000138:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -870,8 +870,8 @@ trait_0000140:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 20000.0
+  min: '10'
+  max: '20000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -894,8 +894,8 @@ trait_0000142:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 100000.0
+  min: '10'
+  max: '100000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -916,8 +916,8 @@ trait_0000144:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.005
-  max: 15.0
+  min: '0.005'
+  max: '15'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000108
@@ -941,8 +941,8 @@ trait_0000146:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 50000.0
+  min: '100'
+  max: '50000'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -965,8 +965,8 @@ trait_0000152:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: mg/kg
   units_uom: milligram per kilogram
   category: trait_group_0000108
@@ -986,8 +986,8 @@ trait_0000216:
   description: The ratio of the mass of carbon in a stem to stem dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 1000.0
+  min: '100'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1007,8 +1007,8 @@ trait_0000238:
   description: The ratio of the mass of nitrogen in a stem to stem dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1027,8 +1027,8 @@ trait_0000416:
   description: The ratio of the mass of carbon in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 750.0
+  min: '50'
+  max: '750'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1047,8 +1047,8 @@ trait_0000418:
   description: The ratio of the mass of calcium in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1067,8 +1067,8 @@ trait_0000430:
   description: The ratio of the mass of potassium in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1087,8 +1087,8 @@ trait_0000432:
   description: The ratio of the mass of magnesium in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1107,8 +1107,8 @@ trait_0000438:
   description: The ratio of the mass of nitrogen in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1127,8 +1127,8 @@ trait_0000440:
   description: The ratio of the mass of sodium in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1147,8 +1147,8 @@ trait_0000444:
   description: The ratio of the mass of phosphorus in wood to wood dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000408
@@ -1169,8 +1169,8 @@ trait_0000518:
     dry mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1194,8 +1194,8 @@ trait_0000530:
     dry mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1219,8 +1219,8 @@ trait_0000532:
     dry mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1244,8 +1244,8 @@ trait_0000538:
     dry mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1268,8 +1268,8 @@ trait_0000540:
     mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1293,8 +1293,8 @@ trait_0000544:
     dry mass of the senesced wood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000508
@@ -1316,8 +1316,8 @@ trait_0000612:
   description: The ratio of the mass of aluminium in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1335,8 +1335,8 @@ trait_0000614:
   description: The ratio of the mass of boron in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1354,8 +1354,8 @@ trait_0000616:
   description: The ratio of the mass of carbon in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 750.0
+  min: '50'
+  max: '750'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1374,8 +1374,8 @@ trait_0000618:
   description: The ratio of the mass of calcium in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1394,8 +1394,8 @@ trait_0000626:
   description: The ratio of the mass of copper in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 1.0
+  min: '0.0001'
+  max: '1'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1414,8 +1414,8 @@ trait_0000628:
   description: The ratio of the mass of iron in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1434,8 +1434,8 @@ trait_0000630:
   description: The ratio of the mass of potassium in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1454,8 +1454,8 @@ trait_0000632:
   description: The ratio of the mass of magnesium in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1474,8 +1474,8 @@ trait_0000634:
   description: The ratio of the mass of manganese in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1494,8 +1494,8 @@ trait_0000638:
   description: The ratio of the mass of nitrogen in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1514,8 +1514,8 @@ trait_0000640:
   description: The ratio of the mass of sodium in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1533,8 +1533,8 @@ trait_0000644:
   description: The ratio of the mass of phosphorus in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1553,8 +1553,8 @@ trait_0000646:
   description: The ratio of the mass of sulphur in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1573,8 +1573,8 @@ trait_0000652:
   description: The ratio of the mass of zinc in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000206
@@ -1593,8 +1593,8 @@ trait_0000816:
   description: The ratio of the mass of carbon in roots to root dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 750.0
+  min: '50'
+  max: '750'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000808
@@ -1614,8 +1614,8 @@ trait_0000838:
   description: The ratio of the mass of nitrogen in roots to root dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000808
@@ -1635,8 +1635,8 @@ trait_0000844:
   description: The ratio of the mass of phosphorus in roots to root dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000808
@@ -1654,8 +1654,8 @@ trait_0001038:
   description: The ratio of the mass of nitrogen in flowers to flower dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 100.0
+  min: '0.5'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1672,8 +1672,8 @@ trait_0001118:
   description: The ratio of the mass of calcium in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 100.0
+  min: '0.5'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1690,8 +1690,8 @@ trait_0001130:
   description: The ratio of the mass of potassium in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 100.0
+  min: '0.5'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1708,8 +1708,8 @@ trait_0001132:
   description: The ratio of the mass of magnesium in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 10.0
+  min: '0.05'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1726,8 +1726,8 @@ trait_0001138:
   description: The ratio of the mass of nitrogen in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 100.0
+  min: '0.5'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1744,8 +1744,8 @@ trait_0001144:
   description: The ratio of the mass of phosphorus in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1762,8 +1762,8 @@ trait_0001146:
   description: The ratio of the mass of sulphur in fruit to fruit dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 10.0
+  min: '0.05'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1780,8 +1780,8 @@ trait_0001218:
   description: The ratio of the mass of calcium in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1800,8 +1800,8 @@ trait_0001230:
   description: The ratio of the mass of potassium in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1820,8 +1820,8 @@ trait_0001232:
   description: The ratio of the mass of magnesium in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1840,8 +1840,8 @@ trait_0001238:
   description: The ratio of the mass of nitrogen in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1862,8 +1862,8 @@ trait_0001244:
   description: The ratio of the mass of phosphorus in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1884,8 +1884,8 @@ trait_0001246:
   description: The ratio of the mass of sulphur in seeds to seed dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0001006
@@ -1907,8 +1907,8 @@ trait_0001511:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: mmol{N}/g
   units_uom: micromole per gram
   category: trait_group_0000008
@@ -1932,8 +1932,8 @@ trait_0001512:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0000008
@@ -1956,8 +1956,8 @@ trait_0001513:
     or as a method context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 0.5
+  min: '0.05'
+  max: '0.5'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0001502
@@ -1982,8 +1982,8 @@ trait_0001514:
     or as a method context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 0.3
+  min: '0.05'
+  max: '0.3'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0001502
@@ -2002,8 +2002,8 @@ trait_0001611:
     fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2022,8 +2022,8 @@ trait_0001612:
     mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2042,8 +2042,8 @@ trait_0001613:
     cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2063,8 +2063,8 @@ trait_0001614:
     mesophyll cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2084,8 +2084,8 @@ trait_0001615:
     cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2105,8 +2105,8 @@ trait_0001616:
     mesophyll cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: umol{Ca}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2125,8 +2125,8 @@ trait_0001661:
     cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10.0
+  min: '0'
+  max: '10'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2145,8 +2145,8 @@ trait_0001662:
     fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10.0
+  min: '0'
+  max: '10'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2166,8 +2166,8 @@ trait_0001663:
     cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10.0
+  min: '0'
+  max: '10'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2187,8 +2187,8 @@ trait_0001664:
     palisade mesophyll cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 30.0
+  min: '0'
+  max: '30'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2208,8 +2208,8 @@ trait_0001665:
     cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10.0
+  min: '0'
+  max: '10'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2229,8 +2229,8 @@ trait_0001666:
     mesophyll cell fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 30.0
+  min: '0'
+  max: '30'
   units: umol{P}/g
   units_uom: micromole per gram
   category: trait_group_0001502
@@ -2251,8 +2251,8 @@ trait_0001667:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -2272,8 +2272,8 @@ trait_0001668:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 10.0
+  min: '0.001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -2293,8 +2293,8 @@ trait_0001669:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -2314,8 +2314,8 @@ trait_0001670:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -2335,8 +2335,8 @@ trait_0001671:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 10.0
+  min: '0.0001'
+  max: '10'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0000008
@@ -2357,8 +2357,8 @@ trait_0002021:
     not comprise the cell wall.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002005
@@ -2379,8 +2379,8 @@ trait_0002022:
     do not comprise the cell wall.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 200.0
+  min: '10'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -2397,8 +2397,8 @@ trait_0002024:
   description: The ratio of the mass of cellulose in a leaf to leaf dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0002005
@@ -2418,8 +2418,8 @@ trait_0002025:
   description: The ratio of the mass of total starch in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002005
@@ -2440,8 +2440,8 @@ trait_0002027:
   description: The ratio of the mass of water soluble starch in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002005
@@ -2462,8 +2462,8 @@ trait_0002028:
     mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 200.0
+  min: '0.1'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -2486,8 +2486,8 @@ trait_0002031:
     both monosaccharides and disaccharides.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002005
@@ -2513,8 +2513,8 @@ trait_0002032:
     both monosaccharides and disaccharides.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 200.0
+  min: '1'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -2535,8 +2535,8 @@ trait_0002035:
   description: The ratio of the mass of water soluble protein in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 20.0
+  min: '0.1'
+  max: '20'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002009
@@ -2559,8 +2559,8 @@ trait_0002037:
     area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 20.0
+  min: '0.1'
+  max: '20'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0002009
@@ -2579,8 +2579,8 @@ trait_0002050:
   description: The ratio of the mass of lignin in a leaf to leaf dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002007
@@ -2604,8 +2604,8 @@ trait_0002052:
     content is measured as gallic acid equivalents.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002007
@@ -2630,8 +2630,8 @@ trait_0002054:
   comments: Tannins are a specific class of polyphenolic compounds found in plants.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002007
@@ -2652,8 +2652,8 @@ trait_0002055:
   description: The ratio of the mass of carotenoids in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: umol{carotenoid}/m2
   units_uom: micromole per square metre
   category: trait_group_0002008
@@ -2673,8 +2673,8 @@ trait_0002056:
   description: The ratio of the mass of carotenoids in a leaf to leaf dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: mmol{carotenoid}/kg
   units_uom: millimole per kilogram
   category: trait_group_0002008
@@ -2697,8 +2697,8 @@ trait_0002081:
     chlorophyll content is the sum of chlorophyll a and chlorophyll b content.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 2000.0
+  min: '10'
+  max: '2000'
   units: umol{chlorophyll}/m2
   units_uom: micromole per square metre
   category: trait_group_0002008
@@ -2723,8 +2723,8 @@ trait_0002082:
     chlorophyll content is the sum of chlorophyll a and chlorophyll b content.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 15.0
+  min: '0.1'
+  max: '15'
   units: mmol{chlorophyll}/kg
   units_uom: millimole per kilogram
   category: trait_group_0002008
@@ -2746,8 +2746,8 @@ trait_0002083:
   description: The ratio of the mass of chlorophyll a in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 2000.0
+  min: '50'
+  max: '2000'
   units: umol{chlorophyllA}/m2
   units_uom: micromole per square metre
   category: trait_group_0002008
@@ -2767,8 +2767,8 @@ trait_0002084:
   description: The ratio of the mass of chlorophyll a in a leaf to leaf dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: mmol{chlorophyllA}/kg
   units_uom: millimole per kilogram
   category: trait_group_0002008
@@ -2789,8 +2789,8 @@ trait_0002085:
   description: The ratio of the mass of chlorophyll b in a leaf to leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: umol{chlorophyllB}/m2
   units_uom: micromole per square metre
   category: trait_group_0002008
@@ -2810,8 +2810,8 @@ trait_0002086:
   description: The ratio of the mass of chlorophyll b in a leaf to leaf dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mmol{chlorophyllB}/kg
   units_uom: millimole per kilogram
   category: trait_group_0002008
@@ -2834,8 +2834,8 @@ trait_0002087:
     b in the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 6.0
+  min: '0.1'
+  max: '6'
   units: umol{chlorophyllA}/umol{chlorophyllB}
   units_uom: micromole per micromole
   category: trait_group_0002008
@@ -2858,8 +2858,8 @@ trait_0002090:
     or as a method context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 5.0
-  max: 50.0
+  min: '5'
+  max: '50'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002009
@@ -2882,8 +2882,8 @@ trait_0002127:
     mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -2905,8 +2905,8 @@ trait_0002131:
     both monosaccharides and disaccharides.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 200.0
+  min: '1'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -2925,8 +2925,8 @@ trait_0002224:
   description: The ratio of the mass of cellulose in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0002005
@@ -2944,8 +2944,8 @@ trait_0002250:
   description: The ratio of the mass of lignin in bark to bark dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0002007
@@ -2965,8 +2965,8 @@ trait_0002255:
   comments: Tannins are a specific class of polyphenolic compounds found in plants.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-05
-  max: 1.0
+  min: '0.00001'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0002007
@@ -2986,8 +2986,8 @@ trait_0002327:
     mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -3010,8 +3010,8 @@ trait_0002331:
     both monosaccharides and disaccharides.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 200.0
+  min: '1'
+  max: '200'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0002005
@@ -3033,8 +3033,8 @@ trait_0002534:
     the methods or as a method context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-05
-  max: 1.0
+  min: '0.00001'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0002009
@@ -3057,8 +3057,8 @@ trait_0002544:
     the methods or as a method context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 1.0
+  min: '0.0001'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0002006
@@ -3081,8 +3081,8 @@ trait_0002822:
   comments: Includes measurements on leaf analogs, including cladodes and phylloclades.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 1.0
+  min: '0.0001'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0000008; trait_group_0030602
@@ -3103,8 +3103,8 @@ trait_0002824:
     to the bark dry mass before the combustion process.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 1.0
+  min: '0.0001'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0000206; trait_group_0030602
@@ -3126,8 +3126,8 @@ trait_0003011:
     has a lower ratio of 13C/12C relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 0.0
+  min: '-50'
+  max: '0'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3150,8 +3150,8 @@ trait_0003012:
     has a lower ratio of 13C/12C relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 0.0
+  min: '-50'
+  max: '0'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3175,8 +3175,8 @@ trait_0003013:
     has a lower ratio of 13C/12C relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 0.0
+  min: '-50'
+  max: '0'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3199,8 +3199,8 @@ trait_0003014:
     has a lower ratio of 13C/12C relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 0.0
+  min: '-50'
+  max: '0'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3223,8 +3223,8 @@ trait_0003015:
     has a lower ratio of 13C/12C relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 0.0
+  min: '-50'
+  max: '0'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3248,8 +3248,8 @@ trait_0003031:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3271,8 +3271,8 @@ trait_0003032:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3295,8 +3295,8 @@ trait_0003033:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3318,8 +3318,8 @@ trait_0003034:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3341,8 +3341,8 @@ trait_0003035:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3364,8 +3364,8 @@ trait_0003052:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3386,8 +3386,8 @@ trait_0003053:
     a lower ratio of 15N/14N relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -25.0
-  max: 75.0
+  min: '-25'
+  max: '75'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3408,8 +3408,8 @@ trait_0003072:
     a lower ratio of 18O/16O relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: 50.0
+  min: '-10'
+  max: '50'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3431,8 +3431,8 @@ trait_0003092:
     a lower ratio of 18O/16O relative to the standard.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: 50.0
+  min: '-10'
+  max: '50'
   units: '{delta}[ppth]'
   units_uom: parts per thousand
   category: trait_group_0003004
@@ -3457,8 +3457,8 @@ trait_0010021:
     or across a taxon.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 20.0
+  min: '0.001'
+  max: '20'
   units: m
   units_uom: metre
   category: trait_group_0010004
@@ -3482,8 +3482,8 @@ trait_0010022:
     or across a taxon.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 20.0
+  min: '0.001'
+  max: '20'
   units: m
   units_uom: metre
   category: trait_group_0010004
@@ -3509,8 +3509,8 @@ trait_0010023:
     reached by reproductive shoots, as it represents the plant's access to light.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 130.0
+  min: '0.001'
+  max: '130'
   units: m
   units_uom: metre
   category: trait_group_0010004
@@ -3550,8 +3550,8 @@ trait_0010024:
     population or across a taxon.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 5000.0
+  min: '0.01'
+  max: '5000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011802
@@ -3575,8 +3575,8 @@ trait_0010025:
   description: Count of stems on multi-stemmed plants.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 5.0
+  min: '0'
+  max: '5'
   units: '{count}'
   category: trait_group_0011802
   created: 14/07/2021
@@ -3602,8 +3602,8 @@ trait_0010026:
     surrounding vegetation.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: m
   units_uom: metre
   category: trait_group_0010004
@@ -3630,8 +3630,8 @@ trait_0010027:
     surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: m
   units_uom: metre
   category: trait_group_0010004
@@ -3652,8 +3652,8 @@ trait_0010028:
     crawling, creeping or similar.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: m
   units_uom: metre
   category: trait_group_0011802
@@ -3845,8 +3845,8 @@ trait_0011211:
     still be recorded as the 2-dimensional projected area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0e+07
+  min: '0.1'
+  max: '10000000'
   units: mm2
   units_uom: square millimetre
   category: trait_group_0011204
@@ -3879,8 +3879,8 @@ trait_0011212:
     of a single leaflet.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000000.0
+  min: '0.1'
+  max: '1000000'
   units: mm2
   units_uom: square millimetre
   category: trait_group_0011204
@@ -3905,8 +3905,8 @@ trait_0011213:
     of a true leaf, this should be noted as a `context` or under `measurement_remarks`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100000.0
+  min: '0.1'
+  max: '100000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011204
@@ -3946,8 +3946,8 @@ trait_0011214:
     as a `context` or under `measurement_remarks`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100000.0
+  min: '0.01'
+  max: '100000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011204
@@ -3981,8 +3981,8 @@ trait_0011215:
     explicitly included, excluded, or ignored.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 51.0
+  min: '0.01'
+  max: '51'
   units: mm
   units_uom: millimetre
   category: trait_group_0011204
@@ -4017,8 +4017,8 @@ trait_0011216:
     is included in or excluded from the leaf dry mass measurements.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 15000.0
+  min: '0.01'
+  max: '15000'
   units: mg
   units_uom: milligram
   category: trait_group_0011206
@@ -4045,8 +4045,8 @@ trait_0011217:
   description: The oven dry mass of a single leaflet.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.005
-  max: 15000.0
+  min: '0.005'
+  max: '15000'
   units: mg
   units_uom: milligram
   category: trait_group_0011206
@@ -4075,8 +4075,8 @@ trait_0011218:
     the methods.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 30000.0
+  min: '0.1'
+  max: '30000'
   units: mg
   units_uom: milligram
   category: trait_group_0011206
@@ -4102,8 +4102,8 @@ trait_0011219:
   description: Length of the petiole from the leaf base to the leaf axil.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: cm
   units_uom: centimetre
   category: trait_group_0011204
@@ -4120,8 +4120,8 @@ trait_0011220:
   description: Width of the petiole.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 200.0
+  min: '0'
+  max: '200'
   units: cm
   units_uom: centimetre
   category: trait_group_0011204
@@ -4138,8 +4138,8 @@ trait_0011221:
   description: The count of leaflets that comprise a single leaf .
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0011202
@@ -4161,8 +4161,8 @@ trait_0011222:
     leaflets per botanical leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: cm
   units_uom: centimetre
   category: trait_group_0011204
@@ -4187,8 +4187,8 @@ trait_0011223:
     leaflets per botanical leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: cm
   units_uom: centimetre
   category: trait_group_0011204
@@ -4218,8 +4218,8 @@ trait_0011230:
     this should be noted in the methods or under `measurement_remarks`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 3000.0
+  min: '1'
+  max: '3000'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0011204; trait_group_0011206
@@ -4259,8 +4259,8 @@ trait_0011231:
     literature. For whole-leaf LMA/SLA data, see the trait `leaf_mass_per_area`
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 500.0
+  min: '0.1'
+  max: '500'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0011204; trait_group_0011206
@@ -4295,8 +4295,8 @@ trait_0011232:
   description: The ratio of leaf dry mass to leaf fresh volume.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 1.1
+  min: '0.05'
+  max: '1.1'
   units: mg/mm3
   units_uom: milligram per cubic millimetre
   category: trait_group_0011206
@@ -4322,8 +4322,8 @@ trait_0011260:
     to include the petiole.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 100.0
+  min: '0.05'
+  max: '100'
   units: mm2/mg
   units_uom: square millimetre per milligram
   category: trait_group_0011204
@@ -4350,8 +4350,8 @@ trait_0011261:
   description: The ratio of leaf dry mass to total plant dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206
@@ -4374,8 +4374,8 @@ trait_0011262:
     ratio of leaf water content to leaf fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 2.0
+  min: '0.001'
+  max: '2'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206
@@ -4403,8 +4403,8 @@ trait_0011263:
     the petiole.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 200.0
-  max: 2000.0
+  min: '200'
+  max: '2000'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0011204; trait_group_0011206
@@ -4430,8 +4430,8 @@ trait_0011264:
     to leaf surface area; leaf succulence.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 5000.0
+  min: '10'
+  max: '5000'
   units: g/m2
   units_uom: gram per square metre
   category: trait_group_0011206
@@ -4454,8 +4454,8 @@ trait_0011265:
     the ratio of a leaf dry mass to leaf fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206
@@ -4478,8 +4478,8 @@ trait_0011266:
     the ratio of a leaf dry mass to leaf fresh mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206
@@ -4502,8 +4502,8 @@ trait_0011267:
     maximal water holding capacity and is at full turgor.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206
@@ -4524,8 +4524,8 @@ trait_0011268:
     fraction of cell wall material that can be recovered from total leaf biomass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0011206
@@ -4777,8 +4777,8 @@ trait_0011318:
     flat plane.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: mm
   units_uom: millimetre
   category: trait_group_0011304
@@ -5041,8 +5041,8 @@ trait_0011412:
     zenith is a separate trait, `leaf_inclination_angle`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 180.0
+  min: '0'
+  max: '180'
   units: deg
   units_uom: plane angle degree
   category: trait_group_0011402
@@ -5072,8 +5072,8 @@ trait_0011413:
     Complanate leaves can be scored as having a `leaf_inclination_angle` of 0.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -90.0
-  max: 90.0
+  min: '-90'
+  max: '90'
   units: deg
   units_uom: plane angle degree
   category: trait_group_0011402
@@ -5127,8 +5127,8 @@ trait_0011510:
   description: Thickness of the cuticle on the lower leaf surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5149,8 +5149,8 @@ trait_0011511:
   description: Thickness of the cuticle on the upper leaf surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5172,8 +5172,8 @@ trait_0011512:
   description: Thickness of the epidermis, where the leaf lamina side is not specified.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5194,8 +5194,8 @@ trait_0011513:
   description: Thickness of the epidermis on the lower side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5216,8 +5216,8 @@ trait_0011514:
   description: Thickness of the epidermis on the upper side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5240,8 +5240,8 @@ trait_0011515:
     the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 10000.0
+  min: '100'
+  max: '10000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011503; trait_group_0011202
@@ -5262,8 +5262,8 @@ trait_0011516:
   description: Epidermal cell density on the lower side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 10000.0
+  min: '100'
+  max: '10000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011503; trait_group_0011202
@@ -5284,8 +5284,8 @@ trait_0011517:
   description: Epidermal cell density on the upper side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 10000.0
+  min: '100'
+  max: '10000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011503; trait_group_0011202
@@ -5305,8 +5305,8 @@ trait_0011518:
   description: Thickness of the hypodermis on the lower side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5326,8 +5326,8 @@ trait_0011519:
   description: Thickness of the hypodermis on the upper side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5347,8 +5347,8 @@ trait_0011520:
   description: Thickness of palisade mesophyll tissue on the lower side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5367,8 +5367,8 @@ trait_0011521:
   description: Thickness of palisade mesophyll tissue on the upper side of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0011502
@@ -5386,8 +5386,8 @@ trait_0011522:
   description: Length of individual leaf palisade cells.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0011503; trait_group_0011202
@@ -5406,8 +5406,8 @@ trait_0011523:
   description: Width of individual leaf palisade cells.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 50.0
+  min: '1'
+  max: '50'
   units: um
   units_uom: micrometre
   category: trait_group_0011503; trait_group_0011202
@@ -5426,8 +5426,8 @@ trait_0011524:
   description: The number of layers of palisade cells in a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10.0
+  min: '1'
+  max: '10'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0011502; trait_group_0011202
@@ -5446,8 +5446,8 @@ trait_0011525:
   description: Thickness of spongy mesophyll tissue in a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0011502; trait_group_0011202
@@ -5469,8 +5469,8 @@ trait_0011526:
     needs to be specified under `measurement_remarks` or as a `method_context`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 10000.0
+  min: '100'
+  max: '10000'
   units: um2
   units_uom: square micrometre
   category: trait_group_0011503
@@ -5491,8 +5491,8 @@ trait_0011610:
   description: Density of stomata on the lower leaf surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011602
@@ -5517,8 +5517,8 @@ trait_0011611:
   description: Density of stomata on the upper leaf surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011602
@@ -5543,8 +5543,8 @@ trait_0011612:
   description: Density of stomata averaged across both leaf surfaces.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0011602
@@ -5599,8 +5599,8 @@ trait_0011615:
   description: Length of guard cells.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 200.0
+  min: '10'
+  max: '200'
   units: um
   units_uom: micrometre
   category: trait_group_0011602
@@ -5622,8 +5622,8 @@ trait_0011710:
     through a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: umol/umol
   units_uom: micromole per micromole
   category: trait_group_0011702
@@ -5643,8 +5643,8 @@ trait_0011711:
     by a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: umol/umol
   units_uom: micromole per micromole
   category: trait_group_0011702
@@ -5664,8 +5664,8 @@ trait_0011712:
     by a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: umol/umol
   units_uom: micromole per micromole
   category: trait_group_0011702
@@ -5684,8 +5684,8 @@ trait_0011713:
     that is reflected by a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: umol/umol
   units_uom: micromole per micromole
   category: trait_group_0011702
@@ -5706,8 +5706,8 @@ trait_0011811:
     such as bark thickness or Huber value.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mm2
   units_uom: square millimetre
   category: trait_group_0011802
@@ -5732,8 +5732,8 @@ trait_0011812:
     have not yet developed heartwood and therefore is the cross-section of sapwood.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mm2
   units_uom: square millimetre
   category: trait_group_0011802
@@ -5752,8 +5752,8 @@ trait_0011813:
     final branching node.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 50.0
+  min: '0.05'
+  max: '50'
   units: mm2
   units_uom: square millimetre
   category: trait_group_0011802
@@ -5772,8 +5772,8 @@ trait_0011814:
     node.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011802
@@ -5794,8 +5794,8 @@ trait_0011815:
     segment without bark.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 1.4
+  min: '0.05'
+  max: '1.4'
   units: mg/mm3
   units_uom: milligram per cubic millimetre
   category: trait_group_0011802
@@ -5823,8 +5823,8 @@ trait_0011816:
     otherwise are outliers for wood density
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.4
+  min: '0.1'
+  max: '1.4'
   units: mg/mm3
   units_uom: milligram per cubic millimetre
   category: trait_group_0011802
@@ -5868,8 +5868,8 @@ trait_0011910:
     not the entire branch.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 100.0
+  min: '0.01'
+  max: '100'
   units: cm2{xylem}/mm2{leaf}
   units_uom: square centimetre per square millimetre
   category: trait_group_0011202
@@ -5889,8 +5889,8 @@ trait_0011911:
     base of the branch to the branch's total leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-06
-  max: 0.2
+  min: '0.000001'
+  max: '0.2'
   units: mm2{sapwood}/mm2{leaf}
   units_uom: square millimetre per square millimetre
   category: trait_group_0011802
@@ -5911,8 +5911,8 @@ trait_0011912:
   description: The ratio of whole plant leaf dry mass to whole plant stem dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206; trait_group_0011902
@@ -5933,8 +5933,8 @@ trait_0011913:
     of stems and branches, rather than leaves; support fraction.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011206; trait_group_0011902
@@ -5957,8 +5957,8 @@ trait_0011914:
     main shoot axis.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0011902
@@ -5980,8 +5980,8 @@ trait_0011915:
   comments: A related trait is `stem_water_content_per_saturated_mass`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 1000.0
+  min: '100'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0011902
@@ -6005,8 +6005,8 @@ trait_0011916:
   comments: A related trait is `stem_dry_matter_content`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011902
@@ -6027,8 +6027,8 @@ trait_0011917:
     of total plant biomass that is comprised of stems and branches.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011902
@@ -6053,8 +6053,8 @@ trait_0011918:
     of the mass of water in a stem to saturated stem mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0011902
@@ -6091,8 +6091,8 @@ trait_0012011:
     measure, the bark thickness to stem diameter ratio, can also be calculated.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: mm
   units_uom: millimetre
   category: trait_group_0012002
@@ -6116,8 +6116,8 @@ trait_0012012:
     to adjust for increasing bark thickness with increasing stem diameter.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm/mm
   units_uom: millimetre per millimetre
   category: trait_group_0012002
@@ -6139,8 +6139,8 @@ trait_0012013:
   description: The ratio of bark dry mass to bark fresh volume.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.1
+  min: '0.1'
+  max: '1.1'
   units: mg/mm3
   units_uom: milligram per cubic millimetre
   category: trait_group_0012002
@@ -6159,8 +6159,8 @@ trait_0012014:
   description: The ratio of bark dry mass to bark surface area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: g/cm2
   units_uom: gram per square centimetre
   category: trait_group_0012002
@@ -6181,8 +6181,8 @@ trait_0012015:
     dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0012002
@@ -6203,8 +6203,8 @@ trait_0012016:
     to its maximal water holding capacity and is at full turgor.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10.0
+  min: '0.1'
+  max: '10'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0012002
@@ -6221,8 +6221,8 @@ trait_0012111:
   description: Maximum root diameter.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012104
@@ -6264,8 +6264,8 @@ trait_0012113:
     of coarse roots (>0.5mm diameter).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 50.0
+  min: '0.05'
+  max: '50'
   units: mm3/mm3
   units_uom: cubic millimetre per cubic millimetre
   category: trait_group_0012104
@@ -6296,8 +6296,8 @@ trait_0012114:
     from the surface to soil depth d in centimeters and b the estimated parameter.'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 1.0
+  min: '0.5'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012104
@@ -6334,8 +6334,8 @@ trait_0012116:
   description: The ratio of root length to root dry mass; SRL.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 5000.0
+  min: '0.5'
+  max: '5000'
   units: m/g
   units_uom: metre per gram
   category: trait_group_0012104
@@ -6359,8 +6359,8 @@ trait_0012117:
     capturing how efficiently seedlings reach reliable water.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 5000.0
+  min: '0.5'
+  max: '5000'
   units: m/g
   units_uom: metre per gram
   category: trait_group_0012104
@@ -6380,8 +6380,8 @@ trait_0012118:
   description: The ratio of root surface area to root dry mass; specific root area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm2/mg
   units_uom: square millimetre per milligram
   category: trait_group_0012104
@@ -6402,8 +6402,8 @@ trait_0012119:
   description: The ratio of woody root dry mass to woody root fresh volume.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 10.0
+  min: '0.05'
+  max: '10'
   units: mg/mm3
   units_uom: milligram per cubic millimetre
   category: trait_group_0012104
@@ -6423,8 +6423,8 @@ trait_0012120:
     it is possible to collect the entire root system.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 15.0
+  min: '0.01'
+  max: '15'
   units: mg{root}/mg{shoot}
   units_uom: milligram per milligram
   category: trait_group_0012104; trait_group_0011802
@@ -6446,8 +6446,8 @@ trait_0012121:
     RDMC.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: mg/g
   units_uom: milligram per gram
   category: trait_group_0012104
@@ -6466,8 +6466,8 @@ trait_0012122:
   description: The ratio of total root system dry mass to whole plant dry mass.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0012104
@@ -6509,8 +6509,8 @@ trait_0012151:
     `storage_organ` and should be documented as an entity context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011802; trait_group_0012104
@@ -6533,8 +6533,8 @@ trait_0012152:
     `storage_organ` and should be documented as an entity context.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0011802; trait_group_0012104
@@ -6562,8 +6562,8 @@ trait_0012221:
     aborted seeds, and successfully matured seeds.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0012202
@@ -6590,8 +6590,8 @@ trait_0012222:
     tissues and aborted seeds.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10000.0
+  min: '0.01'
+  max: '10000'
   units: mg
   units_uom: milligram
   category: trait_group_0012202
@@ -6611,8 +6611,8 @@ trait_0012301:
     not the longest dimension.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: cm
   units_uom: centimetre
   category: trait_group_0012404
@@ -6634,8 +6634,8 @@ trait_0012302:
     bud length, the base-to-apex dimension.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: cm
   units_uom: centimetre
   category: trait_group_0012404
@@ -6655,8 +6655,8 @@ trait_0012351:
     either a single cluster of flowers or the entire reproductive shoot system.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: '{count}/{count}'
   units_uom: '{count}/{count}'
   category: trait_group_0012404
@@ -6676,8 +6676,8 @@ trait_0012352:
   description: The vertical length (height) of an inflorescence.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1500.0
+  min: '0.01'
+  max: '1500'
   units: cm
   units_uom: centimetre
   category: trait_group_0012406
@@ -6698,8 +6698,8 @@ trait_0012353:
   description: The diameter (of greatest width dimension) of an inflorescence.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1500.0
+  min: '0.01'
+  max: '1500'
   units: cm
   units_uom: centimetre
   category: trait_group_0012406
@@ -6724,8 +6724,8 @@ trait_0012410:
     al. (2020) for their character '332. Androecium structural merism (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012408
@@ -6779,8 +6779,8 @@ trait_0012412:
     al. (2020) for their character '331. Number of androecium structural whorls (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012408
@@ -6961,8 +6961,8 @@ trait_0012419:
   description: The length of the flower.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: cm
   units_uom: centimetre
   category: trait_group_0012406
@@ -6985,8 +6985,8 @@ trait_0012420:
     organs, but most commonly the diameter from petal  tip to petal tip.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 200.0
+  min: '0.01'
+  max: '200'
   units: cm
   units_uom: centimetre
   category: trait_group_0012406
@@ -7022,8 +7022,8 @@ trait_0012422:
   description: Maximum flower number produced.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000000.0
+  min: '0'
+  max: '1000000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012404
@@ -7047,8 +7047,8 @@ trait_0012431:
     '301. Number of fertile stamens (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10000.0
+  min: '0'
+  max: '10000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012408
@@ -7108,8 +7108,8 @@ trait_0012433:
     their character '306. Fusion of filaments (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012408
@@ -7146,8 +7146,8 @@ trait_0012434:
     Fusion of filaments to inner perianth series (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012408
@@ -7236,8 +7236,8 @@ trait_0012443:
     et al. (2020) for their character '403. Fusion of ovaries (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012409
@@ -7293,8 +7293,8 @@ trait_0012445:
     ovules per functional carpel (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100000.0
+  min: '0'
+  max: '100000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012409
@@ -7369,8 +7369,8 @@ trait_0012462:
     al. (2020) for their character '204. Fusion of perianth (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012406
@@ -7395,8 +7395,8 @@ trait_0012463:
     their character '232. Perianth merism (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 50.0
+  min: '0'
+  max: '50'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012406
@@ -7429,8 +7429,8 @@ trait_0012464:
     perianth parts (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012406
@@ -7510,8 +7510,8 @@ trait_0012467:
     their character '231. Number of perianth whorls (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 15.0
+  min: '0'
+  max: '15'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012406
@@ -7566,8 +7566,8 @@ trait_0012472:
     their character '5000. Number of apertures (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012408
@@ -7591,8 +7591,8 @@ trait_0012473:
     axis. Here we use P or E or another measure, whichever is the longest.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0012408
@@ -7626,8 +7626,8 @@ trait_0012481:
     structural carpels (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10000.0
+  min: '0'
+  max: '10000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012409
@@ -7701,8 +7701,8 @@ trait_0012484:
     '406. Fusion of styles (C1)'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0012409
@@ -7722,8 +7722,8 @@ trait_0012485:
   description: The length of an individual flower petal.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 100.0
+  min: '1'
+  max: '100'
   units: mm
   units_uom: millimetre
   category: trait_group_0012406
@@ -7743,8 +7743,8 @@ trait_0012511:
   description: Fruit dry mass, including seeds. Fruits will generally be oven-dried.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 1000000.0
+  min: '0.0001'
+  max: '1000000'
   units: mg
   units_uom: milligram
   category: trait_group_0012504
@@ -7771,8 +7771,8 @@ trait_0012512:
     this is not the longest dimension.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012504
@@ -7806,8 +7806,8 @@ trait_0012513:
     to the fruit length, the base-to-apex dimension.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012504
@@ -7839,8 +7839,8 @@ trait_0012514:
     the base-to-apex dimension.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012504
@@ -7870,8 +7870,8 @@ trait_0012515:
     be just some components of the peripcarp (most frequently the exocarp and mesocarp).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012504
@@ -8014,8 +8014,8 @@ trait_0012610:
     these should be mapped to 'diaspore_dry_mass'.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-05
-  max: 1000000.0
+  min: '0.00001'
+  max: '1000000'
   units: mg
   units_uom: milligram
   category: trait_group_0012604
@@ -8054,8 +8054,8 @@ trait_0012611:
     easily be separated.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-05
-  max: 1000000.0
+  min: '0.00001'
+  max: '1000000'
   units: mg
   units_uom: milligram
   category: trait_group_0012604
@@ -8084,8 +8084,8 @@ trait_0012612:
     seed's dispersal structures or protective tissues.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0e-05
-  max: 100000.0
+  min: '0.00001'
+  max: '100000'
   units: mg
   units_uom: milligram
   category: trait_group_0012604
@@ -8115,8 +8115,8 @@ trait_0012613:
     measurements include small appendages that are not easily separated from the seed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012604
@@ -8153,8 +8153,8 @@ trait_0012614:
     measurements include small appendages that are not easily separated from the seed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012604
@@ -8190,8 +8190,8 @@ trait_0012615:
     measurements include small appendages that are not easily separated from the seed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: mm
   units_uom: millimetre
   category: trait_group_0012604
@@ -8218,8 +8218,8 @@ trait_0012616:
   description: Volume of a seed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 100000.0
+  min: '0.001'
+  max: '100000'
   units: mm3
   units_uom: cubic millimetre
   category: trait_group_0012604
@@ -8249,8 +8249,8 @@ trait_0012617:
     under given environmental conditions.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100000.0
+  min: '0'
+  max: '100000'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0012604
@@ -8450,8 +8450,8 @@ trait_0013011:
     vein.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 90.0
+  min: '0'
+  max: '90'
   units: deg
   units_uom: plane angle degree
   category: trait_group_0013006; trait_group_0021002; trait_group_0011202
@@ -8481,8 +8481,8 @@ trait_0013012:
     of all orders of leaf veins.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: mm/mm2
   units_uom: reciprocal millimetre
   category: trait_group_0013006; trait_group_0021002; trait_group_0011202
@@ -8511,8 +8511,8 @@ trait_0013013:
     secondary and tertiary veins).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: mm/mm2
   units_uom: millimetre per square millimetre
   category: trait_group_0013006; trait_group_0021002; trait_group_0011202
@@ -8541,8 +8541,8 @@ trait_0013014:
     of the square.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 20.0
+  min: '0.01'
+  max: '20'
   units: '{count}/mm'
   units_uom: reciprocal millimetre
   category: trait_group_0013006; trait_group_0021002; trait_group_0011202
@@ -8569,8 +8569,8 @@ trait_0013111:
     stem cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.4
-  max: 2000.0
+  min: '0.4'
+  max: '2000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8598,8 +8598,8 @@ trait_0013112:
     leaf cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 50000.0
+  min: '1'
+  max: '50000'
   units: '{count}/mm2'
   units_uom: reciprocal square millimetre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011202
@@ -8626,8 +8626,8 @@ trait_0013113:
     as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8660,8 +8660,8 @@ trait_0013114:
     ones, as flow rate is proportional to the 4th power of the conduit's diameter.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8688,8 +8688,8 @@ trait_0013115:
     as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 250.0
+  min: '1'
+  max: '250'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011202
@@ -8713,8 +8713,8 @@ trait_0013116:
     fraction) to the total stem cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8741,8 +8741,8 @@ trait_0013117:
     indicates a tendency of vessels to occur in clusters.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8768,8 +8768,8 @@ trait_0013118:
     fraction) to the total stem cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8792,8 +8792,8 @@ trait_0013119:
     area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8814,8 +8814,8 @@ trait_0013120:
     vessel cavitation.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 1000.0
+  min: '0.05'
+  max: '1000'
   units: um.m2/{count}
   units_uom: square millimetre micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8834,8 +8834,8 @@ trait_0013121:
   description: The wall thickness of xylem vessels in a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011202
@@ -8853,8 +8853,8 @@ trait_0013122:
   description: The wall thickness of xylem vessels in a stem.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8872,8 +8872,8 @@ trait_0013123:
   description: The length of xylem vessels in a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011202
@@ -8891,8 +8891,8 @@ trait_0013124:
   description: The length of xylem vessels in a stem.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: um
   units_uom: micrometre
   category: trait_group_0013102; trait_group_0021002; trait_group_0011802
@@ -8915,8 +8915,8 @@ trait_0013161:
     sapwood cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013001; trait_group_0021002; trait_group_0011802
@@ -8939,8 +8939,8 @@ trait_0013162:
     ratio of total conduit cross-sectional area to sapwood cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013001; trait_group_0021002; trait_group_0011802
@@ -8962,8 +8962,8 @@ trait_0013163:
     area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013001; trait_group_0021002; trait_group_0011802
@@ -8986,8 +8986,8 @@ trait_0013164:
     area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013001; trait_group_0021002; trait_group_0011802
@@ -9010,8 +9010,8 @@ trait_0013165:
     cross-sectional area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: mm2/mm2
   units_uom: square millimetre per square millimetre
   category: trait_group_0013001; trait_group_0021002; trait_group_0011802
@@ -9036,8 +9036,8 @@ trait_0014011:
     force is applied.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 10000.0
+  min: '0.5'
+  max: '10000'
   units: N/m
   units_uom: newton per metre
   category: trait_group_0014001; trait_group_0011202
@@ -9067,8 +9067,8 @@ trait_0014012:
     force is applied.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1000.0
-  max: 3.0e+07
+  min: '1000'
+  max: '30000000'
   units: N/m2
   units_uom: newton per square meter
   category: trait_group_0014001; trait_group_0011202
@@ -9095,8 +9095,8 @@ trait_0014013:
     how much work (force per distance) is done when force is applied.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: 'N'
   units_uom: newton
   category: trait_group_0014001; trait_group_0011202
@@ -9124,8 +9124,8 @@ trait_0014014:
     indicating how much work (force per distance) is done when force is applied.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 100.0
-  max: 10000.0
+  min: '100'
+  max: '10000'
   units: N/m
   units_uom: newton per metre
   category: trait_group_0014001; trait_group_0011202
@@ -9154,8 +9154,8 @@ trait_0014015:
     is also sometimes reported in J.)
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 50.0
+  min: '0.01'
+  max: '50'
   units: 'N'
   units_uom: newton
   category: trait_group_0014001; trait_group_0011202
@@ -9182,8 +9182,8 @@ trait_0014016:
     indicating how much work (force per distance) is done when force is applied.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 15000.0
+  min: '10'
+  max: '15000'
   units: N/m
   units_uom: newton per metre
   category: trait_group_0014001; trait_group_0011202
@@ -9210,8 +9210,8 @@ trait_0014017:
     The trait is also called Young's modulus for bark.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 100000.0
+  min: '10'
+  max: '100000'
   units: MPa
   units_uom: megapascal
   category: trait_group_0014001; trait_group_0012002
@@ -9239,8 +9239,8 @@ trait_0014018:
     called Young's modulus for a stem.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 100000.0
+  min: '10'
+  max: '100000'
   units: MPa
   units_uom: megapascal
   category: trait_group_0014001; trait_group_0011802
@@ -9267,8 +9267,8 @@ trait_0014019:
     (wood). Trait is also called Young's modulus for xylem.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 100000.0
+  min: '10'
+  max: '100000'
   units: MPa
   units_uom: megapascal
   category: trait_group_0014001; trait_group_0011802
@@ -9293,8 +9293,8 @@ trait_0014020:
     This is also the force required to rupture xylem vessels.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: MPa
   units_uom: megapascal
   category: trait_group_0014001; trait_group_0011802
@@ -9355,8 +9355,8 @@ trait_0020240:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 40.0
+  min: '0.01'
+  max: '40'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020206
@@ -9392,8 +9392,8 @@ trait_0020241:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 65.0
+  min: '0.01'
+  max: '65'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020206
@@ -9429,8 +9429,8 @@ trait_0020242:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 65.0
+  min: '0.01'
+  max: '65'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020206
@@ -9465,8 +9465,8 @@ trait_0020243:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 0.8
+  min: '0.001'
+  max: '0.8'
   units: umol{CO2}/g/s
   units_uom: micromole per gram second
   category: trait_group_0020206
@@ -9501,8 +9501,8 @@ trait_0020244:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: umol{CO2}/g/s
   units_uom: micromole per gram second
   category: trait_group_0020206
@@ -9537,8 +9537,8 @@ trait_0020245:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: umol{CO2}/g/s
   units_uom: micromole per gram second
   category: trait_group_0020206
@@ -9571,8 +9571,8 @@ trait_0020310:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1800.0
+  min: '10'
+  max: '1800'
   units: umol{CO2}/mol
   units_uom: micromole per mole
   category: trait_group_0020212
@@ -9604,8 +9604,8 @@ trait_0020311:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1300.0
+  min: '10'
+  max: '1300'
   units: umol{CO2}/mol
   units_uom: micromole per mole
   category: trait_group_0020212
@@ -9636,8 +9636,8 @@ trait_0020312:
     are made at typical temperature and VPD conditions for the plant.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1300.0
+  min: '10'
+  max: '1300'
   units: umol{CO2}/mol
   units_uom: micromole per mole
   category: trait_group_0020212
@@ -9664,8 +9664,8 @@ trait_0020313:
     conductance; ci/ca.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.3
+  min: '0.001'
+  max: '1.3'
   units: umol{CO2_internal}/umol{CO2_ambient}
   units_uom: micromole per micromole
   category: trait_group_0020212
@@ -9688,8 +9688,8 @@ trait_0020314:
   description: CO2 concentration inside chloroplasts in leaves; cc.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000.0
+  min: '10'
+  max: '1000'
   units: umol{CO2}/umol
   units_uom: micromole per micromole
   category: trait_group_0020212
@@ -9713,8 +9713,8 @@ trait_0020315:
     related to photosynthetic rates and therefore is recorded.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 50.0
-  max: 2000.0
+  min: '50'
+  max: '2000'
   units: umol{CO2}/mol
   units_uom: micromole per mole
   category: trait_group_0020212
@@ -9748,8 +9748,8 @@ trait_0020410:
     made at 25 deg C should be mapped to `leaf_photosynthesis_Jmax_per_area_25C`
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 800.0
+  min: '10'
+  max: '800'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020812
@@ -9787,8 +9787,8 @@ trait_0020411:
     to `leaf_photosynthesis_Jmax_per_area`
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 35.0
-  max: 800.0
+  min: '35'
+  max: '800'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020812
@@ -9825,8 +9825,8 @@ trait_0020412:
     needs to be included as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 3.0
+  min: '0'
+  max: '3'
   units: umol{CO2}/g/s
   units_uom: micromole per gram second
   category: trait_group_0020812
@@ -9863,8 +9863,8 @@ trait_0020413:
     made at 25 deg C should be mapped to `leaf_photosynthesis_Vcmax_per_area_25C`
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 300.0
+  min: '10'
+  max: '300'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020812
@@ -9903,8 +9903,8 @@ trait_0020414:
     mapped to `leaf_photosynthesis_Vcmax_per_area`
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 300.0
+  min: '10'
+  max: '300'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020812
@@ -9941,8 +9941,8 @@ trait_0020415:
     needs to be included as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 2.0
+  min: '0'
+  max: '2'
   units: umol{CO2}/g/s
   units_uom: micromole per gram second
   category: trait_group_0020812
@@ -9976,8 +9976,8 @@ trait_0020416:
     low carbon dioxide concentrations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 5.0
+  min: '1'
+  max: '5'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0020812
@@ -10007,8 +10007,8 @@ trait_0020417:
     state (minimum fluorescence; Fo).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.2
-  max: 1.0
+  min: '0.2'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0020812
@@ -10037,8 +10037,8 @@ trait_0020418:
     under ambient conditions).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0020812
@@ -10065,8 +10065,8 @@ trait_0020419:
     emitted through fluorescence.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0020812
@@ -10094,8 +10094,8 @@ trait_0020420:
     curve.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -50.0
-  max: 10.0
+  min: '-50'
+  max: '10'
   units: C
   units_uom: Celsius
   category: trait_group_0020812; trait_group_0030704
@@ -10119,8 +10119,8 @@ trait_0020421:
     curve.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: C
   units_uom: Celsius
   category: trait_group_0020812; trait_group_0030704
@@ -10145,8 +10145,8 @@ trait_0020422:
     - basal chlorophyll A fluorescence curve.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 100.0
+  min: '0'
+  max: '100'
   units: C
   units_uom: Celsius
   category: trait_group_0020812; trait_group_0030704
@@ -10164,8 +10164,8 @@ trait_0020423:
   description: The temperature at which ice crystals begin to form inside plant tissues.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -40.0
-  max: 10.0
+  min: '-40'
+  max: '10'
   units: C
   units_uom: Celsius
   category: trait_group_0030704
@@ -10186,8 +10186,8 @@ trait_0020510:
     should be specified in the methods or as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 15000.0
+  min: '1'
+  max: '15000'
   units: nmol{CO2}/m2/s
   units_uom: nanomole per square metre second
   category: trait_group_0020208
@@ -10214,8 +10214,8 @@ trait_0020511:
     should be specified in the methods or as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: nmol{CO2}/g/s
   units_uom: nanomole per gram second
   category: trait_group_0020208
@@ -10242,8 +10242,8 @@ trait_0020512:
     should be specified in the methods or as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 10000.0
+  min: '10'
+  max: '10000'
   units: nmol{CO2}/m2/s
   units_uom: nanomole per square metre second
   category: trait_group_0020208
@@ -10269,8 +10269,8 @@ trait_0020513:
     should be specified in the methods or as a context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: umol{CO2}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020208
@@ -10302,8 +10302,8 @@ trait_0020610:
     here as the rate of water exiting the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 2000.0
+  min: '0.1'
+  max: '2000'
   units: mmol{H2O}/m2/s
   units_uom: millimole per square metre second
   category: trait_group_0020204
@@ -10340,8 +10340,8 @@ trait_0020611:
     here as the rate of water exiting the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 2000.0
+  min: '0.1'
+  max: '2000'
   units: mmol{H2O}/m2/s
   units_uom: millimole per square metre second
   category: trait_group_0020204
@@ -10378,8 +10378,8 @@ trait_0020612:
     here as the rate of water exiting the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 2000.0
+  min: '0.1'
+  max: '2000'
   units: mmol{H2O}/m2/s
   units_uom: millimole per square metre second
   category: trait_group_0020204
@@ -10416,8 +10416,8 @@ trait_0020630:
     Water Relations" by M.B. Kirkham (2011), page 149).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 10.0
-  max: 1000000.0
+  min: '10'
+  max: '1000000'
   units: s/m
   units_uom: second per metre
   category: trait_group_0020204
@@ -10443,8 +10443,8 @@ trait_0020640:
     space) and chloroplasts, per unit leaf area
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: mol{CO2}/m2/s
   units_uom: mole per square metre second
   category: trait_group_0020204
@@ -10467,8 +10467,8 @@ trait_0020641:
     space) and chloroplasts, per unit leaf mass
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 10.0
+  min: '0.01'
+  max: '10'
   units: mmol{CO2}/g/s
   units_uom: millimole per gram second
   category: trait_group_0020204
@@ -10499,8 +10499,8 @@ trait_0020660:
     no chamber involved.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: mmol{H2O}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020210
@@ -10536,8 +10536,8 @@ trait_0020661:
     no chamber involved.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: mmol{H2O}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020210
@@ -10573,8 +10573,8 @@ trait_0020662:
     no chamber involved.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: mmol{H2O}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020210
@@ -10605,8 +10605,8 @@ trait_0020663:
     leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0001
-  max: 10.0
+  min: '0.0001'
+  max: '10'
   units: mmol{H2O}/m2/s
   units_uom: micromole per square metre second
   category: trait_group_0020210
@@ -10630,8 +10630,8 @@ trait_0020664:
     leaf area.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: g/cm2{leaf}/d
   units_uom: gram per square centimetre day
   category: trait_group_0020210
@@ -10677,8 +10677,8 @@ trait_0020666:
     cuticle.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -100.0
-  max: 100.0
+  min: '-100'
+  max: '100'
   units: mmol{H2O}/m2/s
   units_uom: millimole per square metre second
   category: trait_group_0020204
@@ -10698,8 +10698,8 @@ trait_0020667:
     inside of the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -100.0
-  max: 100.0
+  min: '-100'
+  max: '100'
   units: umol{H2O}/m2/MPa/s
   units_uom: micromole per square metre megapascal second
   category: trait_group_0020204
@@ -10718,8 +10718,8 @@ trait_0020668:
     the leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: 10.0
+  min: '-10'
+  max: '10'
   units: mol{H2O}/m2
   units_uom: mole per square metre
   category: trait_group_0020204
@@ -10745,8 +10745,8 @@ trait_0020710:
     unit leaf area or per unit leaf mass, but both must have the same denominator.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: umol{CO2}/g{N}/s
   units_uom: micromole per gram second
   category: trait_group_0020204; trait_group_0000008
@@ -10778,8 +10778,8 @@ trait_0020711:
     unit leaf area or per unit leaf mass, but both must have the same denominator.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: umol{CO2}/g{N}/s
   units_uom: micromole per gram second
   category: trait_group_0020204; trait_group_0000008
@@ -10812,8 +10812,8 @@ trait_0020712:
     unit leaf area or per unit leaf mass, but both must have the same denominator.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: umol{CO2}/g{P}/s
   units_uom: micromole per gram second
   category: trait_group_0020204; trait_group_0000008
@@ -10841,8 +10841,8 @@ trait_0020713:
     unit leaf area or per unit leaf mass, but both must have the same denominator.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 10000.0
+  min: '1'
+  max: '10000'
   units: umol{CO2}/g{P}/s
   units_uom: micromole per gram second
   category: trait_group_0020204; trait_group_0000008
@@ -10866,8 +10866,8 @@ trait_0020760:
     measure of water use efficiency; WUE, transpiration ratio
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 50.0
+  min: '0.1'
+  max: '50'
   units: g{biomass}/g{H2O}
   units_uom: gram per gram
   category: trait_group_0020204
@@ -10891,8 +10891,8 @@ trait_0020761:
     determined from gas exchange measurements.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 2.0
+  min: '0.001'
+  max: '2'
   units: umol{CO2}/mmol{H2O}
   units_uom: micromole per millimole
   category: trait_group_0020204
@@ -10920,8 +10920,8 @@ trait_0020762:
     water use efficiency (PWUE) or transpiration efficiency.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 200.0
+  min: '0.1'
+  max: '200'
   units: umol{CO2}/mmol{H2O}
   units_uom: micromole per millimole
   category: trait_group_0020204
@@ -10955,8 +10955,8 @@ trait_0020813:
     value indicating higher radiation use efficiency.'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -1.0
-  max: 1.0
+  min: '-1'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0020812; trait_group_0030704
@@ -10983,8 +10983,8 @@ trait_0020814:
     at 900 nm; a higher value indicates a higher canopy water content.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1.1
+  min: '1'
+  max: '1.1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0021002; trait_group_0030704
@@ -11012,8 +11012,8 @@ trait_0020815:
   comments: Modified NDVI is generally measured from Landsat data.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0030704
@@ -11039,8 +11039,8 @@ trait_0020816:
     is: (R750-R705)/(R750+R705+2(R445)).'
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.0
+  min: '0.1'
+  max: '1'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0030704
@@ -11064,8 +11064,8 @@ trait_0020817:
     (650 nm, absorbed by chlorophyll) and infrared (940 nm, not absorbed by chlorophyll).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: 200.0
+  min: '-10'
+  max: '200'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0002008; trait_group_0030704
@@ -11092,8 +11092,8 @@ trait_0021013:
     stem segment, but IS NOT normalised to the path length and has units kg/MPa/s.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: 10^6.kg.m/MPa/s
   units_uom: million kilogram metre per megapascal second
   category: trait_group_0021002
@@ -11128,8 +11128,8 @@ trait_0021014:
     area (1/m2), then multiplied by the stem length (m).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 500.0
+  min: '0.01'
+  max: '500'
   units: kg/m/MPa/s
   units_uom: kilogram per metre megapascal second
   category: trait_group_0021002
@@ -11162,8 +11162,8 @@ trait_0021015:
     tissues). The calculation is based on Hagen-Poiseuille's law.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.05
-  max: 5000.0
+  min: '0.05'
+  max: '5000'
   units: kg/m/MPa/s
   units_uom: kilogram per metre megapascal second
   category: trait_group_0021002
@@ -11197,8 +11197,8 @@ trait_0021016:
     stem cross sectional area (1/m2), then multiplied by the stem length (m).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 500.0
+  min: '0.01'
+  max: '500'
   units: kg/m/MPa/s
   units_uom: kilogram per metre megapascal second
   category: trait_group_0021002
@@ -11235,8 +11235,8 @@ trait_0021017:
     is a "conductance" not a "conductivity".
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: mmol/m2/MPa/s
   units_uom: millimole per square metre megapascal second
   category: trait_group_0021002
@@ -11273,8 +11273,8 @@ trait_0021018:
     It is not a measure of conductivity through a leaf.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 500.0
+  min: '0.1'
+  max: '500'
   units: 10^4.kg/m/MPa/s
   units_uom: thousand kilogram per metre megapascal second
   category: trait_group_0021002
@@ -11308,8 +11308,8 @@ trait_0021021:
     root segment, but IS NOT normalised to the path length and has units kg/MPa/s.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 2000.0
+  min: '0.01'
+  max: '2000'
   units: 10^6.kg.m/MPa/s
   units_uom: million kilogram metre per megapascal second
   category: trait_group_0021002
@@ -11344,8 +11344,8 @@ trait_0021022:
     multiplied by the root length (m).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 500.0
+  min: '0.01'
+  max: '500'
   units: kg/m/MPa/s
   units_uom: kilogram per metre megapascal second
   category: trait_group_0021002
@@ -11374,8 +11374,8 @@ trait_0021030:
     potential.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11401,8 +11401,8 @@ trait_0021031:
     stressed and has the lowest (most negative) water potential.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11426,8 +11426,8 @@ trait_0021032:
     stem tissue water potential.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 700.0
+  min: '0'
+  max: '700'
   units: kg{H20}/m3/MPa
   units_uom: kilogram per cubic metre megapascal
   category: trait_group_0021002
@@ -11450,8 +11450,8 @@ trait_0021033:
   comments: This trait is derived from pressure-volume curves.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 20.0
+  min: '0'
+  max: '20'
   units: 1/MPa
   units_uom: per megapascal
   category: trait_group_0021002
@@ -11475,8 +11475,8 @@ trait_0021034:
     root tissue water potential.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 700.0
+  min: '0'
+  max: '700'
   units: kg{H20}/m3/MPa
   units_uom: kilogram per cubic metre megapascal
   category: trait_group_0021002
@@ -11500,8 +11500,8 @@ trait_0021050:
     mean maximum rate of hydraulic conductance.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -40.0
-  max: 0.0
+  min: '-40'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11528,8 +11528,8 @@ trait_0021051:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11556,8 +11556,8 @@ trait_0021052:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11585,8 +11585,8 @@ trait_0021053:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11619,8 +11619,8 @@ trait_0021054:
     should be clearly stated in the methods or added as a method context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -5.0
-  max: 10.0
+  min: '-5'
+  max: '10'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11653,8 +11653,8 @@ trait_0021055:
     should be clearly stated in the methods or added as a method context property.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -5.0
-  max: 10.0
+  min: '-5'
+  max: '10'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11681,8 +11681,8 @@ trait_0021056:
     zero.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -5.0
-  max: 0.0
+  min: '-5'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11711,8 +11711,8 @@ trait_0021057:
     potential
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: 0.0
+  min: '-10'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11742,8 +11742,8 @@ trait_0021058:
     membrane and is least negative (largest) when plants are at full turgor.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -10.0
-  max: -0.1
+  min: '-10'
+  max: '-0.1'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11772,8 +11772,8 @@ trait_0021059:
     volume).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11802,8 +11802,8 @@ trait_0021060:
     a relative water content of 100%.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.7
+  min: '0.1'
+  max: '1.7'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0021002
@@ -11831,8 +11831,8 @@ trait_0021061:
     from a pressure-volume curve.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1.5
+  min: '0.1'
+  max: '1.5'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0021002
@@ -11860,8 +11860,8 @@ trait_0021062:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11887,8 +11887,8 @@ trait_0021063:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11914,8 +11914,8 @@ trait_0021064:
     from the mean maximum rate of hydraulic conductivity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -20.0
-  max: 0.0
+  min: '-20'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11941,8 +11941,8 @@ trait_0021065:
     mean maximum rate of hydraulic conductance.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -40.0
-  max: 0.0
+  min: '-40'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11969,8 +11969,8 @@ trait_0021066:
     mean maximum rate of hydraulic conductance.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -40.0
-  max: 0.0
+  min: '-40'
+  max: '0'
   units: MPa
   units_uom: megapascal
   category: trait_group_0021002
@@ -11999,8 +11999,8 @@ trait_0022012:
     leaf before it is shed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -1.1
-  max: 1.0
+  min: '-1.1'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0022002
@@ -12024,8 +12024,8 @@ trait_0022013:
     senescent leaf before it is shed.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -1.1
-  max: 1.0
+  min: '-1.1'
+  max: '1'
   units: mg/mg
   units_uom: milligram per milligram
   category: trait_group_0022002
@@ -12173,8 +12173,8 @@ trait_0030014:
     of the genetic individual.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 10000.0
+  min: '0.1'
+  max: '10000'
   units: a
   units_uom: year
   category: trait_group_0030006
@@ -12514,8 +12514,8 @@ trait_0030025:
     death) or the rate of formation of new leaves (leaf birth).
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mo
   units_uom: month
   category: trait_group_0030008
@@ -12740,8 +12740,8 @@ trait_0030080:
   description: Mass of all chromosomes, the genome, in a somatic cell.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.5
-  max: 100.0
+  min: '0.5'
+  max: '100'
   units: pg
   units_uom: picogram
   category: trait_group_0030059
@@ -12761,8 +12761,8 @@ trait_0030081:
     in a somatic cell.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 4.0
+  min: '1'
+  max: '4'
   units: '{count}'
   units_uom: '{count}'
   category: trait_group_0030059
@@ -12792,8 +12792,8 @@ trait_0030210:
     for measures of secondary reproductive maturity.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: a
   units_uom: year
   category: trait_group_0030008
@@ -13016,8 +13016,8 @@ trait_0030218:
     with > 80% of the vertical projection of the crown exposed to vertical light.`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 8.0
+  min: '0'
+  max: '8'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0030008
@@ -13063,8 +13063,8 @@ trait_0030219:
     with > 80% of the vertical projection of the crown exposed to vertical light.`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 8.0
+  min: '0'
+  max: '8'
   units: '{dimensionless}'
   units_uom: '{dimensionless}'
   category: trait_group_0030008
@@ -13171,8 +13171,8 @@ trait_0030414:
     and `seed_recruitment_timing`.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1000.0
+  min: '0.01'
+  max: '1000'
   units: a
   units_uom: year
   category: trait_group_0030602; trait_group_0030504
@@ -13251,8 +13251,8 @@ trait_0030417:
     environmental or experimental conditions.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{count}/{count}'
   units_uom: '{count}/{count}'
   category: trait_group_0030504
@@ -13281,8 +13281,8 @@ trait_0030418:
     under suitable conditions.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{count}/{count}'
   units_uom: '{count}/{count}'
   category: trait_group_0030504
@@ -13310,8 +13310,8 @@ trait_0030419:
     for germinating until it germinates.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1000.0
+  min: '0'
+  max: '1000'
   units: d
   units_uom: day
   category: trait_group_0030504
@@ -13470,8 +13470,8 @@ trait_0030514:
     such as a fire.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: -100.0
-  max: 100.0
+  min: '-100'
+  max: '100'
   units: mm
   units_uom: millimetre
   category: trait_group_0030602
@@ -13529,8 +13529,8 @@ trait_0030611:
     and resprout following a fire.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 1.0
+  min: '0'
+  max: '1'
   units: '{count}/{count}'
   units_uom: '{count}/{count}'
   category: trait_group_0030602
@@ -13592,8 +13592,8 @@ trait_0030613:
     following a fire.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: a
   units_uom: year
   category: trait_group_0030602
@@ -13625,8 +13625,8 @@ trait_0030614:
     to fire where the dead stems can still be counted post-fire.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.0
-  max: 10.0
+  min: '0'
+  max: '10'
   units: '{count}/{count}'
   units_uom: '{count}/{count}'
   category: trait_group_0030602
@@ -13773,8 +13773,8 @@ trait_0030654:
     or post-fire resprouting to the onset of flowering.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030008; trait_group_0030504
@@ -13805,8 +13805,8 @@ trait_0030655:
     or post-fire resprouting to the onset of flowering.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030008; trait_group_0030504
@@ -13837,8 +13837,8 @@ trait_0030656:
     or post-fire resprouting to the onset of flowering.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030008; trait_group_0030504
@@ -13863,8 +13863,8 @@ trait_0030657:
     in a population begin to decline.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 1000.0
+  min: '1'
+  max: '1000'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030008; trait_group_0030504
@@ -13894,8 +13894,8 @@ trait_0030658:
     seed germination or post-fire resprouting to the onset of fruiting.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030006; trait_group_0030504
@@ -13922,8 +13922,8 @@ trait_0030659:
     produce mature fruit.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 1.0
-  max: 500.0
+  min: '1'
+  max: '500'
   units: mo
   units_uom: month
   category: trait_group_0030602; trait_group_0030006; trait_group_0030504
@@ -13955,8 +13955,8 @@ trait_0030710:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.001
-  max: 1.0
+  min: '0.001'
+  max: '1'
   units: g/cm3
   units_uom: gram per cubic centimetre
   category: trait_group_0030602
@@ -13984,8 +13984,8 @@ trait_0030711:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: g/g
   units_uom: gram per gram
   category: trait_group_0030602
@@ -14009,8 +14009,8 @@ trait_0030712:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.01
-  max: 1.0
+  min: '0.01'
+  max: '1'
   units: cm/s
   units_uom: centimetre per second
   category: trait_group_0030602
@@ -14037,8 +14037,8 @@ trait_0030713:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1000.0
+  min: '0.1'
+  max: '1000'
   units: s
   units_uom: second
   category: trait_group_0030602
@@ -14064,8 +14064,8 @@ trait_0030714:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 200.0
+  min: '0.1'
+  max: '200'
   units: s
   units_uom: second
   category: trait_group_0030602
@@ -14092,8 +14092,8 @@ trait_0030715:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 1500.0
+  min: '0.1'
+  max: '1500'
   units: s
   units_uom: second
   category: trait_group_0030602
@@ -14119,8 +14119,8 @@ trait_0030716:
     situations.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: s
   units_uom: second
   category: trait_group_0030602
@@ -14252,8 +14252,8 @@ trait_0030815:
     of the soil.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: 0.1
-  max: 100.0
+  min: '0.1'
+  max: '100'
   units: dS/m
   units_uom: decisiemens per metre
   category: trait_group_0030702; trait_group_0030704

@@ -4,10 +4,20 @@
 *.tex
 *.pdf
 *_files
-build.html
 factsheets
 ignore
 .Rproj.user
 .Rhistory
 .RData
 /.quarto/
+
+**/*.quarto_ipynb
+
+# Spreadsheet checkout of data/APD_traits_input.yml -- see `make export-csv`
+data/edit/
+
+# Quarto generates docs/site_libs/ (~1.1 MB of Bootstrap, search and nav assets),
+# but every page here sets `embed-resources: true`, so all of it is inlined and
+# nothing references the directory. If a page ever drops embed-resources it will
+# start needing these files, and this line has to go with it.
+docs/site_libs/
