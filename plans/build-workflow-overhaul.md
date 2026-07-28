@@ -3,10 +3,13 @@
 > **Status:** stages 0-4 landed on `refactor/build-workflow`, plus the repo-tidy and licensing work
 > below. **Stage 4's per-entity pages were tried and reverted** — the dictionary stays one document.
 >
-> **Stage 5 is blocked on merge and deploy, not on more work here.** It repoints w3id at the *live*
-> site, so the new `index.html` has to be on `master` and served by Pages first. That makes merging
-> this branch the next step, not an afterthought. Stage 6 (CI) is what makes the deploy repeatable, so
-> it may be worth doing before stage 5 rather than after.
+> **Stages 0-4 are deployed and released as v2.1.1** (2026-07-28). `master` was fast-forwarded from
+> `develop`, Pages serves the 6.14 MB page, and the live RDF carries typed doubles and 27,503 readable
+> N-Triples statements. The release carries its build artefacts as assets, which no previous APD release
+> did. Verified against the live service, not asserted.
+>
+> **Stage 5 is ready to open and its gate has passed** — see that section for the exact rule and the
+> evidence. Stage 6 (CI) is what makes the deploy repeatable, so it may be worth doing first.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -587,30 +590,48 @@ first.
 
 ### Stage 5 — w3id redirect change
 
-A target-only change; the URIs themselves never change. One rule replaces three and fixes the 819
-categorical URIs. **Updated for the single-document decision** — the target is a fragment, not a page:
+**Ready to open. The gate has passed.** A target-only change; no URI changes. One line of
+[`perma-id/w3id.org/APD/.htaccess`](https://github.com/perma-id/w3id.org/blob/master/APD/.htaccess),
+line 57:
 
-```apache
-RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/APD/index.html#$1 [R=303,NE,L]
+```diff
+-RewriteRule ^traits/trait_(.+)$ https://traitecoevo.github.io/APD/index.html#trait_$1 [R=303,NE,L]
++RewriteRule ^traits/([^/]+)/?$ https://traitecoevo.github.io/APD/index.html#$1 [R=303,NE,L]
 ```
 
-The 819 categorical values fail today only because the existing rule matches `trait_` and nothing
-else; widening the pattern is the whole fix.
+That is the whole fix. The existing rule matches only `trait_`, so the 819 categorical values fall
+through to the catch-all on line 63 and land at the top of the page with no fragment.
 
-**How w3id resolves a path that is not an entity.** Anything the rules do not recognise falls through
-to the dictionary page, which is the right behaviour — better than a 404 — and it is why
-`w3id.org/APD/APD_traits.csv` returns HTML. That URL is published nowhere and nothing calls it; the
-published w3id forms are the base URI (used with content negotiation, which works), `index.html`,
-`release/<version>/index.html` and the scheme URIs. So this is not a defect and stage 5 does not need
-to address it. **Files are fetched from `traitecoevo.github.io`**, which is what C12 names and what
-`austraits.build` and `using_the_APD.qmd` use.
+**Use `[^/]+`, not the character class this plan originally proposed.** The earlier suggestion,
+`([A-Za-z][A-Za-z0-9_.-]*)`, matches 1,448 of the 1,449 `traits/` slugs — it misses
+`seed_germination_treatment_heat+smoke`, because the class omits `+`. It would have fixed 818 of 819
+and left one published identifier broken, which is worse than leaving all 819 broken, because it would
+look done. Tested against every real slug; the characters actually in use are `_`, `-`, `+`, digits and
+lowercase letters.
 
-Content negotiation and the versioned `release/X.Y.Z/` rules are untouched. **This PR to
-`perma-id/w3id.org` goes last** — and "last" now has a concrete meaning: the rule points at the live
-site, so the rewritten `index.html` must be merged to `master` and served by Pages *before* the PR
-opens. Until then the anchors it targets are the old page's, which happen to be the same slugs, so the
-change is safe either way for traits — but the 819 categorical anchors only exist once the new page is
-deployed. Verify against the deployed site, not a local build.
+The other rules are untouched and were checked:
+
+- `^traits/?$` (line 58) still handles the bare collection URI: `[^/]+` needs at least one character,
+  so `traits/` does not match line 57 and falls through.
+- Trait and trait-group URIs resolve exactly as before — `trait_0000012` and `trait_group_0000008`
+  both come out at the same fragment they do today.
+- `glossary/` needs no change: all 24 glossary slugs are `glossary_*`, which line 59 already matches.
+- Content negotiation (lines 18-50) and the versioned `release/X.Y.Z/` rules are not in the path of
+  this change.
+
+**The gate, run against the deployed site:** all **1,473 of 1,473** anchors are present in the live
+`index.html` — 559 traits, 71 groups, **819 categorical values**, 24 glossary terms — including the
+`+` slug. So every URI the widened rule points at resolves to content.
+
+**After it merges**, re-run `scripts/check_redirects.sh`; the line to watch is
+
+```
+traits/plant_growth_form_tree  ->  200 index.html                              # before
+traits/plant_growth_form_tree  ->  200 index.html#plant_growth_form_tree       # after
+```
+
+It closes gap C1, a published commitment currently unmet for 819 identifiers, and deserves a `NEWS.md`
+entry.
 
 ### Stage 6 — CI and deployment
 
