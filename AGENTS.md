@@ -10,6 +10,9 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   output format, the licence, the set of published input tables, or where the site deploys. The APD is
   described in a published paper (Wenk et al. 2024), and that paper is a specification — several of its
   claims are promises this repo has to keep, and some are currently broken.
+- **Editing a trait?** [`CONTRIBUTING.md`](CONTRIBUTING.md) has the spreadsheet and YAML routes, and
+  what counts as a breaking change. **Cutting a release?** [`RELEASING.md`](RELEASING.md), whose last
+  three steps are outside this repo and are the ones that get missed.
 - **Source data:** `data/` holds the inputs that define the dictionary. **Trait definitions live in
   `APD_traits_input.yml`, which is the source of truth** — YAML was adopted in #43 because CSV diffs
   were unreviewable. `make export-csv` checks out a spreadsheet view at `data/edit/APD_traits_input.csv`

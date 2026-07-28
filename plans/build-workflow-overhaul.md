@@ -16,7 +16,11 @@
 > fixed a live 404 on `release/2.1.1/index.html` — a tagged, deposited permalink — and two dependencies
 > that had never been declared. `master` is now **release-only**: it moves at a release, not per PR,
 > which was only possible once Pages stopped being served from `master:/docs`. `docs/` is untracked.
-> **Stage 6 is complete**; only stage 7 (documentation) remains.
+>
+> **Stages 0–4, 6 and 7 are done.** `CONTRIBUTING.md` and `RELEASING.md` are written; writing the
+> release checklist found that the ARDC RVA deposit is two releases behind and that
+> `austraits.build` still pins APD 2.1.0. **Stage 5 — the one-line w3id rule change that fixes 819
+> published identifiers — is the only stage left**, and it is a PR to a third-party repository.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -832,6 +836,30 @@ Two audiences, currently served by neither:
   serving 2.0.1 against a repo at 2.1.0) and **re-run the `COMMITMENTS.md` checks**.
 - **`COMMITMENTS.md`** (written in Stage 0) linked from both, and from `AGENTS.md`.
 - Correct `README.md` and `AGENTS.md` on the YAML-vs-CSV source of truth and the default branch.
+
+**Where stage 7 got to.** Both documents are written and cross-linked from `README.md`, `AGENTS.md`
+and `COMMITMENTS.md`. The source-of-truth and default-branch corrections had already been made in
+stages 3 and 6, so nothing was left to fix there.
+
+Writing the release checklist meant checking each of its steps against reality, and **two of the
+three cross-boundary ones are stale right now** — which is the whole argument for having the list:
+
+| Step | State on 2026-07-28 |
+|---|---|
+| ARDC RVA deposit (C8) | serving **2.0.1** against a repo at **2.1.1** — two releases behind, not one as this plan recorded |
+| `austraits.build` `apd_version` | pinned to **"2.1.0"** at `scripts/build_traits_yml_from_APD.R:16`, so downstream builds against the previous release |
+| Zenodo (C9) | current — 2.1.1 deposited with its nine assets |
+
+Neither stale item is detectable from inside this repository, so neither is a candidate for CI. They
+are checklist items in `RELEASING.md`, with the current staleness recorded inline so the next person
+cutting a release sees it rather than trusting the list is already satisfied.
+
+One thing the plan did not anticipate: **the family release playbook is itself stale for APD.**
+`austraits-meta/governance/release-playbooks.md` still says to edit the `*_input.csv` source files and
+rebuild via `build.qmd`. The CSV stopped being the source of truth in stage 3 and `build.qmd` was
+deleted in stage 2, so step 1 of the cross-package sequence is wrong in both particulars. It carries a
+"templates, not verified runbooks" warning, which is honest, but it needs a fix in that repository —
+out of scope here, and not something a reader of this repo would ever discover.
 
 ---
 

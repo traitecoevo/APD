@@ -153,9 +153,16 @@ where, and which are currently unmet. Read it before changing a URI scheme, an
 output format, the licence, the set of published input tables, or where the site
 deploys.
 
-[`AGENTS.md`](AGENTS.md) is the working guide — architecture, gotchas, and the
-cross-package context. [`plans/`](plans/) holds design documents for work in
-progress.
+Then pick the guide that matches what you are doing:
+
+* **[`CONTRIBUTING.md`](CONTRIBUTING.md)** — proposing or editing a trait, and what
+  makes a change *breaking*. Start here if you are not sure.
+* **[`RELEASING.md`](RELEASING.md)** — cutting a release, including the three steps
+  that live outside this repository and get missed.
+* [`AGENTS.md`](AGENTS.md) — the working guide: architecture, CI, branch and release
+  conventions, gotchas, cross-package context.
+* [`plans/`](plans/) — design documents for work in progress, kept current including
+  where they turned out to be wrong.
 
 ## Licensing
 

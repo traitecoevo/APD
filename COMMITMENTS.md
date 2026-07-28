@@ -12,7 +12,9 @@ build software against it on the strength of those statements.
 **Read this before** changing a URI scheme, renaming or removing an output file, changing the licence,
 altering the set of published input tables, or changing where the site is deployed.
 
-Related: `AGENTS.md` (repo orientation), and
+Related: [`CONTRIBUTING.md`](CONTRIBUTING.md) (editing a trait, and what makes a change breaking),
+[`RELEASING.md`](RELEASING.md) (the release checklist, including C8 and C9), `AGENTS.md`
+(repo orientation), and
 [`austraits-meta/governance/release-playbooks.md`](https://github.com/traitecoevo/austraits-meta/blob/main/governance/release-playbooks.md)
 for the downstream ripple when the vocabulary itself changes.
 
