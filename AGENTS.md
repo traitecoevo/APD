@@ -75,29 +75,38 @@ that outlives its problem silences a check.
 
 ## Branches and releases
 
-`develop` is the default branch. **The site is published from `master`** — nothing reaches
-<https://traitecoevo.github.io/APD/> until it is there.
-
-`deploy.yml` renders and deploys it. Until **Settings → Pages → Source** is switched to *GitHub
-Actions*, Pages still serves the committed `master:/docs` tree instead, and `deploy.yml` fails at its
-last step — which is why `docs/` is still tracked, and why deleting it waits on that switch plus a
-green `verify` job. Stage 6 of [`plans/build-workflow-overhaul.md`](plans/build-workflow-overhaul.md)
-has the sequence.
+`develop` is the default branch and where all work lands. **`master` is the published release** — its
+tip is always exactly the last released state, and it moves *only when a release is cut*.
 
 | Merge | How | Why |
 |---|---|---|
-| feature branch → `develop` | **squash** | One commit per PR. `master`'s history is linear and has been built this way — every commit on it is a squashed PR. |
-| `develop` → `master` | **fast-forward** | Keeps that linear history *and* keeps `master` an ancestor of `develop`. |
-
-**Do not squash `develop` into `master`.** It would create a commit on `master` that is not in
-`develop`, permanently diverging the two: `git log master..develop` would stop meaning "work not yet
-released", later merges would stop being fast-forwards, and a release tag on `master` would point at a
-commit no other branch contains — which matters for a repo whose value proposition is persistent,
-citable identifiers, and whose tags Zenodo archives.
+| feature branch → `develop` | **squash** | One commit per PR. |
+| `develop` → `master` | **fast-forward, at a release** | Keeps `master` an ancestor of `develop`, so ancestry still answers "which release shipped this change". |
 
     git checkout master && git merge --ff-only develop && git push
 
 If that refuses, the branches have diverged and the reason needs finding, not forcing.
+
+**`master` used to move on every PR, and that was Pages' fault, not the merge strategy's.** Pages
+served `master:/docs`, so a doc fix or a site tweak had to reach `master` to go live — which is why
+commits like #44 and #46 sit on a branch meant to be a release line. `deploy.yml` publishes via
+Actions now, so that constraint is gone and `master` can sit still between releases. Consequences
+worth knowing:
+
+- **The live site changes only at a release.** `https://w3id.org/APD/` serves the latest *release*,
+  not the latest commit — which is what it should mean for a citable vocabulary. If a fix needs to be
+  live, cut a patch release; 2.1.1 was exactly that.
+- **C13 starts meaning what it says.** `austraits.build` reads
+  `raw.githubusercontent.com/traitecoevo/APD/master/data/APD_trait_hierarchy.csv`. That used to
+  resolve to the Pages branch; now it resolves to the last release. It is the last surviving instance
+  of the bug C12 already fixed for every other artefact — see COMMITMENTS.md.
+
+**Do not squash `develop` into `master`** to get a one-line-per-release log. It would create a commit
+on `master` that is not in `develop`, permanently diverging the two: `git log master..develop` would
+stop meaning "work not yet released", later merges would stop being fast-forwards, and a release tag
+on `master` would point at a commit no other branch contains — which matters for a repo whose value
+proposition is persistent, citable identifiers, and whose tags Zenodo archives. Release history is
+`git tag` and the Releases page; that is where to read it, not `git log master`.
 
 **Version bumps.** `DESCRIPTION` is the single source (`R/version.R`); `index.qmd` and
 `scripts/release.R` read it. Bump it when the *published output* changes, not only when a trait does —

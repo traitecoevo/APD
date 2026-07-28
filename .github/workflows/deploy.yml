@@ -5,11 +5,11 @@
 # every data PR, and no guarantee it came from the inputs beside it. The site is
 # built here instead, from the checkout, on every push to master.
 #
-# ONE-TIME SETUP. The first run of this workflow will fail while the repository
-# is still on the legacy source. Set Settings -> Pages -> Source to
-# "GitHub Actions" and re-run it. Until that switch, the committed docs/ keeps
-# serving the live site unchanged -- which is why plans/build-workflow-overhaul.md
-# keeps docs/ tracked until this workflow has deployed and verify has passed.
+# Settings -> Pages -> Source is "GitHub Actions" (set 2026-07-28). Do not put it
+# back to a branch. Both builders were armed at once on the push that first ran
+# this workflow, and one push produced two deployments -- the legacy one from the
+# committed docs/, then this one, which won only because it finishes later. Once
+# docs/ stops being tracked, a legacy build would publish an empty site.
 name: deploy
 
 on:

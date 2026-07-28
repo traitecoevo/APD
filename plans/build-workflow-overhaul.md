@@ -11,11 +11,12 @@
 > **Stage 5 is ready to open and its gate has passed** — see that section for the exact rule and the
 > evidence. Stage 6 (CI) went first, since it is what makes the deploy repeatable.
 >
-> **Stage 6's first PR is done**: all four workflows exist, `make site` gates on every published anchor,
-> and `scripts/check_redirects.sh` asserts rather than prints. It also found and fixed a live 404 —
-> `release/2.1.1/index.html`, a tagged and deposited permalink. What is left of stage 6 is behind a
-> manual switch of the Pages source to *GitHub Actions* and a green `verify` job; `docs/` stays tracked
-> until then. See that section for the four-step sequence.
+> **Stage 6's first PR is merged and its gate has passed** (2026-07-28). All four workflows run, the
+> site deploys from `master` via Actions, and `verify` is clean against the live service. It found and
+> fixed a live 404 on `release/2.1.1/index.html` — a tagged, deposited permalink — and two dependencies
+> that had never been declared. `master` is now **release-only**: it moves at a release, not per PR,
+> which was only possible once Pages stopped being served from `master:/docs`. All that remains of
+> stage 6 is untracking `docs/`.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -752,16 +753,52 @@ resolves to a fragment of `index.html`, so `make site` now fails if any of the 1
 without its anchor — the check the Verification section below describes, run every time rather than
 once before the w3id PR.
 
-**Still gated, in this order:**
+**The gate passed on 2026-07-28.** `master` was fast-forwarded, `deploy.yml` ran, and the `verify`
+job came back clean against the live service: every content-negotiated endpoint, all four entity
+classes, all five `release/<v>/index.html` permalinks and every published data file, with only gap C1
+outstanding. Pages source is now *GitHub Actions*.
 
-1. Merge, fast-forward `master`, let `deploy.yml` run. Its last step will fail: Pages is still on the
-   legacy `master:/docs` source, so there is nothing for `deploy-pages` to publish to.
-2. Switch **Settings → Pages → Source** to *GitHub Actions* and re-run the workflow. The live site is
-   unaffected until this happens, because `docs/` is still committed and still being served.
-3. Confirm the `verify` job is green — that is the gate: every content-negotiated endpoint, every
-   entity class, every `release/<v>/index.html`, and the published data files, checked live.
-4. Then the second PR: gitignore and delete `docs/`, and drop `release` from `_quarto.yml` resources
-   (`deploy.yml` already copies it, so that line is now redundant rather than load-bearing).
+Two things did not go as this plan predicted, and both are worth recording:
+
+- **The deploy did not fail on the legacy source.** The plan assumed `deploy-pages` would refuse until
+  the source was switched by hand. It did not — `actions/deploy-pages` created a Pages deployment and
+  it went live while `build_type` still read `legacy`. The setting governs the *automatic* legacy
+  builder, not whether a workflow may deploy.
+- **So both builders were armed at once, and one push produced two deployments.** The legacy builder
+  published the committed `docs/` at 03:27:50; this workflow published its fresh render at 03:36:45
+  and won, but only because it finishes nine minutes later. Confirmed by the served `sitemap.xml`
+  carrying a render timestamp the committed copy does not have. That race is why the source was
+  switched even though the deploy already worked: it is not what makes Actions deploy, it is what
+  stops the legacy builder — and after `docs/` is untracked, a legacy build would publish an empty
+  site.
+
+**What is left:** the second PR — gitignore and delete `docs/`, and drop `release` from `_quarto.yml`
+resources (`deploy.yml` copies it now, so that line is redundant rather than load-bearing).
+
+A useful side effect of the fast-forward, before any of the above: `release/2.1.1/` went from 404 to
+200. It reached the site through the *legacy* path, from the committed `docs/release/2.1.1/`, so that
+published permalink was repaired independently of the Actions switch.
+
+**Decided on review: `master` becomes release-only.** The plan's line about fixing "the branch
+topology" turned out to be about the wrong thing. `master` churned on every PR — doc-only changes like
+#44 and #46 are on it — and the reflex reading is that the merge strategy is at fault. It is not:
+Pages served `master:/docs`, so *anything* that had to go live had to reach `master`. The merge
+strategy was downstream of the deploy mechanism.
+
+Standing up the Actions deploy removes the constraint, so `master` now moves **only at a release**,
+still by fast-forward. What that buys, beyond a release line that is actually a release line:
+`https://w3id.org/APD/` starts meaning the latest *release* rather than the latest commit, which is
+what it should mean for a citable vocabulary; and C13 — `austraits.build` reading
+`raw.githubusercontent.com/.../master/data/APD_trait_hierarchy.csv`, the last surviving instance of
+the bug C12 already fixed — silently starts resolving to a release instead of to the Pages branch.
+
+Squashing `develop` into `master` for a one-line-per-release log was considered and rejected: it
+diverges the branches permanently, and ancestry is what makes "which release shipped this change"
+answerable. Release history is `git tag`. Recorded in `AGENTS.md`.
+
+One impurity worth naming: the fast-forward that carried this CI work onto `master` is not a release.
+It could not be avoided — `deploy.yml` only triggers on push to `master`, so it had to get there
+before it could ever run. A bootstrap, once.
 
 **Decided: `export/` stays tracked.** The plan left it open. `tests/testthat/test-golden.R` uses the
 committed artefacts as its fixtures — that was stage 3's deliberate choice, to avoid committing a
