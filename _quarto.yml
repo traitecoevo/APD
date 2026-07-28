@@ -11,13 +11,13 @@ project:
     # Tells GitHub Pages not to run the site through Jekyll, which would
     # otherwise skip any path beginning with an underscore.
     - ".nojekyll"
-    # Copying the ~100 MB snapshot tree on every render is wasteful, and stage 6
-    # of plans/build-workflow-overhaul.md moves it to the deploy step. It has to
-    # stay here until then: w3id.org/APD/release/<version>/index.html is a live
-    # published permalink, Pages serves it from master:/docs, and dropping this
-    # line makes every versioned permalink 404 on the next deploy. That change
-    # needs the verification gate stage 6 describes, not a quiet edit here.
-    - release
+    #
+    # `release` used to be listed here too, so quarto copied the ~100 MB snapshot
+    # tree into docs/ on every render. .github/workflows/deploy.yml copies it
+    # instead, after the render, which is the only place it is actually needed --
+    # w3id.org/APD/release/<version>/index.html is a live permalink and the deploy
+    # has to carry it. Dropping it here means a local `make site` produces a docs/
+    # without release/; that is fine now that docs/ is not what gets published.
   output-dir: docs
   render:
     - index.qmd

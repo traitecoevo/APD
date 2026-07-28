@@ -29,9 +29,12 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   root* by `scripts/build_site.R`, so `https://traitecoevo.github.io/APD/APD.ttl` and the w3id rules
   pointing at it never move. Don't list them as quarto resources — a resource keeps its relative path,
   which would publish them under `export/` and break every existing link. See COMMITMENTS.md C12.
-- **Website:** a Quarto website (`_quarto.yml`, `index.qmd`, `using_the_APD.qmd`, `news.md`) rendered
+- **Website:** a Quarto website (`_quarto.yml`, `index.qmd`, `using_the_APD.qmd`, `NEWS.md`) rendered
   to `docs/` and published via GitHub Pages at <https://traitecoevo.github.io/APD/>. The dictionary
-  is also resolvable via <https://w3id.org/APD/>.
+  is also resolvable via <https://w3id.org/APD/>. **`docs/` is gitignored** — a local build artefact
+  like `export/`. `deploy.yml` renders it fresh on `master`; nothing reads the committed tree, because
+  there isn't one. It also carries `release/`, which is *not* a quarto resource any more, so a local
+  `make site` yields a `docs/` without the versioned snapshots. That is expected.
 - **R helpers:** `R/` holds supporting functions. `DESCRIPTION` is the one declaration of what the
   build needs — `scripts/setup.R` attaches the subset the unqualified dplyr/tidyr/gt/readr verbs in
   `R/` require, and CI installs from `DESCRIPTION`, so don't keep a second list anywhere. **Attach the
@@ -115,7 +118,8 @@ numbers where it had asserted strings. `make release` refuses to overwrite an ex
 `release/<version>/`, so the snapshot for a shipped version cannot be rewritten by accident.
 
 > Heads-up: everything in `export/` is **generated** by `make data` — edit the inputs in `data/`, then
-> rebuild; don't hand-edit them. The `docs/` site is likewise built output, not hand-maintained.
+> rebuild; don't hand-edit them. `docs/` is likewise built output — and gitignored, so if you find
+> yourself staging it, something has gone wrong.
 
 ---
 

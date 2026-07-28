@@ -112,7 +112,9 @@ reason. Those are enumerated in `APD_KNOWN_GAPS` (`R/validate.R`) and explained 
 breakage cannot hide behind existing debt.
 
 `make site` creates the APD website, saved in `docs/`
-  - hosting via Github pages at <https://traitecoevo.github.io/APD/>
+  - `docs/` is a local build artefact and is **not** committed — GitHub Pages is
+    deployed by `.github/workflows/deploy.yml` from a fresh render on `master`
+  - hosted at <https://traitecoevo.github.io/APD/>
   - created from files `index.qmd` and configured with `_quarto.yml`
   - uses the `quarto` package for R, with instructions on formatting from <https://quarto.org/docs/reference/projects/websites.html
   - we were inspired by <https://i-adopt.github.io> with code from <https://github.com/i-adopt/i-adopt.github.io>
