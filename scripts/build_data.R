@@ -2,7 +2,7 @@
 # `make data` -- build the dictionary from data/.
 #
 # Writes APD_triples.csv, the four RDF serialisations (APD.nq/.nt/.ttl/.json) and
-# the two flat CSVs, all at the repo root. Reads data/ and writes nothing to it.
+# the two flat CSVs, all into export/. Reads data/ and writes nothing to it.
 
 source("scripts/setup.R")
 

@@ -28,8 +28,8 @@ message("Releasing version ", version,
 # --- snapshot ----------------------------------------------------------------
 #
 # One snapshot tree, in release/. docs/release/ used to hold a byte-identical
-# copy written here as well; it is now populated on render instead, because
-# _quarto.yml lists `release` as a site resource.
+# copy written here as well; .github/workflows/deploy.yml copies it in after the
+# render instead, so a local `make site` yields a docs/ without it.
 
 # APD_traits_input.csv is no longer tracked in git -- the YAML is the source of
 # truth and a second tracked copy is a second source of truth. But Wenk et al.
@@ -39,9 +39,8 @@ message("Releasing version ", version,
 message("Exporting ", basename(TRAITS_CSV), " for the release")
 convert_APD_traits_input_yml_to_csv()
 
-# Where each release file is found. Everything built at the root is also copied
-# into docs/ by quarto, so the root copy is the one to take; index.html only
-# exists once rendered.
+# Where each release file is found. The build products are taken from export/,
+# which is where `make data` writes them; index.html only exists once rendered.
 RELEASE_FILES <- c(
   file.path(APD_EXPORT_DIR, setdiff(APD_OUTPUTS, "APD_triples.csv")),
   file.path("docs", "index.html"),
