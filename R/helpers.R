@@ -57,17 +57,21 @@ make_link <- function(text, url) {
 }
 
 
-
-
-print_list2 <- function(vals) {
-  
-  out <- c()
-  
+#' Stack several values into one HTML cell
+#'
+#' A property can hold a list -- several keywords, several references -- and all
+#' of them share one `<dd>`, one per line. `NA`s are dropped rather than printed,
+#' and a property with nothing left is returned as `NULL` so that
+#' `apd_definition_list()` omits the row entirely.
+#'
+#' @param vals A character vector of already-rendered values.
+#' @return A single HTML string, or `NULL` if there was nothing to show.
+html_lines <- function(vals) {
   vals <- vals[!is.na(vals)]
-  
-  if (length(vals) > 0) {
-    out <- c(out, paste0(vals, collapse = "<br>\n"))
-  } 
-  
-  out
+
+  if (length(vals) == 0) {
+    return(NULL)
+  }
+
+  paste(vals, collapse = "<br>\n")
 }

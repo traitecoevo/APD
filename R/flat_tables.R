@@ -39,19 +39,13 @@ apd_collapse_field <- function(traits, field, out_name, decorate) {
                                 ~ stringr::str_split(.x, "; "))) %>%
     tidyr::unnest_wider(col = dplyr::all_of(field), names_sep = "_")
 
-  out <-
-    wide %>%
+  wide %>%
     tidyr::pivot_longer(cols = 2:ncol(wide)) %>%
     dplyr::filter(!is.na(value)) %>%
     dplyr::mutate(value = decorate(value)) %>%
     dplyr::group_by(trait) %>%
-    dplyr::mutate(collapsed = paste(value, collapse = "; ")) %>%
-    dplyr::ungroup() %>%
-    dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
-    dplyr::distinct()
-
-  names(out)[names(out) == "collapsed"] <- out_name
-  out
+    dplyr::summarise(!!out_name := paste(value, collapse = "; "),
+                     .groups = "drop")
 }
 
 # Look `keys` up in `table[[key_col]]` and return the matching `value_col`.
@@ -160,12 +154,9 @@ apd_traits_table <- function(inputs) {
     apd_trait_examples(traits)
   )
 
-  out <- core_traits
-  for (piece in collapsed) {
-    out <- dplyr::left_join(out, piece, by = "trait")
-  }
-
-  out %>% dplyr::select(dplyr::all_of(APD_TRAITS_TABLE_COLUMNS))
+  collapsed %>%
+    purrr::reduce(dplyr::left_join, by = "trait", .init = core_traits) %>%
+    dplyr::select(dplyr::all_of(APD_TRAITS_TABLE_COLUMNS))
 }
 
 #' Collapse the per-vocabulary mapping columns into one `examples` column
@@ -201,10 +192,8 @@ apd_trait_examples <- function(traits) {
     tidyr::pivot_longer(cols = 2:ncol(wide)) %>%
     dplyr::filter(!is.na(value)) %>%
     dplyr::group_by(trait) %>%
-    dplyr::mutate(examples = paste(value, collapse = "; ")) %>%
-    dplyr::ungroup() %>%
-    dplyr::select(-dplyr::all_of(c("name", "value"))) %>%
-    dplyr::distinct()
+    dplyr::summarise(examples = paste(value, collapse = "; "),
+                     .groups = "drop")
 }
 
 #' Build the published table of allowable categorical values

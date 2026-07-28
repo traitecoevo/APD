@@ -3,6 +3,56 @@
 # drift, and so the "^^" is impossible to lose again.
 XSD_DOUBLE <- "^^<http://www.w3.org/2001/XMLSchema#double>"
 
+#' Mint the `skos:narrower` statements implied by a set of `skos:broader` ones
+#'
+#' The two are inverse properties, and the inputs only ever record the upward
+#' direction -- a trait names its group, a categorical value names its trait.
+#' SKOS consumers expect to be able to walk down as well, so each `broader`
+#' statement is asserted a second time with subject and object exchanged. Applied
+#' to the hierarchy, the trait table and the categorical values.
+#'
+#' @param triples A triple table already filtered to `skos:broader` statements.
+#' @return The same statements, inverted, as `skos:narrower`.
+as_narrower <- function(triples) {
+  triples %>%
+    mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
+    rename(Subject = Object, Object = Subject)
+}
+
+#' Turn the input tables into the RDF statements the APD publishes
+#'
+#' The one place the dictionary becomes RDF. Each input table is reshaped the
+#' same way -- decorate every cell so it is a legal N-Triples term (`<URI>`,
+#' `"literal"`, `"literal"@en`, `"literal"^^<datatype>`), rename each column to
+#' the predicate it stands for, then pivot to one row per statement -- and the
+#' results are stacked into a single subject/predicate/object table.
+#'
+#' Two products come back rather than one. `triples_df` is the graph as it will
+#' be serialised, with every term still in its RDF form. `triples_with_labels` is
+#' the same statements re-decorated for people: brackets stripped, and each URI
+#' resolved to the human label it stands for, so the website can print "leaf
+#' area" where the graph says a URI. The website and `APD_triples.csv` read only
+#' the latter.
+#'
+#' @param annotation_properties_csv The annotation properties -- the predicate
+#'   vocabulary, and the source of the human label each predicate is shown under.
+#' @param traits_csv The trait definitions, from `APD_traits_input.yml`. The bulk
+#'   of the graph; its list-valued fields are split and numbered so each element
+#'   becomes its own statement.
+#' @param glossary_csv Terms the APD defines itself, because no published
+#'   vocabulary defines them.
+#' @param published_classes_csv Terms borrowed from other vocabularies. Doubles
+#'   as the lookup that resolves a trait's type, structure, characteristic,
+#'   keywords and mappings to labels and URIs.
+#' @param reviewers_csv People who reviewed a trait definition, with ORCIDs.
+#' @param references_csv Literature cited by a trait definition.
+#' @param units_csv Units of measurement, with their SI and UCUM codes.
+#' @param hierarchy_csv The trait groups, and the parent of each.
+#' @param categorical_values_csv Allowable values for the categorical traits,
+#'   each attached to the single trait that permits it.
+#' @param APD_resource_csv Statements describing the dictionary itself --
+#'   licence, publisher, version -- passed through into the graph as written.
+#' @return A list of two tibbles, `triples_df` and `triples_with_labels`.
 convert_to_triples <- function(annotation_properties_csv, traits_csv, glossary_csv, published_classes_csv, reviewers_csv, references_csv, units_csv, hierarchy_csv, categorical_values_csv, APD_resource_csv) {
   
 reformatted_references <- 
@@ -22,11 +72,7 @@ reformatted_references <-
     `<http://purl.org/dc/terms/bibliographicCitation>` = citation,
     `<http://purl.org/dc/terms/title>` = title
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  )
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object")
 
 reformatted_reviewers <- 
   reviewers_csv %>%
@@ -41,11 +87,7 @@ reformatted_reviewers <-
     `<http://www.w3.org/2004/02/skos/core#prefLabel>`= label,
     `<http://purl.obolibrary.org/obo/IAO_0000708>` = ORCID
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  )
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object")
 
 reformatted_units <- 
   units_csv %>%
@@ -65,11 +107,7 @@ reformatted_units <-
     `<https://w3id.org/uom/SI_code>` = SI_code,
     `<https://w3id.org/uom/UCUM_code>` = UCUM_code
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  ) %>%
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object") %>%
   filter(!is.na(Object))
 
 reformatted_categorical <- 
@@ -95,11 +133,7 @@ reformatted_categorical <-
     `<http://purl.org/dc/terms/description>` = description,
     `<http://www.w3.org/2004/02/skos/core#broader>` = Parent
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  )
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object")
   
 reformatted_hierarchy <- 
   hierarchy_csv %>%
@@ -124,19 +158,13 @@ reformatted_hierarchy <-
       `<http://www.w3.org/2004/02/skos/core#broader>` = Parent,
       `<http://www.w3.org/2004/02/skos/core#exactMatch>` = exactMatch
     ) %>%
-    pivot_longer(cols = -Subject) %>% 
-    rename(
-      Predicate = name,
-      Object = value
-    ) %>% 
+    pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object") %>% 
   filter(!is.na(Object))
 
 reformatted_hierarchy_x <- 
   reformatted_hierarchy %>%
   filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
-  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
-  rename(Object2 = Subject, Subject = Object) %>%
-  rename(Object = Object2)
+  as_narrower()
 
 reformatted_hierarchy <- 
   reformatted_hierarchy %>%
@@ -162,11 +190,7 @@ reformatted_glossary <-
     `<http://www.w3.org/2004/02/skos/core#prefLabel>` = label,
     `<http://purl.org/dc/terms/description>` = description
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  ) %>% 
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object") %>% 
   filter(!is.na(Object))
 
 reformatted_published_classes <- 
@@ -187,11 +211,7 @@ reformatted_published_classes <-
     `<http://purl.org/dc/terms/identifier>` = identifier,
     `<http://www.w3.org/2004/02/skos/core#inScheme>` = inScheme
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  ) %>% 
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object") %>% 
   filter(!is.na(Object))
  
 reformatted_annotation <- 
@@ -212,11 +232,7 @@ reformatted_annotation <-
     `<http://purl.org/dc/terms/created>`= issued,
     `<http://www.w3.org/2004/02/skos/core#note>`= comment
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  ) %>% 
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object") %>% 
   filter(!is.na(Object)) %>%
   filter(!stringr::str_detect(Object,"\"NA\"@en"))
 
@@ -281,8 +297,11 @@ reformatted_traits <- reformatted_traits %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#exactMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("exact_match")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#closeMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("close_match")) %>%
   rename_with(~ paste0("<http://www.w3.org/2004/02/skos/core#relatedMatch>", str_extract(., "[:digit:]+")), .cols = dplyr::contains("related_match")) %>%  
+  # Numbered from the selected columns themselves. This used to count them by
+  # re-selecting from `reformatted_traits`, i.e. the value the pipe started from,
+  # and only gave the right answer because the two selections happened to agree.
   rename_with(
-    ~ paste0("<http://www.w3.org/2004/02/skos/core#example>", seq_along(1:length(reformatted_traits %>% select(dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related"))))), 
+    ~ paste0("<http://www.w3.org/2004/02/skos/core#example>", seq_along(.)),
     .cols = dplyr::contains("_exact") | dplyr::contains("_close") | dplyr::contains("_related")) %>%
   rename(
     Subject = Entity,
@@ -304,28 +323,20 @@ reformatted_traits <- reformatted_traits %>%
     `<http://www.w3.org/2004/02/skos/core#changeNote>`= deprecated_trait_name,
     `<http://www.w3.org/2004/02/skos/core#scopeNote>`= constraints
   ) %>%
-  pivot_longer(cols = -Subject) %>% 
-  rename(
-    Predicate = name,
-    Object = value
-  )
+  pivot_longer(cols = -Subject, names_to = "Predicate", values_to = "Object")
 
 reformatted_traits_x <- 
   reformatted_traits %>%
   filter(stringr::str_detect(Predicate, "broader")) %>% 
   filter(!is.na(Object)) %>% 
   distinct(Subject, Object, .keep_all = TRUE) %>%
-  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
-  rename(Object2 = Subject, Subject = Object) %>%
-  rename(Object = Object2) %>%
+  as_narrower() %>%
   filter(!is.na(Subject))
 
 reformatted_categorical_x <- 
   reformatted_categorical %>%
   filter(Predicate == "<http://www.w3.org/2004/02/skos/core#broader>") %>%
-  mutate(Predicate = "<http://www.w3.org/2004/02/skos/core#narrower>") %>%
-  rename(Object2 = Subject, Subject = Object) %>%
-  rename(Object = Object2)
+  as_narrower()
 
 reformatted_glossary_x <- reformatted_glossary %>%
   filter(Predicate == "<http://www.w3.org/2004/02/skos/core#topConceptOf>") %>%
