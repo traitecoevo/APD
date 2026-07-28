@@ -11,6 +11,33 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## APD Version 2.1.1
+
+A patch release. **The trait definitions are unchanged** — no trait, URI, label,
+description or allowable value differs from 2.1.0. What changed is how the
+machine-readable serialisations express two things, and both were wrong before.
+
+**Allowed-value ranges are now typed numbers.** `minAllowedValue` and
+`maxAllowedValue` were serialised as plain strings:
+
+```turtle
+ets:minAllowedValue "0.01"     # 2.1.0
+ets:minAllowedValue 0.01       # 2.1.1 — an xsd:double
+```
+
+The literals were written without the `^^` that marks a datatype, and against
+`https://www.w3.org/2001/XMLSchema#` where the namespace is `http://`. A SPARQL
+query filtering numerically on a range would not have matched in 2.1.0.
+
+**`APD.nt` is valid N-Triples.** Every statement was missing its terminating `.`,
+so a conforming parser read 26,625 of the 27,503 statements and silently dropped
+the rest — the 878 lost were exactly the allowed-value ranges above. All four
+serialisations now agree on 27,503 statements.
+
+**Also:** each entity's own name (`skos:prefLabel`) now appears in its table on the
+website. The row existed but was always empty, because the code looked for a
+property called `label` and the property is `preferred label`.
+
 ## APD Version 2.1.0
 
 **Add new traits**

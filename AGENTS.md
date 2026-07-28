@@ -50,7 +50,32 @@ Run `make` for the list of targets:
 `Rscript scripts/sparql_examples.R` runs example SPARQL queries against `APD.nq`.
 
 This is a **Compendium/Bundle**, not an R package — there is no `devtools::check()` workflow.
-Default branch is `develop`; GitHub Pages deploys from `master:/docs`.
+
+## Branches and releases
+
+`develop` is the default branch. **GitHub Pages deploys from `master:/docs`**, so nothing reaches the
+published site until it is on `master`.
+
+| Merge | How | Why |
+|---|---|---|
+| feature branch → `develop` | **squash** | One commit per PR. `master`'s history is linear and has been built this way — every commit on it is a squashed PR. |
+| `develop` → `master` | **fast-forward** | Keeps that linear history *and* keeps `master` an ancestor of `develop`. |
+
+**Do not squash `develop` into `master`.** It would create a commit on `master` that is not in
+`develop`, permanently diverging the two: `git log master..develop` would stop meaning "work not yet
+released", later merges would stop being fast-forwards, and a release tag on `master` would point at a
+commit no other branch contains — which matters for a repo whose value proposition is persistent,
+citable identifiers, and whose tags Zenodo archives.
+
+    git checkout master && git merge --ff-only develop && git push
+
+If that refuses, the branches have diverged and the reason needs finding, not forcing.
+
+**Version bumps.** `DESCRIPTION` is the single source (`R/version.R`); `index.qmd` and
+`scripts/release.R` read it. Bump it when the *published output* changes, not only when a trait does —
+2.1.1 was a patch release with no change to any definition, because the RDF began asserting typed
+numbers where it had asserted strings. `make release` refuses to overwrite an existing
+`release/<version>/`, so the snapshot for a shipped version cannot be rewritten by accident.
 
 > Heads-up: everything in `export/` is **generated** by `make data` — edit the inputs in `data/`, then
 > rebuild; don't hand-edit them. The `docs/` site is likewise built output, not hand-maintained.
