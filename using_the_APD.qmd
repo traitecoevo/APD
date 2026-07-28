@@ -11,7 +11,7 @@ format:
 
 The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD/, and each trait (and trait groupings) has its own URI.
 
-To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [github.com/traitecoevo/APD/tree/master/docs](https://github.com/traitecoevo/APD/tree/master/docs) or Zenodo at DOI: [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
+To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [traitecoevo.github.io/APD](https://traitecoevo.github.io/APD/APD_traits.csv) or Zenodo at DOI: [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
 
 The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.
 

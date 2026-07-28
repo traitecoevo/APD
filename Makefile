@@ -43,6 +43,6 @@ export-csv:  ## Export trait definitions to data/edit/ for spreadsheet editing
 import-csv:  ## Import edited CSV back into data/APD_traits_input.yml
 	$(R) scripts/import_csv.R
 
-clean:  ## Delete the generated artefacts and the Quarto cache
-	rm -rf export .quarto
-	@echo "Left docs/ and release/ alone -- both are still tracked in git."
+clean:  ## Delete the generated artefacts, the rendered site and the Quarto cache
+	rm -rf export docs .quarto
+	@echo "Left release/ alone -- the versioned snapshots are tracked in git."

@@ -15,8 +15,8 @@
 > site deploys from `master` via Actions, and `verify` is clean against the live service. It found and
 > fixed a live 404 on `release/2.1.1/index.html` — a tagged, deposited permalink — and two dependencies
 > that had never been declared. `master` is now **release-only**: it moves at a release, not per PR,
-> which was only possible once Pages stopped being served from `master:/docs`. All that remains of
-> stage 6 is untracking `docs/`.
+> which was only possible once Pages stopped being served from `master:/docs`. `docs/` is untracked.
+> **Stage 6 is complete**; only stage 7 (documentation) remains.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -772,8 +772,20 @@ Two things did not go as this plan predicted, and both are worth recording:
   stops the legacy builder — and after `docs/` is untracked, a legacy build would publish an empty
   site.
 
-**What is left:** the second PR — gitignore and delete `docs/`, and drop `release` from `_quarto.yml`
-resources (`deploy.yml` copies it now, so that line is redundant rather than load-bearing).
+**The second PR landed too, so stage 6 is done.** `docs/` is gitignored and untracked, and `release`
+is no longer a quarto resource, so a local `make site` no longer copies the ~120 MB snapshot tree on
+every render — `deploy.yml` copies it after the render instead, which is the only place it is needed.
+
+Measured, not estimated: the tracked tree goes from **161 files / 287 MB to 109 files / 143 MB**. The
+plan predicted "roughly 110 MB"; the difference is that `release/` is 121 MB of that and stays, by
+design. What actually mattered was never the megabytes — it was the 6 MB `index.html` diff in every
+data PR, and that is gone.
+
+One thing that had to be fixed with it: `using_the_APD.qmd` told readers to download the flat tables
+from `github.com/traitecoevo/APD/tree/master/docs`. That is a published document (C10) pointing into
+the tree this PR deletes, so it would have become a 404 on the site the moment `docs/` went away. It
+now points at `traitecoevo.github.io/APD/`, which is C12's URL and the one that was always meant to
+be cited.
 
 A useful side effect of the fast-forward, before any of the above: `release/2.1.1/` went from 404 to
 200. It reached the site through the *legacy* path, from the committed `docs/release/2.1.1/`, so that
