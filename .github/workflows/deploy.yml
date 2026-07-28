@@ -45,6 +45,13 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
+      # check.yml runs on this same push, but in parallel -- so without this the
+      # site could publish while validation was going red beside it. The APD is
+      # cited; deploying output nothing has checked is the one thing not worth
+      # saving 40 seconds on.
+      - name: Validate before publishing anything
+        run: make check
+
       - name: Render the website
         run: make site
 
