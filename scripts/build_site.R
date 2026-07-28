@@ -4,10 +4,10 @@
 # Requires the outputs of `make data`: index.qmd reads APD_triples.csv, and
 # _quarto.yml copies the RDF serialisations and flat CSVs in as site resources.
 #
-# Needs network access: using_the_APD.qmd fetches its example data from
-# raw.githubusercontent.com at render time, so it shows the last released data
-# rather than the working tree. Stage 3 of plans/build-workflow-overhaul.md makes
-# it read the local files instead.
+# The render is offline: using_the_APD.qmd used to fetch its example data from
+# raw.githubusercontent.com, which meant a release rendered the *previous*
+# release's data. It reads the local build now, and the render workflow in
+# .github/ depends on that -- nothing here should reach the network again.
 
 source("scripts/setup.R")
 apd_require("quarto")
@@ -50,3 +50,22 @@ if (!all(copied)) {
   stop("Could not publish: ", paste(STATIC[!copied], collapse = ", "),
        call. = FALSE)
 }
+
+# Every published URI resolves to a fragment of the document just rendered, so
+# a missing anchor turns a citable identifier into a scroll to the top of the
+# page. Checked here rather than in `make check`, because it is a property of
+# the render and nothing else produces it. See R/site.R.
+slugs <- apd_entity_slugs()
+missing_anchors <- apd_missing_anchors(slugs = slugs)
+
+if (length(missing_anchors) > 0) {
+  stop(length(missing_anchors), " published entit(ies) have no anchor in ",
+       "docs/index.html:\n  ",
+       paste(utils::head(missing_anchors, 10), collapse = "\n  "),
+       if (length(missing_anchors) > 10) "\n  ..." else "",
+       "\nTheir w3id URIs would resolve to the top of the page. See ",
+       "COMMITMENTS.md C1.", call. = FALSE)
+}
+
+message("All ", length(slugs), " published entities have an anchor in ",
+        "docs/index.html")

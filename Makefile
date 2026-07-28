@@ -31,7 +31,7 @@ data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSV
 check: data  ## Validate the built dictionary and run the tests
 	$(R) scripts/check.R
 
-site: data  ## Render the website into docs/ (slow; needs network)
+site: data  ## Render the website into docs/ (slow, ~75 s; offline)
 	$(R) scripts/build_site.R
 
 release: check site  ## Check the version, then snapshot into release/<version>/

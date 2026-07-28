@@ -31,6 +31,14 @@ apd_require <- function(packages, attach = FALSE) {
 apd_require(c("dplyr", "tidyr", "readr", "stringr", "tibble", "purrr",
               "gt", "rdflib", "yaml"), attach = TRUE)
 
+# Needed but not attached: rdflib calls jsonld to serialise APD.json, and only
+# *suggests* it, so installing rdflib does not bring it. It happened to be on
+# every maintainer's machine, so the build worked everywhere it was ever run and
+# a fresh checkout could not produce APD.json at all -- which is how CI found
+# it. Checked here so the message says what to install, rather than failing
+# eight seconds into a build inside rdf_serialize().
+apd_require("jsonld")
+
 for (file in sort(list.files("R", pattern = "\\.R$", full.names = TRUE))) {
   source(file)
 }

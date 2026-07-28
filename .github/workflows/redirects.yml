@@ -1,0 +1,39 @@
+# Are the published identifiers still resolving?
+#
+# Everything else in CI checks what this repository produces. This checks what
+# the world actually gets, which is not the same thing: w3id.org/APD is a
+# redirect config living in someone else's repository
+# (perma-id/w3id.org/APD/.htaccess), and it can drift away from this site
+# without a commit here. Wenk et al. 2024 p.8 promises that every trait, trait
+# group, categorical value and glossary term resolves to its content, so a
+# silent drift breaks a published commitment.
+#
+# Weekly, because the failure mode is slow and external. Also runnable by hand,
+# which is what to do either side of a change to the w3id rules.
+name: redirects
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  redirects:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Reads DESCRIPTION for the current version and release/ for the list of
+      # versioned permalinks; everything else it needs is live.
+      - name: Check the live redirects and permalinks
+        shell: bash
+        run: |
+          status=0
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          scripts/check_redirects.sh | tee -a "$GITHUB_STEP_SUMMARY" || status=$?
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          exit $status

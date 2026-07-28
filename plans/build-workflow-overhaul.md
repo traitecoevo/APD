@@ -9,7 +9,13 @@
 > did. Verified against the live service, not asserted.
 >
 > **Stage 5 is ready to open and its gate has passed** — see that section for the exact rule and the
-> evidence. Stage 6 (CI) is what makes the deploy repeatable, so it may be worth doing first.
+> evidence. Stage 6 (CI) went first, since it is what makes the deploy repeatable.
+>
+> **Stage 6's first PR is done**: all four workflows exist, `make site` gates on every published anchor,
+> and `scripts/check_redirects.sh` asserts rather than prints. It also found and fixed a live 404 —
+> `release/2.1.1/index.html`, a tagged and deposited permalink. What is left of stage 6 is behind a
+> manual switch of the Pages source to *GitHub Actions* and a green `verify` job; `docs/` stays tracked
+> until then. See that section for the four-step sequence.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -691,6 +697,78 @@ point into it. Two PRs with a verification gate between them: first stand up the
 confirm every `release/<v>/index.html` permalink and every content-negotiated `w3id.org/APD` endpoint
 still resolves; only then delete `docs/` from the tree. Keep `docs/` committed until that gate passes.
 
+**Where stage 6 got to — the first of those two PRs.** All four workflows are in
+`.github/workflows/`, and `docs/` is still tracked, deliberately.
+
+| Workflow | Trigger | Does |
+|---|---|---|
+| `check.yml` | push to `master`/`develop`, every PR | `make data`, `git diff --exit-code -- data/`, `make check` |
+| `render.yml` | PR touching `data/`, `R/`, `scripts/`, `assets/`, a `.qmd` or `_quarto.yml` | `make site`, uploads the page, reports its weight |
+| `deploy.yml` | push to `master` | render → copy `release/` → Pages, then a `verify` job against the live site |
+| `redirects.yml` | Mondays, and on demand | `scripts/check_redirects.sh` |
+
+Three things came out of doing it that the plan had not separated out:
+
+- **Two more undeclared dependencies, and neither is findable by reading the code.** Stage 0 added
+  seven by auditing `R/`; a clean runner found two that audit could not.
+
+  `jsonld` — the first CI run failed at `rdf_serialize(..., "APD.json")` with *"please install the
+  jsonld package"*. `rdflib` only **suggests** it, so installing `rdflib` does not bring it. It was on
+  every maintainer's machine, so the build worked everywhere it had ever been run, and a fresh checkout
+  could not produce `APD.json` at all. Nothing in `R/` mentions `jsonld`, so no amount of reading the
+  code finds it.
+
+  `tidyverse` — `using_the_APD.qmd` attached it in both its display chunk and its evaluated one. The
+  fix is not to declare it: the document uses `dplyr`, `tidyr`, `readr`, `stringr` and `kableExtra`,
+  all already declared, and the umbrella adds ggplot2, lubridate and forcats to every CI run for
+  nothing. It now attaches those five. Only the displayed `library()` block changed — every result
+  table in the rendered page is byte-identical, so commitment C10 is untouched and a reader is told to
+  install less.
+
+  A `::` and `library()` sweep across `R/`, `scripts/`, `tests/` and the `.qmd` files against
+  `DESCRIPTION` also turned up `stringi` (called directly by `scripts/sparql_examples.R`) and `digest`
+  (by `test-entity-tables.R`), both previously arriving only as transitive dependencies. Declared.
+
+
+- **`release/2.1.1/index.html` has been a 404 since 2.1.1 shipped.** `make release` is
+  `check site release.R`, so the render happens *before* the snapshot is written — the version being
+  released is the one version never copied into the `docs/` of the same run. Nobody re-rendered
+  afterwards, so a live, tagged, Zenodo-deposited permalink returned 404. Fixed here by committing the
+  re-render, and prevented from recurring by `deploy.yml` copying `release/` into the site itself,
+  after the render, rather than relying on quarto's resource copy.
+
+  This is also the first thing the new checks caught, which is the argument for them: nothing in the
+  repo was wrong, so nothing that reads the repo could have found it.
+
+- **`scripts/check_redirects.sh` became an asserting check.** It printed a matrix you were meant to
+  diff by eye against a copy taken before the change; as a weekly cron that is not a check. It now
+  carries the expectation for every line and exits non-zero, in the same three severities `make check`
+  uses — and, matching `APD_KNOWN_GAPS`, **a known gap that starts passing fails**. So the day the
+  stage 5 w3id PR merges, `redirects.yml` goes red with "fixed! remove this from COMMITMENTS.md",
+  which is how we will find out it landed.
+
+Also added: `R/site.R` and an anchor gate at the end of `scripts/build_site.R`. Every published URI
+resolves to a fragment of `index.html`, so `make site` now fails if any of the 1,473 entities renders
+without its anchor — the check the Verification section below describes, run every time rather than
+once before the w3id PR.
+
+**Still gated, in this order:**
+
+1. Merge, fast-forward `master`, let `deploy.yml` run. Its last step will fail: Pages is still on the
+   legacy `master:/docs` source, so there is nothing for `deploy-pages` to publish to.
+2. Switch **Settings → Pages → Source** to *GitHub Actions* and re-run the workflow. The live site is
+   unaffected until this happens, because `docs/` is still committed and still being served.
+3. Confirm the `verify` job is green — that is the gate: every content-negotiated endpoint, every
+   entity class, every `release/<v>/index.html`, and the published data files, checked live.
+4. Then the second PR: gitignore and delete `docs/`, and drop `release` from `_quarto.yml` resources
+   (`deploy.yml` already copies it, so that line is now redundant rather than load-bearing).
+
+**Decided: `export/` stays tracked.** The plan left it open. `tests/testthat/test-golden.R` uses the
+committed artefacts as its fixtures — that was stage 3's deliberate choice, to avoid committing a
+second identical copy under `tests/` — so gitignoring `export/` means inventing a fixture mechanism to
+replace it. It is 19 MB against `docs/`'s 127 MB, and its diffs are the reviewable ones: a changed
+`APD_traits.csv` in a PR is the *point*, where a re-rendered 6 MB `index.html` is noise.
+
 ### Stage 7 — Documentation
 
 Two audiences, currently served by neither:
@@ -714,19 +792,21 @@ Two audiences, currently served by neither:
 - **`make check`** — validation report must be clean; deliberately break a `keywords` identifier and
   confirm it fails loudly rather than silently emitting `<NA>`.
 - **Check every anchor exists** in the deployed `index.html` — all 1,473 slugs, including the 819
-  categorical values — *before* the w3id PR. (The per-entity-page version of this check,
-  `make check-pages`, was removed with the pages; the equivalent for one document is a grep for
-  `id="<slug>"` per entity.)
-- **Redirect matrix** — capture the full `curl -H "Accept: ..."` matrix from `README.md:80-94` before
-  any change; every content-negotiation line must be byte-identical afterwards, and the HTML lines must
-  show the new per-page targets.
+  categorical values. **Done, and now continuous:** `apd_missing_anchors()` in `R/site.R`, run by
+  `scripts/build_site.R`, so `make site` fails rather than publishing a document an identifier cannot
+  reach. All 1,473 present.
+- **Redirect matrix** — `scripts/check_redirects.sh`, which since stage 6 asserts rather than prints,
+  so there is no before-and-after copy to keep. `redirects.yml` runs it weekly and `deploy.yml` runs it
+  after every deploy.
 - **Page weight** — measured at 6.14 MB and 79,673 DOM elements, down from 9.00 MB and 123,334. Still
   opens standalone from `file://` with all anchors working, which `embed-resources` is there for.
 - **Downstream** — confirm the published URLs return 200 (done: `traitecoevo.github.io/APD/APD_traits.csv`
   and the pinned `release/2.1.0/` equivalents) and re-run
   `austraits.build/scripts/build_traits_yml_from_APD.R`. Its `apd_version` constant needs bumping at
   each APD release.
-- **CI** — confirm a PR that reintroduces the `build.qmd:156` dangling pipe now fails.
+- **CI** — the June 2025 breakage was a dangling `%>%` in `build.qmd:156` that R parsed happily and
+  nothing ever executed. `build.qmd` is gone, but the equivalent is: any error in `R/` now fails
+  `check.yml` on the pull request that introduces it, because `make data` actually runs.
 - **Paper commitments** — after the w3id PR, re-run the p.8 URI check across all four entity classes.
   The one that must flip from broken to working: `w3id.org/APD/traits/plant_growth_form_tree` and the
   other 818 categorical values.

@@ -1,0 +1,118 @@
+# Render the site and publish it to GitHub Pages.
+#
+# Pages used to be served straight from `master:/docs`, which meant the deployed
+# site was whatever HTML someone last committed -- 6 MB of generated output in
+# every data PR, and no guarantee it came from the inputs beside it. The site is
+# built here instead, from the checkout, on every push to master.
+#
+# ONE-TIME SETUP. The first run of this workflow will fail while the repository
+# is still on the legacy source. Set Settings -> Pages -> Source to
+# "GitHub Actions" and re-run it. Until that switch, the committed docs/ keeps
+# serving the live site unchanged -- which is why plans/build-workflow-overhaul.md
+# keeps docs/ tracked until this workflow has deployed and verify has passed.
+name: deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; never cancel one in flight, because a half-applied
+# deploy is a site with some pages from each.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::testthat, any::withr
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      # check.yml runs on this same push, but in parallel -- so without this the
+      # site could publish while validation was going red beside it. The APD is
+      # cited; deploying output nothing has checked is the one thing not worth
+      # saving 40 seconds on.
+      - name: Validate before publishing anything
+        run: make check
+
+      - name: Render the website
+        run: make site
+
+      # Every release/<version>/index.html is a permalink that has been cited and
+      # that w3id.org resolves, so the deployed site has to carry the whole
+      # snapshot tree. _quarto.yml also copies it as a site resource today; doing
+      # it here as well is what lets that line be dropped later without the
+      # deploy changing, and it is idempotent either way.
+      #
+      # It also fixes a real gap: `make release` renders before it writes the new
+      # snapshot, so the version being released never made it into the same
+      # docs/. release/2.1.1/ has been 404 on the live site since 2.1.1 shipped.
+      - name: Include every versioned snapshot
+        run: |
+          mkdir -p docs/release
+          cp -R release/. docs/release/
+          ls docs/release
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # The gate. A deploy that succeeds and a site that resolves are different
+  # claims: w3id.org sends every published identifier into this site, so the
+  # check that matters is made against the live service afterwards, not against
+  # the artefact. Known gaps (C1) are reported without failing; anything else is
+  # a published URI that stopped working, and this goes red.
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait for the deployment to propagate
+        run: sleep 60
+
+      # `shell: bash` runs with -eo pipefail, so the pipe into tee reports the
+      # script's status rather than tee's -- but -e would also abort before the
+      # closing fence is written, hence `|| status=$?`.
+      - name: Check the live redirects and permalinks
+        shell: bash
+        run: |
+          status=0
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          scripts/check_redirects.sh | tee -a "$GITHUB_STEP_SUMMARY" || status=$?
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          exit $status

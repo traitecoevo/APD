@@ -1,0 +1,77 @@
+# Render the website on a pull request that could change it.
+#
+# `make site` is the slow step (~75 seconds plus the Quarto install), so it runs
+# only when something it consumes has changed, rather than on every PR. It also
+# runs the anchor check in scripts/build_site.R: all 1,473 published identifiers
+# resolve to a fragment of index.html, so an entity that renders without its
+# anchor is a citable URI that no longer lands on its content.
+#
+# The rendered document is uploaded as an artefact so a reviewer can open the
+# actual page rather than trust a diff of 6 MB of generated HTML.
+name: render
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'R/**'
+      - 'scripts/**'
+      - 'assets/**'
+      - '**/*.qmd'
+      - 'NEWS.md'
+      - 'DESCRIPTION'
+      - '_quarto.yml'
+      - '.github/workflows/render.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::testthat, any::withr
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      # Offline by design: using_the_APD.qmd used to fetch its example data from
+      # raw.githubusercontent.com, which made a release render the *previous*
+      # release's numbers. It reads the local build now.
+      - name: Render the website
+        run: make site
+
+      - name: Report the page weight
+        run: |
+          {
+            echo "| | bytes | gzipped |"
+            echo "|---|---:|---:|"
+            for f in docs/index.html docs/using_the_APD.html docs/news.html; do
+              printf '| `%s` | %s | %s |\n' "$f" \
+                "$(wc -c < "$f" | tr -d ' ')" \
+                "$(gzip -c "$f" | wc -c | tr -d ' ')"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # release/ is excluded: quarto copies the ~120 MB snapshot tree into docs/
+      # as a site resource, and none of it is what a reviewer wants to look at.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: |
+            docs
+            !docs/release
+          retention-days: 14
