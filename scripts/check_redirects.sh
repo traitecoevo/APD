@@ -1,64 +1,190 @@
 #!/usr/bin/env bash
-# Content-negotiation and identifier-resolution matrix for w3id.org/APD.
+# Does every published URI still land on its content?
 #
-# Run it before a deploy, keep the output, run it after, diff the two. Every line
-# must be identical except where a change was intended. This is the check stage 6
-# of plans/build-workflow-overhaul.md schedules as `redirects.yml`.
+# This talks to the live service, so it tests what a user actually gets rather
+# than what the repo contains. That is the only way to catch the two failures
+# nothing else here can see: a w3id rule that has drifted away from the site,
+# and a deploy that quietly dropped a versioned permalink.
 #
-#   scripts/check_redirects.sh > before.txt
-#   ... deploy ...
-#   scripts/check_redirects.sh | diff before.txt -
+# Three severities, matching `make check`:
 #
-# It talks to the live service, so it needs network and it tests what users
-# actually get -- not what the repo contains.
+#   ok    the URI resolved to what it promises
+#   gap   a resolution that is already broken in production and recorded in
+#         COMMITMENTS.md. Reported every run, does not fail. If a gap starts
+#         *passing* that does fail: the register has outlived its problem, and
+#         both it and this script need updating.
+#   FAIL  anything else. Exits non-zero.
+#
+# Run weekly, and after every deploy, by .github/workflows/redirects.yml. Also
+# worth running by hand either side of a change to the w3id rules:
+#
+#   scripts/check_redirects.sh
+#
+# Set APD_VERSION to check a version other than the one in DESCRIPTION.
 set -uo pipefail
 
-APD_VERSION="${APD_VERSION:-2.1.0}"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SITE="https://traitecoevo.github.io/APD"
+APD_VERSION="${APD_VERSION:-$(awk '/^Version:/ {print $2}' "$ROOT/DESCRIPTION")}"
 
-resolve() {  # url -> "<status> <final-path>"
-  local url="$1" accept="${2:-}" args=(-s -o /dev/null -L)
+failures=0
+gaps=0
+
+# Retry rather than report a third party's blip as a broken redirect: w3id.org
+# is a community-run service and this runs unattended on a schedule.
+CURL=(curl -sS -o /dev/null -L --retry 3 --retry-delay 2 --max-time 30)
+
+resolve() {  # url [accept] -> "<status> <final-path>"
+  local url="$1" accept="${2:-}" args=("${CURL[@]}")
   [[ -n "$accept" ]] && args+=(-H "Accept: $accept")
   printf '%s %s' \
-    "$(curl "${args[@]}" -w '%{http_code}' "$url")" \
-    "$(curl "${args[@]}" -w '%{url_effective}' "$url" | sed 's|https://traitecoevo.github.io/APD/||')"
+    "$("${args[@]}" -w '%{http_code}' "$url")" \
+    "$("${args[@]}" -w '%{url_effective}' "$url" | sed "s|$SITE/||")"
 }
 
-echo "# Content negotiation"
-for accept in text/turtle application/n-triples application/n-quads \
-              application/ld+json text/html; do
+expect() {  # label actual expected [known-gap-explanation]
+  local label="$1" actual="$2" expected="$3" gap="${4:-}"
+
+  if [[ "$actual" == "$expected" ]]; then
+    if [[ -z "$gap" ]]; then
+      printf '[  ok  ] %-44s %s\n' "$label" "$actual"
+      return
+    fi
+    # A recorded gap that now resolves correctly. Good news, and still a
+    # failure: a register entry that outlives its problem silences a check.
+    printf '[ FAIL ] %-44s %s\n' "$label" "$actual"
+    printf '         fixed! remove this expected failure from COMMITMENTS.md\n'
+    printf '         and from this script: %s\n' "$gap"
+    failures=$((failures + 1))
+  elif [[ -n "$gap" ]]; then
+    printf '[ gap  ] %-44s %s\n' "$label" "$actual"
+    printf '         want %s -- %s\n' "$expected" "$gap"
+    gaps=$((gaps + 1))
+  else
+    printf '[ FAIL ] %-44s %s\n' "$label" "$actual"
+    printf '         want %s\n' "$expected"
+    failures=$((failures + 1))
+  fi
+}
+
+section() { printf '\n%s\n' "$1"; }
+
+
+# --- content negotiation -----------------------------------------------------
+#
+# w3id.org/APD serves whichever serialisation the Accept header asks for. These
+# are the lines that must never change: they are the machine-readable interface
+# COMMITMENTS.md C5 and C12 promise.
+
+section "Content negotiation"
+
+for spec in "text/turtle:APD.ttl" "application/n-triples:APD.nt" \
+            "application/n-quads:APD.nq" "application/ld+json:APD.json"; do
+  accept="${spec%%:*}"
+  want="${spec##*:}"
   for path in "" /traits /glossary; do
-    printf '%-22s %-26s -> %s\n' "$accept" "APD${path}" \
-      "$(resolve "https://w3id.org/APD${path}" "$accept")"
+    expect "$accept APD$path" \
+      "$(resolve "https://w3id.org/APD$path" "$accept")" "200 $want"
   done
 done
 
-echo
-echo "# Identifier resolution -- one per entity class"
-for path in traits/trait_0000012 traits/trait_group_0000008 \
-            traits/plant_growth_form_tree glossary/glossary_40004; do
-  printf '%-40s -> %s\n' "$path" "$(resolve "https://w3id.org/APD/$path")"
+# The collection URIs land on their section of the document, not its top.
+for spec in ":index.html" "/traits:index.html#trait-concepts" \
+            "/glossary:index.html#glossary"; do
+  path="${spec%%:*}"
+  want="${spec#*:}"
+  expect "text/html APD$path" \
+    "$(resolve "https://w3id.org/APD$path" "text/html")" "200 $want"
 done
 
-echo
-echo "# Versioned permalink -- published by index.qmd's \"This version\" link"
-printf '%-40s -> %s\n' "release/${APD_VERSION}/index.html" \
-  "$(resolve "https://w3id.org/APD/release/${APD_VERSION}/index.html")"
 
-# w3id resolves any path it does not recognise as an entity to the dictionary page,
-# which is the intended fallback. So the data files are fetched from github.io --
-# see COMMITMENTS.md C12 -- and it is those URLs that have to serve data rather
-# than HTML. A wrong one still returns 200, so check the body, not the status.
-echo
-echo "# Published data files -- must serve data, not the HTML page"
-SITE="https://traitecoevo.github.io/APD"
+# --- identifier resolution ---------------------------------------------------
+#
+# One per entity class. COMMITMENTS.md C1 promises that each of the 1,473
+# identifiers resolves to that term's content; the anchors themselves are
+# checked at render time by scripts/build_site.R, so what is left to test here
+# is whether w3id sends each class to the right fragment.
+
+section "Identifier resolution -- one per entity class"
+
+for spec in "traits/trait_0000012:trait_0000012" \
+            "traits/trait_group_0000008:trait_group_0000008" \
+            "glossary/glossary_40004:glossary_40004"; do
+  path="${spec%%:*}"
+  anchor="${spec##*:}"
+  expect "$path" "$(resolve "https://w3id.org/APD/$path")" \
+    "200 index.html#$anchor"
+done
+
+# Gap C1. The w3id rule is `^traits/trait_(.+)$`; categorical value slugs do not
+# start with `trait_`, so all 819 fall through to the catch-all and land at the
+# top of the page with no fragment. Stage 5 of plans/build-workflow-overhaul.md
+# widens the rule to `^traits/([^/]+)/?$`, at which point this line goes green
+# and the entry below has to go.
+expect "traits/plant_growth_form_tree" \
+  "$(resolve "https://w3id.org/APD/traits/plant_growth_form_tree")" \
+  "200 index.html#plant_growth_form_tree" \
+  "gap C1, fixed by the stage 5 w3id rule change"
+
+
+# --- versioned permalinks ----------------------------------------------------
+#
+# Every snapshot in release/ is a permalink someone may have cited -- index.qmd
+# publishes the current and previous ones as "This version" / "Previous
+# version", and Zenodo deposits point at them. They are served from the deployed
+# site, so a deploy that stops carrying release/ silently 404s all of them. That
+# is the failure the stage 6 gate exists to catch.
+
+section "Versioned permalinks -- every snapshot in release/"
+
+for dir in "$ROOT"/release/*/; do
+  version="$(basename "$dir")"
+  expect "release/$version/index.html" \
+    "$(resolve "https://w3id.org/APD/release/$version/index.html")" \
+    "200 release/$version/index.html"
+done
+
+
+# --- published data files ----------------------------------------------------
+#
+# w3id resolves any path it does not recognise as an entity to the dictionary
+# page, so a wrong URL here still returns 200 -- check the body, not the status.
+# These are the URLs austraits.build and using_the_APD.qmd read: COMMITMENTS.md
+# C12.
+
+section "Published data files -- must serve data, not the HTML page"
+
 for path in APD_traits.csv APD_categorical_values.csv APD.ttl APD.nt APD.nq \
             APD.json "release/${APD_VERSION}/APD_traits.csv" \
             "release/${APD_VERSION}/APD_categorical_values.csv"; do
-  code="$(curl -s -o /dev/null -w '%{http_code}' -L "$SITE/$path")"
-  body="$(curl -s -L "$SITE/$path" | head -c 24)"
+  code="$("${CURL[@]}" -w '%{http_code}' "$SITE/$path")"
+  # `-s` rather than `-sS` here: `head` closes the pipe after 24 bytes and curl
+  # would report the resulting SIGPIPE as an error on every one of these.
+  body="$(curl -s -L --retry 3 --max-time 30 "$SITE/$path" | head -c 24)"
   if [[ "$body" == *"<!DOCTYPE"* || "$body" == *"<html"* ]]; then
-    printf '%-46s %s HTML -- WRONG\n' "$path" "$code"
+    actual="$code HTML"
   else
-    printf '%-46s %s data\n' "$path" "$code"
+    actual="$code data"
   fi
+  expect "$path" "$actual" "200 data"
 done
+
+
+# --- summary -----------------------------------------------------------------
+
+printf '\n%s\n' "$(printf '%.0s-' {1..78})"
+
+if (( gaps > 0 )); then
+  printf '%d known gap(s), tracked in COMMITMENTS.md.\n' "$gaps"
+fi
+
+if (( failures > 0 )); then
+  printf '\n%d check(s) FAILED.\n' "$failures"
+  exit 1
+fi
+
+if (( gaps > 0 )); then
+  printf '\nNo failures.\n'
+else
+  printf 'All checks passed.\n'
+fi

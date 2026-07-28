@@ -1,0 +1,57 @@
+# Build the dictionary and validate it.
+#
+# This is the workflow whose absence let the build stay broken from June 2025
+# until the 2026 audit: `build.qmd:156` ended in a dangling `%>%`, R parsed it,
+# and nothing ever ran it. Everything else here is downstream of this passing.
+#
+# `make check` runs `make data` itself, so the explicit build step below is only
+# there to put the "must not write to data/" assertion between the two.
+name: check
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      # Reads DESCRIPTION, which is the single declaration of what the build
+      # needs -- do not list packages here as well. pak also installs the system
+      # libraries: rdflib needs redland, which is not on the runner image.
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::testthat, any::withr
+
+      - name: Build the dictionary
+        run: make data
+
+      # The build reads data/ and must never write to it. That used to be false:
+      # convert_APD_traits_input_yml_to_csv() ended in a write back to
+      # data/APD_traits_input.csv, so the build rewrote its own tracked input and
+      # a contributor could not tell an edit from a side effect.
+      - name: The build must not write to data/
+        run: git diff --exit-code -- data/
+
+      # Validation report, RDF parse, and the test suite -- including
+      # test-golden.R, which rebuilds into a temp directory and compares against
+      # the artefacts committed in export/. Known gaps are reported, not fatal;
+      # anything not on the register in R/validate.R fails here.
+      - name: Validate and test
+        run: make check

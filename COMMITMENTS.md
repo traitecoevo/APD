@@ -22,7 +22,7 @@ for the downstream ripple when the vocabulary itself changes.
 
 | # | Commitment | Source | Checked by |
 |---|---|---|---|
-| C1 | Every trait concept, **allowable categorical trait value**, trait grouping and glossary term has a unique, stable URI that resolves to that term's content. | p.8 | `test-commitments.R` — uniqueness and form of all 1,473. Resolution is gap C1. |
+| C1 | Every trait concept, **allowable categorical trait value**, trait grouping and glossary term has a unique, stable URI that resolves to that term's content. | p.8 | `test-commitments.R` — uniqueness and form of all 1,473. `scripts/build_site.R` — every one has an anchor in the rendered page. `check_redirects.sh` — one per class resolves live. Resolution for the 819 is gap C1. |
 | C2 | `data/APD_namespace_declaration.csv` is the namespace declaration used when compiling the RDF representation. | p.8 | `test-namespaces.R` — **true since 98ceeb4**; the file is now the only source. |
 | C3 | `APD.ttl` passes SKOS validation: relationships consistent, all URIs unique, all concepts labelled. | p.13 | `test-commitments.R` — every one of the 1,475 APD subjects carries a `skos:prefLabel`. Datatype problems remain: gap C5. |
 | C4 | The data are available under **CC BY 4.0**. | p.12 | `test-commitments.R` — `LICENSE` exists and says CC BY 4.0. |
@@ -38,7 +38,7 @@ Additional constraint, not from the paper but equally binding:
 
 | # | Commitment | Source |
 |---|---|---|
-| C12 | The generated artefacts remain fetchable at their published URLs — `https://traitecoevo.github.io/APD/<file>` for the latest release and `.../APD/release/<version>/<file>` for a pinned one — for `APD.ttl`, `APD.nq`, `APD.nt`, `APD.json`, `APD_traits.csv` and `APD_categorical_values.csv`. | `austraits.build/scripts/build_traits_yml_from_APD.R`; `using_the_APD.qmd`; the w3id content-negotiation rules |
+| C12 | The generated artefacts remain fetchable at their published URLs — `https://traitecoevo.github.io/APD/<file>` for the latest release and `.../APD/release/<version>/<file>` for a pinned one — for `APD.ttl`, `APD.nq`, `APD.nt`, `APD.json`, `APD_traits.csv` and `APD_categorical_values.csv`. | `austraits.build/scripts/build_traits_yml_from_APD.R`; `using_the_APD.qmd`; the w3id content-negotiation rules. Checked weekly against the live service by `redirects.yml`, and after every deploy. |
 | C13 | `data/APD_trait_hierarchy.csv` remains fetchable from `raw.githubusercontent.com/traitecoevo/APD/master/data/`. | `austraits.build` reads it from there. It is an input table, not a build product, so it has no published copy yet; `make release` now snapshots one, and C12 can absorb it after the next release. |
 
 **C12 used to name repo paths, not URLs**, and that was the mistake. It read
@@ -66,8 +66,10 @@ outlives the problem it describes.
 
 - **C1 — broken for all 819 categorical trait values.** The w3id rule is `^traits/trait_(.+)$`.
   Categorical URIs look like `https://w3id.org/APD/traits/plant_growth_form_tree`, do not match, and
-  fall through to the catch-all — landing at the top of the 9 MB `index.html` with no fragment.
-  Trait concepts, trait groups and glossary terms are fine.
+  fall through to the catch-all — landing at the top of `index.html` with no fragment. Trait concepts,
+  trait groups and glossary terms are fine. The anchors themselves all exist — all 1,473 of them,
+  checked at render — so widening the rule is the whole fix, and `scripts/check_redirects.sh` carries
+  this as an expected failure that goes red the moment it starts passing.
 
   ```
   w3id.org/APD/traits/trait_0000012           -> index.html#trait_0000012   OK

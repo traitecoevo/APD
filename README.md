@@ -97,7 +97,7 @@ regardless of where they sit in this repository:
 
 ```
 https://traitecoevo.github.io/APD/APD_traits.csv               # latest release
-https://traitecoevo.github.io/APD/release/2.1.0/APD_traits.csv  # pinned
+https://traitecoevo.github.io/APD/release/2.1.1/APD_traits.csv  # pinned
 ```
 
 Use those rather than `raw.githubusercontent.com` paths — the repo layout can
@@ -116,28 +116,31 @@ breakage cannot hide behind existing debt.
   - created from files `index.qmd` and configured with `_quarto.yml`
   - uses the `quarto` package for R, with instructions on formatting from <https://quarto.org/docs/reference/projects/websites.html
   - we were inspired by <https://i-adopt.github.io> with code from <https://github.com/i-adopt/i-adopt.github.io>
+  - the render fails if any of the 1,473 published identifiers has no anchor in
+    the page, since each one resolves to a fragment of it
+
+None of this has to be run by hand to be trusted: `check.yml` builds and
+validates every pull request, `render.yml` renders one that could change the
+site, `deploy.yml` publishes from `master`, and `redirects.yml` checks the live
+identifiers weekly. See [`AGENTS.md`](AGENTS.md).
 
 The APD is accessible via <https://w3id.org/APD/>, <https://w3id.org/APD/traits/>, and <https://w3id.org/APD/glossary/>. These links redirect to the site generated here. To enable the links, we sent a pull request to the [w3id.org repo](https://github.com/perma-id/w3id.org/), like this example from <https://github.com/perma-id/w3id.org/blob/master/iadopt/>.
 
-Redirect syntax can be tested at <https://htaccess.madewithlove.com>.
-
 ## Testing w3id.org access
 
-To test the redirects via <w3id.org/APD> try the following
-
 ```
-curl -sH "Accept: text/turtle" -L https://w3id.org/APD > temp.ttl
-curl -sH "Accept: text/turtle" -L https://w3id.org/APD/traits > temp2.ttl
-curl -sH "Accept: text/turtle" -L https://w3id.org/APD/traits\#trait_0001 > temp3.ttl
-
-curl -sH "Accept: application/n-triples" -L https://w3id.org/APD > temp.nt
-curl -sH "Accept: application/n-triples" -L https://w3id.org/APD/traits > temp2.nt
-curl -sH "Accept: application/n-triples" -L https://w3id.org/APD/traits\#trait_0001 > temp3.nt
-
-curl -sH "Accept: text/html" -L https://w3id.org/APD > temp.html
-curl -sH "Accept: text/html" -L https://w3id.org/APD/traits > temp2.html
-curl -sH "Accept: text/html" -L https://w3id.org/APD/traits\#trait_0001 > temp3.html
+scripts/check_redirects.sh
 ```
+
+Checks the live service, not this repository: content negotiation on all four serialisations, one
+identifier per entity class, every `release/<version>/index.html` permalink, and the published data
+files. It reports the known gaps in `COMMITMENTS.md` without failing, and exits non-zero on anything
+else — including a known gap that has started passing, which means the register needs updating.
+
+`.github/workflows/redirects.yml` runs it every Monday and `deploy.yml` runs it after every deploy, so
+a redirect that drifts is noticed within a week rather than by a user.
+
+Redirect syntax itself can be tested at <https://htaccess.madewithlove.com>.
 
 ## Before you change something
 

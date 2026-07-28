@@ -41,7 +41,7 @@ Run `make` for the list of targets:
 |---|---|
 | `make data` | validate inputs → triples → RDF + the two flat CSVs |
 | `make check` | validation report + tests |
-| `make site` | `data`, then render the website into `docs/` (slow; needs network) |
+| `make site` | `data`, then render the website into `docs/` (slow, ~75 s; offline) |
 | `make release` | `check` + `site` + version checks + snapshot into `release/<version>/` |
 | `make export-csv` | trait YAML → CSV, for spreadsheet editing |
 | `make import-csv` | CSV → trait YAML, printing the per-trait diff |
@@ -51,10 +51,33 @@ Run `make` for the list of targets:
 
 This is a **Compendium/Bundle**, not an R package — there is no `devtools::check()` workflow.
 
+## Continuous integration
+
+Four workflows in `.github/workflows/`, plus the issue-triage one:
+
+| Workflow | Trigger | Does |
+|---|---|---|
+| `check.yml` | push to `master`/`develop`, every PR | `make data`, assert the build wrote nothing to `data/`, `make check` |
+| `render.yml` | PR touching `data/`, `R/`, `scripts/`, `assets/`, a `.qmd` or `_quarto.yml` | `make site`, and uploads the rendered page as an artefact |
+| `deploy.yml` | push to `master` | renders, publishes to Pages, then verifies the live site |
+| `redirects.yml` | Mondays, and on demand | `scripts/check_redirects.sh` against the live service |
+
+`scripts/check_redirects.sh` is the one check that tests something this repo does not contain: the
+w3id.org rules live in [`perma-id/w3id.org`](https://github.com/perma-id/w3id.org/blob/master/APD/.htaccess)
+and can drift away from this site without a commit here. It reports known gaps without failing, in the
+same three severities `make check` uses, and **fails if a known gap starts passing** — a register entry
+that outlives its problem silences a check.
+
 ## Branches and releases
 
-`develop` is the default branch. **GitHub Pages deploys from `master:/docs`**, so nothing reaches the
-published site until it is on `master`.
+`develop` is the default branch. **The site is published from `master`** — nothing reaches
+<https://traitecoevo.github.io/APD/> until it is there.
+
+`deploy.yml` renders and deploys it. Until **Settings → Pages → Source** is switched to *GitHub
+Actions*, Pages still serves the committed `master:/docs` tree instead, and `deploy.yml` fails at its
+last step — which is why `docs/` is still tracked, and why deleting it waits on that switch plus a
+green `verify` job. Stage 6 of [`plans/build-workflow-overhaul.md`](plans/build-workflow-overhaul.md)
+has the sequence.
 
 | Merge | How | Why |
 |---|---|---|
