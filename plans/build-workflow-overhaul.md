@@ -707,7 +707,16 @@ still resolves; only then delete `docs/` from the tree. Keep `docs/` committed u
 | `deploy.yml` | push to `master` | render → copy `release/` → Pages, then a `verify` job against the live site |
 | `redirects.yml` | Mondays, and on demand | `scripts/check_redirects.sh` |
 
-Two things came out of writing them that the plan had not separated out:
+Three things came out of doing it that the plan had not separated out:
+
+- **`jsonld` was never declared, and the build has always needed it.** The first CI run failed at
+  `rdf_serialize(..., "APD.json")` with *"please install the jsonld package"*. `rdflib` only
+  **suggests** `jsonld`, so installing `rdflib` does not bring it — it was present on every
+  maintainer's machine, the build worked everywhere it had ever been run, and a fresh checkout could
+  not produce `APD.json` at all. Stage 0 added seven undeclared dependencies by reading the code; this
+  one is invisible that way, because nothing in `R/` mentions it. A clean runner is the only thing that
+  finds a dependency like this, which is most of the argument for CI.
+
 
 - **`release/2.1.1/index.html` has been a 404 since 2.1.1 shipped.** `make release` is
   `check site release.R`, so the render happens *before* the snapshot is written — the version being

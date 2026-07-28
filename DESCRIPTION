@@ -18,6 +18,7 @@ Depends:
     dplyr,
     gt,
     htmltools,
+    jsonld,
     kableExtra,
     knitr,
     purrr,
