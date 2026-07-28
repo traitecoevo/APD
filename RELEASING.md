@@ -30,7 +30,9 @@ git checkout develop && git pull
 
 - Bump `Version:` in `DESCRIPTION`.
 - Add a `## APD Version <X.Y.Z>` section to `NEWS.md`. `make release` refuses without one, and the
-  section immediately below yours is what the site publishes as "Previous version".
+  section immediately below yours is what the site publishes as "Previous version". If there is an
+  `## Unreleased` section at the top, rename *it* rather than adding another — changes land there
+  between releases, and only the `## APD Version` form is matched by the version checks.
 - Note anything breaking, and anything that closes a gap in `COMMITMENTS.md`.
 
 ```bash
