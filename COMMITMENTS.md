@@ -39,7 +39,7 @@ Additional constraint, not from the paper but equally binding:
 | # | Commitment | Source |
 |---|---|---|
 | C12 | The generated artefacts remain fetchable at their published URLs — `https://traitecoevo.github.io/APD/<file>` for the latest release and `.../APD/release/<version>/<file>` for a pinned one — for `APD.ttl`, `APD.nq`, `APD.nt`, `APD.json`, `APD_traits.csv` and `APD_categorical_values.csv`. | `austraits.build/scripts/build_traits_yml_from_APD.R`; `using_the_APD.qmd`; the w3id content-negotiation rules. Checked weekly against the live service by `redirects.yml`, and after every deploy. |
-| C13 | `data/APD_trait_hierarchy.csv` remains fetchable from `raw.githubusercontent.com/traitecoevo/APD/master/data/`. | `austraits.build` reads it from there. It is an input table, not a build product, so it has no published copy yet; `make release` now snapshots one, and C12 can absorb it after the next release. |
+| C13 | `data/APD_trait_hierarchy.csv` remains fetchable from `raw.githubusercontent.com/traitecoevo/APD/master/data/`. | `austraits.build` reads it from there. It is an input table, not a build product, so it has no published copy yet; `make release` now snapshots one, and C12 can absorb it after the next release. **`master` is now release-only** (see AGENTS.md), so this URL resolves to the last release rather than to the Pages branch — which is what it always should have meant. |
 
 **C12 used to name repo paths, not URLs**, and that was the mistake. It read
 "`APD_traits.csv` … remain fetchable from `raw.githubusercontent.com/.../master/`", which pinned two
