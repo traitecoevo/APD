@@ -26,11 +26,13 @@ Depends:
     rdflib,
     readr,
     rmarkdown,
+    stringi,
     stringr,
     tibble,
     tidyr,
     yaml
 Suggests:
+    digest,
     testthat (>= 3.0.0),
     withr
 Encoding: UTF-8

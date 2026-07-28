@@ -709,13 +709,25 @@ still resolves; only then delete `docs/` from the tree. Keep `docs/` committed u
 
 Three things came out of doing it that the plan had not separated out:
 
-- **`jsonld` was never declared, and the build has always needed it.** The first CI run failed at
-  `rdf_serialize(..., "APD.json")` with *"please install the jsonld package"*. `rdflib` only
-  **suggests** `jsonld`, so installing `rdflib` does not bring it — it was present on every
-  maintainer's machine, the build worked everywhere it had ever been run, and a fresh checkout could
-  not produce `APD.json` at all. Stage 0 added seven undeclared dependencies by reading the code; this
-  one is invisible that way, because nothing in `R/` mentions it. A clean runner is the only thing that
-  finds a dependency like this, which is most of the argument for CI.
+- **Two more undeclared dependencies, and neither is findable by reading the code.** Stage 0 added
+  seven by auditing `R/`; a clean runner found two that audit could not.
+
+  `jsonld` — the first CI run failed at `rdf_serialize(..., "APD.json")` with *"please install the
+  jsonld package"*. `rdflib` only **suggests** it, so installing `rdflib` does not bring it. It was on
+  every maintainer's machine, so the build worked everywhere it had ever been run, and a fresh checkout
+  could not produce `APD.json` at all. Nothing in `R/` mentions `jsonld`, so no amount of reading the
+  code finds it.
+
+  `tidyverse` — `using_the_APD.qmd` attached it in both its display chunk and its evaluated one. The
+  fix is not to declare it: the document uses `dplyr`, `tidyr`, `readr`, `stringr` and `kableExtra`,
+  all already declared, and the umbrella adds ggplot2, lubridate and forcats to every CI run for
+  nothing. It now attaches those five. Only the displayed `library()` block changed — every result
+  table in the rendered page is byte-identical, so commitment C10 is untouched and a reader is told to
+  install less.
+
+  A `::` and `library()` sweep across `R/`, `scripts/`, `tests/` and the `.qmd` files against
+  `DESCRIPTION` also turned up `stringi` (called directly by `scripts/sparql_examples.R`) and `digest`
+  (by `test-entity-tables.R`), both previously arriving only as transitive dependencies. Declared.
 
 
 - **`release/2.1.1/index.html` has been a 404 since 2.1.1 shipped.** `make release` is

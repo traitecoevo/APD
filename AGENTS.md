@@ -32,8 +32,13 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
 - **Website:** a Quarto website (`_quarto.yml`, `index.qmd`, `using_the_APD.qmd`, `news.md`) rendered
   to `docs/` and published via GitHub Pages at <https://traitecoevo.github.io/APD/>. The dictionary
   is also resolvable via <https://w3id.org/APD/>.
-- **R helpers:** `R/` holds supporting functions; the compendium `Depends` on dplyr, tidyr, readr,
-  stringr, rdflib, purrr, gt, knitr.
+- **R helpers:** `R/` holds supporting functions. `DESCRIPTION` is the one declaration of what the
+  build needs — `scripts/setup.R` attaches the subset the unqualified dplyr/tidyr/gt/readr verbs in
+  `R/` require, and CI installs from `DESCRIPTION`, so don't keep a second list anywhere. **Attach the
+  packages you use, not `tidyverse`** — the umbrella hides which six of its packages are load-bearing
+  and pulls in ggplot2, lubridate and forcats, which nothing here touches. `jsonld` is the one entry
+  that looks unused: `rdflib` calls it to write `APD.json` and only *suggests* it, so it has to be
+  declared here or a fresh checkout cannot produce that output at all.
 
 Run `make` for the list of targets:
 
