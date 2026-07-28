@@ -4108,7 +4108,8 @@ border-top: 2px solid var(--bs-border-color, #dee2e6);
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#apd-version-2.1.0" id="toc-apd-version-2.1.0" class="nav-link active" data-scroll-target="#apd-version-2.1.0">APD Version 2.1.0</a></li>
+  <li><a href="#apd-version-2.1.1" id="toc-apd-version-2.1.1" class="nav-link active" data-scroll-target="#apd-version-2.1.1">APD Version 2.1.1</a></li>
+  <li><a href="#apd-version-2.1.0" id="toc-apd-version-2.1.0" class="nav-link" data-scroll-target="#apd-version-2.1.0">APD Version 2.1.0</a></li>
   <li><a href="#apd-version-2.0.0" id="toc-apd-version-2.0.0" class="nav-link" data-scroll-target="#apd-version-2.0.0">APD Version 2.0.0</a></li>
   <li><a href="#apd-version-1.1.0" id="toc-apd-version-1.1.0" class="nav-link" data-scroll-target="#apd-version-1.1.0">APD Version 1.1.0</a></li>
   </ul>
@@ -4136,6 +4137,16 @@ border-top: 2px solid var(--bs-border-color, #dee2e6);
 </header>
 
 
+<section id="apd-version-2.1.1" class="level2">
+<h2 class="anchored" data-anchor-id="apd-version-2.1.1">APD Version 2.1.1</h2>
+<p>A patch release. <strong>The trait definitions are unchanged</strong> — no trait, URI, label, description or allowable value differs from 2.1.0. What changed is how the machine-readable serialisations express two things, and both were wrong before.</p>
+<p><strong>Allowed-value ranges are now typed numbers.</strong> <code>minAllowedValue</code> and <code>maxAllowedValue</code> were serialised as plain strings:</p>
+<pre class="turtle"><code>ets:minAllowedValue &quot;0.01&quot;     # 2.1.0
+ets:minAllowedValue 0.01       # 2.1.1 — an xsd:double</code></pre>
+<p>The literals were written without the <code>^^</code> that marks a datatype, and against <code>https://www.w3.org/2001/XMLSchema#</code> where the namespace is <code>http://</code>. A SPARQL query filtering numerically on a range would not have matched in 2.1.0.</p>
+<p><strong><code>APD.nt</code> is valid N-Triples.</strong> Every statement was missing its terminating <code>.</code>, so a conforming parser read 26,625 of the 27,503 statements and silently dropped the rest — the 878 lost were exactly the allowed-value ranges above. All four serialisations now agree on 27,503 statements.</p>
+<p><strong>Also:</strong> each entity’s own name (<code>skos:prefLabel</code>) now appears in its table on the website. The row existed but was always empty, because the code looked for a property called <code>label</code> and the property is <code>preferred label</code>.</p>
+</section>
 <section id="apd-version-2.1.0" class="level2">
 <h2 class="anchored" data-anchor-id="apd-version-2.1.0">APD Version 2.1.0</h2>
 <p><strong>Add new traits</strong></p>

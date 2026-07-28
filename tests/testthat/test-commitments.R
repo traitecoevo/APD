@@ -127,8 +127,16 @@ test_that("the version is recorded in one place only", {
   withr::local_dir(APD_ROOT)
 
   expect_match(apd_version(), "^[0-9]+\\.[0-9]+\\.[0-9]+$")
-  expect_true(apd_version() %in% apd_released_versions())
-  expect_identical(apd_previous_version(), "2.0.0")
+
+  # The version being built has to have a change log entry -- `make release`
+  # refuses without one -- and the previous version is whatever NEWS.md lists
+  # immediately below it. Asserted as a relationship, not a literal: pinning
+  # "2.0.0" here meant this test failed on the next release rather than on a
+  # regression, which is how it behaved when 2.1.1 was cut.
+  released <- apd_released_versions()
+  expect_true(apd_version() %in% released)
+  expect_identical(apd_previous_version(), setdiff(released, apd_version())[[1]])
+  expect_false(identical(apd_previous_version(), apd_version()))
 
   front_matter <- rmarkdown::yaml_front_matter("index.qmd")
   expect_null(front_matter$params$version)
