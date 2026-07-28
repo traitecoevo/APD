@@ -597,6 +597,14 @@ RewriteRule ^traits/([A-Za-z][A-Za-z0-9_.-]*)/?$ https://traitecoevo.github.io/A
 The 819 categorical values fail today only because the existing rule matches `trait_` and nothing
 else; widening the pattern is the whole fix.
 
+**How w3id resolves a path that is not an entity.** Anything the rules do not recognise falls through
+to the dictionary page, which is the right behaviour — better than a 404 — and it is why
+`w3id.org/APD/APD_traits.csv` returns HTML. That URL is published nowhere and nothing calls it; the
+published w3id forms are the base URI (used with content negotiation, which works), `index.html`,
+`release/<version>/index.html` and the scheme URIs. So this is not a defect and stage 5 does not need
+to address it. **Files are fetched from `traitecoevo.github.io`**, which is what C12 names and what
+`austraits.build` and `using_the_APD.qmd` use.
+
 Content negotiation and the versioned `release/X.Y.Z/` rules are untouched. **This PR to
 `perma-id/w3id.org` goes last** — and "last" now has a concrete meaning: the rule points at the live
 site, so the rewritten `index.html` must be merged to `master` and served by Pages *before* the PR
