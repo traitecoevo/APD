@@ -79,16 +79,24 @@ outlives the problem it describes.
 - **C3 — partly checked.** Every APD concept now provably carries a label, and URI uniqueness is
   tested. What a real SKOS validator would still reject are the datatype problems below.
 
-- **C5 — the RDF has four syntax defects.** All four are in how literals and datatypes are written, all
-  four are visible in the published 2.1.0 artefacts, and none can be fixed without changing published
-  bytes. Register ids in brackets.
+- **C5 — two RDF syntax defects remain; three were fixed.** Fixed in #48: every statement in `APD.nt`
+  lacked its closing `.`, and the `min`/`max` literals were written `"0.01"<…#double>` with no `^^` and
+  with `https://` for a namespace that is `http://`. Together those cost 878 of 27,503 statements on
+  parse and made `APD.ttl` publish every allowed-value range as a plain **string** rather than a number.
+  All four serialisations now agree on 27,503 statements, which they never had before, and Turtle
+  publishes `ets:minAllowedValue 0.01`.
+
+  The root cause of the terminator bug is worth recording: the column called `graph` in
+  `convert_to_triples.R` is hardcoded to `"."` and never held a graph label — it *is* the statement
+  terminator. So "N-Triples has no graph field, drop the graph column" was right in intent and dropped
+  the terminator instead. N-Triples is N-Quads without graph labels, so the two files are legitimately
+  identical.
+
+  Still open, register ids in brackets:
 
   | What | Scale | Where |
   |---|---|---|
-  | Every statement in `APD.nt` lacks its closing `.` — `.nt` is written by dropping the `graph` column, and that column was doubling as the terminator. librdf recovers 26,625 statements but silently loses 878. [`nt-unterminated`] | 27,523 statements | `R/build.R` `apd_write_rdf()` |
-  | `min`/`max` are written `"0.01"<…#double>` with **no `^^`**, so they are not typed literals. A conforming N-Triples parser drops them; the N-Quads parser reads the datatype URI as a *graph label*, which is why `APD.ttl` publishes every allowed-value range as a plain string. **These are the same 878 statements.** [`rdf-untyped-literal`] | 878 | `R/convert_to_triples.R:238-239` |
-  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference, not the XSD datatype. The dates are also `M/D/YYYY`, not ISO 8601, so correcting the datatype URI alone would make them invalidly typed. [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:201,243-245` |
-  | The datatype URIs use `https://www.w3.org/2001/XMLSchema#`; the standard namespace, and the declared `xsd` prefix, are `http://`. [`rdf-xsd-namespace-https`] | 878 | `R/convert_to_triples.R:238-239` |
+  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `M/D/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*. Needs the 1,363 dates reformatted, which is a data decision. [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:201,243-245` |
   | `dcterms:license` and `dcterms:publisher` wrap their URI in angle brackets *inside* the string literal, so the published value is the string `"<https://…>"` rather than the URI. [`rdf-uri-inside-literal`] | 8 | `data/APD_resource.csv` |
 
 - **Input data — three unresolved references and two duplicated keys.** `TO_0000432` (4 traits) and

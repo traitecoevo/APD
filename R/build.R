@@ -92,8 +92,12 @@ apd_write_rdf <- function(triples, out_dir = APD_EXPORT_DIR,
   triples %>%
     readr::write_delim(nq, col_names = FALSE, escape = "none", quote = "none")
 
+  # N-Triples gets the same content. The column called `graph` never held a graph
+  # label -- convert_to_triples.R hardcodes it to "." and it is the statement
+  # terminator, so dropping it (as this used to) left every one of the 27,523
+  # statements unterminated and cost 878 of them on parse. N-Triples is a subset of
+  # N-Quads with no graph labels, so the two files are legitimately identical.
   triples %>%
-    dplyr::select(-graph) %>%
     readr::write_delim(file.path(out_dir, "APD.nt"),
                        col_names = FALSE, escape = "none", quote = "none")
 

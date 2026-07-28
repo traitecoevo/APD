@@ -66,12 +66,11 @@ check("no output is empty",
 
 section("RDF")
 
-# APD.nt is skipped while it is unterminated (the `nt-unterminated` gap): librdf
-# recovers from each malformed statement by logging to stderr and dropping it,
-# which would bury this report under 878 lines of chatter. validate_apd() reports
-# the malformation itself, and the statement counts below show what it costs.
-parseable <- list(c("APD.nq", "nquads"), c("APD.ttl", "turtle"),
-                  c("APD.json", "jsonld"))
+# APD.nt used to be skipped here: every statement was unterminated, so librdf
+# logged 878 recovery errors and dropped that many statements. Both are fixed, so
+# it is checked like the rest.
+parseable <- list(c("APD.nq", "nquads"), c("APD.nt", "ntriples"),
+                  c("APD.ttl", "turtle"), c("APD.json", "jsonld"))
 in_export <- function(file) file.path(APD_EXPORT_DIR, file)
 
 statements <- list()

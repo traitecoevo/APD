@@ -13,27 +13,12 @@
 #'
 #' Keyed by problem id. Each value says why it is still open.
 APD_KNOWN_GAPS <- c(
-  `nt-unterminated` = paste(
-    "Every statement in APD.nt lacks the closing '.' that N-Triples requires,",
-    "because .nt is written by dropping the `graph` column and that column was",
-    "doubling as the terminator. Fixing it changes published bytes. #47"
-  ),
-  `rdf-untyped-literal` = paste(
-    "The 878 min/max statements are written as '\"0.01\"<...#double>' with no",
-    "'^^', so they are not typed literals. A conforming N-Triples parser drops",
-    "them; the N-Quads parser reads the datatype URI as a graph label, which is",
-    "why APD.ttl publishes them as plain strings. R/convert_to_triples.R:238-239."
-  ),
   `rdf-datatype-relative-uri` = paste(
     "1,371 statements are typed '^^<xsd:date>' or '^^<xsd:anyURI>' -- a prefixed",
     "name where RDF requires an absolute URI, so it resolves as a relative",
     "reference instead of the XSD datatype. R/convert_to_triples.R:201,243-245.",
     "The dates are also M/D/YYYY, not ISO 8601, so correcting the datatype URI",
     "alone would make them invalidly typed."
-  ),
-  `rdf-xsd-namespace-https` = paste(
-    "The datatype URIs use https://www.w3.org/2001/XMLSchema# where the standard",
-    "namespace, and the declared `xsd` prefix, are http://."
   ),
   `namespace-no-delimiter` = paste(
     "SWEET_propConductivity is declared without a trailing '/', so the URIs",
