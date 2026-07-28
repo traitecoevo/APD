@@ -20,9 +20,14 @@ library(tidyverse)
 library(stringr)
 library(kableExtra)
 
-# The published, version-pinned tables. Pin the version so your analysis is
-# reproducible; drop `release/2.1.0/` for the latest release instead.
-apd <- "https://w3id.org/APD/release/2.1.0"
+# The published tables. Pin the version so your analysis stays reproducible; drop
+# `release/2.1.0/` for whatever the current release is.
+#
+# These are github.io URLs. Cite the APD by its persistent identifier,
+# https://w3id.org/APD, and use that with an `Accept` header to fetch the RDF (see
+# below) -- but fetch the data files from here: w3id.org resolves anything it does
+# not recognise as an entity to the dictionary page.
+apd <- "https://traitecoevo.github.io/APD/release/2.1.0"
 
 APD_traits <- read_csv(file.path(apd, "APD_traits.csv"), show_col_types = FALSE)
 APD_categorical_values <- read_csv(file.path(apd, "APD_categorical_values.csv"), show_col_types = FALSE)
