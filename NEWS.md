@@ -11,11 +11,12 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
-## Unreleased
+## APD Version 2.1.2
 
-<!-- Rename this heading to `## APD Version <X.Y.Z>` when the next release is cut;
-     `apd_released_versions()` matches only that form, so an "Unreleased" section
-     is invisible to the version checks and to "Previous version" on the site. -->
+A patch release, and **nothing here can invalidate data built against 2.1.1**. One
+allowed range was widened; no trait, URI, label, description, allowable value or
+unit changed. The rest is about how identifiers resolve and how the document
+reads.
 
 **`plant_height_reproductive` accepts values down to 1 mm.** Its allowed minimum
 was 0.1 m, which excluded taxa the trait was written for. It is intended as the
@@ -49,9 +50,21 @@ flat run — a value was indistinguishable from a trait, and a trait could not b
 collapsed. Values are now one level deeper, and the contents opens showing traits
 only.
 
-No definition, URI, label or allowable value changed, and the machine-readable
-serialisations are byte-for-byte identical. This is how the page is arranged, not
-what it says.
+This is how the page is arranged, not what it says.
+
+**The dictionary now has one address.** `https://traitecoevo.github.io/APD/` and
+`.../APD/index.html` served the same 6 MB document, so a reader who arrived both
+ways downloaded it twice and every step between the two forms was a full reload
+rather than a jump. `https://w3id.org/APD/` is the identifier to use, and it now
+resolves to the first of those; the page declares it as canonical, and the site
+search sends you to a fragment of the page you are already on instead of fetching
+it again.
+
+**Also:** the worked example at
+[using_the_APD.html](https://traitecoevo.github.io/APD/using_the_APD.html) has
+grown from table recipes into a guide covering the persistent identifiers, the
+Research Vocabularies Australia deposit, content negotiation for the four RDF
+serialisations, SPARQL, and how to label your own columns with APD identifiers.
 
 ## APD Version 2.1.1
 
