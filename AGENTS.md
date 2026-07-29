@@ -34,7 +34,15 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   which would publish them under `export/` and break every existing link. See COMMITMENTS.md C12.
 - **Website:** a Quarto website (`_quarto.yml`, `index.qmd`, `using_the_APD.qmd`, `NEWS.md`) rendered
   to `docs/` and published via GitHub Pages at <https://traitecoevo.github.io/APD/>. The dictionary
-  is also resolvable via <https://w3id.org/APD/>. **`docs/` is gitignored** — a local build artefact
+  is also resolvable via <https://w3id.org/APD/>.
+
+  **Never add a `<link href=...>` via `include-in-header`.** Every page sets `embed-resources: true`,
+  and that pass inlines any `<link>` target it can resolve. Adding a `rel="canonical"` link that way
+  made quarto **fetch the live site and embed all 6 MB of it as a `data:` URI** — the page went from
+  6.1 MB to 15.2 MB and the `href` was replaced by the inlined document. Anything that has to reach
+  the `<head>` of these pages gets added *after* the render, in `scripts/build_site.R`.
+
+  **`docs/` is gitignored** — a local build artefact
   like `export/`. `deploy.yml` renders it fresh on `master`; nothing reads the committed tree, because
   there isn't one. It also carries `release/`, which is *not* a quarto resource any more, so a local
   `make site` yields a `docs/` without the versioned snapshots. That is expected.
