@@ -132,6 +132,10 @@ Concept DOI [`10.5281/zenodo.8040789`](https://doi.org/10.5281/zenodo.8040789).
 > the concept DOI resolved to **2.1.0** while the repo was at 2.1.2, so **neither 2.1.1 nor 2.1.2 was
 > ever archived.** C9 is currently unmet for both.
 
+**Elizabeth Wenk owns the Zenodo record** — the deposit has to be made from her account, so this step
+is a hand-off rather than something the person cutting the release can finish. Give her the version
+number, the files, and the description block below.
+
 On zenodo.org, open the concept DOI, choose **New version**, and upload the files. The set deposited
 for 2.1.0 was **not** the same as `release/<version>/`:
 
@@ -210,6 +214,76 @@ Then re-read [`COMMITMENTS.md`](COMMITMENTS.md) and update anything this release
 by" column, the known-gaps list, and C8's staleness note.
 
 ---
+
+## The Zenodo record description
+
+Paste this into the **Description** field, replacing `X.Y.Z`. Zenodo accepts a small HTML subset, so
+this uses only `<p>`, `<ul>`, `<li>`, `<a>`, `<strong>`, `<code>`. Keep it with the repo so each release
+reuses it rather than re-deriving it.
+
+The version deposited before this was written carried the site abstract verbatim, which left three
+things wrong: two typos it inherited (`trait focused`, `traits describe here`), links that were plain
+text rather than anchors, and — the real gap — **no explanation of the nine files**, so a visitor saw
+`APD.ttl`, `APD.nt`, `APD.nq`, `APD.json`, two CSVs, `APD_triples.csv` and two HTML files with nothing
+saying which to take.
+
+```html
+<p>The <strong>AusTraits Plant Dictionary (APD)</strong> is a formal vocabulary defining more than 500
+plant trait concepts, covering plant morphology, nutrient concentrations, physiology, life history and
+fire response. Every trait carries a definition, expected units, an allowed range or an enumerated set
+of allowed values, keywords, references, reviewers, and mappings to equivalent traits in other trait
+databases and ontologies. The definitions support the
+<a href="https://doi.org/10.5281/zenodo.3568417">AusTraits</a> plant trait database, and are intended
+for reuse well beyond it.</p>
+
+<p><strong>Cite the APD by its persistent identifier</strong>,
+<a href="https://w3id.org/APD">https://w3id.org/APD</a>, together with the version you used. Every
+trait concept, trait grouping, allowable categorical value and glossary term has its own resolvable
+identifier under that namespace — for example
+<a href="https://w3id.org/APD/traits/trait_0000012">https://w3id.org/APD/traits/trait_0000012</a>.
+Content negotiation on those identifiers returns any of the RDF serialisations below.</p>
+
+<p><strong>This deposit is version X.Y.Z.</strong> The files are:</p>
+<ul>
+<li><code>index.html</code> — the whole dictionary as one human-readable document, the same page served
+at <a href="https://w3id.org/APD">w3id.org/APD</a>.</li>
+<li><code>APD.ttl</code> — RDF in Turtle. The most compact serialisation and the one to start from for
+most RDF tooling.</li>
+<li><code>APD.nt</code> / <code>APD.nq</code> — the same graph as N-Triples and N-Quads: one statement
+per line, streamable and parseable without an RDF library.</li>
+<li><code>APD.json</code> — the same graph as JSON-LD, for JavaScript and Python tooling.</li>
+<li><code>APD_traits.csv</code> — one row per trait concept with all its metadata. The flat table most
+analyses want.</li>
+<li><code>APD_categorical_values.csv</code> — one row per allowed value of a categorical trait.</li>
+<li><code>APD_triples.csv</code> — the intermediate triple table the RDF is built from, with
+human-readable labels resolved.</li>
+<li><code>using_the_APD.html</code> — worked examples: fetching the serialisations, querying the graph
+with SPARQL, filtering the tables, and labelling your own data with APD identifiers.</li>
+</ul>
+
+<p>The dictionary is also browsable, searchable and queryable at
+<a href="https://vocabs.ardc.edu.au/viewById/649">Research Vocabularies Australia</a>. It is built from
+source at <a href="https://github.com/traitecoevo/APD">github.com/traitecoevo/APD</a>, where this
+version is tagged <code>vX.Y.Z</code>; the change log is at
+<a href="https://traitecoevo.github.io/APD/news.html">traitecoevo.github.io/APD/news.html</a>.</p>
+
+<p>Definitions and metadata are released under
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+```
+
+### Metadata to fix while you are in there
+
+- **`isPublishedIn` points at the preprint.** The 2.1.0 record relates to
+  `10.1101/2023.06.16.545047` (bioRxiv). The paper has been out since 2024 — it should be
+  **`10.1038/s41597-024-03368-z`** (*Sci Data* **11**:537). Keep the preprint if you like, but the
+  published article is what should carry `isPublishedIn`.
+- **Keywords are three words** — `plant`, `trait`, `biodiversity`. Worth adding `plant functional
+  traits`, `vocabulary`, `ontology`, `SKOS`, `RDF`, `AusTraits`, `Australia`, so the record is
+  findable as a vocabulary rather than only as a dataset.
+- **Set the version field** to `X.Y.Z`. Zenodo does not infer it from the files or the title.
+
+The rest of the metadata on 2.1.0 is right and should carry over: `Dataset`, CC BY 4.0, six creators,
+and the `isIdenticalTo` relations to `w3id.org/APD` and the RVA record.
 
 ## Checklist
 
