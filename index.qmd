@@ -32,12 +32,15 @@ source("R/version.R")
 version <- apd_version()
 previous_version <- apd_previous_version(version)
 
-link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/index.html>", v)
+# Directory form, not `.../index.html`: both resolve, but /APD/ is the canonical
+# URL of this document and the one w3id redirects to, so publishing the other form
+# here would cost readers an extra hop to reach the page's own address.
+link_version <- function(v) sprintf("<https://w3id.org/APD/release/%s/>", v)
 ```
 ## Release `r version`
 
 <dl>
-<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/index.html> </dd>
+<dt> **Latest version**:</dt> <dd><https://w3id.org/APD/> </dd>
 <dt> **This version**:</dt> <dd>`r link_version(version)`  </dd>
 <dt> **Previous version**:</dt> <dd>`r link_version(previous_version)` </dd>
 <dt> **Authors**: </dt> <dd>[Elizabeth Wenk](https://orcid.org/0000-0001-5640-5910), [Daniel Falster](https://orcid.org/0000-0002-9814-092X), [Rachael Gallagher](https://orcid.org/0000-0002-4680-8115), [Hervé Sauquet](https://orcid.org/0000-0001-8305-3236), [Rowan Brownlee](https://orcid.org/0000-0002-1955-1262), [Carl Boettiger](https://orcid.org/0000-0002-1642-628X) </dd>
