@@ -15,6 +15,11 @@ format:
     toc: true
     toc-expand: 1
     embed-resources: true
+    # The canonical <link> is NOT declared here. `embed-resources` treats every
+    # <link href> as a resource to inline, so putting it in the header made
+    # quarto fetch the live site and embed all 6 MB of it as a data: URI --
+    # the page went from 6.1 MB to 15.2 MB and the href was replaced by the
+    # inlined document. scripts/build_site.R adds it after the render instead.
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}

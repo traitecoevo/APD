@@ -55,6 +55,20 @@ if (!all(copied)) {
 # a missing anchor turns a citable identifier into a scroll to the top of the
 # page. Checked here rather than in `make check`, because it is a property of
 # the render and nothing else produces it. See R/site.R.
+# The search index is the one part of the render that names index.html, which
+# would make every search result a 6 MB reload for anyone on the canonical
+# /APD/. See R/site.R for why a bare fragment is the right target.
+rewritten <- apd_canonicalise_search_hrefs()
+message("Pointed ", rewritten, " search hrefs at the document rather than ",
+        "index.html")
+
+# Declares /APD/ as the real URL of the two that serve this document. Has to be
+# done here rather than in index.qmd's header: `embed-resources` inlines every
+# <link href> it finds, and given the canonical link it fetched the live site
+# and embedded 6 MB of it. See R/site.R.
+apd_add_canonical_link()
+message("Declared ", apd_site_url(), " as the canonical URL")
+
 slugs <- apd_entity_slugs()
 missing_anchors <- apd_missing_anchors(slugs = slugs)
 
