@@ -55,24 +55,68 @@ a PR to `develop`, let CI pass, merge.
 
 ## 2. Publish
 
+Do these in order. Each step depends on the one before, and 2.1.2 went wrong in three places by not
+respecting that — the notes at the end of this section record how.
+
+**a. Merge the release PR, then update your local refs.**
+
 ```bash
-git checkout master && git merge --ff-only develop && git push
+gh pr checks <n>                       # green before merging
+# merge the release PR on GitHub
+git checkout develop && git pull       # <- do not skip
 ```
 
-If that refuses, the branches have diverged and the reason needs finding, not forcing.
+> ⚠️ **`git merge --ff-only develop` merges your *local* `develop` ref, not the remote one.** If you
+> merged the release PR in the browser and did not pull, the fast-forward silently publishes the commit
+> *before* the release. It succeeds, so nothing warns you. This is what happened cutting 2.1.2:
+> `master` landed on the previous commit, the site deployed without `release/2.1.2/`, and the tag was
+> created on a commit whose `DESCRIPTION` still said 2.1.1.
+
+**b. Fast-forward `master` and let it deploy.**
+
+```bash
+git checkout master && git merge --ff-only develop && git push
+git log --oneline -1                   # confirm this is the release commit
+```
+
+If the merge refuses, the branches have diverged and the reason needs finding, not forcing.
 
 The push triggers [`deploy.yml`](.github/workflows/deploy.yml), which validates, renders, copies
-`release/` into the site, deploys to Pages, and then runs `scripts/check_redirects.sh` against the
-live service. **Wait for the `verify` job.** A green deploy and a resolving site are different claims;
-`verify` is the one that checks the second.
+`release/` into the site, deploys to Pages, then runs `scripts/check_redirects.sh` against the live
+service. **Wait for the `verify` job.** A green deploy and a resolving site are different claims;
+`verify` checks the second.
+
+> Deploys queue rather than cancel (concurrency group `pages`, `cancel-in-progress: false`). So a
+> mistaken push followed by a corrected one means two runs, serialised, ~8–10 minutes each — and the
+> permalink 404s until the second finishes.
+
+**c. Confirm the release is actually live before tagging.**
+
+```bash
+curl -sI -o /dev/null -w '%{http_code}\n' \
+  https://traitecoevo.github.io/APD/release/<X.Y.Z>/index.html   # want 200
+```
+
+Tag only once this returns 200 and `master` is the release commit. A tag is what Zenodo and citations
+point at; moving one afterwards means deleting a published ref.
 
 ```bash
 git tag v<X.Y.Z> && git push --tags
-gh release create v<X.Y.Z> --title "APD v<X.Y.Z>" --notes-file <notes> release/<X.Y.Z>/*
 ```
 
-Attach the whole snapshot directory — nine files. Releases before 2.1.1 carried **no assets at all**,
-which meant Zenodo archived only a source tarball of the tag.
+**d. Cut the GitHub Release.**
+
+Extract this version's section from `NEWS.md` into a scratch file first — the flag takes a real path,
+and `--notes-file <notes>` with angle brackets is shell input redirection, not a placeholder your shell
+will prompt about:
+
+```bash
+gh release create v<X.Y.Z> --title "APD v<X.Y.Z>" \
+  --notes-file /tmp/apd-notes.md release/<X.Y.Z>/*
+gh release view v<X.Y.Z> --json assets --jq '.assets | length'   # want 9
+```
+
+Attach the whole snapshot directory — nine files. Releases before 2.1.1 carried **no assets at all**.
 
 ## 3. The three things outside this repo
 
@@ -80,16 +124,51 @@ This is the part that gets missed.
 
 ### Zenodo — commitment C9
 
-Concept DOI [`10.5281/zenodo.8040789`](https://doi.org/10.5281/zenodo.8040789). The GitHub integration
-deposits on release; confirm the new version appears and carries the assets, not just the tarball.
+Concept DOI [`10.5281/zenodo.8040789`](https://doi.org/10.5281/zenodo.8040789).
+
+> ⚠️ **This is a manual upload. Nothing deposits automatically.** An earlier version of this document
+> said the GitHub integration handles it. It does not: the deposited file sets are hand-curated and do
+> not match a source tarball, and cutting a GitHub Release deposits nothing. Verified 2026-07-29 —
+> the concept DOI resolved to **2.1.0** while the repo was at 2.1.2, so **neither 2.1.1 nor 2.1.2 was
+> ever archived.** C9 is currently unmet for both.
+
+On zenodo.org, open the concept DOI, choose **New version**, and upload the files. The set deposited
+for 2.1.0 was **not** the same as `release/<version>/`:
+
+| File | in `release/<v>/` | on Zenodo |
+|---|:-:|:-:|
+| `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json` | ✅ | ✅ |
+| `APD_traits.csv`, `APD_categorical_values.csv` | ✅ | ✅ |
+| `index.html` | ✅ | ✅ |
+| `APD_triples.csv` | — | ✅ |
+| `using_the_APD.html` | — | ✅ |
+| `APD_trait_hierarchy.csv`, `APD_traits_input.csv` | ✅ | — |
+
+Decide deliberately which set you are depositing rather than inheriting this by accident. `APD_triples.csv`
+and `using_the_APD.html` are both in `docs/` after `make site`; the other two are in the snapshot.
+
+Then set the version field to `<X.Y.Z>` — Zenodo does not infer it — and check the record lists the
+version you expect:
+
+```bash
+curl -s -o /dev/null -L -w '%{url_effective}\n' https://doi.org/10.5281/zenodo.8040789
+curl -s "https://zenodo.org/api/records?q=conceptdoi:%2210.5281/zenodo.8040789%22&all_versions=true&sort=-version" \
+  | python3 -c "import json,sys; [print(h['metadata'].get('version'), h['doi']) for h in json.load(sys.stdin)['hits']['hits']]"
+```
 
 ### ARDC Research Vocabularies Australia — commitment C8
 
 <https://vocabs.ardc.edu.au/viewById/649> must serve the new `APD.ttl`. Figure 4 of the paper promises
 a copy is "archived and discoverable" there.
 
-> **Currently stale: RVA serves 2.0.1 against a repo at 2.1.1.** Two releases behind. Nothing
-> automated catches this, which is why it is on the checklist rather than in CI.
+**Check the version on the record by eye.** It is not reliably machine-readable: the registry API does
+not expose it, and the public page carries more than one version-shaped string (2026-07-29 it showed
+both `2.0.18` and `2.1.1`, only one of which is the vocabulary version). So this is a look-and-confirm
+step, not something to script.
+
+> Deliberately left manual, along with Zenodo. Both are external services with no reliable API for
+> "what version is published", so a scheduled check would either need scraping or would give false
+> confidence. Revisit if ARDC exposes the version properly.
 
 ### The downstream pin
 
@@ -103,7 +182,12 @@ apd_version <- "2.1.0"    # line 16
 Bump it, re-run the script to regenerate `config/traits.yml`, and rebuild. Trait validation failures
 there are the point — they are records using something this release changed.
 
-> **Currently stale: it pins 2.1.0 against an APD at 2.1.1.**
+**The script reads the release over HTTP**, so this step cannot run until the deploy in step 2b has
+finished and `https://traitecoevo.github.io/APD/release/<X.Y.Z>/APD_traits.csv` returns 200. Check
+before running it, or you will pin a version that 404s.
+
+> The pin was two releases behind when 2.1.2 was cut, and nothing surfaced it from inside this repo —
+> which is why it is on this list. See traitecoevo/austraits.build#852.
 
 Sibling databases that pin the APD (`AusFizz`, `ausinvertraits.build`) need the same treatment. For a
 breaking change, follow the
@@ -129,18 +213,38 @@ by" column, the known-gaps list, and C8's staleness note.
 
 ## Checklist
 
+The order is not cosmetic — four of these gate the ones after them, marked `←`.
+
 ```
+prepare
 [ ] DESCRIPTION bumped
-[ ] NEWS.md section added
+[ ] NEWS.md `## Unreleased` renamed to `## APD Version <X.Y.Z>`
 [ ] make release            (refuses if either of the above is missing)
 [ ] PR to develop, CI green, merged
+
+publish
+[ ] git checkout develop && git pull                   ← or the next step
+                                                         publishes the wrong commit
 [ ] master fast-forwarded and pushed
-[ ] deploy.yml verify job green
+[ ] `git log --oneline -1` on master IS the release commit
+[ ] deploy.yml verify job green                        ← two deploys queue if you
+                                                         pushed a wrong one first
+[ ] release/<X.Y.Z>/index.html returns 200 live        ← before tagging
 [ ] tag pushed
-[ ] GitHub Release created with all nine assets
-[ ] Zenodo deposit confirmed                              (C9)
-[ ] ARDC RVA deposit refreshed                            (C8)
-[ ] austraits.build apd_version bumped and rebuilt
+[ ] notes extracted from NEWS.md into a real file      ← --notes-file needs a path
+[ ] GitHub Release created, `gh release view` shows 9 assets
+
+outside this repo — all manual, none automatic
+[ ] Zenodo: New version under the concept DOI, files uploaded,
+    version field set                                      (C9)
+[ ] ARDC RVA refreshed, version on the record checked by eye (C8)
+[ ] release/<X.Y.Z>/APD_traits.csv returns 200 live    ← before the next step
+[ ] austraits.build apd_version bumped, script re-run, rebuilt
 [ ] sibling databases rebuilt, if the change is breaking
 [ ] COMMITMENTS.md re-read and updated
 ```
+
+**What went wrong cutting 2.1.2**, all three from ignoring the order above: a stale local `develop`
+put `master` and the tag on the pre-release commit; the tag then had to be deleted and re-pushed;
+and `--notes-file <notes>` was taken literally by the shell. None of it reached Zenodo, because the
+Release never got created — which is the only reason it was recoverable.

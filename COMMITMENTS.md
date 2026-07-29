@@ -112,8 +112,24 @@ outlives the problem it describes.
   > true: there are no ENVO entries in `published_classes.csv`, which already carries 95 colon-style
   > identifiers against 657 underscore-style; and the units `identifier` column reaches no output.
 
-- **C8 — stale.** ARDC RVA (`vocabs.ardc.edu.au/viewById/649`) serves **2.0.1**; this repo is at 2.1.0.
-  Refreshing the deposit belongs on the release checklist.
+- **C8 — check it by eye.** ARDC RVA (`vocabs.ardc.edu.au/viewById/649`) has historically lagged; it
+  was two releases behind at the 2026-07 audit. The version is not reliably machine-readable — the
+  registry API does not expose it and the page carries more than one version-shaped string — so this
+  cannot be a CI check. Refreshing the deposit is on the release checklist.
+
+- **C9 — unmet for 2.1.1 and 2.1.2.** Zenodo's latest deposit under concept DOI
+  `10.5281/zenodo.8040789` is **2.1.0**; the concept DOI resolved to that record on 2026-07-29 with the
+  repo at 2.1.2. Two releases are unarchived.
+
+  The cause is a wrong assumption, now corrected in `RELEASING.md`: **Zenodo deposits for the APD are
+  manual uploads, not the GitHub integration.** Cutting a GitHub Release deposits nothing. The evidence
+  is in the deposited file sets — they are curated (they include `APD_triples.csv` and
+  `using_the_APD.html`, and omit `APD_trait_hierarchy.csv` and `APD_traits_input.csv`), so they cannot
+  be source tarballs.
+
+  Switching to the GitHub integration was considered and rejected: it archives the repository tarball
+  rather than the published outputs, and it mints its **own** concept DOI, which would fork the citation
+  lineage away from `10.5281/zenodo.8040789` — the DOI in `README.md`, `index.qmd` and the paper.
 
 ---
 
