@@ -107,24 +107,21 @@ done
 
 section "Identifier resolution -- one per entity class"
 
+# The categorical value is the one that used to fail: the rule matched only
+# `trait_`, so all 819 fell through to the catch-all and landed at the top of the
+# page. The stage 5 rule change widened it to `^traits/([^/]+)/?$`, and this line
+# is what proves it stayed fixed. `heat+smoke` is here because `+` is the one slug
+# character a narrower character class would have missed.
 for spec in "traits/trait_0000012:trait_0000012" \
             "traits/trait_group_0000008:trait_group_0000008" \
+            "traits/plant_growth_form_tree:plant_growth_form_tree" \
+            "traits/seed_germination_treatment_heat+smoke:seed_germination_treatment_heat+smoke" \
             "glossary/glossary_40004:glossary_40004"; do
   path="${spec%%:*}"
   anchor="${spec##*:}"
   expect "$path" "$(resolve "https://w3id.org/APD/$path")" \
     "200 index.html#$anchor"
 done
-
-# Gap C1. The w3id rule is `^traits/trait_(.+)$`; categorical value slugs do not
-# start with `trait_`, so all 819 fall through to the catch-all and land at the
-# top of the page with no fragment. Stage 5 of plans/build-workflow-overhaul.md
-# widens the rule to `^traits/([^/]+)/?$`, at which point this line goes green
-# and the entry below has to go.
-expect "traits/plant_growth_form_tree" \
-  "$(resolve "https://w3id.org/APD/traits/plant_growth_form_tree")" \
-  "200 index.html#plant_growth_form_tree" \
-  "gap C1, fixed by the stage 5 w3id rule change"
 
 
 # --- versioned permalinks ----------------------------------------------------

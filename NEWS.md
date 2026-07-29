@@ -17,6 +17,20 @@ format:
      `apd_released_versions()` matches only that form, so an "Unreleased" section
      is invisible to the version checks and to "Previous version" on the site. -->
 
+**All 819 allowable categorical trait values now resolve to their own definition.**
+Their persistent identifiers look like
+<https://w3id.org/APD/traits/plant_growth_form_tree>, and the redirect rule behind
+`w3id.org/APD` matched only identifiers beginning `trait_`. So every categorical
+value fell through to a catch-all and landed at the top of the dictionary rather
+than at the term you asked for — while trait concepts, trait groupings and
+glossary terms resolved correctly, which is why it went unnoticed. Wenk et al.
+2024 (p.8) names allowable categorical values as one of the four classes
+guaranteed a resolvable URI, so this was a published commitment unmet for 819 of
+them.
+
+**No identifier changed** — only where they point. Anything you have already cited
+still resolves, and now to the right place.
+
 **Allowable categorical values now sit under their trait in the contents.** In
 section 4 of the dictionary, each of the 819 allowable values was headed at the
 same level as the 115 traits that own them, so the contents listed all 934 as one
