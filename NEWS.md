@@ -17,6 +17,17 @@ format:
      `apd_released_versions()` matches only that form, so an "Unreleased" section
      is invisible to the version checks and to "Previous version" on the site. -->
 
+**`plant_height_reproductive` accepts values down to 1 mm.** Its allowed minimum
+was 0.1 m, which excluded taxa the trait was written for. It is intended as the
+alternative to `plant_height` for plants with no vegetative stem — geophytes and
+similar — where the reproductive height *is* the length of an inflorescence stalk
+arising at ground level, and for tiny orchids and filmy ferns that is millimetres
+to centimetres. The minimum is now 0.001 m.
+
+Widening a range cannot invalidate anything: every value acceptable under 2.1.1
+is still acceptable. Nothing else about the trait changed, and no other trait
+changed at all.
+
 **All 819 allowable categorical trait values now resolve to their own definition.**
 Their persistent identifiers look like
 <https://w3id.org/APD/traits/plant_growth_form_tree>, and the redirect rule behind
