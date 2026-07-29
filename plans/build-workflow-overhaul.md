@@ -8,8 +8,10 @@
 > N-Triples statements. The release carries its build artefacts as assets, which no previous APD release
 > did. Verified against the live service, not asserted.
 >
-> **Stage 5 is ready to open and its gate has passed** — see that section for the exact rule and the
-> evidence. Stage 6 (CI) went first, since it is what makes the deploy repeatable.
+> **Stage 5 is merged and live** (verified against w3id.org, 2026-07-29). Every `traits/` slug now
+> resolves to its own anchor — the 819 categorical values included, and the `+` slug with them. Gap C1
+> is closed, its register entry is deleted, and `check_redirects.sh` asserts the categorical and `+`
+> cases so it stays closed. Stage 6 (CI) went first, since it is what makes the deploy repeatable.
 >
 > **Stage 6's first PR is merged and its gate has passed** (2026-07-28). All four workflows run, the
 > site deploys from `master` via Actions, and `verify` is clean against the live service. It found and
@@ -17,10 +19,11 @@
 > that had never been declared. `master` is now **release-only**: it moves at a release, not per PR,
 > which was only possible once Pages stopped being served from `master:/docs`. `docs/` is untracked.
 >
-> **Stages 0–4, 6 and 7 are done.** `CONTRIBUTING.md` and `RELEASING.md` are written; writing the
+> **Every stage is now done.** `CONTRIBUTING.md` and `RELEASING.md` are written; writing the
 > release checklist found that the ARDC RVA deposit is two releases behind and that
-> `austraits.build` still pins APD 2.1.0. **Stage 5 — the one-line w3id rule change that fixes 819
-> published identifiers — is the only stage left**, and it is a PR to a third-party repository.
+> `austraits.build` still pins APD 2.1.0. Both are follow-ups this plan does not cover. Stage 5 still
+> owes a `NEWS.md` entry — the fix is live but unrecorded, and it belongs in the next release's notes
+> rather than under the already-published 2.1.1 heading.
 >
 > **No release needed to deploy this.** The dictionary is unchanged — verified against `master`, not
 > asserted: 27,523 statements both sides, differing only in 31 `min`/`max` literals reformatted from
@@ -601,7 +604,15 @@ first.
 
 ### Stage 5 — w3id redirect change
 
-**Ready to open. The gate has passed.** A target-only change; no URI changes. One line of
+**Merged upstream and verified live on 2026-07-29.** `traits/plant_growth_form_tree`,
+`traits/seed_germination_treatment_heat+smoke`, `traits/trait_0000012`,
+`traits/trait_group_0000008` and `glossary/glossary_40004` all resolve to their own anchor. The
+prediction below held: nothing else moved, and the gate's claim that all 1,473 anchors exist is what
+made that safe. What is left is a `NEWS.md` entry, and a separate proposal — not part of this stage —
+to stop w3id serving the dictionary page in response to a request that names a file (`/APD/APD_traits.csv`
+and `/APD/release/2.1.1/APD_traits.csv` both return HTTP 200 with HTML).
+
+A target-only change; no URI changes. One line of
 [`perma-id/w3id.org/APD/.htaccess`](https://github.com/perma-id/w3id.org/blob/master/APD/.htaccess),
 line 57:
 
@@ -643,6 +654,55 @@ traits/plant_growth_form_tree  ->  200 index.html#plant_growth_form_tree       #
 
 It closes gap C1, a published commitment currently unmet for 819 identifiers, and deserves a `NEWS.md`
 entry.
+
+### Stage 5b — w3id file pass-through (proposed, not opened)
+
+**The problem.** w3id.org negotiates on `Accept` and resolves identifiers; a request that *names a
+file* does neither, so it reaches the catch-all and gets the dictionary document with a `200`. Both of
+these serve 6 MB of HTML to anything that pipes the result into a CSV parser:
+
+```
+https://w3id.org/APD/APD_traits.csv                 -> 200, index.html
+https://w3id.org/APD/release/2.1.1/APD_traits.csv   -> 200, index.html
+```
+
+The RDF serialisations are reachable by negotiation, so this bites the two CSVs hardest — and they are
+the artefacts `using_the_APD.qmd` tells readers to download. The document currently has to carry a
+warning callout explaining that the obvious URL lies.
+
+**The rule.** Two lines, inserted *before* the HTML section — ordering is the whole subtlety, since
+`^release/(\d+)\.(\d+)\.(\d+)(.+)?$` matches `release/2.1.1/APD_traits.csv` and would swallow it:
+
+```apache
+RewriteRule ^release/(\d+)\.(\d+)\.(\d+)/([\w.-]+\.(csv|ttl|nt|nq|json))$ https://traitecoevo.github.io/APD/release/$1.$2.$3/$4 [R=303,L]
+
+RewriteRule ^([\w.-]+\.(csv|ttl|nt|nq|json))$ https://traitecoevo.github.io/APD/$1 [R=303,L]
+```
+
+**Match basenames generically, do not enumerate them.** The snapshots do not carry the same file set:
+`release/1.0.0/` has `APD.csv` and no `APD_traits.csv`, while `release/2.1.1/` adds
+`APD_trait_hierarchy.csv` and `APD_traits_input.csv`. A rule listing today's filenames silently stops
+covering tomorrow's. Let the site 404 what it does not have — a 404 is a *correct* answer here, and the
+failure this fixes is that the wrong answer currently arrives as a 200.
+
+**`html` is deliberately absent from the extension list.** `release/X.Y.Z/index.html` must keep falling
+through to the rule below it, which sends it to the directory form so the document keeps one URL.
+
+**Simulated against the whole chain before proposing it.** Only file-named paths change: the six real
+ones resolve to their file, `nonexistent.csv` becomes a 404 instead of a 200 with HTML, and everything
+else is byte-identical — every negotiated path latest and versioned, `release/2.1.1/` in all three
+spellings, every `traits/` slug including `trait_group_` and `heat+smoke`, both collection URIs, and
+the base URI.
+
+**Consequences to settle before opening the PR.**
+
+- COMMITMENTS.md C12 names the `traitecoevo.github.io` paths as the published URLs for these files.
+  This does not move them, it adds an alias — but C12 should then say whether the w3id form is
+  promised too, or is an undocumented convenience.
+- `check_redirects.sh` already has a *Published data files* section that sniffs for `<!DOCTYPE` against
+  `$SITE`. Extend that same loop over `https://w3id.org/APD/` once the rule is live; the harness exists.
+- `using_the_APD.qmd`'s warning callout gets rewritten, and the CSV download URLs in it can move to the
+  persistent form.
 
 ### Stage 6 — CI and deployment
 
