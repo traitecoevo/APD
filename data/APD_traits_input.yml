@@ -3630,7 +3630,7 @@ trait_0010027:
     surface.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: '0.1'
+  min: '0.001'
   max: '100'
   units: m
   units_uom: metre

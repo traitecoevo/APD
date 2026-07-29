@@ -13386,7 +13386,7 @@
 <https://w3id.org/APD/traits/trait_0010027> <http://www.w3.org/2004/02/skos/core#note> "This trait can be scored for any species, but is intended as an alternative to `plant_height` (maximum vegetative height) for species that do not have vegetative stems, but instead only leaves and reproductive stems that extend past the soil surface."@en .
 <https://w3id.org/APD/traits/trait_0010027> <http://www.w3.org/2004/02/skos/core#inScheme> "https://w3id.org/APD/traits" .
 <https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/valueType> <http://purl.obolibrary.org/obo/STATO_0000251> .
-<https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/minAllowedValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/minAllowedValue> "0.001"^^<http://www.w3.org/2001/XMLSchema#double> .
 <https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/maxAllowedValue> "100"^^<http://www.w3.org/2001/XMLSchema#double> .
 <https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/expectedUnit> "m" .
 <https://w3id.org/APD/traits/trait_0010027> <http://terminologies.gfbio.org/terms/ETS/expectedUnit> <https://w3id.org/uom/m> .

@@ -9558,7 +9558,7 @@ https://w3id.org/APD/traits/trait_0010027,description,http://purl.org/dc/terms/d
 https://w3id.org/APD/traits/trait_0010027,note,http://www.w3.org/2004/02/skos/core#note,"This trait can be scored for any species, but is intended as an alternative to `plant_height` (maximum vegetative height) for species that do not have vegetative stems, but instead only leaves and reproductive stems that extend past the soil surface.",NA,.,https://w3id.org/APD/traits/trait_0010027
 https://w3id.org/APD/traits/trait_0010027,is in scheme,http://www.w3.org/2004/02/skos/core#inScheme,https://w3id.org/APD/traits,https://w3id.org/APD/traits,.,https://w3id.org/APD/traits/trait_0010027
 https://w3id.org/APD/traits/trait_0010027,value type,http://terminologies.gfbio.org/terms/ETS/valueType,continuous variable,http://purl.obolibrary.org/obo/STATO_0000251,.,https://w3id.org/APD/traits/trait_0010027
-https://w3id.org/APD/traits/trait_0010027,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.1,NA,.,https://w3id.org/APD/traits/trait_0010027
+https://w3id.org/APD/traits/trait_0010027,minAllowedValue,http://terminologies.gfbio.org/terms/ETS/minAllowedValue,0.001,NA,.,https://w3id.org/APD/traits/trait_0010027
 https://w3id.org/APD/traits/trait_0010027,maxAllowedValue,http://terminologies.gfbio.org/terms/ETS/maxAllowedValue,100,NA,.,https://w3id.org/APD/traits/trait_0010027
 https://w3id.org/APD/traits/trait_0010027,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,m,NA,.,https://w3id.org/APD/traits/trait_0010027
 https://w3id.org/APD/traits/trait_0010027,unit,http://terminologies.gfbio.org/terms/ETS/expectedUnit,metre,https://w3id.org/uom/m,.,https://w3id.org/APD/traits/trait_0010027
