@@ -15736,7 +15736,7 @@ APD:trait_0010027
     SIO:SIO_000147 obo:PO_0025082, <http://vocabs.lter-europe.net/EnvThes/20535> ;
     ets:expectedUnit uom:m, "m" ;
     ets:maxAllowedValue 100 ;
-    ets:minAllowedValue 0.1 ;
+    ets:minAllowedValue 0.001 ;
     ets:valueType obo:STATO_0000251 ;
     a skos:Concept ;
     skos:altLabel "plant_height_reproductive" ;

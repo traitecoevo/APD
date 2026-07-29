@@ -42926,7 +42926,7 @@
       },
       "http://terminologies.gfbio.org/terms/ETS/minAllowedValue": {
         "@type": "http://www.w3.org/2001/XMLSchema#double",
-        "@value": "0.1"
+        "@value": "0.001"
       },
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
         "@id": "http://purl.obolibrary.org/obo/STATO_0000251"
