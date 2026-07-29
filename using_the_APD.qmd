@@ -20,7 +20,7 @@ There are four routes into the dictionary. They are views of the same content, s
 | look up, link to or cite a single trait concept | the dictionary document — one page, one entry per term | <https://w3id.org/APD/traits/trait_0000012> |
 | browse the trait hierarchy, search definitions, or offer APD terms in your own data-entry form | ARDC **Research Vocabularies Australia** (RVA) | <https://vocabs.ardc.edu.au/viewById/649> |
 | query the vocabulary as a graph, or load it into a triplestore | the RDF serialisations: `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json` | content negotiation on <https://w3id.org/APD/> |
-| filter, subset and join trait metadata inside an analysis | the two tables: `APD_traits.csv`, `APD_categorical_values.csv` | [the R examples below](#exploring-the-tables-in-r) |
+| filter, subset and join trait metadata inside an analysis | the two tables: `APD_traits.csv`, `APD_categorical_values.csv` | [the worked examples below](#exploring-the-tables) |
 
 The last of these is the bulk of this document: the worked examples show how definitions and metadata for specific traits or trait clusters can be extracted, allowing searches by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies and databases.
 
@@ -32,17 +32,14 @@ Each class of entity has its own identifier pattern:
 
 | Entity | Identifier |
 |------------------------------|------------------------------------------|
-| trait concept | `https://w3id.org/APD/traits/trait_0000012` |
-| trait grouping | `https://w3id.org/APD/traits/trait_group_0000008` |
-| allowed categorical value | `https://w3id.org/APD/traits/plant_growth_form_tree` |
-| glossary term | `https://w3id.org/APD/glossary/glossary_40004` |
+| trait concept | <https://w3id.org/APD/traits/trait_0000012> |
+| trait grouping | <https://w3id.org/APD/traits/trait_group_0000008> |
+| allowed categorical value | <https://w3id.org/APD/traits/plant_growth_form_tree> |
+| glossary term | <https://w3id.org/APD/glossary/glossary_40004> |
 
-Each of these resolves to that term's own entry in the dictionary. The collection identifiers `https://w3id.org/APD/traits/` and `https://w3id.org/APD/glossary/` land on the corresponding section.
+Each of these resolves to that term's own entry in the dictionary — follow any of them to see. The collection identifiers <https://w3id.org/APD/traits/> and <https://w3id.org/APD/glossary/> land on the corresponding section.
 
-To pin a version, insert a release path. Content negotiation (below) works on these too, so a pinned identifier can be resolved as RDF as well as HTML:
-
--   latest release: <https://w3id.org/APD/index.html>
--   a specific release: <https://w3id.org/APD/release/2.1.1/index.html>
+The identifier above without a release path always resolves to the current release: <https://w3id.org/APD/>. To pin a version instead, insert a release path — <https://w3id.org/APD/release/2.1.1/>. Content negotiation (below) works on either, so a pinned identifier can be resolved as RDF as well as HTML.
 
 For citation, use the paper (Wenk et al. 2024, [doi:10.1038/s41597-024-03368-z](https://doi.org/10.1038/s41597-024-03368-z)) together with the version you used; the archived deposits carry DOI [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
 
@@ -63,10 +60,10 @@ The dictionary is published as RDF in four serialisations. All four carry the sa
 
 | File | Format | Suits |
 |-----------------|-----------------|-------------------------------------------|
-| `APD.ttl` | Turtle | reading by eye, and loading into a triplestore or an RDF library — the most compact of the four (\~1.7 MB) |
+| `APD.ttl` | Turtle | reading by eye, and loading into a triplestore or an RDF library — the most compact of the four (\~1.6 MB) |
 | `APD.nt` | N-Triples | one triple per line: streamable, greppable, diffable, and parseable without an RDF library (\~4 MB) |
-| `APD.nq` | N-Quads | as `APD.nt`, plus a graph column, for loading into a named graph in a quad store |
-| `APD.json` | JSON-LD | JavaScript and Python web tooling, or anything that would rather consume JSON than RDF |
+| `APD.nq` | N-Quads | as `APD.nt`, plus a graph column, for loading into a named graph in a quad store (\~4 MB) |
+| `APD.json` | JSON-LD | JavaScript and Python web tooling, or anything that would rather consume JSON than RDF (\~3.5 MB) |
 
 ### Fetching a serialisation
 
@@ -91,12 +88,31 @@ curl -L -H "Accept: application/ld+json" https://w3id.org/APD/release/2.1.1/ -o 
 ::: callout-warning
 ## w3id resolves identifiers, not file paths
 
-w3id.org recognises entity identifiers, release paths and `Accept` headers; anything else falls through to the dictionary document. Both `https://w3id.org/APD/APD.ttl` and `https://w3id.org/APD/release/2.1.1/APD_traits.csv` return HTTP 200 with HTML, not the file you asked for — a silent failure if you pipe the result into a parser. Negotiate with an `Accept` header, or, for the files that are not negotiated (the two CSVs), request them from the site directly: `https://traitecoevo.github.io/APD/release/2.1.1/APD_traits.csv`.
+w3id.org recognises entity identifiers, release paths and `Accept` headers — nothing else. **You cannot name a file in a w3id URL.** Both `https://w3id.org/APD/APD.ttl` and `https://w3id.org/APD/release/2.1.1/APD_traits.csv` return HTTP 200 with the dictionary *document*, not the file you asked for, because anything unrecognised falls through to it. That is a silent failure if you pipe the result into a parser.
+
+For the RDF, name the format with an `Accept` header rather than in the path, as above.
+
+**There is no `Accept` header that returns a CSV.** The two flat tables are not part of content negotiation at all, so `APD_traits.csv` and `APD_categorical_values.csv` can only be fetched from the site:
+
+``` bash
+# Right
+curl -L -O https://traitecoevo.github.io/APD/release/2.1.1/APD_traits.csv
+
+# Wrong -- returns the dictionary page, with a 200
+curl -L -O https://w3id.org/APD/release/2.1.1/APD_traits.csv
+```
 :::
 
 ### Querying the RDF with SPARQL
 
-The graph answers questions the flat tables cannot, because in the RDF the keywords, units, structures and cross-vocabulary matches are themselves identifiers rather than text. In R, [`rdflib`](https://docs.ropensci.org/rdflib/) parses any of the four serialisations and runs SPARQL over the result:
+The graph answers questions the flat tables cannot. In the CSVs, a trait's keywords, units, structures and cross-vocabulary matches arrive as `;`-delimited text that you have to split and string-match; in the RDF each one is an identifier pointing into the vocabulary it came from. So the graph lets you ask questions *through* those identifiers rather than about the words that happen to spell them:
+
+-   every trait measured on a leaf, by the Plant Ontology's identifier for a leaf — which finds traits whose labels never say "leaf", and excludes ones that mention leaves incidentally
+-   every trait sharing a unit, a characteristic or a keyword with a given trait
+-   which external vocabularies the APD asserts `skos:exactMatch` against, and how often
+-   the trait hierarchy as a hierarchy, following `skos:broader` upwards, rather than as a delimited string
+
+SPARQL is the query language for that, and it needs no server: the whole graph is 1.6 MB, so it loads into memory locally. In R, [`rdflib`](https://docs.ropensci.org/rdflib/) parses any of the four serialisations and queries the result, returning a plain data frame. The example needs `rdflib` and `httr` in addition to the packages above — `install.packages(c("rdflib", "httr"))`:
 
 ```{r, warning=FALSE, message=FALSE, echo=TRUE, eval=FALSE}
 library(httr)
@@ -165,9 +181,11 @@ exact_matches %>%
 
 The same queries run unchanged in Python (`rdflib`), or in any triplestore you load `APD.nq` into. `scripts/sparql_examples.R` in the [APD repository](https://github.com/traitecoevo/APD) holds further examples.
 
-## Exploring the tables in R
+## Exploring the tables
 
 For everyday filtering and joining, the two flat tables are easier than the graph: `APD_traits.csv` carries one row per trait concept with all its metadata, and `APD_categorical_values.csv` one row per allowed value of a categorical trait. Both can be downloaded from [traitecoevo.github.io/APD](https://traitecoevo.github.io/APD/APD_traits.csv) or from Zenodo, DOI [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
+
+They are ordinary CSVs, so nothing here is R-specific — the examples below use `dplyr`, and each has a direct equivalent in `pandas` or any other table library. Multi-valued fields such as `keywords`, `references` and `trait_groupings` hold `;`-delimited text, so the recurring pattern is split-then-unnest, whatever you split with.
 
 ```{r, warning=FALSE, message=FALSE, echo=TRUE, eval=FALSE}
 library(dplyr)
