@@ -9,11 +9,183 @@ format:
     embed-resources: true
 ---
 
-The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. The full dictionary is available at https://w3id.org/APD/, and each trait (and trait groupings) has its own URI.
+The AusTraits Plant Dictionary (APD) is a published vocabulary, documenting explicit definitions for more than 500 plant trait concepts. Every trait concept, trait grouping, allowed categorical value and glossary term has a persistent identifier under <https://w3id.org/APD/>, and the same content is published simultaneously as a human-readable document, as RDF, and as a pair of flat tables.
 
-To faciliate use of this formal vocabulary by researchers, the content is also output as a pairs of tables, `APD_traits.csv` and `APD_categorical_values`, which can be downloaded from [traitecoevo.github.io/APD](https://traitecoevo.github.io/APD/APD_traits.csv) or Zenodo at DOI: [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
+## Ways to use the APD
 
-The examples below indicate how the definitions and metadata for specific traits or trait clusters can be extracted from these files, allowing searches for traits by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies or databases.
+There are four routes into the dictionary. They are views of the same content, so the choice is about what you are doing rather than what you can reach.
+
+| If you want to | Use | Start at |
+|-----------------------|-----------------------|-------------------------|
+| look up, link to or cite a single trait concept | the dictionary document — one page, one entry per term | <https://w3id.org/APD/traits/trait_0000012> |
+| browse the trait hierarchy, search definitions, or offer APD terms in your own data-entry form | ARDC **Research Vocabularies Australia** (RVA) | <https://vocabs.ardc.edu.au/viewById/649> |
+| query the vocabulary as a graph, or load it into a triplestore | the RDF serialisations: `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json` | content negotiation on <https://w3id.org/APD/> |
+| filter, subset and join trait metadata inside an analysis | the two tables: `APD_traits.csv`, `APD_categorical_values.csv` | [the worked examples below](#exploring-the-tables) |
+
+The last of these is the bulk of this document: the worked examples show how definitions and metadata for specific traits or trait clusters can be extracted, allowing searches by trait name, trait cluster, characteristic measured, reference, previously used trait labels, or matches to identical or similar trait concepts in other vocabularies and databases.
+
+## Referring to trait concepts: w3id identifiers
+
+`https://w3id.org/APD/` is the APD's persistent identifier, and the one to use in citations, dataset metadata and code. It redirects to wherever the dictionary is currently served, so a link written against it keeps working if the hosting changes.
+
+Each class of entity has its own identifier pattern:
+
+| Entity | Identifier |
+|------------------------------|------------------------------------------|
+| trait concept | <https://w3id.org/APD/traits/trait_0000012> |
+| trait grouping | <https://w3id.org/APD/traits/trait_group_0000008> |
+| allowed categorical value | <https://w3id.org/APD/traits/plant_growth_form_tree> |
+| glossary term | <https://w3id.org/APD/glossary/glossary_40004> |
+
+Each of these resolves to that term's own entry in the dictionary — follow any of them to see. The collection identifiers <https://w3id.org/APD/traits/> and <https://w3id.org/APD/glossary/> land on the corresponding section.
+
+The identifier above without a release path always resolves to the current release: <https://w3id.org/APD/>. To pin a version instead, insert a release path — <https://w3id.org/APD/release/2.1.1/>. Content negotiation (below) works on either, so a pinned identifier can be resolved as RDF as well as HTML.
+
+For citation, use the paper (Wenk et al. 2024, [doi:10.1038/s41597-024-03368-z](https://doi.org/10.1038/s41597-024-03368-z)) together with the version you used; the archived deposits carry DOI [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
+
+## Browsing and searching: Research Vocabularies Australia
+
+A copy of the APD is deposited in [Research Vocabularies Australia](https://vocabs.ardc.edu.au/viewById/649) (RVA), the ARDC's national vocabulary service. RVA is the route that requires no downloads and no code, and it is the easiest place to:
+
+-   browse the SKOS concept tree — trait groupings, the traits within them, and the allowed values beneath each categorical trait — and search across labels and definitions;
+-   download the vocabulary in serialisations beyond the four published here, which RVA generates on request (RDF/XML, TriG, RDF/JSON and others);
+-   run SPARQL queries from the browser against RVA's hosted endpoint, without loading the graph locally;
+-   embed RVA's vocabulary widget in your own data-entry form, so contributors choose a defined APD term instead of typing free text.
+
+The RVA copy is refreshed as part of each APD release, so check the version shown on the record: at the time of writing it trails the current release. Where it matters that you have the definitions exactly as published in the latest version, work from <https://w3id.org/APD/>.
+
+## Machine-readable serialisations: `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json`
+
+The dictionary is published as RDF in four serialisations. All four carry the same 27,500 or so triples describing 1,473 concepts — 559 trait concepts, 819 allowed categorical values, plus trait groupings and glossary terms — so the choice is about tooling, not content.
+
+| File | Format | Suits |
+|-----------------|-----------------|-------------------------------------------|
+| `APD.ttl` | Turtle | reading by eye, and loading into a triplestore or an RDF library — the most compact of the four (\~1.6 MB) |
+| `APD.nt` | N-Triples | one triple per line: streamable, greppable, diffable, and parseable without an RDF library (\~4 MB) |
+| `APD.nq` | N-Quads | as `APD.nt`, plus a graph column, for loading into a named graph in a quad store (\~4 MB) |
+| `APD.json` | JSON-LD | JavaScript and Python web tooling, or anything that would rather consume JSON than RDF (\~3.5 MB) |
+
+### Fetching a serialisation
+
+Ask <https://w3id.org/APD/> for the format you want with an `Accept` header. The `-L` is needed because the request is answered with a 303 redirect to the file:
+
+``` bash
+# The latest release, as Turtle
+curl -L -H "Accept: text/turtle" https://w3id.org/APD/ -o APD.ttl
+
+# A pinned release, as JSON-LD -- negotiation works on any release path
+curl -L -H "Accept: application/ld+json" https://w3id.org/APD/release/2.1.1/ -o APD_2.1.1.json
+```
+
+| `Accept` header | You get |
+|------------------------------------|------------------------------------|
+| `text/turtle` | `APD.ttl` |
+| `application/n-triples` | `APD.nt` |
+| `application/n-quads` | `APD.nq` |
+| `application/ld+json` | `APD.json` |
+| `text/html`, or no header | the dictionary document |
+
+::: callout-warning
+## w3id resolves identifiers, not file paths
+
+w3id.org recognises entity identifiers, release paths and `Accept` headers — nothing else. **You cannot name a file in a w3id URL.** Both `https://w3id.org/APD/APD.ttl` and `https://w3id.org/APD/release/2.1.1/APD_traits.csv` return HTTP 200 with the dictionary *document*, not the file you asked for, because anything unrecognised falls through to it. That is a silent failure if you pipe the result into a parser.
+
+For the RDF, name the format with an `Accept` header rather than in the path, as above.
+
+**There is no `Accept` header that returns a CSV.** The two flat tables are not part of content negotiation at all, so `APD_traits.csv` and `APD_categorical_values.csv` can only be fetched from the site:
+
+``` bash
+# Right
+curl -L -O https://traitecoevo.github.io/APD/release/2.1.1/APD_traits.csv
+
+# Wrong -- returns the dictionary page, with a 200
+curl -L -O https://w3id.org/APD/release/2.1.1/APD_traits.csv
+```
+:::
+
+### Querying the RDF with SPARQL
+
+The graph answers questions the flat tables cannot. In the CSVs, a trait's keywords, units, structures and cross-vocabulary matches arrive as `;`-delimited text that you have to split and string-match; in the RDF each one is an identifier pointing into the vocabulary it came from. So the graph lets you ask questions *through* those identifiers rather than about the words that happen to spell them:
+
+-   every trait measured on a leaf, by the Plant Ontology's identifier for a leaf — which finds traits whose labels never say "leaf", and excludes ones that mention leaves incidentally
+-   every trait sharing a unit, a characteristic or a keyword with a given trait
+-   which external vocabularies the APD asserts `skos:exactMatch` against, and how often
+-   the trait hierarchy as a hierarchy, following `skos:broader` upwards, rather than as a delimited string
+
+SPARQL is the query language for that, and it needs no server: the whole graph is 1.6 MB, so it loads into memory locally. In R, [`rdflib`](https://docs.ropensci.org/rdflib/) parses any of the four serialisations and queries the result, returning a plain data frame. The example needs `rdflib` and `httr` in addition to the packages above — `install.packages(c("rdflib", "httr"))`:
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE, eval=FALSE}
+library(httr)
+library(rdflib)
+library(dplyr)
+library(stringr)
+
+# Fetch the latest release as Turtle, via the persistent identifier
+ttl <- tempfile(fileext = ".ttl")
+GET("https://w3id.org/APD/", accept("text/turtle"), write_disk(ttl, overwrite = TRUE))
+
+APD_rdf <- rdf_parse(ttl, format = "turtle")
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+# Same graph, read from this build rather than over the network -- see the note on
+# the tables below. The chunk above is what a reader runs.
+library(rdflib)
+library(dplyr)
+library(stringr)
+library(kableExtra)
+
+APD_rdf <- rdf_parse(file.path("export", "APD.ttl"), format = "turtle")
+```
+
+Every trait measured on a leaf, found through the Plant Ontology identifier for a leaf (`PO_0025034`) rather than by matching the word "leaf", together with its expected unit:
+
+```{r, warning=FALSE, message=FALSE, output=FALSE}
+leaf_traits <-
+  rdflib::rdf_query(APD_rdf, '
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX ont:  <https://w3id.org/iadopt/ont/>
+    PREFIX obo:  <http://purl.obolibrary.org/obo/>
+    PREFIX ets:  <http://terminologies.gfbio.org/terms/ETS/>
+
+    SELECT ?trait ?label ?unit
+    WHERE {
+      ?trait ont:hasContextObject obo:PO_0025034 ;
+             skos:prefLabel ?label ;
+             ets:expectedUnit ?unit .
+      FILTER(isURI(?unit))
+    }')
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+leaf_traits %>%
+  dplyr::slice(1:10) %>%
+  kableExtra::kable(format = "markdown")
+```
+
+A query result is a data frame, so anything awkward to express in SPARQL can be left to `dplyr`. Counting the formally asserted `skos:exactMatch` links by the vocabulary they point into:
+
+```{r, warning=FALSE, message=FALSE, output=FALSE}
+exact_matches <-
+  rdflib::rdf_query(APD_rdf, '
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?trait ?match WHERE { ?trait skos:exactMatch ?match }') %>%
+  dplyr::count(vocabulary = stringr::str_extract(match, "^https?://[^/]+/[^/]+")) %>%
+  dplyr::arrange(dplyr::desc(n))
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+exact_matches %>%
+  kableExtra::kable(format = "markdown")
+```
+
+The same queries run unchanged in Python (`rdflib`), or in any triplestore you load `APD.nq` into. `scripts/sparql_examples.R` in the [APD repository](https://github.com/traitecoevo/APD) holds further examples.
+
+## Exploring the tables
+
+For everyday filtering and joining, the two flat tables are easier than the graph: `APD_traits.csv` carries one row per trait concept with all its metadata, and `APD_categorical_values.csv` one row per allowed value of a categorical trait. Both can be downloaded from [traitecoevo.github.io/APD](https://traitecoevo.github.io/APD/APD_traits.csv) or from Zenodo, DOI [10.5281/zenodo.8040789](https://doi.org/10.5281/zenodo.8040789).
+
+They are ordinary CSVs, so nothing here is R-specific — the examples below use `dplyr`, and each has a direct equivalent in `pandas` or any other table library. Multi-valued fields such as `keywords`, `references` and `trait_groupings` hold `;`-delimited text, so the recurring pattern is split-then-unnest, whatever you split with.
 
 ```{r, warning=FALSE, message=FALSE, echo=TRUE, eval=FALSE}
 library(dplyr)
@@ -23,13 +195,13 @@ library(stringr)
 library(kableExtra)
 
 # The published tables. Pin the version so your analysis stays reproducible; drop
-# `release/2.1.0/` for whatever the current release is.
+# `release/2.1.1/` for whatever the current release is.
 #
 # These are github.io URLs. Cite the APD by its persistent identifier,
 # https://w3id.org/APD, and use that with an `Accept` header to fetch the RDF (see
-# below) -- but fetch the data files from here: w3id.org resolves anything it does
+# above) -- but fetch the data files from here: w3id.org resolves anything it does
 # not recognise as an entity to the dictionary page.
-apd <- "https://traitecoevo.github.io/APD/release/2.1.0"
+apd <- "https://traitecoevo.github.io/APD/release/2.1.1"
 
 APD_traits <- read_csv(file.path(apd, "APD_traits.csv"), show_col_types = FALSE)
 APD_categorical_values <- read_csv(file.path(apd, "APD_categorical_values.csv"), show_col_types = FALSE)
@@ -348,7 +520,7 @@ deprecated_trait_names %>%
 Or look up a specific trait name that is no longer used:
 
 ```{r, output=FALSE}
-deprecated_fire_traits <- 
+deprecated_fire_traits <-
   APD_traits %>%
   select(trait, label, deprecated_trait_name) %>%
   filter(str_detect(deprecated_trait_name, "fire"))
@@ -359,3 +531,39 @@ deprecated_fire_traits <-
 deprecated_fire_traits %>%
   kableExtra::kable(format = "markdown")
 ```
+
+## Labelling your own data with APD identifiers
+
+The reason the definitions carry identifiers is so that a dataset can point at them. Recording `https://w3id.org/APD/traits/trait_0011211` alongside your `leaf_area` column says which of the several possible meanings of "leaf area" you measured, and lets anyone — or any pipeline — retrieve the definition, the expected unit and the allowed range without asking you.
+
+`APD_traits` carries both forms of identifier: `identifier` is the bare `trait_0011211`, and `Entity` is the resolvable URI. Matching your column names against `trait`, falling back to `deprecated_trait_name` for names that have since been renamed:
+
+```{r, output=FALSE}
+my_traits <- tibble::tibble(
+  column = c("leaf_area", "seed_dry_mass", "N_to_P_ratio", "leaf_thickness_mm")
+)
+
+deprecated <-
+  APD_traits %>%
+  select(trait, deprecated_trait_name) %>%
+  filter(!is.na(deprecated_trait_name)) %>%
+  mutate(deprecated_trait_name = str_split(deprecated_trait_name, "; ")) %>%
+  unnest_longer(deprecated_trait_name)
+
+my_traits_labelled <-
+  my_traits %>%
+  left_join(deprecated, by = c(column = "deprecated_trait_name")) %>%
+  mutate(trait = coalesce(trait, column)) %>%
+  left_join(
+    APD_traits %>% select(trait, APD_identifier = identifier, APD_URI = Entity),
+    by = "trait"
+    ) %>%
+  select(column, trait, APD_identifier, APD_URI)
+```
+
+```{r, echo=FALSE}
+my_traits_labelled %>%
+  kableExtra::kable(format = "markdown")
+```
+
+`N_to_P_ratio` resolves through its deprecated name to the current concept, `leaf_NP_ratio`. `leaf_thickness_mm` does not match at all — it is a column name carrying a unit rather than a trait concept, and the APD concept it belongs to (`leaf_thickness`) has to be chosen by reading the definition. Unmatched rows are the useful output of this exercise: each one is either a trait the APD does not yet define, in which case [please tell us](https://github.com/traitecoevo/APD/issues), or a column whose meaning was never as obvious as its name suggested.
