@@ -34,12 +34,19 @@ gaps=0
 # is a community-run service and this runs unattended on a schedule.
 CURL=(curl -sS -o /dev/null -L --retry 3 --retry-delay 2 --max-time 30)
 
+# The HTML targets are the *directory* form -- /APD/#<slug>, not
+# /APD/index.html#<slug>. Both serve the same document, so naming the second gave
+# one page two URLs: two browser cache entries, and a search result clicked from
+# /APD/ reloaded 6 MB instead of jumping. See perma-id/w3id.org#6454 and #60.
+#
+# resolve() strips the site root but keeps the leading '/', so the bare document
+# reads as "/" rather than an empty string.
 resolve() {  # url [accept] -> "<status> <final-path>"
   local url="$1" accept="${2:-}" args=("${CURL[@]}")
   [[ -n "$accept" ]] && args+=(-H "Accept: $accept")
   printf '%s %s' \
     "$("${args[@]}" -w '%{http_code}' "$url")" \
-    "$("${args[@]}" -w '%{url_effective}' "$url" | sed "s|$SITE/||")"
+    "$("${args[@]}" -w '%{url_effective}' "$url" | sed "s|$SITE||")"
 }
 
 expect() {  # label actual expected [known-gap-explanation]
@@ -78,8 +85,8 @@ section() { printf '\n%s\n' "$1"; }
 
 section "Content negotiation"
 
-for spec in "text/turtle:APD.ttl" "application/n-triples:APD.nt" \
-            "application/n-quads:APD.nq" "application/ld+json:APD.json"; do
+for spec in "text/turtle:/APD.ttl" "application/n-triples:/APD.nt" \
+            "application/n-quads:/APD.nq" "application/ld+json:/APD.json"; do
   accept="${spec%%:*}"
   want="${spec##*:}"
   for path in "" /traits /glossary; do
@@ -88,9 +95,10 @@ for spec in "text/turtle:APD.ttl" "application/n-triples:APD.nt" \
   done
 done
 
-# The collection URIs land on their section of the document, not its top.
-for spec in ":index.html" "/traits:index.html#trait-concepts" \
-            "/glossary:index.html#glossary"; do
+# The document itself, and the two collection URIs, which land on their section
+# of it rather than its top.
+for spec in ":/" "/traits:/#trait-concepts" \
+            "/glossary:/#glossary"; do
   path="${spec%%:*}"
   want="${spec#*:}"
   expect "text/html APD$path" \
@@ -120,7 +128,7 @@ for spec in "traits/trait_0000012:trait_0000012" \
   path="${spec%%:*}"
   anchor="${spec##*:}"
   expect "$path" "$(resolve "https://w3id.org/APD/$path")" \
-    "200 index.html#$anchor"
+    "200 /#$anchor"
 done
 
 
@@ -132,13 +140,17 @@ done
 # site, so a deploy that stops carrying release/ silently 404s all of them. That
 # is the failure the stage 6 gate exists to catch.
 
+# Requested in the legacy `index.html` form on purpose: that is what index.qmd
+# published as "This version" and what the Zenodo deposits cite, so it is the form
+# most likely to be in someone's bibliography. It has to keep resolving, and it
+# should land on the canonical directory URL.
 section "Versioned permalinks -- every snapshot in release/"
 
 for dir in "$ROOT"/release/*/; do
   version="$(basename "$dir")"
   expect "release/$version/index.html" \
     "$(resolve "https://w3id.org/APD/release/$version/index.html")" \
-    "200 release/$version/index.html"
+    "200 /release/$version/"
 done
 
 
