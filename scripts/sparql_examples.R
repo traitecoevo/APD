@@ -10,11 +10,13 @@
 source("scripts/setup.R")
 apd_require("stringi")
 
-if (!file.exists("APD.nq")) {
-  stop("APD.nq does not exist. Run `make data` first.", call. = FALSE)
+nq <- file.path(APD_EXPORT_DIR, "APD.nq")
+
+if (!file.exists(nq)) {
+  stop(nq, " does not exist. Run `make data` first.", call. = FALSE)
 }
 
-graph <- rdflib::rdf_parse("APD.nq", format = "nquads")
+graph <- rdflib::rdf_parse(nq, format = "nquads")
 
 # rdflib writes non-ASCII as "<U+00E9>" escapes, so labels need unescaping to be
 # readable -- see the iconv() call in convert_to_triples.R.

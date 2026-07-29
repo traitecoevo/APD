@@ -100,17 +100,31 @@ outlives the problem it describes.
 
   | What | Scale | Where |
   |---|---|---|
-  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `M/D/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*. Needs the 1,363 dates reformatted, which is a data decision. [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:201,243-245` |
+  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `DD/MM/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*, so the 1,363 dates have to be reformatted in the same change. Day-first is unambiguous and consistent — 764 of the 1,353 values have a first component above 12 and none has a second above 12 — so this is a deterministic reformat, **not** the data decision this table used to call it. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:225,269-271` |
   | `dcterms:license` and `dcterms:publisher` wrap their URI in angle brackets *inside* the string literal, so the published value is the string `"<https://…>"` rather than the URI. [`rdf-uri-inside-literal`] | 8 | `data/APD_resource.csv` |
 
-- **Input data — three unresolved references and two duplicated keys.** `TO_0000432` (4 traits) and
-  `ENVO:01001125` (1 trait) are used as keywords but are absent from `published_classes.csv`, so they
-  publish as `NA [id]`; `ENVO:01001125` also uses `:` where every ENVO entry in that file uses `_`.
-  `data/APD_units.csv` has `[ppm]` on two rows with different labels and URIs — the second is *parts
-  per thousand* and should be `[ppth]`, so the published RDF asserts the wrong identifier for that
-  unit. `published_classes.csv` has four duplicated identifiers, two on rows that disagree. Fixing
-  these needs the labels from the source ontologies and a decision on which duplicate row wins.
-  [`unresolved-identifier`, `input-duplicate-key`, `input-redundant-row`]
+- **Input data — two unresolved references, four duplicated keys, one free typo.** All tracked in
+  [#59](https://github.com/traitecoevo/APD/issues/59).
+
+  `TO_0000432` (4 traits) and `ENVO:01001125` (1 trait) are used as keywords but are absent from
+  `published_classes.csv`, so they publish as `NA [id]`. Fixing needs the labels from the source
+  ontologies, or a decision to drop the keyword. [`unresolved-identifier`]
+
+  `published_classes.csv` has four duplicated identifiers — `EnvThes:21211`, `TO_0000006`,
+  `TO_0001017`, `TO_0002616` — two repeated on identical rows and two on rows that disagree, which
+  needs a decision on which row wins. [`input-duplicate-key`, `input-redundant-row`]
+
+  `data/APD_units.csv` has `[ppm]` in the `identifier` cell of two rows. **This one is free, and this
+  table used to describe it wrongly.** The second row is parts per thousand and its URI, label and
+  UCUM code all say so; only that cell is a typo for `[ppth]`. No part of the build reads the column —
+  `convert_to_triples.R` matches units on `label` and `Entity` — so the published RDF is already
+  correct for both units and for the 3 traits pointing at the ppm URI and 14 at ppth. Fixing it
+  changes no output and needs no decision. [`input-duplicate-key`]
+
+  > This table previously said `ENVO:01001125` "uses `:` where every ENVO entry in that file uses
+  > `_`", and that the units row made "the published RDF assert the wrong identifier". Neither is
+  > true: there are no ENVO entries in `published_classes.csv`, which already carries 95 colon-style
+  > identifiers against 657 underscore-style; and the units `identifier` column reaches no output.
 
 - **C8 — stale.** ARDC RVA (`vocabs.ardc.edu.au/viewById/649`) serves **2.0.1**; this repo is at 2.1.0.
   Refreshing the deposit belongs on the release checklist.

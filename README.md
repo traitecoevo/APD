@@ -1,7 +1,12 @@
 # The AusTraits Plant Dictionary (APD)
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8040789.svg)](https://doi.org/10.5281/zenodo.8040789)
+<!-- The DOI badge is served by shields.io, not zenodo.org/badge/DOI/. Zenodo
+     rate-limits GitHub's image proxy, which then serves the string "Invalid
+     upstream response (429)" in place of the SVG and the badge renders broken.
+     index.qmd already used shields.io for this same DOI. -->
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8040789-blue.svg)](https://doi.org/10.5281/zenodo.8040789)
+[![check](https://github.com/traitecoevo/APD/actions/workflows/check.yml/badge.svg)](https://github.com/traitecoevo/APD/actions/workflows/check.yml)
 <!-- badges: end -->
 
 ![](inst/figures/logo.png)

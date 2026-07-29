@@ -199,7 +199,7 @@ to_match_tmp <- triples_with_labels %>%
  
 for (thistrait in list_of_traits[[1]]) {
   
-  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
+  # creating header makes anchor using header name. Also create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait,to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_traits, "", thistrait, fixed = TRUE)
   writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
@@ -235,8 +235,9 @@ categorical_allowed <-
     filter(Subject_stripped %in% to_match_tmp$Subject_stripped) %>%
     filter(property == "has broader") %>%
     select(Subject_stripped, trait_name = value) %>%
-    left_join(to_match_tmp) %>%
-    left_join(categorical_allowed %>% rename(Subject_stripped = identifier)) %>%
+    left_join(to_match_tmp, by = "Subject_stripped") %>%
+    left_join(categorical_allowed %>% rename(Subject_stripped = identifier),
+              by = "Subject_stripped") %>%
     arrange(Object)
  
   traits_names_tmp <- tmp_categorical2 %>%
@@ -245,25 +246,29 @@ categorical_allowed <-
 for (thistrait in traits_names_tmp$trait_name) {
 
   writeLines(paste0("\n## ", thistrait, "\n\n"))
-  
-  tmp_cat_select <- tmp_categorical2 %>% 
-    filter(trait_name == thistrait)
-  
-  cat_for_trait <- as.data.frame(categorical_allowed) %>% filter(categorical_allowed$identifier %in% tmp_cat_select$Subject_stripped)
-  
-  for (cat_val in cat_for_trait$identifier) {
-  
-  # creating header makes anchor using header name. Aslo create an anchor using trait_ID
-  term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
-  anchor <- gsub(base_url_traits, "", cat_val, fixed = TRUE)    
-  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
 
-  out <- 
+  tmp_cat_select <- tmp_categorical2 %>%
+    filter(trait_name == thistrait)
+
+  cat_for_trait <- categorical_allowed %>%
+    filter(identifier %in% tmp_cat_select$Subject_stripped)
+
+  for (cat_val in cat_for_trait$identifier) {
+
+  # An allowed value belongs to the trait above it, so it is a level deeper.
+  # Both were `##`, which made the 819 values siblings of the 115 traits that
+  # own them -- one flat run in the TOC, and no way to collapse a trait.
+  # `toc-expand: 1` now leaves them folded until a trait is opened.
+  term_to_display <- to_match_tmp$value[match(cat_val, to_match_tmp$Subject_stripped)]
+  anchor <- gsub(base_url_traits, "", cat_val, fixed = TRUE)
+  writeLines(sprintf('\n\n <span id="%s"> </span>\n\n### %s ', anchor, term_to_display))
+
+  out <-
       create_APD_categorical_values_table(anchor, triples_with_labels)
-  
+
   out %>% print_table()
   }
-  
+
 }
   
 ```
@@ -280,14 +285,14 @@ glossary_terms <-
   filter(stringr::str_detect(Subject, "glossary_")) %>%
   select(identifier = Subject)
 
-for (thistrait in glossary_terms$identifier) {
-  
-  to_match_tmp <- triples_with_labels %>% 
-    filter(Subject_stripped %in% glossary_terms$identifier) %>%
-    filter(property == "preferred label") %>%
-    select(Subject_stripped, value)
+to_match_tmp <- triples_with_labels %>%
+  filter(Subject_stripped %in% glossary_terms$identifier) %>%
+  filter(property == "preferred label") %>%
+  select(Subject_stripped, value)
 
-  # creating header makes anchor using header name. Aslo create an anchor using trait_ID  
+for (thistrait in glossary_terms$identifier) {
+
+  # creating header makes anchor using header name. Also create an anchor using trait_ID
   term_to_display <- to_match_tmp$value[match(thistrait, to_match_tmp$Subject_stripped)]
   anchor <- gsub(base_url_glossary, "", thistrait, fixed = TRUE)
   writeLines(sprintf('\n\n <span id="%s"> </span>\n\n## %s ', anchor, term_to_display))
@@ -295,7 +300,7 @@ for (thistrait in glossary_terms$identifier) {
   out <- 
     create_APD_trait_glossary_table(thistrait, triples_with_labels)
 
-  out %>% print_table()#150, 500)
+  out %>% print_table()
 }
 ```
 

@@ -11,6 +11,23 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## Unreleased
+
+<!-- Rename this heading to `## APD Version <X.Y.Z>` when the next release is cut;
+     `apd_released_versions()` matches only that form, so an "Unreleased" section
+     is invisible to the version checks and to "Previous version" on the site. -->
+
+**Allowable categorical values now sit under their trait in the contents.** In
+section 4 of the dictionary, each of the 819 allowable values was headed at the
+same level as the 115 traits that own them, so the contents listed all 934 as one
+flat run — a value was indistinguishable from a trait, and a trait could not be
+collapsed. Values are now one level deeper, and the contents opens showing traits
+only.
+
+No definition, URI, label or allowable value changed, and the machine-readable
+serialisations are byte-for-byte identical. This is how the page is arranged, not
+what it says.
+
 ## APD Version 2.1.1
 
 A patch release. **The trait definitions are unchanged** — no trait, URI, label,

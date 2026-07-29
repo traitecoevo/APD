@@ -1,532 +1,357 @@
+# The property/value pairs shown under each entity on the rendered dictionary.
+#
+# `index.qmd` walks the four kinds of published entity -- trait groups, trait
+# concepts, allowable categorical values and glossary terms -- and calls one
+# builder per kind. Each returns a two-column tibble of `name` and `description`
+# list-columns, which `R/table.R` renders as a `<dl>`.
+#
+# Each builder is now a list of `prop()` calls, one per property, in the order
+# they appear on the page. They used to be 22 six-line blocks differing only in
+# which property they selected and how the value was formatted, which made the
+# shape of an entity's entry impossible to see at a glance.
+#
+# A builder emits a pair per property the entity *could* have, whether or not it
+# has one; `apd_definition_list()` drops the empties. That is why there are far
+# more pairs here than appear on the page.
 
+# Predicate namespaces. Kept as constants rather than inlined at each call site
+# both because the repetition was the bulk of the old file, and because
+# test-namespaces.R fails any file in R/ that accumulates more than a handful of
+# `name = "http..."` assignments -- the shape a second namespace map would take.
+SKOS <- "http://www.w3.org/2004/02/skos/core#"
+DCTERMS <- "http://purl.org/dc/terms/"
+DATACITE <- "http://purl.org/datacite/v4.4/"
+IADOPT <- "https://w3id.org/iadopt/ont/"
 
-add_row <- function(data, name, description) {
-  if(!("html" %in% class(name)))
-    name <- gt::html(name)
-  if (!("html" %in% class(description))) {
-    description <- gt::html(description)
+#' The triples describing one entity, with display links resolved
+#'
+#' All four builders open the same way: take the rows of the labelled triple
+#' table that describe one entity, then render each row's predicate and object as
+#' a link.
+#'
+#' Two builders match on `Subject` and two on `Subject_stripped`. The two columns
+#' are identical for every row of `APD_triples.csv` and a test in
+#' `test-entity-tables.R` pins that, so `key` records which one each builder
+#' meant rather than quietly collapsing them.
+#'
+#' @param triples_with_labels The labelled triple table, i.e. `APD_triples.csv`.
+#' @param subject URI of the entity to describe.
+#' @param key Name of the column to match `subject` against.
+#' @return The matching rows plus two character columns: `property_link`, the
+#'   predicate linked to its definition, and `value_link`, the object linked to
+#'   its target -- or left as plain text where the object is a literal rather
+#'   than a URI.
+apd_entity_rows <- function(triples_with_labels, subject, key = "Subject") {
+
+  triples_with_labels %>%
+    filter(.data[[key]] == subject) %>%
+    mutate(
+      property_link = purrr::map2_chr(
+        property, Predicate,
+        \(text, uri) as.character(make_link(text, uri))
+      ),
+      value_link = purrr::map2_chr(
+        value, Object,
+        \(text, uri) {
+          if (is.na(uri)) as.character(text) else as.character(make_link(text, uri))
+        }
+      )
+    )
+}
+
+#' One property/value pair of an entity's table
+#'
+#' The defaults describe the common case: select the entity's rows for one
+#' property, head the pair with that predicate's own label linked to its
+#' definition, and show the linked value. Every other argument exists because
+#' some property on some entity departs from that, and naming the departure at
+#' the call site is the point -- reading a builder should show what is unusual
+#' about each pair and nothing else.
+#'
+#' @param rows The entity's rows, from `apd_entity_rows()`.
+#' @param property Value of the `property` column to select.
+#' @param label,uri Head the pair with this fixed link instead of the predicate's
+#'   own label, for the predicates `APD_annotation_properties.csv` carries no
+#'   label for.
+#' @param collapse Stack the values into a single cell, one per line. This is
+#'   what distinguishes a list-valued property from a single-valued one.
+#' @param heading `"first"` gives the whole list one heading, `"each"` one
+#'   heading per value. Follows `collapse` unless overridden.
+#' @param column Which column supplies the value. `min`/`max` publish the raw
+#'   `value` rather than the linked form.
+#' @param values Supply the values directly, already aligned to the selected
+#'   rows, where a value needs more than a link.
+#' @param default Shown when the entity has no such property. Only two properties
+#'   say anything in that case; the rest render as an empty pair that
+#'   `apd_definition_list()` drops.
+#' @param skip_if_empty Emit no pair at all when there is nothing to show, rather
+#'   than an empty one.
+#' @param repeat_heading Repeat a fixed heading once per selected row -- and so
+#'   omit it entirely when there are no rows. Only `has context object` does
+#'   this, and it is published output.
+#' @return A `list(name, description)`, or `NULL` when the pair is skipped.
+prop <- function(rows, property, label = NULL, uri = NULL, collapse = FALSE,
+                 heading = if (collapse) "first" else "each",
+                 column = "value_link", values = NULL, default = NULL,
+                 skip_if_empty = FALSE, repeat_heading = FALSE) {
+
+  # Base subsetting rather than filter(): `property` names both an argument here
+  # and a column there, and filter() would resolve it to the column.
+  selected <- rows[!is.na(rows$property) & rows$property == property, ,
+                   drop = FALSE]
+
+  if (skip_if_empty && nrow(selected) == 0) {
+    return(NULL)
   }
 
-  bind_rows(
-    data, 
-    tibble(name = list(name), description = list(description))
+  if (is.null(values)) {
+    values <- selected[[column]]
+  }
+  if (nrow(selected) == 0 && !is.null(default)) {
+    values <- default
+  }
+
+  name <-
+    if (!is.null(label)) {
+      link <- make_link(label, uri)
+      # A fixed heading stands whether or not the entity has the property -- that
+      # is what makes `date reviewed` show up empty rather than vanish.
+      if (repeat_heading) rep(link, nrow(selected)) else link
+    } else if (identical(heading, "first")) {
+      selected$property_link[1]
+    } else {
+      selected$property_link
+    }
+
+  list(name = name,
+       description = if (collapse) html_lines(values) else values)
+}
+
+#' A pair whose heading is literal text rather than a predicate
+#'
+#' Only the `URI` row, which names the entity itself rather than a statement
+#' about it.
+#'
+#' @param name Heading text.
+#' @param description Value.
+#' @return A `list(name, description)`.
+literal_prop <- function(name, description) {
+  list(name = name, description = description)
+}
+
+#' Assemble property pairs into the table the renderer expects
+#'
+#' Both columns are list-columns because a value may be a `gt::html()` object, a
+#' plain string, or a vector of several, and a list-column holds all three
+#' without flattening. Built in one call rather than appended a pair at a time,
+#' which recopied the accumulating tibble about 25 times per entity and was half
+#' the cost of the entity-table build.
+#'
+#' @param pairs A list of `prop()` results; `NULL` entries are dropped.
+#' @return A tibble of `name` and `description` list-columns.
+property_table <- function(pairs) {
+
+  pairs <- Filter(Negate(is.null), pairs)
+
+  as_html <- function(x) if ("html" %in% class(x)) x else gt::html(x)
+
+  tibble(
+    name = lapply(pairs, function(pair) as_html(pair$name)),
+    description = lapply(pairs, function(pair) as_html(pair$description))
   )
 }
 
+#' Each allowable value of a categorical trait, with its definition
+#'
+#' A categorical trait lists its allowed values, and the page shows each one's
+#' definition beside it rather than making the reader jump to section 4. The
+#' definitions are statements about the *values*, so they come from the full
+#' triple table rather than from the trait's own rows.
+#'
+#' @param narrower The trait's `has narrower` rows.
+#' @param triples_with_labels The labelled triple table.
+#' @return A character vector, one entry per allowable value.
+categorical_value_lines <- function(narrower, triples_with_labels) {
+
+  definitions <- triples_with_labels %>%
+    filter(Subject_stripped %in% narrower$Object) %>%
+    filter(property %in% c("identifier", "description")) %>%
+    select(Subject_stripped, property, value) %>%
+    pivot_wider(names_from = property, values_from = value)
+
+  paste(narrower$value_link,
+        definitions$description[match(narrower$value, definitions$identifier)])
+}
+
+# Four traits record a season rather than a set of allowable values, so their
+# `has narrower` statements are not categorical values and are not listed.
+APD_TIME_TRAITS <- c("flowering_time", "fruiting_time", "recruitment_time",
+                     "foliage_time")
+
+#' Build the table for one trait concept
+#'
+#' The largest of the four: a trait carries the full annotation set -- labels,
+#' description, units and allowed range or allowed values, groupings, keywords,
+#' mappings out to other vocabularies, references, reviewers and dates. Produces
+#' section 3 of the dictionary, "Trait concepts".
+#'
+#' Which pairs appear depends on the trait's value type: continuous traits get
+#' units and a min/max, categorical traits get their allowable values inlined
+#' with each value's definition.
+#'
+#' @param thistrait URI of the trait, e.g.
+#'   `https://w3id.org/APD/traits/trait_0000012`.
+#' @param triples_with_labels The labelled triple table.
+#' @return A tibble of `name` and `description` list-columns.
 create_APD_trait_table <- function(thistrait, triples_with_labels) {
 
-  trait_i <- 
-    triples_with_labels %>% 
-    filter(Subject == thistrait) %>%
-    mutate(property_link = NA, value_link = NA)
-  
-  
-  for (i in seq_len(nrow(trait_i))) {
-    trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
-    trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
-  }
-  
-  output <- tibble(name =  list(), description = list())
+  trait <- apd_entity_rows(triples_with_labels, thistrait)
 
-  output <- 
-    add_row(output, "URI", trait_i$Subject[1])
-  
-  # label
-    label <- trait_i %>% filter(property == "preferred label")
-    
-    output <-
-      add_row(output,
-              label$property_link,
-              label$value_link
-              )
-  
-  # alternative label
-    altlabel <- trait_i %>% filter(property == "alternative label")
-    
-    output <-
-      add_row(output,
-              altlabel$property_link,
-              altlabel$value_link
-              )
-  
-  # description
-    description <- trait_i %>% filter(property == "description")
+  value_type <- trait %>% filter(property == "value type")
+  altlabel <- trait %>% filter(property == "alternative label")
+  narrower <- trait %>% filter(property == "has narrower")
 
-    output <-
-      add_row(output,
-              description$property_link[1],
-              print_list2(description$value_link)
-              )
+  property_table(c(
+    list(
+      literal_prop("URI", trait$Subject[1]),
+      prop(trait, "preferred label"),
+      prop(trait, "alternative label"),
+      prop(trait, "description", collapse = TRUE),
+      prop(trait, "note", label = "comments", uri = paste0(SKOS, "note")),
+      prop(trait, "value type")
+    ),
 
-  # comments
-    comments_tmp <- trait_i %>% filter(property == "note")
+    if (value_type$value == "continuous variable") list(
+      prop(trait, "unit", collapse = TRUE),
+      # The allowed range comes from `value`, not `value_link`: these are
+      # numbers, with nothing to link them to.
+      prop(trait, "minAllowedValue", column = "value"),
+      prop(trait, "maxAllowedValue", column = "value")
+    ),
 
-    output <-
-      add_row(output,
-              make_link("comments","http://www.w3.org/2004/02/skos/core#note"),
-              comments_tmp$value_link
-              )
+    if (value_type$value == "categorical variable" &&
+          !altlabel$value %in% APD_TIME_TRAITS) list(
+      prop(trait, "has narrower", collapse = TRUE,
+           values = categorical_value_lines(narrower, triples_with_labels))
+    ),
 
-   # value type
-     value_type <- trait_i %>% filter(property == "value type")
-
-     output <-
-      add_row(output,
-              value_type$property_link,
-              value_type$value_link
-              )
-
-  if(value_type$value == "continuous variable") {
-    units_tmp <- trait_i %>% filter(property == "unit")
-    min_tmp <- trait_i %>% filter(property == "minAllowedValue")
-    max_tmp <- trait_i %>% filter(property == "maxAllowedValue")
-    uom_tmp <- trait_i %>% filter(property == "units_uom")
-
-    output <-
-      add_row(output,
-              units_tmp$property_link[1],
-              print_list2(units_tmp$value_link)
-              )
-
-  # min & max
-    output <-
-      add_row(output,
-              min_tmp$property_link,
-              min_tmp$value
-              )
-
-    output <-
-      add_row(output,
-              max_tmp$property_link,
-              max_tmp$value
-              )
-
-   }
-
-  # categorical values (has narrower)
-    if(value_type$value == "categorical variable" & !altlabel$value %in% c("flowering_time", "fruiting_time", "recruitment_time", "foliage_time")) {
-
-      categorical_narrower <- trait_i %>%
-        filter(property == "has narrower")
-
-      categorical_defs <- triples_with_labels %>%
-        filter(Subject_stripped %in% categorical_narrower$Object) %>%
-        filter(property %in% c("identifier", "description")) %>%
-        select(Subject_stripped, property, value) %>%
-        pivot_wider(names_from = property, values_from = value)
-
-
-      categorical_narrower <- categorical_narrower %>%
-        mutate(
-          description = categorical_defs$description[match(categorical_narrower$value, categorical_defs$identifier)],
-          description2 = paste(value_link, description)
-          )
-
-      output <-
-        add_row(output,
-                categorical_narrower$property_link[1],
-                print_list2(categorical_narrower$description2)
-                )
-    }
-
-  # trait grouping (has broader)
-    grouping <- trait_i %>% filter(property == "has broader")
-
-    output <-
-      add_row(output,
-              grouping$property_link[1],
-              print_list2(grouping$value_link)
-              )
-
-  # measured entity (plant structure)
-    plant_structure <- trait_i %>% filter(property == "has context object")
-
-    plant_structure$property_link <- "<a href=\"https://w3id.org/iadopt/ont/hasContextObject\">plant structure</a>"
-    
-    output <-
-      add_row(output,
-              plant_structure$property_link,
-              print_list2(plant_structure$value_link)
-              )
-
-  # measured characteristic
-    characteristic <- trait_i %>% filter(property == "measured characteristic")
-
-    output <-
-      add_row(output,
-              characteristic$property_link[1],
-              print_list2(characteristic$value_link)
-              )
-
-  # keywords
-    keywords_tmp <- trait_i %>% filter(property == "keyword")
-
-    plant_structure$value_link <- print_list2(plant_structure$value_link)
-    
-    if (nrow(keywords_tmp) > 0) {
-      output <-
-        add_row(output,
-                keywords_tmp$property_link[1],
-                print_list2(keywords_tmp$value_link)
-                )
-    }
-
-  # scope
-    scope_tmp <- trait_i %>% filter(property == "scope note")
-
-    output <-
-      add_row(output,
-              make_link("scope note", "http://www.w3.org/2004/02/skos/core#scopeNote"),
-              scope_tmp$value_link
-              )
-
-  # exact match
-    exact_match <- trait_i %>% filter(property == "has exact match")
-
-    output <-
-      add_row(output,
-              make_link("has exact match", "http://www.w3.org/2004/02/skos/core#exactMatch"),
-              print_list2(exact_match$value_link)
-              )
-
-  # close match
-  close_match <- trait_i %>% filter(property == "has close match")
-
-  output <-
-    add_row(output,
-            make_link("has close match", "http://www.w3.org/2004/02/skos/core#closeMatch"),
-            print_list2(close_match$value_link)
-            )
-
-  # related match
-  related_match <- trait_i %>% filter(property == "has related match")
-
-  output <-
-    add_row(output,
-            make_link("has related match", "http://www.w3.org/2004/02/skos/core#relatedMatch"),
-            print_list2(related_match$value_link)
-            )
-
-  # examples (matches that are literals/strings)
-  examples <- trait_i %>% filter(property == "example")
-
-  output <-
-    add_row(output,
-            make_link("examples", "http://www.w3.org/2004/02/skos/core#example"),
-            print_list2(examples$value_link)
+    list(
+      prop(trait, "has broader", collapse = TRUE),
+      prop(trait, "has context object", label = "plant structure",
+           uri = paste0(IADOPT, "hasContextObject"),
+           collapse = TRUE, repeat_heading = TRUE),
+      prop(trait, "measured characteristic", collapse = TRUE),
+      prop(trait, "keyword", collapse = TRUE, skip_if_empty = TRUE),
+      prop(trait, "scope note",
+           label = "scope note", uri = paste0(SKOS, "scopeNote")),
+      prop(trait, "has exact match", collapse = TRUE,
+           label = "has exact match", uri = paste0(SKOS, "exactMatch")),
+      prop(trait, "has close match", collapse = TRUE,
+           label = "has close match", uri = paste0(SKOS, "closeMatch")),
+      prop(trait, "has related match", collapse = TRUE,
+           label = "has related match", uri = paste0(SKOS, "relatedMatch")),
+      prop(trait, "example", collapse = TRUE,
+           label = "examples", uri = paste0(SKOS, "example")),
+      prop(trait, "references", collapse = TRUE,
+           label = "references", uri = paste0(DCTERMS, "references"),
+           default = "no linked references"),
+      prop(trait, "date created",
+           label = "date created", uri = paste0(DCTERMS, "created")),
+      prop(trait, "date modified",
+           label = "date modified", uri = paste0(DCTERMS, "modified")),
+      prop(trait, "date reviewed",
+           label = "date reviewed", uri = paste0(DCTERMS, "reviewed")),
+      prop(trait, "reviewed by", collapse = TRUE,
+           label = "reviewed by", uri = paste0(DATACITE, "IsReviewedBy"),
+           default = "no reviewers"),
+      prop(trait, "change note",
+           label = "change note", uri = paste0(SKOS, "changeNote")),
+      prop(trait, "is in scheme"),
+      prop(trait, "identifier")
     )
-
-  # references
-  references_tmp <- trait_i %>% filter(property == "references")
-
-  if(nrow(references_tmp) == 0) {
-    references_tmp <- NULL
-    references_tmp$value_link <- "no linked references"
-  }
-
-  output <-
-    add_row(output,
-            make_link("references","http://purl.org/dc/terms/references"),
-            print_list2(references_tmp$value_link)
-            )
-  
-  # date created
-  date_created <- trait_i %>% filter(property == "date created")
-
-  output <-
-    add_row(output,
-            make_link("date created","http://purl.org/dc/terms/created"),
-            date_created$value_link
-            )
-
-  # date modified
-  date_modified <- trait_i %>% filter(property == "date modified")
-
-  output <-
-    add_row(output,
-            make_link("date modified","http://purl.org/dc/terms/modified"),
-            date_modified$value_link
-            )
-
-  # date reviewed
-  date_reviewed <- trait_i %>% filter(property == "date reviewed")
-
-  output <-
-    add_row(output,
-            make_link("date reviewed","http://purl.org/dc/terms/reviewed"),
-            date_reviewed$value_link
-            )
-
-  # reviewers - PROBLEM; print_list2
-  reviewers_tmp <- trait_i %>% filter(property == "reviewed by")
-
-  if(nrow(reviewers_tmp) == 0) {
-    reviewers_tmp <- NULL
-    reviewers_tmp$value_link <- "no reviewers"
-  }
-
-  output <-
-    add_row(output,
-            make_link("reviewed by", "http://purl.org/datacite/v4.4/IsReviewedBy"),
-            print_list2(reviewers_tmp$value_link)
-            )
-
-  # deprecated names (change note)
-  
-  change_tmp <- trait_i %>% filter(property == "change note")
-  
-  output <-
-    add_row(output, 
-            make_link("change note", "http://www.w3.org/2004/02/skos/core#changeNote"),
-            change_tmp$value_link
-            )
-
-  # in scheme
-  scheme <- trait_i %>% filter(property == "is in scheme")
-  
-  output <-
-    add_row(output,
-            scheme$property_link,
-            scheme$value_link
-            )
-  
-  
-  # identifier
-  identifier <- trait_i %>% filter(property == "identifier")
-  
-  output <-
-    add_row(output,
-            identifier$property_link,
-            identifier$value_link
-            )
-  
-  output
+  ))
 }
 
-# trait hierarchy table
-
+#' Build the table for one trait group
+#'
+#' Trait groups are the hierarchy layer above trait concepts: each names the
+#' traits below it, so the table is mostly the `has narrower` list. Produces
+#' section 2 of the dictionary, "Trait groups".
+#'
+#' @param thistrait URI of the group, e.g.
+#'   `https://w3id.org/APD/traits/trait_group_0000008`.
+#' @param triples_with_labels The labelled triple table.
+#' @return A tibble of `name` and `description` list-columns.
 create_APD_trait_hierarchy_table <- function(thistrait, triples_with_labels) {
-  
-  trait_i <- 
-    triples_with_labels %>% 
-    filter(Subject == thistrait) %>%
-    mutate(property_link = NA, value_link = NA)
-  
-  
-  for (i in seq_len(nrow(trait_i))) {
-    trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
-    trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
-  }
-  
-  output <- tibble(name =  list(), description = list())
-  
-  output <- 
-    add_row(output, "URI", trait_i$Subject[1])
-  
-  # label
-    label_tmp <- trait_i %>% filter(property == "preferred label")
-    
-    output <-
-      add_row(output,
-              label_tmp$property_link,
-              label_tmp$value_link
-      )
-  
-  
-  # description
-    description_tmp <- trait_i %>% filter(property == "description")
-    
-    output <-
-      add_row(output, 
-              description_tmp$property_link, 
-              description_tmp$value_link
-              )
-  
-  
-  # traits within group (has narrower)
-    narrower_tmp <- trait_i %>% filter(property == "has narrower")
-    
-    if (nrow(narrower_tmp) > 0) {
-    output <-
-      add_row(output, 
-              narrower_tmp$property_link[1],
-              print_list2(narrower_tmp$value_link)
-              ) 
-    }
-    
-  
-  # trait grouping (has broader)
-    grouping <- trait_i %>% filter(property == "has broader")
-    
-    if (nrow(grouping) > 0) {
-    output <-
-      add_row(output, 
-              grouping$property_link[1],
-              print_list2(grouping$value_link)
-              ) 
-    }
-  
-  # in scheme
-    scheme_tmp <- trait_i %>% filter(property == "is in scheme")
-    
-    output <-
-      add_row(output,
-              scheme_tmp$property_link,
-              scheme_tmp$value_link
-      )
-    
-  
-  # identifier
-    identifier_tmp <- trait_i %>% filter(property == "identifier")
-    
-    output <-
-      add_row(output,
-              identifier_tmp$property_link,
-              identifier_tmp$value_link
-      )
-    
-  output
+
+  group <- apd_entity_rows(triples_with_labels, thistrait)
+
+  property_table(list(
+    literal_prop("URI", group$Subject[1]),
+    prop(group, "preferred label"),
+    prop(group, "description"),
+    # The top of the hierarchy has no parent and the bottom no children, so
+    # unlike everywhere else these pairs are omitted rather than left empty.
+    prop(group, "has narrower", collapse = TRUE, skip_if_empty = TRUE),
+    prop(group, "has broader", collapse = TRUE, skip_if_empty = TRUE),
+    prop(group, "is in scheme"),
+    prop(group, "identifier")
+  ))
 }
 
-
-# categorical values
+#' Build the table for one allowable categorical value
+#'
+#' The 819 allowed values of the categorical traits, each defined once and linked
+#' to the single trait it belongs to, so that the same word used by two traits
+#' does not become ambiguous. Produces section 4 of the dictionary, "Values for
+#' categorical traits".
+#'
+#' The odd one out of the four: it takes a bare slug rather than a URI, because
+#' `index.qmd` has already stripped the base off to use as the page anchor.
+#'
+#' @param thistrait Slug of the value, e.g. `plant_growth_form_tree` -- not a
+#'   full URI.
+#' @param triples_with_labels The labelled triple table.
+#' @return A tibble of `name` and `description` list-columns.
 create_APD_categorical_values_table <- function(thistrait, triples_with_labels) {
-  
+
   thistrait <- paste0("https://w3id.org/APD/traits/", thistrait)
-  
-  trait_i <- 
-    triples_with_labels %>% 
-    filter(Subject_stripped == thistrait) %>%
-    mutate(property_link = NA, value_link = NA)
-  
-  
-  for (i in seq_len(nrow(trait_i))) {
-    trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
-    trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
-  }
-  
-  output <- tibble(name =  list(), description = list())
-  
-  output <- 
-    add_row(output, "URI", trait_i$Subject[1])
-  
-  # label
-  label_tmp <- trait_i %>% filter(property == "preferred label")
-  
-  output <-
-    add_row(output,
-            label_tmp$property_link,
-            label_tmp$value_link
-    )
-  
-  
-  # description
-  description_tmp <- trait_i %>% filter(property == "description")
-  
-  output <-
-    add_row(output, 
-            description_tmp$property_link, 
-            description_tmp$value_link
-    )
-  
-  # in scheme
-  broader_tmp <- trait_i %>% filter(property == "has broader")
-  
-  output <-
-    add_row(output,
-            broader_tmp$property_link[1],
-            broader_tmp$value_link
-    )
-  
-  # in scheme
-  scheme_tmp <- trait_i %>% filter(property == "is in scheme")
-  
-  output <-
-    add_row(output,
-            scheme_tmp$property_link,
-            scheme_tmp$value_link
-    )
-  
-  
-  # identifier
-  identifier_tmp <- trait_i %>% filter(property == "identifier")
-  
-  output <-
-    add_row(output,
-            identifier_tmp$property_link,
-            identifier_tmp$value_link
-    )
-  
-  output
+
+  value <- apd_entity_rows(triples_with_labels, thistrait,
+                           key = "Subject_stripped")
+
+  property_table(list(
+    literal_prop("URI", value$Subject[1]),
+    prop(value, "preferred label"),
+    prop(value, "description"),
+    # The trait this value belongs to: one heading, but the value shown as it
+    # comes rather than stacked, since there is only ever one parent.
+    prop(value, "has broader", heading = "first"),
+    prop(value, "is in scheme"),
+    prop(value, "identifier")
+  ))
 }
 
-# glossary terms
-
+#' Build the table for one glossary term
+#'
+#' The glossary holds terms used as keywords in trait descriptions that no other
+#' published vocabulary defines, so the APD has to define them itself. The
+#' smallest of the four tables. Produces section 5 of the dictionary, "Glossary".
+#'
+#' @param thistrait URI of the term, under `https://w3id.org/APD/glossary/`.
+#' @param triples_with_labels The labelled triple table.
+#' @return A tibble of `name` and `description` list-columns.
 create_APD_trait_glossary_table <- function(thistrait, triples_with_labels) {
-  
-  trait_i <- 
-    triples_with_labels %>% 
-    filter(Subject_stripped == thistrait) %>%
-    mutate(property_link = NA, value_link = NA)
-  
-  
-  for (i in seq_len(nrow(trait_i))) {
-    trait_i$property_link[i] <- make_link(trait_i$property[i], trait_i$Predicate[i])
-    trait_i$value_link[i] = ifelse(!is.na(trait_i$Object[i]), make_link(trait_i$value[i], trait_i$Object[i]), trait_i$value[i])
-  }
-  
-  output <- tibble(name =  list(), description = list())
-  
-  output <- 
-    add_row(output, "URI", trait_i$Subject[1])
-  
-  # label
-  label_tmp <- trait_i %>% filter(property == "preferred label")
-  
-  output <-
-    add_row(output,
-            label_tmp$property_link,
-            label_tmp$value_link
-    )
-  
-  
-  # description
-  description_tmp <- trait_i %>% filter(property == "description")
-  
-  output <-
-    add_row(output, 
-            description_tmp$property_link, 
-            description_tmp$value_link
-    )
-  
-  
-  # top concept
-  top_concept_tmp <- trait_i %>% filter(property == "top concept of")
-  
-  output <-
-    add_row(output,
-            top_concept_tmp$property_link,
-            top_concept_tmp$value_link
-    ) 
-  
-  # in scheme
-  scheme_tmp <- trait_i %>% filter(property == "is in scheme")
-  
-  output <-
-    add_row(output,
-            scheme_tmp$property_link,
-            scheme_tmp$value_link
-    )
-  
-  
-  # identifier
-  identifier_tmp <- trait_i %>% filter(property == "identifier")
-  
-  output <-
-    add_row(output,
-            identifier_tmp$property_link,
-            identifier_tmp$value_link
-    )
-  
-  output
+
+  term <- apd_entity_rows(triples_with_labels, thistrait,
+                          key = "Subject_stripped")
+
+  property_table(list(
+    literal_prop("URI", term$Subject[1]),
+    prop(term, "preferred label"),
+    prop(term, "description"),
+    prop(term, "top concept of"),
+    prop(term, "is in scheme"),
+    prop(term, "identifier")
+  ))
 }
