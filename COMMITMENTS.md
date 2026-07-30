@@ -53,10 +53,15 @@ URLs are unchanged and the repo layout is free to move again.
 
 ---
 
-## Known gaps (2026-07-27)
+## Known gaps
 
-Audited against the live service. Tracked by epic
-[#47](https://github.com/traitecoevo/APD/issues/47).
+Audited against the live service on 2026-07-27, and revised as they were fixed. Every id still on the
+register is tracked by [#59](https://github.com/traitecoevo/APD/issues/59) — the seven there are
+exactly the seven in `APD_KNOWN_GAPS`. The deposits are [#52](https://github.com/traitecoevo/APD/issues/52).
+
+> Tracking moved here from epic [#47](https://github.com/traitecoevo/APD/issues/47), which covered the
+> eight-stage build overhaul and closed once those stages shipped. The gaps outlived it, so they needed
+> an issue of their own rather than an epic kept open for them.
 
 **These are also a machine-readable register.** `APD_KNOWN_GAPS` in
 [`R/validate.R`](R/validate.R) lists every problem below that `validate_apd()` can detect, keyed by a
