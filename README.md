@@ -102,7 +102,7 @@ regardless of where they sit in this repository:
 
 ```
 https://traitecoevo.github.io/APD/APD_traits.csv               # latest release
-https://traitecoevo.github.io/APD/release/2.1.1/APD_traits.csv  # pinned
+https://traitecoevo.github.io/APD/release/2.1.2/APD_traits.csv  # pinned
 ```
 
 Use those rather than `raw.githubusercontent.com` paths — the repo layout can
