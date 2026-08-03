@@ -59,6 +59,13 @@ them are not valid day-first at all, and the remaining four (`7/11/2000`) would
 have silently become 2000-11-07. Each file was converted on its own convention,
 and the nine DCMI values were checked against DCMI's own `dublin_core_terms.ttl`.
 
+**A release now carries its licence.** The dictionary has always been CC BY 4.0,
+and the RDF has always said so — but the four CSVs carry no licence statement of
+their own, and there was no `LICENSE` beside them: asking for
+`release/<version>/LICENSE` returned a 404. Anyone who downloaded
+`APD_traits.csv` had nowhere to read the terms from. Every release from here
+ships `LICENSE` alongside the data.
+
 **Turtle no longer spells any namespace out in full.** Six namespaces appearing
 in the RDF had no declared prefix. Four were simply missing — `rdf`, `om-2`, and
 one each for the Cerrado *ccon* and *fire* vocabularies, which had been sharing a
