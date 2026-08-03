@@ -59,6 +59,17 @@ them are not valid day-first at all, and the remaining four (`7/11/2000`) would
 have silently become 2000-11-07. Each file was converted on its own convention,
 and the nine DCMI values were checked against DCMI's own `dublin_core_terms.ttl`.
 
+**Nothing is listed twice any more.** Five traits named the same characteristic,
+structure or keyword more than once — `post_fire_recruitment` gave *sensitivity*
+three times and *response to* twice, and `plant_growth_substrate` gave *growth*
+twice. These were visible in `APD_traits.csv`, which prints a list. A further
+five statements about the dictionary itself were repeated verbatim: its licence
+and publisher were each asserted twice for both concept schemes, and the root
+trait group was typed a `skos:Concept` in the resource file when the hierarchy
+already types every group. The RDF never differed, because a graph is a set —
+but the file wrote 27,524 statements to express 27,512. Both numbers are now
+27,512.
+
 **Identifiers cited inside descriptions are written `ENVO:01001864`, not
 `ENVO_01001864`.** Descriptions cite terms in prose with a colon — `PATO:0001470`,
 `PO:0025034` — and 21 references had drifted to an underscore. They now match.

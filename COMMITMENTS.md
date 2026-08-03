@@ -109,10 +109,14 @@ outlives the problem it describes.
   2000-07-11, `bibliographicCitation` 2003-02-15, and `description`, `identifier`, `subject` and
   `title` 2008-01-14 — month-first in every case. Converted per file accordingly.
 
-  **Still there, and pre-existing:** the graph carries 12 duplicate statements (27,524 written,
-  27,512 distinct), down from 20. Four come from `data/APD_resource.csv`, which repeats its licence
-  and publisher rows verbatim for both concept schemes; the rest are traits naming the same
-  characteristic or keyword twice. Harmless — an RDF graph is a set — but they inflate the count.
+  **The graph no longer repeats itself.** It used to write 20 statements twice; the count written and
+  the count distinct now agree at 27,512. Twelve of those survived into this branch and were removed
+  on ehwenk's call: seven were five traits naming the same characteristic, structure or keyword more
+  than once (`post_fire_recruitment` listed *sensitivity* three times), four were `APD_resource.csv`
+  repeating its licence and publisher rows verbatim for both concept schemes, and one was that file
+  typing `trait_group_0000000` as a `skos:Concept` when the hierarchy builder already types every
+  group. None changed the graph — an RDF graph is a set — but the repeats were visible in
+  `APD_traits.csv`, which is a list.
 
 - **Input data — closed.** The five input-data gaps this section used to list were fixed in
   [#59](https://github.com/traitecoevo/APD/issues/59), and their register entries are gone. For the

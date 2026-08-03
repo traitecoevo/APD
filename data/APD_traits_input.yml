@@ -6431,8 +6431,7 @@ trait_0012120:
   created: '2021-07-14'
   modified: '2024-02-05'
   structure: PO_0009005; PO_0000003; PO_0009047
-  measured_characteristic: PATO_0000125; PATO_0001470; PATO_0001470; ECSO_00000619;
-    PATO_0001019
+  measured_characteristic: PATO_0000125; PATO_0001470; ECSO_00000619; PATO_0001019
   keywords: EnvThes:21360; PO_0025025
   exact_match: TO_0000278
   TRY_exact: Root/shoot ratio [TRY:9] (https://www.try-db.org/de/de.php)
@@ -11246,7 +11245,7 @@ trait_0021017:
   modified: '2024-02-05'
   reviewed: '2023-05-31'
   deprecated_trait_name: leaf_hydraulic_conductivity
-  structure: PO_0025034; PO_0025034
+  structure: PO_0025034
   measured_characteristic: PATO_0001585; EnvThes:22003; PATO_0001470; PATO_0000161;
     PATO_0001035; PATO_0001029
   reviewers: Timothy Brodribb; Brendan Choat
@@ -12223,10 +12222,10 @@ trait_0030015:
     Vesk; Gregory J. Jordan; Andy Leigh; Patricia Lu-Irving; Lily Dun; David Coleman
   references: Pérez-Harguindeguy 2013; Simpson 2019
   keywords: EFO:0005061; GO_0040007; EnvThes:21785; EnvThes:21880; ENVO_01000739;
-    EnvThes:10107; GO_0040007
+    EnvThes:10107
   related_match: EFO:0005061
   TRY_related: Plant growth form [TRY:42] (https://www.try-db.org/de/de.php)
-  GIFT_close: Epiphyte_2 [GIFT:1.3.2] (https://gift.uni-goettingen.de);  Aquatic_1
+  GIFT_close: Epiphyte_2 [GIFT:1.3.2] (https://gift.uni-goettingen.de); Aquatic_1
     [GIFT:1.7.1] (https://gift.uni-goettingen.de)
 trait_0030016:
   trait: plant_photosynthetic_organ
@@ -13570,7 +13569,7 @@ trait_0030612:
   deprecated_trait_name: fire_response_juvenile
   constraints: applicable to plants that experience fire
   structure: PO_0000003; PO_0000055
-  measured_characteristic: PATO_0000077; NCIT_C43414; NCIT_C25201; NCIT_C43414
+  measured_characteristic: PATO_0000077; NCIT_C43414; NCIT_C25201
   reviewers: Elizabeth Wenk; Rachael Gallagher; Russell Barrett; Carl Gosper; Rachael
     Nolan; Tony Auld; Tom Le Breton; Matthew White; Sophie Yang
   references: Noble & Slatyer 1980; Noble & Gitay 1996
@@ -13721,8 +13720,7 @@ trait_0030652:
   reviewed: '2023-05-31'
   deprecated_trait_name: fire_and_establishing
   structure: PO_0000003; PO_0009010
-  measured_characteristic: PATO_0000077; NCIT_C25201; NCIT_C25652; NCIT_C25201; NCIT_C25201;
-    PATO_0000077
+  measured_characteristic: PATO_0000077; NCIT_C25201; NCIT_C25652
   reviewers: Elizabeth Wenk; Rachael Gallagher; Russell Barrett; Carl Gosper; Rachael
     Nolan; Tony Auld; Tom Le Breton; Matthew White; Sophie Yang
   references: Pyke 2017; Noble & Slatyer 1980
@@ -14157,8 +14155,8 @@ trait_0030810:
   references: Santos 2016
   keywords: ENVO_01000203; EnvThes:21497; CHEBI_15377; ENVO_00001998; CHEBI_33284;
     PATO_0085001
-  TRY_close: Species tolerance to salt [TRY:1254] (https://www.try-db.org/de/de.php);  Species
-    tolerance to drought [TRY:30] (https://www.try-db.org/de/de.php)
+  TRY_close: Species tolerance to salt [TRY:1254] (https://www.try-db.org/de/de.php);
+    Species tolerance to drought [TRY:30] (https://www.try-db.org/de/de.php)
 trait_0030811:
   trait: plant_flood_regime_classification
   label: Plant flood regime response
