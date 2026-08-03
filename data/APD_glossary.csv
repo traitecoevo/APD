@@ -4,7 +4,7 @@ glossary_40006,ambient photosynthetic rate,Photosynthetic rate [TO:0001015] in a
 glossary_40014,bark water content,A bark mass trait [APD:trait_group_0012006] which is the mass [PATO:0000125] of water [CHEBI:15377] in a section of bark [PO:0004518].
 glossary_40026,coarse root,A root greater than 2 mm in diameter. The alternative to fine roots [EnvThes:20581].
 glossary_40040,ignition,The act of causing something to start burning [Merriam-Webster Dictionary].
-glossary_40044,fresh mass,The mass [PATO:0000125] of tissue [CARO_0000043] before it is dried; the mass of the tissue when it is fresh [EnvThes:21976].
+glossary_40044,fresh mass,The mass [PATO:0000125] of tissue [CARO:0000043] before it is dried; the mass of the tissue when it is fresh [EnvThes:21976].
 glossary_40050,leaf water content,A leaf mass trait [TO:0000505] which is the total mass [PATO:0000125] of water [CHEBI:15377] in a leaf [PO:0025034].
 glossary_40058,"maximum photosynthetic rate, Amax",Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made.
 glossary_40060,merism,"The repetition of similar parts, units, or segments within the structure of an organism. [www.lexico.com]"

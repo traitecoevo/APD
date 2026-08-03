@@ -27,7 +27,7 @@ for the downstream ripple when the vocabulary itself changes.
 | C1 | Every trait concept, **allowable categorical trait value**, trait grouping and glossary term has a unique, stable URI that resolves to that term's content. | p.8 | `test-commitments.R` — uniqueness and form of all 1,473. `scripts/build_site.R` — every one has an anchor in the rendered page. `check_redirects.sh` — one per class resolves live, plus the `+` slug. **Met in full since the stage 5 w3id rule change** (2026-07); the 819 categorical values used to land at the top of the page. |
 | C2 | `data/APD_namespace_declaration.csv` is the namespace declaration used when compiling the RDF representation. | p.8 | `test-namespaces.R` — **true since 98ceeb4**; the file is now the only source. |
 | C3 | `APD.ttl` passes SKOS validation: relationships consistent, all URIs unique, all concepts labelled. | p.13 | `test-commitments.R` — every one of the 1,475 APD subjects carries a `skos:prefLabel`. Datatype problems remain: gap C5. |
-| C4 | The data are available under **CC BY 4.0**. | p.12 | `test-commitments.R` — `LICENSE` exists and says CC BY 4.0. |
+| C4 | The data are available under **CC BY 4.0**. | p.12 | `test-commitments.R` — `LICENSE` exists, says CC BY 4.0, and is in the release manifest so it ships beside the data. |
 | C5 | The dictionary is published simultaneously in human-readable and machine-readable form: a compiled human-readable HTML document, plus `APD.ttl`, `APD.nt`, `APD.nq` and `APD.json`. | p.11-12 | `make check` — each serialisation parses and holds the same number of statements. See gap below. |
 | C6 | The derived tables `APD_traits.csv` and `APD_categorical_values.csv` are published, with the columns documented in Tables 5 and 6. | p.12 | `test-golden.R` (byte-for-byte) + `test-commitments.R` (column names) |
 | C7 | The input tables named in the paper are published and citable. | p.8, Fig. 4 | `test-commitments.R` — all 11 present in `data/` |
@@ -87,33 +87,85 @@ outlives the problem it describes.
   the terminator instead. N-Triples is N-Quads without graph labels, so the two files are legitimately
   identical.
 
-  Still open, register ids in brackets:
+  **Nothing is still open. `APD_KNOWN_GAPS` is empty**, as of
+  [#59](https://github.com/traitecoevo/APD/issues/59) — so every problem the checks find from here is
+  a regression, not debt. What follows records what was closed and what it turned out to be.
 
-  | What | Scale | Where |
-  |---|---|---|
-  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `DD/MM/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*, so the 1,363 dates have to be reformatted in the same change. Day-first is unambiguous and consistent — 764 of the 1,353 values have a first component above 12 and none has a second above 12 — so this is a deterministic reformat, **not** the data decision this table used to call it. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:225,269-271` |
-  | `dcterms:license` and `dcterms:publisher` wrap their URI in angle brackets *inside* the string literal, so the published value is the string `"<https://…>"` rather than the URI. [`rdf-uri-inside-literal`] | 8 | `data/APD_resource.csv` |
+  **Every namespace in the RDF has a declared prefix.** Six did not. `rdf`, `om-2`, `Cerrado_ccon` and
+  `Cerrado_fire` were simply missing and were added. The other two were not missing prefixes at all:
 
-- **Input data — two unresolved references, four duplicated keys, one free typo.** All tracked in
-  [#59](https://github.com/traitecoevo/APD/issues/59).
+  - `http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61556` was an **orphan row** in
+    `published_classes.csv` — the only INBIO-attributed row in the file, labelled *defence*, and
+    referenced by nothing. The obo form of the same concept, `obo:NCIT_C61556` *defense*, was already
+    a separate row and is the one two traits actually use. Deleted rather than repointed, which would
+    have produced two rows on one URI disagreeing about the label.
+  - `https://w3id.org/APD/` is **ours**, and is the namespace of the two ConceptScheme URIs
+    `…/APD/traits` and `…/APD/glossary`. Declared as `APD_scheme`. Note that the existing `APD` and
+    `APD_glossary` declarations keep their trailing `/` — **removing it does not help and costs a
+    great deal.** Measured: it drops all 1,448 `APD:`-abbreviated lines, spells out 3,080 URIs, adds
+    123 KB to `APD.ttl`, and *still* leaves the two scheme URIs written out in full, because a prefix
+    whose namespace equals the whole URI leaves nothing to abbreviate. Declaring the parent is what
+    fixes it, and it makes `APD.ttl` 11 KB smaller.
 
-  `TO_0000432` (4 traits) and `ENVO:01001125` (1 trait) are used as keywords but are absent from
-  `published_classes.csv`, so they publish as `NA [id]`. Fixing needs the labels from the source
-  ontologies, or a decision to drop the keyword. [`unresolved-identifier`]
+  Also corrected while here: the Cerrado `Recruitment` URI carried a stray slash
+  (`…/ecology/ccon/#Recruitment`). The published ontology declares
+  `xmlns:ccon="http://cerrado.linkeddata.es/ecology/ccon#"` and mints `ccon:Recruitment`, so the slash
+  was simply wrong. Verified against `ccon0.9.3-rdf.owl`.
 
-  `published_classes.csv` has four duplicated identifiers — `EnvThes:21211`, `TO_0000006`,
-  `TO_0001017`, `TO_0002616` — two repeated on identical rows and two on rows that disagree, which
-  needs a decision on which row wins. [`input-duplicate-key`, `input-redundant-row`]
+  **The relative datatype URIs are fixed.** All 1,371 statements typed `^^<xsd:date>` or
+  `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI — now carry the full
+  `http://www.w3.org/2001/XMLSchema#` form, named as `XSD_DATE` alongside the existing `XSD_DOUBLE`.
+  This could only be done together with reformatting the 1,363 dates, because correcting the datatype
+  alone would have moved them from *unknown* datatype to *invalidly typed*.
 
-  `data/APD_units.csv` has `[ppm]` in the `identifier` cell of two rows. **This one is free, and this
-  table used to describe it wrongly.** The second row is parts per thousand and its URI, label and
-  UCUM code all say so; only that cell is a typo for `[ppth]`. No part of the build reads the column —
-  `convert_to_triples.R` matches units on `label` and `Entity` — so the published RDF is already
-  correct for both units and for the 3 traits pointing at the ppm URI and 14 at ppth. Fixing it
-  changes no output and needs no decision. [`input-duplicate-key`]
+  **The two input files did not share a date convention, and this table said they did.** It called all
+  of them `DD/MM/YYYY`. That is right for the 1,353 dates in `APD_traits_input.yml` — 764 have a first
+  component above 12 and none has a second above 12 — but the 10 in `APD_annotation_properties.csv`
+  are **month-first**. They are the DCMI issue dates, and six of them (`2/15/2003`, `1/14/2008`) are
+  not valid day-first at all. The other four are `7/11/2000`, which *is* valid day-first and would
+  have silently become 2000-11-07. All nine DCMI values were checked against
+  `dublin_core_terms.ttl`: `dcterms:extent`, `created`, `modified` and `references` are issued
+  2000-07-11, `bibliographicCitation` 2003-02-15, and `description`, `identifier`, `subject` and
+  `title` 2008-01-14 — month-first in every case. Converted per file accordingly.
 
-  > This table previously said `ENVO:01001125` "uses `:` where every ENVO entry in that file uses
-  > `_`", and that the units row made "the published RDF assert the wrong identifier". Neither is
+  **The graph no longer repeats itself.** It used to write 20 statements twice; the count written and
+  the count distinct now agree at 27,512. Twelve of those survived into this branch and were removed
+  on ehwenk's call: seven were five traits naming the same characteristic, structure or keyword more
+  than once (`post_fire_recruitment` listed *sensitivity* three times), four were `APD_resource.csv`
+  repeating its licence and publisher rows verbatim for both concept schemes, and one was that file
+  typing `trait_group_0000000` as a `skos:Concept` when the hierarchy builder already types every
+  group. None changed the graph — an RDF graph is a set — but the repeats were visible in
+  `APD_traits.csv`, which is a list.
+
+- **Input data — closed.** The five input-data gaps this section used to list were fixed in
+  [#59](https://github.com/traitecoevo/APD/issues/59), and their register entries are gone. For the
+  record, because two of them were described wrongly here for months:
+
+  `TO_0000432` and `ENVO_01001125` were used as keywords but absent from `published_classes.csv`, so
+  five traits published `NA [id]`. Both terms are now in the file with labels from the source
+  ontologies (*temperature stress response trait*, *ice*), and the one colon-style keyword reference
+  was normalised to `ENVO_01001125` so it matches. [`unresolved-identifier`]
+
+  `published_classes.csv` had four duplicated identifiers — `EnvThes:21211`, `TO_0000006`,
+  `TO_0001017`, `TO_0002616`. All four are deduplicated. `TO_0000006` and `TO_0001017` were repeated
+  on byte-identical rows. The two that disagreed both kept the better row: the dropped `EnvThes:21211`
+  row carried mojibake (`m?� s?�`) where the survivor has `m⁻² s⁻¹`, and the dropped `TO_0002616` row
+  used `[…]` brackets and a leading caveat where the survivor uses the `|`-separated parenthetical
+  form the other TO imports use. [`input-duplicate-key`, `input-redundant-row`]
+
+  `SWEET_propConductivity` now carries its trailing `/`, so URIs built from it abbreviate.
+  [`namespace-no-delimiter`]
+
+  `data/APD_units.csv` had `[ppm]` in the `identifier` cell of two rows; the second is now `[ppth]`.
+  Nothing in the build reads that column — `convert_to_triples.R` matches units on `label` and
+  `Entity` — so this changed no published output. [`input-duplicate-key`]
+
+  `dcterms:license` and `dcterms:publisher` wrapped their URI in angle brackets *inside* the string
+  literal, publishing the string `"<https://…>"` rather than the URI. The brackets are stripped from
+  all 8 statements. [`rdf-uri-inside-literal`]
+
+  > This section previously said `ENVO:01001125` "uses `:` where every ENVO entry in that file uses
+  > `_`", and that the units row made "the published RDF assert the wrong identifier". Neither was
   > true: there are no ENVO entries in `published_classes.csv`, which already carries 95 colon-style
   > identifiers against 657 underscore-style; and the units `identifier` column reaches no output.
 

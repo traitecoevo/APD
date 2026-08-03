@@ -101,11 +101,32 @@ test_that("C7: every input table the paper names is present", {
 test_that("C4: the advertised licence matches a licence file", {
   # index.qmd advertises CC BY 4.0 and the paper states it (p.12). Stage 0 added
   # the files; this stops DESCRIPTION and the site drifting apart again.
-  skip_if_not(file.exists(file.path(APD_ROOT, "LICENSE")),
-              "LICENSE does not exist yet (gap C4)")
+  #
+  # This used to skip when LICENSE was absent, dating from when it was gap C4 --
+  # which made the one thing it exists to catch unable to fail it.
+  expect_true(file.exists(file.path(APD_ROOT, "LICENSE")))
 
   licence <- readr::read_lines(file.path(APD_ROOT, "LICENSE"))
   expect_true(any(grepl("CC BY 4.0|Attribution 4.0", licence, ignore.case = TRUE)))
+})
+
+test_that("C4: a release snapshot ships the licence beside the data", {
+  # C4 promises the *data* are CC BY 4.0, but the check above only looks at the
+  # repo. Until #59 nothing published said so outside the RDF: the four CSVs
+  # carry no licence and release/<version>/LICENSE returned a 404, so anyone
+  # downloading APD_traits.csv had no way to learn the terms.
+  #
+  # Asserted against the text of scripts/release.R rather than a built snapshot,
+  # because RELEASE_FILES is a local in a script rather than an exported value,
+  # and the snapshots already published are archives that must not be rewritten
+  # to satisfy a test.
+  script <- readr::read_lines(file.path(APD_ROOT, "scripts", "release.R"))
+  manifest <- script[seq(
+    grep("^RELEASE_FILES <- c\\(", script),
+    grep("^names\\(RELEASE_FILES\\)", script)
+  )]
+
+  expect_true(any(grepl("\"LICENSE\"", manifest)))
 })
 
 test_that("the known-gaps register only lists problems that still exist", {

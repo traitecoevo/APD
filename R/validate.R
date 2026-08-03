@@ -6,63 +6,20 @@
 # existing debt is enumerated with a reason and an owner, and anything NOT on the
 # list fails. Fixing a gap means deleting its entry.
 #
-# Everything on the register today changes published output when fixed, which is
-# why none of them are fixed here -- see COMMITMENTS.md.
+# The register is EMPTY, as of APD#59 -- every problem the checks can find is
+# fixed, so every problem they find from here is a regression. Add an entry only
+# for a defect that is already published and cannot be fixed without a decision
+# from the vocabulary owner, and say who owes the decision.
 
 #' Problems that exist in the published dictionary and are tracked, not fixed
 #'
 #' Keyed by problem id. Each value says why it is still open.
-APD_KNOWN_GAPS <- c(
-  `rdf-datatype-relative-uri` = paste(
-    "1,371 statements are typed '^^<xsd:date>' or '^^<xsd:anyURI>' -- a prefixed",
-    "name where RDF requires an absolute URI, so it resolves as a relative",
-    "reference instead of the XSD datatype. R/convert_to_triples.R:225,269-271.",
-    "The dates are also DD/MM/YYYY, not ISO 8601, so correcting the datatype URI",
-    "alone would make them invalidly typed. The two have to be fixed together.",
-    "Day-first is unambiguous and consistent -- 764 of the 1,353 values have a",
-    "first component above 12 and none has a second above 12 -- so reformatting",
-    "is deterministic, not a judgement call. Tracked in APD#59."
-  ),
-  `namespace-no-delimiter` = paste(
-    "SWEET_propConductivity is declared without a trailing '/', so the URIs",
-    "built from it are not abbreviated. Adding it changes published Turtle."
-  ),
-  `namespace-undeclared` = paste(
-    "Some namespaces appearing in the RDF have no declared prefix. Declaring",
-    "them changes how APD.ttl abbreviates those URIs."
-  ),
-  `input-duplicate-key` = paste(
-    "data/APD_units.csv has `[ppm]` in the `identifier` cell of two rows. The",
-    "second row is parts per thousand and its URI, label and UCUM code all say",
-    "so; only that one cell is a typo for `[ppth]`. Nothing in the build reads",
-    "the column -- units are matched on `label` and `Entity` -- so the published",
-    "RDF is correct and fixing it changes no output. published_classes.csv is the",
-    "real gap: four duplicated identifiers, two on rows that disagree, which does",
-    "need a decision on which row wins. Tracked in APD#59."
-  ),
-  `input-redundant-row` = paste(
-    "published_classes.csv repeats four identifiers on rows that are otherwise",
-    "identical. Harmless -- match() returns the first and it is the right one --",
-    "but it should be deduplicated. Same maintainer decision as",
-    "input-duplicate-key."
-  ),
-  `rdf-uri-inside-literal` = paste(
-    "The license and publisher statements in data/APD_resource.csv wrap their",
-    "URI in angle brackets *inside* the string literal, so the published value",
-    "is the string \"<https://...>\" rather than the URI. Well-formed RDF, wrong",
-    "value. Fixing it changes published output."
-  ),
-  `unresolved-identifier` = paste(
-    "TO_0000432 (4 traits) and ENVO:01001125 (1 trait) are referenced as",
-    "keywords but are absent from published_classes.csv, so they publish as",
-    "'NA [id]'. Adding them needs the labels from the source ontologies, or a",
-    "decision to drop the keyword. Tracked in APD#59. The register used to say",
-    "ENVO:01001125 was also punctuated wrongly, using ':' where 'the ENVO",
-    "entries in that file use _'; there are no ENVO entries in that file, and it",
-    "already carries 95 colon-style identifiers against 657 underscore-style, so",
-    "the punctuation is not part of the problem."
-  )
-)
+#'
+#' Subscripting a named vector to length zero, rather than writing
+#' `character(0)`, is deliberate: it keeps the `names` attribute, and
+#' `names(character(0))` is NULL, which would make the staleness check in
+#' test-commitments.R compare NULL against character(0) and fail.
+APD_KNOWN_GAPS <- c(`example-problem-id` = "why it is still open")[0]
 
 #' Extract the URIs from a set of N-Triples lines, by role
 #'

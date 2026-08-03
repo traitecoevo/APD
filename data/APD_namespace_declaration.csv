@@ -11,11 +11,14 @@ obo,http://purl.obolibrary.org/obo/
 oboecore,http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#
 ont,https://w3id.org/iadopt/ont/
 owl,http://www.w3.org/2002/07/owl#
+rdf,http://www.w3.org/1999/02/22-rdf-syntax-ns#
 rdfs,http://www.w3.org/2000/01/rdf-schema#
 uom,https://w3id.org/uom/
 datacite,http://purl.org/datacite/v4.4/
 xsd,http://www.w3.org/2001/XMLSchema#
 Cerrado,http://cerrado.linkeddata.es/ecology/
+Cerrado_ccon,http://cerrado.linkeddata.es/ecology/ccon#
+Cerrado_fire,http://cerrado.linkeddata.es/ecology/fire#
 CorVeg,http://linked.data.gov.au/def/corveg-cv/
 CO,https://cropontology.org/rdf/
 DCM,http://dicom.nema.org/resources/ontology/DCM/
@@ -32,9 +35,11 @@ SWEET_phenSolid,http://sweetontology.net/phenSolid/
 SWEET_phenSystem,http://sweetontology.net/phenSystem/
 SWEET_procWave,http://sweetontology.net/procWave/
 SWEET_prop,http://sweetontology.net/prop/
-SWEET_propConductivity,http://sweetontology.net/propConductivity
+SWEET_propConductivity,http://sweetontology.net/propConductivity/
 SWEET_propPressure,http://sweetontology.net/propPressure/
 SWEET_propTime,http://sweetontology.net/propTime/
 SWEET_realmSoil,http://sweetontology.net/realmSoil/
 SWEET_reprSciComponent,http://sweetontology.net/reprSciComponent/
 SWEET_reprTimeDay,http://sweetontology.net/reprTimeDay/
+om-2,http://www.ontology-of-units-of-measure.org/resource/om-2/
+APD_scheme,https://w3id.org/APD/

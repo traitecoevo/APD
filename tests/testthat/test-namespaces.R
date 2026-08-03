@@ -48,13 +48,23 @@ test_that("apd_namespaces() rejects a table it cannot trust", {
   expect_error(apd_namespaces(broken), "prefix.*scheme")
 })
 
-test_that("every namespace in the RDF either has a prefix or is a known gap", {
-  # The anti-drift check the plan asks for. It passes only because the
-  # namespaces still missing a prefix are on the register in R/validate.R; adding
-  # a vocabulary without declaring it will fail here.
+test_that("every namespace in the RDF has a declared prefix", {
+  # The anti-drift check the plan asks for: adding a vocabulary without
+  # declaring it fails here.
+  #
+  # This used to loop over the undeclared namespaces asserting each was on the
+  # register. Once #59 declared the last of them the loop body stopped running,
+  # leaving a test with no expectations that testthat skipped as empty -- so it
+  # asserts the count directly now, and would have caught its own vacuity.
   problems <- validate_apd(data_dir = APD_DATA, out_dir = APD_EXPORT)
   undeclared <- Filter(function(p) p$id == "namespace-undeclared", problems)
 
+  # Declare the prefix in data/APD_namespace_declaration.csv rather than adding
+  # a register entry: an entry is for a *published* defect needing a decision.
+  expect_identical(length(undeclared), 0L)
+
+  # Kept for the case where one is registered anyway, so this stays the single
+  # place that says what an undeclared namespace is allowed to be.
   for (problem in undeclared) {
     expect_identical(problem$severity, "known gap")
   }

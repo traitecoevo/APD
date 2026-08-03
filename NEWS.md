@@ -11,6 +11,96 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## Unreleased
+
+**Five traits now name their keywords instead of publishing `NA`.** `TO_0000432`
+(*temperature stress response trait*, used by four traits) and `ENVO_01001125`
+(*ice*, used by one) were referenced as keywords but were missing from the
+published-classes table, so they resolved to nothing and the trait table showed
+`NA [TO_0000432]`. Both terms are now present with labels from the source
+ontologies. No trait, URI or description changed meaning; five values that were
+blank now read correctly.
+
+**Four duplicated terms in the published-classes table are deduplicated.** Two
+were repeated on identical rows and were always harmless. The other two had rows
+that disagreed, which made one of each pair unreachable: `EnvThes:21211`
+(*stomatal conductance*) kept the row whose description renders `m⁻² s⁻¹`
+correctly rather than as mojibake, and `TO_0002616` (*flowering time trait*) kept
+the wording that matches the other terms imported from the Plant Trait Ontology.
+
+**The licence and publisher are published as URIs, not as bracketed strings.**
+Eight statements wrapped their URI in angle brackets *inside* the string literal,
+so `dcterms:license` published the eight-character-longer string
+`"<https://creativecommons.org/licenses/by/4.0/>"`. Anything reading those two
+properties saw a value that was not a URL.
+
+**Turtle abbreviates the SWEET conductivity namespace.** Its declaration was
+missing a trailing `/`, so URIs built from it were spelled out in full.
+
+**`[ppth]` is no longer labelled `[ppm]` in the units table.** A typo in one cell
+of a column the build never reads — the published RDF was already correct for
+both units.
+
+**Every date is ISO 8601, and every datatype URI is absolute.** These had to
+change together. All 1,363 dates were `D/M/YYYY`-style and are now `YYYY-MM-DD` —
+a calendar date with no time component. At the same time the 1,371 statements
+typed `^^<xsd:date>` or `^^<xsd:anyURI>` were corrected to the full
+`http://www.w3.org/2001/XMLSchema#` form; a prefixed name is a *relative* URI
+where RDF requires an absolute one, so those literals previously carried a
+datatype nobody had declared. Correcting the datatype without reformatting the
+dates would have made them invalidly typed rather than merely untyped, which is
+why neither was done before. Turtle still shows `xsd:date`, because `xsd` is a
+declared prefix there — that is the abbreviation working as intended.
+
+Worth noting for anyone who parsed the old dates: **the two input files did not
+share a convention.** The 1,353 trait dates were day-first, but the 10 dates on
+the annotation properties are the DCMI issue dates and are month-first. Six of
+them are not valid day-first at all, and the remaining four (`7/11/2000`) would
+have silently become 2000-11-07. Each file was converted on its own convention,
+and the nine DCMI values were checked against DCMI's own `dublin_core_terms.ttl`.
+
+**A release now carries its licence.** The dictionary has always been CC BY 4.0,
+and the RDF has always said so — but the four CSVs carry no licence statement of
+their own, and there was no `LICENSE` beside them: asking for
+`release/<version>/LICENSE` returned a 404. Anyone who downloaded
+`APD_traits.csv` had nowhere to read the terms from. Every release from here
+ships `LICENSE` alongside the data.
+
+**Turtle no longer spells any namespace out in full.** Six namespaces appearing
+in the RDF had no declared prefix. Four were simply missing — `rdf`, `om-2`, and
+one each for the Cerrado *ccon* and *fire* vocabularies, which had been sharing a
+declaration for their parent that matched neither. The fifth was APD's own
+`https://w3id.org/APD/`, the namespace of the two ConceptScheme URIs, now
+declared as `APD_scheme`; `APD.ttl` is 11 KB smaller as a result. The sixth was
+not a namespace problem at all — see below.
+
+**The Cerrado *recruitment* term had a stray slash in its URI.** It was published
+as `…/ecology/ccon/#Recruitment`; the Cerrado ontology mints
+`…/ecology/ccon#Recruitment`. Anyone who followed the old URI got nothing back.
+
+**A duplicate entry for *defence* is gone.** `C61556` appeared twice in the
+published-classes table: once under the National Cancer Institute Thesaurus URI,
+labelled *defence* and attributed to the Invasion Biology Ontology, and once
+under the OBO URI as *defense*. Only the second was ever referenced — the first
+was unreachable, and is removed.
+
+**Nothing is listed twice any more.** Five traits named the same characteristic,
+structure or keyword more than once — `post_fire_recruitment` gave *sensitivity*
+three times and *response to* twice, and `plant_growth_substrate` gave *growth*
+twice. These were visible in `APD_traits.csv`, which prints a list. A further
+five statements about the dictionary itself were repeated verbatim: its licence
+and publisher were each asserted twice for both concept schemes, and the root
+trait group was typed a `skos:Concept` in the resource file when the hierarchy
+already types every group. The RDF never differed, because a graph is a set —
+but the file wrote 27,524 statements to express 27,512. Both numbers are now
+27,512.
+
+**Identifiers cited inside descriptions are written `ENVO:01001864`, not
+`ENVO_01001864`.** Descriptions cite terms in prose with a colon — `PATO:0001470`,
+`PO:0025034` — and 21 references had drifted to an underscore. They now match.
+This is display text: identifiers inside a description are published as literal
+text and are not resolved, so nothing looks up differently.
+
 ## APD Version 2.1.2
 
 A patch release, and **nothing here can invalidate data built against 2.1.1**. One
