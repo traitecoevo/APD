@@ -924,6 +924,14 @@
       }
     },
     {
+      "@id": "http://purl.obolibrary.org/obo/ENVO_01001125",
+      "http://purl.org/dc/terms/identifier": "ENVO_01001125",
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "ice"
+      }
+    },
+    {
       "@id": "http://purl.obolibrary.org/obo/ENVO_01001242",
       "http://purl.org/dc/terms/identifier": "ENVO_01001242",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -5134,6 +5142,14 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "salt sensitivity"
+      }
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/TO_0000432",
+      "http://purl.org/dc/terms/identifier": "TO_0000432",
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "temperature stress response trait"
       }
     },
     {
@@ -9783,11 +9799,11 @@
       },
       "http://purl.org/dc/terms/license": {
         "@type": "xsd:anyURI",
-        "@value": "<https://creativecommons.org/licenses/by/4.0/>"
+        "@value": "https://creativecommons.org/licenses/by/4.0/"
       },
       "http://purl.org/dc/terms/publisher": {
         "@type": "xsd:anyURI",
-        "@value": "<https://austraits.org/>"
+        "@value": "https://austraits.org/"
       },
       "http://purl.org/dc/terms/title": {
         "@language": "en",
@@ -9902,12 +9918,12 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://purl.org/dc/terms/identifier": "glossary_40006",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -10028,12 +10044,12 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://purl.org/dc/terms/identifier": "glossary_40058",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -10259,12 +10275,12 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://purl.org/dc/terms/identifier": "glossary_40092",
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."
+        "@value": "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -10389,11 +10405,11 @@
       },
       "http://purl.org/dc/terms/license": {
         "@type": "xsd:anyURI",
-        "@value": "<https://creativecommons.org/licenses/by/4.0/>"
+        "@value": "https://creativecommons.org/licenses/by/4.0/"
       },
       "http://purl.org/dc/terms/publisher": {
         "@type": "xsd:anyURI",
-        "@value": "<https://austraits.org/>"
+        "@value": "https://austraits.org/"
       },
       "http://purl.org/dc/terms/title": {
         "@language": "en",
@@ -31289,7 +31305,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of aluminium [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of aluminium [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000112",
@@ -31376,7 +31392,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of boron [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of boron [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000114",
@@ -31463,7 +31479,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of carbon [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of carbon [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000116",
@@ -31550,7 +31566,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000118",
@@ -31640,7 +31656,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of copper [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of copper [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000126",
@@ -31730,7 +31746,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of iron [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of iron [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000128",
@@ -31820,7 +31836,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000130",
@@ -31910,7 +31926,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000132",
@@ -32000,7 +32016,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of manganese [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of manganese [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000134",
@@ -32090,7 +32106,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of molybdenum [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of molybdenum [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000136",
@@ -32180,7 +32196,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000138",
@@ -32270,7 +32286,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000140",
@@ -32360,7 +32376,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nickel [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nickel [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000142",
@@ -32443,7 +32459,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000144",
@@ -32533,7 +32549,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000146",
@@ -32623,7 +32639,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of zinc [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of zinc [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000152",
@@ -33496,7 +33512,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000518",
@@ -33590,7 +33606,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000530",
@@ -33684,7 +33700,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000532",
@@ -33778,7 +33794,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000538",
@@ -33872,7 +33888,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000540",
@@ -33966,7 +33982,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0000544",
@@ -40899,7 +40915,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of leaf [PO:0025034] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839] to the leaf dry mass before the combustion process."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of leaf [PO:0025034] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839] to the leaf dry mass before the combustion process."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0002822",
@@ -40988,7 +41004,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of bark [PO:0004518] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839] to the bark dry mass before the combustion process."
+          "@value": "The ratio [PATO:0001470] of the mass [PATO:0000125] of bark [PO:0004518] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839] to the bark dry mass before the combustion process."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0002824",
@@ -42322,7 +42338,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant morphology trait [TO:0000398] which is the maximum [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242] for a taxon [NCIT:C40098] in a given population [PCO:0000001] or location [NCIT:C25341]. This is a plant's larger [NCIT:C49508] width dimension and is orthogonal to its height and breadth."
+          "@value": "A whole plant morphology trait [TO:0000398] which is the maximum [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242] for a taxon [NCIT:C40098] in a given population [PCO:0000001] or location [NCIT:C25341]. This is a plant's larger [NCIT:C49508] width dimension and is orthogonal to its height and breadth."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0010021",
@@ -42405,7 +42421,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant morphology trait [TO:0000398] which is the smaller [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242]."
+          "@value": "A whole plant morphology trait [TO:0000398] which is the smaller [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0010022",
@@ -51494,7 +51510,7 @@
         },
         {
           "@language": "en",
-          "@value": "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO:21001214] that is reflected [SWEET:procWave/Reflection] by a leaf."
+          "@value": "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO_21001214] that is reflected [SWEET:procWave/Reflection] by a leaf."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0011713",
@@ -65883,7 +65899,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic pathway, or biochemical reaction [NCIT:C19899], used by a plant to convert carbon dioxide [ENVO:01000451] into carbohydrates [CHEBI:16646], with options being C3 photosynthesis [GO:0019253], C4 photosynthesis [GO:0009760], and CAM photosynthesis [GO:0009761]."
+          "@value": "The photosynthetic pathway, or biochemical reaction [NCIT:C19899], used by a plant to convert carbon dioxide [ENVO_01000451] into carbohydrates [CHEBI:16646], with options being C3 photosynthesis [GO:0019253], C4 photosynthesis [GO:0009760], and CAM photosynthesis [GO:0009761]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020221",
@@ -66065,7 +66081,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020240",
@@ -66193,7 +66209,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020241",
@@ -66321,7 +66337,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020242",
@@ -66446,7 +66462,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020243",
@@ -66571,7 +66587,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020244",
@@ -66699,7 +66715,7 @@
         },
         {
           "@language": "en",
-          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
+          "@value": "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020245",
@@ -66830,7 +66846,7 @@
         },
         {
           "@language": "en",
-          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations."
+          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020310",
@@ -66932,7 +66948,7 @@
         },
         {
           "@language": "en",
-          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations."
+          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020311",
@@ -67034,7 +67050,7 @@
         },
         {
           "@language": "en",
-          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations."
+          "@value": "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020312",
@@ -67136,7 +67152,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of leaf [PO:0025034] intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] to atmospheric carbon dioxide [ENVO:01000451] concentration."
+          "@value": "The ratio [PATO:0001470] of leaf [PO:0025034] intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] to atmospheric carbon dioxide [ENVO_01000451] concentration."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020313",
@@ -67239,7 +67255,7 @@
         },
         {
           "@language": "en",
-          "@value": "The concentration [PATO:0000033] of carbon dioxide [ENVO:01000451] inside chloroplasts [GO:0009507] in leaves [PO:0025034]."
+          "@value": "The concentration [PATO:0000033] of carbon dioxide [ENVO_01000451] inside chloroplasts [GO:0009507] in leaves [PO:0025034]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020314",
@@ -67334,7 +67350,7 @@
         },
         {
           "@language": "en",
-          "@value": "The atmospheric carbon dioxide [ENVO:01000451] concentration [PATO:0000033]."
+          "@value": "The atmospheric carbon dioxide [ENVO_01000451] concentration [PATO:0000033]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020315",
@@ -68207,7 +68223,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] maximum [NCIT:C25564] electron transport [MESH:D004579] rate [PATO:0000161] to its maximum carboxylation [MOP:0000591] rate, reflecting the trade-off between photosynthetic gain and costs of excess energy dissipation, with the ratio affected by temperature, photosynthetically active radiation [ENVO:01001864] (light), and carbon dioxide [CHEBI:16526] concentration. These are both model parameters [STATO:0000034] derived from a photosynthesis [GO:0015979] A-ci response curve."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] maximum [NCIT:C25564] electron transport [MESH:D004579] rate [PATO:0000161] to its maximum carboxylation [MOP:0000591] rate, reflecting the trade-off between photosynthetic gain and costs of excess energy dissipation, with the ratio affected by temperature, photosynthetically active radiation [ENVO_01001864] (light), and carbon dioxide [CHEBI:16526] concentration. These are both model parameters [STATO:0000034] derived from a photosynthesis [GO:0015979] A-ci response curve."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020416",
@@ -68640,7 +68656,7 @@
         },
         {
           "@language": "en",
-          "@value": "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
+          "@value": "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020420",
@@ -68652,6 +68668,9 @@
         "@id": "https://doi.org/10.1071/fp20344"
       },
       "http://semanticscience.org/resource/SIO_000147": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/TO_0000432"
+        },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0090546"
         },
@@ -68718,7 +68737,7 @@
         },
         {
           "@language": "en",
-          "@value": "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
+          "@value": "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020421",
@@ -68730,6 +68749,9 @@
         "@id": "https://doi.org/10.1071/fp20344"
       },
       "http://semanticscience.org/resource/SIO_000147": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/TO_0000432"
+        },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0090546"
         },
@@ -68796,7 +68818,7 @@
         },
         {
           "@language": "en",
-          "@value": "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546] as the leaf temperature increases (is heated) [PATO:0001305] which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter [STATO:0000034] derived from a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
+          "@value": "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546] as the leaf temperature increases (is heated) [PATO:0001305] which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter [STATO:0000034] derived from a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020422",
@@ -68805,6 +68827,9 @@
         "@value": "01/04/2025"
       },
       "http://semanticscience.org/resource/SIO_000147": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/TO_0000432"
+        },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0090546"
         },
@@ -68866,7 +68891,7 @@
         },
         {
           "@language": "en",
-          "@value": "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] at which ice [ENVO:01001125] crystals [ENVO:01000845] begin to form inside plant tissues [CARO:0000043]."
+          "@value": "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] at which ice [ENVO_01001125] crystals [ENVO_01000845] begin to form inside plant tissues [CARO:0000043]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020423",
@@ -68874,9 +68899,17 @@
         "@type": "xsd:date",
         "@value": "01/04/2025"
       },
-      "http://semanticscience.org/resource/SIO_000147": {
-        "@id": "http://purl.obolibrary.org/obo/PO_0020039"
-      },
+      "http://semanticscience.org/resource/SIO_000147": [
+        {
+          "@id": "http://purl.obolibrary.org/obo/TO_0000432"
+        },
+        {
+          "@id": "http://purl.obolibrary.org/obo/PO_0020039"
+        },
+        {
+          "@id": "http://purl.obolibrary.org/obo/ENVO_01001125"
+        }
+      ],
       "http://terminologies.gfbio.org/terms/ETS/expectedUnit": "C",
       "http://terminologies.gfbio.org/terms/ETS/maxAllowedValue": {
         "@type": "http://www.w3.org/2001/XMLSchema#double",
@@ -68942,7 +68975,7 @@
         },
         {
           "@language": "en",
-          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit leaf area [PATO:0001323]."
+          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit leaf area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020510",
@@ -69049,7 +69082,7 @@
         },
         {
           "@language": "en",
-          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit leaf dry mass [TO:0001014]."
+          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit leaf dry mass [TO:0001014]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020511",
@@ -69159,7 +69192,7 @@
         },
         {
           "@language": "en",
-          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels, recorded per unit leaf area [PATO:0001323]."
+          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels, recorded per unit leaf area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020512",
@@ -69260,7 +69293,7 @@
         },
         {
           "@language": "en",
-          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant stems [PO:0009047] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit stem area [PATO:0001323]."
+          "@value": "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant stems [PO:0009047] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit stem area [PATO:0001323]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020513",
@@ -69365,7 +69398,7 @@
         },
         {
           "@language": "en",
-          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
+          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020610",
@@ -69478,7 +69511,7 @@
         },
         {
           "@language": "en",
-          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
+          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020611",
@@ -69591,7 +69624,7 @@
         },
         {
           "@language": "en",
-          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
+          "@value": "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020612",
@@ -69701,7 +69734,7 @@
         },
         {
           "@language": "en",
-          "@value": "The stomatal [PO:0008032] water vapour resistance [SWEET:propConductivity/Resistance] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal resistance is the resistance to the diffusion [NCIT:C82333] of carbon dioxide [CHEBI:16526] through stomata."
+          "@value": "The stomatal [PO:0008032] water vapour resistance [SWEET:propConductivity/Resistance] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal resistance is the resistance to the diffusion [NCIT:C82333] of carbon dioxide [CHEBI:16526] through stomata."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020630",
@@ -70043,7 +70076,7 @@
         },
         {
           "@language": "en",
-          "@value": "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
+          "@value": "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020660",
@@ -70156,7 +70189,7 @@
         },
         {
           "@language": "en",
-          "@value": "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
+          "@value": "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020661",
@@ -70269,7 +70302,7 @@
         },
         {
           "@language": "en",
-          "@value": "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
+          "@value": "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020662",
@@ -70382,7 +70415,7 @@
         },
         {
           "@language": "en",
-          "@value": "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area  [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
+          "@value": "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area  [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020663",
@@ -70923,7 +70956,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020710",
@@ -71038,7 +71071,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020711",
@@ -71153,7 +71186,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020712",
@@ -71261,7 +71294,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020713",
@@ -71366,7 +71399,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of biomass [ENVO:01000155] production [EnvThes:21071] (carbon dioxide [ENVO:01000451] fixation) to transpiration [ENVO:02500035] (water [CHEBI:15377] loss) across a given time interval [TimeInterval]."
+          "@value": "The ratio [PATO:0001470] of biomass [ENVO_01000155] production [EnvThes:21071] (carbon dioxide [ENVO_01000451] fixation) to transpiration [ENVO_02500035] (water [CHEBI:15377] loss) across a given time interval [TimeInterval]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020760",
@@ -71583,7 +71616,7 @@
         },
         {
           "@language": "en",
-          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its transpiration [ENVO:02500035] rate [PATO:0000161], with photosynthetic rate and transpiration rate determined by gas exchange measurements."
+          "@value": "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its transpiration [ENVO_02500035] rate [PATO:0000161], with photosynthetic rate and transpiration rate determined by gas exchange measurements."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020762",
@@ -71690,7 +71723,7 @@
         },
         {
           "@language": "en",
-          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of the efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically active radiation [ENVO:01001864], calculated from the reflectance [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 531 nm (a xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and a higher value indicates a higher radiation use efficiency."
+          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of the efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically active radiation [ENVO_01001864], calculated from the reflectance [EnvThes:21580] of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242] at 531 nm (a xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and a higher value indicates a higher radiation use efficiency."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020813",
@@ -71806,7 +71839,7 @@
         },
         {
           "@language": "en",
-          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] water status, which is the ratio [PATO:0001470] of the reflectance [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 970 nm to the reflectance at 900 nm, recorded with a spectroradiometer [MOSAIC:00000974], where a higher value indicates a higher canopy water [CHEBI:15377] content."
+          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] water status, which is the ratio [PATO:0001470] of the reflectance [EnvThes:21580] of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242] at 970 nm to the reflectance at 900 nm, recorded with a spectroradiometer [MOSAIC:00000974], where a higher value indicates a higher canopy water [CHEBI:15377] content."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020814",
@@ -71913,7 +71946,7 @@
         },
         {
           "@language": "en",
-          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] vegetation status, which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of red light versus short-wave infrared radiation (SWIR) [ENVO:21001214] off the plant canopy [ENVO:01001242], where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."
+          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] vegetation status, which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of red light versus short-wave infrared radiation (SWIR) [ENVO_21001214] off the plant canopy [ENVO_01001242], where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020815",
@@ -72013,7 +72046,7 @@
         },
         {
           "@language": "en",
-          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of chlorophyll [CHEBI:28966] absorption [SWEET:procWave/Absorption], which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of different wavelengths off the plant canopy [ENVO:01001242], where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."
+          "@value": "A remote sensing [EnvThes:21762] index [NCIT:C25390] of chlorophyll [CHEBI:28966] absorption [SWEET:procWave/Absorption], which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of different wavelengths off the plant canopy [ENVO_01001242], where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020816",
@@ -72111,7 +72144,7 @@
         },
         {
           "@language": "en",
-          "@value": "A relative measure of the mass [PATO:0000125] of chlorophyll [CHEBI:28966] in a leaf [PO:0025034] determined as the difference in light transmission [SWEET:procWave/Transmission] through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared [ENVO:21001214] (940 nm, not absorbed by chlorophyll)."
+          "@value": "A relative measure of the mass [PATO:0000125] of chlorophyll [CHEBI:28966] in a leaf [PO:0025034] determined as the difference in light transmission [SWEET:procWave/Transmission] through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared [ENVO_21001214] (940 nm, not absorbed by chlorophyll)."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0020817",
@@ -73233,7 +73266,7 @@
         },
         {
           "@language": "en",
-          "@value": "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."
+          "@value": "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO_02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021031",
@@ -74383,7 +74416,7 @@
         },
         {
           "@language": "en",
-          "@value": "In a plant tissue [CARO:0000043], the potential energy [ENVO:2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane, such that the osmotic potential becomes more negative as the solute concentration increases or the cell water content decreases. Osmotic potential is equal to negative osmotic pressure [EnvThes:21558] and is also referred to as solute potential."
+          "@value": "In a plant tissue [CARO:0000043], the potential energy [ENVO_2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane, such that the osmotic potential becomes more negative as the solute concentration increases or the cell water content decreases. Osmotic potential is equal to negative osmotic pressure [EnvThes:21558] and is also referred to as solute potential."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021057",
@@ -74491,7 +74524,7 @@
         },
         {
           "@language": "en",
-          "@value": "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is, for a shoot or leaf [PO:0025034], the osmotic potential (solute potential) when they are fully hydrated (relative water content = 100%). Osmotic potential is always negative and is the potential energy [ENVO:2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane."
+          "@value": "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is, for a shoot or leaf [PO:0025034], the osmotic potential (solute potential) when they are fully hydrated (relative water content = 100%). Osmotic potential is always negative and is the potential energy [ENVO_2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0021058",
@@ -75471,7 +75504,7 @@
         },
         {
           "@language": "en",
-          "@value": "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed."
+          "@value": "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0022012",
@@ -75559,7 +75592,7 @@
         },
         {
           "@language": "en",
-          "@value": "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed."
+          "@value": "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0022013",
@@ -76365,7 +76398,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which indicates either the substrate [EFO:0005061] on which a plant grows [GO:0040007] or, broadly, whether the plant grows in an aquatic [EnvThes:21785] or terrestrial [EnvThes:21880] habitat [ENVO:01000739]. Substrate is defined as the surface to which an organism is attached."
+          "@value": "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which indicates either the substrate [EFO:0005061] on which a plant grows [GO:0040007] or, broadly, whether the plant grows in an aquatic [EnvThes:21785] or terrestrial [EnvThes:21880] habitat [ENVO_01000739]. Substrate is defined as the surface to which an organism is attached."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030015",
@@ -77794,7 +77827,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait characterising whether there is a part of the year when a plant sheds all leaves [PO:0025034] (shedability [PATO:0001729]) and the environmental conditions [ENVO:01000203] that cause a plant to shed its leaves."
+          "@value": "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait characterising whether there is a part of the year when a plant sheds all leaves [PO:0025034] (shedability [PATO:0001729]) and the environmental conditions [ENVO_01000203] that cause a plant to shed its leaves."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030024",
@@ -78040,7 +78073,7 @@
         },
         {
           "@language": "en",
-          "@value": "A classification [NCIT:C25161] that indicates the vegetation layer [ENVO:01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310], used to assess competition [EnvThes:21097] within the community."
+          "@value": "A classification [NCIT:C25161] that indicates the vegetation layer [ENVO_01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310], used to assess competition [EnvThes:21097] within the community."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030026",
@@ -80224,7 +80257,7 @@
         },
         {
           "@language": "en",
-          "@value": "The environmental conditions [ENVO:01000203] under which a taxon [NCIT:C40098] displays seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410], with trait values reflecting successional changes to the vegetation community."
+          "@value": "The environmental conditions [ENVO_01000203] under which a taxon [NCIT:C40098] displays seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410], with trait values reflecting successional changes to the vegetation community."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030217",
@@ -80333,7 +80366,7 @@
         },
         {
           "@language": "en",
-          "@value": "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO:01001864] required by plants for reproduction [GO:0000003]."
+          "@value": "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO_01001864] required by plants for reproduction [GO:0000003]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030218",
@@ -80423,7 +80456,7 @@
         },
         {
           "@language": "en",
-          "@value": "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO:01001864] required by plants for seed germination [GO:0009845] and seedling establishment [EnvThes:20410]."
+          "@value": "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO_01001864] required by plants for seed germination [GO:0009845] and seedling establishment [EnvThes:20410]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030219",
@@ -80706,7 +80739,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786], but possibly also drought or extreme heat."
+          "@value": "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO_01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO_01000203], usually an environmental cue associated with a fire [ENVO_01000786], but possibly also drought or extreme heat."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030412",
@@ -81497,7 +81530,7 @@
         },
         {
           "@language": "en",
-          "@value": "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] in a sample that germinated [GO:0009845] under the specified [NCIT:C38024] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000]."
+          "@value": "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] in a sample that germinated [GO:0009845] under the specified [NCIT:C38024] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030417",
@@ -81641,7 +81674,7 @@
         },
         {
           "@language": "en",
-          "@value": "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] that are capable of germinating [GO:0009845] under suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] ."
+          "@value": "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] that are capable of germinating [GO:0009845] under suitable [NCIT:C116358] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000] ."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030418",
@@ -81747,7 +81780,7 @@
         },
         {
           "@language": "en",
-          "@value": "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."
+          "@value": "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030419",
@@ -82356,7 +82389,7 @@
         },
         {
           "@language": "en",
-          "@value": "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."
+          "@value": "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO_01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030513",
@@ -82501,7 +82534,7 @@
         },
         {
           "@language": "en",
-          "@value": "The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground] surface or height [PATO:0000119] above the ground surface of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786]."
+          "@value": "The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground] surface or height [PATO:0000119] above the ground surface of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030514",
@@ -82626,7 +82659,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which indicates whether mature [PATO:0001701] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] that causes 100% leaf scorch, with fire severity index [EnvThes:22120] an important contextual variable."
+          "@value": "A fire response trait which indicates whether mature [PATO:0001701] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] that causes 100% leaf scorch, with fire severity index [EnvThes:22120] an important contextual variable."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030610",
@@ -82782,7 +82815,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the proportion [PATO:0001470] of mature [PATO:0001701] individuals [EFO:0000542] in a population [PCO:0000001] that have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786]."
+          "@value": "A fire response trait which is the proportion [PATO:0001470] of mature [PATO:0001701] individuals [EFO:0000542] in a population [PCO:0000001] that have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030611",
@@ -82914,7 +82947,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which indicates whether juvenile [PATO:0001190] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] with 100% leaf scorch."
+          "@value": "A fire response trait which indicates whether juvenile [PATO:0001190] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] with 100% leaf scorch."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030612",
@@ -83056,7 +83089,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] from seed germination [GO:0009845] until individuals [EFO:0000542] are able to survive [EnvThes:21064] and resprout [PlantResprout] following a fire where 100% of the leaves [PO:0025034] in the canopy [ENVO:01001242] are scorched."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] from seed germination [GO:0009845] until individuals [EFO:0000542] are able to survive [EnvThes:21064] and resprout [PlantResprout] following a fire where 100% of the leaves [PO:0025034] in the canopy [ENVO_01001242] are scorched."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030613",
@@ -83190,7 +83223,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the ratio [PATO:0001470] of the count [NCIT:C25463] of stems [PO:0009047] per individual [EFO:0000542] following a fire [ENVO:01000786] to the count of stems per individual before the fire, recorded for taxa that have multiple stems emerging from the ground [SWEET:realmSoil/Ground]."
+          "@value": "A fire response trait which is the ratio [PATO:0001470] of the count [NCIT:C25463] of stems [PO:0009047] per individual [EFO:0000542] following a fire [ENVO_01000786] to the count of stems per individual before the fire, recorded for taxa that have multiple stems emerging from the ground [SWEET:realmSoil/Ground]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030614",
@@ -83322,7 +83355,7 @@
         },
         {
           "@language": "en",
-          "@value": "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which is the ability [NCIT:C78209] of individual [EFO:0000542] plants to regenerate [GO:0031099] vegetatively (resprout [Cerrado:fire#PlantResprout]) from meristematic tissue [PO:0006079], buds [PO:0000055]) after a disturbance event [EnvThes:20373] other than a fire [ENVO:01000786] that causes 100% defoliation."
+          "@value": "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which is the ability [NCIT:C78209] of individual [EFO:0000542] plants to regenerate [GO:0031099] vegetatively (resprout [Cerrado:fire#PlantResprout]) from meristematic tissue [PO:0006079], buds [PO:0000055]) after a disturbance event [EnvThes:20373] other than a fire [ENVO_01000786] that causes 100% defoliation."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030615",
@@ -83451,7 +83484,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait indicating small-scale variation in plant [PO:0000003] habitat [ENVO:01000739] or growing season that protects the plant's shoot systems [PO:0009006] or root system [PO:0025025] from exposure [NCIT:C17941] to fire [ENVO:01000786] or being damaged (scorched) by fire, when a fire occurs nearby."
+          "@value": "A fire response trait indicating small-scale variation in plant [PO:0000003] habitat [ENVO_01000739] or growing season that protects the plant's shoot systems [PO:0009006] or root system [PO:0025025] from exposure [NCIT:C17941] to fire [ENVO_01000786] or being damaged (scorched) by fire, when a fire occurs nearby."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030651",
@@ -83571,7 +83604,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the magnitude [NCIT:C49158] of seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] after a fire [ENVO:01000786]."
+          "@value": "A fire response trait which is the magnitude [NCIT:C49158] of seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] after a fire [ENVO_01000786]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030652",
@@ -83710,7 +83743,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is a taxon's [NCIT:C40098] flowering [PO:0007016] response [NCIT:C25755] to fire [ENVO:01000786], indicating if the magnitude [NCIT_C49158] of flowers [PO:0009046] increases, decreases or remains unchanged following a fire."
+          "@value": "A fire response trait which is a taxon's [NCIT:C40098] flowering [PO:0007016] response [NCIT:C25755] to fire [ENVO_01000786], indicating if the magnitude [NCIT_C49158] of flowers [PO:0009046] increases, decreases or remains unchanged following a fire."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030653",
@@ -83853,7 +83886,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030654",
@@ -84006,7 +84039,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030655",
@@ -84167,7 +84200,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reach maximum flowering [PO_0007016] levels."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reach maximum flowering [PO_0007016] levels."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030656",
@@ -84317,7 +84350,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] begin to decrease their level of flowering [PO_0007016]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] begin to decrease their level of flowering [PO_0007016]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030657",
@@ -84463,7 +84496,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produces mature [PATO:0001701] fruit [PO:0009001]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produces mature [PATO:0001701] fruit [PO:0009001]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030658",
@@ -84625,7 +84658,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produce mature [PATO:0001701] fruit [PO:0009001]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produce mature [PATO:0001701] fruit [PO:0009001]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030659",
@@ -84785,7 +84818,7 @@
         },
         {
           "@language": "en",
-          "@value": "Fuel bed bulk density (volume density [PATO:0001353]), which is the ratio [PATO:0001470] of the mass [PATO:0000125] of the fuel bed divided by the fuel bed volume [PATO:0000918]; the term `fuel bed` refers to the accumulated plant litter [ENVO:01000628] on the ground [SWEET:realmSoil/Ground], as this is the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO:01000786]."
+          "@value": "Fuel bed bulk density (volume density [PATO:0001353]), which is the ratio [PATO:0001470] of the mass [PATO:0000125] of the fuel bed divided by the fuel bed volume [PATO:0000918]; the term `fuel bed` refers to the accumulated plant litter [ENVO_01000628] on the ground [SWEET:realmSoil/Ground], as this is the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO_01000786]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030710",
@@ -84917,7 +84950,7 @@
         },
         {
           "@language": "en",
-          "@value": "For a given taxon [NCIT:C40098], the proportion [PATO:0001470] of plant biomass [ENVO:01000155] (fuel [CHEBI:33292]) that is consumed by a fire [ENVO:01000786]."
+          "@value": "For a given taxon [NCIT:C40098], the proportion [PATO:0001470] of plant biomass [ENVO_01000155] (fuel [CHEBI:33292]) that is consumed by a fire [ENVO_01000786]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030711",
@@ -85046,7 +85079,7 @@
         },
         {
           "@language": "en",
-          "@value": "For a given taxon [NCIT:C40098], the horizontal [PATO:0001855] speed [PATO:0000008] of fire [ENVO:01000786] movement [NCIT:C37994]."
+          "@value": "For a given taxon [NCIT:C40098], the horizontal [PATO:0001855] speed [PATO:0000008] of fire [ENVO_01000786] movement [NCIT:C37994]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030712",
@@ -85167,7 +85200,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the time when a flame [ENVO:01000789] is no longer visible until smoulder combustion ends."
+          "@value": "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the time when a flame [ENVO_01000789] is no longer visible until smoulder combustion ends."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030713",
@@ -85288,7 +85321,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the start of combustion until a flame [ENVO:01000789] is no longer visible."
+          "@value": "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the start of combustion until a flame [ENVO_01000789] is no longer visible."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030714",
@@ -85406,7 +85439,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the duration [PATO:0001309] of the entire fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the time of the start of combustion until smoulder combustion [APD:glossary/40094] ends."
+          "@value": "A fire response trait which is the duration [PATO:0001309] of the entire fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the time of the start of combustion until smoulder combustion [APD:glossary/40094] ends."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030715",
@@ -85527,7 +85560,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO:01000789] until the leaf ignites [APD:glossary/40040]."
+          "@value": "A fire response trait which is the time interval (duration) [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO_01000789] until the leaf ignites [APD:glossary/40040]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030716",
@@ -85622,7 +85655,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on the environmental conditions in which they survive and thrive, including their tolerance of, sensitivity [NCIT:C25201] to, and requirement [NCIT:C25652] for certain resource availabilities [EnvThes:21497], including water [CHEBI:15377] availability and soil [ENVO:00001998] nutrient [CHEBI:33284] content and salinity [PATO:0085001]."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on the environmental conditions in which they survive and thrive, including their tolerance of, sensitivity [NCIT:C25201] to, and requirement [NCIT:C25652] for certain resource availabilities [EnvThes:21497], including water [CHEBI:15377] availability and soil [ENVO_00001998] nutrient [CHEBI:33284] content and salinity [PATO:0085001]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030810",
@@ -85729,7 +85762,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309] and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or respond to fluctuations in flooding [ENVO:01000710] and drying, including growth [GO:0040007] and seed germination [GO:0009845] responses."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309] and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or respond to fluctuations in flooding [ENVO_01000710] and drying, including growth [GO:0040007] and seed germination [GO:0009845] responses."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030811",
@@ -85850,7 +85883,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions. Soil [ENVO:00001998] is considered water-logged if it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379]."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO_01000710] conditions. Soil [ENVO_00001998] is considered water-logged if it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030812",
@@ -85955,7 +85988,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO_01000710] conditions."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030813",
@@ -86059,7 +86092,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate being covered by snow [ENVO:01000406]."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate being covered by snow [ENVO_01000406]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030814",
@@ -86142,7 +86175,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the maximum [NCIT:C25564] soil [ENVO:00001998] salinity [PATO:0085001], reported as soil conductivity [PATO:0001585], that a plant is able to tolerate."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the maximum [NCIT:C25564] soil [ENVO_00001998] salinity [PATO:0085001], reported as soil conductivity [PATO:0001585], that a plant is able to tolerate."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030815",
@@ -86245,7 +86278,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on their salinity [PATO:0085001] tolerance [TO:0006001], reflecting the duration [PATO:0001309] and concentration [PATO:0000033] of salt [CHEBI:24866] exposure that a plant is able to tolerate."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on their salinity [PATO:0085001] tolerance [TO:0006001], reflecting the duration [PATO:0001309] and concentration [PATO:0000033] of salt [CHEBI:24866] exposure that a plant is able to tolerate."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030816",
@@ -86364,7 +86397,7 @@
         },
         {
           "@language": "en",
-          "@value": "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is a plant's [PO:0000003] calcium sensitivity [TO:0000006], corresponding to its sensitivity [NCIT:C25201] to high soil [ENVO:00001998] pH [NCIT:C45997]."
+          "@value": "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is a plant's [PO:0000003] calcium sensitivity [TO:0000006], corresponding to its sensitivity [NCIT:C25201] to high soil [ENVO_00001998] pH [NCIT:C45997]."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030817",
@@ -86501,7 +86534,7 @@
         },
         {
           "@language": "en",
-          "@value": "A fire response trait indicating morphological [PATO_0000051] features that protect individuals [EFO:0000542] from death [GO_0016265] when a fire [ENVO:01000786] occurs nearby."
+          "@value": "A fire response trait indicating morphological [PATO_0000051] features that protect individuals [EFO:0000542] from death [GO_0016265] when a fire [ENVO_01000786] occurs nearby."
         }
       ],
       "http://purl.org/dc/terms/identifier": "trait_0030818",
@@ -89757,7 +89790,7 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A plant gas exchange trait which is the rate of transpiration [ENVO:02500035]."
+        "@value": "A plant gas exchange trait which is the rate of transpiration [ENVO_02500035]."
       },
       "http://purl.org/dc/terms/identifier": "trait_group_0020210",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -89765,7 +89798,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A plant gas exchange trait which is the rate of transpiration [ENVO:02500035]."
+        "@value": "A plant gas exchange trait which is the rate of transpiration [ENVO_02500035]."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -89843,7 +89876,7 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO:01001864] during the photosynthesis light reactions [GO:0019684]."
+        "@value": "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO_01001864] during the photosynthesis light reactions [GO:0019684]."
       },
       "http://purl.org/dc/terms/identifier": "trait_group_0020812",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -89851,7 +89884,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO:01001864] during the photosynthesis light reactions [GO:0019684]."
+        "@value": "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO_01001864] during the photosynthesis light reactions [GO:0019684]."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -90494,7 +90527,7 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire."
+        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO_01000786] or indicating a plants response [NCIT:C25755] to fire."
       },
       "http://purl.org/dc/terms/identifier": "trait_group_0030602",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -90502,7 +90535,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire."
+        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO_01000786] or indicating a plants response [NCIT:C25755] to fire."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"
@@ -90652,7 +90685,7 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO:01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."
+        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO_01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."
       },
       "http://purl.org/dc/terms/identifier": "trait_group_0030704",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -90660,7 +90693,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO:01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."
+        "@value": "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO_01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"

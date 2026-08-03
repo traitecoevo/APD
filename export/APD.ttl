@@ -33,7 +33,7 @@
 @prefix SWEET_phenSystem: <http://sweetontology.net/phenSystem/> .
 @prefix SWEET_procWave: <http://sweetontology.net/procWave/> .
 @prefix SWEET_prop: <http://sweetontology.net/prop/> .
-@prefix SWEET_propConductivity: <http://sweetontology.net/propConductivity> .
+@prefix SWEET_propConductivity: <http://sweetontology.net/propConductivity/> .
 @prefix SWEET_propPressure: <http://sweetontology.net/propPressure/> .
 @prefix SWEET_propTime: <http://sweetontology.net/propTime/> .
 @prefix SWEET_realmSoil: <http://sweetontology.net/realmSoil/> .
@@ -499,6 +499,10 @@ obo:ENVO_01000839
 obo:ENVO_01001023
     dcterms:identifier "ENVO_01001023" ;
     skos:prefLabel "radiation"@en .
+
+obo:ENVO_01001125
+    dcterms:identifier "ENVO_01001125" ;
+    skos:prefLabel "ice"@en .
 
 obo:ENVO_01001242
     dcterms:identifier "ENVO_01001242" ;
@@ -2603,6 +2607,10 @@ obo:TO_0000429
     dcterms:identifier "TO_0000429" ;
     skos:prefLabel "salt sensitivity"@en .
 
+obo:TO_0000432
+    dcterms:identifier "TO_0000432" ;
+    skos:prefLabel "temperature stress response trait"@en .
+
 obo:TO_0000435
     dcterms:identifier "TO_0000435" ;
     skos:prefLabel "seed longevity"@en .
@@ -3300,7 +3308,7 @@ SWEET_prop:ElectromagneticProperty
     dcterms:identifier "ElectromagneticProperty" ;
     skos:prefLabel "electromagnetic property"@en .
 
-<http://sweetontology.net/propConductivity/Resistance>
+SWEET_propConductivity:Resistance
     dcterms:identifier "Resistance" ;
     skos:prefLabel "resistance"@en .
 
@@ -4790,8 +4798,8 @@ skos:topConceptOf
 
 <https://w3id.org/APD/glossary>
     dcterms:description "AusTraits is an open-source, harmonized database of Australian plant trait data. It synthesises data on nearly 500 traits across more than 30,000 taxa from field campaigns, published literature, taxonomic monographs, and individual taxon descriptions. Begun in 2016 as an initiative between three lab groups, it has grown to be the largest collation of plant trait data for Australian plants. AusTraits integrates plant trait data collected by researchers from diverse disciplines, including functional plant biology, plant physiology, plant taxonomy, and conservation biology. By harmonizing and error checking values, linking all AusTraits data entries to detailed metadata, and documenting trait and trait values definitions, AusTraits is a resource researchers can trust and use for their research agendas with minimal additional filtering or manipulations."@en ;
-    dcterms:license "<https://creativecommons.org/licenses/by/4.0/>"^^<xsd:anyURI> ;
-    dcterms:publisher "<https://austraits.org/>"^^<xsd:anyURI> ;
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^<xsd:anyURI> ;
+    dcterms:publisher "https://austraits.org/"^^<xsd:anyURI> ;
     dcterms:title "AusTraits Plant Dictionary glossary"@en ;
     a skos:ConceptScheme ;
     rdfs:label "AusTraits Plant Dictionary glossary"@en ;
@@ -4808,10 +4816,10 @@ APD_glossary:glossary_40004
     skos:topConceptOf <https://w3id.org/APD/glossary> .
 
 APD_glossary:glossary_40006
-    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     dcterms:identifier "glossary_40006" ;
     a skos:Concept ;
-    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "ambient photosynthetic rate"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
@@ -4862,10 +4870,10 @@ APD_glossary:glossary_40050
     skos:topConceptOf <https://w3id.org/APD/glossary> .
 
 APD_glossary:glossary_40058
-    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     dcterms:identifier "glossary_40058" ;
     a skos:Concept ;
-    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "maximum photosynthetic rate, Amax"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
@@ -4961,10 +4969,10 @@ APD_glossary:glossary_40088
     skos:topConceptOf <https://w3id.org/APD/glossary> .
 
 APD_glossary:glossary_40092
-    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    dcterms:description "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     dcterms:identifier "glossary_40092" ;
     a skos:Concept ;
-    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO:01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
+    skos:definition "Photosynthetic rate [TO:0001015] in a plant whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are saturated [NCIT_C61427] by photosynthetically active radiation [ENVO_01001864] and which is exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033] while the measurement is made."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "saturated photosynthetic rate, Asat"@en ;
     skos:topConceptOf <https://w3id.org/APD/glossary> .
@@ -5016,8 +5024,8 @@ APD_glossary:glossary_40124
 
 <https://w3id.org/APD/traits>
     dcterms:description "AusTraits is an open-source, harmonized database of Australian plant trait data. It synthesises data on nearly 500 traits across more than 30,000 taxa from field campaigns, published literature, taxonomic monographs, and individual taxon descriptions. Begun in 2016 as an initiative between three lab groups, it has grown to be the largest collation of plant trait data for Australian plants. AusTraits integrates plant trait data collected by researchers from diverse disciplines, including functional plant biology, plant physiology, plant taxonomy, and conservation biology. By harmonizing and error checking values, linking all AusTraits data entries to detailed metadata, and documenting trait and trait values definitions, AusTraits is a resource researchers can trust and use for their research agendas with minimal additional filtering or manipulations."@en ;
-    dcterms:license "<https://creativecommons.org/licenses/by/4.0/>"^^<xsd:anyURI> ;
-    dcterms:publisher "<https://austraits.org/>"^^<xsd:anyURI> ;
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^<xsd:anyURI> ;
+    dcterms:publisher "https://austraits.org/"^^<xsd:anyURI> ;
     dcterms:title "AusTraits Plant Dictionary traits"@en ;
     a skos:ConceptScheme ;
     rdfs:label "AusTraits Plant Dictionary traits"@en ;
@@ -12873,7 +12881,7 @@ APD:trait_0000091
 APD:trait_0000112
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of aluminium [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of aluminium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of aluminium [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of aluminium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000112" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28984, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -12895,7 +12903,7 @@ APD:trait_0000112
 APD:trait_0000114
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of boron [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of boron in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of boron [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of boron in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000114" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_27027, obo:CHEBI_27560, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -12917,7 +12925,7 @@ APD:trait_0000114
 APD:trait_0000116
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of carbon [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of carbon in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of carbon [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of carbon in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000116" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_27594, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -12939,7 +12947,7 @@ APD:trait_0000116
 APD:trait_0000118
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of calcium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of calcium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000118" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_22984, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -12961,7 +12969,7 @@ APD:trait_0000118
 APD:trait_0000126
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of copper [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of copper in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of copper [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of copper in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000126" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_27027, obo:CHEBI_28694, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -12983,7 +12991,7 @@ APD:trait_0000126
 APD:trait_0000128
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of iron [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of iron in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of iron [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of iron in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000128" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_18248, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13005,7 +13013,7 @@ APD:trait_0000128
 APD:trait_0000130
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of potassium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of potassium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000130" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_26216, obo:CHEBI_33937, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13027,7 +13035,7 @@ APD:trait_0000130
 APD:trait_0000132
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of magnesium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of magnesium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000132" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_25107, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13049,7 +13057,7 @@ APD:trait_0000132
 APD:trait_0000134
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of manganese [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of manganese in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of manganese [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of manganese in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000134" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_18291, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13071,7 +13079,7 @@ APD:trait_0000134
 APD:trait_0000136
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of molybdenum [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of molybdenum in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of molybdenum [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of molybdenum in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000136" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_27027, obo:CHEBI_28685, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13093,7 +13101,7 @@ APD:trait_0000136
 APD:trait_0000138
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of nitrogen in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of nitrogen in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000138" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_25555, obo:CHEBI_33937, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13115,7 +13123,7 @@ APD:trait_0000138
 APD:trait_0000140
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of sodium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of sodium in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000140" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_26708, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13137,7 +13145,7 @@ APD:trait_0000140
 APD:trait_0000142
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nickel [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of nickel in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nickel [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of nickel in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000142" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28112, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13158,7 +13166,7 @@ APD:trait_0000142
 APD:trait_0000144
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of phosphorus in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of phosphorus in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000144" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28659, obo:CHEBI_33937, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13180,7 +13188,7 @@ APD:trait_0000144
 APD:trait_0000146
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of sulphur in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of sulphur in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000146" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_26833, obo:CHEBI_27027, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13202,7 +13210,7 @@ APD:trait_0000146
 APD:trait_0000152
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of zinc [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of zinc in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of zinc [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628]) to the senescent leaf dry mass [TO:0001014]."@en, "The ratio of the mass of zinc in a senescent leaf (leaf litter) to the senescent leaf dry mass."@en ;
     dcterms:identifier "trait_0000152" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_27027, obo:CHEBI_27363, obo:ENVO_01000628, obo:PATO_0001487 ;
@@ -13405,7 +13413,7 @@ APD:trait_0000444
 APD:trait_0000518
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of calcium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of calcium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000518" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_22984, obo:CHEBI_27027, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -13426,7 +13434,7 @@ APD:trait_0000518
 APD:trait_0000530
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of potassium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of potassium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000530" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_26216, obo:CHEBI_33937, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -13447,7 +13455,7 @@ APD:trait_0000530
 APD:trait_0000532
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of magnesium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of magnesium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000532" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_25107, obo:CHEBI_27027, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -13468,7 +13476,7 @@ APD:trait_0000532
 APD:trait_0000538
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of nitrogen in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of nitrogen in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000538" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_25555, obo:CHEBI_33937, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -13489,7 +13497,7 @@ APD:trait_0000538
 APD:trait_0000540
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of sodium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of sodium in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000540" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_26708, obo:CHEBI_27027, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -13510,7 +13518,7 @@ APD:trait_0000540
 APD:trait_0000544
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of phosphorus in senescent wood (litter) to the dry mass of the senesced wood."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628]) to the dry mass of the senesced wood."@en, "The ratio of the mass of phosphorus in senescent wood (litter) to the dry mass of the senesced wood."@en ;
     dcterms:identifier "trait_0000544" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28659, obo:CHEBI_33937, obo:ENVO_01000628, obo:NCIT_C93062, obo:PATO_0001487 ;
@@ -15255,7 +15263,7 @@ APD:trait_0002544
 APD:trait_0002822
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of leaf [PO:0025034] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839] to the leaf dry mass before the combustion process."@en, "The ratio of the mass of leaf ash remaining after a combustion process to the leaf dry mass before the combustion process."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of leaf [PO:0025034] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839] to the leaf dry mass before the combustion process."@en, "The ratio of the mass of leaf ash remaining after a combustion process to the leaf dry mass before the combustion process."@en ;
     dcterms:identifier "trait_0002822" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
@@ -15277,7 +15285,7 @@ APD:trait_0002822
 APD:trait_0002824
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of bark [PO:0004518] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839] to the bark dry mass before the combustion process."@en, "The ratio of the mass of bark ash remaining after a combustion process to the bark dry mass before the combustion process."@en ;
+    dcterms:description "The ratio [PATO:0001470] of the mass [PATO:0000125] of bark [PO:0004518] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839] to the bark dry mass before the combustion process."@en, "The ratio of the mass of bark ash remaining after a combustion process to the bark dry mass before the combustion process."@en ;
     dcterms:identifier "trait_0002824" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01000786, obo:ENVO_01000839, obo:ENVO_02000090 ;
@@ -15591,7 +15599,7 @@ APD:trait_0003092
 APD:trait_0010021
     oboecore:MeasuredCharacteristic obo:PATO_0000117, obo:PATO_0000921 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A whole plant morphology trait [TO:0000398] which is the maximum [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242] for a taxon [NCIT:C40098] in a given population [PCO:0000001] or location [NCIT:C25341]. This is a plant's larger [NCIT:C49508] width dimension and is orthogonal to its height and breadth."@en, "Maximum width dimension of a plant's vegetative canopy for a taxon in a given location; this is the larger width dimension and is orthogonal to its height and breadth."@en ;
+    dcterms:description "A whole plant morphology trait [TO:0000398] which is the maximum [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242] for a taxon [NCIT:C40098] in a given population [PCO:0000001] or location [NCIT:C25341]. This is a plant's larger [NCIT:C49508] width dimension and is orthogonal to its height and breadth."@en, "Maximum width dimension of a plant's vegetative canopy for a taxon in a given location; this is the larger width dimension and is orthogonal to its height and breadth."@en ;
     dcterms:identifier "trait_0010021" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01001242, <http://vocabs.lter-europe.net/EnvThes/20535> ;
@@ -15614,7 +15622,7 @@ APD:trait_0010021
 APD:trait_0010022
     oboecore:MeasuredCharacteristic obo:PATO_0000117, obo:PATO_0000921 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A whole plant morphology trait [TO:0000398] which is the smaller [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242]."@en, "Shortest width dimension of a plant's vegetative canopy; orthogonal to its height and width."@en ;
+    dcterms:description "A whole plant morphology trait [TO:0000398] which is the smaller [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242]."@en, "Shortest width dimension of a plant's vegetative canopy; orthogonal to its height and width."@en ;
     dcterms:identifier "trait_0010022" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01001242, <http://vocabs.lter-europe.net/EnvThes/20535> ;
@@ -17548,7 +17556,7 @@ APD:trait_0011712
 APD:trait_0011713
     oboecore:MeasuredCharacteristic obo:ENVO_01001023, obo:PATO_0001470, obo:STATO_0000300, SWEET_prop:ElectromagneticProperty ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO:21001214] that is reflected [SWEET:procWave/Reflection] by a leaf."@en, "Proportion of incoming near infra-red light (between 750-10500 nm) that is reflected by a leaf."@en ;
+    dcterms:description "A leaf [PO:0025034] optical [NCIT:C16940] properties trait which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO_21001214] that is reflected [SWEET:procWave/Reflection] by a leaf."@en, "Proportion of incoming near infra-red light (between 750-10500 nm) that is reflected by a leaf."@en ;
     dcterms:identifier "trait_0011713" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01001023, obo:ENVO_21001214, obo:NCIT_C16940, SWEET_procWave:Reflection ;
@@ -20623,7 +20631,7 @@ APD:trait_0014020
 APD:trait_0020221
     oboecore:MeasuredCharacteristic obo:PATO_0001995 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic pathway, or biochemical reaction [NCIT:C19899], used by a plant to convert carbon dioxide [ENVO:01000451] into carbohydrates [CHEBI:16646], with options being C3 photosynthesis [GO:0019253], C4 photosynthesis [GO:0009760], and CAM photosynthesis [GO:0009761]."@en, "Type of photosynthetic pathway displayed by a plant."@en ;
+    dcterms:description "The photosynthetic pathway, or biochemical reaction [NCIT:C19899], used by a plant to convert carbon dioxide [ENVO_01000451] into carbohydrates [CHEBI:16646], with options being C3 photosynthesis [GO:0019253], C4 photosynthesis [GO:0009760], and CAM photosynthesis [GO:0009761]."@en, "Type of photosynthetic pathway displayed by a plant."@en ;
     dcterms:identifier "trait_0020221" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:GO_0009760, obo:GO_0009761, obo:GO_0015979, obo:GO_0019253, obo:GO_0019685, obo:NCIT_C19899 ;
@@ -20661,7 +20669,7 @@ APD:trait_0020240
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf area."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf area."@en ;
     dcterms:identifier "trait_0020240" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20688,7 +20696,7 @@ APD:trait_0020241
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, at optimal leaf temperature and VPD conditions, per unit leaf area; maximum photosynthetic rate."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, at optimal leaf temperature and VPD conditions, per unit leaf area; maximum photosynthetic rate."@en ;
     dcterms:identifier "trait_0020241" ;
     dcterms:modified "03/06/2025"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20715,7 +20723,7 @@ APD:trait_0020242
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf area; light-saturated photosynthetic rate."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf area; light-saturated photosynthetic rate."@en ;
     dcterms:identifier "trait_0020242" ;
     dcterms:modified "03/06/2025"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20742,7 +20750,7 @@ APD:trait_0020243
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, at ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf dry mass."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, at ambient carbon dioxide concentrations, air temperature and vapour pressure deficit, per unit leaf dry mass."@en ;
     dcterms:identifier "trait_0020243" ;
     dcterms:modified "03/06/2025"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20768,7 +20776,7 @@ APD:trait_0020244
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, at optimal leaf temperature and VPD conditions, per unit leaf dry mass; maximum photosynthetic rate."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, at optimal leaf temperature and VPD conditions, per unit leaf dry mass; maximum photosynthetic rate."@en ;
     dcterms:identifier "trait_0020244" ;
     dcterms:modified "03/06/2025"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN0521262968>, <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20794,7 +20802,7 @@ APD:trait_0020245
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit,  per unit leaf dry mass; saturated photosynthetic rate."@en ;
+    dcterms:description "The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014]."@en, "The photosynthetic rate of a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, air temperature and vapour pressure deficit,  per unit leaf dry mass; saturated photosynthetic rate."@en ;
     dcterms:identifier "trait_0020245" ;
     dcterms:modified "03/06/2025"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN0521262968>, <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -20820,7 +20828,7 @@ APD:trait_0020310
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations."@en ;
+    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations."@en ;
     dcterms:identifier "trait_0020310" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -20846,7 +20854,7 @@ APD:trait_0020311
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations."@en ;
+    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations."@en ;
     dcterms:identifier "trait_0020311" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -20872,7 +20880,7 @@ APD:trait_0020312
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations."@en ;
+    dcterms:description "The CO2 concentration in intercellular (interstitial) spaces in a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; ci."@en, "The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations."@en ;
     dcterms:identifier "trait_0020312" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -20898,7 +20906,7 @@ APD:trait_0020313
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of leaf [PO:0025034] intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] to atmospheric carbon dioxide [ENVO:01000451] concentration."@en, "The ratio of the CO2 concentration in intercellular (interstitial) spaces in leaves to the atmospheric CO2 concentration, an indication of stomatal conductance; ci/ca."@en ;
+    dcterms:description "The ratio [PATO:0001470] of leaf [PO:0025034] intercellular space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] to atmospheric carbon dioxide [ENVO_01000451] concentration."@en, "The ratio of the CO2 concentration in intercellular (interstitial) spaces in leaves to the atmospheric CO2 concentration, an indication of stomatal conductance; ci/ca."@en ;
     dcterms:identifier "trait_0020313" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1038/282424a0> ;
@@ -20922,7 +20930,7 @@ APD:trait_0020314
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "CO2 concentration inside chloroplasts in leaves; cc."@en, "The concentration [PATO:0000033] of carbon dioxide [ENVO:01000451] inside chloroplasts [GO:0009507] in leaves [PO:0025034]."@en ;
+    dcterms:description "CO2 concentration inside chloroplasts in leaves; cc."@en, "The concentration [PATO:0000033] of carbon dioxide [ENVO_01000451] inside chloroplasts [GO:0009507] in leaves [PO:0025034]."@en ;
     dcterms:identifier "trait_0020314" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -20946,7 +20954,7 @@ APD:trait_0020315
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000033, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Atmospheric CO2 concentration (external CO2 concentration); ca."@en, "The atmospheric carbon dioxide [ENVO:01000451] concentration [PATO:0000033]."@en ;
+    dcterms:description "Atmospheric CO2 concentration (external CO2 concentration); ca."@en, "The atmospheric carbon dioxide [ENVO_01000451] concentration [PATO:0000033]."@en ;
     dcterms:identifier "trait_0020315" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -21123,7 +21131,7 @@ APD:trait_0020416
     oboecore:MeasuredCharacteristic obo:NCIT_C180567, obo:PATO_0000161, obo:STATO_0000034, obo:STATO_0000071, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Ratio of photosynthetic electron transport capacity (Jmax) to maximum Rubisco activity (carboxylation capacity) (Vcmax). These are model-derived parameters, calculated from an A-ci response curve, reflecting, respectively the component of the curve where photosynthetic rates are limited by the light reactions versus low carbon dioxide concentrations."@en, "The ratio [PATO:0001470] of a leaf's [PO:0025034] maximum [NCIT:C25564] electron transport [MESH:D004579] rate [PATO:0000161] to its maximum carboxylation [MOP:0000591] rate, reflecting the trade-off between photosynthetic gain and costs of excess energy dissipation, with the ratio affected by temperature, photosynthetically active radiation [ENVO:01001864] (light), and carbon dioxide [CHEBI:16526] concentration. These are both model parameters [STATO:0000034] derived from a photosynthesis [GO:0015979] A-ci response curve."@en ;
+    dcterms:description "Ratio of photosynthetic electron transport capacity (Jmax) to maximum Rubisco activity (carboxylation capacity) (Vcmax). These are model-derived parameters, calculated from an A-ci response curve, reflecting, respectively the component of the curve where photosynthetic rates are limited by the light reactions versus low carbon dioxide concentrations."@en, "The ratio [PATO:0001470] of a leaf's [PO:0025034] maximum [NCIT:C25564] electron transport [MESH:D004579] rate [PATO:0000161] to its maximum carboxylation [MOP:0000591] rate, reflecting the trade-off between photosynthetic gain and costs of excess energy dissipation, with the ratio affected by temperature, photosynthetically active radiation [ENVO_01001864] (light), and carbon dioxide [CHEBI:16526] concentration. These are both model parameters [STATO:0000034] derived from a photosynthesis [GO:0015979] A-ci response curve."@en ;
     dcterms:identifier "trait_0020416" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00386231> ;
@@ -21216,11 +21224,11 @@ APD:trait_0020419
 APD:trait_0020420
     oboecore:MeasuredCharacteristic obo:NCIT_C25570, obo:PATO_0000146 ;
     dcterms:created "01/04/2025"^^<xsd:date> ;
-    dcterms:description "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature threshold at which photosystem II begins to become inactive as the leaf temperature decreases. This is a modelled parameter derived from the inflection point on a temperature - basal chlorophyll A fluorescence curve."@en ;
+    dcterms:description "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature threshold at which photosystem II begins to become inactive as the leaf temperature decreases. This is a modelled parameter derived from the inflection point on a temperature - basal chlorophyll A fluorescence curve."@en ;
     dcterms:identifier "trait_0020420" ;
     dcterms:modified "01/04/2025"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1071/fp20344> ;
-    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034 ;
+    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034, obo:TO_0000432 ;
     ets:expectedUnit "C" ;
     ets:maxAllowedValue 10 ;
     ets:minAllowedValue -50 ;
@@ -21236,11 +21244,11 @@ APD:trait_0020420
 APD:trait_0020421
     oboecore:MeasuredCharacteristic obo:NCIT_C25564, obo:PATO_0000146 ;
     dcterms:created "01/04/2025"^^<xsd:date> ;
-    dcterms:description "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature threshold at which photosystem II begins to become inactive as the leaf temperature increases. This is a modelled parameter derived from the inflection point on a temperature - basal chlorophyll A fluorescence curve."@en ;
+    dcterms:description "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305]. This is a modelled parameter [STATO:0000034] derived from the inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature threshold at which photosystem II begins to become inactive as the leaf temperature increases. This is a modelled parameter derived from the inflection point on a temperature - basal chlorophyll A fluorescence curve."@en ;
     dcterms:identifier "trait_0020421" ;
     dcterms:modified "01/04/2025"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1071/fp20344> ;
-    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034 ;
+    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034, obo:TO_0000432 ;
     ets:expectedUnit "C" ;
     ets:maxAllowedValue 100 ;
     ets:minAllowedValue 0 ;
@@ -21256,10 +21264,10 @@ APD:trait_0020421
 APD:trait_0020422
     oboecore:MeasuredCharacteristic obo:NCIT_C25564, obo:PATO_0000146 ;
     dcterms:created "01/04/2025"^^<xsd:date> ;
-    dcterms:description "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546] as the leaf temperature increases (is heated) [PATO:0001305] which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter [STATO:0000034] derived from a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature at maximum chlorophyll fluorescence (F0) as the leaf temperature increases (is heated), which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter derived from a temperature - basal chlorophyll A fluorescence curve."@en ;
+    dcterms:description "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546] as the leaf temperature increases (is heated) [PATO:0001305] which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter [STATO:0000034] derived from a temperature - basal chlorophyll A fluorescence [GO:0090546] curve."@en, "The temperature at maximum chlorophyll fluorescence (F0) as the leaf temperature increases (is heated), which corresponds to potential sustained damage to the photosynthetic apparatus. This is a modelled parameter derived from a temperature - basal chlorophyll A fluorescence curve."@en ;
     dcterms:identifier "trait_0020422" ;
     dcterms:modified "01/04/2025"^^<xsd:date> ;
-    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034 ;
+    SIO:SIO_000147 obo:GO_0009539, obo:GO_0090546, obo:STATO_0000034, obo:TO_0000432 ;
     ets:expectedUnit "C" ;
     ets:maxAllowedValue 100 ;
     ets:minAllowedValue 0 ;
@@ -21275,10 +21283,10 @@ APD:trait_0020422
 APD:trait_0020423
     oboecore:MeasuredCharacteristic obo:PATO_0000146 ;
     dcterms:created "01/04/2025"^^<xsd:date> ;
-    dcterms:description "A temperature response trait [TO:0000432] which is the temperature [PATO:0000146] at which ice [ENVO:01001125] crystals [ENVO:01000845] begin to form inside plant tissues [CARO:0000043]."@en, "The temperature at which ice crystals begin to form inside plant tissues."@en ;
+    dcterms:description "A temperature stress response trait [TO:0000432] which is the temperature [PATO:0000146] at which ice [ENVO_01001125] crystals [ENVO_01000845] begin to form inside plant tissues [CARO:0000043]."@en, "The temperature at which ice crystals begin to form inside plant tissues."@en ;
     dcterms:identifier "trait_0020423" ;
     dcterms:modified "01/04/2025"^^<xsd:date> ;
-    SIO:SIO_000147 obo:PO_0020039 ;
+    SIO:SIO_000147 obo:ENVO_01001125, obo:PO_0020039, obo:TO_0000432 ;
     ets:expectedUnit "C" ;
     ets:maxAllowedValue 10 ;
     ets:minAllowedValue -40 ;
@@ -21295,7 +21303,7 @@ APD:trait_0020510
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:STATO_0000071, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit leaf area [PATO:0001323]."@en, "The respiration rate of a leaf in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit leaf area."@en ;
+    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit leaf area [PATO:0001323]."@en, "The respiration rate of a leaf in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit leaf area."@en ;
     dcterms:identifier "trait_0020510" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -21320,7 +21328,7 @@ APD:trait_0020511
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit leaf dry mass [TO:0001014]."@en, "The respiration rate of a leaf in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit leaf dry mass."@en ;
+    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit leaf dry mass [TO:0001014]."@en, "The respiration rate of a leaf in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit leaf dry mass."@en ;
     dcterms:identifier "trait_0020511" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -21345,7 +21353,7 @@ APD:trait_0020512
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:STATO_0000071, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels, recorded per unit leaf area [PATO:0001323]."@en, "The respiration rate of a leaf in ambient light (ambient photosynthetically active radiation), calculated as the production of CO2 per unit leaf area."@en ;
+    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels, recorded per unit leaf area [PATO:0001323]."@en, "The respiration rate of a leaf in ambient light (ambient photosynthetically active radiation), calculated as the production of CO2 per unit leaf area."@en ;
     dcterms:identifier "trait_0020512" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232>, <https://doi.org/10.1071/BT12225> ;
@@ -21370,7 +21378,7 @@ APD:trait_0020513
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant stems [PO:0009047] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]), recorded per unit stem area [PATO:0001323]."@en, "The respiration rate of a stem in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit stem area."@en ;
+    dcterms:description "The cellular respiration [GO:0045333] rate [PATO:0000161] of plant stems [PO:0009047] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]), recorded per unit stem area [PATO:0001323]."@en, "The respiration rate of a stem in the dark (absence of photosynthetically active radiation), calculated as the production of CO2 per unit stem area."@en ;
     dcterms:identifier "trait_0020513" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -21395,7 +21403,7 @@ APD:trait_0020610
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020610" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21422,7 +21430,7 @@ APD:trait_0020611
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020611" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21449,7 +21457,7 @@ APD:trait_0020612
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470, obo:PATO_0001585, <http://vocabs.lter-europe.net/EnvThes/22003> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of gaseous water diffusion through stomata in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The stomatal conductance [EnvThes:21211] to water vapour of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020612" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21473,10 +21481,10 @@ APD:trait_0020612
     ont:hasContextObject obo:PO_0025034 .
 
 APD:trait_0020630
-    oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001585, <http://sweetontology.net/propConductivity/Resistance> ;
+    oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001585, SWEET_propConductivity:Resistance ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Leaf stomatal water vapour resistance under ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations."@en, "The stomatal [PO:0008032] water vapour resistance [SWEET:propConductivity/Resistance] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal resistance is the resistance to the diffusion [NCIT:C82333] of carbon dioxide [CHEBI:16526] through stomata."@en ;
+    dcterms:description "Leaf stomatal water vapour resistance under ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations."@en, "The stomatal [PO:0008032] water vapour resistance [SWEET:propConductivity/Resistance] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal resistance is the resistance to the diffusion [NCIT:C82333] of carbon dioxide [CHEBI:16526] through stomata."@en ;
     dcterms:identifier "trait_0020630" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1017/CBO9780511845727>, <https://doi.org/10.1201/b10812> ;
@@ -21548,7 +21556,7 @@ APD:trait_0020660
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of water loss from a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of water loss from a leaf exposed to ambient light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020660" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21574,7 +21582,7 @@ APD:trait_0020661
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of water loss from a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of water loss from a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020661" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21600,7 +21608,7 @@ APD:trait_0020662
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of water loss from a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of water loss from a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020662" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21626,7 +21634,7 @@ APD:trait_0020663
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of water loss from a leaf in the dark (no photosynthetically active radiation) and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO:02500035] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO:01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area  [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
+    dcterms:description "The rate of water loss from a leaf in the dark (no photosynthetically active radiation) and ambient carbon dioxide concentrations, recorded per unit leaf area."@en, "The transpiration [ENVO_02500035] rate [PATO:0000161] of plant leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation [ENVO_01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area  [PATO:0001323]. Transpiration rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390] through their stomata [PO:0008032]."@en ;
     dcterms:identifier "trait_0020663" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ecoinf.2021.101232> ;
@@ -21753,7 +21761,7 @@ APD:trait_0020710
     oboecore:MeasuredCharacteristic obo:PATO_0000125, obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; PNUE."@en ;
+    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; PNUE."@en ;
     dcterms:identifier "trait_0020710" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN0521262968> ;
@@ -21778,7 +21786,7 @@ APD:trait_0020711
     oboecore:MeasuredCharacteristic obo:PATO_0000125, obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; PNUE."@en ;
+    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its nitrogen [CHEBI:25555] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; PNUE."@en ;
     dcterms:identifier "trait_0020711" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN0521262968> ;
@@ -21803,7 +21811,7 @@ APD:trait_0020712
     oboecore:MeasuredCharacteristic obo:PATO_0000125, obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; PPUE."@en ;
+    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, where photosynthesis is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and saturating carbon dioxide concentrations; PPUE."@en ;
     dcterms:identifier "trait_0020712" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -21825,7 +21833,7 @@ APD:trait_0020713
     oboecore:MeasuredCharacteristic obo:PATO_0000125, obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; PPUE."@en ;
+    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its phosphorus [CHEBI:28659] content, with the photosynthesis measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033]."@en, "The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus content, where photosynthesis has been measured in a leaf exposed to saturating light (photosynthetically active radiation) levels and ambient carbon dioxide concentrations; PPUE."@en ;
     dcterms:identifier "trait_0020713" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -21847,7 +21855,7 @@ APD:trait_0020760
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The rate of carbon dioxide fixation relative to water loss, calculated as biomass production / transpiration. This measures how much biomass is produced relative to transpiration across a given time interval, and is therefore an integrated measure of water use efficiency; WUE, transpiration ratio"@en, "The ratio [PATO:0001470] of biomass [ENVO:01000155] production [EnvThes:21071] (carbon dioxide [ENVO:01000451] fixation) to transpiration [ENVO:02500035] (water [CHEBI:15377] loss) across a given time interval [TimeInterval]."@en ;
+    dcterms:description "The rate of carbon dioxide fixation relative to water loss, calculated as biomass production / transpiration. This measures how much biomass is produced relative to transpiration across a given time interval, and is therefore an integrated measure of water use efficiency; WUE, transpiration ratio"@en, "The ratio [PATO:0001470] of biomass [ENVO_01000155] production [EnvThes:21071] (carbon dioxide [ENVO_01000451] fixation) to transpiration [ENVO_02500035] (water [CHEBI:15377] loss) across a given time interval [TimeInterval]."@en ;
     dcterms:identifier "trait_0020760" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN9781405149990> ;
@@ -21895,7 +21903,7 @@ APD:trait_0020762
     oboecore:MeasuredCharacteristic obo:PATO_0000161, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000071 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5728-9827>, <https://orcid.org/0000-0002-9699-2272> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its transpiration [ENVO:02500035] rate [PATO:0000161], with photosynthetic rate and transpiration rate determined by gas exchange measurements."@en, "The ratio of photosynthetic rate (A; CO2 assimilation rate) to transpiration rate (E; water loss), with photosynthetic rate and transpiration rate determined from gas exchange measurements, inside a leaf chamber. This is usually called instantaneous water use efficiency, but can also be referred to as photosynthetic water use efficiency (PWUE) or transpiration efficiency."@en ;
+    dcterms:description "The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic rate [TO:0001015] to its transpiration [ENVO_02500035] rate [PATO:0000161], with photosynthetic rate and transpiration rate determined by gas exchange measurements."@en, "The ratio of photosynthetic rate (A; CO2 assimilation rate) to transpiration rate (E; water loss), with photosynthetic rate and transpiration rate determined from gas exchange measurements, inside a leaf chamber. This is usually called instantaneous water use efficiency, but can also be referred to as photosynthetic water use efficiency (PWUE) or transpiration efficiency."@en ;
     dcterms:identifier "trait_0020762" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN9781405149990> ;
@@ -21919,7 +21927,7 @@ APD:trait_0020762
 APD:trait_0020813
     oboecore:MeasuredCharacteristic obo:NCIT_C25390, obo:PATO_0001029, obo:PATO_0001470, obo:STATO_0000300, <http://vocabs.lter-europe.net/EnvThes/21580> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of the efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically active radiation [ENVO:01001864], calculated from the reflectance [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 531 nm (a xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and a higher value indicates a higher radiation use efficiency."@en, "Photochemical reflectance index measures plant responses to stress and the efficiency with which it uses photosynthetically active radiation, by indicating changes in carotenoid pigments in live foliage.  It is calculated from the reflectance of radiation off the plant canopy at 531 nm (a xanthophyll band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570), with a higher value indicating higher radiation use efficiency."@en ;
+    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of the efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically active radiation [ENVO_01001864], calculated from the reflectance [EnvThes:21580] of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242] at 531 nm (a xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and a higher value indicates a higher radiation use efficiency."@en, "Photochemical reflectance index measures plant responses to stress and the efficiency with which it uses photosynthetically active radiation, by indicating changes in carotenoid pigments in live foliage.  It is calculated from the reflectance of radiation off the plant canopy at 531 nm (a xanthophyll band) and 570 nm (a reference band): PRI = (R531 - R570) / (R531 + R570), with a higher value indicating higher radiation use efficiency."@en ;
     dcterms:identifier "trait_0020813" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/s004420050337>, <https://doi.org/10.1080/014311697217387>, <https://www.indexdatabase.de/> ;
@@ -21941,7 +21949,7 @@ APD:trait_0020813
 APD:trait_0020814
     oboecore:MeasuredCharacteristic obo:NCIT_C25390, obo:PATO_0001470, obo:STATO_0000300, <http://vocabs.lter-europe.net/EnvThes/21580> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] water status, which is the ratio [PATO:0001470] of the reflectance [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 970 nm to the reflectance at 900 nm, recorded with a spectroradiometer [MOSAIC:00000974], where a higher value indicates a higher canopy water [CHEBI:15377] content."@en, "Water band index measures whole plant water status. It is the ratio of the reflectance of radiation off the plant canopy at 970 nm to the reflectance at 900 nm; a higher value indicates a higher canopy water content."@en ;
+    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] water status, which is the ratio [PATO:0001470] of the reflectance [EnvThes:21580] of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242] at 970 nm to the reflectance at 900 nm, recorded with a spectroradiometer [MOSAIC:00000974], where a higher value indicates a higher canopy water [CHEBI:15377] content."@en, "Water band index measures whole plant water status. It is the ratio of the reflectance of radiation off the plant canopy at 970 nm to the reflectance at 900 nm; a higher value indicates a higher canopy water content."@en ;
     dcterms:identifier "trait_0020814" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1080/014311697217387>, <https://www.indexdatabase.de/> ;
@@ -21962,7 +21970,7 @@ APD:trait_0020814
 APD:trait_0020815
     oboecore:MeasuredCharacteristic obo:NCIT_C25390, obo:PATO_0001470, obo:STATO_0000300, <http://vocabs.lter-europe.net/EnvThes/21580> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] vegetation status, which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of red light versus short-wave infrared radiation (SWIR) [ENVO:21001214] off the plant canopy [ENVO:01001242], where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."@en, "A remote sensing index of whole plant vegetation status, which is a ratio that considers the relative reflectance of red light versus short-wave infrared radiation (SWIR) off the plant canopy, where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."@en ;
+    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole plant [PO:0000003] vegetation status, which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of red light versus short-wave infrared radiation (SWIR) [ENVO_21001214] off the plant canopy [ENVO_01001242], where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."@en, "A remote sensing index of whole plant vegetation status, which is a ratio that considers the relative reflectance of red light versus short-wave infrared radiation (SWIR) off the plant canopy, where a higher value indicates greater vegetation health. The formula is: (SWIR - Red) / (SWIR + Red)."@en ;
     dcterms:identifier "trait_0020815" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1080/014311697216810> ;
@@ -21984,7 +21992,7 @@ APD:trait_0020815
 APD:trait_0020816
     oboecore:MeasuredCharacteristic obo:NCIT_C25390, obo:PATO_0001470, obo:STATO_0000300, <http://vocabs.lter-europe.net/EnvThes/21580> ;
     dcterms:created "17/05/2023"^^<xsd:date> ;
-    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of chlorophyll [CHEBI:28966] absorption [SWEET:procWave/Absorption], which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of different wavelengths off the plant canopy [ENVO:01001242], where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."@en, "A remote sensing index of chlorophyll absorption, which is a ratio that considers the relative reflectance of different wavelengths off the plant canopy, where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."@en ;
+    dcterms:description "A remote sensing [EnvThes:21762] index [NCIT:C25390] of chlorophyll [CHEBI:28966] absorption [SWEET:procWave/Absorption], which is a ratio [PATO:0001470] that considers the relative reflectance [EnvThes:21580] of different wavelengths off the plant canopy [ENVO_01001242], where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."@en, "A remote sensing index of chlorophyll absorption, which is a ratio that considers the relative reflectance of different wavelengths off the plant canopy, where a higher value indicates greater chlorophyll absorption. The formula is: (R750-R705)/(R750+R705+2(R445))."@en ;
     dcterms:identifier "trait_0020816" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/S0034-4257(02)00010-X>, <https://www.indexdatabase.de/> ;
@@ -22004,7 +22012,7 @@ APD:trait_0020816
 APD:trait_0020817
     oboecore:MeasuredCharacteristic obo:NCIT_C25390, obo:PATO_0001470, obo:STATO_0000300 ;
     dcterms:created "01/04/2025"^^<xsd:date> ;
-    dcterms:description "A relative measure of a leaf's chlorophyll content, determined as the difference in light transmission through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared (940 nm, not absorbed by chlorophyll)."@en, "A relative measure of the mass [PATO:0000125] of chlorophyll [CHEBI:28966] in a leaf [PO:0025034] determined as the difference in light transmission [SWEET:procWave/Transmission] through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared [ENVO:21001214] (940 nm, not absorbed by chlorophyll)."@en ;
+    dcterms:description "A relative measure of a leaf's chlorophyll content, determined as the difference in light transmission through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared (940 nm, not absorbed by chlorophyll)."@en, "A relative measure of the mass [PATO:0000125] of chlorophyll [CHEBI:28966] in a leaf [PO:0025034] determined as the difference in light transmission [SWEET:procWave/Transmission] through a leaf at two specific wavelengths, red (650 nm, absorbed by chlorophyll) and infrared [ENVO_21001214] (940 nm, not absorbed by chlorophyll)."@en ;
     dcterms:identifier "trait_0020817" ;
     dcterms:modified "01/04/2025"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28966, obo:PO_0020039 ;
@@ -22236,7 +22244,7 @@ APD:trait_0021031
     oboecore:MeasuredCharacteristic obo:PATO_0001035, obo:PATO_0002284 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."@en, "The water potential of a plant's leaf or shoot photosynthetic tissue during maximum midday transpiration, the time of day when the plant is most water stressed and has the lowest (most negative) water potential."@en ;
+    dcterms:description "The average water potential [EnvThes:22311] of a plant's leaf [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043] during maximum midday transpiration [ENVO_02500035] and assumed to be the plant's daily minimum [NCIT:C25570] water potential."@en, "The water potential of a plant's leaf or shoot photosynthetic tissue during maximum midday transpiration, the time of day when the plant is most water stressed and has the lowest (most negative) water potential."@en ;
     dcterms:identifier "trait_0021031" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1071/BT12225> ;
@@ -22496,7 +22504,7 @@ APD:trait_0021057
     oboecore:MeasuredCharacteristic obo:PATO_0001025, obo:PATO_0001035 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "In a plant tissue [CARO:0000043], the potential energy [ENVO:2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane, such that the osmotic potential becomes more negative as the solute concentration increases or the cell water content decreases. Osmotic potential is equal to negative osmotic pressure [EnvThes:21558] and is also referred to as solute potential."@en, "The potential energy of water molecules to move across a semi-permeable membrane due to differences in solute concentration across the membrane; solute potential"@en ;
+    dcterms:description "In a plant tissue [CARO:0000043], the potential energy [ENVO_2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane, such that the osmotic potential becomes more negative as the solute concentration increases or the cell water content decreases. Osmotic potential is equal to negative osmotic pressure [EnvThes:21558] and is also referred to as solute potential."@en, "The potential energy of water molecules to move across a semi-permeable membrane due to differences in solute concentration across the membrane; solute potential"@en ;
     dcterms:identifier "trait_0021057" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -22518,7 +22526,7 @@ APD:trait_0021058
     oboecore:MeasuredCharacteristic obo:PATO_0001025, obo:PATO_0001035, obo:STATO_0000034 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0002-4964-6107>, <https://orcid.org/0000-0002-9105-640X> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is, for a shoot or leaf [PO:0025034], the osmotic potential (solute potential) when they are fully hydrated (relative water content = 100%). Osmotic potential is always negative and is the potential energy [ENVO:2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane."@en, "A parameter calculated from a pressure-volume curve which is the osmotic potential (solute potential) in leaf cells at full turgor (when relative water content = 100%). Osmotic potential is the energy of water molecules to move across a semi-permeable membrane due to differences in solute concentration across a membrane and is least negative (largest) when plants are at full turgor."@en ;
+    dcterms:description "A parameter [STATO:0000034] calculated from a pressure-volume curve [APD:glossary/40124], which is, for a shoot or leaf [PO:0025034], the osmotic potential (solute potential) when they are fully hydrated (relative water content = 100%). Osmotic potential is always negative and is the potential energy [ENVO_2000016] of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418] concentration [PATO:0000033] across the membrane."@en, "A parameter calculated from a pressure-volume curve which is the osmotic potential (solute potential) in leaf cells at full turgor (when relative water content = 100%). Osmotic potential is the energy of water molecules to move across a semi-permeable membrane due to differences in solute concentration across a membrane and is least negative (largest) when plants are at full turgor."@en ;
     dcterms:identifier "trait_0021058" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://prometheusprotocols.net/function/water-relations/pressure-volume-curves/leaf-pressure-volume-curve-parameters/> ;
@@ -22728,7 +22736,7 @@ APD:trait_0021066
 APD:trait_0022012
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470, obo:STATO_0000300 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed."@en, "A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed."@en ;
+    dcterms:description "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf nitrogen content in a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed [NCIT:C93204] from the senescent leaf before it is shed."@en, "A leaf nutrient recycling trait which is one minus the ratio of leaf nitrogen content in a senescent leaf (leaf litter) to leaf nitrogen content in a live leaf, indicating what proportion of nitrogen is resorbed from the senescent leaf before it is shed."@en ;
     dcterms:identifier "trait_0022012" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_25555, obo:CHEBI_33937, obo:ENVO_01000628, obo:NCIT_C93204, obo:PATO_0001487 ;
@@ -22748,7 +22756,7 @@ APD:trait_0022012
 APD:trait_0022013
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470, obo:STATO_0000300 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed."@en, "A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed."@en ;
+    dcterms:description "A leaf [PO:0025034] nutrient recycling trait which is one minus the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf phosphorus content in a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed [NCIT:C93204] from the senescent leaf before it is shed."@en, "A leaf nutrient recycling trait which is one minus the ratio of leaf phosphorus content in a senescent leaf (leaf litter) to leaf phosphorus content in a live leaf, indicating what proportion of phosphorus is resorbed from the senescent leaf before it is shed."@en ;
     dcterms:identifier "trait_0022013" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_28659, obo:CHEBI_33937, obo:ENVO_01000628, obo:NCIT_C93204, obo:PATO_0001487 ;
@@ -22879,7 +22887,7 @@ APD:trait_0030015
     oboecore:MeasuredCharacteristic obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-8305-3236>, <https://orcid.org/0000-0001-8338-9143>, <https://orcid.org/0000-0002-0712-5143>, <https://orcid.org/0000-0002-1773-6597>, <https://orcid.org/0000-0002-6033-2766>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-1116-9402>, <https://orcid.org/0000-0003-2008-7062>, <https://orcid.org/0000-0003-3568-2606> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which indicates either the substrate [EFO:0005061] on which a plant grows [GO:0040007] or, broadly, whether the plant grows in an aquatic [EnvThes:21785] or terrestrial [EnvThes:21880] habitat [ENVO:01000739]. Substrate is defined as the surface to which an organism is attached."@en, "Trait broadly indicating where a plant is usually found, referencing the habitat in which a plant grows, the substrate to which a plant is attached, or a plant's growth medium."@en ;
+    dcterms:description "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which indicates either the substrate [EFO:0005061] on which a plant grows [GO:0040007] or, broadly, whether the plant grows in an aquatic [EnvThes:21785] or terrestrial [EnvThes:21880] habitat [ENVO_01000739]. Substrate is defined as the surface to which an organism is attached."@en, "Trait broadly indicating where a plant is usually found, referencing the habitat in which a plant grows, the substrate to which a plant is attached, or a plant's growth medium."@en ;
     dcterms:identifier "trait_0030015" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://books.google.com/books?vid=ISBN9780128126288>, <https://doi.org/10.1071/BT12225> ;
@@ -23090,7 +23098,7 @@ APD:trait_0030024
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:PATO_0000077, obo:PATO_0001995, <http://vocabs.lter-europe.net/EnvThes/21586> ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-8305-3236>, <https://orcid.org/0000-0001-8338-9143>, <https://orcid.org/0000-0002-0712-5143>, <https://orcid.org/0000-0002-1773-6597>, <https://orcid.org/0000-0002-6033-2766>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-1116-9402>, <https://orcid.org/0000-0003-2008-7062>, <https://orcid.org/0000-0003-3568-2606> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait characterising whether there is a part of the year when a plant sheds all leaves [PO:0025034] (shedability [PATO:0001729]) and the environmental conditions [ENVO:01000203] that cause a plant to shed its leaves."@en, "Trait indicating whether a plant retains a leaf canopy throughout the year and what environmental cues are associated with canopy shedding."@en ;
+    dcterms:description "A whole plant [PO:0000003] phenotype [NCIT:C16977] trait characterising whether there is a part of the year when a plant sheds all leaves [PO:0025034] (shedability [PATO:0001729]) and the environmental conditions [ENVO_01000203] that cause a plant to shed its leaves."@en, "Trait indicating whether a plant retains a leaf canopy throughout the year and what environmental cues are associated with canopy shedding."@en ;
     dcterms:identifier "trait_0030024" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1890/0012-9658%281997%29078%5B2542%3ALPOWSI%5D2.0.CO%3B2> ;
@@ -23138,7 +23146,7 @@ APD:trait_0030025
 APD:trait_0030026
     oboecore:MeasuredCharacteristic obo:PATO_0000119, obo:PATO_0001995 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A classification [NCIT:C25161] that indicates the vegetation layer [ENVO:01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310], used to assess competition [EnvThes:21097] within the community."@en, "Categorical descriptions of a taxon's relative stature in its community, used to assess competitive heirarchies within a community."@en ;
+    dcterms:description "A classification [NCIT:C25161] that indicates the vegetation layer [ENVO_01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310], used to assess competition [EnvThes:21097] within the community."@en, "Categorical descriptions of a taxon's relative stature in its community, used to assess competitive heirarchies within a community."@en ;
     dcterms:identifier "trait_0030026" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1111/j.1365-2745.2007.01302.x>, <https://doi.org/10.1111/j.1654-1103.2012.01434.x> ;
@@ -23495,7 +23503,7 @@ APD:trait_0030217
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "19/05/2023"^^<xsd:date> ;
-    dcterms:description "The environmental conditions [ENVO:01000203] under which a taxon [NCIT:C40098] displays seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410], with trait values reflecting successional changes to the vegetation community."@en, "The environmental conditions under which a taxon's seedlings can establish, with trait values reflecting successional changes to the vegetation community."@en ;
+    dcterms:description "The environmental conditions [ENVO_01000203] under which a taxon [NCIT:C40098] displays seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410], with trait values reflecting successional changes to the vegetation community."@en, "The environmental conditions under which a taxon's seedlings can establish, with trait values reflecting successional changes to the vegetation community."@en ;
     dcterms:identifier "trait_0030217" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -23515,7 +23523,7 @@ APD:trait_0030217
 APD:trait_0030218
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000077 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO:01001864] required by plants for reproduction [GO:0000003]."@en, "The minimum light environment required by plants for reproduction, scaled from 0 to 8."@en ;
+    dcterms:description "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO_01001864] required by plants for reproduction [GO:0000003]."@en, "The minimum light environment required by plants for reproduction, scaled from 0 to 8."@en ;
     dcterms:identifier "trait_0030218" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Z8v6xPMAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=Z8v6xPMAAAAJ:YOwf2qJgpHMC> ;
@@ -23538,7 +23546,7 @@ APD:trait_0030218
 APD:trait_0030219
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000077 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO:01001864] required by plants for seed germination [GO:0009845] and seedling establishment [EnvThes:20410]."@en, "The minimum light environment required by seedlings for establishment, scaled from 0 to 8."@en ;
+    dcterms:description "A plant phenological [TO:0000933] life history [ECOCORE:00000018] trait which is an index [NCIT:C25390] that captures the level of photosynthetically active radiation [ENVO_01001864] required by plants for seed germination [GO:0009845] and seedling establishment [EnvThes:20410]."@en, "The minimum light environment required by seedlings for establishment, scaled from 0 to 8."@en ;
     dcterms:identifier "trait_0030219" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Z8v6xPMAAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=Z8v6xPMAAAAJ:YOwf2qJgpHMC> ;
@@ -23584,7 +23592,7 @@ APD:trait_0030412
     oboecore:MeasuredCharacteristic obo:NCIT_C25652, obo:PATO_0000077, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually an environmental cue associated with a fire [ENVO:01000786], but possibly also drought or extreme heat."@en, "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."@en ;
+    dcterms:description "A fire response trait which indicates whether a fruit [PO:0009001] or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO_01001242] after maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882] after a specific [NCIT:C38024] environmental conditions [ENVO_01000203], usually an environmental cue associated with a fire [ENVO_01000786], but possibly also drought or extreme heat."@en, "Categorical variable describing whether a fruit or cone remains closed in the plant canopy after maturation until an environmental cue, usually a fire, but possibly also drought or extreme heat, triggers it to release its seeds."@en ;
     dcterms:identifier "trait_0030412" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1080/07352689.2020.1768465> ;
@@ -23701,7 +23709,7 @@ APD:trait_0030417
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25463, obo:NCIT_C43414, obo:PATO_0001470, obo:PATO_0001555, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-5945-438X>, <https://orcid.org/0000-0001-8305-3236>, <https://orcid.org/0000-0002-0712-5143>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-3046-0417>, <https://orcid.org/0000-0002-6033-2766>, <https://orcid.org/0000-0002-9843-6616>, <https://orcid.org/0000-0003-0360-8321> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Proportion of mature seeds in a sample that germinated under specified environmental or experimental conditions."@en, "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] in a sample that germinated [GO:0009845] under the specified [NCIT:C38024] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000]."@en ;
+    dcterms:description "Proportion of mature seeds in a sample that germinated under specified environmental or experimental conditions."@en, "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] in a sample that germinated [GO:0009845] under the specified [NCIT:C38024] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000]."@en ;
     dcterms:identifier "trait_0030417" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/978-1-4684-7747-4_8>, <https://doi.org/www.rbgsyd.nsw.gov.au/science/rainforest-conservation-research/rainforest-seed-conservation-project/what-are-we-testing/seed-viability-germination>, <https://uol.de/en/landeco/research/leda/standards> ;
@@ -23726,7 +23734,7 @@ APD:trait_0030418
     oboecore:MeasuredCharacteristic obo:NCIT_C25463, obo:PATO_0001470, obo:PATO_0001555, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-5945-438X>, <https://orcid.org/0000-0001-8305-3236>, <https://orcid.org/0000-0002-0712-5143>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-3046-0417>, <https://orcid.org/0000-0002-6033-2766>, <https://orcid.org/0000-0002-9843-6616>, <https://orcid.org/0000-0003-0360-8321> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Proportion of mature seeds in a sample that are capable of germinating under suitable conditions."@en, "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] that are capable of germinating [GO:0009845] under suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] ."@en ;
+    dcterms:description "Proportion of mature seeds in a sample that are capable of germinating under suitable conditions."@en, "The proportion [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] that are capable of germinating [GO:0009845] under suitable [NCIT:C116358] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000] ."@en ;
     dcterms:identifier "trait_0030418" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/978-1-4684-7747-4_8>, <https://doi.org/www.rbgsyd.nsw.gov.au/science/rainforest-conservation-research/rainforest-seed-conservation-project/what-are-we-testing/seed-viability-germination>, <https://uol.de/en/landeco/research/leda/standards> ;
@@ -23749,7 +23757,7 @@ APD:trait_0030418
 APD:trait_0030419
     oboecore:MeasuredCharacteristic obo:PATO_0001309 ;
     dcterms:created "10/06/2023"^^<xsd:date> ;
-    dcterms:description "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."@en, "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."@en ;
+    dcterms:description "The time interval (duration) [PATO:0001309] from when a seed [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it germinates."@en, "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."@en ;
     dcterms:identifier "trait_0030419" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment>, MESH:D000068098, obo:ENVO_01000203, obo:GO_0009845, obo:XCO_0000000 ;
@@ -23840,7 +23848,7 @@ APD:trait_0030513
     oboecore:MeasuredCharacteristic obo:NCIT_C25341, obo:PATO_0000060, obo:PATO_0000140 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en, "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."@en ;
+    dcterms:description "The location of buds (meristematic tissue) on a plant that allows it to resprout following a fire, annual unfavourable season, or other disturbance event, such as a drought or cyclone. Trait values include both generic terms and quite specific ones to accommodate the variation in detail provided across datasets."@en, "The position [PATO:0000140] and distribution [PATO:0000060] of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) on a plant [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373] such as a fire, cyclone or drought. In particular, they may be meristematic tissue that survives a fire [ENVO_01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout] following the fire."@en ;
     dcterms:identifier "trait_0030513" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1038/sdata.2018.135>, <https://doi.org/10.1071/BT20048>, <https://doi.org/10.1111/nph.12001>, <https://doi.org/10.1111/nph.14982> ;
@@ -23861,7 +23869,7 @@ APD:trait_0030513
 APD:trait_0030514
     oboecore:MeasuredCharacteristic obo:PATO_0000119, obo:PATO_0001595 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Depth below the soil surface (positive number) or height above ground (negative number) from which buds (meristematic tissue) resprout following a disturbance, such as a fire."@en, "The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground] surface or height [PATO:0000119] above the ground surface of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786]."@en ;
+    dcterms:description "Depth below the soil surface (positive number) or height above ground (negative number) from which buds (meristematic tissue) resprout following a disturbance, such as a fire."@en, "The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground] surface or height [PATO:0000119] above the ground surface of vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786]."@en ;
     dcterms:identifier "trait_0030514" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.ppees.2019.125497> ;
@@ -23883,7 +23891,7 @@ APD:trait_0030610
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which indicates whether mature [PATO:0001701] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] that causes 100% leaf scorch, with fire severity index [EnvThes:22120] an important contextual variable."@en, "Trait indicating whether mature individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to fire that causes 100% leaf scorch.  Species where at least 70% of plants resprout are designated `resprouters`, while those where fewer than 30% of plants resprout are designated as `fire killed`. Species with an intermediate response have a mixed fire response, and are coded as `fire_killed resprouts`."@en ;
+    dcterms:description "A fire response trait which indicates whether mature [PATO:0001701] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] that causes 100% leaf scorch, with fire severity index [EnvThes:22120] an important contextual variable."@en, "Trait indicating whether mature individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to fire that causes 100% leaf scorch.  Species where at least 70% of plants resprout are designated `resprouters`, while those where fewer than 30% of plants resprout are designated as `fire killed`. Species with an intermediate response have a mixed fire response, and are coded as `fire_killed resprouts`."@en ;
     dcterms:identifier "trait_0030610" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1016/j.scitotenv.2015.04.002>, <https://hdl.handle.net/102.100.100/248872?index=1> ;
@@ -23907,7 +23915,7 @@ APD:trait_0030611
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25463, obo:NCIT_C43414, obo:PATO_0000077, obo:PATO_0001470, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the proportion [PATO:0001470] of mature [PATO:0001701] individuals [EFO:0000542] in a population [PCO:0000001] that have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786]."@en, "Proportion of mature individuals in a population that survive a fire and resprout following a fire."@en ;
+    dcterms:description "A fire response trait which is the proportion [PATO:0001470] of mature [PATO:0001701] individuals [EFO:0000542] in a population [PCO:0000001] that have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786]."@en, "Proportion of mature individuals in a population that survive a fire and resprout following a fire."@en ;
     dcterms:identifier "trait_0030611" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -23931,7 +23939,7 @@ APD:trait_0030612
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which indicates whether juvenile [PATO:0001190] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] with 100% leaf scorch."@en, "Trait indicating whether juvenile phase individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to a fire with 100% leaf scorch."@en ;
+    dcterms:description "A fire response trait which indicates whether juvenile [PATO:0001190] plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] with 100% leaf scorch."@en, "Trait indicating whether juvenile phase individuals of a taxon are killed, resprout, or have a mixed survival response when exposed to a fire with 100% leaf scorch."@en ;
     dcterms:identifier "trait_0030612" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.2307/3236276> ;
@@ -23954,7 +23962,7 @@ APD:trait_0030613
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "19/05/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time from seed germination until individuals are able to survive and resprout following a fire where 100% of the leaves in the canopy are scorched."@en, "A fire response trait which is the time interval (duration) [PATO:0001309] from seed germination [GO:0009845] until individuals [EFO:0000542] are able to survive [EnvThes:21064] and resprout [PlantResprout] following a fire where 100% of the leaves [PO:0025034] in the canopy [ENVO:01001242] are scorched."@en ;
+    dcterms:description "A fire response trait which is the time from seed germination until individuals are able to survive and resprout following a fire where 100% of the leaves in the canopy are scorched."@en, "A fire response trait which is the time interval (duration) [PATO:0001309] from seed germination [GO:0009845] until individuals [EFO:0000542] are able to survive [EnvThes:21064] and resprout [PlantResprout] following a fire where 100% of the leaves [PO:0025034] in the canopy [ENVO_01001242] are scorched."@en ;
     dcterms:identifier "trait_0030613" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -23977,7 +23985,7 @@ APD:trait_0030614
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000077, obo:PATO_0001470, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the ratio [PATO:0001470] of the count [NCIT:C25463] of stems [PO:0009047] per individual [EFO:0000542] following a fire [ENVO:01000786] to the count of stems per individual before the fire, recorded for taxa that have multiple stems emerging from the ground [SWEET:realmSoil/Ground]."@en, "Ratio of stem count post-fire to basal stem count (e.g. grass tillers) pre-fire at an individual or population level. This trait is appropriate to score for plants that have many stems from the base (shrubs, herbs, graminoids) where the number of stems is censused both before and after the fire. It is a continuous measure of resprouting strength conditioned on initial size."@en ;
+    dcterms:description "A fire response trait which is the ratio [PATO:0001470] of the count [NCIT:C25463] of stems [PO:0009047] per individual [EFO:0000542] following a fire [ENVO_01000786] to the count of stems per individual before the fire, recorded for taxa that have multiple stems emerging from the ground [SWEET:realmSoil/Ground]."@en, "Ratio of stem count post-fire to basal stem count (e.g. grass tillers) pre-fire at an individual or population level. This trait is appropriate to score for plants that have many stems from the base (shrubs, herbs, graminoids) where the number of stems is censused both before and after the fire. It is a continuous measure of resprouting strength conditioned on initial size."@en ;
     dcterms:identifier "trait_0030614" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1111/nph.15480> ;
@@ -24002,7 +24010,7 @@ APD:trait_0030615
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:NCIT_C78209, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A plant's ability to regenerate vegetatively (resprout) from a disturbance other than fire that causes 100% defoliation."@en, "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which is the ability [NCIT:C78209] of individual [EFO:0000542] plants to regenerate [GO:0031099] vegetatively (resprout [Cerrado:fire#PlantResprout]) from meristematic tissue [PO:0006079], buds [PO:0000055]) after a disturbance event [EnvThes:20373] other than a fire [ENVO:01000786] that causes 100% defoliation."@en ;
+    dcterms:description "A plant's ability to regenerate vegetatively (resprout) from a disturbance other than fire that causes 100% defoliation."@en, "A whole plant [PO:0000003] life history [ECOCORE:00000018] trait which is the ability [NCIT:C78209] of individual [EFO:0000542] plants to regenerate [GO:0031099] vegetatively (resprout [Cerrado:fire#PlantResprout]) from meristematic tissue [PO:0006079], buds [PO:0000055]) after a disturbance event [EnvThes:20373] other than a fire [ENVO_01000786] that causes 100% defoliation."@en ;
     dcterms:identifier "trait_0030615" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24024,7 +24032,7 @@ APD:trait_0030651
     oboecore:MeasuredCharacteristic obo:NCIT_C17941, obo:NCIT_C54264, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait indicating small-scale variation in plant [PO:0000003] habitat [ENVO:01000739] or growing season that protects the plant's shoot systems [PO:0009006] or root system [PO:0025025] from exposure [NCIT:C17941] to fire [ENVO:01000786] or being damaged (scorched) by fire, when a fire occurs nearby."@en, "Trait indicating habitat (or microhabitat) variation that protects the shoot or root system of some taxa from being exposed to fire and scorched by the fire, even when a fire burns nearby."@en ;
+    dcterms:description "A fire response trait indicating small-scale variation in plant [PO:0000003] habitat [ENVO_01000739] or growing season that protects the plant's shoot systems [PO:0009006] or root system [PO:0025025] from exposure [NCIT:C17941] to fire [ENVO_01000786] or being damaged (scorched) by fire, when a fire occurs nearby."@en, "Trait indicating habitat (or microhabitat) variation that protects the shoot or root system of some taxa from being exposed to fire and scorched by the fire, even when a fire burns nearby."@en ;
     dcterms:identifier "trait_0030651" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24043,7 +24051,7 @@ APD:trait_0030652
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25652, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the magnitude [NCIT:C49158] of seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] after a fire [ENVO:01000786]."@en, "A trait indicating the magnitude of seed germination and seedling establishment following a fire."@en ;
+    dcterms:description "A fire response trait which is the magnitude [NCIT:C49158] of seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410] after a fire [ENVO_01000786]."@en, "A trait indicating the magnitude of seed germination and seedling establishment following a fire."@en ;
     dcterms:identifier "trait_0030652" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.1080/07352689.2017.1364209> ;
@@ -24066,7 +24074,7 @@ APD:trait_0030653
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25652, obo:PATO_0000077 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "23/02/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is a taxon's [NCIT:C40098] flowering [PO:0007016] response [NCIT:C25755] to fire [ENVO:01000786], indicating if the magnitude [NCIT_C49158] of flowers [PO:0009046] increases, decreases or remains unchanged following a fire."@en, "Indication of whether the magnitude of flowers produced by a taxon increases, decreases or remains unchanged following a fire."@en ;
+    dcterms:description "A fire response trait which is a taxon's [NCIT:C40098] flowering [PO:0007016] response [NCIT:C25755] to fire [ENVO_01000786], indicating if the magnitude [NCIT_C49158] of flowers [PO:0009046] increases, decreases or remains unchanged following a fire."@en, "Indication of whether the magnitude of flowers produced by a taxon increases, decreases or remains unchanged following a fire."@en ;
     dcterms:identifier "trait_0030653" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.1080/07352689.2017.1364209> ;
@@ -24088,7 +24096,7 @@ APD:trait_0030654
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "16/02/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."@en, "The time interval from a fire until the first individual in a population begins flowering."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."@en, "The time interval from a fire until the first individual in a population begins flowering."@en ;
     dcterms:identifier "trait_0030654" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013> ;
@@ -24112,7 +24120,7 @@ APD:trait_0030655
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "17/05/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."@en, "The time interval from a fire until 50% of the individuals in a population produce flowers."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering stage [PO_0007016]."@en, "The time interval from a fire until 50% of the individuals in a population produce flowers."@en ;
     dcterms:identifier "trait_0030655" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.1111/j.1654-1103.2003.tb02160.x>, <https://doi.org/10.1890/12-0621.1> ;
@@ -24136,7 +24144,7 @@ APD:trait_0030656
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "17/05/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reach maximum flowering [PO_0007016] levels."@en, "The time interval from a fire until the individuals in a population display maximum flowering."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] reach maximum flowering [PO_0007016] levels."@en, "The time interval from a fire until the individuals in a population display maximum flowering."@en ;
     dcterms:identifier "trait_0030656" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24159,7 +24167,7 @@ APD:trait_0030657
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "17/05/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] begin to decrease their level of flowering [PO_0007016]."@en, "The time interval from a fire until the degree of flowering by individuals in a population begin to decline."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] begin to decrease their level of flowering [PO_0007016]."@en, "The time interval from a fire until the degree of flowering by individuals in a population begin to decline."@en ;
     dcterms:identifier "trait_0030657" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24181,7 +24189,7 @@ APD:trait_0030658
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produces mature [PATO:0001701] fruit [PO:0009001]."@en, "The time interval from a fire until the first individual in a population produces a mature fruit with viable propagules."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produces mature [PATO:0001701] fruit [PO:0009001]."@en, "The time interval from a fire until the first individual in a population produces a mature fruit with viable propagules."@en ;
     dcterms:identifier "trait_0030658" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.1111/j.1654-1103.2003.tb02160.x>, <https://doi.org/10.1890/12-0621.1> ;
@@ -24206,7 +24214,7 @@ APD:trait_0030659
     oboecore:MeasuredCharacteristic obo:NCIT_C25150, obo:PATO_0000165, obo:PATO_0001309, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "16/02/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produce mature [PATO:0001701] fruit [PO:0009001]."@en, "The time interval from a fire until 50% of the individuals in a population produce mature fruit."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542] of a taxon [NCIT:C40098] in a population  [PCO:0000001] produce mature [PATO:0001701] fruit [PO:0009001]."@en, "The time interval from a fire until 50% of the individuals in a population produce mature fruit."@en ;
     dcterms:identifier "trait_0030659" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1007/BF00121013>, <https://doi.org/10.1111/j.1654-1103.2003.tb02160.x>, <https://doi.org/10.1890/12-0621.1> ;
@@ -24229,7 +24237,7 @@ APD:trait_0030710
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001019, obo:PATO_0001353, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "Fuel bed bulk density (volume density [PATO:0001353]), which is the ratio [PATO:0001470] of the mass [PATO:0000125] of the fuel bed divided by the fuel bed volume [PATO:0000918]; the term `fuel bed` refers to the accumulated plant litter [ENVO:01000628] on the ground [SWEET:realmSoil/Ground], as this is the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO:01000786]."@en, "The density of the fuel bed, the plant litter accumulated on the ground. It is calculated as the ratio of the mass of the fuel bed to the fuel bed volume. This trait should be measured on plant litter from a single taxon."@en ;
+    dcterms:description "Fuel bed bulk density (volume density [PATO:0001353]), which is the ratio [PATO:0001470] of the mass [PATO:0000125] of the fuel bed divided by the fuel bed volume [PATO:0000918]; the term `fuel bed` refers to the accumulated plant litter [ENVO_01000628] on the ground [SWEET:realmSoil/Ground], as this is the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO_01000786]."@en, "The density of the fuel bed, the plant litter accumulated on the ground. It is calculated as the ratio of the mass of the fuel bed to the fuel bed volume. This trait should be measured on plant litter from a single taxon."@en ;
     dcterms:identifier "trait_0030710" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1111/oik.03886> ;
@@ -24252,7 +24260,7 @@ APD:trait_0030711
     oboecore:MeasuredCharacteristic odo:ECSO_00000619, obo:PATO_0000125, obo:PATO_0001470, obo:STATO_0000300 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "For a given taxon [NCIT:C40098], the proportion [PATO:0001470] of plant biomass [ENVO:01000155] (fuel [CHEBI:33292]) that is consumed by a fire [ENVO:01000786]."@en, "Proportion of available plant biomass (live and dead) that is consumed by fire. This trait should be measured on biomass from a single taxon."@en ;
+    dcterms:description "For a given taxon [NCIT:C40098], the proportion [PATO:0001470] of plant biomass [ENVO_01000155] (fuel [CHEBI:33292]) that is consumed by a fire [ENVO_01000786]."@en, "Proportion of available plant biomass (live and dead) that is consumed by fire. This trait should be measured on biomass from a single taxon."@en ;
     dcterms:identifier "trait_0030711" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24274,7 +24282,7 @@ APD:trait_0030712
     oboecore:MeasuredCharacteristic obo:NCIT_C37994, obo:PATO_0000008, obo:PATO_0000161, obo:PATO_0001470 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "For a given taxon [NCIT:C40098], the horizontal [PATO:0001855] speed [PATO:0000008] of fire [ENVO:01000786] movement [NCIT:C37994]."@en, "The horizontal rate of fire spread."@en ;
+    dcterms:description "For a given taxon [NCIT:C40098], the horizontal [PATO:0001855] speed [PATO:0000008] of fire [ENVO_01000786] movement [NCIT:C37994]."@en, "The horizontal rate of fire spread."@en ;
     dcterms:identifier "trait_0030712" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24296,7 +24304,7 @@ APD:trait_0030713
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the time when a flame [ENVO:01000789] is no longer visible until smoulder combustion ends."@en, "Smoulder duration for a single leaf, which is the time from the end of the last visible flame until the glowing phase dies out."@en ;
+    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the time when a flame [ENVO_01000789] is no longer visible until smoulder combustion ends."@en, "Smoulder duration for a single leaf, which is the time from the end of the last visible flame until the glowing phase dies out."@en ;
     dcterms:identifier "trait_0030713" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24318,7 +24326,7 @@ APD:trait_0030714
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the start of combustion until a flame [ENVO:01000789] is no longer visible."@en, "Flame duration for a single leaf, which is the time from the first visible flame until the last visible flame."@en ;
+    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the start of combustion until a flame [ENVO_01000789] is no longer visible."@en, "Flame duration for a single leaf, which is the time from the first visible flame until the last visible flame."@en ;
     dcterms:identifier "trait_0030714" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24340,7 +24348,7 @@ APD:trait_0030715
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the entire fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from the time of the start of combustion until smoulder combustion [APD:glossary/40094] ends."@en, "For a single leaf, the sum of flame duration and smoulder duration, which is the time from the first visible flame until the glowing phase dies out."@en ;
+    dcterms:description "A fire response trait which is the duration [PATO:0001309] of the entire fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from the time of the start of combustion until smoulder combustion [APD:glossary/40094] ends."@en, "For a single leaf, the sum of flame duration and smoulder duration, which is the time from the first visible flame until the glowing phase dies out."@en ;
     dcterms:identifier "trait_0030715" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24362,7 +24370,7 @@ APD:trait_0030716
     oboecore:MeasuredCharacteristic obo:PATO_0000165, obo:PATO_0001309, SWEET_propTime:TimeInterval ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO:01000789] until the leaf ignites [APD:glossary/40040]."@en, "For a single leaf, the time from an ignition source contacting the leaf until ignition occurs."@en ;
+    dcterms:description "A fire response trait which is the time interval (duration) [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO_01000789] until the leaf ignites [APD:glossary/40040]."@en, "For a single leaf, the time from an ignition source contacting the leaf until ignition occurs."@en ;
     dcterms:identifier "trait_0030716" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -24383,7 +24391,7 @@ APD:trait_0030716
 APD:trait_0030810
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25652, obo:NCIT_C43414, obo:PATO_0001046 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on the environmental conditions in which they survive and thrive, including their tolerance of, sensitivity [NCIT:C25201] to, and requirement [NCIT:C25652] for certain resource availabilities [EnvThes:21497], including water [CHEBI:15377] availability and soil [ENVO:00001998] nutrient [CHEBI:33284] content and salinity [PATO:0085001]."@en, "Classification scheme of plant resource requirements and tolerances, categorising taxa based on their water, soil nutrient, and soil salinity requirements and tolerances."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on the environmental conditions in which they survive and thrive, including their tolerance of, sensitivity [NCIT:C25201] to, and requirement [NCIT:C25652] for certain resource availabilities [EnvThes:21497], including water [CHEBI:15377] availability and soil [ENVO_00001998] nutrient [CHEBI:33284] content and salinity [PATO:0085001]."@en, "Classification scheme of plant resource requirements and tolerances, categorising taxa based on their water, soil nutrient, and soil salinity requirements and tolerances."@en ;
     dcterms:identifier "trait_0030810" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1093/pcp/pcv155> ;
@@ -24403,7 +24411,7 @@ APD:trait_0030810
 APD:trait_0030811
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C25652, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001309 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309] and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or respond to fluctuations in flooding [ENVO:01000710] and drying, including growth [GO:0040007] and seed germination [GO:0009845] responses."@en, "Classification scheme of plant flood regime requirements and tolerances, categorising taxa into seven groups based on their germination and growth responses to flood regimes."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309] and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or respond to fluctuations in flooding [ENVO_01000710] and drying, including growth [GO:0040007] and seed germination [GO:0009845] responses."@en, "Classification scheme of plant flood regime requirements and tolerances, categorising taxa into seven groups based on their germination and growth responses to flood regimes."@en ;
     dcterms:identifier "trait_0030811" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1023/A1009875226637>, <https://doi.org/10.13140/2.1.2761.5367> ;
@@ -24423,7 +24431,7 @@ APD:trait_0030811
 APD:trait_0030812
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001309 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions. Soil [ENVO:00001998] is considered water-logged if it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379]."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate water-logged soils."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO_01000710] conditions. Soil [ENVO_00001998] is considered water-logged if it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379]."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate water-logged soils."@en ;
     dcterms:identifier "trait_0030812" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_00001998, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, SWEET_phenSystem:Inundation, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/22281> ;
@@ -24441,7 +24449,7 @@ APD:trait_0030812
 APD:trait_0030813
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001309 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO:01000710] conditions."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate being under water."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity [NCIT:C25201] to flood [ENVO_01000710] conditions."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate being under water."@en ;
     dcterms:identifier "trait_0030813" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_15377, obo:ENVO_01000203, obo:ENVO_01000710, obo:NCIT_C61427, SWEET_phenSystem:Inundation, <http://vocabs.lter-europe.net/EnvThes/21064> ;
@@ -24462,7 +24470,7 @@ APD:trait_0030813
 APD:trait_0030814
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001309 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate being covered by snow [ENVO:01000406]."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate being under snow cover."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate being covered by snow [ENVO_01000406]."@en, "Categorical groupings, indicating the length of time a taxon is able to tolerate being under snow cover."@en ;
     dcterms:identifier "trait_0030814" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:ENVO_01000203, obo:ENVO_01000406, <http://vocabs.lter-europe.net/EnvThes/21064> ;
@@ -24481,7 +24489,7 @@ APD:trait_0030814
 APD:trait_0030815
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001585 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is the maximum [NCIT:C25564] soil [ENVO:00001998] salinity [PATO:0085001], reported as soil conductivity [PATO:0001585], that a plant is able to tolerate."@en, "Maximum salinity tolerated by a taxon, reported as the conductivity of the soil."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is the maximum [NCIT:C25564] soil [ENVO_00001998] salinity [PATO:0085001], reported as soil conductivity [PATO:0001585], that a plant is able to tolerate."@en, "Maximum salinity tolerated by a taxon, reported as the conductivity of the soil."@en ;
     dcterms:identifier "trait_0030815" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_24866, obo:ENVO_00001998, obo:ENVO_01000203, obo:PATO_0085001, obo:TO_0006001, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/21497> ;
@@ -24502,7 +24510,7 @@ APD:trait_0030815
 APD:trait_0030816
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001309 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which categorises plants based on their salinity [PATO:0085001] tolerance [TO:0006001], reflecting the duration [PATO:0001309] and concentration [PATO:0000033] of salt [CHEBI:24866] exposure that a plant is able to tolerate."@en, "Classification scheme of plant salt-tolerance categories, categorising taxa based on their tolerance of or sensitivity to salty soils, salt spray, or salt water."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which categorises plants based on their salinity [PATO:0085001] tolerance [TO:0006001], reflecting the duration [PATO:0001309] and concentration [PATO:0000033] of salt [CHEBI:24866] exposure that a plant is able to tolerate."@en, "Classification scheme of plant salt-tolerance categories, categorising taxa based on their tolerance of or sensitivity to salty soils, salt spray, or salt water."@en ;
     dcterms:identifier "trait_0030816" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     SIO:SIO_000147 obo:CHEBI_24866, obo:ENVO_00001998, obo:ENVO_01000203, obo:PATO_0085001, obo:TO_0006001, <http://vocabs.lter-europe.net/EnvThes/21064>, <http://vocabs.lter-europe.net/EnvThes/21497> ;
@@ -24523,7 +24531,7 @@ APD:trait_0030816
 APD:trait_0030817
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0001046, obo:PATO_0001995 ;
     dcterms:created "14/07/2021"^^<xsd:date> ;
-    dcterms:description "An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait which is a plant's [PO:0000003] calcium sensitivity [TO:0000006], corresponding to its sensitivity [NCIT:C25201] to high soil [ENVO:00001998] pH [NCIT:C45997]."@en, "Classification scheme of plant soil calcium tolerance,  corresponding to its sensitivity to high soil pH. Plants are categorised as either calcifuge (intolerant of basic soils) or calcicole (tolerant of basic soils, such as calcareous sands and limestone derived soils)."@en ;
+    dcterms:description "An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait which is a plant's [PO:0000003] calcium sensitivity [TO:0000006], corresponding to its sensitivity [NCIT:C25201] to high soil [ENVO_00001998] pH [NCIT:C45997]."@en, "Classification scheme of plant soil calcium tolerance,  corresponding to its sensitivity to high soil pH. Plants are categorised as either calcifuge (intolerant of basic soils) or calcicole (tolerant of basic soils, such as calcareous sands and limestone derived soils)."@en ;
     dcterms:identifier "trait_0030817" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:references <https://doi.org/10.1002/ece3.7544>, <https://doi.org/10.1007/BF02803249> ;
@@ -24546,7 +24554,7 @@ APD:trait_0030818
     oboecore:MeasuredCharacteristic obo:NCIT_C25201, obo:NCIT_C43414, obo:PATO_0000141, obo:PATO_0001995 ;
     datacite:IsReviewedBy <https://orcid.org/0000-0001-5640-5910>, <https://orcid.org/0000-0001-7328-345X>, <https://orcid.org/0000-0001-9277-5142>, <https://orcid.org/0000-0001-9353-0067>, <https://orcid.org/0000-0002-0962-5117>, <https://orcid.org/0000-0002-4680-8115>, <https://orcid.org/0000-0002-8766-2829>, <https://orcid.org/0000-0003-0360-8321>, <https://orcid.org/0000-0003-2120-0071> ;
     dcterms:created "23/02/2023"^^<xsd:date> ;
-    dcterms:description "A fire response trait indicating morphological [PATO_0000051] features that protect individuals [EFO:0000542] from death [GO_0016265] when a fire [ENVO:01000786] occurs nearby."@en, "Classification scheme of plant fire tolerance, indicating morphological characteristics plants use to survive fire."@en ;
+    dcterms:description "A fire response trait indicating morphological [PATO_0000051] features that protect individuals [EFO:0000542] from death [GO_0016265] when a fire [ENVO_01000786] occurs nearby."@en, "Classification scheme of plant fire tolerance, indicating morphological characteristics plants use to survive fire."@en ;
     dcterms:identifier "trait_0030818" ;
     dcterms:modified "05/02/2024"^^<xsd:date> ;
     dcterms:reviewed "31/05/2023"^^<xsd:date> ;
@@ -25159,11 +25167,11 @@ APD:trait_group_0020208
     skos:prefLabel "respiration rate trait"@en .
 
 APD:trait_group_0020210
-    dcterms:description "A plant gas exchange trait which is the rate of transpiration [ENVO:02500035]."@en ;
+    dcterms:description "A plant gas exchange trait which is the rate of transpiration [ENVO_02500035]."@en ;
     dcterms:identifier "trait_group_0020210" ;
     a skos:Concept ;
     skos:broader APD:trait_group_0020204 ;
-    skos:definition "A plant gas exchange trait which is the rate of transpiration [ENVO:02500035]."@en ;
+    skos:definition "A plant gas exchange trait which is the rate of transpiration [ENVO_02500035]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020660, APD:trait_0020661, APD:trait_0020662, APD:trait_0020663, APD:trait_0020664, APD:trait_0020665 ;
     skos:prefLabel "transpiration rate trait"@en .
@@ -25179,11 +25187,11 @@ APD:trait_group_0020212
     skos:prefLabel "carbon dioxide concentration trait"@en .
 
 APD:trait_group_0020812
-    dcterms:description "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO:01001864] during the photosynthesis light reactions [GO:0019684]."@en ;
+    dcterms:description "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO_01001864] during the photosynthesis light reactions [GO:0019684]."@en ;
     dcterms:identifier "trait_group_0020812" ;
     a skos:Concept ;
     skos:broader APD:trait_group_0020202 ;
-    skos:definition "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO:01001864] during the photosynthesis light reactions [GO:0019684]."@en ;
+    skos:definition "A plant photosynthesis trait pertaining to the performance [NCIT:C60778] of the photosystem [GO:0009521] complexes, especially with regard to how effectively they process photosynthetically active radiation [ENVO_01001864] during the photosynthesis light reactions [GO:0019684]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020410, APD:trait_0020411, APD:trait_0020412, APD:trait_0020413, APD:trait_0020414, APD:trait_0020415, APD:trait_0020416, APD:trait_0020417, APD:trait_0020418, APD:trait_0020419, APD:trait_0020420, APD:trait_0020421, APD:trait_0020422, APD:trait_0020813 ;
     skos:prefLabel "photosystem performance trait"@en .
@@ -25270,11 +25278,11 @@ APD:trait_group_0030504
     skos:prefLabel "reproductive structure life history trait"@en .
 
 APD:trait_group_0030602
-    dcterms:description "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire."@en ;
+    dcterms:description "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO_01000786] or indicating a plants response [NCIT:C25755] to fire."@en ;
     dcterms:identifier "trait_group_0030602" ;
     a skos:Concept ;
     skos:broader APD:trait_group_0030001 ;
-    skos:definition "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO:01000786] or indicating a plants response [NCIT:C25755] to fire."@en ;
+    skos:definition "A plant life history trait indicating adaptations [NCIT:C158868] to increase survival rate [EnvThes:21065] or seed germination [GO_0009845] rate following fire [ENVO_01000786] or indicating a plants response [NCIT:C25755] to fire."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0002822, APD:trait_0002824, APD:trait_0030013, APD:trait_0030216, APD:trait_0030217, APD:trait_0030411, APD:trait_0030412, APD:trait_0030413, APD:trait_0030414, APD:trait_0030514, APD:trait_0030610, APD:trait_0030611, APD:trait_0030612, APD:trait_0030613, APD:trait_0030614, APD:trait_0030651, APD:trait_0030652, APD:trait_0030653, APD:trait_0030654, APD:trait_0030655, APD:trait_0030656, APD:trait_0030657, APD:trait_0030658, APD:trait_0030659, APD:trait_0030710, APD:trait_0030711, APD:trait_0030712, APD:trait_0030713, APD:trait_0030714, APD:trait_0030715, APD:trait_0030716, APD:trait_0030818 ;
     skos:prefLabel "fire response trait"@en .
@@ -25291,11 +25299,11 @@ APD:trait_group_0030702
     skos:prefLabel "chemical stress sensitivity trait"@en .
 
 APD:trait_group_0030704
-    dcterms:description "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO:01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."@en ;
+    dcterms:description "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO_01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."@en ;
     dcterms:identifier "trait_group_0030704" ;
     a skos:Concept ;
     skos:broader APD:trait_group_0030001 ;
-    skos:definition "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO:01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."@en ;
+    skos:definition "A plant life history trait indicating adaptations [NCIT:C158868] to specific environmental conditions [ENVO_01000203] or tolerance [NCIT:C43414] to specific environmental stresses [EnvThes:21245]."@en ;
     skos:inScheme <https://w3id.org/APD/traits> ;
     skos:narrower APD:trait_0020420, APD:trait_0020421, APD:trait_0020422, APD:trait_0020423, APD:trait_0020813, APD:trait_0020814, APD:trait_0020815, APD:trait_0020816, APD:trait_0020817, APD:trait_0030022, APD:trait_0030030, APD:trait_0030213, APD:trait_0030216, APD:trait_0030217, APD:trait_0030810, APD:trait_0030811, APD:trait_0030812, APD:trait_0030813, APD:trait_0030814, APD:trait_0030815, APD:trait_0030816, APD:trait_0030817 ;
     skos:prefLabel "environmental tolerance trait"@en .
