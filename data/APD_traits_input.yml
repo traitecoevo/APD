@@ -594,7 +594,7 @@ trait_0000112:
   trait: leaf_senesced_Al_per_dry_mass
   label: Senesced leaf aluminium (Al) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of aluminium
-    [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:28984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of aluminium in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -618,7 +618,7 @@ trait_0000114:
   trait: leaf_senesced_B_per_dry_mass
   label: Senesced leaf boron (B) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of boron
-    [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:27560] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of boron in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -641,7 +641,7 @@ trait_0000116:
   trait: leaf_senesced_C_per_dry_mass
   label: Senesced leaf carbon (C) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of carbon
-    [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:27594] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of carbon in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -665,7 +665,7 @@ trait_0000118:
   trait: leaf_senesced_Ca_per_dry_mass
   label: Senesced leaf calcium (Ca) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium
-    [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:22984] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of calcium in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -690,7 +690,7 @@ trait_0000126:
   trait: leaf_senesced_Cu_per_dry_mass
   label: Senesced leaf copper (Cu) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of copper
-    [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:28694] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of copper in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -715,7 +715,7 @@ trait_0000128:
   trait: leaf_senesced_Fe_per_dry_mass
   label: Senesced leaf iron (Fe) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of iron
-    [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:18248] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of iron in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -739,7 +739,7 @@ trait_0000130:
   trait: leaf_senesced_K_per_dry_mass
   label: Senesced leaf potassium (K) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium
-    [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:26216] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of potassium in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -764,7 +764,7 @@ trait_0000132:
   trait: leaf_senesced_Mg_per_dry_mass
   label: Senesced leaf magnesium (Mg) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium
-    [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:25107] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of magnesium in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -789,7 +789,7 @@ trait_0000134:
   trait: leaf_senesced_Mn_per_dry_mass
   label: Senesced leaf manganese (Mn) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of manganese
-    [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:18291] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of manganese in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -814,7 +814,7 @@ trait_0000136:
   trait: leaf_senesced_Mo_per_dry_mass
   label: Senesced leaf molybdenum (Mo) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of molybdenum
-    [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:28685] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of molybdenum in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -838,7 +838,7 @@ trait_0000138:
   trait: leaf_senesced_N_per_dry_mass
   label: Senesced leaf nitrogen (N) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen
-    [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:25555] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of nitrogen in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -863,7 +863,7 @@ trait_0000140:
   trait: leaf_senesced_Na_per_dry_mass
   label: Senesced leaf sodium (Na) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium
-    [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:26708] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of sodium in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -887,7 +887,7 @@ trait_0000142:
   trait: leaf_senesced_Ni_per_dry_mass
   label: Senesced leaf nickel (Ni) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of nickel
-    [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:28112] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of nickel in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -909,7 +909,7 @@ trait_0000144:
   trait: leaf_senesced_P_per_dry_mass
   label: Senesced leaf phosphorus (P) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus
-    [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:28659] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of phosphorus in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -934,7 +934,7 @@ trait_0000146:
   trait: leaf_senesced_S_per_dry_mass
   label: Senesced leaf sulphur (S) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of sulphur
-    [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:26833] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of sulphur in a senescent leaf (leaf litter)
     to the senescent leaf dry mass.
@@ -958,7 +958,7 @@ trait_0000152:
   trait: leaf_senesced_Zn_per_dry_mass
   label: Senesced leaf zinc (Zn) content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of zinc
-    [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO:01000628])
+    [CHEBI:27363] in a senescent [PATO:0001487] leaf [PO:0025034] (leaf litter [ENVO_01000628])
     to the senescent leaf dry mass [TO:0001014].
   description: The ratio of the mass of zinc in a senescent leaf (leaf litter) to
     the senescent leaf dry mass.
@@ -1163,7 +1163,7 @@ trait_0000518:
   trait: wood_dead_Ca_per_dry_mass
   label: Dead wood calcium (Ca) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of calcium
-    [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:22984] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of calcium in senescent wood (litter) to the
     dry mass of the senesced wood.
@@ -1188,7 +1188,7 @@ trait_0000530:
   trait: wood_dead_K_per_dry_mass
   label: Dead wood potassium (K) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of potassium
-    [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:26216] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of potassium in senescent wood (litter) to the
     dry mass of the senesced wood.
@@ -1213,7 +1213,7 @@ trait_0000532:
   trait: wood_dead_Mg_per_dry_mass
   label: Dead wood magnesium (Mg) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of magnesium
-    [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:25107] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of magnesium in senescent wood (litter) to the
     dry mass of the senesced wood.
@@ -1238,7 +1238,7 @@ trait_0000538:
   trait: wood_dead_N_per_dry_mass
   label: Dead wood nitrogen (N) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of nitrogen
-    [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:25555] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of nitrogen in senescent wood (litter) to the
     dry mass of the senesced wood.
@@ -1262,7 +1262,7 @@ trait_0000540:
   trait: wood_dead_Na_per_dry_mass
   label: Dead wood sodium (Na) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of sodium
-    [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:26708] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of sodium in senescent wood (litter) to the dry
     mass of the senesced wood.
@@ -1287,7 +1287,7 @@ trait_0000544:
   trait: wood_dead_P_per_dry_mass
   label: Dead wood phosphorus (P) content per unit dead wood dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of phosphorus
-    [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO:01000628])
+    [CHEBI:28659] in senescent [PATO:0001487] wood [PO:0005848] (litter [ENVO_01000628])
     to the dry mass of the senesced wood.
   description: The ratio of the mass of phosphorus in senescent wood (litter) to the
     dry mass of the senesced wood.
@@ -3074,7 +3074,7 @@ trait_0002822:
   trait: leaf_ash_per_dry_mass
   label: Leaf ash content per unit leaf dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of leaf
-    [PO:0025034] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839]
+    [PO:0025034] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839]
     to the leaf dry mass before the combustion process.
   description: The ratio of the mass of leaf ash remaining after a combustion process
     to the leaf dry mass before the combustion process.
@@ -3097,7 +3097,7 @@ trait_0002824:
   trait: bark_ash_per_dry_mass
   label: Bark ash content per unit bark dry mass
   description_encoded: The ratio [PATO:0001470] of the mass [PATO:0000125] of bark
-    [PO:0004518] ash [ENVO:02000090] remaining after a combustion process [ENVO:01000839]
+    [PO:0004518] ash [ENVO_02000090] remaining after a combustion process [ENVO_01000839]
     to the bark dry mass before the combustion process.
   description: The ratio of the mass of bark ash remaining after a combustion process
     to the bark dry mass before the combustion process.
@@ -3445,7 +3445,7 @@ trait_0010021:
   trait: plant_width
   label: Plant canopy width
   description_encoded: A whole plant morphology trait [TO:0000398] which is the maximum
-    [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242]
+    [NCIT:C25564] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242]
     for a taxon [NCIT:C40098] in a given population [PCO:0000001] or location [NCIT:C25341].
     This is a plant's larger [NCIT:C49508] width dimension and is orthogonal to its
     height and breadth.
@@ -3474,7 +3474,7 @@ trait_0010022:
   trait: plant_breadth
   label: Plant canopy breadth
   description_encoded: A whole plant morphology trait [TO:0000398] which is the smaller
-    [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO:01001242].
+    [NCIT:C25376] width [PATO:0000600] dimension of a plant canopy [ENVO_01001242].
   description: Shortest width dimension of a plant's vegetative canopy; orthogonal
     to its height and width.
   comments: This trait is not meant to document the breadth of all individuals sampled,
@@ -5678,7 +5678,7 @@ trait_0011713:
   trait: leaf_reflectance_near_infrared
   label: Leaf infra-red light reflection
   description_encoded: A leaf [PO:0025034] optical [NCIT:C16940] properties trait
-    which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO:21001214]
+    which is the proportion [PATO:0001470] of incoming infrared radiation [ENVO_21001214]
     that is reflected [SWEET:procWave/Reflection] by a leaf.
   description: Proportion of incoming near infra-red light (between 750-10500 nm)
     that is reflected by a leaf.
@@ -9309,7 +9309,7 @@ trait_0020221:
   trait: photosynthetic_pathway
   label: Plant photosynthetic pathway
   description_encoded: The photosynthetic pathway, or biochemical reaction [NCIT:C19899],
-    used by a plant to convert carbon dioxide [ENVO:01000451] into carbohydrates [CHEBI:16646],
+    used by a plant to convert carbon dioxide [ENVO_01000451] into carbohydrates [CHEBI:16646],
     with options being C3 photosynthesis [GO:0019253], C4 photosynthesis [GO:0009760],
     and CAM photosynthesis [GO:0009761].
   description: Type of photosynthetic pathway displayed by a plant.
@@ -9344,8 +9344,8 @@ trait_0020240:
   trait: leaf_photosynthetic_rate_per_area_ambient
   label: Leaf photosynthesis rate per unit leaf area under ambient light and CO2 (A)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
-    exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864]
-    levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations
+    exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864]
+    levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations
     [PATO:0000033], recorded per unit leaf area [PATO:0001323].
   description: The photosynthetic rate of a leaf exposed to ambient light (photosynthetically
     active radiation) levels and ambient carbon dioxide concentrations, air temperature
@@ -9380,8 +9380,8 @@ trait_0020241:
     (Amax)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
     whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539]
-    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864]
-    and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations
+    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864]
+    and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations
     [PATO:0000033], recorded per unit leaf area [PATO:0001323].
   description: The photosynthetic rate of a leaf exposed to saturating light (photosynthetically
     active radiation) levels and saturating carbon dioxide concentrations, at optimal
@@ -9417,8 +9417,8 @@ trait_0020242:
     CO2 (Asat)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
     whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539]
-    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864]
-    and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526]
+    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864]
+    and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323].
   description: The photosynthetic rate of a leaf exposed to saturating light (photosynthetically
     active radiation) levels and ambient carbon dioxide concentrations, air temperature
@@ -9453,8 +9453,8 @@ trait_0020243:
   label: Leaf photosynthesis rate per unit leaf dry mass under ambient light and CO2
     (A)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
-    exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO:01001864]
-    levels and ambient atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations
+    exposed to ambient [NCIT:C62306] photosynthetically active radiation [ENVO_01001864]
+    levels and ambient atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations
     [PATO:0000033], recorded per unit leaf dry mass [TO:0001014].
   description: The photosynthetic rate of a leaf exposed to ambient light (photosynthetically
     active radiation) levels and ambient carbon dioxide concentrations, at ambient
@@ -9489,8 +9489,8 @@ trait_0020244:
     CO2 (Amax)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
     whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539]
-    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864]
-    and saturating atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526] concentrations
+    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864]
+    and saturating atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526] concentrations
     [PATO:0000033], recorded per unit leaf dry mass [TO:0001014].
   description: The photosynthetic rate of a leaf exposed to saturating light (photosynthetically
     active radiation) levels and saturating carbon dioxide concentrations, at optimal
@@ -9525,8 +9525,8 @@ trait_0020245:
     ambient CO2 (Asat)
   description_encoded: The photosynthetic rate [TO:0001015] of plant leaves [PO:0025034]
     whose photosystem [GO:0009521] I and II reaction centers [GO:0009538; GO:0009539]
-    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO:01001864]
-    and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO:01000451; CHEBI:16526]
+    are exposed to saturating [NCIT:C61427] photosynthetically active radiation [ENVO_01001864]
+    and ambient [NCIT:C62306] atmospheric carbon dioxide [ENVO_01000451; CHEBI:16526]
     concentrations [PATO:0000033], recorded per unit leaf dry mass [TO:0001014].
   description: The photosynthetic rate of a leaf exposed to saturating light (photosynthetically
     active radiation) levels and ambient carbon dioxide concentrations, air temperature
@@ -9561,8 +9561,8 @@ trait_0020310:
   description_encoded: The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526]
     concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521]
     I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427]
-    photosynthetically active radiation [ENVO:01001864] and saturating atmospheric
-    carbon dioxide [ENVO:01000451] concentrations.
+    photosynthetically active radiation [ENVO_01001864] and saturating atmospheric
+    carbon dioxide [ENVO_01000451] concentrations.
   description: The CO2 concentration in intercellular (interstitial) spaces in a leaf
     exposed to saturating light (photosynthetically active radiation) levels and saturating
     carbon dioxide concentrations; ci.
@@ -9594,8 +9594,8 @@ trait_0020311:
   description_encoded: The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526]
     concentration [PATO:0000033] of plant leaves [PO:0025034] whose photosystem [GO:0009521]
     I and II reaction centers [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427]
-    photosynthetically active radiation [ENVO:01001864] and ambient atmospheric carbon
-    dioxide [ENVO:01000451] concentrations.
+    photosynthetically active radiation [ENVO_01001864] and ambient atmospheric carbon
+    dioxide [ENVO_01000451] concentrations.
   description: The CO2 concentration in intercellular (interstitial) spaces in a leaf
     exposed to saturating light (photosynthetically active radiation) levels and ambient
     carbon dioxide concentrations; ci.
@@ -9626,8 +9626,8 @@ trait_0020312:
   label: Internal CO2 concentration under ambient conditions (ci)
   description_encoded: The intercellular space [PO:0025379] carbon dioxide [CHEBI:16526]
     concentration [PATO:0000033] of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306]
-    photosynthetically active radiation [ENVO:01001864] levels and ambient atmospheric
-    carbon dioxide [ENVO:01000451] concentrations.
+    photosynthetically active radiation [ENVO_01001864] levels and ambient atmospheric
+    carbon dioxide [ENVO_01000451] concentrations.
   description: The CO2 concentration in intercellular (interstitial) spaces in a leaf
     exposed to ambient light (photosynthetically active radiation) levels and ambient
     carbon dioxide concentrations; ci.
@@ -9658,7 +9658,7 @@ trait_0020313:
   label: Ratio of internal to external CO2 concentrations (ci/ca)
   description_encoded: The ratio [PATO:0001470] of leaf [PO:0025034] intercellular
     space [PO:0025379] carbon dioxide [CHEBI:16526] concentration [PATO:0000033] to
-    atmospheric carbon dioxide [ENVO:01000451] concentration.
+    atmospheric carbon dioxide [ENVO_01000451] concentration.
   description: The ratio of the CO2 concentration in intercellular (interstitial)
     spaces in leaves to the atmospheric CO2 concentration, an indication of stomatal
     conductance; ci/ca.
@@ -9683,7 +9683,7 @@ trait_0020313:
 trait_0020314:
   trait: leaf_chloroplast_CO2_concentration
   label: CO2 concentration inside chloroplasts (cc)
-  description_encoded: The concentration [PATO:0000033] of carbon dioxide [ENVO:01000451]
+  description_encoded: The concentration [PATO:0000033] of carbon dioxide [ENVO_01000451]
     inside chloroplasts [GO:0009507] in leaves [PO:0025034].
   description: CO2 concentration inside chloroplasts in leaves; cc.
   inScheme: https://w3id.org/APD
@@ -9706,7 +9706,7 @@ trait_0020314:
 trait_0020315:
   trait: atmospheric_CO2_concentration
   label: Ambient CO2 concentration (ca)
-  description_encoded: The atmospheric carbon dioxide [ENVO:01000451] concentration
+  description_encoded: The atmospheric carbon dioxide [ENVO_01000451] concentration
     [PATO:0000033].
   description: Atmospheric CO2 concentration (external CO2 concentration); ca.
   comments: This is not a trait itself, but will often be used to calculate traits
@@ -9966,7 +9966,7 @@ trait_0020416:
     electron transport [MESH:D004579] rate [PATO:0000161] to its maximum carboxylation
     [MOP:0000591] rate, reflecting the trade-off between photosynthetic gain and costs
     of excess energy dissipation, with the ratio affected by temperature, photosynthetically
-    active radiation [ENVO:01001864] (light), and carbon dioxide [CHEBI:16526] concentration.
+    active radiation [ENVO_01001864] (light), and carbon dioxide [CHEBI:16526] concentration.
     These are both model parameters [STATO:0000034] derived from a photosynthesis
     [GO:0015979] A-ci response curve.
   description: Ratio of photosynthetic electron transport capacity (Jmax) to maximum
@@ -10083,7 +10083,7 @@ trait_0020419:
 trait_0020420:
   trait: leaf_critical_temperature_minimum
   label: Leaf heat tolerance maximum critical temperature (Tcrit-cold or Tcrit-min)
-  description_encoded: A temperature response trait [TO:0000432] which is the temperature
+  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
     [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become
     inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306].
     This is a modelled parameter [STATO:0000034] derived from the inflection point
@@ -10108,7 +10108,7 @@ trait_0020420:
 trait_0020421:
   trait: leaf_critical_temperature_maximum
   label: Leaf heat tolerance minimum critical temperature (Tcrit-hot or Tcrit-max)
-  description_encoded: A temperature response trait [TO:0000432] which is the temperature
+  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
     [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become
     inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305].
     This is a modelled parameter [STATO:0000034] derived from the inflection point
@@ -10133,7 +10133,7 @@ trait_0020421:
 trait_0020422:
   trait: leaf_maximum_temperature
   label: Leaf heat tolerance maximum temperature (Tmax-hot)
-  description_encoded: A temperature response trait [TO:0000432] which is the temperature
+  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
     [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546]
     as the leaf temperature increases (is heated) [PATO:0001305] which corresponds
     to potential sustained damage to the photosynthetic apparatus. This is a modelled
@@ -10158,8 +10158,8 @@ trait_0020422:
 trait_0020423:
   trait: leaf_ice_nucleation_temperature
   label: Leaf ice nucleation temperature
-  description_encoded: A temperature response trait [TO:0000432] which is the temperature
-    [PATO:0000146] at which ice [ENVO:01001125] crystals [ENVO:01000845] begin to
+  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
+    [PATO:0000146] at which ice [ENVO_01001125] crystals [ENVO_01000845] begin to
     form inside plant tissues [CARO:0000043].
   description: The temperature at which ice crystals begin to form inside plant tissues.
   inScheme: https://w3id.org/APD
@@ -10173,13 +10173,13 @@ trait_0020423:
   modified: 01/04/2025
   structure: PO_0025034
   measured_characteristic: PATO_0000146
-  keywords: ENVO:01001125; PO_0020039; TO_0000432
+  keywords: ENVO_01001125; PO_0020039; TO_0000432
 trait_0020510:
   trait: leaf_dark_respiration_per_area
   label: Leaf respiration rate per unit leaf area, in the dark (Rdark)
   description_encoded: The cellular respiration [GO:0045333] rate [PATO:0000161] of
     plant leaves [PO:0025034] in the dark (absence of any photosynthetically active
-    radiation [ENVO:01001864]), recorded per unit leaf area [PATO:0001323].
+    radiation [ENVO_01001864]), recorded per unit leaf area [PATO:0001323].
   description: The respiration rate of a leaf in the dark (absence of photosynthetically
     active radiation), calculated as the production of CO2 per unit leaf area.
   comments: Respiration is heavily temperature dependent and the measurement temperature
@@ -10207,7 +10207,7 @@ trait_0020511:
   label: Leaf respiration rate per unit leaf dry mass, in the dark (Rdark)
   description_encoded: The cellular respiration [GO:0045333] rate [PATO:0000161] of
     plant leaves [PO:0025034] in the dark (absence of any photosynthetically active
-    radiation [ENVO:01001864]), recorded per unit leaf dry mass [TO:0001014].
+    radiation [ENVO_01001864]), recorded per unit leaf dry mass [TO:0001014].
   description: The respiration rate of a leaf in the dark (absence of photosynthetically
     active radiation), calculated as the production of CO2 per unit leaf dry mass.
   comments: Respiration is heavily temperature dependent and the measurement temperature
@@ -10235,7 +10235,7 @@ trait_0020512:
   label: Leaf respiration rate per unit leaf area, in the light (Rday)
   description_encoded: The cellular respiration [GO:0045333] rate [PATO:0000161] of
     plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically
-    active radiation [ENVO:01001864] levels, recorded per unit leaf area [PATO:0001323].
+    active radiation [ENVO_01001864] levels, recorded per unit leaf area [PATO:0001323].
   description: The respiration rate of a leaf in ambient light (ambient photosynthetically
     active radiation), calculated as the production of CO2 per unit leaf area.
   comments: Respiration is heavily temperature dependent and the measurement temperature
@@ -10262,7 +10262,7 @@ trait_0020513:
   label: Stem respiration rate per unit stem area, in the dark
   description_encoded: The cellular respiration [GO:0045333] rate [PATO:0000161] of
     plant stems [PO:0009047] in the dark (absence of any photosynthetically active
-    radiation [ENVO:01001864]), recorded per unit stem area [PATO:0001323].
+    radiation [ENVO_01001864]), recorded per unit stem area [PATO:0001323].
   description: The respiration rate of a stem in the dark (absence of photosynthetically
     active radiation), calculated as the production of CO2 per unit stem area.
   comments: Respiration is heavily temperature dependent and the measurement temperature
@@ -10290,8 +10290,8 @@ trait_0020610:
     conditions (gsw)
   description_encoded: The stomatal conductance [EnvThes:21211] to water vapour of
     plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically
-    active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide
-    [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323].
+    active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide
+    [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323].
     Stomatal conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water
     [CHEBI:15377] diffusion [NCIT:C82333] through stomata [PO:0008032].
   description: The rate of gaseous water diffusion through stomata in a leaf exposed
@@ -10328,7 +10328,7 @@ trait_0020611:
   description_encoded: The stomatal conductance [EnvThes:21211] to water vapour of
     plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers
     [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically
-    active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451]
+    active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal
     conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377]
     diffusion [NCIT:C82333] through stomata [PO:0008032].
@@ -10366,7 +10366,7 @@ trait_0020612:
   description_encoded: The stomatal conductance [EnvThes:21211] to water vapour of
     plant leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers
     [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically
-    active radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451]
+    active radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Stomatal
     conductance is the rate [PATO:0000161] of gaseous [MESH:D005740] water [CHEBI:15377]
     diffusion [NCIT:C82333] through stomata [PO:0008032].
@@ -10402,8 +10402,8 @@ trait_0020630:
   label: Leaf stomatal water vapour resistance under ambient conditions
   description_encoded: The stomatal [PO:0008032] water vapour resistance [SWEET:propConductivity/Resistance]
     of plant leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically
-    active radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide
-    [ENVO:01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323].
+    active radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide
+    [ENVO_01000451] concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323].
     Stomatal resistance is the resistance to the diffusion [NCIT:C82333] of carbon
     dioxide [CHEBI:16526] through stomata.
   description: Leaf stomatal water vapour resistance under ambient light (photosynthetically
@@ -10484,9 +10484,9 @@ trait_0020641:
 trait_0020660:
   trait: leaf_transpiration_per_area_ambient
   label: Leaf transpiration per unit leaf area under ambient conditions (E)
-  description_encoded: The transpiration [ENVO:02500035] rate [PATO:0000161] of plant
+  description_encoded: The transpiration [ENVO_02500035] rate [PATO:0000161] of plant
     leaves [PO:0025034] exposed to ambient [NCIT:C62306] photosynthetically active
-    radiation [ENVO:01001864] levels and ambient atmospheric carbon dioxide [ENVO:01000451]
+    radiation [ENVO_01001864] levels and ambient atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration
     rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390]
     through their stomata [PO:0008032].
@@ -10520,10 +10520,10 @@ trait_0020660:
 trait_0020661:
   trait: leaf_transpiration_per_area_at_Amax
   label: Leaf transpiration per unit leaf area during Amax measurement (E)
-  description_encoded: The transpiration [ENVO:02500035] rate [PATO:0000161] of plant
+  description_encoded: The transpiration [ENVO_02500035] rate [PATO:0000161] of plant
     leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538;
     GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active
-    radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451]
+    radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration
     rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390]
     through their stomata [PO:0008032].
@@ -10557,10 +10557,10 @@ trait_0020661:
 trait_0020662:
   trait: leaf_transpiration_per_area_at_Asat
   label: Leaf transpiration per unit leaf area during Asat measurement (E)
-  description_encoded: The transpiration [ENVO:02500035] rate [PATO:0000161] of plant
+  description_encoded: The transpiration [ENVO_02500035] rate [PATO:0000161] of plant
     leaves [PO:0025034] whose photosystem [GO:0009521] I and II reaction centers [GO:0009538;
     GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically active
-    radiation [ENVO:01001864] and ambient atmospheric carbon dioxide [ENVO:01000451]
+    radiation [ENVO_01001864] and ambient atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area [PATO:0001323]. Transpiration
     rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390]
     through their stomata [PO:0008032].
@@ -10594,9 +10594,9 @@ trait_0020662:
 trait_0020663:
   trait: leaf_dark_transpiration_per_area
   label: Leaf transpiration rate per unit leaf area, in the dark
-  description_encoded: The transpiration [ENVO:02500035] rate [PATO:0000161] of plant
+  description_encoded: The transpiration [ENVO_02500035] rate [PATO:0000161] of plant
     leaves [PO:0025034] in the dark (absence of any photosynthetically active radiation
-    [ENVO:01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO:01000451]
+    [ENVO_01001864]) and exposed to ambient atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033], recorded per unit leaf area  [PATO:0001323]. Transpiration
     rate is the rate at which plants lose water [CHEBI:15377] vapor [NCIT:C63390]
     through their stomata [PO:0008032].
@@ -10735,7 +10735,7 @@ trait_0020710:
     rate [TO:0001015] to its nitrogen [CHEBI:25555] content, where photosynthesis
     is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers
     [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically
-    active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451]
+    active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033].
   description: The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen
     content, where photosynthesis has been measured in a leaf exposed to saturating
@@ -10768,8 +10768,8 @@ trait_0020711:
   description_encoded: The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic
     rate [TO:0001015] to its nitrogen [CHEBI:25555] content, with the photosynthesis
     measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically
-    active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306]
-    atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033].
+    active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306]
+    atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033].
   description: The ratio of photosynthesis (CO2 assimilation rate) to leaf nitrogen
     content, where photosynthesis has been measured in a leaf exposed to saturating
     light (photosynthetically active radiation) levels and ambient carbon dioxide
@@ -10802,7 +10802,7 @@ trait_0020712:
     rate [TO:0001015] to its phosphorus [CHEBI:28659] content, where photosynthesis
     is measured in plant leaves whose photosystem [GO:0009521] I and II reaction centers
     [GO:0009538; GO:0009539] are exposed to saturating [NCIT:C61427] photosynthetically
-    active radiation [ENVO:01001864] and saturating atmospheric carbon dioxide [ENVO:01000451]
+    active radiation [ENVO_01001864] and saturating atmospheric carbon dioxide [ENVO_01000451]
     concentrations [PATO:0000033].
   description: The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus
     content, where photosynthesis has been measured in a leaf exposed to saturating
@@ -10831,8 +10831,8 @@ trait_0020713:
   description_encoded: The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic
     rate [TO:0001015] to its phosphorus [CHEBI:28659] content, with the photosynthesis
     measurements made on leaves which are saturated [NCIT:C61427] by photosynthetically
-    active radiation [ENVO:01001864] and which are exposed to ambient [NCIT:C62306]
-    atmospheric carbon dioxide [ENVO:01000451] concentrations [PATO:0000033].
+    active radiation [ENVO_01001864] and which are exposed to ambient [NCIT:C62306]
+    atmospheric carbon dioxide [ENVO_01000451] concentrations [PATO:0000033].
   description: The ratio of photosynthesis (CO2 assimilation rate) to leaf phosphorus
     content, where photosynthesis has been measured in a leaf exposed to saturating
     light (photosynthetically active radiation) levels and ambient carbon dioxide
@@ -10857,8 +10857,8 @@ trait_0020713:
 trait_0020760:
   trait: leaf_water_use_efficiency_integrated
   label: Integrated water use efficiency
-  description_encoded: The ratio [PATO:0001470] of biomass [ENVO:01000155] production
-    [EnvThes:21071] (carbon dioxide [ENVO:01000451] fixation) to transpiration [ENVO:02500035]
+  description_encoded: The ratio [PATO:0001470] of biomass [ENVO_01000155] production
+    [EnvThes:21071] (carbon dioxide [ENVO_01000451] fixation) to transpiration [ENVO_02500035]
     (water [CHEBI:15377] loss) across a given time interval [TimeInterval].
   description: The rate of carbon dioxide fixation relative to water loss, calculated
     as biomass production / transpiration. This measures how much biomass is produced
@@ -10911,7 +10911,7 @@ trait_0020762:
   trait: leaf_water_use_efficiency_instantaneous
   label: Instantaneous water use efficiency (WUE)
   description_encoded: The ratio [PATO:0001470] of a leaf's [PO:0025034] photosynthetic
-    rate [TO:0001015] to its transpiration [ENVO:02500035] rate [PATO:0000161], with
+    rate [TO:0001015] to its transpiration [ENVO_02500035] rate [PATO:0000161], with
     photosynthetic rate and transpiration rate determined by gas exchange measurements.
   description: The ratio of photosynthetic rate (A; CO2 assimilation rate) to transpiration
     rate (E; water loss), with photosynthetic rate and transpiration rate determined
@@ -10942,8 +10942,8 @@ trait_0020813:
   label: Photochemical reflectance index (PRI)
   description_encoded: 'A remote sensing [EnvThes:21762] index [NCIT:C25390] of the
     efficiency [PATO:0001029] with which a whole plant [PO:0000003] uses photosynthetically
-    active radiation [ENVO:01001864], calculated from the reflectance [EnvThes:21580]
-    of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242] at 531 nm (a
+    active radiation [ENVO_01001864], calculated from the reflectance [EnvThes:21580]
+    of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242] at 531 nm (a
     xanthophyll [CHEBI:27325] band) and 570 nm (a reference band): PRI = (R531 - R570)
     / (R531 + R570). It is recorded with a spectroradiometer [MOSAIC:00000974] and
     a higher value indicates a higher radiation use efficiency.'
@@ -10975,7 +10975,7 @@ trait_0020814:
   label: Water band index
   description_encoded: A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole
     plant [PO:0000003] water status, which is the ratio [PATO:0001470] of the reflectance
-    [EnvThes:21580] of radiation [ENVO:01001023] off the plant canopy [ENVO:01001242]
+    [EnvThes:21580] of radiation [ENVO_01001023] off the plant canopy [ENVO_01001242]
     at 970 nm to the reflectance at 900 nm, recorded with a spectroradiometer [MOSAIC:00000974],
     where a higher value indicates a higher canopy water [CHEBI:15377] content.
   description: Water band index measures whole plant water status. It is the ratio
@@ -11002,7 +11002,7 @@ trait_0020815:
   description_encoded: 'A remote sensing [EnvThes:21762] index [NCIT:C25390] of whole
     plant [PO:0000003] vegetation status, which is a ratio [PATO:0001470] that considers
     the relative reflectance [EnvThes:21580] of red light versus short-wave infrared
-    radiation (SWIR) [ENVO:21001214] off the plant canopy [ENVO:01001242], where a
+    radiation (SWIR) [ENVO_21001214] off the plant canopy [ENVO_01001242], where a
     higher value indicates greater vegetation health. The formula is: (SWIR - Red)
     / (SWIR + Red).'
   description: 'A remote sensing index of whole plant vegetation status, which is
@@ -11031,7 +11031,7 @@ trait_0020816:
   description_encoded: 'A remote sensing [EnvThes:21762] index [NCIT:C25390] of chlorophyll
     [CHEBI:28966] absorption [SWEET:procWave/Absorption], which is a ratio [PATO:0001470]
     that considers the relative reflectance [EnvThes:21580] of different wavelengths
-    off the plant canopy [ENVO:01001242], where a higher value indicates greater chlorophyll
+    off the plant canopy [ENVO_01001242], where a higher value indicates greater chlorophyll
     absorption. The formula is: (R750-R705)/(R750+R705+2(R445)).'
   description: 'A remote sensing index of chlorophyll absorption, which is a ratio
     that considers the relative reflectance of different wavelengths off the plant
@@ -11057,7 +11057,7 @@ trait_0020817:
   description_encoded: A relative measure of the mass [PATO:0000125] of chlorophyll
     [CHEBI:28966] in a leaf [PO:0025034] determined as the difference in light transmission
     [SWEET:procWave/Transmission] through a leaf at two specific wavelengths, red
-    (650 nm, absorbed by chlorophyll) and infrared [ENVO:21001214] (940 nm, not absorbed
+    (650 nm, absorbed by chlorophyll) and infrared [ENVO_21001214] (940 nm, not absorbed
     by chlorophyll).
   description: A relative measure of a leaf's chlorophyll content, determined as the
     difference in light transmission through a leaf at two specific wavelengths, red
@@ -11394,7 +11394,7 @@ trait_0021031:
   label: Midday water potential
   description_encoded: The average water potential [EnvThes:22311] of a plant's leaf
     [PO:0025034] and shoot [PO:0009006] mesophyll [PO:0006070] tissue [CARO:0000043]
-    during maximum midday transpiration [ENVO:02500035] and assumed to be the plant's
+    during maximum midday transpiration [ENVO_02500035] and assumed to be the plant's
     daily minimum [NCIT:C25570] water potential.
   description: The water potential of a plant's leaf or shoot photosynthetic tissue
     during maximum midday transpiration, the time of day when the plant is most water
@@ -11699,7 +11699,7 @@ trait_0021056:
 trait_0021057:
   trait: osmotic_potential
   label: Osmotic potential
-  description_encoded: In a plant tissue [CARO:0000043], the potential energy [ENVO:2000016]
+  description_encoded: In a plant tissue [CARO:0000043], the potential energy [ENVO_2000016]
     of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable
     [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418]
     concentration [PATO:0000033] across the membrane, such that the osmotic potential
@@ -11731,7 +11731,7 @@ trait_0021058:
   description_encoded: A parameter [STATO:0000034] calculated from a pressure-volume
     curve [APD:glossary/40124], which is, for a shoot or leaf [PO:0025034], the osmotic
     potential (solute potential) when they are fully hydrated (relative water content
-    = 100%). Osmotic potential is always negative and is the potential energy [ENVO:2000016]
+    = 100%). Osmotic potential is always negative and is the potential energy [ENVO_2000016]
     of water [CHEBI:15377] molecules to flow [NCIT:C41141] across a semi-permeable
     [PATO:0000982] membrane [GO:0016020] due to the differences in solute [SIO:010418]
     concentration [PATO:0000033] across the membrane.
@@ -11990,7 +11990,7 @@ trait_0022012:
   label: Leaf nitrogen resorption efficiency
   description_encoded: A leaf [PO:0025034] nutrient recycling trait which is one minus
     the ratio [PATO:0001470] of leaf nitrogen [CHEBI:25555] content in a senescent
-    [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf nitrogen content in
+    [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf nitrogen content in
     a live [PATO:0001421] leaf, indicating what proportion of nitrogen is resorbed
     [NCIT:C93204] from the senescent leaf before it is shed.
   description: A leaf nutrient recycling trait which is one minus the ratio of leaf
@@ -12015,7 +12015,7 @@ trait_0022013:
   label: Leaf phosphorus resorption efficiency
   description_encoded: A leaf [PO:0025034] nutrient recycling trait which is one minus
     the ratio [PATO:0001470] of leaf phosphorus [CHEBI:28659] content in a senescent
-    [PATO:0001487] leaf (leaf litter [ENVO:01000628]) to leaf phosphorus content in
+    [PATO:0001487] leaf (leaf litter [ENVO_01000628]) to leaf phosphorus content in
     a live [PATO:0001421] leaf, indicating what proportion of phosphorus is resorbed
     [NCIT:C93204] from the senescent leaf before it is shed.
   description: A leaf nutrient recycling trait which is one minus the ratio of leaf
@@ -12196,7 +12196,7 @@ trait_0030015:
   description_encoded: A whole plant [PO:0000003] life history [ECOCORE:00000018]
     trait which indicates either the substrate [EFO:0005061] on which a plant grows
     [GO:0040007] or, broadly, whether the plant grows in an aquatic [EnvThes:21785]
-    or terrestrial [EnvThes:21880] habitat [ENVO:01000739]. Substrate is defined as
+    or terrestrial [EnvThes:21880] habitat [ENVO_01000739]. Substrate is defined as
     the surface to which an organism is attached.
   description: Trait broadly indicating where a plant is usually found, referencing
     the habitat in which a plant grows, the substrate to which a plant is attached,
@@ -12478,7 +12478,7 @@ trait_0030024:
   label: Leaf phenology
   description_encoded: A whole plant [PO:0000003] phenotype [NCIT:C16977] trait characterising
     whether there is a part of the year when a plant sheds all leaves [PO:0025034]
-    (shedability [PATO:0001729]) and the environmental conditions [ENVO:01000203]
+    (shedability [PATO:0001729]) and the environmental conditions [ENVO_01000203]
     that cause a plant to shed its leaves.
   description: Trait indicating whether a plant retains a leaf canopy throughout the
     year and what environmental cues are associated with canopy shedding.
@@ -12538,7 +12538,7 @@ trait_0030026:
   trait: competitive_stratum
   label: Competitive stratum
   description_encoded: A classification [NCIT:C25161] that indicates the vegetation
-    layer [ENVO:01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310],
+    layer [ENVO_01000355] a taxon [NCIT:C40098] reaches within its community [ECSO:00000310],
     used to assess competition [EnvThes:21097] within the community.
   description: Categorical descriptions of a taxon's relative stature in its community,
     used to assess competitive heirarchies within a community.
@@ -12962,7 +12962,7 @@ trait_0030216:
 trait_0030217:
   trait: seedling_establishment_conditions
   label: Seedling establishment conditions
-  description_encoded: The environmental conditions [ENVO:01000203] under which a
+  description_encoded: The environmental conditions [ENVO_01000203] under which a
     taxon [NCIT:C40098] displays seed [PO:0009010] germination [GO:0009845] and seedling
     establishment [EnvThes:20410], with trait values reflecting successional changes
     to the vegetation community.
@@ -12988,7 +12988,7 @@ trait_0030218:
   label: Canopy light environment required for reproduction
   description_encoded: A plant phenological [TO:0000933] life history [ECOCORE:00000018]
     trait which is an index [NCIT:C25390] that captures the level of photosynthetically
-    active radiation [ENVO:01001864] required by plants for reproduction [GO:0000003].
+    active radiation [ENVO_01001864] required by plants for reproduction [GO:0000003].
   description: The minimum light environment required by plants for reproduction,
     scaled from 0 to 8.
   comments: 0 indicates `No direct light, extremely low levels of transmitted/reflected
@@ -13034,7 +13034,7 @@ trait_0030219:
   label: Canopy light environment required for seedling establishment
   description_encoded: A plant phenological [TO:0000933] life history [ECOCORE:00000018]
     trait which is an index [NCIT:C25390] that captures the level of photosynthetically
-    active radiation [ENVO:01001864] required by plants for seed germination [GO:0009845]
+    active radiation [ENVO_01001864] required by plants for seed germination [GO:0009845]
     and seedling establishment [EnvThes:20410].
   description: The minimum light environment required by seedlings for establishment,
     scaled from 0 to 8.
@@ -13104,10 +13104,10 @@ trait_0030412:
   trait: serotiny
   label: Serotiny
   description_encoded: A fire response trait which indicates whether a fruit [PO:0009001]
-    or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO:01001242] after
+    or cone [strobilus; PO:0025083] remains closed in the canopy [ENVO_01001242] after
     maturation [TO:0002661], with the seed [PO:0009010] only being released [NCIT:C42882]
-    after a specific [NCIT:C38024] environmental conditions [ENVO:01000203], usually
-    an environmental cue associated with a fire [ENVO:01000786], but possibly also
+    after a specific [NCIT:C38024] environmental conditions [ENVO_01000203], usually
+    an environmental cue associated with a fire [ENVO_01000786], but possibly also
     drought or extreme heat.
   description: Categorical variable describing whether a fruit or cone remains closed
     in the plant canopy after maturation until an environmental cue, usually a fire,
@@ -13246,7 +13246,7 @@ trait_0030417:
   label: Seed germination proportion
   description_encoded: The proportion [PATO:0001470] of mature [PATO:0001701] seeds
     [PO:0009010] in a sample that germinated [GO:0009845] under the specified [NCIT:C38024]
-    environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000].
+    environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000].
   description: Proportion of mature seeds in a sample that germinated under specified
     environmental or experimental conditions.
   inScheme: https://w3id.org/APD
@@ -13275,7 +13275,7 @@ trait_0030418:
   label: Seed viability
   description_encoded: The proportion [PATO:0001470] of mature [PATO:0001701] seeds
     [PO:0009010] that are capable of germinating [GO:0009845] under suitable [NCIT:C116358]
-    environmental conditions [ENVO:01000203] or experimental conditions [XCO:0000000]
+    environmental conditions [ENVO_01000203] or experimental conditions [XCO:0000000]
     .
   description: Proportion of mature seeds in a sample that are capable of germinating
     under suitable conditions.
@@ -13303,7 +13303,7 @@ trait_0030419:
   trait: seed_germination_time
   label: Seed germination time
   description_encoded: The time interval (duration) [PATO:0001309] from when a seed
-    [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO:01000203]
+    [PO:0009010] is exposed to suitable [NCIT:C116358] environmental conditions [ENVO_01000203]
     or experimental conditions [XCO:0000000] for germinating  [GO:0009845] until it
     germinates.
   description: The time interval from when a seed is exposed to suitable conditions
@@ -13429,7 +13429,7 @@ trait_0030513:
     [PO:0000003]. These may be buds that allow a plant to regrow following an unfavourable
     season or buds that survive [EnvThes:21064] a disturbance event [EnvThes:20373]
     such as a fire, cyclone or drought. In particular, they may be meristematic tissue
-    that survives a fire [ENVO:01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout]
+    that survives a fire [ENVO_01000786] and allows the plant to resprout [Cerrado:fire#PlantResprout]
     following the fire.
   description: The location of buds (meristematic tissue) on a plant that allows it
     to resprout following a fire, annual unfavourable season, or other disturbance
@@ -13464,7 +13464,7 @@ trait_0030514:
   description_encoded: The depth [PATO:0001595] below the ground [SWEET:realmSoil/Ground]
     surface or height [PATO:0000119] above the ground surface of vegetative meristematic
     tissue [PO:0006079] (buds [PO:0000055]) that resprouts [Cerrado:fire#PlantResprout]
-    following a fire [ENVO:01000786].
+    following a fire [ENVO_01000786].
   description: Depth below the soil surface (positive number) or height above ground
     (negative number) from which buds (meristematic tissue) resprout following a disturbance,
     such as a fire.
@@ -13488,7 +13488,7 @@ trait_0030610:
   description_encoded: A fire response trait which indicates whether mature [PATO:0001701]
     plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are
     killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055])
-    that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] that
+    that resprout [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] that
     causes 100% leaf scorch, with fire severity index [EnvThes:22120] an important
     contextual variable.
   description: Trait indicating whether mature individuals of a taxon are killed,
@@ -13524,7 +13524,7 @@ trait_0030611:
   description_encoded: A fire response trait which is the proportion [PATO:0001470]
     of mature [PATO:0001701] individuals [EFO:0000542] in a population [PCO:0000001]
     that have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055]) that
-    resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786].
+    resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786].
   description: Proportion of mature individuals in a population that survive a fire
     and resprout following a fire.
   inScheme: https://w3id.org/APD
@@ -13554,7 +13554,7 @@ trait_0030612:
   description_encoded: A fire response trait which indicates whether juvenile [PATO:0001190]
     plants [PO:0000003] from a taxon [NCIT:C40098] or population [PCO:0000001] are
     killed or have vegetative meristematic tissue [PO:0006079] (buds [PO:0000055])
-    that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO:01000786] with
+    that resprouts [Cerrado:fire#PlantResprout] following a fire [ENVO_01000786] with
     100% leaf scorch.
   description: Trait indicating whether juvenile phase individuals of a taxon are
     killed, resprout, or have a mixed survival response when exposed to a fire with
@@ -13582,7 +13582,7 @@ trait_0030613:
   description_encoded: A fire response trait which is the time interval (duration)
     [PATO:0001309] from seed germination [GO:0009845] until individuals [EFO:0000542]
     are able to survive [EnvThes:21064] and resprout [PlantResprout] following a fire
-    where 100% of the leaves [PO:0025034] in the canopy [ENVO:01001242] are scorched.
+    where 100% of the leaves [PO:0025034] in the canopy [ENVO_01001242] are scorched.
   description: A fire response trait which is the time from seed germination until
     individuals are able to survive and resprout following a fire where 100% of the
     leaves in the canopy are scorched.
@@ -13612,7 +13612,7 @@ trait_0030614:
   label: Post-fire to pre-fire stem ratio
   description_encoded: A fire response trait which is the ratio [PATO:0001470] of
     the count [NCIT:C25463] of stems [PO:0009047] per individual [EFO:0000542] following
-    a fire [ENVO:01000786] to the count of stems per individual before the fire, recorded
+    a fire [ENVO_01000786] to the count of stems per individual before the fire, recorded
     for taxa that have multiple stems emerging from the ground [SWEET:realmSoil/Ground].
   description: Ratio of stem count post-fire to basal stem count (e.g. grass tillers)
     pre-fire at an individual or population level. This trait is appropriate to score
@@ -13649,7 +13649,7 @@ trait_0030615:
     trait which is the ability [NCIT:C78209] of individual [EFO:0000542] plants to
     regenerate [GO:0031099] vegetatively (resprout [Cerrado:fire#PlantResprout]) from
     meristematic tissue [PO:0006079], buds [PO:0000055]) after a disturbance event
-    [EnvThes:20373] other than a fire [ENVO:01000786] that causes 100% defoliation.
+    [EnvThes:20373] other than a fire [ENVO_01000786] that causes 100% defoliation.
   description: A plant's ability to regenerate vegetatively (resprout) from a disturbance
     other than fire that causes 100% defoliation.
   comments: This trait explicitly refers to a plant's vegetative regeneration ability
@@ -13678,9 +13678,9 @@ trait_0030651:
   trait: fire_exposure_level
   label: Fire exposure level
   description_encoded: A fire response trait indicating small-scale variation in plant
-    [PO:0000003] habitat [ENVO:01000739] or growing season that protects the plant's
+    [PO:0000003] habitat [ENVO_01000739] or growing season that protects the plant's
     shoot systems [PO:0009006] or root system [PO:0025025] from exposure [NCIT:C17941]
-    to fire [ENVO:01000786] or being damaged (scorched) by fire, when a fire occurs
+    to fire [ENVO_01000786] or being damaged (scorched) by fire, when a fire occurs
     nearby.
   description: Trait indicating habitat (or microhabitat) variation that protects
     the shoot or root system of some taxa from being exposed to fire and scorched
@@ -13701,7 +13701,7 @@ trait_0030652:
   label: Post-fire recruitment
   description_encoded: A fire response trait which is the magnitude [NCIT:C49158]
     of seed [PO:0009010] germination [GO:0009845] and seedling establishment [EnvThes:20410]
-    after a fire [ENVO:01000786].
+    after a fire [ENVO_01000786].
   description: A trait indicating the magnitude of seed germination and seedling establishment
     following a fire.
   comments: This trait does not suggest what mechanism(s) is triggering post-fire
@@ -13732,7 +13732,7 @@ trait_0030653:
   trait: post_fire_flowering
   label: Post-fire flowering
   description_encoded: A fire response trait which is a taxon's [NCIT:C40098] flowering
-    [PO:0007016] response [NCIT:C25755] to fire [ENVO:01000786], indicating if the
+    [PO:0007016] response [NCIT:C25755] to fire [ENVO_01000786], indicating if the
     magnitude [NCIT_C49158] of flowers [PO:0009046] increases, decreases or remains
     unchanged following a fire.
   description: Indication of whether the magnitude of flowers produced by a taxon
@@ -13761,7 +13761,7 @@ trait_0030654:
   trait: fire_time_from_fire_to_flowering
   label: Time from fire to first flowering
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering
     stage [PO_0007016].
   description: The time interval from a fire until the first individual in a population
@@ -13793,7 +13793,7 @@ trait_0030655:
   trait: fire_time_from_fire_to_50_percent_flowering
   label: Time from fire until 50% of individuals are flowering
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] reaches whole plant flowering
     stage [PO_0007016].
   description: The time interval from a fire until 50% of the individuals in a population
@@ -13825,7 +13825,7 @@ trait_0030656:
   trait: fire_time_from_fire_to_peak_flowering
   label: Time from fire to peak flowering
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] reach maximum flowering
     [PO_0007016] levels.
   description: The time interval from a fire until the individuals in a population
@@ -13856,7 +13856,7 @@ trait_0030657:
   trait: fire_time_from_fire_to_flowering_decline
   label: Time from fire until flowering declines
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until the individuals [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until the individuals [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] begin to decrease their
     level of flowering [PO_0007016].
   description: The time interval from a fire until the degree of flowering by individuals
@@ -13882,7 +13882,7 @@ trait_0030658:
   trait: fire_time_from_fire_to_fruiting
   label: Time from fire to fruiting
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until one individual [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until one individual [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] produces mature [PATO:0001701]
     fruit [PO:0009001].
   description: The time interval from a fire until the first individual in a population
@@ -13915,7 +13915,7 @@ trait_0030659:
   trait: fire_time_from_fire_to_50_percent_fruiting
   label: Time from fire until 50% of individuals are fruiting
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] after a fire [ENVO:01000786] until a 50% of the individuals  [EFO:0000542]
+    [PATO:0001309] after a fire [ENVO_01000786] until a 50% of the individuals  [EFO:0000542]
     of a taxon [NCIT:C40098] in a population  [PCO:0000001] produce mature [PATO:0001701]
     fruit [PO:0009001].
   description: The time interval from a fire until 50% of the individuals in a population
@@ -13944,8 +13944,8 @@ trait_0030710:
   description_encoded: Fuel bed bulk density (volume density [PATO:0001353]), which
     is the ratio [PATO:0001470] of the mass [PATO:0000125] of the fuel bed divided
     by the fuel bed volume [PATO:0000918]; the term `fuel bed` refers to the accumulated
-    plant litter [ENVO:01000628] on the ground [SWEET:realmSoil/Ground], as this is
-    the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO:01000786].
+    plant litter [ENVO_01000628] on the ground [SWEET:realmSoil/Ground], as this is
+    the fuel [CHEBI:33292] that is burnt in a ground fire [ENVO_01000786].
   description: The density of the fuel bed, the plant litter accumulated on the ground.
     It is calculated as the ratio of the mass of the fuel bed to the fuel bed volume.
     This trait should be measured on plant litter from a single taxon.
@@ -13974,8 +13974,8 @@ trait_0030711:
   trait: fire_fuel_consumption
   label: Fuel consumption by fire
   description_encoded: For a given taxon [NCIT:C40098], the proportion [PATO:0001470]
-    of plant biomass [ENVO:01000155] (fuel [CHEBI:33292]) that is consumed by a fire
-    [ENVO:01000786].
+    of plant biomass [ENVO_01000155] (fuel [CHEBI:33292]) that is consumed by a fire
+    [ENVO_01000786].
   description: Proportion of available plant biomass (live and dead) that is consumed
     by fire. This trait should be measured on biomass from a single taxon.
   comments: In wildland environments it will be difficult to measure this trait on
@@ -14001,7 +14001,7 @@ trait_0030712:
   trait: fire_rate_of_spread
   label: Fire rate of spread
   description_encoded: For a given taxon [NCIT:C40098], the horizontal [PATO:0001855]
-    speed [PATO:0000008] of fire [ENVO:01000786] movement [NCIT:C37994].
+    speed [PATO:0000008] of fire [ENVO_01000786] movement [NCIT:C37994].
   description: The horizontal rate of fire spread.
   comments: In wildland environments it will be difficult to measure this trait on
     an individual taxon; it will instead be a "community level" trait. Therefore,
@@ -14026,8 +14026,8 @@ trait_0030713:
   trait: fire_smoulder_duration
   label: Leaf smoulder duration
   description_encoded: A fire response trait which is the duration [PATO:0001309]
-    of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process
-    from the time when a flame [ENVO:01000789] is no longer visible until smoulder
+    of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process
+    from the time when a flame [ENVO_01000789] is no longer visible until smoulder
     combustion ends.
   description: Smoulder duration for a single leaf, which is the time from the end
     of the last visible flame until the glowing phase dies out.
@@ -14054,8 +14054,8 @@ trait_0030714:
   trait: fire_flame_duration
   label: Leaf flame duration
   description_encoded: A fire response trait which is the duration [PATO:0001309]
-    of the portion of fire [ENVO:01000786]-induced combustion [NCIT:C157201] process
-    from the start of combustion until a flame [ENVO:01000789] is no longer visible.
+    of the portion of fire [ENVO_01000786]-induced combustion [NCIT:C157201] process
+    from the start of combustion until a flame [ENVO_01000789] is no longer visible.
   description: Flame duration for a single leaf, which is the time from the first
     visible flame until the last visible flame.
   comments: In wildland environments it will be difficult to measure this trait on
@@ -14081,7 +14081,7 @@ trait_0030715:
   trait: fire_total_burn_duration
   label: Leaf flame and smoulder duration
   description_encoded: A fire response trait which is the duration [PATO:0001309]
-    of the entire fire [ENVO:01000786]-induced combustion [NCIT:C157201] process from
+    of the entire fire [ENVO_01000786]-induced combustion [NCIT:C157201] process from
     the time of the start of combustion until smoulder combustion [APD:glossary/40094]
     ends.
   description: For a single leaf, the sum of flame duration and smoulder duration,
@@ -14109,7 +14109,7 @@ trait_0030716:
   trait: fire_time_to_ignition
   label: Fire time to ignition
   description_encoded: A fire response trait which is the time interval (duration)
-    [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO:01000789]
+    [PATO:0001309] from a leaf's [PO:0025034] exposure [NCIT:C17941] to a flame [ENVO_01000789]
     until the leaf ignites [APD:glossary/40040].
   description: For a single leaf, the time from an ignition source contacting the
     leaf until ignition occurs.
@@ -14135,11 +14135,11 @@ trait_0030716:
 trait_0030810:
   trait: plant_type_by_resource_use
   label: Plant resource requirements and tolerance
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which categorises plants based on the environmental conditions in which they survive
     and thrive, including their tolerance of, sensitivity [NCIT:C25201] to, and requirement
     [NCIT:C25652] for certain resource availabilities [EnvThes:21497], including water
-    [CHEBI:15377] availability and soil [ENVO:00001998] nutrient [CHEBI:33284] content
+    [CHEBI:15377] availability and soil [ENVO_00001998] nutrient [CHEBI:33284] content
     and salinity [PATO:0085001].
   description: Classification scheme of plant resource requirements and tolerances,
     categorising taxa based on their water, soil nutrient, and soil salinity requirements
@@ -14160,11 +14160,11 @@ trait_0030810:
 trait_0030811:
   trait: plant_flood_regime_classification
   label: Plant flood regime response
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which categorises plants based on the depth [PATO:0001595], duration [PATO:0001309]
     and frequency [PATO:0000044] of inundation [SWEET:phenSystem/Inundation] a plant
     [PO:0000003] is able to tolerate. It incorporates their ability to tolerate or
-    respond to fluctuations in flooding [ENVO:01000710] and drying, including growth
+    respond to fluctuations in flooding [ENVO_01000710] and drying, including growth
     [GO:0040007] and seed germination [GO:0009845] responses.
   description: Classification scheme of plant flood regime requirements and tolerances,
     categorising taxa into seven groups based on their germination and growth responses
@@ -14184,10 +14184,10 @@ trait_0030811:
 trait_0030812:
   trait: plant_tolerance_water_logged_soils
   label: Plant water-logging tolerance
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate
     water-logged soils, an indication of a plant's sensitivity [NCIT:C25201] to flood
-    [ENVO:01000710] conditions. Soil [ENVO:00001998] is considered water-logged if
+    [ENVO_01000710] conditions. Soil [ENVO_00001998] is considered water-logged if
     it is saturated [NCIT:C61427] with water [CHEBI:15377], limiting the plant root's
     [PO:0009005] ability to respire [GO:0045333] due to a lack of soil oxygen [CHEBI:15379].
   description: Categorical groupings, indicating the length of time a taxon is able
@@ -14205,10 +14205,10 @@ trait_0030812:
 trait_0030813:
   trait: plant_tolerance_inundation
   label: Plant inundation tolerance
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate
     inundation [SWEET:phenSystem/Inundation], an indication of a plant's sensitivity
-    [NCIT:C25201] to flood [ENVO:01000710] conditions.
+    [NCIT:C25201] to flood [ENVO_01000710] conditions.
   description: Categorical groupings, indicating the length of time a taxon is able
     to tolerate being under water.
   inScheme: https://w3id.org/APD
@@ -14227,9 +14227,9 @@ trait_0030813:
 trait_0030814:
   trait: plant_tolerance_snow
   label: Plant snow tolerance
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which is the duration [PATO:0001309] that a plant [PO:0000003] is able to tolerate
-    being covered by snow [ENVO:01000406].
+    being covered by snow [ENVO_01000406].
   description: Categorical groupings, indicating the length of time a taxon is able
     to tolerate being under snow cover.
   inScheme: https://w3id.org/APD
@@ -14245,8 +14245,8 @@ trait_0030814:
 trait_0030815:
   trait: plant_tolerance_soil_salinity
   label: Plant soil salinity tolerance
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
-    which is the maximum [NCIT:C25564] soil [ENVO:00001998] salinity [PATO:0085001],
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
+    which is the maximum [NCIT:C25564] soil [ENVO_00001998] salinity [PATO:0085001],
     reported as soil conductivity [PATO:0001585], that a plant is able to tolerate.
   description: Maximum salinity tolerated by a taxon, reported as the conductivity
     of the soil.
@@ -14269,7 +14269,7 @@ trait_0030815:
 trait_0030816:
   trait: plant_tolerance_salt
   label: Plant salt tolerance strategy
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which categorises plants based on their salinity [PATO:0085001] tolerance [TO:0006001],
     reflecting the duration [PATO:0001309] and concentration [PATO:0000033] of salt
     [CHEBI:24866] exposure that a plant is able to tolerate.
@@ -14298,9 +14298,9 @@ trait_0030816:
 trait_0030817:
   trait: plant_tolerance_calcicole
   label: Plant calcium sensitivity
-  description_encoded: An environmental [ENVO:01000203] tolerance [NCIT:C43414] trait
+  description_encoded: An environmental [ENVO_01000203] tolerance [NCIT:C43414] trait
     which is a plant's [PO:0000003] calcium sensitivity [TO:0000006], corresponding
-    to its sensitivity [NCIT:C25201] to high soil [ENVO:00001998] pH [NCIT:C45997].
+    to its sensitivity [NCIT:C25201] to high soil [ENVO_00001998] pH [NCIT:C45997].
   description: Classification scheme of plant soil calcium tolerance,  corresponding
     to its sensitivity to high soil pH. Plants are categorised as either calcifuge
     (intolerant of basic soils) or calcicole (tolerant of basic soils, such as calcareous
@@ -14324,7 +14324,7 @@ trait_0030818:
   label: Plant fire tolerance strategy
   description_encoded: A fire response trait indicating morphological [PATO_0000051]
     features that protect individuals [EFO:0000542] from death [GO_0016265] when a
-    fire [ENVO:01000786] occurs nearby.
+    fire [ENVO_01000786] occurs nearby.
   description: Classification scheme of plant fire tolerance, indicating morphological
     characteristics plants use to survive fire.
   inScheme: https://w3id.org/APD
