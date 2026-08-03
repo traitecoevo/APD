@@ -22898,7 +22898,7 @@ APD:trait_0030015
     skos:altLabel "plant_growth_substrate" ;
     skos:broader APD:trait_group_0030001 ;
     skos:definition "Trait broadly indicating where a plant is usually found, referencing the habitat in which a plant grows, the substrate to which a plant is attached, or a plant's growth medium."@en ;
-    skos:example "close match:  Aquatic_1 [GIFT:1.7.1] (https://gift.uni-goettingen.de)", "close match: Epiphyte_2 [GIFT:1.3.2] (https://gift.uni-goettingen.de)", "related match: Plant growth form [TRY:42] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Aquatic_1 [GIFT:1.7.1] (https://gift.uni-goettingen.de)", "close match: Epiphyte_2 [GIFT:1.3.2] (https://gift.uni-goettingen.de)", "related match: Plant growth form [TRY:42] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:plant_growth_substrate_aquatic, APD:plant_growth_substrate_epiphyte, APD:plant_growth_substrate_hemiepiphyte, APD:plant_growth_substrate_lithophyte, APD:plant_growth_substrate_marine, APD:plant_growth_substrate_semiaquatic, APD:plant_growth_substrate_terrestrial ;
     skos:note "Although the majority of vascular plants are `terrestrial`, for most taxonomic groups `plant growth substrate` is only recorded if a plant is not terrestrial. The exceptions are ferns and orchids, where both floras and individual researchers tend to specifically indicate which taxa are terrestrial. The values under this trait are recorded as part of `plant growth form` by many researchers, trait handbooks, and databases; they have been split out here, as the terms capturing what a plant is attached to do not generally describe the form of a plant."@en ;
@@ -24402,7 +24402,7 @@ APD:trait_0030810
     skos:broader APD:trait_group_0030704 ;
     skos:changeNote "plant_type_by_resource_use" ;
     skos:definition "Classification scheme of plant resource requirements and tolerances, categorising taxa based on their water, soil nutrient, and soil salinity requirements and tolerances."@en ;
-    skos:example "close match:  Species tolerance to drought [TRY:30] (https://www.try-db.org/de/de.php)", "close match: Species tolerance to salt [TRY:1254] (https://www.try-db.org/de/de.php)" ;
+    skos:example "close match: Species tolerance to drought [TRY:30] (https://www.try-db.org/de/de.php)", "close match: Species tolerance to salt [TRY:1254] (https://www.try-db.org/de/de.php)" ;
     skos:inScheme "https://w3id.org/APD/traits" ;
     skos:narrower APD:plant_type_by_resource_use_hydrohalophyte, APD:plant_type_by_resource_use_phreatophyte, APD:plant_type_by_resource_use_psammophile, APD:plant_type_by_resource_use_weedy, APD:plant_type_by_resource_use_xerohalophyte, APD:plant_type_by_resource_use_xerophyte ;
     skos:prefLabel "Plant resource requirements and tolerance"@en ;
