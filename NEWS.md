@@ -11,7 +11,26 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
-## Unreleased
+## APD Version 2.2.0
+
+**No trait, allowable value, unit or APD identifier changed.** Nothing you have
+cited has moved, and nothing built against 2.1.2 becomes invalid. But two things
+that consumers *parse* did change, which is why this is a minor release rather
+than a patch.
+
+**If you read dates, read this.** Every date is now `YYYY-MM-DD` where it was
+`D/M/YYYY`. Code that split `dcterms:created` on `/`, or parsed it day-first,
+needs updating — and the dates it produced before were not all correct anyway
+(see below). Every date literal is now a valid `xsd:date`.
+
+**If you consume the RDF, the datatypes are now resolvable.** 1,371 literals were
+typed with a prefixed name where RDF requires an absolute URI, so a conforming
+parser resolved them against the base and gave them a datatype nobody declared.
+They now carry the full `http://www.w3.org/2001/XMLSchema#` form.
+
+This release also closes **every entry on the known-gaps register** — the first
+time it has been empty since it was introduced. `COMMITMENTS.md` records what
+each one turned out to be.
 
 **Five traits now name their keywords instead of publishing `NA`.** `TO_0000432`
 (*temperature stress response trait*, used by four traits) and `ENVO_01001125`

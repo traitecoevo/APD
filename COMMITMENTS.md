@@ -26,9 +26,9 @@ for the downstream ripple when the vocabulary itself changes.
 |---|---|---|---|
 | C1 | Every trait concept, **allowable categorical trait value**, trait grouping and glossary term has a unique, stable URI that resolves to that term's content. | p.8 | `test-commitments.R` — uniqueness and form of all 1,473. `scripts/build_site.R` — every one has an anchor in the rendered page. `check_redirects.sh` — one per class resolves live, plus the `+` slug. **Met in full since the stage 5 w3id rule change** (2026-07); the 819 categorical values used to land at the top of the page. |
 | C2 | `data/APD_namespace_declaration.csv` is the namespace declaration used when compiling the RDF representation. | p.8 | `test-namespaces.R` — **true since 98ceeb4**; the file is now the only source. |
-| C3 | `APD.ttl` passes SKOS validation: relationships consistent, all URIs unique, all concepts labelled. | p.13 | `test-commitments.R` — every one of the 1,475 APD subjects carries a `skos:prefLabel`. Datatype problems remain: gap C5. |
+| C3 | `APD.ttl` passes SKOS validation: relationships consistent, all URIs unique, all concepts labelled. | p.13 | `test-commitments.R` — every one of the 1,475 APD subjects carries a `skos:prefLabel`. The datatype problems this row used to defer to are fixed in 2.2.0. |
 | C4 | The data are available under **CC BY 4.0**. | p.12 | `test-commitments.R` — `LICENSE` exists, says CC BY 4.0, and is in the release manifest so it ships beside the data. |
-| C5 | The dictionary is published simultaneously in human-readable and machine-readable form: a compiled human-readable HTML document, plus `APD.ttl`, `APD.nt`, `APD.nq` and `APD.json`. | p.11-12 | `make check` — each serialisation parses and holds the same number of statements. See gap below. |
+| C5 | The dictionary is published simultaneously in human-readable and machine-readable form: a compiled human-readable HTML document, plus `APD.ttl`, `APD.nt`, `APD.nq` and `APD.json`. | p.11-12 | `make check` — each serialisation parses and holds the same number of statements. |
 | C6 | The derived tables `APD_traits.csv` and `APD_categorical_values.csv` are published, with the columns documented in Tables 5 and 6. | p.12 | `test-golden.R` (byte-for-byte) + `test-commitments.R` (column names) |
 | C7 | The input tables named in the paper are published and citable. | p.8, Fig. 4 | `test-commitments.R` — all 11 present in `data/` |
 | C8 | A copy of `APD.ttl` is archived and discoverable at ARDC Research Vocabularies Australia. | Fig. 4 | release checklist |
@@ -63,13 +63,13 @@ exactly the seven in `APD_KNOWN_GAPS`. The deposits are [#52](https://github.com
 > eight-stage build overhaul and closed once those stages shipped. The gaps outlived it, so they needed
 > an issue of their own rather than an epic kept open for them.
 
-**These are also a machine-readable register.** `APD_KNOWN_GAPS` in
-[`R/validate.R`](R/validate.R) lists every problem below that `validate_apd()` can detect, keyed by a
-problem id, with the reason it is still open. `make check` reports them every run as `gap` rather than
-`FAIL` — because every one of them changes published output when fixed, so each needs its own reviewed
-change. Anything *not* on that register fails the build, so new breakage cannot hide behind the
-existing debt. **Fixing a gap means deleting its register entry**, and a test fails if an entry
-outlives the problem it describes.
+**These are also a machine-readable register — and as of 2.2.0 it is empty.** `APD_KNOWN_GAPS` in
+[`R/validate.R`](R/validate.R) holds every problem `validate_apd()` can detect but that is not being
+fixed, keyed by a problem id, with the reason. Such a problem reports as `gap` rather than `FAIL`;
+anything *not* on the register fails the build. With nothing on it, **every problem the checks find is
+now a regression**. Add an entry only for a defect that is already published and cannot be fixed
+without a decision from the vocabulary owner, and name who owes the decision. **Fixing a gap means
+deleting its register entry**, and a test fails if an entry outlives the problem it describes.
 
 - **C3 — partly checked.** Every APD concept now provably carries a label, and URI uniqueness is
   tested. What a real SKOS validator would still reject are the datatype problems below.
@@ -174,9 +174,9 @@ outlives the problem it describes.
   registry API does not expose it and the page carries more than one version-shaped string — so this
   cannot be a CI check. Refreshing the deposit is on the release checklist.
 
-- **C9 — unmet for 2.1.1 and 2.1.2.** Zenodo's latest deposit under concept DOI
+- **C9 — unmet for 2.1.1, 2.1.2 and 2.2.0.** Zenodo's latest deposit under concept DOI
   `10.5281/zenodo.8040789` is **2.1.0**; the concept DOI resolved to that record on 2026-07-29 with the
-  repo at 2.1.2. Two releases are unarchived.
+  repo at 2.1.2. Three releases are now unarchived.
 
   The cause is a wrong assumption, now corrected in `RELEASING.md`: **Zenodo deposits for the APD are
   manual uploads, not the GitHub integration.** Cutting a GitHub Release deposits nothing. The evidence
