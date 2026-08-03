@@ -13,7 +13,7 @@
 # Re-pinned when plant_height_reproductive's allowed minimum was corrected from
 # 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
 # previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
-APD_ENTITY_TABLE_DIGEST <- "3a55ef49a2fc7d2b45615763e156cf1f"
+APD_ENTITY_TABLE_DIGEST <- "af75dc2ee47f68ba4c79fc5c2de07a4c"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the

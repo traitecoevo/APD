@@ -23,44 +23,10 @@ APD_KNOWN_GAPS <- c(
     "first component above 12 and none has a second above 12 -- so reformatting",
     "is deterministic, not a judgement call. Tracked in APD#59."
   ),
-  `namespace-no-delimiter` = paste(
-    "SWEET_propConductivity is declared without a trailing '/', so the URIs",
-    "built from it are not abbreviated. Adding it changes published Turtle."
-  ),
   `namespace-undeclared` = paste(
-    "Some namespaces appearing in the RDF have no declared prefix. Declaring",
-    "them changes how APD.ttl abbreviates those URIs."
-  ),
-  `input-duplicate-key` = paste(
-    "data/APD_units.csv has `[ppm]` in the `identifier` cell of two rows. The",
-    "second row is parts per thousand and its URI, label and UCUM code all say",
-    "so; only that one cell is a typo for `[ppth]`. Nothing in the build reads",
-    "the column -- units are matched on `label` and `Entity` -- so the published",
-    "RDF is correct and fixing it changes no output. published_classes.csv is the",
-    "real gap: four duplicated identifiers, two on rows that disagree, which does",
-    "need a decision on which row wins. Tracked in APD#59."
-  ),
-  `input-redundant-row` = paste(
-    "published_classes.csv repeats four identifiers on rows that are otherwise",
-    "identical. Harmless -- match() returns the first and it is the right one --",
-    "but it should be deduplicated. Same maintainer decision as",
-    "input-duplicate-key."
-  ),
-  `rdf-uri-inside-literal` = paste(
-    "The license and publisher statements in data/APD_resource.csv wrap their",
-    "URI in angle brackets *inside* the string literal, so the published value",
-    "is the string \"<https://...>\" rather than the URI. Well-formed RDF, wrong",
-    "value. Fixing it changes published output."
-  ),
-  `unresolved-identifier` = paste(
-    "TO_0000432 (4 traits) and ENVO:01001125 (1 trait) are referenced as",
-    "keywords but are absent from published_classes.csv, so they publish as",
-    "'NA [id]'. Adding them needs the labels from the source ontologies, or a",
-    "decision to drop the keyword. Tracked in APD#59. The register used to say",
-    "ENVO:01001125 was also punctuated wrongly, using ':' where 'the ENVO",
-    "entries in that file use _'; there are no ENVO entries in that file, and it",
-    "already carries 95 colon-style identifiers against 657 underscore-style, so",
-    "the punctuation is not part of the problem."
+    "Six namespaces appearing in the RDF have no declared prefix, so APD.ttl",
+    "spells those URIs out in full. Declaring them changes how APD.ttl",
+    "abbreviates them. Tracked in APD#59."
   )
 )
 

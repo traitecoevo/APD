@@ -92,28 +92,37 @@ outlives the problem it describes.
   | What | Scale | Where |
   |---|---|---|
   | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `DD/MM/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*, so the 1,363 dates have to be reformatted in the same change. Day-first is unambiguous and consistent — 764 of the 1,353 values have a first component above 12 and none has a second above 12 — so this is a deterministic reformat, **not** the data decision this table used to call it. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:225,269-271` |
-  | `dcterms:license` and `dcterms:publisher` wrap their URI in angle brackets *inside* the string literal, so the published value is the string `"<https://…>"` rather than the URI. [`rdf-uri-inside-literal`] | 8 | `data/APD_resource.csv` |
+  | Six namespaces appearing in the RDF have no declared prefix, so `APD.ttl` spells those URIs out in full. Declaring them changes how Turtle abbreviates them. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`namespace-undeclared`] | 6 | `data/APD_namespace_declaration.csv` |
 
-- **Input data — two unresolved references, four duplicated keys, one free typo.** All tracked in
-  [#59](https://github.com/traitecoevo/APD/issues/59).
+- **Input data — closed.** The five input-data gaps this section used to list were fixed in
+  [#59](https://github.com/traitecoevo/APD/issues/59), and their register entries are gone. For the
+  record, because two of them were described wrongly here for months:
 
-  `TO_0000432` (4 traits) and `ENVO:01001125` (1 trait) are used as keywords but are absent from
-  `published_classes.csv`, so they publish as `NA [id]`. Fixing needs the labels from the source
-  ontologies, or a decision to drop the keyword. [`unresolved-identifier`]
+  `TO_0000432` and `ENVO_01001125` were used as keywords but absent from `published_classes.csv`, so
+  five traits published `NA [id]`. Both terms are now in the file with labels from the source
+  ontologies (*temperature stress response trait*, *ice*), and the one colon-style keyword reference
+  was normalised to `ENVO_01001125` so it matches. [`unresolved-identifier`]
 
-  `published_classes.csv` has four duplicated identifiers — `EnvThes:21211`, `TO_0000006`,
-  `TO_0001017`, `TO_0002616` — two repeated on identical rows and two on rows that disagree, which
-  needs a decision on which row wins. [`input-duplicate-key`, `input-redundant-row`]
+  `published_classes.csv` had four duplicated identifiers — `EnvThes:21211`, `TO_0000006`,
+  `TO_0001017`, `TO_0002616`. All four are deduplicated. `TO_0000006` and `TO_0001017` were repeated
+  on byte-identical rows. The two that disagreed both kept the better row: the dropped `EnvThes:21211`
+  row carried mojibake (`m?� s?�`) where the survivor has `m⁻² s⁻¹`, and the dropped `TO_0002616` row
+  used `[…]` brackets and a leading caveat where the survivor uses the `|`-separated parenthetical
+  form the other TO imports use. [`input-duplicate-key`, `input-redundant-row`]
 
-  `data/APD_units.csv` has `[ppm]` in the `identifier` cell of two rows. **This one is free, and this
-  table used to describe it wrongly.** The second row is parts per thousand and its URI, label and
-  UCUM code all say so; only that cell is a typo for `[ppth]`. No part of the build reads the column —
-  `convert_to_triples.R` matches units on `label` and `Entity` — so the published RDF is already
-  correct for both units and for the 3 traits pointing at the ppm URI and 14 at ppth. Fixing it
-  changes no output and needs no decision. [`input-duplicate-key`]
+  `SWEET_propConductivity` now carries its trailing `/`, so URIs built from it abbreviate.
+  [`namespace-no-delimiter`]
 
-  > This table previously said `ENVO:01001125` "uses `:` where every ENVO entry in that file uses
-  > `_`", and that the units row made "the published RDF assert the wrong identifier". Neither is
+  `data/APD_units.csv` had `[ppm]` in the `identifier` cell of two rows; the second is now `[ppth]`.
+  Nothing in the build reads that column — `convert_to_triples.R` matches units on `label` and
+  `Entity` — so this changed no published output. [`input-duplicate-key`]
+
+  `dcterms:license` and `dcterms:publisher` wrapped their URI in angle brackets *inside* the string
+  literal, publishing the string `"<https://…>"` rather than the URI. The brackets are stripped from
+  all 8 statements. [`rdf-uri-inside-literal`]
+
+  > This section previously said `ENVO:01001125` "uses `:` where every ENVO entry in that file uses
+  > `_`", and that the units row made "the published RDF assert the wrong identifier". Neither was
   > true: there are no ENVO entries in `published_classes.csv`, which already carries 95 colon-style
   > identifiers against 657 underscore-style; and the units `identifier` column reaches no output.
 

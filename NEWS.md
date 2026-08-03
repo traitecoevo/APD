@@ -11,6 +11,43 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## Unreleased
+
+**Five traits now name their keywords instead of publishing `NA`.** `TO_0000432`
+(*temperature stress response trait*, used by four traits) and `ENVO_01001125`
+(*ice*, used by one) were referenced as keywords but were missing from the
+published-classes table, so they resolved to nothing and the trait table showed
+`NA [TO_0000432]`. Both terms are now present with labels from the source
+ontologies. No trait, URI or description changed meaning; five values that were
+blank now read correctly.
+
+**Four duplicated terms in the published-classes table are deduplicated.** Two
+were repeated on identical rows and were always harmless. The other two had rows
+that disagreed, which made one of each pair unreachable: `EnvThes:21211`
+(*stomatal conductance*) kept the row whose description renders `m⁻² s⁻¹`
+correctly rather than as mojibake, and `TO_0002616` (*flowering time trait*) kept
+the wording that matches the other terms imported from the Plant Trait Ontology.
+
+**The licence and publisher are published as URIs, not as bracketed strings.**
+Eight statements wrapped their URI in angle brackets *inside* the string literal,
+so `dcterms:license` published the eight-character-longer string
+`"<https://creativecommons.org/licenses/by/4.0/>"`. Anything reading those two
+properties saw a value that was not a URL.
+
+**Turtle abbreviates the SWEET conductivity namespace.** Its declaration was
+missing a trailing `/`, so URIs built from it were spelled out in full.
+
+**`[ppth]` is no longer labelled `[ppm]` in the units table.** A typo in one cell
+of a column the build never reads — the published RDF was already correct for
+both units.
+
+**ENVO identifiers cited in descriptions are written `ENVO_01001864`, not
+`ENVO:01001864`.** This affects the text of 154 encoded descriptions across 21
+ENVO terms. Only the keyword fields are resolved against the published-classes
+table; identifiers appearing inside a description are published as literal text
+and are not linked, so nothing resolves differently because of this. It brings
+ENVO into line with how the published-classes table spells the same identifiers.
+
 ## APD Version 2.1.2
 
 A patch release, and **nothing here can invalidate data built against 2.1.1**. One

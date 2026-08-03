@@ -10083,11 +10083,12 @@ trait_0020419:
 trait_0020420:
   trait: leaf_critical_temperature_minimum
   label: Leaf heat tolerance maximum critical temperature (Tcrit-cold or Tcrit-min)
-  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
-    [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become
-    inactive [PATO:0002355] as the leaf temperature decreases (is cooled) [PATO:0001306].
-    This is a modelled parameter [STATO:0000034] derived from the inflection point
-    on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve.
+  description_encoded: A temperature stress response trait [TO:0000432] which is the
+    temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins
+    to become inactive [PATO:0002355] as the leaf temperature decreases (is cooled)
+    [PATO:0001306]. This is a modelled parameter [STATO:0000034] derived from the
+    inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546]
+    curve.
   description: The temperature threshold at which photosystem II begins to become
     inactive as the leaf temperature decreases. This is a modelled parameter derived
     from the inflection point on a temperature - basal chlorophyll A fluorescence
@@ -10108,11 +10109,12 @@ trait_0020420:
 trait_0020421:
   trait: leaf_critical_temperature_maximum
   label: Leaf heat tolerance minimum critical temperature (Tcrit-hot or Tcrit-max)
-  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
-    [PATO:0000146] threshold at which photosystem II [GO:0009539] begins to become
-    inactive [PATO:0002355] as the leaf temperature increases (is heated) [PATO:0001305].
-    This is a modelled parameter [STATO:0000034] derived from the inflection point
-    on a temperature - basal chlorophyll A fluorescence [GO:0090546] curve.
+  description_encoded: A temperature stress response trait [TO:0000432] which is the
+    temperature [PATO:0000146] threshold at which photosystem II [GO:0009539] begins
+    to become inactive [PATO:0002355] as the leaf temperature increases (is heated)
+    [PATO:0001305]. This is a modelled parameter [STATO:0000034] derived from the
+    inflection point on a temperature - basal chlorophyll A fluorescence [GO:0090546]
+    curve.
   description: The temperature threshold at which photosystem II begins to become
     inactive as the leaf temperature increases. This is a modelled parameter derived
     from the inflection point on a temperature - basal chlorophyll A fluorescence
@@ -10133,12 +10135,12 @@ trait_0020421:
 trait_0020422:
   trait: leaf_maximum_temperature
   label: Leaf heat tolerance maximum temperature (Tmax-hot)
-  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
-    [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0) [GO:0090546]
-    as the leaf temperature increases (is heated) [PATO:0001305] which corresponds
-    to potential sustained damage to the photosynthetic apparatus. This is a modelled
-    parameter [STATO:0000034] derived from a temperature - basal chlorophyll A fluorescence
-    [GO:0090546] curve.
+  description_encoded: A temperature stress response trait [TO:0000432] which is the
+    temperature [PATO:0000146] at maximum [NCIT:C25564] chlorophyll fluorescence (F0)
+    [GO:0090546] as the leaf temperature increases (is heated) [PATO:0001305] which
+    corresponds to potential sustained damage to the photosynthetic apparatus. This
+    is a modelled parameter [STATO:0000034] derived from a temperature - basal chlorophyll
+    A fluorescence [GO:0090546] curve.
   description: The temperature at maximum chlorophyll fluorescence (F0) as the leaf
     temperature increases (is heated), which corresponds to potential sustained damage
     to the photosynthetic apparatus. This is a modelled parameter derived from a temperature
@@ -10158,9 +10160,9 @@ trait_0020422:
 trait_0020423:
   trait: leaf_ice_nucleation_temperature
   label: Leaf ice nucleation temperature
-  description_encoded: A temperature stress response trait [TO:0000432] which is the temperature
-    [PATO:0000146] at which ice [ENVO_01001125] crystals [ENVO_01000845] begin to
-    form inside plant tissues [CARO:0000043].
+  description_encoded: A temperature stress response trait [TO:0000432] which is the
+    temperature [PATO:0000146] at which ice [ENVO_01001125] crystals [ENVO_01000845]
+    begin to form inside plant tissues [CARO:0000043].
   description: The temperature at which ice crystals begin to form inside plant tissues.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
