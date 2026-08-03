@@ -6,19 +6,20 @@
 # existing debt is enumerated with a reason and an owner, and anything NOT on the
 # list fails. Fixing a gap means deleting its entry.
 #
-# Everything on the register today changes published output when fixed, which is
-# why none of them are fixed here -- see COMMITMENTS.md.
+# The register is EMPTY, as of APD#59 -- every problem the checks can find is
+# fixed, so every problem they find from here is a regression. Add an entry only
+# for a defect that is already published and cannot be fixed without a decision
+# from the vocabulary owner, and say who owes the decision.
 
 #' Problems that exist in the published dictionary and are tracked, not fixed
 #'
 #' Keyed by problem id. Each value says why it is still open.
-APD_KNOWN_GAPS <- c(
-  `namespace-undeclared` = paste(
-    "Six namespaces appearing in the RDF have no declared prefix, so APD.ttl",
-    "spells those URIs out in full. Declaring them changes how APD.ttl",
-    "abbreviates them. Tracked in APD#59."
-  )
-)
+#'
+#' Subscripting a named vector to length zero, rather than writing
+#' `character(0)`, is deliberate: it keeps the `names` attribute, and
+#' `names(character(0))` is NULL, which would make the staleness check in
+#' test-commitments.R compare NULL against character(0) and fail.
+APD_KNOWN_GAPS <- c(`example-problem-id` = "why it is still open")[0]
 
 #' Extract the URIs from a set of N-Triples lines, by role
 #'

@@ -87,11 +87,30 @@ outlives the problem it describes.
   the terminator instead. N-Triples is N-Quads without graph labels, so the two files are legitimately
   identical.
 
-  Still open, register ids in brackets:
+  **Nothing is still open. `APD_KNOWN_GAPS` is empty**, as of
+  [#59](https://github.com/traitecoevo/APD/issues/59) — so every problem the checks find from here is
+  a regression, not debt. What follows records what was closed and what it turned out to be.
 
-  | What | Scale | Where |
-  |---|---|---|
-  | Six namespaces appearing in the RDF have no declared prefix, so `APD.ttl` spells those URIs out in full. Declaring them changes how Turtle abbreviates them. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`namespace-undeclared`] | 6 | `data/APD_namespace_declaration.csv` |
+  **Every namespace in the RDF has a declared prefix.** Six did not. `rdf`, `om-2`, `Cerrado_ccon` and
+  `Cerrado_fire` were simply missing and were added. The other two were not missing prefixes at all:
+
+  - `http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61556` was an **orphan row** in
+    `published_classes.csv` — the only INBIO-attributed row in the file, labelled *defence*, and
+    referenced by nothing. The obo form of the same concept, `obo:NCIT_C61556` *defense*, was already
+    a separate row and is the one two traits actually use. Deleted rather than repointed, which would
+    have produced two rows on one URI disagreeing about the label.
+  - `https://w3id.org/APD/` is **ours**, and is the namespace of the two ConceptScheme URIs
+    `…/APD/traits` and `…/APD/glossary`. Declared as `APD_scheme`. Note that the existing `APD` and
+    `APD_glossary` declarations keep their trailing `/` — **removing it does not help and costs a
+    great deal.** Measured: it drops all 1,448 `APD:`-abbreviated lines, spells out 3,080 URIs, adds
+    123 KB to `APD.ttl`, and *still* leaves the two scheme URIs written out in full, because a prefix
+    whose namespace equals the whole URI leaves nothing to abbreviate. Declaring the parent is what
+    fixes it, and it makes `APD.ttl` 11 KB smaller.
+
+  Also corrected while here: the Cerrado `Recruitment` URI carried a stray slash
+  (`…/ecology/ccon/#Recruitment`). The published ontology declares
+  `xmlns:ccon="http://cerrado.linkeddata.es/ecology/ccon#"` and mints `ccon:Recruitment`, so the slash
+  was simply wrong. Verified against `ccon0.9.3-rdf.owl`.
 
   **The relative datatype URIs are fixed.** All 1,371 statements typed `^^<xsd:date>` or
   `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI — now carry the full

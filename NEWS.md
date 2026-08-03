@@ -59,6 +59,24 @@ them are not valid day-first at all, and the remaining four (`7/11/2000`) would
 have silently become 2000-11-07. Each file was converted on its own convention,
 and the nine DCMI values were checked against DCMI's own `dublin_core_terms.ttl`.
 
+**Turtle no longer spells any namespace out in full.** Six namespaces appearing
+in the RDF had no declared prefix. Four were simply missing — `rdf`, `om-2`, and
+one each for the Cerrado *ccon* and *fire* vocabularies, which had been sharing a
+declaration for their parent that matched neither. The fifth was APD's own
+`https://w3id.org/APD/`, the namespace of the two ConceptScheme URIs, now
+declared as `APD_scheme`; `APD.ttl` is 11 KB smaller as a result. The sixth was
+not a namespace problem at all — see below.
+
+**The Cerrado *recruitment* term had a stray slash in its URI.** It was published
+as `…/ecology/ccon/#Recruitment`; the Cerrado ontology mints
+`…/ecology/ccon#Recruitment`. Anyone who followed the old URI got nothing back.
+
+**A duplicate entry for *defence* is gone.** `C61556` appeared twice in the
+published-classes table: once under the National Cancer Institute Thesaurus URI,
+labelled *defence* and attributed to the Invasion Biology Ontology, and once
+under the OBO URI as *defense*. Only the second was ever referenced — the first
+was unreachable, and is removed.
+
 **Nothing is listed twice any more.** Five traits named the same characteristic,
 structure or keyword more than once — `post_fire_recruitment` gave *sensitivity*
 three times and *response to* twice, and `plant_growth_substrate` gave *growth*
