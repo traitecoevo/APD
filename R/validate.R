@@ -13,16 +13,6 @@
 #'
 #' Keyed by problem id. Each value says why it is still open.
 APD_KNOWN_GAPS <- c(
-  `rdf-datatype-relative-uri` = paste(
-    "1,371 statements are typed '^^<xsd:date>' or '^^<xsd:anyURI>' -- a prefixed",
-    "name where RDF requires an absolute URI, so it resolves as a relative",
-    "reference instead of the XSD datatype. R/convert_to_triples.R:225,269-271.",
-    "The dates are also DD/MM/YYYY, not ISO 8601, so correcting the datatype URI",
-    "alone would make them invalidly typed. The two have to be fixed together.",
-    "Day-first is unambiguous and consistent -- 764 of the 1,353 values have a",
-    "first component above 12 and none has a second above 12 -- so reformatting",
-    "is deterministic, not a judgement call. Tracked in APD#59."
-  ),
   `namespace-undeclared` = paste(
     "Six namespaces appearing in the RDF have no declared prefix, so APD.ttl",
     "spells those URIs out in full. Declaring them changes how APD.ttl",

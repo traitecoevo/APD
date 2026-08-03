@@ -41,12 +41,29 @@ missing a trailing `/`, so URIs built from it were spelled out in full.
 of a column the build never reads — the published RDF was already correct for
 both units.
 
-**ENVO identifiers cited in descriptions are written `ENVO_01001864`, not
-`ENVO:01001864`.** This affects the text of 154 encoded descriptions across 21
-ENVO terms. Only the keyword fields are resolved against the published-classes
-table; identifiers appearing inside a description are published as literal text
-and are not linked, so nothing resolves differently because of this. It brings
-ENVO into line with how the published-classes table spells the same identifiers.
+**Every date is ISO 8601, and every datatype URI is absolute.** These had to
+change together. All 1,363 dates were `D/M/YYYY`-style and are now `YYYY-MM-DD` —
+a calendar date with no time component. At the same time the 1,371 statements
+typed `^^<xsd:date>` or `^^<xsd:anyURI>` were corrected to the full
+`http://www.w3.org/2001/XMLSchema#` form; a prefixed name is a *relative* URI
+where RDF requires an absolute one, so those literals previously carried a
+datatype nobody had declared. Correcting the datatype without reformatting the
+dates would have made them invalidly typed rather than merely untyped, which is
+why neither was done before. Turtle still shows `xsd:date`, because `xsd` is a
+declared prefix there — that is the abbreviation working as intended.
+
+Worth noting for anyone who parsed the old dates: **the two input files did not
+share a convention.** The 1,353 trait dates were day-first, but the 10 dates on
+the annotation properties are the DCMI issue dates and are month-first. Six of
+them are not valid day-first at all, and the remaining four (`7/11/2000`) would
+have silently become 2000-11-07. Each file was converted on its own convention,
+and the nine DCMI values were checked against DCMI's own `dublin_core_terms.ttl`.
+
+**Identifiers cited inside descriptions are written `ENVO:01001864`, not
+`ENVO_01001864`.** Descriptions cite terms in prose with a colon — `PATO:0001470`,
+`PO:0025034` — and 21 references had drifted to an underscore. They now match.
+This is display text: identifiers inside a description are published as literal
+text and are not resolved, so nothing looks up differently.
 
 ## APD Version 2.1.2
 

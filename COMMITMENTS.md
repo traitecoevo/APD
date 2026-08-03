@@ -91,8 +91,28 @@ outlives the problem it describes.
 
   | What | Scale | Where |
   |---|---|---|
-  | Dates and URIs are typed `^^<xsd:date>` / `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI, so it resolves as a *relative* reference rather than the XSD datatype. **Deliberately not fixed with the others:** the dates are `DD/MM/YYYY`, not ISO 8601, so correcting the datatype URI alone would move them from *unknown* datatype to *invalidly typed*, so the 1,363 dates have to be reformatted in the same change. Day-first is unambiguous and consistent — 764 of the 1,353 values have a first component above 12 and none has a second above 12 — so this is a deterministic reformat, **not** the data decision this table used to call it. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`rdf-datatype-relative-uri`] | 1,371 | `R/convert_to_triples.R:225,269-271` |
   | Six namespaces appearing in the RDF have no declared prefix, so `APD.ttl` spells those URIs out in full. Declaring them changes how Turtle abbreviates them. Tracked in [#59](https://github.com/traitecoevo/APD/issues/59). [`namespace-undeclared`] | 6 | `data/APD_namespace_declaration.csv` |
+
+  **The relative datatype URIs are fixed.** All 1,371 statements typed `^^<xsd:date>` or
+  `^^<xsd:anyURI>` — a prefixed name where RDF requires an absolute URI — now carry the full
+  `http://www.w3.org/2001/XMLSchema#` form, named as `XSD_DATE` alongside the existing `XSD_DOUBLE`.
+  This could only be done together with reformatting the 1,363 dates, because correcting the datatype
+  alone would have moved them from *unknown* datatype to *invalidly typed*.
+
+  **The two input files did not share a date convention, and this table said they did.** It called all
+  of them `DD/MM/YYYY`. That is right for the 1,353 dates in `APD_traits_input.yml` — 764 have a first
+  component above 12 and none has a second above 12 — but the 10 in `APD_annotation_properties.csv`
+  are **month-first**. They are the DCMI issue dates, and six of them (`2/15/2003`, `1/14/2008`) are
+  not valid day-first at all. The other four are `7/11/2000`, which *is* valid day-first and would
+  have silently become 2000-11-07. All nine DCMI values were checked against
+  `dublin_core_terms.ttl`: `dcterms:extent`, `created`, `modified` and `references` are issued
+  2000-07-11, `bibliographicCitation` 2003-02-15, and `description`, `identifier`, `subject` and
+  `title` 2008-01-14 — month-first in every case. Converted per file accordingly.
+
+  **Still there, and pre-existing:** the graph carries 12 duplicate statements (27,524 written,
+  27,512 distinct), down from 20. Four come from `data/APD_resource.csv`, which repeats its licence
+  and publisher rows verbatim for both concept schemes; the rest are traits naming the same
+  characteristic or keyword twice. Harmless — an RDF graph is a set — but they inflate the count.
 
 - **Input data — closed.** The five input-data gaps this section used to list were fixed in
   [#59](https://github.com/traitecoevo/APD/issues/59), and their register entries are gone. For the
