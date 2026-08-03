@@ -19852,7 +19852,7 @@ https://w3id.org/APD/traits/trait_0030216,reviewed by,http://purl.org/datacite/v
 https://w3id.org/APD/traits/trait_0030216,reviewed by,http://purl.org/datacite/v4.4/IsReviewedBy,Sophie Yang,https://orcid.org/0000-0001-7328-345X,.,https://w3id.org/APD/traits/trait_0030216
 https://w3id.org/APD/traits/trait_0030216,references,http://purl.org/dc/terms/references,Auld 1990,https://doi.org/10.1071/BT9900255,.,https://w3id.org/APD/traits/trait_0030216
 https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,seed germination,http://purl.obolibrary.org/obo/GO_0009845,.,https://w3id.org/APD/traits/trait_0030216
-https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030216
+https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030216
 https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,seedling,http://vocabs.lter-europe.net/EnvThes/20698,.,https://w3id.org/APD/traits/trait_0030216
 https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,seedling establishment,http://vocabs.lter-europe.net/EnvThes/20410,.,https://w3id.org/APD/traits/trait_0030216
 https://w3id.org/APD/traits/trait_0030216,keyword,http://semanticscience.org/resource/SIO_000147,reproduction,http://purl.obolibrary.org/obo/GO_0000003,.,https://w3id.org/APD/traits/trait_0030216
@@ -19885,7 +19885,7 @@ https://w3id.org/APD/traits/trait_0030217,reviewed by,http://purl.org/datacite/v
 https://w3id.org/APD/traits/trait_0030217,reviewed by,http://purl.org/datacite/v4.4/IsReviewedBy,Matthew White,https://orcid.org/0000-0003-2120-0071,.,https://w3id.org/APD/traits/trait_0030217
 https://w3id.org/APD/traits/trait_0030217,reviewed by,http://purl.org/datacite/v4.4/IsReviewedBy,Sophie Yang,https://orcid.org/0000-0001-7328-345X,.,https://w3id.org/APD/traits/trait_0030217
 https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,seed germination,http://purl.obolibrary.org/obo/GO_0009845,.,https://w3id.org/APD/traits/trait_0030217
-https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030217
+https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030217
 https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,seedling,http://vocabs.lter-europe.net/EnvThes/20698,.,https://w3id.org/APD/traits/trait_0030217
 https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,seedling establishment,http://vocabs.lter-europe.net/EnvThes/20410,.,https://w3id.org/APD/traits/trait_0030217
 https://w3id.org/APD/traits/trait_0030217,keyword,http://semanticscience.org/resource/SIO_000147,reproduction,http://purl.obolibrary.org/obo/GO_0000003,.,https://w3id.org/APD/traits/trait_0030217
@@ -19914,7 +19914,7 @@ https://w3id.org/APD/traits/trait_0030218,references,http://purl.org/dc/terms/re
 https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,photosynthetically active radiation,http://purl.obolibrary.org/obo/ENVO_01001864,.,https://w3id.org/APD/traits/trait_0030218
 https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,reproduction,http://purl.obolibrary.org/obo/GO_0000003,.,https://w3id.org/APD/traits/trait_0030218
 https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,environmental condition,http://purl.obolibrary.org/obo/ENVO_01000203,.,https://w3id.org/APD/traits/trait_0030218
-https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030218
+https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030218
 https://w3id.org/APD/traits/trait_0030218,keyword,http://semanticscience.org/resource/SIO_000147,radiation,http://purl.obolibrary.org/obo/ENVO_01001023,.,https://w3id.org/APD/traits/trait_0030218
 https://w3id.org/APD/traits/trait_0030218,has related match,http://www.w3.org/2004/02/skos/core#relatedMatch,shade tolerance,http://vocabs.lter-europe.net/EnvThes/21436,.,https://w3id.org/APD/traits/trait_0030218
 https://w3id.org/APD/traits/trait_0030218,example,http://www.w3.org/2004/02/skos/core#example,related match: Species light requirement [TRY:788] (https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0030218
@@ -19943,7 +19943,7 @@ https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,environmental condition,http://purl.obolibrary.org/obo/ENVO_01000203,.,https://w3id.org/APD/traits/trait_0030219
 https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,seed germination,http://purl.obolibrary.org/obo/GO_0009845,.,https://w3id.org/APD/traits/trait_0030219
 https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,seedling establishment,http://vocabs.lter-europe.net/EnvThes/20410,.,https://w3id.org/APD/traits/trait_0030219
-https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030219
+https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030219
 https://w3id.org/APD/traits/trait_0030219,keyword,http://semanticscience.org/resource/SIO_000147,radiation,http://purl.obolibrary.org/obo/ENVO_01001023,.,https://w3id.org/APD/traits/trait_0030219
 https://w3id.org/APD/traits/trait_0030219,has related match,http://www.w3.org/2004/02/skos/core#relatedMatch,shade tolerance,http://vocabs.lter-europe.net/EnvThes/21436,.,https://w3id.org/APD/traits/trait_0030219
 https://w3id.org/APD/traits/trait_0030219,example,http://www.w3.org/2004/02/skos/core#example,related match: Species light requirement [TRY:788] (https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0030219
@@ -20144,7 +20144,7 @@ https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/resource/SIO_000147,experimental condition,http://purl.obolibrary.org/obo/XCO_0000000,.,https://w3id.org/APD/traits/trait_0030415
 https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/resource/SIO_000147,seed dormancy,http://purl.obolibrary.org/obo/GO_0010162,.,https://w3id.org/APD/traits/trait_0030415
 https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/resource/SIO_000147,reproduction,http://purl.obolibrary.org/obo/GO_0000003,.,https://w3id.org/APD/traits/trait_0030415
-https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030415
+https://w3id.org/APD/traits/trait_0030415,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030415
 https://w3id.org/APD/traits/trait_0030415,has related match,http://www.w3.org/2004/02/skos/core#relatedMatch,seed dormancy,http://purl.obolibrary.org/obo/TO_0000253,.,https://w3id.org/APD/traits/trait_0030415
 https://w3id.org/APD/traits/trait_0030415,example,http://www.w3.org/2004/02/skos/core#example,close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135),NA,.,https://w3id.org/APD/traits/trait_0030415
 https://w3id.org/APD/traits/trait_0030415,example,http://www.w3.org/2004/02/skos/core#example,close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135),NA,.,https://w3id.org/APD/traits/trait_0030415
@@ -20184,7 +20184,7 @@ https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/resource/SIO_000147,experimental condition,http://purl.obolibrary.org/obo/XCO_0000000,.,https://w3id.org/APD/traits/trait_0030416
 https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/resource/SIO_000147,seed dormancy,http://purl.obolibrary.org/obo/GO_0010162,.,https://w3id.org/APD/traits/trait_0030416
 https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/resource/SIO_000147,seed germination,http://purl.obolibrary.org/obo/GO_0009845,.,https://w3id.org/APD/traits/trait_0030416
-https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030416
+https://w3id.org/APD/traits/trait_0030416,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030416
 https://w3id.org/APD/traits/trait_0030416,example,http://www.w3.org/2004/02/skos/core#example,exact match: Seed germination stimulation [TRY:34] (https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0030416
 https://w3id.org/APD/traits/trait_0030416,example,http://www.w3.org/2004/02/skos/core#example,close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135),NA,.,https://w3id.org/APD/traits/trait_0030416
 https://w3id.org/APD/traits/trait_0030416,example,http://www.w3.org/2004/02/skos/core#example,close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135),NA,.,https://w3id.org/APD/traits/trait_0030416
@@ -20230,7 +20230,7 @@ https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/resource/SIO_000147,seed dormancy,http://purl.obolibrary.org/obo/GO_0010162,.,https://w3id.org/APD/traits/trait_0030417
 https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/resource/SIO_000147,seed germination,http://purl.obolibrary.org/obo/GO_0009845,.,https://w3id.org/APD/traits/trait_0030417
 https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/resource/SIO_000147,environmental condition,http://purl.obolibrary.org/obo/ENVO_01000203,.,https://w3id.org/APD/traits/trait_0030417
-https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030417
+https://w3id.org/APD/traits/trait_0030417,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030417
 https://w3id.org/APD/traits/trait_0030417,has exact match,http://www.w3.org/2004/02/skos/core#exactMatch,germination ratio,http://purl.obolibrary.org/obo/TO_0000202,.,https://w3id.org/APD/traits/trait_0030417
 https://w3id.org/APD/traits/trait_0030417,has exact match,http://www.w3.org/2004/02/skos/core#exactMatch,percent germination,http://purl.obolibrary.org/obo/TO_0010001,.,https://w3id.org/APD/traits/trait_0030417
 https://w3id.org/APD/traits/trait_0030417,example,http://www.w3.org/2004/02/skos/core#example,exact match: Seed germination rate (germination efficiency) [TRY:95] (https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0030417
@@ -20273,7 +20273,7 @@ https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/resource/SIO_000147,seed viability,http://purl.obolibrary.org/obo/TO_0000345,.,https://w3id.org/APD/traits/trait_0030418
 https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/resource/SIO_000147,seed bank,http://purl.bioontology.org/ontology/MESH/D000068098,.,https://w3id.org/APD/traits/trait_0030418
 https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/resource/SIO_000147,reproduction,http://purl.obolibrary.org/obo/GO_0000003,.,https://w3id.org/APD/traits/trait_0030418
-https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030418
+https://w3id.org/APD/traits/trait_0030418,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030418
 https://w3id.org/APD/traits/trait_0030418,has exact match,http://www.w3.org/2004/02/skos/core#exactMatch,seed viability ratio,http://vocabs.lter-europe.net/EnvThes/22232,.,https://w3id.org/APD/traits/trait_0030418
 https://w3id.org/APD/traits/trait_0030418,has exact match,http://www.w3.org/2004/02/skos/core#exactMatch,seed viability,http://purl.obolibrary.org/obo/TO_0000345,.,https://w3id.org/APD/traits/trait_0030418
 https://w3id.org/APD/traits/trait_0030418,example,http://www.w3.org/2004/02/skos/core#example,exact match: Seed viability [TRY:1109](https://www.try-db.org/de/de.php),NA,.,https://w3id.org/APD/traits/trait_0030418
@@ -20299,7 +20299,7 @@ https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/resource/SIO_000147,environmental condition,http://purl.obolibrary.org/obo/ENVO_01000203,.,https://w3id.org/APD/traits/trait_0030419
 https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/resource/SIO_000147,experimental condition,http://purl.obolibrary.org/obo/XCO_0000000,.,https://w3id.org/APD/traits/trait_0030419
 https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/resource/SIO_000147,seed bank,http://purl.bioontology.org/ontology/MESH/D000068098,.,https://w3id.org/APD/traits/trait_0030419
-https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030419
+https://w3id.org/APD/traits/trait_0030419,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030419
 https://w3id.org/APD/traits/trait_0030419,has exact match,http://www.w3.org/2004/02/skos/core#exactMatch,days to germinate,http://purl.obolibrary.org/obo/TO_0006061,.,https://w3id.org/APD/traits/trait_0030419
 https://w3id.org/APD/traits/trait_0030419,definition,http://www.w3.org/2004/02/skos/core#definition,The time interval from when a seed is exposed to suitable conditions for germinating until it germinates.,NA,.,https://w3id.org/APD/traits/trait_0030419
 https://w3id.org/APD/traits/trait_0030510,identifier,http://purl.org/dc/terms/identifier,trait_0030510,NA,.,https://w3id.org/APD/traits/trait_0030510
@@ -20785,7 +20785,7 @@ https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/res
 https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,seedling establishment,http://vocabs.lter-europe.net/EnvThes/20410,.,https://w3id.org/APD/traits/trait_0030652
 https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,fire,http://purl.obolibrary.org/obo/ENVO_01000786,.,https://w3id.org/APD/traits/trait_0030652
 https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,habitat disturbance,http://vocabs.lter-europe.net/EnvThes/21488,.,https://w3id.org/APD/traits/trait_0030652
-https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon/#Recruitment,.,https://w3id.org/APD/traits/trait_0030652
+https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,recruitment,http://cerrado.linkeddata.es/ecology/ccon#Recruitment,.,https://w3id.org/APD/traits/trait_0030652
 https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,environmental condition,http://purl.obolibrary.org/obo/ENVO_01000203,.,https://w3id.org/APD/traits/trait_0030652
 https://w3id.org/APD/traits/trait_0030652,keyword,http://semanticscience.org/resource/SIO_000147,disturbance (event,http://vocabs.lter-europe.net/EnvThes/20373,.,https://w3id.org/APD/traits/trait_0030652
 https://w3id.org/APD/traits/trait_0030652,example,http://www.w3.org/2004/02/skos/core#example,exact match: Post-fire seedling emergence [BROT:43] (http://doi.org/10.1038/sdata.2018.135),NA,.,https://w3id.org/APD/traits/trait_0030652

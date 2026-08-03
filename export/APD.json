@@ -1,7 +1,7 @@
 {
   "@graph": [
     {
-      "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment",
+      "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment",
       "http://purl.org/dc/terms/identifier": "Recruitment",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
@@ -73,14 +73,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "vegetation stratum"
-      }
-    },
-    {
-      "@id": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61556",
-      "http://purl.org/dc/terms/identifier": "C61556",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "defence"
       }
     },
     {
@@ -80163,7 +80155,7 @@
           "@id": "http://vocabs.lter-europe.net/EnvThes/20698"
         },
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0009845"
@@ -80283,7 +80275,7 @@
           "@id": "http://vocabs.lter-europe.net/EnvThes/20698"
         },
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0009845"
@@ -80382,7 +80374,7 @@
           "@id": "http://purl.obolibrary.org/obo/ENVO_01001023"
         },
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/ENVO_01000203"
@@ -80472,7 +80464,7 @@
           "@id": "http://purl.obolibrary.org/obo/ENVO_01001023"
         },
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://vocabs.lter-europe.net/EnvThes/20410"
@@ -81213,7 +81205,7 @@
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0000003"
@@ -81364,7 +81356,7 @@
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0009845"
@@ -81555,7 +81547,7 @@
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/ENVO_01000203"
@@ -81699,7 +81691,7 @@
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.obolibrary.org/obo/GO_0000003"
@@ -81790,7 +81782,7 @@
       },
       "http://semanticscience.org/resource/SIO_000147": [
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://purl.bioontology.org/ontology/MESH/D000068098"
@@ -83632,7 +83624,7 @@
           "@id": "http://purl.obolibrary.org/obo/ENVO_01000203"
         },
         {
-          "@id": "http://cerrado.linkeddata.es/ecology/ccon/#Recruitment"
+          "@id": "http://cerrado.linkeddata.es/ecology/ccon#Recruitment"
         },
         {
           "@id": "http://vocabs.lter-europe.net/EnvThes/21488"

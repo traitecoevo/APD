@@ -146,8 +146,8 @@
 <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://www.w3.org/2004/02/skos/core#prefLabel> "has top concept"@en .
 <http://purl.org/dc/terms/license> <http://www.w3.org/2004/02/skos/core#prefLabel> "license"@en .
 <http://purl.org/dc/terms/publisher> <http://www.w3.org/2004/02/skos/core#prefLabel> "publisher"@en .
-<http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> <http://www.w3.org/2004/02/skos/core#prefLabel> "recruitment"@en .
-<http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> <http://purl.org/dc/terms/identifier> "Recruitment" .
+<http://cerrado.linkeddata.es/ecology/ccon#Recruitment> <http://www.w3.org/2004/02/skos/core#prefLabel> "recruitment"@en .
+<http://cerrado.linkeddata.es/ecology/ccon#Recruitment> <http://purl.org/dc/terms/identifier> "Recruitment" .
 <http://cerrado.linkeddata.es/ecology/fire#PlantMortality> <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant Mortality"@en .
 <http://cerrado.linkeddata.es/ecology/fire#PlantMortality> <http://purl.org/dc/terms/identifier> "PlantMortality" .
 <http://cerrado.linkeddata.es/ecology/fire#PlantResprout> <http://www.w3.org/2004/02/skos/core#prefLabel> "Plant resprout"@en .
@@ -432,8 +432,6 @@
 <http://vocabs.lter-europe.net/EnvThes/30127> <http://purl.org/dc/terms/identifier> "30127" .
 <http://scai.fraunhofer.de/HuPSON#SCAIVPH_00000131> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hagen Poiseuille equation"@en .
 <http://scai.fraunhofer.de/HuPSON#SCAIVPH_00000131> <http://purl.org/dc/terms/identifier> "SCAIVPH_00000131" .
-<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61556> <http://www.w3.org/2004/02/skos/core#prefLabel> "defence"@en .
-<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61556> <http://purl.org/dc/terms/identifier> "C61556" .
 <http://purl.jp/bio/4/id/200906054028027590> <http://www.w3.org/2004/02/skos/core#prefLabel> "establishment"@en .
 <http://purl.jp/bio/4/id/200906054028027590> <http://purl.org/dc/terms/identifier> "200906054028027590" .
 <http://purl.jp/bio/4/id/200906064703668091> <http://www.w3.org/2004/02/skos/core#prefLabel> "water holding capacity"@en .
@@ -24023,7 +24021,7 @@
 <https://w3id.org/APD/traits/trait_0030216> <http://purl.org/datacite/v4.4/IsReviewedBy> <https://orcid.org/0000-0001-7328-345X> .
 <https://w3id.org/APD/traits/trait_0030216> <http://purl.org/dc/terms/references> <https://doi.org/10.1071/BT9900255> .
 <https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0009845> .
-<https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20698> .
 <https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20410> .
 <https://w3id.org/APD/traits/trait_0030216> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0000003> .
@@ -24057,7 +24055,7 @@
 <https://w3id.org/APD/traits/trait_0030217> <http://purl.org/datacite/v4.4/IsReviewedBy> <https://orcid.org/0000-0003-2120-0071> .
 <https://w3id.org/APD/traits/trait_0030217> <http://purl.org/datacite/v4.4/IsReviewedBy> <https://orcid.org/0000-0001-7328-345X> .
 <https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0009845> .
-<https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20698> .
 <https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20410> .
 <https://w3id.org/APD/traits/trait_0030217> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0000003> .
@@ -24087,7 +24085,7 @@
 <https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01001864> .
 <https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0000003> .
 <https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000203> .
-<https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030218> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01001023> .
 <https://w3id.org/APD/traits/trait_0030218> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://vocabs.lter-europe.net/EnvThes/21436> .
 <https://w3id.org/APD/traits/trait_0030218> <http://www.w3.org/2004/02/skos/core#example> "related match: Species light requirement [TRY:788] (https://www.try-db.org/de/de.php)" .
@@ -24117,7 +24115,7 @@
 <https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000203> .
 <https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0009845> .
 <https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20410> .
-<https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030219> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01001023> .
 <https://w3id.org/APD/traits/trait_0030219> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://vocabs.lter-europe.net/EnvThes/21436> .
 <https://w3id.org/APD/traits/trait_0030219> <http://www.w3.org/2004/02/skos/core#example> "related match: Species light requirement [TRY:788] (https://www.try-db.org/de/de.php)" .
@@ -24323,7 +24321,7 @@
 <https://w3id.org/APD/traits/trait_0030415> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/XCO_0000000> .
 <https://w3id.org/APD/traits/trait_0030415> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0010162> .
 <https://w3id.org/APD/traits/trait_0030415> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0000003> .
-<https://w3id.org/APD/traits/trait_0030415> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030415> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030415> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://purl.obolibrary.org/obo/TO_0000253> .
 <https://w3id.org/APD/traits/trait_0030415> <http://www.w3.org/2004/02/skos/core#example> "close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135)" .
 <https://w3id.org/APD/traits/trait_0030415> <http://www.w3.org/2004/02/skos/core#example> "close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135)" .
@@ -24364,7 +24362,7 @@
 <https://w3id.org/APD/traits/trait_0030416> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/XCO_0000000> .
 <https://w3id.org/APD/traits/trait_0030416> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0010162> .
 <https://w3id.org/APD/traits/trait_0030416> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0009845> .
-<https://w3id.org/APD/traits/trait_0030416> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030416> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030416> <http://www.w3.org/2004/02/skos/core#example> "exact match: Seed germination stimulation [TRY:34] (https://www.try-db.org/de/de.php)" .
 <https://w3id.org/APD/traits/trait_0030416> <http://www.w3.org/2004/02/skos/core#example> "close match: Chemical germination cues [BROT:35] (http://doi.org/10.1038/sdata.2018.135)" .
 <https://w3id.org/APD/traits/trait_0030416> <http://www.w3.org/2004/02/skos/core#example> "close match: Heat-stimulated germination [BROT:36] (http://doi.org/10.1038/sdata.2018.135)" .
@@ -24411,7 +24409,7 @@
 <https://w3id.org/APD/traits/trait_0030417> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0010162> .
 <https://w3id.org/APD/traits/trait_0030417> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0009845> .
 <https://w3id.org/APD/traits/trait_0030417> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000203> .
-<https://w3id.org/APD/traits/trait_0030417> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030417> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030417> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/TO_0000202> .
 <https://w3id.org/APD/traits/trait_0030417> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/TO_0010001> .
 <https://w3id.org/APD/traits/trait_0030417> <http://www.w3.org/2004/02/skos/core#example> "exact match: Seed germination rate (germination efficiency) [TRY:95] (https://www.try-db.org/de/de.php)" .
@@ -24455,7 +24453,7 @@
 <https://w3id.org/APD/traits/trait_0030418> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/TO_0000345> .
 <https://w3id.org/APD/traits/trait_0030418> <http://semanticscience.org/resource/SIO_000147> <http://purl.bioontology.org/ontology/MESH/D000068098> .
 <https://w3id.org/APD/traits/trait_0030418> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/GO_0000003> .
-<https://w3id.org/APD/traits/trait_0030418> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030418> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030418> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://vocabs.lter-europe.net/EnvThes/22232> .
 <https://w3id.org/APD/traits/trait_0030418> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/TO_0000345> .
 <https://w3id.org/APD/traits/trait_0030418> <http://www.w3.org/2004/02/skos/core#example> "exact match: Seed viability [TRY:1109](https://www.try-db.org/de/de.php)" .
@@ -24482,7 +24480,7 @@
 <https://w3id.org/APD/traits/trait_0030419> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000203> .
 <https://w3id.org/APD/traits/trait_0030419> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/XCO_0000000> .
 <https://w3id.org/APD/traits/trait_0030419> <http://semanticscience.org/resource/SIO_000147> <http://purl.bioontology.org/ontology/MESH/D000068098> .
-<https://w3id.org/APD/traits/trait_0030419> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030419> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030419> <http://www.w3.org/2004/02/skos/core#exactMatch> <http://purl.obolibrary.org/obo/TO_0006061> .
 <https://w3id.org/APD/traits/trait_0030419> <http://www.w3.org/2004/02/skos/core#definition> "The time interval from when a seed is exposed to suitable conditions for germinating until it germinates."@en .
 <https://w3id.org/APD/traits/trait_0030419> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -24981,7 +24979,7 @@
 <https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20410> .
 <https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000786> .
 <https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/21488> .
-<https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon/#Recruitment> .
+<https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://cerrado.linkeddata.es/ecology/ccon#Recruitment> .
 <https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://purl.obolibrary.org/obo/ENVO_01000203> .
 <https://w3id.org/APD/traits/trait_0030652> <http://semanticscience.org/resource/SIO_000147> <http://vocabs.lter-europe.net/EnvThes/20373> .
 <https://w3id.org/APD/traits/trait_0030652> <http://www.w3.org/2004/02/skos/core#example> "exact match: Post-fire seedling emergence [BROT:43] (http://doi.org/10.1038/sdata.2018.135)" .
