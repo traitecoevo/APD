@@ -1,0 +1,38 @@
+identifier,label,parent_identifier
+flower_pollination,Flower & pollination,
+androecium_male_organs,Androecium (male organs),flower_pollination
+stamen,Stamen,androecium_male_organs
+anther,Anther,androecium_male_organs
+filament,Filament,androecium_male_organs
+pollen,Pollen,androecium_male_organs
+gynoecium_female_organs,Gynoecium (female organs),flower_pollination
+carpel,Carpel,gynoecium_female_organs
+ovary,Ovary,gynoecium_female_organs
+style,Style,gynoecium_female_organs
+stigma,Stigma,gynoecium_female_organs
+perianth,Perianth,flower_pollination
+calyx_sepals,Calyx (sepals),perianth
+corolla_petals,Corolla (petals),perianth
+perianth_undifferentiated,Perianth (undifferentiated),perianth
+inflorescence_arrangement,Inflorescence & arrangement,flower_pollination
+whole_flower,Whole flower,flower_pollination
+pollination,Pollination,flower_pollination
+fruit_seed,Fruit & seed,
+fruit,Fruit,fruit_seed
+seed,Seed,fruit_seed
+seed_morphology,Seed morphology,seed
+reproductive_allocation,Reproductive allocation,seed
+dispersal_ecology,Dispersal ecology,seed
+dormancy_germination,Dormancy & germination,seed
+seedling_embryo,Seedling & embryo,seed
+fire_ecology,Fire ecology,
+combustion_flammability,Combustion & flammability,fire_ecology
+resprouting_post_fire_recovery,Resprouting & post-fire recovery,fire_ecology
+fire_cued_phenology,Fire-cued phenology,fire_ecology
+growth_form_architecture,Growth form & architecture,
+phenology_timing_of_life_events,Phenology (timing of life events),
+environmental_tolerance_stress,Environmental tolerance & stress,
+symbioses_nutrition,Symbioses & nutrition,
+vegetative_clonal_reproduction,Vegetative & clonal reproduction,
+genetics,Genetics,
+whole_plant_life_history,Whole-plant life history,
