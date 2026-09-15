@@ -41,21 +41,17 @@ history domain are mostly filled in (185 of the traits in `austraits.build`'s
 wood, biochemical content, gas exchange, water transport, ...) hasn't been worked through
 yet.
 
-## Known gap: 26 forward references to not-yet-contributed traits
+## `trait_id` is deliberately scoped to `austraits.build`'s current trait set, not APD's
 
-`APD_concept_assignments_input.csv`'s `trait_id` column currently references 26 trait
-names that exist in `austraits.build`'s `config/traits.yml` but not yet in this
-repository's `data/APD_traits_input.yml` -- traits that were apparently added directly to
-the downstream `config/traits.yml` at some point without ever being contributed back
-upstream to APD (a larger, separate reconciliation this branch does not attempt to
-resolve): `fire_minimum_fire_interval`, `flower_anther_length`, `flower_bract_length`,
-`flower_carpel_length`, `flower_filament_length`, `flower_lifespan`,
-`flower_nectar_production`, `flower_perianth_fusion_categorical`,
-`flower_pollinator_reward`, `flower_scent_production`, `flower_sepal_length`,
-`flower_shape`, `flower_stamen_length`, `flower_stigma_length`, `flower_style_length`,
-`flower_tube_length`, `flower_visitor`, `flowers_per_inflorescence`,
-`inflorescence_shape`, `inflorescence_type`, `pedicel_length`, `peduncle_length`,
-`plant_height_epiphyte`, `pollination_vector_known`, `pollination_vector_possible`,
-`reproduction_time_to_maximum_seeding`. These assignment rows are left in place (a trait
-missing from APD doesn't invalidate the ones that are present), but resolving the
-forward references properly means adding these traits to `APD_traits_input.yml` first.
+This taxonomy is built against `austraits.build`'s `config/traits.yml` as it stands
+right now (610 traits), not against whatever APD's own vocabulary currently contains --
+the two are expected to be out of step mid-release, the same way they always are between
+an APD release and `austraits.build`'s own ongoing curation. 26 of the 185 `trait_id`
+values in `APD_concept_assignments_input.csv` don't have a matching entry in this
+repository's `data/APD_traits_input.yml` yet for exactly that reason
+(`pollination_vector_known`, `pollination_vector_possible`, `flower_visitor`, and 23 more
+-- mostly floral/inflorescence morphology traits). That's expected, not a defect: this
+branch intentionally leaves APD's own vocabulary tables untouched, and those traits will
+reach APD through its own normal contribution/release process on its own timeline, not as
+a side effect of landing this taxonomy. Nothing about the concept-groups tables
+themselves depends on that happening first.
