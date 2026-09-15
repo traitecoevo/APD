@@ -9,9 +9,10 @@ tolerance, symbioses, ...).
 
 Ported from `austraits.build`'s `concepts/` directory, where this started as an extra
 browsing mode ("Concepts") in the AusTraits trait mind-map artifact, alongside the
-existing `trait_group`-based view and a computed similarity view. See that artifact
-(link held by Elizabeth Wenk) and `austraits.build`'s `concepts/README.md` for the full
-history.
+existing `trait_group`-based view and a computed similarity view:
+https://claude.ai/code/artifact/af37c3a8-8e5c-447e-a28d-d1357932e85e (owned by Elizabeth
+Wenk -- ask her if the link doesn't open, sharing may need to be turned on). See also
+`austraits.build`'s `concepts/README.md` for the full history.
 
 ## Files
 
