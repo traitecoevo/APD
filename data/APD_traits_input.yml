@@ -3757,7 +3757,7 @@ trait_0010113:
   modified: 05/02/2024
   structure: PO_0000003; PO_0025034
   measured_characteristic: PATO_0000150; PATO_0000066
-  keywords: PO_0020030; PO_0009009; PATO_0000454; EnvThes:20698; PO_0025470; PO_0004510
+  keywords: PO_0020030; PO_0009009; PATO_0000454; EnvThes:20698; PO_0025470; PO_0000282
   exact_match: FLOPO_0001889
 trait_0010114:
   trait: seedling_hypocotyl_hairs
@@ -3774,7 +3774,7 @@ trait_0010114:
   deprecated_trait_name: hypocotyl_type
   structure: PO_0000003; PO_0025034
   measured_characteristic: PATO_0000150; PATO_0000066
-  keywords: TO_0000769; PO_0020100; PO_0009009; PATO_0000454; EnvThes:20698; PO_0004510
+  keywords: TO_0000769; PO_0020100; PO_0009009; PATO_0000454; EnvThes:20698; PO_0000282
   exact_match: FLOPO_0003626
 trait_0010160:
   trait: seedling_first_node_leaf_type
@@ -4867,7 +4867,7 @@ trait_0011361:
     Vesk; Gregory J. Jordan; Andy Leigh; Patricia Lu-Irving; Lily Dun; David Coleman
   references: Hanley 2007; Simpson 2019
   keywords: TO_0002722; PO_0006504; PO_0020039; glossary_40114; PATO_0000454; PO_0006340;
-    PATO_0000066; PO_0004510
+    PATO_0000066; PO_0000282
   exact_match: TO_0000055
   related_match: TO_0006066
   TRY_close: Leaf emergences (pubescence, pruinescence, hairs, spines, thorns) [TRY:677]
@@ -4900,7 +4900,7 @@ trait_0011362:
     Vesk; Gregory J. Jordan; Andy Leigh; Patricia Lu-Irving; Lily Dun; David Coleman
   references: Hanley 2007; Simpson 2019
   keywords: TO_0002722; PO_0006504; PO_0020039; glossary_40114; PATO_0000454; PO_0006339;
-    PATO_0000066; PO_0004510
+    PATO_0000066; PO_0000282
   close_match: TO_0000055
   related_match: TO_0006066
   TRY_close: Leaf emergences (pubescence, pruinescence, hairs, spines, thorns) [TRY:677]
@@ -4931,7 +4931,7 @@ trait_0011363:
     Vesk; Gregory J. Jordan; Andy Leigh; Patricia Lu-Irving; Lily Dun; David Coleman
   references: Hanley 2007; Simpson 2019
   keywords: TO_0002722; PO_0006504; PO_0020039; glossary_40114; PATO_0000454; PO_0006340;
-    PO_0001052; PO_0004510
+    PO_0001052; PO_0000282
   close_match: TO_0000055
   related_match: TO_0006066
   TRY_close: Leaf emergences (pubescence, pruinescence, hairs, spines, thorns) [TRY:677]
@@ -5853,7 +5853,7 @@ trait_0011817:
   modified: 01/04/2025
   structure: PO_0009047
   measured_characteristic: PATO_0000150; PATO_0000066
-  keywords: PO_0004510
+  keywords: PO_0000282
   exact_match: TO_0000879
   TRY_close: Stem emergences (pubescence, hairs, spines, thorns) [TRY:1256]  (https://www.try-db.org/de/de.php)
 trait_0011910:
@@ -7996,7 +7996,7 @@ trait_0012521:
   modified: 01/04/2025
   structure: PO_0025082; PO_0009001
   measured_characteristic: PATO_0000150; PATO_0000066
-  keywords: PO_0004510; TO_0002629
+  keywords: PO_0000282; TO_0002629
   exact_match: TO_0000851
 trait_0012610:
   trait: seed_dry_mass
@@ -8307,7 +8307,7 @@ trait_0012619:
   reviewers: Elizabeth Wenk; Hervé Sauquet; Russell Barrett; Carl Gosper; Lydia Guja;
     Gregory J. Jordan; Mark Ooi; Karen D. Sommerville; Lily Dun
   references: Pérez-Harguindeguy 2013; Simpson 2019; Saatkamp 2018
-  keywords: PO_0004510; glossary_40114; GO_0000003
+  keywords: PO_0000282; glossary_40114; GO_0000003
 trait_0012620:
   trait: seed_surface_texture
   label: Seed surface texture

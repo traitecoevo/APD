@@ -30,8 +30,10 @@ ORCID,https://orcid.org/
 SIO,http://semanticscience.org/resource/
 SWEET_phenSolid,http://sweetontology.net/phenSolid/
 SWEET_phenSystem,http://sweetontology.net/phenSystem/
+SWEET_procPhysical,http://sweetontology.net/procPhysical/
 SWEET_procWave,http://sweetontology.net/procWave/
 SWEET_prop,http://sweetontology.net/prop/
+SWEET_propChemical,http://sweetontology.net/propChemical/
 SWEET_propConductivity,http://sweetontology.net/propConductivity/
 SWEET_propPressure,http://sweetontology.net/propPressure/
 SWEET_propTime,http://sweetontology.net/propTime/
