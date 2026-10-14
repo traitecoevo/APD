@@ -15,7 +15,7 @@ altering the set of published input tables, or changing where the site is deploy
 Related: [`CONTRIBUTING.md`](CONTRIBUTING.md) (editing a trait, and what makes a change breaking),
 [`RELEASING.md`](RELEASING.md) (the release checklist, including C8 and C9), `AGENTS.md`
 (repo orientation), and
-[`austraits-meta/governance/release-playbooks.md`](https://github.com/traitecoevo/austraits-meta/blob/main/governance/release-playbooks.md)
+[`austraits-meta/governance/release-playbooks.md`](https://github.com/traitecoevo/austraits-meta/blob/master/governance/release-playbooks.md)
 for the downstream ripple when the vocabulary itself changes.
 
 ---

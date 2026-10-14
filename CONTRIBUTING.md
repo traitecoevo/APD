@@ -112,7 +112,7 @@ drifted apart.
 ## What makes a change *breaking*
 
 The APD feeds `austraits.build`, which feeds the released AusTraits database. Per the family
-[release playbook](https://github.com/traitecoevo/austraits-meta/blob/main/governance/release-playbooks.md),
+[release playbook](https://github.com/traitecoevo/austraits-meta/blob/master/governance/release-playbooks.md),
 **default to treating these as breaking**:
 
 - renaming or removing a trait, trait group, categorical value or glossary term
