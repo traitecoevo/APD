@@ -4803,7 +4803,7 @@ APD_scheme:glossary
     dcterms:title "AusTraits Plant Dictionary glossary"@en ;
     a skos:ConceptScheme ;
     rdfs:label "AusTraits Plant Dictionary glossary"@en ;
-    skos:hasTopConcept APD_glossary:glossary_40004, APD_glossary:glossary_40006, APD_glossary:glossary_40014, APD_glossary:glossary_40026, APD_glossary:glossary_40040, APD_glossary:glossary_40044, APD_glossary:glossary_40050, APD_glossary:glossary_40058, APD_glossary:glossary_40060, APD_glossary:glossary_40062, APD_glossary:glossary_40066, APD_glossary:glossary_40068, APD_glossary:glossary_40074, APD_glossary:glossary_40076, APD_glossary:glossary_40080, APD_glossary:glossary_40081, APD_glossary:glossary_40086, APD_glossary:glossary_40088, APD_glossary:glossary_40092, APD_glossary:glossary_40094, APD_glossary:glossary_40106, APD_glossary:glossary_40112, APD_glossary:glossary_40114, APD_glossary:glossary_40124 ;
+    skos:hasTopConcept APD_glossary:glossary_40004, APD_glossary:glossary_40006, APD_glossary:glossary_40014, APD_glossary:glossary_40026, APD_glossary:glossary_40040, APD_glossary:glossary_40044, APD_glossary:glossary_40050, APD_glossary:glossary_40058, APD_glossary:glossary_40060, APD_glossary:glossary_40062, APD_glossary:glossary_40066, APD_glossary:glossary_40068, APD_glossary:glossary_40074, APD_glossary:glossary_40076, APD_glossary:glossary_40080, APD_glossary:glossary_40081, APD_glossary:glossary_40086, APD_glossary:glossary_40088, APD_glossary:glossary_40092, APD_glossary:glossary_40094, APD_glossary:glossary_40106, APD_glossary:glossary_40112, APD_glossary:glossary_40114, APD_glossary:glossary_40124, APD_glossary:glossary_40126, APD_glossary:glossary_40128 ;
     skos:prefLabel "AusTraits Plant Dictionary glossary"@en .
 
 APD_glossary:glossary_40004
@@ -5020,6 +5020,24 @@ APD_glossary:glossary_40124
     skos:definition "A plot of the relationship between tissue water content and tissue water potential, which is used in plant water-relations studies to understand tissue/cell elasticity, cell turgor, and cell osmotic potential."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "pressure-volume curve"@en ;
+    skos:topConceptOf APD_scheme:glossary .
+
+APD_glossary:glossary_40126
+    dcterms:description "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en ;
+    dcterms:identifier "glossary_40126" ;
+    a skos:Concept ;
+    skos:definition "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en ;
+    skos:inScheme "https://w3id.org/APD/glossary" ;
+    skos:prefLabel "month presence"@en ;
+    skos:topConceptOf APD_scheme:glossary .
+
+APD_glossary:glossary_40128
+    dcterms:description "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
+    dcterms:identifier "glossary_40128" ;
+    a skos:Concept ;
+    skos:definition "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
+    skos:inScheme "https://w3id.org/APD/glossary" ;
+    skos:prefLabel "text"@en ;
     skos:topConceptOf APD_scheme:glossary .
 
 APD_scheme:traits
@@ -23231,7 +23249,7 @@ APD:trait_0030030
     dcterms:identifier "trait_0030030" ;
     dcterms:modified "2025-06-03"^^xsd:date ;
     SIO:SIO_000147 obo:ENVO_01000203, obo:PATO_0001729, obo:PATO_0001731, obo:PATO_0001733, obo:TO_0000933 ;
-    ets:valueType obo:STATO_0000252 ;
+    ets:valueType APD_glossary:glossary_40126 ;
     a skos:Concept ;
     skos:altLabel "foliage_time" ;
     skos:broader APD:trait_group_0030008, APD:trait_group_0030704 ;
@@ -23445,7 +23463,7 @@ APD:trait_0030214
     dcterms:references <https://doi.org/10.1111/jbi.14375>, <https://doi.org/10.1111/nph.15502> ;
     dcterms:reviewed "2021-11-30"^^xsd:date ;
     SIO:SIO_000147 obo:PO_0007016, obo:TO_0002616 ;
-    ets:valueType obo:STATO_0000252 ;
+    ets:valueType APD_glossary:glossary_40126 ;
     a skos:Concept ;
     skos:altLabel "flowering_time" ;
     skos:broader APD:trait_group_0030008 ;
@@ -23468,7 +23486,7 @@ APD:trait_0030215
     dcterms:references <https://doi.org/10.1111/nph.15502> ;
     dcterms:reviewed "2021-11-30"^^xsd:date ;
     SIO:SIO_000147 obo:PO_0025500 ;
-    ets:valueType obo:STATO_0000252 ;
+    ets:valueType APD_glossary:glossary_40126 ;
     a skos:Concept ;
     skos:altLabel "fruiting_time" ;
     skos:broader APD:trait_group_0030008 ;
@@ -23489,7 +23507,7 @@ APD:trait_0030216
     dcterms:references <https://doi.org/10.1071/BT9900255> ;
     dcterms:reviewed "2023-05-31"^^xsd:date ;
     SIO:SIO_000147 Cerrado_ccon:Recruitment, obo:GO_0000003, obo:GO_0009845, <http://vocabs.lter-europe.net/EnvThes/20410>, <http://vocabs.lter-europe.net/EnvThes/20698> ;
-    ets:valueType obo:STATO_0000252 ;
+    ets:valueType APD_glossary:glossary_40126 ;
     a skos:Concept ;
     skos:altLabel "recruitment_time" ;
     skos:broader APD:trait_group_0030008, APD:trait_group_0030602, APD:trait_group_0030704 ;

@@ -9807,6 +9807,12 @@
       },
       "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
         {
+          "@id": "https://w3id.org/APD/glossary/glossary_40128"
+        },
+        {
+          "@id": "https://w3id.org/APD/glossary/glossary_40126"
+        },
+        {
           "@id": "https://w3id.org/APD/glossary/glossary_40124"
         },
         {
@@ -10383,6 +10389,48 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "pressure-volume curve"
+      },
+      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
+        "@id": "https://w3id.org/APD/glossary"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/glossary/glossary_40126",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."
+      },
+      "http://purl.org/dc/terms/identifier": "glossary_40126",
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "month presence"
+      },
+      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
+        "@id": "https://w3id.org/APD/glossary"
+      }
+    },
+    {
+      "@id": "https://w3id.org/APD/glossary/glossary_40128",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://purl.org/dc/terms/description": {
+        "@language": "en",
+        "@value": "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."
+      },
+      "http://purl.org/dc/terms/identifier": "glossary_40128",
+      "http://www.w3.org/2004/02/skos/core#definition": {
+        "@language": "en",
+        "@value": "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."
+      },
+      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "text"
       },
       "http://www.w3.org/2004/02/skos/core#topConceptOf": {
         "@id": "https://w3id.org/APD/glossary"
@@ -78586,7 +78634,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
+        "@id": "https://w3id.org/APD/glossary/glossary_40126"
       },
       "http://www.w3.org/2004/02/skos/core#altLabel": "foliage_time",
       "http://www.w3.org/2004/02/skos/core#broader": [
@@ -79931,7 +79979,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
+        "@id": "https://w3id.org/APD/glossary/glossary_40126"
       },
       "http://www.w3.org/2004/02/skos/core#altLabel": "flowering_time",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -80046,7 +80094,7 @@
         "@id": "http://purl.obolibrary.org/obo/PO_0025500"
       },
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
+        "@id": "https://w3id.org/APD/glossary/glossary_40126"
       },
       "http://www.w3.org/2004/02/skos/core#altLabel": "fruiting_time",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -80162,7 +80210,7 @@
         }
       ],
       "http://terminologies.gfbio.org/terms/ETS/valueType": {
-        "@id": "http://purl.obolibrary.org/obo/STATO_0000252"
+        "@id": "https://w3id.org/APD/glossary/glossary_40126"
       },
       "http://www.w3.org/2004/02/skos/core#altLabel": "recruitment_time",
       "http://www.w3.org/2004/02/skos/core#broader": [
