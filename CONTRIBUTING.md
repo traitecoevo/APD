@@ -69,6 +69,19 @@ values end up inside RDF literals, so text is the honest representation. Storing
 the published output depend on R's `options(scipen)`, which is how `1e+05` once shipped where
 `100000` was meant. Keep the quotes.
 
+### A trait's value type
+
+A trait's `type` names one of four value types, and the type decides what else the trait carries. `make check` fails a trait whose fields disagree with its type.
+
+| `type` | Value type | The trait carries |
+|---|---|---|
+| `STATO_0000251` | continuous variable (numeric) | `units`, and an allowed range in `min` and `max` |
+| `STATO_0000252` | categorical variable | at least one allowable value in `APD_categorical_values_input.csv`, and no units or range |
+| `glossary_40126` | month presence | neither: a value is twelve characters, `Y` or `N` for each month starting with January |
+| `glossary_40128` | text | neither: values are open-ended, such as a taxon name |
+
+The first two are borrowed from STATO. The other two are APD glossary terms, because no published vocabulary defines them. `APD_VALUE_TYPES` in `R/build.R` is the list the build and the checks use, so a new value type needs a glossary term and an entry there. Changing an existing trait's type changes how `austraits.build` validates its data, since its generator maps the `trait_type` column of `APD_traits.csv`, so coordinate the change there.
+
 ## The other input tables
 
 Allowable categorical values, the trait hierarchy, glossary, units, references, reviewers, namespaces

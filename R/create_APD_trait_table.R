@@ -173,6 +173,12 @@ property_table <- function(pairs) {
 #' @return A character vector, one entry per allowable value.
 categorical_value_lines <- function(narrower, triples_with_labels) {
 
+  # A categorical trait with no allowable values fails validate_apd(), but the
+  # page should not warn about missing columns while it says so.
+  if (nrow(narrower) == 0) {
+    return(character(0))
+  }
+
   definitions <- triples_with_labels %>%
     filter(Subject_stripped %in% narrower$Object) %>%
     filter(property %in% c("identifier", "description")) %>%
@@ -183,10 +189,30 @@ categorical_value_lines <- function(narrower, triples_with_labels) {
         definitions$description[match(narrower$value, definitions$identifier)])
 }
 
-# Four traits record a season rather than a set of allowable values, so their
-# `has narrower` statements are not categorical values and are not listed.
-APD_TIME_TRAITS <- c("flowering_time", "fruiting_time", "recruitment_time",
-                     "foliage_time")
+#' A trait's value type, with the type's definition where the APD defines it
+#'
+#' A numeric or categorical trait states its format in the pairs that follow --
+#' units and an allowed range, or the allowed values. A month-presence or text
+#' trait has neither, so without this its entry would say nothing about what a
+#' value looks like. Those two types are the APD's own glossary terms, so their
+#' definitions are in the triple table, and they are shown beside the type the
+#' way `categorical_value_lines()` shows each allowed value's definition. The
+#' borrowed STATO types have no rows there and are shown as before.
+#'
+#' @param value_type The trait's `value type` rows.
+#' @param triples_with_labels The labelled triple table.
+#' @return A character vector, one entry per row of `value_type`.
+value_type_lines <- function(value_type, triples_with_labels) {
+
+  definitions <- triples_with_labels %>%
+    filter(Subject_stripped %in% value_type$Object, property == "definition")
+
+  definition <- definitions$value[match(value_type$Object,
+                                        definitions$Subject_stripped)]
+
+  ifelse(is.na(definition), value_type$value_link,
+         paste(value_type$value_link, definition))
+}
 
 #' Build the table for one trait concept
 #'
@@ -195,9 +221,13 @@ APD_TIME_TRAITS <- c("flowering_time", "fruiting_time", "recruitment_time",
 #' mappings out to other vocabularies, references, reviewers and dates. Produces
 #' section 3 of the dictionary, "Trait concepts".
 #'
-#' Which pairs appear depends on the trait's value type: continuous traits get
-#' units and a min/max, categorical traits get their allowable values inlined
-#' with each value's definition.
+#' Which pairs appear depends on the trait's value type (`APD_VALUE_TYPES`):
+#' numeric traits get units and a min/max, categorical traits get their
+#' allowable values inlined with each value's definition, and month-presence and
+#' text traits get neither -- their format is the value type's own definition.
+#' This used to test the labels "continuous variable" and "categorical
+#' variable", with a list of four trait names to skip, because the phenology
+#' traits were typed categorical while having no allowable values.
 #'
 #' @param thistrait URI of the trait, e.g.
 #'   `https://w3id.org/APD/traits/trait_0000012`.
@@ -208,8 +238,9 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
   trait <- apd_entity_rows(triples_with_labels, thistrait)
 
   value_type <- trait %>% filter(property == "value type")
-  altlabel <- trait %>% filter(property == "alternative label")
   narrower <- trait %>% filter(property == "has narrower")
+
+  kind <- apd_value_kind(value_type$Object)
 
   property_table(c(
     list(
@@ -218,10 +249,11 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
       prop(trait, "alternative label"),
       prop(trait, "description", collapse = TRUE),
       prop(trait, "note", label = "comments", uri = paste0(SKOS, "note")),
-      prop(trait, "value type")
+      prop(trait, "value type",
+           values = value_type_lines(value_type, triples_with_labels))
     ),
 
-    if (value_type$value == "continuous variable") list(
+    if (identical(kind, "numeric")) list(
       prop(trait, "unit", collapse = TRUE),
       # The allowed range comes from `value`, not `value_link`: these are
       # numbers, with nothing to link them to.
@@ -229,8 +261,7 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
       prop(trait, "maxAllowedValue", column = "value")
     ),
 
-    if (value_type$value == "categorical variable" &&
-          !altlabel$value %in% APD_TIME_TRAITS) list(
+    if (identical(kind, "categorical")) list(
       prop(trait, "has narrower", collapse = TRUE,
            values = categorical_value_lines(narrower, triples_with_labels))
     ),

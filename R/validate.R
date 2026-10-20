@@ -66,6 +66,74 @@ new_problem <- function(id, message, details = character()) {
   list(id = id, message = message, details = as.character(details))
 }
 
+#' Check that every trait's value type agrees with the rest of its definition
+#'
+#' A trait's `type` decides what else it must carry (see `APD_VALUE_TYPES`), and
+#' each mismatch here is silent in the build. A type that is not a value type --
+#' STATO's "ordinal variable" is in `published_classes.csv`, so it would resolve
+#' and publish without complaint -- renders with neither a range nor a list of
+#' values. A categorical trait with no allowable values publishes an empty list:
+#' that is what the four month-presence traits were until they had a type of
+#' their own, and it broke the `traits.yml` that austraits.build generates from
+#' this dictionary (traitecoevo/traits.build#87).
+#'
+#' @param inputs Output of `apd_read_inputs()`.
+#' @return A list of problems, possibly empty.
+apd_value_type_problems <- function(inputs) {
+
+  traits <- inputs$traits
+  kind <- apd_value_kind(traits$type)
+  problems <- list()
+
+  unknown <- is.na(kind)
+  if (any(unknown)) {
+    problems <- c(problems, list(new_problem(
+      "trait-unknown-value-type",
+      sprintf("%d trait(s) have a type that is not one of the %d value types",
+              sum(unknown), length(APD_VALUE_TYPES)),
+      sprintf("%s: %s", traits$trait[unknown], traits$type[unknown])
+    )))
+  }
+
+  categorical <- traits$trait[kind %in% "categorical"]
+  with_values <- unique(inputs$categorical_values$trait_name)
+
+  empty <- setdiff(categorical, with_values)
+  if (length(empty) > 0) {
+    problems <- c(problems, list(new_problem(
+      "trait-value-type-mismatch",
+      sprintf("%d categorical trait(s) have no allowable values",
+              length(empty)),
+      empty
+    )))
+  }
+
+  stray <- setdiff(with_values, categorical)
+  if (length(stray) > 0) {
+    problems <- c(problems, list(new_problem(
+      "trait-value-type-mismatch",
+      sprintf("%d trait(s) that are not categorical have allowable values",
+              length(stray)),
+      stray
+    )))
+  }
+
+  measured <- with(traits, !is.na(min) | !is.na(max) | !is.na(units) |
+                     !is.na(units_uom))
+  # An unknown type is reported above, not again here.
+  ranged <- !is.na(kind) & kind != "numeric" & measured
+  if (any(ranged)) {
+    problems <- c(problems, list(new_problem(
+      "trait-value-type-mismatch",
+      sprintf("%d trait(s) that are not numeric have units or a range",
+              sum(ranged)),
+      traits$trait[ranged]
+    )))
+  }
+
+  problems
+}
+
 #' Validate the built dictionary
 #'
 #' @param data_dir Directory holding the input tables.
@@ -131,6 +199,8 @@ validate_apd <- function(data_dir = "data", out_dir = APD_EXPORT_DIR) {
         sprintf("%d trait(s) have no label or no description", sum(missing_text)),
         inputs$traits$trait[missing_text])
   }
+
+  problems <- c(problems, apd_value_type_problems(inputs))
 
   # --- referential integrity ------------------------------------------------
   #

@@ -13,7 +13,13 @@
 # Re-pinned when plant_height_reproductive's allowed minimum was corrected from
 # 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
 # previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
-APD_ENTITY_TABLE_DIGEST <- "9691c9693867aae2929bb17ae0bf65dd"
+#
+# Re-pinned again for the month presence and text value types (previous digest
+# 9691c9693867aae2929bb17ae0bf65dd). Verified attributable by comparing every
+# entity's rendering before and after: the four phenology traits differ in one
+# line each, their value type, and the two new glossary terms are added.
+# Nothing else moved.
+APD_ENTITY_TABLE_DIGEST <- "3bc9e0339c00a05d99024cf319c68d48"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -48,8 +54,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 559 traits + 71 groups + 819 categorical values + 24 glossary terms
-  expect_identical(length(subjects), 1473L)
+  # 559 traits + 71 groups + 819 categorical values + 26 glossary terms
+  expect_identical(length(subjects), 1475L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -164,7 +170,8 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  expect_identical(rendered_pairs, 16803L)
+  # 16,803 before the two value-type glossary terms added six pairs each.
+  expect_identical(rendered_pairs, 16815L)
   expect_identical(length(dropped), 3034L)
 })
 

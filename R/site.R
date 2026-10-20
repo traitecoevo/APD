@@ -1,6 +1,6 @@
 # Checks on the rendered site, as opposed to the data build.
 #
-# The dictionary is one document, so every one of the 1,473 published
+# The dictionary is one document, so every one of the 1,475 published
 # identifiers resolves to a fragment of it: w3id.org sends
 # https://w3id.org/APD/traits/trait_0000012 to
 # https://traitecoevo.github.io/APD/#trait_0000012. An entity that

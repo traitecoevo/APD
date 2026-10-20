@@ -146,7 +146,7 @@ This document describes the schema available from the APD namespace. The APD off
 2. [Trait groups](#trait-groupings): Hierarchical trait groupings, included to enhance trait findability.
 3. [Trait concepts](#trait-concepts): Traits defined within the vocabulary.
 4. [Values for categorical traits](#values-for-categorical-traits): Allowed categorical trait values to support the defined trait concepts.
-5. [Glossary](#glossary): Terms used as keywords that were not available in other published vocabularies.
+5. [Glossary](#glossary): Terms used as keywords, and value types for traits, that were not available in other published vocabularies.
 6. [Acknowledgements](#acknowledgements)
 
 # 1. Introduction
@@ -278,7 +278,7 @@ for (thistrait in traits_names_tmp$trait_name) {
 
 # 5. Glossary
 
-This section of the ontology includes terminology used within trait concept descriptions that are not defined by other resources.
+This section of the ontology includes terminology used within trait concept descriptions that are not defined by other resources. It also defines two of the value types a trait concept can have, [month presence](#glossary_40126) and [text](#glossary_40128), for which no published vocabulary has a term; the other two, continuous and categorical variable, come from the Statistical Methods Ontology (STATO).
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 

@@ -5,9 +5,9 @@
 test_that("the entity slugs are the fragments the URIs resolve to", {
   slugs <- apd_entity_slugs(APD_DATA)
 
-  # 559 traits + 71 groups + 819 categorical values + 24 glossary terms, the
-  # same 1,473 that test-commitments.R pins for C1.
-  expect_identical(length(slugs), 1473L)
+  # 559 traits + 71 groups + 819 categorical values + 26 glossary terms, the
+  # same 1,475 that test-commitments.R pins for C1.
+  expect_identical(length(slugs), 1475L)
   expect_false(any(duplicated(slugs)))
   expect_false(any(grepl("/", slugs, fixed = TRUE)))
 })
