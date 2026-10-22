@@ -259,9 +259,9 @@ reformatted_traits <-
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
     inScheme = paste0("\"", "https://w3id.org/APD/traits", "\""),
-    # A value type is borrowed (STATO, in published_classes) or one the APD
-    # defines itself in the glossary -- monthly presence and text, which no
-    # published vocabulary has. See APD_VALUE_TYPES.
+    # A value type is borrowed (STATO or NCIT, in published_classes) or one the
+    # APD defines itself in the glossary -- monthly presence, which no published
+    # vocabulary has. See APD_VALUE_TYPES.
     type = paste0("<", c(published_classes_csv$Entity, glossary_csv$Entity)[
       match(type, c(published_classes_csv$identifier, glossary_csv$identifier))], ">"),
     # A typed literal is "value"^^<datatype>. These were missing the "^^" and used

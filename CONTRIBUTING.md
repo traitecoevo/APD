@@ -78,9 +78,9 @@ A trait's `type` names one of four value types, and the type decides what else t
 | `STATO_0000251` | continuous variable (numeric) | `units`, and an allowed range in `min` and `max` |
 | `STATO_0000252` | categorical variable | at least one allowable value in `APD_categorical_values_input.csv`, and no units or range |
 | `glossary_40126` | monthly presence | neither: a value is twelve characters, `Y` or `N` for each month starting with January |
-| `glossary_40128` | text | neither: values are free text, such as taxon names |
+| `NCIT_C25704` | text | neither: values are free text, such as taxon names |
 
-The first two are borrowed from STATO. The other two are APD glossary terms, because no published vocabulary defines them. `APD_VALUE_TYPES` in `R/build.R` is the list the build and the checks use, so a new value type needs a glossary term and an entry there. Changing an existing trait's type changes how `austraits.build` validates its data, since its generator maps the `trait_type` column of `APD_traits.csv`, so coordinate the change there.
+The first two are borrowed from STATO and text from the NCI Thesaurus, each with a row in `published_classes.csv`. Monthly presence is an APD glossary term, because no published vocabulary defines it. `APD_VALUE_TYPES` in `R/build.R` is the list the build and the checks use, so a new value type needs a term (borrowed, or in the glossary) and an entry there. Changing an existing trait's type changes how `austraits.build` validates its data, since its generator maps the `trait_type` column of `APD_traits.csv`, so coordinate the change there.
 
 ## The other input tables
 

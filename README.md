@@ -40,7 +40,7 @@ This repository is the original source for the APD. It includes
   published, as part of each release snapshot.
 * `APD_trait_hierarchy.csv`: Table documenting a trait hierarchy into which traits in the APD are mapped.
 * `APD_categorical_values_input.csv`: Table of allowable categorical trait values for categorical traits within the APD.
-* `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies. It includes the two value types the APD defines itself, `monthly presence` and `text`.
+* `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies. It includes the one value type the APD defines itself, `monthly presence`.
 * `APD_references.csv`: Table of references used in the APD, including dois and complete reference details.
 * `APD_reviewers.csv`: Table of people who have reviewed trait definitions for the APD, identified by their ORCIDs.
 * `APD_units.csv`: Table of units used in the APD, including links in the Units of Measurement ontology.

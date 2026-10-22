@@ -24,7 +24,12 @@
 # text definition (previous digest 3bc9e0339c00a05d99024cf319c68d48). export/
 # changes only in those two glossary terms and the four phenology traits'
 # trait_type.
-APD_ENTITY_TABLE_DIGEST <- "209cd16efe5e2169199aa52bec2e3a6f"
+#
+# Re-pinned once more when text became NCIT_C25704, borrowed from the NCI
+# Thesaurus, in place of the glossary term glossary_40128 (previous digest
+# 209cd16efe5e2169199aa52bec2e3a6f). No trait has type text, so the only
+# rendering that changes is that glossary_40128's table is gone.
+APD_ENTITY_TABLE_DIGEST <- "eb07884bc28aa57d34cf7155d609bdd1"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -59,8 +64,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 559 traits + 71 groups + 819 categorical values + 26 glossary terms
-  expect_identical(length(subjects), 1475L)
+  # 559 traits + 71 groups + 819 categorical values + 25 glossary terms
+  expect_identical(length(subjects), 1474L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -175,8 +180,8 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  # 16,803 before the two value-type glossary terms added six pairs each.
-  expect_identical(rendered_pairs, 16815L)
+  # 16,803 before the monthly presence glossary term added six pairs.
+  expect_identical(rendered_pairs, 16809L)
   expect_identical(length(dropped), 3034L)
 })
 

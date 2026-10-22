@@ -278,7 +278,7 @@ for (thistrait in traits_names_tmp$trait_name) {
 
 # 5. Glossary
 
-This section of the ontology includes terminology used within trait concept descriptions that are not defined by other resources. It also defines two of the value types a trait concept can have, [monthly presence](#glossary_40126) and [text](#glossary_40128), for which no published vocabulary has a term; the other two, continuous and categorical variable, come from the Statistical Methods Ontology (STATO).
+This section of the ontology includes terminology used within trait concept descriptions that are not defined by other resources. It also defines one of the value types a trait concept can have, [monthly presence](#glossary_40126), for which no published vocabulary has a term; the other three, continuous and categorical variable from the Statistical Methods Ontology (STATO) and text from the NCI Thesaurus (NCIT), are borrowed.
 
 ```{r, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
 

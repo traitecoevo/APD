@@ -1,9 +1,9 @@
 # The value types a trait can have (APD_VALUE_TYPES, R/build.R), and the checks
 # that keep a trait's type in agreement with the rest of its definition.
 #
-# Two of the four are the APD's own glossary terms, added for
-# traitecoevo/traits.build#87: `monthly presence`, for the four phenology traits
-# that record a Y or N per month, and `text`, for free text values. Until then
+# Two of the four were added for traitecoevo/traits.build#87: `monthly
+# presence`, an APD glossary term, for the four phenology traits that record a Y
+# or N per month, and `text` (NCIT_C25704), for free text values. Until then
 # those four traits were typed categorical with no allowable values, which gave
 # austraits.build an empty list of allowed values to generate.
 
@@ -15,7 +15,7 @@ PUBLISHED_TRAIT_TYPES <- c(
   numeric = "continuous variable [STATO_0000251]",
   categorical = "categorical variable [STATO_0000252]",
   monthly_presence = "monthly presence [glossary_40126]",
-  text = "text [glossary_40128]"
+  text = "text [NCIT_C25704]"
 )
 
 PHENOLOGY_TRAITS <- c("flowering_time", "fruiting_time", "foliage_time",
@@ -42,8 +42,10 @@ test_that("the APD's own value types are glossary terms, so they resolve", {
   # The w3id rule for the glossary is `^glossary/glossary_(.+)/?$`, and the
   # page anchors every glossary term on its slug. A value type minted anywhere
   # else would need a new rule in perma-id/w3id.org.
-  own <- names(APD_VALUE_TYPES)[!startsWith(names(APD_VALUE_TYPES), "STATO_")]
+  own <- setdiff(names(APD_VALUE_TYPES),
+                 apd_test_inputs()$published_classes$identifier)
 
+  expect_identical(own, "glossary_40126")
   expect_true(all(own %in% apd_test_inputs()$glossary$identifier))
   expect_true(all(grepl("^glossary_[0-9]+$", own)))
 })
@@ -81,7 +83,7 @@ test_that("the value-type checks pass on the dictionary and fire when broken", {
 
   # Allowable values attached to a trait that is not categorical.
   problems <- apd_value_type_problems(
-    with_field("plant_growth_form", "type", "glossary_40128"))
+    with_field("plant_growth_form", "type", "NCIT_C25704"))
   expect_identical(ids(problems), "trait-value-type-mismatch")
   expect_identical(problems[[1]]$details, "plant_growth_form")
 

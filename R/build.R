@@ -14,15 +14,14 @@ APD_GLOSSARY_BASE <- "https://w3id.org/APD/glossary/"
 #
 # Names are the identifiers written in APD_traits_input.yml; values are the
 # trait types traits.build uses for them (traitecoevo/traits.build#87). The
-# first two are borrowed from STATO. The other two are the APD's own, defined in
-# the glossary because no published vocabulary has a term for either -- ETS
-# lists "character" among the values of `ets:valueType`, but as a word, with no
-# IRI to point at.
+# first two are borrowed from STATO and text from the NCI Thesaurus. Monthly
+# presence is the APD's own, defined in the glossary because no published
+# vocabulary has a term for it.
 APD_VALUE_TYPES <- c(
   STATO_0000251 = "numeric",            # continuous variable
   STATO_0000252 = "categorical",        # categorical variable
   glossary_40126 = "monthly_presence",  # monthly presence
-  glossary_40128 = "text"               # text
+  NCIT_C25704 = "text"                  # text
 )
 
 #' The kind of value a trait takes, from its value type
