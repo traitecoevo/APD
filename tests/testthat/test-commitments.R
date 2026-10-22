@@ -18,7 +18,7 @@ test_that("C1: every entity has a unique, well-formed URI", {
   expect_false(any(duplicated(entities)))
 
   # 559 traits + 71 groups + 819 categorical values + 26 glossary terms, two of
-  # which are the value types month presence and text
+  # which are the value types monthly presence and text
   expect_identical(length(entities), 1475L)
 })
 

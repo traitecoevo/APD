@@ -2,8 +2,8 @@
 # that keep a trait's type in agreement with the rest of its definition.
 #
 # Two of the four are the APD's own glossary terms, added for
-# traitecoevo/traits.build#87: `month presence`, for the four phenology traits
-# that record a Y or N per month, and `text`, for open-ended values. Until then
+# traitecoevo/traits.build#87: `monthly presence`, for the four phenology traits
+# that record a Y or N per month, and `text`, for free text values. Until then
 # those four traits were typed categorical with no allowable values, which gave
 # austraits.build an empty list of allowed values to generate.
 
@@ -14,7 +14,7 @@
 PUBLISHED_TRAIT_TYPES <- c(
   numeric = "continuous variable [STATO_0000251]",
   categorical = "categorical variable [STATO_0000252]",
-  month_presence = "month presence [glossary_40126]",
+  monthly_presence = "monthly presence [glossary_40126]",
   text = "text [glossary_40128]"
 )
 
@@ -58,7 +58,7 @@ test_that("APD_traits.csv publishes each trait's type as downstream reads it", {
                            collapse = ", "))
 
   month <- traits$trait[traits$trait_type ==
-                          PUBLISHED_TRAIT_TYPES[["month_presence"]]]
+                          PUBLISHED_TRAIT_TYPES[["monthly_presence"]]]
   expect_setequal(month, PHENOLOGY_TRAITS)
 })
 
@@ -85,7 +85,7 @@ test_that("the value-type checks pass on the dictionary and fire when broken", {
   expect_identical(ids(problems), "trait-value-type-mismatch")
   expect_identical(problems[[1]]$details, "plant_growth_form")
 
-  # A month-presence trait carrying a unit.
+  # A monthly-presence trait carrying a unit.
   problems <- apd_value_type_problems(
     with_field("flowering_time", "units", "mo"))
   expect_identical(ids(problems), "trait-value-type-mismatch")
@@ -99,7 +99,7 @@ test_that("the value-type checks pass on the dictionary and fire when broken", {
   expect_identical(problems[[1]]$details, "leaf_area: STATO_0000228")
 })
 
-test_that("a month-presence trait's entry states its format", {
+test_that("a monthly-presence trait's entry states its format", {
   skip_if_not(file.exists(apd_export_path("APD_triples.csv")),
               "APD_triples.csv is not built")
 
@@ -113,7 +113,7 @@ test_that("a month-presence trait's entry states its format", {
   )
 
   expect_match(html, paste0('title="https://w3id.org/APD/glossary/glossary_40126"',
-                            ">month presence</a> Twelve characters, one per month"),
+                            ">monthly presence</a> Twelve characters, one per month"),
                fixed = TRUE)
   # Neither a range nor a list of allowed values.
   for (absent in c(">unit<", ">minAllowedValue<", ">maxAllowedValue<",

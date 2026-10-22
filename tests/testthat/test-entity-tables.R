@@ -14,12 +14,17 @@
 # 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
 # previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
 #
-# Re-pinned again for the month presence and text value types (previous digest
+# Re-pinned again for the monthly presence and text value types (previous digest
 # 9691c9693867aae2929bb17ae0bf65dd). Verified attributable by comparing every
 # entity's rendering before and after: the four phenology traits differ in one
 # line each, their value type, and the two new glossary terms are added.
 # Nothing else moved.
-APD_ENTITY_TABLE_DIGEST <- "3bc9e0339c00a05d99024cf319c68d48"
+#
+# Re-pinned for the rename of month presence to monthly presence and the reworded
+# text definition (previous digest 3bc9e0339c00a05d99024cf319c68d48). export/
+# changes only in those two glossary terms and the four phenology traits'
+# trait_type.
+APD_ENTITY_TABLE_DIGEST <- "209cd16efe5e2169199aa52bec2e3a6f"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the

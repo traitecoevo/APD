@@ -73,7 +73,7 @@ new_problem <- function(id, message, details = character()) {
 #' STATO's "ordinal variable" is in `published_classes.csv`, so it would resolve
 #' and publish without complaint -- renders with neither a range nor a list of
 #' values. A categorical trait with no allowable values publishes an empty list:
-#' that is what the four month-presence traits were until they had a type of
+#' that is what the four monthly-presence traits were until they had a type of
 #' their own, and it broke the `traits.yml` that austraits.build generates from
 #' this dictionary (traitecoevo/traits.build#87).
 #'

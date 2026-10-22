@@ -192,7 +192,7 @@ categorical_value_lines <- function(narrower, triples_with_labels) {
 #' A trait's value type, with the type's definition where the APD defines it
 #'
 #' A numeric or categorical trait states its format in the pairs that follow --
-#' units and an allowed range, or the allowed values. A month-presence or text
+#' units and an allowed range, or the allowed values. A monthly-presence or text
 #' trait has neither, so without this its entry would say nothing about what a
 #' value looks like. Those two types are the APD's own glossary terms, so their
 #' definitions are in the triple table, and they are shown beside the type the
@@ -223,7 +223,7 @@ value_type_lines <- function(value_type, triples_with_labels) {
 #'
 #' Which pairs appear depends on the trait's value type (`APD_VALUE_TYPES`):
 #' numeric traits get units and a min/max, categorical traits get their
-#' allowable values inlined with each value's definition, and month-presence and
+#' allowable values inlined with each value's definition, and monthly-presence and
 #' text traits get neither -- their format is the value type's own definition.
 #' This used to test the labels "continuous variable" and "categorical
 #' variable", with a list of four trait names to skip, because the phenology

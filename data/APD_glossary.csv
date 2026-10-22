@@ -23,5 +23,5 @@ glossary_40106,sugar,An informal grouping of carbohydrates [CHEBI:16646] that in
 glossary_40112,vessel lumen,The lumen [PO:0025117] of the xylem vessel [PO:0025417].
 glossary_40114,vestiture,"Trichome cover [TO:0006066], a combination of trichome type [TO:0000911], length [PATO:0000122], strength [PATO:0001230], shape [PATO:0000052], density [PATO:0001019], and color [PATO:0000014] [Simpson glossary]"
 glossary_40124,pressure-volume curve,"A plot of the relationship between tissue water content and tissue water potential, which is used in plant water-relations studies to understand tissue/cell elasticity, cell turgor, and cell osmotic potential."
-glossary_40126,month presence,"Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."
-glossary_40128,text,"Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."
+glossary_40126,monthly presence,"Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."
+glossary_40128,text,"Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."

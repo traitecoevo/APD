@@ -8,7 +8,7 @@ APD_GLOSSARY_BASE <- "https://w3id.org/APD/glossary/"
 
 # The value types a trait's `type` may name, and what each one means for the
 # rest of its definition: a numeric trait carries units and an allowed range, a
-# categorical trait a list of allowed values, and a month-presence or text trait
+# categorical trait a list of allowed values, and a monthly-presence or text trait
 # neither. The site renderer and validate_apd() both branch on this, so it is
 # the one place that says which identifier is which kind.
 #
@@ -19,10 +19,10 @@ APD_GLOSSARY_BASE <- "https://w3id.org/APD/glossary/"
 # lists "character" among the values of `ets:valueType`, but as a word, with no
 # IRI to point at.
 APD_VALUE_TYPES <- c(
-  STATO_0000251 = "numeric",         # continuous variable
-  STATO_0000252 = "categorical",     # categorical variable
-  glossary_40126 = "month_presence", # month presence
-  glossary_40128 = "text"            # text
+  STATO_0000251 = "numeric",            # continuous variable
+  STATO_0000252 = "categorical",        # categorical variable
+  glossary_40126 = "monthly_presence",  # monthly presence
+  glossary_40128 = "text"               # text
 )
 
 #' The kind of value a trait takes, from its value type
