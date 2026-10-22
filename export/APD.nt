@@ -39,7 +39,6 @@
 <https://w3id.org/APD/glossary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/APD/glossary/glossary_40114> .
 <https://w3id.org/APD/glossary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/APD/glossary/glossary_40124> .
 <https://w3id.org/APD/glossary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/APD/glossary/glossary_40126> .
-<https://w3id.org/APD/glossary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/APD/glossary/glossary_40128> .
 <http://purl.org/dc/terms/extent> <http://www.w3.org/2004/02/skos/core#prefLabel> "extent"@en .
 <http://purl.org/dc/terms/extent> <http://purl.org/dc/terms/description> "Recommended practice is to specify the file size in megabytes and duration in ISO 8601 format."@en .
 <http://purl.org/dc/terms/extent> <http://purl.org/dc/terms/created> "2000-07-11"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -882,6 +881,8 @@
 <http://purl.obolibrary.org/obo/NCIT_C25570> <http://purl.org/dc/terms/identifier> "NCIT_C25570" .
 <http://purl.obolibrary.org/obo/NCIT_C25652> <http://www.w3.org/2004/02/skos/core#prefLabel> "requirement"@en .
 <http://purl.obolibrary.org/obo/NCIT_C25652> <http://purl.org/dc/terms/identifier> "NCIT_C25652" .
+<http://purl.obolibrary.org/obo/NCIT_C25704> <http://www.w3.org/2004/02/skos/core#prefLabel> "text"@en .
+<http://purl.obolibrary.org/obo/NCIT_C25704> <http://purl.org/dc/terms/identifier> "NCIT_C25704" .
 <http://purl.obolibrary.org/obo/NCIT_C25755> <http://www.w3.org/2004/02/skos/core#prefLabel> "response"@en .
 <http://purl.obolibrary.org/obo/NCIT_C25755> <http://purl.org/dc/terms/identifier> "NCIT_C25755" .
 <http://purl.obolibrary.org/obo/NCIT_C28176> <http://www.w3.org/2004/02/skos/core#prefLabel> "parasite"@en .
@@ -26814,13 +26815,6 @@
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#inScheme> "https://w3id.org/APD/glossary" .
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/APD/glossary> .
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/APD/glossary/glossary_40128> <http://purl.org/dc/terms/identifier> "glossary_40128" .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#prefLabel> "text"@en .
-<https://w3id.org/APD/glossary/glossary_40128> <http://purl.org/dc/terms/description> "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#definition> "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#inScheme> "https://w3id.org/APD/glossary" .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/APD/glossary> .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/APD/traits/trait_group_0000008> <http://www.w3.org/2004/02/skos/core#narrower> <https://w3id.org/APD/traits/trait_0000012> .
 <https://w3id.org/APD/traits/trait_group_0000008> <http://www.w3.org/2004/02/skos/core#narrower> <https://w3id.org/APD/traits/trait_0000014> .
 <https://w3id.org/APD/traits/trait_group_0000008> <http://www.w3.org/2004/02/skos/core#narrower> <https://w3id.org/APD/traits/trait_0000016> .

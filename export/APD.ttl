@@ -1055,6 +1055,10 @@ obo:NCIT_C25652
     dcterms:identifier "NCIT_C25652" ;
     skos:prefLabel "requirement"@en .
 
+obo:NCIT_C25704
+    dcterms:identifier "NCIT_C25704" ;
+    skos:prefLabel "text"@en .
+
 obo:NCIT_C25755
     dcterms:identifier "NCIT_C25755" ;
     skos:prefLabel "response"@en .
@@ -4803,7 +4807,7 @@ APD_scheme:glossary
     dcterms:title "AusTraits Plant Dictionary glossary"@en ;
     a skos:ConceptScheme ;
     rdfs:label "AusTraits Plant Dictionary glossary"@en ;
-    skos:hasTopConcept APD_glossary:glossary_40004, APD_glossary:glossary_40006, APD_glossary:glossary_40014, APD_glossary:glossary_40026, APD_glossary:glossary_40040, APD_glossary:glossary_40044, APD_glossary:glossary_40050, APD_glossary:glossary_40058, APD_glossary:glossary_40060, APD_glossary:glossary_40062, APD_glossary:glossary_40066, APD_glossary:glossary_40068, APD_glossary:glossary_40074, APD_glossary:glossary_40076, APD_glossary:glossary_40080, APD_glossary:glossary_40081, APD_glossary:glossary_40086, APD_glossary:glossary_40088, APD_glossary:glossary_40092, APD_glossary:glossary_40094, APD_glossary:glossary_40106, APD_glossary:glossary_40112, APD_glossary:glossary_40114, APD_glossary:glossary_40124, APD_glossary:glossary_40126, APD_glossary:glossary_40128 ;
+    skos:hasTopConcept APD_glossary:glossary_40004, APD_glossary:glossary_40006, APD_glossary:glossary_40014, APD_glossary:glossary_40026, APD_glossary:glossary_40040, APD_glossary:glossary_40044, APD_glossary:glossary_40050, APD_glossary:glossary_40058, APD_glossary:glossary_40060, APD_glossary:glossary_40062, APD_glossary:glossary_40066, APD_glossary:glossary_40068, APD_glossary:glossary_40074, APD_glossary:glossary_40076, APD_glossary:glossary_40080, APD_glossary:glossary_40081, APD_glossary:glossary_40086, APD_glossary:glossary_40088, APD_glossary:glossary_40092, APD_glossary:glossary_40094, APD_glossary:glossary_40106, APD_glossary:glossary_40112, APD_glossary:glossary_40114, APD_glossary:glossary_40124, APD_glossary:glossary_40126 ;
     skos:prefLabel "AusTraits Plant Dictionary glossary"@en .
 
 APD_glossary:glossary_40004
@@ -5029,15 +5033,6 @@ APD_glossary:glossary_40126
     skos:definition "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "monthly presence"@en ;
-    skos:topConceptOf APD_scheme:glossary .
-
-APD_glossary:glossary_40128
-    dcterms:description "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
-    dcterms:identifier "glossary_40128" ;
-    a skos:Concept ;
-    skos:definition "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
-    skos:inScheme "https://w3id.org/APD/glossary" ;
-    skos:prefLabel "text"@en ;
     skos:topConceptOf APD_scheme:glossary .
 
 APD_scheme:traits

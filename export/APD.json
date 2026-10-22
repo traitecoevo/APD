@@ -2033,6 +2033,14 @@
       }
     },
     {
+      "@id": "http://purl.obolibrary.org/obo/NCIT_C25704",
+      "http://purl.org/dc/terms/identifier": "NCIT_C25704",
+      "http://www.w3.org/2004/02/skos/core#prefLabel": {
+        "@language": "en",
+        "@value": "text"
+      }
+    },
+    {
       "@id": "http://purl.obolibrary.org/obo/NCIT_C25755",
       "http://purl.org/dc/terms/identifier": "NCIT_C25755",
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
@@ -9807,9 +9815,6 @@
       },
       "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
         {
-          "@id": "https://w3id.org/APD/glossary/glossary_40128"
-        },
-        {
           "@id": "https://w3id.org/APD/glossary/glossary_40126"
         },
         {
@@ -10410,27 +10415,6 @@
       "http://www.w3.org/2004/02/skos/core#prefLabel": {
         "@language": "en",
         "@value": "monthly presence"
-      },
-      "http://www.w3.org/2004/02/skos/core#topConceptOf": {
-        "@id": "https://w3id.org/APD/glossary"
-      }
-    },
-    {
-      "@id": "https://w3id.org/APD/glossary/glossary_40128",
-      "@type": "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://purl.org/dc/terms/description": {
-        "@language": "en",
-        "@value": "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."
-      },
-      "http://purl.org/dc/terms/identifier": "glossary_40128",
-      "http://www.w3.org/2004/02/skos/core#definition": {
-        "@language": "en",
-        "@value": "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."
-      },
-      "http://www.w3.org/2004/02/skos/core#inScheme": "https://w3id.org/APD/glossary",
-      "http://www.w3.org/2004/02/skos/core#prefLabel": {
-        "@language": "en",
-        "@value": "text"
       },
       "http://www.w3.org/2004/02/skos/core#topConceptOf": {
         "@id": "https://w3id.org/APD/glossary"
