@@ -26808,7 +26808,7 @@
 <https://w3id.org/APD/glossary/glossary_40124> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/APD/glossary> .
 <https://w3id.org/APD/glossary/glossary_40124> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/APD/glossary/glossary_40126> <http://purl.org/dc/terms/identifier> "glossary_40126" .
-<https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#prefLabel> "month presence"@en .
+<https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#prefLabel> "monthly presence"@en .
 <https://w3id.org/APD/glossary/glossary_40126> <http://purl.org/dc/terms/description> "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en .
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#definition> "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en .
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/2004/02/skos/core#inScheme> "https://w3id.org/APD/glossary" .
@@ -26816,8 +26816,8 @@
 <https://w3id.org/APD/glossary/glossary_40126> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/APD/glossary/glossary_40128> <http://purl.org/dc/terms/identifier> "glossary_40128" .
 <https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#prefLabel> "text"@en .
-<https://w3id.org/APD/glossary/glossary_40128> <http://purl.org/dc/terms/description> "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
-<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#definition> "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
+<https://w3id.org/APD/glossary/glossary_40128> <http://purl.org/dc/terms/description> "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
+<https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#definition> "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en .
 <https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#inScheme> "https://w3id.org/APD/glossary" .
 <https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/APD/glossary> .
 <https://w3id.org/APD/glossary/glossary_40128> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .

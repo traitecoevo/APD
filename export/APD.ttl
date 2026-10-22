@@ -5028,14 +5028,14 @@ APD_glossary:glossary_40126
     a skos:Concept ;
     skos:definition "Twelve characters, one per month starting with January, each Y if the trait (a phenophase such as flowering) occurs in that month and N if it does not."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
-    skos:prefLabel "month presence"@en ;
+    skos:prefLabel "monthly presence"@en ;
     skos:topConceptOf APD_scheme:glossary .
 
 APD_glossary:glossary_40128
-    dcterms:description "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
+    dcterms:description "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
     dcterms:identifier "glossary_40128" ;
     a skos:Concept ;
-    skos:definition "Open-ended text with no fixed list of allowed values, such as a taxon name. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
+    skos:definition "Free text with no fixed list of allowed values, appropriate to use for traits whose values are taxon names. Values are kept as written, including their case and word order. Corresponds to the value type 'character' of the Ecological Trait-data Standard [ets:valueType]."@en ;
     skos:inScheme "https://w3id.org/APD/glossary" ;
     skos:prefLabel "text"@en ;
     skos:topConceptOf APD_scheme:glossary .
