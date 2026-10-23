@@ -29,7 +29,11 @@
 # Thesaurus, in place of the glossary term glossary_40128 (previous digest
 # 209cd16efe5e2169199aa52bec2e3a6f). No trait has type text, so the only
 # rendering that changes is that glossary_40128's table is gone.
-APD_ENTITY_TABLE_DIGEST <- "eb07884bc28aa57d34cf7155d609bdd1"
+#
+# And again when glossary_40126's definition gained its datatype (previous
+# digest eb07884bc28aa57d34cf7155d609bdd1); export/ changes only in that
+# definition.
+APD_ENTITY_TABLE_DIGEST <- "1139e69fcd9f0b612c1ad6dc7e964efe"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
