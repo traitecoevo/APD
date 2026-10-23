@@ -108,7 +108,7 @@ done
 
 # --- identifier resolution ---------------------------------------------------
 #
-# One per entity class. COMMITMENTS.md C1 promises that each of the 1,473
+# One per entity class. COMMITMENTS.md C1 promises that each of the 1,475
 # identifiers resolves to that term's content; the anchors themselves are
 # checked at render time by scripts/build_site.R, so what is left to test here
 # is whether w3id sends each class to the right fragment.

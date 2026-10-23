@@ -2,7 +2,7 @@
 #
 # `make site` is the slow step (~75 seconds plus the Quarto install), so it runs
 # only when something it consumes has changed, rather than on every PR. It also
-# runs the anchor check in scripts/build_site.R: all 1,473 published identifiers
+# runs the anchor check in scripts/build_site.R: all 1,475 published identifiers
 # resolve to a fragment of index.html, so an entity that renders without its
 # anchor is a citable URI that no longer lands on its content.
 #

@@ -366,6 +366,7 @@ http://purl.obolibrary.org/obo/NCIT_C25558,longest,Having the greater length of 
 http://purl.obolibrary.org/obo/NCIT_C25564,maximum,The largest possible quantity or degree.,NCIT_C25564,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
 http://purl.obolibrary.org/obo/NCIT_C25570,minimum,The smallest possible quantity.,NCIT_C25570,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
 http://purl.obolibrary.org/obo/NCIT_C25652,requirement,Something that is a necessary condition; something that is obligatory.,NCIT_C25652,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
+http://purl.obolibrary.org/obo/NCIT_C25704,text,The words of something written.,NCIT_C25704,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
 http://purl.obolibrary.org/obo/NCIT_C25755,response,"Any act or phenomena, or behavior, constituting a reply or reaction of a living organism or its part to some foregoing stimulus or agent.",NCIT_C25755,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
 http://purl.obolibrary.org/obo/NCIT_C28176,parasite,"Any organism that has a close, symbiotic relationship with a separate, host organism.",NCIT_C28176,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus
 http://purl.obolibrary.org/obo/NCIT_C37940,deficit,A lack or deficiency.,NCIT_C37940,http://purl.obolibrary.org/obo/,obo,NCIT,National Cancer Institute Thesaurus

@@ -40,7 +40,7 @@ This repository is the original source for the APD. It includes
   published, as part of each release snapshot.
 * `APD_trait_hierarchy.csv`: Table documenting a trait hierarchy into which traits in the APD are mapped.
 * `APD_categorical_values_input.csv`: Table of allowable categorical trait values for categorical traits within the APD.
-* `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies.
+* `APD_glossary.csv`: Table of technical vocabulary used for APD trait definitions and keywords which were not located in previously published vocabularies and ontologies. It includes the one value type the APD defines itself, `monthly presence`.
 * `APD_references.csv`: Table of references used in the APD, including dois and complete reference details.
 * `APD_reviewers.csv`: Table of people who have reviewed trait definitions for the APD, identified by their ORCIDs.
 * `APD_units.csv`: Table of units used in the APD, including links in the Units of Measurement ontology.
@@ -123,7 +123,7 @@ breakage cannot hide behind existing debt.
   - created from files `index.qmd` and configured with `_quarto.yml`
   - uses the `quarto` package for R, with instructions on formatting from <https://quarto.org/docs/reference/projects/websites.html
   - we were inspired by <https://i-adopt.github.io> with code from <https://github.com/i-adopt/i-adopt.github.io>
-  - the render fails if any of the 1,473 published identifiers has no anchor in
+  - the render fails if any of the 1,475 published identifiers has no anchor in
     the page, since each one resolves to a fragment of it
 
 None of this has to be run by hand to be trusted: `check.yml` builds and
