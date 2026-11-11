@@ -11,6 +11,16 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## Unreleased
+
+**The trait hierarchy's path columns now match its `Parent` links.** In
+`APD_trait_hierarchy.csv`, the `tier_*` and `hierarchy` columns spell out each
+group's full path, and had drifted from `Parent` — the link the RDF publishes as
+`skos:broader` — for 40 of 81 groups. They are now derived from `Parent` (`make
+sync-hierarchy`), a `tier_5` column holds the three five-level paths, and `make
+check` fails if they drift again. The published RDF is unchanged; the trait
+groups austraits.build builds from the `hierarchy` column change to match it.
+
 ## APD Version 2.1.2
 
 A patch release, and **nothing here can invalidate data built against 2.1.1**. One

@@ -75,6 +75,10 @@ Allowable categorical values, the trait hierarchy, glossary, units, references, 
 and annotation properties are CSVs in `data/`. Edit them directly. `data/APD_namespace_declaration.csv`
 is the **only** namespace map the build reads — do not add a second one in `R/`.
 
+In `data/APD_trait_hierarchy.csv`, edit only a group's `Parent`. The `tier_*` and `hierarchy`
+columns spell out the same path and are derived from it: run `make sync-hierarchy` after any change
+to `Parent`, and `make check` fails until you do. austraits.build reads `hierarchy`.
+
 ## Before you open a PR
 
 ```bash
