@@ -10,10 +10,11 @@
 # of plans/build-workflow-overhaul.md replaces gt with a <dl> emitter, which will
 # change it on purpose -- when it does, re-pin it in the same commit.
 
-# Re-pinned when plant_height_reproductive's allowed minimum was corrected from
-# 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
-# previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
-APD_ENTITY_TABLE_DIGEST <- "9691c9693867aae2929bb17ae0bf65dd"
+# Re-pinned for the vocabulary edits on fixes-to-vocabularies (10 new trait
+# groups, 2 categorical values, new published classes, colon-form prose IDs).
+# Previously 9691c9693867aae2929bb17ae0bf65dd, pinned when
+# plant_height_reproductive's allowed minimum was corrected from 0.1 m to 0.001 m.
+APD_ENTITY_TABLE_DIGEST <- "25245423a5e2e6721f20b23b115a2e94"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -48,8 +49,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 559 traits + 71 groups + 819 categorical values + 24 glossary terms
-  expect_identical(length(subjects), 1473L)
+  # 559 traits + 81 groups + 821 categorical values + 24 glossary terms
+  expect_identical(length(subjects), 1485L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -164,7 +165,7 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  expect_identical(rendered_pairs, 16803L)
+  expect_identical(rendered_pairs, 16877L)
   expect_identical(length(dropped), 3034L)
 })
 
