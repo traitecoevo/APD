@@ -1,7 +1,10 @@
 
-# The datatype for an allowed-value range. Named so the two uses below cannot
-# drift, and so the "^^" is impossible to lose again.
+# Datatypes, spelled out. A prefixed name like `xsd:date` is a *relative* IRI
+# where RDF requires an absolute one, so a conforming parser resolves it against
+# the base IRI and the literal ends up with a datatype nobody declared. Named so
+# the uses below cannot drift, and so the "^^" is impossible to lose again.
 XSD_DOUBLE <- "^^<http://www.w3.org/2001/XMLSchema#double>"
+XSD_DATE <- "^^<http://www.w3.org/2001/XMLSchema#date>"
 
 #' Mint the `skos:narrower` statements implied by a set of `skos:broader` ones
 #'
@@ -222,7 +225,7 @@ reformatted_annotation <-
     Entity = paste0("<", Entity, ">"),
     label = paste0("\"", label, "\"", "@en"),
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
-    issued = ifelse(!is.na(issued), paste0("\"", issued, "\"", "^^<xsd:date>"), NA),
+    issued = ifelse(!is.na(issued), paste0("\"", issued, "\"", XSD_DATE), NA),
     comment = paste0("\"", comment, "\"", "@en")
   ) %>%
   rename(
@@ -266,9 +269,9 @@ reformatted_traits <-
     units = ifelse(!is.na(units), paste0("\"", units, "\""), NA),
     units_uom = ifelse(!is.na(units_uom), paste0("<", units_csv$Entity[match(units_uom, units_csv$label)], ">"), NA),
     across(dplyr::contains("category"), ~ifelse(!is.na(.x), paste0("<", hierarchy_csv$Entity[match(.x, hierarchy_csv$identifier)], ">"), NA)),
-    created = ifelse(!is.na(created), paste0("\"", created, "\"", "^^<xsd:date>"), NA),
-    modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", "^^<xsd:date>"), NA),
-    reviewed = ifelse(!is.na(reviewed), paste0("\"", reviewed, "\"", "^^<xsd:date>"), NA),
+    created = ifelse(!is.na(created), paste0("\"", created, "\"", XSD_DATE), NA),
+    modified = ifelse(!is.na(modified), paste0("\"", modified, "\"", XSD_DATE), NA),
+    reviewed = ifelse(!is.na(reviewed), paste0("\"", reviewed, "\"", XSD_DATE), NA),
     deprecated_trait_name = ifelse(!is.na(deprecated_trait_name), paste0("\"", deprecated_trait_name, "\""), NA),
     constraints = ifelse(!is.na(constraints), paste0("\"", constraints, "\"", "@en"), NA),
     across(dplyr::contains("structure"), ~ifelse(!is.na(.x), paste0("<", published_classes_csv$Entity[match(.x, published_classes_csv$identifier)], ">"), NA)),

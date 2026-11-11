@@ -195,7 +195,7 @@ before running it, or you will pin a version that 404s.
 
 Sibling databases that pin the APD (`AusFizz`, `ausinvertraits.build`) need the same treatment. For a
 breaking change, follow the
-[family release playbook](https://github.com/traitecoevo/austraits-meta/blob/main/governance/release-playbooks.md)
+[family release playbook](https://github.com/traitecoevo/austraits-meta/blob/master/governance/release-playbooks.md)
 and label the issues `cross-package` + `breaking`.
 
 ## 4. Re-check the commitments

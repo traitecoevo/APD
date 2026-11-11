@@ -1,7 +1,7 @@
 Type: Compendium
 Package: APD
 Title: Repository used to build the AusTraits Plant Dictionary (APD) vocabulary
-Version: 2.1.2
+Version: 2.2.0
 Maintainer: Elizabeth Wenk <ehwenk@gmail.com>
 Authors@R: c(
     person(given = "Elizabeth", family = "Wenk", role = c("cre", "aut"), email = "ehwenk@gmail.com", comment = c(ORCID = "0000-0001-5640-5910")),

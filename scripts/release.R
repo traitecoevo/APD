@@ -47,7 +47,13 @@ RELEASE_FILES <- c(
   TRAITS_CSV,
   # An input table rather than a build product, but austraits.build reads it and
   # the paper names it, so the snapshot should carry a pinned copy.
-  file.path("data", "APD_trait_hierarchy.csv")
+  file.path("data", "APD_trait_hierarchy.csv"),
+  # C4 promises the data are CC BY 4.0, but only the RDF said so: the four CSVs
+  # carry no licence, and release/<version>/LICENSE was a 404, so anyone who
+  # downloaded APD_traits.csv got the terms from nowhere. One file beside them
+  # covers the whole directory. LICENSE-CODE is not here on purpose -- no code
+  # is released in this snapshot.
+  "LICENSE"
 )
 names(RELEASE_FILES) <- basename(RELEASE_FILES)
 

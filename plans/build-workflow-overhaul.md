@@ -959,10 +959,10 @@ Stage 3 will surface real data errors — that is the point, but budget for it.
 
 This document is the reference for the refactor; the work itself is tracked as an **epic** on
 [AusTraits board #9](https://github.com/orgs/traitecoevo/projects/9), with one sub-issue per stage,
-per the [issue & labelling guide](https://github.com/traitecoevo/austraits-meta/blob/main/governance/issue-guide.md).
+per the [issue & labelling guide](https://github.com/traitecoevo/austraits-meta/blob/master/governance/issue-guide.md).
 
 Each stage lands as its own PR against `develop` (the default branch — *not* `master`). Stages 0 and 1
 are small and independently shippable, so they should not wait for the rest.
 
 `plans/` follows the convention already used in
-[`austraits-meta/plans/`](https://github.com/traitecoevo/austraits-meta/tree/main/plans).
+[`austraits-meta/plans/`](https://github.com/traitecoevo/austraits-meta/tree/master/plans).
