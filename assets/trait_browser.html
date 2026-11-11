@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AusTraits Trait Browser</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420;0,9..144,560;1,9..144,480&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #f5f6f0;
+    --surface: #ffffff;
+    --surface-2: #edf0e6;
+    --border: #dde2d5;
+    --border-soft: #e7ebe0;
+    --text: #1c2620;
+    --text-dim: #5c6a5e;
+    --text-faint: #8b978a;
+    --accent: #2f6b4a;
+    --accent-ink: #1f4c34;
+    --accent-soft: #dfeae2;
+    --accent-soft-border: #bcd6c4;
+    --facet-terms: #26647f;
+    --facet-terms-soft: #dbe9ee;
+    --facet-characteristic: #93591c;
+    --facet-characteristic-soft: #f0e3cd;
+    --facet-structure: #6a4c93;
+    --facet-structure-soft: #e9e2f3;
+    --link-line: #c7d0bd;
+    --shadow: 0 8px 24px -12px rgba(28, 38, 32, 0.28);
+    --cat-0: #3f7d5c;
+    --cat-1: #93701f;
+    --cat-2: #2b7a8f;
+    --cat-3: #9c4f6b;
+    --cat-4: #b0562e;
+    --cat-5: #5c6b3f;
+    --cat-6: #7a5c9c;
+    --cat-7: #707a6b;
+    --cat-8: #46608f;
+    --cat-9: #8a4438;
+    --cat-10: #b0468f;
+    --cat-11: #3f8f7a;
+    --cat-12: #8f7a3f;
+    --cat-13: #4f5f9c;
+    --cat-14: #9c5f3f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12160f;
+      --surface: #181e17;
+      --surface-2: #1f261c;
+      --border: #313b2c;
+      --border-soft: #262f22;
+      --text: #e9ede3;
+      --text-dim: #a6b2a0;
+      --text-faint: #74806f;
+      --accent: #5ea37d;
+      --accent-ink: #a9d6bc;
+      --accent-soft: #21362a;
+      --accent-soft-border: #345a41;
+      --facet-terms: #5fa9c4;
+      --facet-terms-soft: #1c2f38;
+      --facet-characteristic: #d0a355;
+      --facet-characteristic-soft: #332a17;
+      --facet-structure: #b79ee0;
+      --facet-structure-soft: #2b2340;
+      --link-line: #3a4534;
+      --shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.55);
+      --cat-0: #6fb98f;
+      --cat-1: #c9a24a;
+      --cat-2: #57adc4;
+      --cat-3: #cd85a2;
+      --cat-4: #d68657;
+      --cat-5: #93a56a;
+      --cat-6: #ab8ad0;
+      --cat-7: #9aa393;
+      --cat-8: #8fa4d6;
+      --cat-9: #d6897c;
+      --cat-10: #d67cc0;
+      --cat-11: #6cc0a8;
+      --cat-12: #c0a86c;
+      --cat-13: #8a97d6;
+      --cat-14: #d69572;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12160f;
+    --surface: #181e17;
+    --surface-2: #1f261c;
+    --border: #313b2c;
+    --border-soft: #262f22;
+    --text: #e9ede3;
+    --text-dim: #a6b2a0;
+    --text-faint: #74806f;
+    --accent: #5ea37d;
+    --accent-ink: #a9d6bc;
+    --accent-soft: #21362a;
+    --accent-soft-border: #345a41;
+    --facet-terms: #5fa9c4;
+    --facet-terms-soft: #1c2f38;
+    --facet-characteristic: #d0a355;
+    --facet-characteristic-soft: #332a17;
+      --facet-structure: #b79ee0;
+      --facet-structure-soft: #2b2340;
+    --link-line: #3a4534;
+    --shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.55);
+    --cat-0: #6fb98f;
+    --cat-1: #c9a24a;
+    --cat-2: #57adc4;
+    --cat-3: #cd85a2;
+    --cat-4: #d68657;
+    --cat-5: #93a56a;
+    --cat-6: #ab8ad0;
+    --cat-7: #9aa393;
+    --cat-8: #8fa4d6;
+    --cat-9: #d6897c;
+    --cat-10: #d67cc0;
+    --cat-11: #6cc0a8;
+    --cat-12: #c0a86c;
+    --cat-13: #8a97d6;
+    --cat-14: #d69572;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  /* ---------- header ---------- */
+  header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    z-index: 5;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; flex-direction: column; gap: 1px; min-width: 200px; }
+  .brand h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 560;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    margin: 0;
+    color: var(--text);
+    text-wrap: balance;
+  }
+  .brand .tagline { font-size: 11px; color: var(--text-faint); }
+
+  .stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2px 9px;
+    border-left: 2px solid var(--border);
+    line-height: 1.15;
+  }
+  .stat b { font-family: "IBM Plex Mono", monospace; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 9.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .search-wrap { position: relative; flex: 1 1 220px; max-width: 320px; }
+  .search-wrap input {
+    width: 100%;
+    padding: 8px 12px 8px 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 13px;
+    font-family: inherit;
+  }
+  .search-wrap input:focus { outline: 2px solid var(--accent-soft-border); outline-offset: 1px; }
+  .search-wrap svg { position: absolute; left: 9px; top: 9px; width: 15px; height: 15px; stroke: var(--text-faint); }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-height: 340px;
+    overflow-y: auto;
+    z-index: 20;
+    display: none;
+  }
+  .search-results.open { display: block; }
+  .search-results button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    border: 0;
+    background: none;
+    border-bottom: 1px solid var(--border-soft);
+    cursor: pointer;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12.5px;
+  }
+  .search-results button:last-child { border-bottom: 0; }
+  .search-results button:hover { background: var(--accent-soft); }
+  .search-results .sr-label { font-weight: 600; display: block; }
+  .search-results .sr-id { color: var(--text-faint); font-size: 10.5px; }
+  .search-empty { padding: 10px 12px; color: var(--text-faint); font-size: 12px; }
+
+  .filter-summary { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); margin-left: auto; }
+  .filter-summary b { color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+  #clear-filters {
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11.5px;
+    cursor: pointer;
+    font-family: inherit;
+    display: none;
+  }
+  #clear-filters.show { display: inline-block; }
+  #clear-filters:hover { background: var(--accent-soft); color: var(--accent-ink); border-color: var(--accent-soft-border); }
+
+  /* ---------- layout ---------- */
+  .layout { flex: 1 1 auto; display: flex; min-height: 0; }
+  .canvas-wrap { flex: 1 1 auto; position: relative; min-width: 0; background:
+      radial-gradient(circle at 0px 0px, var(--border-soft) 0.6px, transparent 0.6px) 0 0/22px 22px,
+      var(--bg);
+  }
+  #tree-svg { width: 100%; height: 100%; display: block; cursor: grab; }
+  #tree-svg:active { cursor: grabbing; }
+
+  .node circle { cursor: pointer; stroke-width: 1.6px; }
+  .node text {
+    font-family: "Public Sans", sans-serif;
+    fill: var(--text);
+    paint-order: stroke;
+    stroke: var(--bg);
+    stroke-width: 3px;
+    cursor: pointer;
+  }
+  .node.leaf text { font-size: 11px; fill: var(--text-dim); }
+  .node.branch text { font-size: 12px; font-weight: 600; }
+  .node.dashed circle { stroke-dasharray: 2.5 2; }
+  .link { fill: none; stroke: var(--link-line); stroke-width: 1.4px; }
+
+  .node.dim circle { opacity: 0.25; }
+  .node.dim text { opacity: 0.3; }
+  .node.match circle { stroke: var(--accent); stroke-width: 3px; }
+  .node.selected circle { stroke: var(--accent-ink); stroke-width: 3.5px; }
+
+  .zoom-controls { position: absolute; right: 14px; bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .zoom-controls button {
+    width: 30px; height: 30px; border-radius: 7px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-dim);
+    font-size: 16px; cursor: pointer; box-shadow: var(--shadow);
+  }
+  .zoom-controls button:hover { color: var(--accent-ink); border-color: var(--accent-soft-border); }
+  .hint {
+    position: absolute; left: 14px; bottom: 14px; font-size: 11px; color: var(--text-faint);
+    background: color-mix(in srgb, var(--surface) 88%, transparent); padding: 5px 9px; border-radius: 6px;
+    border: 1px solid var(--border-soft); max-width: 260px;
+  }
+  .legend {
+    position: absolute; left: 14px; top: 14px; display: flex; flex-direction: column; gap: 4px;
+    background: color-mix(in srgb, var(--surface) 90%, transparent); border: 1px solid var(--border-soft);
+    border-radius: 8px; padding: 8px 10px; font-size: 10.5px; color: var(--text-dim); max-width: 210px;
+  }
+  .legend-title { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-faint); margin-bottom: 2px; }
+  .legend-row { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
+
+  /* ---------- sidebar ---------- */
+  .sidebar {
+    flex: 0 0 340px;
+    border-left: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .sidebar-scroll { flex: 1 1 auto; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 18px; }
+
+  .panel-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-faint);
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+  }
+
+  /* detail card */
+  .detail-card { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-2); padding: 14px; }
+  .detail-empty { color: var(--text-faint); font-size: 12.5px; line-height: 1.5; }
+  .detail-label { font-family: "Fraunces", serif; font-weight: 560; font-size: 16px; margin: 0 0 2px; text-wrap: balance; }
+  .detail-id { font-size: 11px; color: var(--text-faint); margin-bottom: 8px; }
+  .detail-id a, .about a { color: var(--accent-ink); }
+  .detail-desc { font-size: 12.5px; line-height: 1.55; color: var(--text-dim); margin-bottom: 10px; }
+  .detail-meta { display: flex; gap: 14px; font-size: 11px; color: var(--text-faint); margin-bottom: 10px; flex-wrap: wrap; }
+  .detail-meta b { color: var(--text-dim); font-weight: 600; }
+  .source-note {
+    font-size: 10.5px; padding: 5px 8px; border-radius: 6px; margin-bottom: 10px; line-height: 1.4;
+  }
+  .source-note.apd { background: var(--facet-terms-soft); color: var(--facet-terms); }
+  .source-note.none { background: var(--facet-characteristic-soft); color: var(--facet-characteristic); }
+  .breadcrumb { font-size: 11px; color: var(--text-faint); margin-bottom: 10px; line-height: 1.6; }
+  .breadcrumb .crumb, .breadcrumb .crumb-static {
+    color: var(--accent-ink); background: var(--accent-soft); border: none; font-family: inherit;
+    padding: 1px 6px; border-radius: 4px; font-size: 11px; display: inline-block;
+  }
+  .breadcrumb .crumb { cursor: pointer; }
+  .breadcrumb .crumb.active { outline: 1.5px solid var(--accent-ink); }
+  .breadcrumb .sep { margin: 0 2px; color: var(--text-faint); }
+
+  .facet-group { margin-bottom: 8px; }
+  .facet-group:last-child { margin-bottom: 0; }
+  .facet-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-faint); margin-bottom: 5px; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 9px; border-radius: 100px; font-size: 11px; cursor: pointer;
+    border: 1px solid transparent; font-family: inherit; line-height: 1.4;
+  }
+  .pill.terms { background: var(--facet-terms-soft); color: var(--facet-terms); }
+  .pill.characteristic { background: var(--facet-characteristic-soft); color: var(--facet-characteristic); }
+  .pill.structure { background: var(--facet-structure-soft); color: var(--facet-structure); }
+  .pill.group { background: var(--accent-soft); color: var(--accent-ink); }
+  .pill.active { border-color: currentColor; font-weight: 600; }
+  .pill.derived { border-style: dashed; border-color: color-mix(in srgb, currentColor 55%, transparent); }
+  .pill:hover { filter: brightness(0.95); }
+  .pill .n { opacity: 0.65; font-family: "IBM Plex Mono", monospace; font-size: 9.5px; }
+
+  /* facet browser */
+  .facet-tabs { display: flex; gap: 4px; margin-bottom: 10px; flex-wrap: wrap; }
+  .action-switch { display: flex; gap: 3px; padding: 2px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 7px; }
+  .action-btn { border: 0; background: none; padding: 3px 8px; font-size: 10px; font-weight: 600; border-radius: 5px; cursor: pointer; color: var(--text-dim); font-family: inherit; white-space: nowrap; }
+  .action-btn.active { background: var(--surface); color: var(--accent-ink); box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+  .action-btn:hover:not(.active) { color: var(--text); }
+  .facet-tab {
+    flex: 1 1 auto; padding: 6px 4px; text-align: center; font-size: 10.5px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text-dim); cursor: pointer;
+  }
+  .facet-tab.active.terms { background: var(--facet-terms-soft); color: var(--facet-terms); border-color: var(--facet-terms); }
+  .facet-tab.active.characteristic { background: var(--facet-characteristic-soft); color: var(--facet-characteristic); border-color: var(--facet-characteristic); }
+  .facet-tab.active.structure { background: var(--facet-structure-soft); color: var(--facet-structure); border-color: var(--facet-structure); }
+  .facet-tab.active.group { background: var(--accent-soft); color: var(--accent-ink); border-color: var(--accent-ink); }
+  .facet-search { width: 100%; margin-bottom: 8px; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); font-size: 11.5px; font-family: inherit; }
+  .facet-cloud { display: flex; flex-wrap: wrap; gap: 5px; max-height: 260px; overflow-y: auto; padding-right: 2px; }
+
+  .about { font-size: 11.5px; color: var(--text-faint); line-height: 1.6; border-top: 1px solid var(--border-soft); padding-top: 12px; }
+  .about b { color: var(--text-dim); }
+  .about p { margin: 0 0 10px; }
+  .about p:last-child { margin-bottom: 0; }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  @media (max-width: 860px) {
+    .layout { flex-direction: column; }
+    .sidebar { flex: 1 1 auto; border-left: none; border-top: 1px solid var(--border); max-height: 46vh; }
+    .canvas-wrap { flex: 1 1 50vh; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>AusTraits Trait Browser</h1>
+    <div class="tagline" id="tagline">traits, organised by trait group</div>
+  </div>
+  <div class="stat-row" id="stat-row"></div>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input id="search-input" type="text" placeholder="Search traits, ids, keywords…" autocomplete="off">
+    <div class="search-results" id="search-results"></div>
+  </div>
+  <div class="filter-summary">
+    <span id="filter-summary-text"></span>
+    <button id="clear-filters">Clear filters</button>
+  </div>
+</header>
+
+<div class="layout">
+  <div class="canvas-wrap">
+    <svg id="tree-svg"></svg>
+    <div class="legend" id="legend"></div>
+    <div class="hint" id="hint">Click a category to expand · drag to pan · scroll to zoom</div>
+    <div class="zoom-controls">
+      <button id="zoom-in" title="Zoom in">+</button>
+      <button id="zoom-out" title="Zoom out">−</button>
+      <button id="zoom-reset" title="Fit">⤢</button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-scroll">
+      <div>
+        <div class="panel-title">Selected trait</div>
+        <div class="detail-card" id="detail-card">
+          <div class="detail-empty">Click any leaf in the tree to see its full definition and the facets it shares with other traits — structure measured, characteristic measured, trait group and keywords. Click a pill (or a breadcrumb crumb) to see every other trait that shares it.</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel-title">
+          <span>Explore by facet</span>
+          <div class="action-switch" id="action-switch">
+            <button class="action-btn active" data-action="browse" title="Highlight matching traits in the full tree">Highlight</button>
+            <button class="action-btn" data-action="filter" title="Redraw the tree with only matching traits">Filter</button>
+          </div>
+        </div>
+        <div class="facet-tabs" id="facet-tabs">
+          <button class="facet-tab terms active" data-facet="terms">Terms</button>
+          <button class="facet-tab structure" data-facet="structure_measured">Structure</button>
+          <button class="facet-tab characteristic" data-facet="characteristic_measured">Characteristic</button>
+          <button class="facet-tab group" data-facet="trait_group">Trait group</button>
+        </div>
+        <input class="facet-search" id="facet-search" type="text" placeholder="Filter this list…">
+        <div class="facet-cloud" id="facet-cloud"></div>
+      </div>
+
+      <div class="about" id="about"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script type="application/json" id="trait-data"></script>
+<script>
+(function () {
+  "use strict";
+
+  // Filled in by apd_write_trait_browser() (R/trait_browser.R) at `make site`.
+  const DATA = JSON.parse(document.getElementById('trait-data').textContent);
+  const RAW = DATA.traits;
+
+  const traitById = new Map();
+  RAW.forEach(t => traitById.set(t.id, t));
+
+  const nMulti = RAW.filter(t => t.trait_groups.length > 1).length;
+  const nUnresolved = RAW.reduce((acc, t) => acc + t.trait_groups.filter(g => !g.resolved).length, 0);
+
+  const ABOUT_GROUP = `
+    <p><b>How this is organised.</b> Branches follow each trait's <span class="mono">trait_group</span> — the trait categories curated by hand in the APD, from broad domain (plant morphology, biochemical, biological process, life history) down to specific trait categories.</p>
+    <p><b>${nMulti} traits belong to more than one category</b> and appear in each of them; hence the total number of endpoints is greater than the number of traits in the APD.</p>
+    ${nUnresolved ? `<p><b>${nUnresolved} end-group placements</b> use a trait group not found in the APD trait hierarchy (dashed ring).</p>` : ''}
+    <p><b>Highlight vs. Filter.</b> Selecting a facet pill — Terms, Structure, Characteristic or Trait group — normally just highlights matching traits in the full tree ("Highlight"). Switch to "Filter" to redraw the tree showing only the branches that lead to a match.</p>
+    <p><b>Source.</b> Built from the <a href="https://w3id.org/APD/" target="_blank" rel="noopener">AusTraits Plant Dictionary</a> version ${escapeHtml(DATA.version)} on ${escapeHtml(DATA.built)}. Definitions licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+  `;
+
+  /* ---------------------------------------------------------------
+   * 1. Build the trait_group tree
+   *    A trait that genuinely belongs to more than one category (see
+   *    t.trait_groups) gets a leaf under each, rather than being forced
+   *    into a single "primary" home.
+   * ------------------------------------------------------------- */
+  function leafNode(t) {
+    return { name: t.label, trait: t, children: null, isLeaf: true };
+  }
+
+  function buildPathTree(rootName, pathsForFn, decorateLeafFn) {
+    const rootData = { name: rootName, children: [] };
+    const byPathKey = new Map();
+    byPathKey.set('', rootData);
+    RAW.forEach(t => {
+      const paths = pathsForFn(t);
+      paths.forEach((path, idx) => {
+        let parent = rootData;
+        let key = '';
+        path.forEach(seg => {
+          key += '/' + seg;
+          let node = byPathKey.get(key);
+          if (!node) {
+            node = { name: seg, children: [] };
+            byPathKey.set(key, node);
+            parent.children.push(node);
+          }
+          parent = node;
+        });
+        const leaf = leafNode(t);
+        if (decorateLeafFn) decorateLeafFn(leaf, t, idx);
+        parent.children.push(leaf);
+      });
+    });
+    return rootData;
+  }
+
+  function groupPathsFor(t) {
+    if (!t.trait_groups.length) return [['Ungrouped']];
+    return t.trait_groups.map(g => g.path);
+  }
+  function buildGroupTree() {
+    return buildPathTree('AusTraits', groupPathsFor, (leaf, t, idx) => {
+      leaf.dashed = t.trait_groups.length ? !t.trait_groups[idx].resolved : false;
+    });
+  }
+
+  function countLeaves(node) {
+    if (node.isLeaf) return 1;
+    if (node._leafCount != null) return node._leafCount;
+    let n = 0;
+    (node.children || []).forEach(c => n += countLeaves(c));
+    node._leafCount = n;
+    return n;
+  }
+  function sortTree(node) {
+    if (!node.children) return;
+    node.children.forEach(sortTree);
+    node.children.sort((a, b) => {
+      if (!!a.isLeaf !== !!b.isLeaf) return a.isLeaf ? 1 : -1;
+      if (a.isLeaf) return a.name.localeCompare(b.name);
+      return countLeaves(b) - countLeaves(a);
+    });
+  }
+
+  /* ---------------------------------------------------------------
+   * 2. Facet indexes: value -> [trait ids]  (terms / structure / characteristic / trait_group)
+   *    "terms" combines structure_measured + keywords into one pool - they
+   *    describe the same kind of thing (what a trait is *about*) and
+   *    researchers use them interchangeably. "Structure measured" is also
+   *    offered on its own, since filtering by anatomical structure alone is
+   *    a common, more targeted search.
+   * ------------------------------------------------------------- */
+  const FACET_KEYS = ['terms', 'structure_measured', 'characteristic_measured', 'trait_group'];
+  const FACET_LABEL = { terms: 'Terms', structure_measured: 'Structure', characteristic_measured: 'Characteristic', trait_group: 'Trait group' };
+  const FACET_CLASS = { terms: 'terms', structure_measured: 'structure', characteristic_measured: 'characteristic', trait_group: 'group' };
+  const facetIndex = {};
+
+  function rebuildFacetIndex() {
+    FACET_KEYS.forEach(fk => facetIndex[fk] = new Map());
+    RAW.forEach(t => {
+      FACET_KEYS.forEach(fk => {
+        (t[fk] || []).forEach(v => {
+          if (!facetIndex[fk].has(v)) facetIndex[fk].set(v, []);
+          facetIndex[fk].get(v).push(t.id);
+        });
+      });
+    });
+  }
+  RAW.forEach(t => { t.terms = t.terms_core; });
+  // flatten every level of every trait_groups path into one facet-able list,
+  // so the "Trait group" facet can match on a broad domain (e.g. "biochemical
+  // trait") or a specific subfamily, not just the deepest category.
+  RAW.forEach(t => {
+    const set = new Set();
+    (t.trait_groups.length ? t.trait_groups : [{ path: ['Ungrouped'] }]).forEach(g => g.path.forEach(p => set.add(p)));
+    t.trait_group = Array.from(set);
+  });
+  rebuildFacetIndex();
+
+  /* ---------------------------------------------------------------
+   * 3. State
+   * ------------------------------------------------------------- */
+  let masterTreeData = null;
+  let currentRootData = null;
+  let hroot = null;
+  let viewIsFiltered = false;
+  let facetAction = 'browse'; // 'browse' (highlight) | 'filter' (redraw)
+  let selectedTraitId = null;
+  const activeFilters = {};
+  FACET_KEYS.forEach(fk => activeFilters[fk] = new Set());
+  let searchQuery = '';
+  let catOrder = [];
+  let catColorVar = new Map();
+
+  function matchesFilters(traitId) {
+    const t = traitById.get(traitId);
+    for (const fk of FACET_KEYS) {
+      const set = activeFilters[fk];
+      if (set.size && !(t[fk] || []).some(v => set.has(v))) return false;
+    }
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      const hay = (t.label + ' ' + t.id + ' ' + t.description + ' ' + t.terms.join(' ')).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }
+  function filtersActive() {
+    return !!searchQuery || FACET_KEYS.some(fk => activeFilters[fk].size);
+  }
+  function collectLeafTraitIds(node) {
+    const out = [];
+    (function walk(n) {
+      if (n.isLeaf) { out.push(n.trait.id); return; }
+      (n.children || n._children || []).forEach(walk);
+    })(node);
+    return out;
+  }
+
+  /* ---------------------------------------------------------------
+   * 4. Colour coding
+   * ------------------------------------------------------------- */
+  function colorForNode(d) {
+    let n = d;
+    while (n.parent && n.depth > 1) n = n.parent;
+    const v = catColorVar.get(n.data.name) || '--text-faint';
+    return `var(${v})`;
+  }
+  function rebuildColorsAndLegend() {
+    catOrder = currentRootData.children.map(c => c.name);
+    catColorVar = new Map(catOrder.map((name, i) => [name, `--cat-${i % 15}`]));
+    const legendEl = document.getElementById('legend');
+    legendEl.innerHTML = '<div class="legend-title">Trait domain</div>' +
+      catOrder.map((name, i) => {
+        const short = name.replace(/ trait$/, '').replace(', physiological process trait', ' / physiological');
+        return `<div class="legend-row"><span class="legend-dot" style="background:var(--cat-${i % 15})"></span>${escapeHtml(short)} <span class="mono" style="color:var(--text-faint);margin-left:auto">${countLeaves(currentRootData.children[i])}</span></div>`;
+      }).join('');
+  }
+
+  /* ---------------------------------------------------------------
+   * 5. Header stats + about text
+   * ------------------------------------------------------------- */
+  document.getElementById('tagline').textContent = `${RAW.length} APD ${DATA.version} traits, organised by trait group`;
+  document.getElementById('stat-row').innerHTML = [
+    [String(RAW.length), 'Traits'],
+    [String(facetIndex.terms.size), 'Terms'],
+    [String(facetIndex.characteristic_measured.size), 'Characteristics'],
+  ].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+
+  function renderAbout() {
+    document.getElementById('about').innerHTML = ABOUT_GROUP;
+  }
+
+  /* ---------------------------------------------------------------
+   * 6. D3 collapsible tree
+   * ------------------------------------------------------------- */
+  const svg = d3.select('#tree-svg');
+  const gZoom = svg.append('g');
+  const gLinks = gZoom.append('g').attr('class', 'links-layer');
+  const gNodes = gZoom.append('g').attr('class', 'nodes-layer');
+
+  const dx = 24;
+  const dy = 230;
+  const treeLayout = d3.tree().nodeSize([dx, dy]);
+
+  function diagonal(sy, sx, ty, tx) {
+    return `M${sy},${sx} C${(sy + ty) / 2},${sx} ${(sy + ty) / 2},${tx} ${ty},${tx}`;
+  }
+
+  function update(source) {
+    treeLayout(hroot);
+    const nodes = hroot.descendants();
+    const links = hroot.links();
+    const active = filtersActive();
+
+    const link = gLinks.selectAll('path.link').data(links, d => d.target.id);
+    link.enter().append('path').attr('class', 'link')
+      .attr('d', d => diagonal(source.y0 ?? source.y, source.x0 ?? source.x, source.y0 ?? source.y, source.x0 ?? source.x))
+      .merge(link)
+      .transition().duration(280)
+      .attr('d', d => diagonal(d.source.y, d.source.x, d.target.y, d.target.x));
+    link.exit().transition().duration(200)
+      .attr('d', d => diagonal(source.y, source.x, source.y, source.x)).remove();
+
+    const node = gNodes.selectAll('g.node').data(nodes, d => d.id);
+
+    const nodeEnter = node.enter().append('g')
+      .attr('class', d => 'node ' + (d.data.isLeaf ? 'leaf' : 'branch') + (d.data.dashed ? ' dashed' : ''))
+      .attr('transform', d => `translate(${source.y0 ?? source.y},${source.x0 ?? source.x})`)
+      .on('click', (event, d) => { event.stopPropagation(); nodeClicked(d); });
+
+    nodeEnter.append('circle')
+      .attr('r', 1e-6)
+      .attr('fill', d => d.data.isLeaf ? 'var(--surface)' : colorForNode(d))
+      .attr('stroke', d => d.data.isLeaf ? colorForNode(d) : 'var(--surface)');
+
+    nodeEnter.append('text')
+      .attr('dy', '0.32em')
+      .text(d => d.data.name);
+
+    const nodeUpdate = nodeEnter.merge(node);
+
+    nodeUpdate.transition().duration(280)
+      .attr('transform', d => `translate(${d.y},${d.x})`);
+
+    nodeUpdate.select('circle')
+      .attr('r', d => d.data.isLeaf ? 4 : Math.max(5, Math.min(11, 4 + Math.sqrt(countLeaves(d.data)))))
+      .attr('fill', d => d.data.isLeaf ? 'var(--surface)' : colorForNode(d))
+      .attr('stroke', d => d.data.isLeaf ? colorForNode(d) : 'var(--surface)');
+
+    nodeUpdate.select('text')
+      .attr('x', d => d.data.isLeaf ? 9 : (d.children ? -9 : 9))
+      .attr('text-anchor', d => d.data.isLeaf ? 'start' : (d.children ? 'end' : 'start'))
+      .text(d => d.data.isLeaf ? d.data.name : `${d.data.name} · ${countLeaves(d.data)}`);
+
+    nodeUpdate.classed('dim', d => {
+      if (!active) return false;
+      if (d.data.isLeaf) return !matchesFilters(d.data.trait.id);
+      return !collectLeafTraitIds(d.data).some(matchesFilters);
+    });
+    nodeUpdate.classed('match', d => active && d.data.isLeaf && matchesFilters(d.data.trait.id));
+    nodeUpdate.classed('selected', d => d.data.isLeaf && d.data.trait.id === selectedTraitId);
+
+    node.exit().transition().duration(200)
+      .attr('transform', d => `translate(${source.y},${source.x})`)
+      .remove();
+
+    nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    updateFilterSummary();
+  }
+
+  function nodeClicked(d) {
+    if (d.data.isLeaf) { selectTrait(d.data.trait.id); update(d); return; }
+    if (d.children) d.children = null; else d.children = d._children;
+    update(d);
+  }
+
+  /* ---------------------------------------------------------------
+   * 7. Full tree vs. filtered (pruned) tree
+   * ------------------------------------------------------------- */
+  function mountTree(rootData, opts) {
+    opts = opts || {};
+    currentRootData = rootData;
+    sortTree(currentRootData);
+    gLinks.selectAll('*').remove();
+    gNodes.selectAll('*').remove();
+    hroot = d3.hierarchy(currentRootData, d => d.children);
+    hroot.x0 = 0; hroot.y0 = 0;
+    hroot.descendants().forEach((d, i) => {
+      d.id = i;
+      d._children = d.children;
+      if (opts.collapseDeep && d.depth >= 2) d.children = null;
+    });
+    rebuildColorsAndLegend();
+    if (filtersActive()) expandMatchingAncestors();
+    update(hroot);
+    setTimeout(fitView, 340);
+  }
+
+  function renderFullTree() {
+    mountTree(masterTreeData, { collapseDeep: true });
+    viewIsFiltered = false;
+  }
+
+  function pruneNode(node) {
+    if (node.isLeaf) return matchesFilters(node.trait.id) ? node : null;
+    const kept = (node.children || []).map(pruneNode).filter(Boolean);
+    if (!kept.length) return null;
+    return { name: node.name, children: kept, isLeaf: false };
+  }
+  function renderFilteredTree() {
+    const pruned = pruneNode(masterTreeData) || { name: 'AusTraits', children: [] };
+    mountTree(pruned, { collapseDeep: false });
+    viewIsFiltered = true;
+  }
+
+  /* ---------------------------------------------------------------
+   * 8. Highlight / Filter toggle
+   * ------------------------------------------------------------- */
+  document.getElementById('action-switch').addEventListener('click', (e) => {
+    const btn = e.target.closest('.action-btn');
+    if (!btn || btn.classList.contains('active')) return;
+    document.querySelectorAll('.action-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    facetAction = btn.dataset.action;
+    applyFilters();
+  });
+
+  /* ---------------------------------------------------------------
+   * 9. Zoom / pan
+   * ------------------------------------------------------------- */
+  const zoom = d3.zoom().scaleExtent([0.15, 6]).on('zoom', (event) => {
+    gZoom.attr('transform', event.transform);
+  });
+  svg.call(zoom).on('dblclick.zoom', null);
+
+  function fitView() {
+    const bbox = gNodes.node().getBBox();
+    const svgEl = svg.node();
+    const w = svgEl.clientWidth, h = svgEl.clientHeight;
+    if (!bbox.width || !bbox.height) return;
+    const scale = Math.min(1, 0.9 / Math.max(bbox.width / w, bbox.height / h));
+    const tx = w / 2 - (bbox.x + bbox.width / 2) * scale;
+    const ty = h / 2 - (bbox.y + bbox.height / 2) * scale;
+    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+  }
+  document.getElementById('zoom-in').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1.3);
+  document.getElementById('zoom-out').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1 / 1.3);
+  document.getElementById('zoom-reset').onclick = fitView;
+
+  /* ---------------------------------------------------------------
+   * 10. Detail panel
+   * ------------------------------------------------------------- */
+  const detailCard = document.getElementById('detail-card');
+
+  function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+  function pillsFor(t, fk) {
+    return (t[fk] || []).map(v => {
+      const active = activeFilters[fk].has(v);
+      const cls = [FACET_CLASS[fk], active ? 'active' : ''].filter(Boolean).join(' ');
+      return `<button class="pill ${cls}" data-facet="${fk}" data-value="${escapeHtml(v)}">${escapeHtml(v)} <span class="n">${(facetIndex[fk].get(v) || []).length}</span></button>`;
+    }).join('');
+  }
+
+  function showEmptyDetail() {
+    detailCard.innerHTML = '<div class="detail-empty">Click any leaf to see its full definition and the facets it shares with other traits — terms, structure measured, characteristic measured, and trait group. Click a pill (or a breadcrumb crumb) to see every other trait that shares it.</div>';
+  }
+
+  function selectTrait(id) {
+    selectedTraitId = id;
+    const t = traitById.get(id);
+    if (!t) return;
+    const groups = t.trait_groups.length ? t.trait_groups : [{ path: ['Ungrouped'], resolved: true }];
+    const path = groups[0].path;
+    const crumbs = path.map(p => {
+      const active = activeFilters.trait_group.has(p);
+      return `<button class="crumb ${active ? 'active' : ''}" data-facet="trait_group" data-value="${escapeHtml(p)}">${escapeHtml(p)}</button>`;
+    }).join('<span class="sep">›</span>');
+
+    let sourceNote = '';
+    const unresolved = groups.filter(g => !g.resolved);
+    if (unresolved.length) {
+      const names = unresolved.map(g => g.path[g.path.length - 1]).join(', ');
+      sourceNote = `<div class="source-note none">Not found in the APD trait hierarchy: ${escapeHtml(names)} — shown with a dashed ring, as its own top-level branch since no parent is known.</div>`;
+    }
+
+    let relatedHtml = '';
+    if (groups.length > 1) {
+      const seen = new Set();
+      const pills = [];
+      groups.slice(1).forEach(g => {
+        const label = g.path[g.path.length - 1];
+        if (seen.has(label)) return;
+        seen.add(label);
+        const active = activeFilters.trait_group.has(label);
+        pills.push(`<button class="pill group ${active ? 'active' : ''}" data-facet="trait_group" data-value="${escapeHtml(label)}">${escapeHtml(label)} <span class="n">${(facetIndex.trait_group.get(label) || []).length}</span></button>`);
+      });
+      if (pills.length) {
+        relatedHtml = `<div class="facet-group"><div class="facet-group-label">Also belongs to</div><div class="pill-row">${pills.join('')}</div></div>`;
+      }
+    }
+
+    detailCard.innerHTML = `
+      <p class="detail-label">${escapeHtml(t.label)}</p>
+      <div class="detail-id mono">${escapeHtml(t.id)} · <a href="${escapeHtml(t.uri)}" target="_blank" rel="noopener">${escapeHtml(t.uri.replace(/.*\//, ''))}</a></div>
+      <div class="breadcrumb">${crumbs}</div>
+      ${sourceNote}
+      <div class="detail-desc">${escapeHtml(t.description || 'No description available.')}</div>
+      <div class="detail-meta">
+        ${t.type ? `<span><b>${escapeHtml(t.type)}</b> type</span>` : ''}
+        ${t.units ? `<span><b>${escapeHtml(t.units)}</b> units</span>` : ''}
+      </div>
+      ${t.structure_measured.length ? `<div class="facet-group"><div class="facet-group-label">Structure measured</div><div class="pill-row">${pillsFor(t, 'structure_measured')}</div></div>` : ''}
+      ${t.terms.length ? `<div class="facet-group"><div class="facet-group-label">Terms <span style="text-transform:none;font-weight:400">(structure &amp; keywords)</span></div><div class="pill-row">${pillsFor(t, 'terms')}</div></div>` : ''}
+      ${t.characteristic_measured.length ? `<div class="facet-group"><div class="facet-group-label">Characteristic measured</div><div class="pill-row">${pillsFor(t, 'characteristic_measured')}</div></div>` : ''}
+      ${relatedHtml}
+    `;
+    detailCard.querySelectorAll('.pill, .crumb').forEach(p => {
+      p.addEventListener('click', () => toggleFacet(p.dataset.facet, p.dataset.value));
+    });
+  }
+
+  /* ---------------------------------------------------------------
+   * 11. Facet browser sidebar
+   * ------------------------------------------------------------- */
+  let currentFacetTab = 'terms';
+  const facetCloud = document.getElementById('facet-cloud');
+  const facetSearchInput = document.getElementById('facet-search');
+
+  function renderFacetCloud() {
+    const fk = currentFacetTab;
+    const q = facetSearchInput.value.trim().toLowerCase();
+    const entries = Array.from(facetIndex[fk].entries())
+      .filter(([v]) => !q || v.toLowerCase().includes(q))
+      .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+    const cls = FACET_CLASS[fk];
+    facetCloud.innerHTML = entries.map(([v, ids]) => {
+      const active = activeFilters[fk].has(v);
+      return `<button class="pill ${cls} ${active ? 'active' : ''}" data-facet="${fk}" data-value="${escapeHtml(v)}">${escapeHtml(v)} <span class="n">${ids.length}</span></button>`;
+    }).join('') || '<span class="detail-empty">No matches.</span>';
+    facetCloud.querySelectorAll('.pill').forEach(p => {
+      p.addEventListener('click', () => toggleFacet(p.dataset.facet, p.dataset.value));
+    });
+  }
+
+  document.getElementById('facet-tabs').addEventListener('click', (e) => {
+    const btn = e.target.closest('.facet-tab');
+    if (!btn) return;
+    document.querySelectorAll('.facet-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFacetTab = btn.dataset.facet;
+    facetSearchInput.value = '';
+    renderFacetCloud();
+  });
+  facetSearchInput.addEventListener('input', renderFacetCloud);
+
+  /* ---------------------------------------------------------------
+   * 12. Filters: toggling + expanding matches + summary
+   * ------------------------------------------------------------- */
+  function toggleFacet(fk, value) {
+    const set = activeFilters[fk];
+    if (set.has(value)) set.delete(value); else set.add(value);
+    applyFilters();
+  }
+
+  function expandMatchingAncestors() {
+    hroot.each(d => {
+      if (d.data.isLeaf || !d._children) return;
+      if (filtersActive() && !d.children && collectLeafTraitIds(d.data).some(matchesFilters)) {
+        d.children = d._children;
+      }
+    });
+  }
+
+  function applyFilters() {
+    const wantFiltered = facetAction === 'filter' && filtersActive();
+    if (wantFiltered) {
+      renderFilteredTree();
+    } else if (viewIsFiltered) {
+      renderFullTree();
+    } else {
+      if (filtersActive()) expandMatchingAncestors();
+      update(hroot);
+    }
+    renderFacetCloud();
+    if (selectedTraitId) selectTrait(selectedTraitId);
+  }
+
+  function updateFilterSummary() {
+    const summaryEl = document.getElementById('filter-summary-text');
+    const clearBtn = document.getElementById('clear-filters');
+    if (!filtersActive()) { summaryEl.textContent = ''; clearBtn.classList.remove('show'); return; }
+    const n = RAW.reduce((acc, t) => acc + (matchesFilters(t.id) ? 1 : 0), 0);
+    summaryEl.innerHTML = `<b>${n}</b> of ${RAW.length} traits match`;
+    clearBtn.classList.add('show');
+  }
+
+  document.getElementById('clear-filters').addEventListener('click', () => {
+    FACET_KEYS.forEach(fk => activeFilters[fk].clear());
+    searchQuery = '';
+    document.getElementById('search-input').value = '';
+    applyFilters();
+  });
+
+  /* ---------------------------------------------------------------
+   * 13. Search box
+   * ------------------------------------------------------------- */
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  function renderSearchResults(q) {
+    if (!q) { searchResults.classList.remove('open'); searchResults.innerHTML = ''; return; }
+    const ql = q.toLowerCase();
+    const matches = RAW.filter(t =>
+      t.label.toLowerCase().includes(ql) ||
+      t.id.toLowerCase().includes(ql) ||
+      t.terms.some(k => k.toLowerCase().includes(ql))
+    ).slice(0, 40);
+    searchResults.innerHTML = matches.length
+      ? matches.map(t => `<button data-id="${escapeHtml(t.id)}"><span class="sr-label">${escapeHtml(t.label)}</span><span class="sr-id mono">${escapeHtml(t.id)}</span></button>`).join('')
+      : '<div class="search-empty">No traits found.</div>';
+    searchResults.classList.add('open');
+    searchResults.querySelectorAll('button[data-id]').forEach(b => {
+      b.addEventListener('click', () => revealTrait(b.dataset.id));
+    });
+  }
+
+  let searchDebounce = null;
+  searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value.trim();
+    renderSearchResults(searchQuery);
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(applyFilters, 150);
+  });
+  searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) renderSearchResults(searchInput.value.trim()); });
+  document.addEventListener('click', (e) => {
+    if (!searchResults.contains(e.target) && e.target !== searchInput) searchResults.classList.remove('open');
+  });
+
+  function revealTrait(id) {
+    searchResults.classList.remove('open');
+
+    const targets = [];
+    hroot.each(d => { if (d.data.isLeaf && d.data.trait.id === id) targets.push(d); });
+    if (!targets.length) return;
+    targets.forEach(target => {
+      let node = target;
+      const chain = [];
+      while (node.parent) { chain.push(node.parent); node = node.parent; }
+      chain.forEach(n => { if (n._children && !n.children) n.children = n._children; });
+    });
+
+    update(hroot);
+    selectTrait(id);
+
+    setTimeout(() => {
+      let found = null;
+      hroot.each(d => { if (d.data.isLeaf && d.data.trait.id === id) found = found || d; });
+      if (!found) return;
+      const svgEl = svg.node();
+      const w = svgEl.clientWidth, h = svgEl.clientHeight;
+      const tx = w * 0.32 - found.y;
+      const ty = h / 2 - found.x;
+      svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(1));
+    }, 40);
+  }
+
+  /* ---------------------------------------------------------------
+   * 14. Boot
+   * ------------------------------------------------------------- */
+  showEmptyDetail();
+  renderAbout();
+  renderFacetCloud();
+  masterTreeData = buildGroupTree();
+  sortTree(masterTreeData);
+  renderFullTree();
+
+})();
+</script>
+</body>
+</html>

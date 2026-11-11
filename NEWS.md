@@ -11,6 +11,14 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
+## Unreleased
+
+**New: a trait browser** at
+[trait_browser.html](https://traitecoevo.github.io/APD/trait_browser.html) — every
+trait in a zoomable tree by trait group, searchable by name, structure measured,
+characteristic measured and keyword. It is rebuilt from the dictionary with the
+rest of the site, so it always matches the current release.
+
 ## APD Version 2.2.0
 
 **No trait, allowable value, unit or APD identifier changed.** Nothing you have
