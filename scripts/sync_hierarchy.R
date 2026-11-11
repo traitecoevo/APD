@@ -5,12 +5,19 @@
 # do. See R/hierarchy.R.
 #
 # Only those columns change. The file is read and written as text, untrimmed,
-# with its CRLF line endings and no final newline, so every other cell keeps its
-# exact bytes and the diff shows only the paths that moved.
+# and keeps the line endings and final newline it already has, so every other
+# cell keeps its exact bytes and the diff shows only the paths that moved.
+# (A spreadsheet save turns the file into CRLF with no final newline; develop
+# has it as LF, and a whole-file line-ending change is what made merging it
+# conflict on every line.)
 
 source("scripts/setup.R")
 
 HIERARCHY_CSV <- file.path("data", "APD_trait_hierarchy.csv")
+
+original <- readr::read_file(HIERARCHY_CSV)
+eol <- if (grepl("\r\n", original, fixed = TRUE)) "\r\n" else "\n"
+final_newline <- endsWith(original, eol)
 
 raw <- readr::read_csv(HIERARCHY_CSV,
                        col_types = readr::cols(.default = "c"),
@@ -48,8 +55,11 @@ raw[columns] <- derived[columns]
 raw <- raw[, c(before, columns, after)]
 moved <- raw$identifier[path_text(raw) != old_paths]
 
-out <- readr::format_csv(raw, na = "", eol = "\r\n")
-readr::write_file(sub("\r\n$", "", out), HIERARCHY_CSV)
+out <- readr::format_csv(raw, na = "", eol = eol)
+if (!final_newline) {
+  out <- substr(out, 1, nchar(out) - nchar(eol))
+}
+readr::write_file(out, HIERARCHY_CSV)
 
 cat(sprintf("%d of %d trait groups had their path changed in %s.\n",
             length(moved), nrow(raw), HIERARCHY_CSV))
