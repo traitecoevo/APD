@@ -229,7 +229,9 @@ create_APD_trait_table <- function(thistrait, triples_with_labels) {
       prop(trait, "maxAllowedValue", column = "value")
     ),
 
-    if (value_type$value == "categorical variable" &&
+    # A twelve-month trait typed monthly_presence in austraits.build has no
+    # allowable values at all, so there is nothing to list -- no need to name it.
+    if (value_type$value == "categorical variable" && nrow(narrower) > 0 &&
           !altlabel$value %in% APD_TIME_TRAITS) list(
       prop(trait, "has narrower", collapse = TRUE,
            values = categorical_value_lines(narrower, triples_with_labels))
