@@ -1,6 +1,6 @@
 ---
 name: apd-import-traits
-description: Import new and edited trait definitions from austraits.build `config/traits.yml` into the APD's input files (`data/APD_traits_input.yml`, `data/APD_categorical_values_input.csv`, `data/published_classes.csv`) before an APD release. It assigns APD identifiers (URIs), sets `created`/`modified` dates from austraits.build git history, adds `constraints` where a trait only applies to some plants, maps exact/close/related matches to TO/PO, and maps TRY and BIEN traits, with a review workbook for the curator. Use when the user says "import traits from austraits.build", "sync traits.yml into the APD", "add the new traits to the APD", or is preparing the trait content of an APD release.
+description: Import new and edited trait definitions from austraits.build `config/traits.yml` into the APD's input files (`data/APD_traits_input.yml`, `data/APD_categorical_values_input.csv`, `data/published_classes.csv`) before an APD release. It assigns APD identifiers (URIs), sets `created`/`modified` dates from austraits.build git history, carries references into `APD_references.csv`, adds `constraints` where a trait only applies to some plants, maps exact/close/related matches to TO/PO, and maps TRY and BIEN traits, with a review workbook for the curator. Use when the user says "import traits from austraits.build", "sync traits.yml into the APD", "add the new traits to the APD", or is preparing the trait content of an APD release.
 ---
 
 # Import traits.yml into the APD
@@ -13,7 +13,9 @@ The first run was November 2026 (192 new traits, 167 edited). Its numbers appear
 as worked examples.
 
 **traits.yml wins** for every field it owns: label, description, comments, type, units,
-range, structure, characteristic, keywords, trait groups and categorical values. **The APD
+range, structure, characteristic, keywords, trait groups and categorical values.
+**References are merged.** A citation in traits.yml (`reference` or `references`, as free
+text) is added to the trait's APD `references` and never replaces it. **The APD
 wins** for everything else: identifiers, `created`/`reviewed` dates, reviewers,
 references, `deprecated_trait_name`, constraints, and all `*_match`/TRY/TOP/BIEN/... fields.
 Never drop an APD-only field because traits.yml lacks it.
@@ -58,9 +60,32 @@ python3 $S prepare --since <sync-commit>   # diff, dates, URI proposal, candidat
 | `candidates.txt` | for each new trait: description, structure, keywords, best TO/PO and TRY name matches |
 | `matches.csv` | one row per new trait to fill: matches, TRY ids, BIEN names, constraints, optional `category` override |
 | `history.json` | the first-seen and last-changed dates for each trait |
+| `references.csv` | every citation in traits.yml, and whether it resolves to an `APD_references.csv` label |
 
 Then curate (sections below): edit `uris.csv` and `matches.csv`, and add
 `units_uom.csv` (`unit,units_uom`) for any unit the notes flag.
+
+### References
+
+`apply` refuses to write while any citation is unresolved. A citation resolves in one of
+three ways: its DOI matches a row in `APD_references.csv`; it is exactly a row's `label`; or
+`references_map.csv` (`source,label`, where `source` is the citation's text as split from
+traits.yml) maps it. For each unresolved work:
+
+1. Add a row to `data/APD_references.csv`, in label order, keeping the BOM and the existing
+   rows byte-for-byte. The columns are `Entity` (`https://doi.org/…`, or a books.google
+   `vid=ISBN…` URL or other URL), `label` (`Surname Year`, `A & B Year`, or the first
+   author alone for three or more), `citation` (`Surname, I., … Title. *Journal* vol(issue),
+   pages (year).`), `identifier` (`doi:…`, `ISBN:…` or `url:…`) and `title`.
+2. **Take the citation details from Crossref** (`https://api.crossref.org/works/<doi>`, or
+   `works?query.bibliographic=…` to find a DOI), not from memory. In 2026-11 that caught a
+   wrong DOI: Lloyd & Schoen 1992 part I is `10.1086/297040`.
+3. If the citation has no DOI, add a `references_map.csv` row.
+
+Then tell the user about anything that couldn't be pinned down. (2026-11: Horsey & Watson
+2012 is grey literature with no DOI or stable URL, so it got a Google Scholar search URL,
+following the `Wells 2012` precedent. Crossref lists the IAWA DOI as "Preliminary material,
+219-232", and the row cites the full 219-332 list.)
 
 Two more optional files handle changes the curator makes in the APD **before**
 austraits.build has caught up. Both are applied on every run, so a re-import can't undo them:
@@ -236,7 +261,7 @@ get **accept (y/n)** and **comment** columns, and the curator works from those. 
 send back rejections, edit `matches.csv`/`uris.csv` and re-run the three `apply` commands.
 Then tell the user:
 
-- the counts (new, edited, values added or removed, terms added)
+- the counts (new, edited, values added or removed, terms and references added)
 - the decisions they made or still owe (URIs, kept traits)
 - the breaking changes
 - the upstream fixes for traits.yml (from `conversion_notes.csv`, plus anything odd, e.g. a

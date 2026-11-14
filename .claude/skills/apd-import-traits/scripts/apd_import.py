@@ -269,6 +269,44 @@ def signature(rec):
     return json.dumps([rec.get(f) for f in SIGNATURE] + [sorted(rec.get('_levels', {}).items())])
 
 
+# --- references ------------------------------------------------------------------
+
+DOI = re.compile(r'10\.\d{4,9}/\S+')
+
+
+def clean_doi(d):
+    d = d.rstrip('.,;')
+    while d.endswith(')') and d.count(')') > d.count('('):
+        d = d[:-1]
+    return d.lower()
+
+
+def reference_resolver(work):
+    """traits.yml writes references as free text ('reference' or 'references'), '; '-joined.
+    A fragment resolves to an APD_references.csv label by its DOI, or through
+    <work>/references_map.csv (source,label) for anything without one."""
+    refs = read_csv(os.path.join(DATA, 'APD_references.csv'))
+    by_doi = {}
+    for r in refs:
+        for x in (r['Entity'], r['identifier']):
+            m = DOI.search(x or '')
+            if m:
+                by_doi[clean_doi(m.group(0))] = r['label']
+    labels = {r['label'] for r in refs}
+    mp = os.path.join(work, 'references_map.csv')
+    manual = {ws(r['source']): r['label'] for r in read_csv(mp)} if os.path.exists(mp) else {}
+
+    def resolve(text):
+        out, unresolved = [], []
+        for frag in [ws(f) for f in re.split(r';\s+(?![^()]*\))', str(text or '')) if ws(f)]:
+            m = DOI.search(frag)
+            label = manual.get(frag) or (by_doi.get(clean_doi(m.group(0))) if m else None) or \
+                (frag if frag in labels else None)
+            (out if label else unresolved).append(label or frag)
+        return out, unresolved
+    return resolve
+
+
 # --- git history -> dates --------------------------------------------------------
 
 def history_dates(ab_repo, since, ref, vocab, work=None):
@@ -442,6 +480,16 @@ def cmd_prepare(args):
     write_csv(changes_path, changes, ['trait', 'identifier', 'field', 'apd', 'traits_yml', 'last_changed'])
     write_csv(notes_path, notes_rows, ['trait', 'new', 'note'])
 
+    resolve = reference_resolver(args.work)
+    ref_rows = []
+    for t, v in ab.items():
+        src = v.get('references', v.get('reference'))
+        if src:
+            got, bad = resolve(src)
+            ref_rows += [{'trait': t, 'reference': x, 'resolved': 'yes'} for x in got]
+            ref_rows += [{'trait': t, 'reference': x, 'resolved': 'NO: add to APD_references.csv and/or references_map.csv'}
+                         for x in bad]
+    write_csv(os.path.join(args.work, 'references.csv'), ref_rows, ['trait', 'reference', 'resolved'])
     uris_path = os.path.join(args.work, 'uris.csv')
     proposal = propose_uris(ab, apd_by_name, used_identifiers())
     write_csv(os.path.join(args.work, 'uri_proposal.csv'), proposal, ['trait', 'identifier', 'basis'])
@@ -480,6 +528,9 @@ def cmd_prepare(args):
           f'-> {args.work}/uri_proposal.csv (edit {args.work}/uris.csv)')
     print(f'Conversion notes: {len(notes_rows)} -> {notes_path}')
     print(f'Candidates -> {args.work}/candidates.txt; fill in {args.work}/matches.csv')
+    nbad = sum(r['resolved'] != 'yes' for r in ref_rows)
+    print(f'References: {len(ref_rows)} on {len(set(r["trait"] for r in ref_rows))} traits, {nbad} unresolved '
+          f'-> {args.work}/references.csv')
 
 
 def cmd_apply(args):
@@ -526,6 +577,7 @@ def cmd_apply(args):
             apd_by_name[r['new']] = ident
     dp = os.path.join(args.work, 'drop_values.csv')
     dropped = {r['trait'] for r in read_csv(dp)} if os.path.exists(dp) else set()
+    resolve = reference_resolver(args.work)
     levels = {}
     review_new, review_try = [], []
     for t, v in ab.items():
@@ -552,6 +604,12 @@ def cmd_apply(args):
                        created=hist['first'].get(t, today), modified=hist['last'].get(t) or hist['first'].get(t, today))
             rows.append(row)
             by_id[ident] = row
+        src = v.get('references', v.get('reference'))
+        if src:  # references are added to the APD's own, never replace them
+            got, bad = resolve(src)
+            errors += [f'{t}: reference not in APD_references.csv: {b}' for b in bad]
+            have = [x for x in (row.get('references') or '').split('; ') if x]
+            row['references'] = '; '.join(dict.fromkeys(have + got))
         if t in uris:  # this import's new traits: matches always come from matches.csv
             if uris[t] != ident:
                 errors.append(f'{t}: uris.csv says {uris[t]} but the APD already has it as {ident}')
@@ -728,6 +786,12 @@ def cmd_review(args):
     sheet('New traits', ['identifier', 'trait', 'label', 'URI basis', 'category', 'created', 'modified', 'constraints',
                          'exact', 'close', 'related', 'description'], rows, [15, 34, 34, 40, 34, 11, 11, 34, 16, 16, 16, 60])
     sheet('Constraints', ['identifier', 'trait', 'constraints'], [[r[0], r[1], r[7]] for r in rows if r[7]], [15, 40, 60])
+    refs = {r['label']: r for r in read_csv(os.path.join(DATA, 'APD_references.csv'))}
+    rp = os.path.join(args.work, 'references.csv')
+    sheet('References', ['trait', 'label', 'citation', 'Entity'],
+          [[r['trait'], r['reference'], refs.get(r['reference'], {}).get('citation', 'UNRESOLVED'),
+            refs.get(r['reference'], {}).get('Entity', '')] for r in (read_csv(rp) if os.path.exists(rp) else [])],
+          [34, 22, 80, 40])
     ch = read_csv(os.path.join(args.work, 'existing_changes.csv'))
     sheet('Existing-trait edits', ['trait', 'identifier', 'field', 'APD before', 'traits.yml (applied)', 'last changed'],
           [[r['trait'], r['identifier'], r['field'], r['apd'], r['traits_yml'], r['last_changed']] for r in ch],
