@@ -132,6 +132,26 @@ validate_apd <- function(data_dir = "data", out_dir = APD_EXPORT_DIR) {
         inputs$traits$trait[missing_text])
   }
 
+  # A blank description is published as the literal "NA"@en, not omitted.
+  missing_group_text <- with(inputs$hierarchy, is.na(label) | is.na(description))
+  if (any(missing_group_text)) {
+    add("group-missing-required-field",
+        sprintf("%d trait group(s) have no label or no description",
+                sum(missing_group_text)),
+        inputs$hierarchy$identifier[missing_group_text])
+  }
+
+  # `Parent` is what gets edited and published; the path columns are a copy that
+  # austraits.build reads, and a stale copy goes unnoticed. See R/hierarchy.R.
+  stale_paths <- apd_stale_hierarchy_paths(inputs$hierarchy)
+  if (length(stale_paths) > 0) {
+    add("hierarchy-paths-stale",
+        sprintf(paste("%d trait group(s) have tier_*/hierarchy columns that",
+                      "disagree with Parent; run `make sync-hierarchy`"),
+                length(stale_paths)),
+        stale_paths)
+  }
+
   # --- referential integrity ------------------------------------------------
   #
   # The build resolves identifier -> label with match(). A miss becomes the

@@ -64,6 +64,7 @@ Run `make` for the list of targets:
 | `make release` | `check` + `site` + version checks + snapshot into `release/<version>/` |
 | `make export-csv` | trait YAML → CSV, for spreadsheet editing |
 | `make import-csv` | CSV → trait YAML, printing the per-trait diff |
+| `make sync-hierarchy` | rewrite the trait hierarchy's `tier_*`/`hierarchy` columns from `Parent` |
 | `make clean` | delete `export/` and the Quarto cache |
 
 `Rscript scripts/sparql_examples.R` runs example SPARQL queries against `APD.nq`.

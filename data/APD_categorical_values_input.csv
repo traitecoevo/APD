@@ -637,9 +637,11 @@ storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutr
 storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
 storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
 storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
-resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,"Plants that are known to be fire-killed, but have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.",resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,Plants have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.,resprouting_capacity_non_fire_disturbance
 resprouting_capacity_non_fire_disturbance_resprouts_after_cyclone,resprouts_after_cyclone,Plants are able to resprout following 100% leaf loss in a cyclone.,resprouting_capacity_non_fire_disturbance
 resprouting_capacity_non_fire_disturbance_resprouts_after_drought,resprouts_after_drought,Plants are able to resprout following 100% leaf loss during a drought.,resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_after_non-fire_stem_loss,resprouts_after_non-fire_stem_loss,Plants are able to resprout following 100% leaf loss following stem or branch removal.,resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_killed_by_non_fire_disturbance,killed_by_non_fire_disturbance,Plants do not resprout following a non-fire disturbance that leads to 100% leaf loss.,resprouting_capacity_non_fire_disturbance
 clonal_spread_mechanism_aboveground_clonal,aboveground_clonal,"Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions).",clonal_spread_mechanism
 clonal_spread_mechanism_adventitious_roots,adventitious_roots,Adventitious roots can form at nodes on the main roots or aboveground from nodes on stems.,clonal_spread_mechanism
 clonal_spread_mechanism_bulb,bulb,"Below ground storage organ derived from stem (and sometimes leaf) tissue, that divides into new individuals.",clonal_spread_mechanism
