@@ -10,11 +10,13 @@
 # of plans/build-workflow-overhaul.md replaces gt with a <dl> emitter, which will
 # change it on purpose -- when it does, re-pin it in the same commit.
 
-# Re-pinned for the vocabulary edits on fixes-to-vocabularies (10 new trait
-# groups, 2 categorical values, new published classes, colon-form prose IDs).
-# Previously 9691c9693867aae2929bb17ae0bf65dd, pinned when
-# plant_height_reproductive's allowed minimum was corrected from 0.1 m to 0.001 m.
-APD_ENTITY_TABLE_DIGEST <- "25245423a5e2e6721f20b23b115a2e94"
+# Re-pinned for the November 2026 import from austraits.build traits.yml (192 new
+# traits, 730 categorical values added and 8 removed, edits to 168 existing traits
+# including the rain value dropped from seed_germination_treatment).
+# Previously 25245423a5e2e6721f20b23b115a2e94, pinned for the vocabulary edits on
+# fixes-to-vocabularies (10 new trait groups, 2 categorical values, new published
+# classes, colon-form prose IDs).
+APD_ENTITY_TABLE_DIGEST <- "b73971c41e1b584e7d6d5e5f7b0ba861"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -49,8 +51,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 559 traits + 81 groups + 821 categorical values + 24 glossary terms
-  expect_identical(length(subjects), 1485L)
+  # 751 traits + 81 groups + 1,543 categorical values + 24 glossary terms
+  expect_identical(length(subjects), 2399L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -165,8 +167,8 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  expect_identical(rendered_pairs, 16877L)
-  expect_identical(length(dropped), 3034L)
+  expect_identical(rendered_pairs, 24884L)
+  expect_identical(length(dropped), 4202L)
 })
 
 test_that("no gt stylesheet reaches the page", {
