@@ -21,7 +21,13 @@ pollination and nectar traits, breeding systems, chromosome counts, and two
 twelve-month traits (`active_growing_time`, `dormancy_time`). Each has an APD
 identifier, ontology matches where the Plant Trait Ontology has a counterpart,
 TRY and BIEN matches where those databases have one, and constraints where a
-trait only applies to plants with a particular structure. Their categorical
+trait only applies to plants with a particular structure. Twenty traits cite the
+source of their definition, through six new entries in `APD_references.csv` (the
+IAWA hardwood feature list for 14 wood-anatomy traits; Fuller 2025 and Horsey &
+Watson 2012 for bark; Jordan 2008 for stomatal position; Richards 1997 and Lloyd &
+Schoen 1992 for breeding systems) and two already there (Chittka 1992 and 1994 for
+the bee colour-space traits). `bark_morphology_eucalyptus` gains the two bark
+references too. Their categorical
 traits bring 662 new allowable values. Three are named differently here than in
 traits.yml, ahead of the same renames there: `inflorescence_peduncle_length`
 (was `peduncle_length`), `seed_ovule_ratio` (was `seed_set_proportion`) and

@@ -12,11 +12,12 @@
 
 # Re-pinned for the November 2026 import from austraits.build traits.yml (192 new
 # traits, 730 categorical values added and 8 removed, edits to 168 existing traits
-# including the rain value dropped from seed_germination_treatment).
+# including the rain value dropped from seed_germination_treatment; references on
+# 21 traits).
 # Previously 25245423a5e2e6721f20b23b115a2e94, pinned for the vocabulary edits on
 # fixes-to-vocabularies (10 new trait groups, 2 categorical values, new published
 # classes, colon-form prose IDs).
-APD_ENTITY_TABLE_DIGEST <- "b73971c41e1b584e7d6d5e5f7b0ba861"
+APD_ENTITY_TABLE_DIGEST <- "e9f7d7b994c66359617d8c53e9b6c04b"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the

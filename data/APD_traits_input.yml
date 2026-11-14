@@ -6859,6 +6859,7 @@ trait_0011616:
   modified: '2026-10-15'
   structure: PO_0025034; PO_0009047
   measured_characteristic: PATO_0000140
+  references: Jordan 2008
   keywords: PO_0008032
 trait_0011617:
   trait: leaf_guard_cell_width
@@ -7564,6 +7565,7 @@ trait_0012010:
   constraints: taxa in the genera Eucalyptus, Corymbia, and Angophora
   structure: PO_0004518
   measured_characteristic: PATO_0000141; PATO_0000150
+  references: Fuller 2025; Horsey & Watson 2012
   keywords: PO_0009047; FLOPO_0008799
 trait_0012011:
   trait: bark_thickness
@@ -7738,6 +7740,7 @@ trait_0012018:
   modified: '2026-11-15'
   structure: PO_0004518
   measured_characteristic: PATO_0000070; PATO_0000044
+  references: Fuller 2025
   keywords: ENVO_01000786
   TRY_related: Bark morphology [TRY:4260] (https://www.try-db.org/de/de.php)
 trait_0012019:
@@ -8904,6 +8907,7 @@ trait_0012430:
   modified: '2026-11-15'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000014; PATO_0002326
+  references: Chittka 1992
   keywords: GO_0000003; GO_0009856; PATO_0000015
   related_match: TO_0000537
   TRY_related: Flower color [TRY:207] (https://www.try-db.org/de/de.php)
@@ -9053,6 +9057,7 @@ trait_0012435:
   modified: '2026-11-15'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000014; STATO_0000300
+  references: Chittka 1992
   keywords: GO_0000003; GO_0009856; PATO_0000017
   related_match: TO_0000537
   TRY_related: Flower color [TRY:207] (https://www.try-db.org/de/de.php)
@@ -9072,6 +9077,7 @@ trait_0012436:
   modified: '2026-11-15'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000014
+  references: Chittka 1992; Chittka 1994
   keywords: GO_0000003; GO_0009856; PATO_0000015
   related_match: TO_0000537
   TRY_related: Flower color [TRY:207] (https://www.try-db.org/de/de.php)
@@ -11974,6 +11980,7 @@ trait_0013166:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: NCIT_C61532; PATO_0000060; PATO_0001995
+  references: IAWA Committee 1989
   keywords: PO_0025417; NCIT_C93062; PO_0005848; PO_0004514; D000715
   TRY_related: Wood vessel arrangement [TRY:275] (https://www.try-db.org/de/de.php)
 trait_0013167:
@@ -11992,6 +11999,7 @@ trait_0013167:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: NCIT_C61532; PATO_0000060; PATO_0000140
+  references: IAWA Committee 1989
   keywords: PO_0025417; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood vessel grouping [TRY:276] (https://www.try-db.org/de/de.php)
 trait_0013168:
@@ -12010,6 +12018,7 @@ trait_0013168:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: PATO_0000052; PATO_0000141
+  references: IAWA Committee 1989
   keywords: PO_0025417; PO_0002003; GO_1990073; GO_0006833; D000715
   TRY_exact: Wood vessel perforation plates [TRY:278] (https://www.try-db.org/de/de.php)
 trait_0013169:
@@ -12028,6 +12037,7 @@ trait_0013169:
   modified: '2026-10-15'
   structure: PO_0009047
   measured_characteristic: PATO_0000025; PATO_0000141; PATO_0000052
+  references: IAWA Committee 1989
   keywords: PO_0004534; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood cellular composition of rays [TRY:292] (https://www.try-db.org/de/de.php)
   TRY_close: Wood ray types [TRY:1234] (https://www.try-db.org/de/de.php)
@@ -12090,6 +12100,7 @@ trait_0013172:
   modified: '2026-11-14'
   structure: PO_0009047
   measured_characteristic: PATO_0000141
+  references: IAWA Committee 1989
   keywords: PO_0004514; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood growth ring distinction [TRY:273] (https://www.try-db.org/de/de.php)
 trait_0013173:
@@ -12108,6 +12119,7 @@ trait_0013173:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: NCIT_C61532; PATO_0000060
+  references: IAWA Committee 1989
   keywords: PO_0025417; PO_0002003; D000715
   TRY_close: Wood vessel intervessel pits [TRY:1240] (https://www.try-db.org/de/de.php)
 trait_0013174:
@@ -12127,6 +12139,7 @@ trait_0013174:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: PATO_0000141
+  references: IAWA Committee 1989
   keywords: PO_0025417; PO_0002003; D000715
   TRY_exact: Wood vessel vestured pits [TRY:1243] (https://www.try-db.org/de/de.php)
   TRY_close: Wood vessel pits characteristics (vestured pits) [TRY:279] (https://www.try-db.org/de/de.php)
@@ -12167,6 +12180,7 @@ trait_0013176:
   modified: '2026-10-15'
   structure: PO_0009047
   measured_characteristic: PATO_0000915; PATO_0000141
+  references: IAWA Committee 1989
   keywords: PO_0025407; NCIT_C93062; PO_0005848; D000715
   TRY_close: Wood fiber wall thickness [TRY:288] (https://www.try-db.org/de/de.php)
 trait_0013177:
@@ -12183,6 +12197,7 @@ trait_0013177:
   modified: '2026-11-14'
   structure: PO_0009047
   measured_characteristic: NCIT_C61532; PATO_0000060
+  references: IAWA Committee 1989
   keywords: PO_0004533; PO_0025417; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood axial parenchyma arrangement [TRY:3988] (https://www.try-db.org/de/de.php)
 trait_0013178:
@@ -12203,6 +12218,7 @@ trait_0013178:
   constraints: applicable to plants with vessels
   structure: PO_0009047
   measured_characteristic: PATO_0000122; PATO_0000117
+  references: IAWA Committee 1989
   keywords: PO_0002003; PO_0025417; D000715
   TRY_exact: Wood vessel element length; stem conduit (vessel and tracheids) element
     length [TRY:282] (https://www.try-db.org/de/de.php)
@@ -12224,6 +12240,7 @@ trait_0013179:
   modified: '2026-10-15'
   structure: PO_0009047
   measured_characteristic: PATO_0000122; PATO_0000117
+  references: IAWA Committee 1989
   keywords: PO_0025407; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood fiber lengths [TRY:289] (https://www.try-db.org/de/de.php)
 trait_0013180:
@@ -12268,6 +12285,7 @@ trait_0013181:
   structure: PO_0009047
   measured_characteristic: PATO_0001555; ECSO_00001160; PATO_0001470; NCIT_C25463;
     PATO_0000122
+  references: IAWA Committee 1989
   keywords: PO_0004534; NCIT_C63795; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood ray density (number of rays per tangential section) [TRY:297] (https://www.try-db.org/de/de.php)
 trait_0013182:
@@ -12286,6 +12304,7 @@ trait_0013182:
   modified: '2026-11-14'
   structure: PO_0009047
   measured_characteristic: PATO_0000052; PATO_0000141
+  references: IAWA Committee 1989
   keywords: PO_0025407; NCIT_C93062; PO_0005848; D000715
   TRY_exact: Wood fiber-pits types [TRY:1220] (https://www.try-db.org/de/de.php)
 trait_0013183:
@@ -12306,6 +12325,7 @@ trait_0013183:
   modified: '2026-10-15'
   structure: PO_0009047
   measured_characteristic: PATO_0000044
+  references: IAWA Committee 1989
   keywords: PO_0025117; NCIT_C93062; PO_0005848; D000715
   TRY_close: Wood vessel tyloses and deposits [TRY:283] (https://www.try-db.org/de/de.php)
 trait_0014011:
@@ -16329,6 +16349,7 @@ trait_0030063:
   modified: '2026-10-15'
   structure: PO_0000003; PO_0009046
   measured_characteristic: PATO_0001995; PATO_0000060
+  references: Richards 1997; Lloyd & Schoen 1992
   keywords: PO_0025281; OMIT_0027849
   related_match: TO_0000035
   TRY_exact: Plant mating system [TRY:347] (https://www.try-db.org/de/de.php)
