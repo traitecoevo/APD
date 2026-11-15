@@ -32,7 +32,7 @@ DATA = 'data'
 TRY_URL = 'https://www.try-db.org/de/TabDetails.php'
 TRY_SUFFIX = '(https://www.try-db.org/de/de.php)'
 BIEN_SUFFIX = '[BIEN] (https://bien.nceas.ucsb.edu/bien/biendata)'
-TYPE = {'numeric': 'STATO_0000251', 'categorical': 'STATO_0000252', 'monthly_presence': 'STATO_0000252'}
+TYPE = {'numeric': 'STATO_0000251', 'categorical': 'STATO_0000252', 'monthly_presence': 'glossary_40126', 'text': 'NCIT_C25704'}
 # Fields austraits.build owns; everything else in the APD record (dates, reviewers,
 # references, matches, constraints, deprecated names) is APD-only and is preserved.
 AB_OWNED = ['label', 'description_encoded', 'description', 'comments', 'type', 'min', 'max',

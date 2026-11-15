@@ -13,12 +13,21 @@ format:
 ---
 ## Unreleased
 
+**Two new value types: monthly presence and text.** Every trait's value type used to be a continuous or a categorical variable, both terms from the Statistical Methods Ontology (STATO). The four phenology traits, `flowering_time`, `fruiting_time`, `foliage_time` and `recruitment_time`, are neither: a value is twelve characters, `Y` or `N` for each month starting with January. They were typed categorical while having no allowable values, which left `austraits.build` generating an empty list of allowed values for them. They are now typed **monthly presence**. The second new type, **text**, is for free text values such as taxon names; no trait uses it yet. See [traitecoevo/traits.build#87](https://github.com/traitecoevo/traits.build/issues/87).
+
+Monthly presence is a glossary term, <https://w3id.org/APD/glossary/glossary_40126>, because no published vocabulary has a term for it. Text is borrowed from the NCI Thesaurus, [`NCIT_C25704`](http://purl.obolibrary.org/obo/NCIT_C25704).
+
+**What changes for consumers.** In `APD_traits.csv`, the `trait_type` of the four phenology traits reads `monthly presence [glossary_40126]` where it read `categorical variable [STATO_0000252]`, and a text trait would read `text [NCIT_C25704]`. In the RDF, their `ets:valueType` is the glossary term rather than `obo:STATO_0000252`. Code that treats every trait that is not a continuous variable as categorical still runs, and still sees these four as categorical traits with no values, as before. No other trait, value, unit or range changed, and `APD_categorical_values.csv` is unchanged. The graph grows from 27,510 to 27,520 statements: the monthly presence term and the glossary's listing of it, and the label and identifier of the borrowed text term. On the site, each of the four traits now shows its format beside its value type.
+
+**`make check` now checks that a trait's type agrees with the rest of its definition.** A categorical trait must have allowable values, an allowable value must belong to a categorical trait, only a numeric trait may carry units or an allowed range, and the type must be one of the four. The first rule is the one the phenology traits broke.
+
 **192 new traits, imported from austraits.build.** Every definition in
 austraits.build `config/traits.yml` (`develop`, 2026-11-15) is now in the APD:
 new leaf, stem and root chemistry (sugars, starch, essential oils, nitrate, dead
 bark nutrients), stable isotopes, wood anatomy, leaf, flower and fruit morphology,
 pollination and nectar traits, breeding systems, chromosome counts, and two
-twelve-month traits (`active_growing_time`, `dormancy_time`). Each has an APD
+twelve-month traits (`active_growing_time`, `dormancy_time`), typed monthly
+presence like the four phenology traits above. Each has an APD
 identifier, ontology matches where the Plant Trait Ontology has a counterpart,
 TRY and BIEN matches where those databases have one, and constraints where a
 trait only applies to plants with a particular structure. Twenty traits cite the

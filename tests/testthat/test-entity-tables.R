@@ -17,7 +17,38 @@
 # Previously 25245423a5e2e6721f20b23b115a2e94, pinned for the vocabulary edits on
 # fixes-to-vocabularies (10 new trait groups, 2 categorical values, new published
 # classes, colon-form prose IDs).
-APD_ENTITY_TABLE_DIGEST <- "e9f7d7b994c66359617d8c53e9b6c04b"
+#
+# Re-pinned when plant_height_reproductive's allowed minimum was corrected from
+# 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
+# previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
+#
+# Re-pinned again for the monthly presence and text value types (previous digest
+# 9691c9693867aae2929bb17ae0bf65dd). Verified attributable by comparing every
+# entity's rendering before and after: the four phenology traits differ in one
+# line each, their value type, and the two new glossary terms are added.
+# Nothing else moved.
+#
+# Re-pinned for the rename of month presence to monthly presence and the reworded
+# text definition (previous digest 3bc9e0339c00a05d99024cf319c68d48). export/
+# changes only in those two glossary terms and the four phenology traits'
+# trait_type.
+#
+# Re-pinned once more when text became NCIT_C25704, borrowed from the NCI
+# Thesaurus, in place of the glossary term glossary_40128 (previous digest
+# 209cd16efe5e2169199aa52bec2e3a6f). No trait has type text, so the only
+# rendering that changes is that glossary_40128's table is gone.
+#
+# And again when glossary_40126's definition gained its datatype (previous
+# digest eb07884bc28aa57d34cf7155d609bdd1); export/ changes only in that
+# definition.
+# Re-pinned for the merge of develop's value types into the traits.yml import
+# (previous digests e9f7d7b994c66359617d8c53e9b6c04b on this branch and
+# 1139e69fcd9f0b612c1ad6dc7e964efe on develop). Verified attributable by
+# comparing every entity's rendering before and after the merge: six traits
+# differ in their value type only -- the four phenology traits and the imported
+# active_growing_time and dormancy_time, now monthly presence -- and
+# glossary_40126 is added. Nothing else moved.
+APD_ENTITY_TABLE_DIGEST <- "b623542a11ab94d94643774dd21b2d1a"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -52,8 +83,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 751 traits + 81 groups + 1,543 categorical values + 24 glossary terms
-  expect_identical(length(subjects), 2399L)
+  # 751 traits + 81 groups + 1,543 categorical values + 25 glossary terms
+  expect_identical(length(subjects), 2400L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -168,7 +199,8 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  expect_identical(rendered_pairs, 24884L)
+  # 24,884 before the monthly presence glossary term added six pairs.
+  expect_identical(rendered_pairs, 24890L)
   expect_identical(length(dropped), 4202L)
 })
 

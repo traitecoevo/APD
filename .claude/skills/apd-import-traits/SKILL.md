@@ -222,8 +222,7 @@ Otherwise leave it absent. Don't add "Plants with leaves." to every new leaf tra
 - New trait: `created` = the date of the first austraits.build commit after the sync commit
   that contains it; `modified` = the date it last changed there (otherwise `created`).
 - Existing trait: `modified` moves **only if the import changes something it publishes**,
-  to the date of the last austraits.build commit that changed it. Retyping a trait as
-  `monthly_presence` doesn't count, because the APD types both as categorical.
+  to the date of the last austraits.build commit that changed it.
 - `reviewed` is never set by this step.
 
 ## What the converter does to traits.yml text
@@ -250,8 +249,10 @@ too (2026-11 counts in brackets):
 - `units_uom` keeps the APD's existing label when the unit is unchanged. New units need
   `units_uom.csv`. A label missing from `APD_units.csv` is tolerated: 67 traits already
   have one.
-- `make check` flags a categorical trait with no allowable values (the `monthly_presence`
-  type). `R/create_APD_trait_table.R` skips the values row for those.
+- traits.yml's `type` maps to an APD value type (`APD_VALUE_TYPES`, `R/build.R`):
+  `numeric` → `STATO_0000251`, `categorical` → `STATO_0000252`, `monthly_presence` →
+  `glossary_40126`, `text` → `NCIT_C25704`. `make check` fails a trait whose units,
+  range or allowable values disagree with its type.
 
 ## Review
 
