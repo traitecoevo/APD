@@ -12642,7 +12642,7 @@ trait_0030030:
   comments: Trait keyed as a sequences of 12 Ns (without foliage) and Ys (with foliage),
     representing the 12 months, starting with January.
   inScheme: https://w3id.org/APD
-  type: STATO_0000252
+  type: glossary_40126
   category: trait_group_0030008; trait_group_0030704
   created: '2025-04-01'
   modified: '2025-06-03'
@@ -12897,7 +12897,7 @@ trait_0030214:
   comments: Trait keyed as a sequences of 12 Ns (not flowering) and Ys (flowering),
     representing the 12 months, starting with January.
   inScheme: https://w3id.org/APD
-  type: STATO_0000252
+  type: glossary_40126
   category: trait_group_0030008
   created: '2021-07-14'
   modified: '2024-02-05'
@@ -12926,7 +12926,7 @@ trait_0030215:
   comments: Trait keyed as a sequences of 12 Ns (not fruiting) and Ys (fruiting),
     representing the 12 months, starting with January.
   inScheme: https://w3id.org/APD
-  type: STATO_0000252
+  type: glossary_40126
   category: trait_group_0030008
   created: '2021-07-14'
   modified: '2024-02-05'
@@ -12949,7 +12949,7 @@ trait_0030216:
   comments: Trait keyed as a sequences of 12 Ns (not recruiting) and Ys (recruiting),
     representing the 12 months, starting with January.
   inScheme: https://w3id.org/APD
-  type: STATO_0000252
+  type: glossary_40126
   category: trait_group_0030008; trait_group_0030704; trait_group_0030602
   created: '2023-05-19'
   modified: '2024-02-05'

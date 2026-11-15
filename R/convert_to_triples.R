@@ -43,10 +43,12 @@ as_narrower <- function(triples) {
 #'   of the graph; its list-valued fields are split and numbered so each element
 #'   becomes its own statement.
 #' @param glossary_csv Terms the APD defines itself, because no published
-#'   vocabulary defines them.
+#'   vocabulary defines them -- including two of the value types a trait's
+#'   `type` can name.
 #' @param published_classes_csv Terms borrowed from other vocabularies. Doubles
 #'   as the lookup that resolves a trait's type, structure, characteristic,
-#'   keywords and mappings to labels and URIs.
+#'   keywords and mappings to labels and URIs, alongside the glossary for the
+#'   types and keywords the APD defines itself.
 #' @param reviewers_csv People who reviewed a trait definition, with ORCIDs.
 #' @param references_csv Literature cited by a trait definition.
 #' @param units_csv Units of measurement, with their SI and UCUM codes.
@@ -257,7 +259,11 @@ reformatted_traits <-
     description = ifelse(!is.na(description), paste0("\"", description, "\"", "@en"), NA),
     comments = ifelse(!is.na(comments), paste0("\"", comments, "\"", "@en"), NA),
     inScheme = paste0("\"", "https://w3id.org/APD/traits", "\""),
-    type = paste0("<", published_classes_csv$Entity[match(type, published_classes_csv$identifier)], ">"),
+    # A value type is borrowed (STATO or NCIT, in published_classes) or one the
+    # APD defines itself in the glossary -- monthly presence, which no published
+    # vocabulary has. See APD_VALUE_TYPES.
+    type = paste0("<", c(published_classes_csv$Entity, glossary_csv$Entity)[
+      match(type, c(published_classes_csv$identifier, glossary_csv$identifier))], ">"),
     # A typed literal is "value"^^<datatype>. These were missing the "^^" and used
     # https:// for the XMLSchema namespace, which is http://. Without the "^^" a
     # conforming N-Triples parser cannot read the statement at all, and the
@@ -442,7 +448,7 @@ triples_with_labels <-
          value = ifelse(property == "unit" & stringr::str_detect(Object, "https"), units_csv$label[match(Object_stripped, units_csv$Entity)], value),
          value = ifelse(property %in% c("value type", "keyword", "measured characteristic", "has context object") & !stringr::str_detect(Object, "glossary\\_"),
                         published_classes_csv$label[match(Object_stripped, published_classes_csv$Entity)], value),
-         value = ifelse(property %in% c("keyword") & stringr::str_detect(Object, "glossary\\_"),
+         value = ifelse(property %in% c("value type", "keyword") & stringr::str_detect(Object, "glossary\\_"),
                         glossary_csv$label[match(Object_stripped, glossary_csv$Entity)], value),
          # Strip the datatype off the displayed value. Matches the XSD namespace on
          # either scheme: the literals used to be built with https:// (and without

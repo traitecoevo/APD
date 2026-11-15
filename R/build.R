@@ -6,6 +6,33 @@
 APD_TRAITS_BASE <- "https://w3id.org/APD/traits/"
 APD_GLOSSARY_BASE <- "https://w3id.org/APD/glossary/"
 
+# The value types a trait's `type` may name, and what each one means for the
+# rest of its definition: a numeric trait carries units and an allowed range, a
+# categorical trait a list of allowed values, and a monthly-presence or text trait
+# neither. The site renderer and validate_apd() both branch on this, so it is
+# the one place that says which identifier is which kind.
+#
+# Names are the identifiers written in APD_traits_input.yml; values are the
+# trait types traits.build uses for them (traitecoevo/traits.build#87). The
+# first two are borrowed from STATO and text from the NCI Thesaurus. Monthly
+# presence is the APD's own, defined in the glossary because no published
+# vocabulary has a term for it.
+APD_VALUE_TYPES <- c(
+  STATO_0000251 = "numeric",            # continuous variable
+  STATO_0000252 = "categorical",        # categorical variable
+  glossary_40126 = "monthly_presence",  # monthly presence
+  NCIT_C25704 = "text"                  # text
+)
+
+#' The kind of value a trait takes, from its value type
+#'
+#' @param type Value-type identifiers (`STATO_0000251`) or the URIs they
+#'   resolve to (`http://purl.obolibrary.org/obo/STATO_0000251`).
+#' @return The matching values of `APD_VALUE_TYPES`; `NA` for anything else.
+apd_value_kind <- function(type) {
+  unname(APD_VALUE_TYPES[sub(".*/", "", type)])
+}
+
 # Where the generated artefacts go. They used to sit at the repo root, which put
 # seven build products among the dozen files a contributor actually edits. They
 # are still published at the site root -- scripts/build_site.R copies them into

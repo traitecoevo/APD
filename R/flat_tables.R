@@ -68,7 +68,10 @@ apd_traits_table <- function(inputs) {
   traits <- inputs$traits
 
   # Glossary terms are looked up alongside the published classes, so that a
-  # keyword defined by the APD itself resolves to its label like any other.
+  # keyword defined by the APD itself resolves to its label like any other --
+  # and so does a value type the APD defines itself, which is how `trait_type`
+  # reads "monthly presence [glossary_40126]" beside "continuous variable
+  # [STATO_0000251]".
   #
   # `Entity` is dropped so glossary rows match what the CSV carries: no URI.
   # That means an exact/close/related match pointing at a glossary term renders
