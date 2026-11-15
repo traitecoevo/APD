@@ -28,6 +28,10 @@ Use [semver](https://semver.org/) as the family reads it: **major** for a breaki
 git checkout develop && git pull
 ```
 
+- If the trait definitions have moved on in austraits.build, import them first. Follow
+  `.claude/skills/apd-import-traits/SKILL.md`, which covers new traits, edits, URIs, dates
+  and matches, and lands as its own PR. A removed or renamed categorical value in that import is
+  breaking (CONTRIBUTING.md), so check its NEWS entry before choosing the bump.
 - Bump `Version:` in `DESCRIPTION`.
 - Add a `## APD Version <X.Y.Z>` section to `NEWS.md`. `make release` refuses without one, and the
   section immediately below yours is what the site publishes as "Previous version". If there is an

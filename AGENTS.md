@@ -11,7 +11,9 @@ al. 2024, doi:10.1038/s41597-024-03368-z).
   described in a published paper (Wenk et al. 2024), and that paper is a specification — several of its
   claims are promises this repo has to keep, and some are currently broken.
 - **Editing a trait?** [`CONTRIBUTING.md`](CONTRIBUTING.md) has the spreadsheet and YAML routes, and
-  what counts as a breaking change. **Cutting a release?** [`RELEASING.md`](RELEASING.md), whose last
+  what counts as a breaking change. **Bringing in trait definitions from austraits.build `traits.yml`**
+  (before each release) has its own skill:
+  [`.claude/skills/apd-import-traits/`](.claude/skills/apd-import-traits/SKILL.md). **Cutting a release?** [`RELEASING.md`](RELEASING.md), whose last
   three steps are outside this repo and are the ones that get missed.
 - **Source data:** `data/` holds the inputs that define the dictionary. **Trait definitions live in
   `APD_traits_input.yml`, which is the source of truth** — YAML was adopted in #43 because CSV diffs
@@ -64,6 +66,7 @@ Run `make` for the list of targets:
 | `make release` | `check` + `site` + version checks + snapshot into `release/<version>/` |
 | `make export-csv` | trait YAML → CSV, for spreadsheet editing |
 | `make import-csv` | CSV → trait YAML, printing the per-trait diff |
+| `make sync-hierarchy` | rewrite the trait hierarchy's `tier_*`/`hierarchy` columns from `Parent` |
 | `make clean` | delete `export/` and the Quarto cache |
 
 `Rscript scripts/sparql_examples.R` runs example SPARQL queries against `APD.nq`.

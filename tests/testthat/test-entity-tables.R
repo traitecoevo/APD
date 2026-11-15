@@ -10,6 +10,14 @@
 # of plans/build-workflow-overhaul.md replaces gt with a <dl> emitter, which will
 # change it on purpose -- when it does, re-pin it in the same commit.
 
+# Re-pinned for the November 2026 import from austraits.build traits.yml (192 new
+# traits, 730 categorical values added and 8 removed, edits to 168 existing traits
+# including the rain value dropped from seed_germination_treatment; references on
+# 21 traits).
+# Previously 25245423a5e2e6721f20b23b115a2e94, pinned for the vocabulary edits on
+# fixes-to-vocabularies (10 new trait groups, 2 categorical values, new published
+# classes, colon-form prose IDs).
+#
 # Re-pinned when plant_height_reproductive's allowed minimum was corrected from
 # 0.1 m to 0.001 m. Verified attributable: reverting that one value restores the
 # previous digest, f53f2c8acc0cffe907a32134265534dd, exactly.
@@ -33,7 +41,14 @@
 # And again when glossary_40126's definition gained its datatype (previous
 # digest eb07884bc28aa57d34cf7155d609bdd1); export/ changes only in that
 # definition.
-APD_ENTITY_TABLE_DIGEST <- "1139e69fcd9f0b612c1ad6dc7e964efe"
+# Re-pinned for the merge of develop's value types into the traits.yml import
+# (previous digests e9f7d7b994c66359617d8c53e9b6c04b on this branch and
+# 1139e69fcd9f0b612c1ad6dc7e964efe on develop). Verified attributable by
+# comparing every entity's rendering before and after the merge: six traits
+# differ in their value type only -- the four phenology traits and the imported
+# active_growing_time and dormancy_time, now monthly presence -- and
+# glossary_40126 is added. Nothing else moved.
+APD_ENTITY_TABLE_DIGEST <- "b623542a11ab94d94643774dd21b2d1a"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -68,8 +83,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 559 traits + 71 groups + 819 categorical values + 25 glossary terms
-  expect_identical(length(subjects), 1474L)
+  # 751 traits + 81 groups + 1,543 categorical values + 25 glossary terms
+  expect_identical(length(subjects), 2400L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -184,9 +199,9 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  # 16,803 before the monthly presence glossary term added six pairs.
-  expect_identical(rendered_pairs, 16809L)
-  expect_identical(length(dropped), 3034L)
+  # 24,884 before the monthly presence glossary term added six pairs.
+  expect_identical(rendered_pairs, 24890L)
+  expect_identical(length(dropped), 4202L)
 })
 
 test_that("no gt stylesheet reaches the page", {

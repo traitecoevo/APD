@@ -21,6 +21,54 @@ Monthly presence is a glossary term, <https://w3id.org/APD/glossary/glossary_401
 
 **`make check` now checks that a trait's type agrees with the rest of its definition.** A categorical trait must have allowable values, an allowable value must belong to a categorical trait, only a numeric trait may carry units or an allowed range, and the type must be one of the four. The first rule is the one the phenology traits broke.
 
+**192 new traits, imported from austraits.build.** Every definition in
+austraits.build `config/traits.yml` (`develop`, 2026-11-15) is now in the APD:
+new leaf, stem and root chemistry (sugars, starch, essential oils, nitrate, dead
+bark nutrients), stable isotopes, wood anatomy, leaf, flower and fruit morphology,
+pollination and nectar traits, breeding systems, chromosome counts, and two
+twelve-month traits (`active_growing_time`, `dormancy_time`), typed monthly
+presence like the four phenology traits above. Each has an APD
+identifier, ontology matches where the Plant Trait Ontology has a counterpart,
+TRY and BIEN matches where those databases have one, and constraints where a
+trait only applies to plants with a particular structure. Twenty traits cite the
+source of their definition, through six new entries in `APD_references.csv` (the
+IAWA hardwood feature list for 14 wood-anatomy traits; Fuller 2025 and Horsey &
+Watson 2012 for bark; Jordan 2008 for stomatal position; Richards 1997 and Lloyd &
+Schoen 1992 for breeding systems) and two already there (Chittka 1992 and 1994 for
+the bee colour-space traits). `bark_morphology_eucalyptus` gains the two bark
+references too. Their categorical
+traits bring 662 new allowable values. Three are named differently here than in
+traits.yml, ahead of the same renames there: `inflorescence_peduncle_length`
+(was `peduncle_length`), `seed_ovule_ratio` (was `seed_set_proportion`) and
+`leaf_heterophylly` (was `leaf_heterogeneity`).
+
+**167 existing traits are edited to match traits.yml**, and their `modified`
+dates move to the date of the austraits.build change. Most edits are wording,
+keywords and allowed ranges; 75 traits move into the trait groups added on this
+branch (post-fire recovery, flammability, regeneration life history, leaf surface
+morphology and others). 68 allowable values are added to existing traits.
+
+**Eight allowable values are removed, which is a breaking change.**
+`root_system_type` replaces `tap_root_present`, `tap_root_absent` and
+`tap_root_sometimes_present` with `taproot`, `taproot_absent` and
+`taproot_sometimes_present`; `bark_morphology_eucalyptus` loses
+`eucalypt_ribbonbark` to the new trait `bark_ribbon_type`; `stem_growth_habit`
+loses `compact` and `spindly`; `pollination_syndrome` loses `animal`; and
+`seed_germination_treatment` loses `rain`, since rain as a germination trigger
+is recorded under the new trait `germination_cues`.
+
+`pollination_system` (`trait_0030062`) is no longer in traits.yml, apparently
+superseded by `pollination_vector_known`, `pollination_vector_possible` and
+`flower_visitor`. It stays published here, unchanged.
+
+**The trait hierarchy's path columns now match its `Parent` links.** In
+`APD_trait_hierarchy.csv`, the `tier_*` and `hierarchy` columns spell out each
+group's full path, and had drifted from `Parent` — the link the RDF publishes as
+`skos:broader` — for 40 of 81 groups. They are now derived from `Parent` (`make
+sync-hierarchy`), a `tier_5` column holds the three five-level paths, and `make
+check` fails if they drift again. The published RDF is unchanged; the trait
+groups austraits.build builds from the `hierarchy` column change to match it.
+
 ## APD Version 2.2.0
 
 **No trait, allowable value, unit or APD identifier changed.** Nothing you have
