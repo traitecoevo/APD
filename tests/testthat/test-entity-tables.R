@@ -54,7 +54,16 @@
 # digest b623542a11ab94d94643774dd21b2d1a). Verified attributable by rendering
 # every entity with and without the change: the three values are added, and only
 # flowering_cues and storage_organ differ, in their value lists and modified dates.
-APD_ENTITY_TABLE_DIGEST <- "eeb4a29db1d0abaa74cdc8c0c1c855e2"
+#
+# Re-pinned for the rest of the edits taken ahead of traits.yml from unmerged
+# austraits.build branches (previous digest eeb4a29db1d0abaa74cdc8c0c1c855e2): five
+# allowable values, four widened ranges, and the labels of the three renamed traits.
+# Verified attributable by rendering every entity with and without the change: the
+# five values are added; the ten edited traits differ in exactly those fields and
+# their modified dates; and the new labels show wherever another entity links to
+# those traits (four trait groups and leaf_heterophylly's two values). Nothing else
+# moved.
+APD_ENTITY_TABLE_DIGEST <- "0d6b029a9a788b4ace582864655ed78b"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -89,8 +98,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 751 traits + 81 groups + 1,546 categorical values + 25 glossary terms
-  expect_identical(length(subjects), 2403L)
+  # 751 traits + 81 groups + 1,551 categorical values + 25 glossary terms
+  expect_identical(length(subjects), 2408L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -206,8 +215,9 @@ test_that("rendering drops only empty rows, across every entity", {
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
   # 24,884 before the monthly presence glossary term added six pairs, and 24,890
-  # before three new allowable values added six each.
-  expect_identical(rendered_pairs, 24908L)
+  # before three new allowable values added six each, and 24,908 before five more
+  # added six each.
+  expect_identical(rendered_pairs, 24938L)
   expect_identical(length(dropped), 4202L)
 })
 

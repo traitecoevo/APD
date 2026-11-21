@@ -57,6 +57,7 @@ dispersal_syndrome_myrmecochory,myrmecochory,"Diaspores have elaiosomes (special
 dispersal_syndrome_undefined,undefined,"Dispersal mechanism unknown. (Synonyms, unknown)",dispersal_syndrome
 dispersal_syndrome_zoochory,zoochory,"Diaspore is dispersed by animals, by an undescribed mechanism.",dispersal_syndrome
 dispersal_unit_fruit,fruit,Dispersal unit is a fruit.,dispersal_unit
+dispersal_unit_infructescence,infructescence,"Dispersal unit is a whole infructescence (e.g. an Asteraceae capitulum or burr) carrying the fruits or seeds.",dispersal_unit
 dispersal_unit_seed,seed,Dispersal unit is a seed.,dispersal_unit
 dispersal_unit_spore,spore,Dispersal unit is a spore.,dispersal_unit
 dispersal_unit_seedling,seedling,"Dispersal unit is a seedling. (Synonyms, viviparous)",dispersal_unit
@@ -150,6 +151,7 @@ flowering_cues_rain_summer,rain_summer,Plants increase flowering in response to 
 flowering_cues_rain_autumn,rain_autumn,Plants increase flowering in response to autumn rains.,flowering_cues
 flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to winter rains.,flowering_cues
 flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
+flowering_cues_low_temperature_following_rain,low_temperature_following_rain,Plants flower in response to a drop in temperature following (heavy) rain.,flowering_cues
 flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
 flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
 flowering_cues_disturbance,disturbance,Plants increase flowering in response to disturbance other than fire.,flowering_cues
@@ -582,6 +584,7 @@ plant_growth_substrate_epiphyte,epiphyte,A plant that grows upon another plant.,
 plant_growth_substrate_lithophyte,lithophyte,A plant that grows upon a rock.,plant_growth_substrate
 plant_growth_substrate_terrestrial,terrestrial,"A plant that grows on land, and generally referencing a plant that grows in soil.",plant_growth_substrate
 plant_growth_substrate_semiaquatic,semiaquatic,A plant that grows partially submerged in water or spends part of its life growing in water.,plant_growth_substrate
+plant_growth_substrate_swampy,swampy,"A plant that grows in swamps, marshes or swampy ground, where the soil is waterlogged or shallowly inundated for part of the year.",plant_growth_substrate
 plant_growth_substrate_aquatic,aquatic,A plant that grows in water.,plant_growth_substrate
 plant_growth_substrate_marine,marine,A plant that grows in the sea.,plant_growth_substrate
 plant_growth_substrate_hemiepiphyte,hemiepiphyte,"A plant that spends part of its life cycle as an epiphyte, growing upon another plant.",plant_growth_substrate
@@ -1092,6 +1095,8 @@ flower_shape_cruciform,cruciform,"Flower is cross-shaped, with four petals sprea
 flower_shape_campanulate,campanulate,"Flower is bell-shaped. (Synonyms, bell-shaped)",flower_shape
 flower_shape_cup-shaped,cup-shaped,Flower is cup-shaped.,flower_shape
 flower_shape_funnelform,funnelform,"Flower is funnel-shaped. (Synonyms, funnel-shaped)",flower_shape
+flower_shape_ligulate,ligulate,Flower has a strap-shaped corolla extended to one side.,flower_shape
+flower_shape_papilionaceous,papilionaceous,"Flower has a large upper petal (standard), two lateral petals (wings) and two lower petals joined into a keel. (Synonyms, papilionate)",flower_shape
 flower_shape_rotate,rotate,"Flower is open with un-fused petals. (Synonyms, open)",flower_shape
 flower_shape_salverform,salverform,"Flower is a long, narrow cylinder that flares fully open at the tip.",flower_shape
 flower_shape_tubulate,tubulate,"Flower is a long, narrow cylinder with little to no spreading at the tip. (Synonyms, tubular)",flower_shape

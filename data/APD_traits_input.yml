@@ -8330,7 +8330,7 @@ trait_0012355:
   related_match: TO_0000979
 trait_0012356:
   trait: inflorescence_peduncle_length
-  label: Peduncle length
+  label: Inflorescence peduncle length
   description_encoded: A shoot system morphology trait [TO:0000077] which is the length
     [PATO:0000122] of the peduncle [PO:0009053], the stalk that supports an inflorescence
     [PO:0009049] or a solitary flower [PO:0009046].
@@ -8338,13 +8338,13 @@ trait_0012356:
     solitary flower.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: '0.01'
-  max: '1500'
+  min: '0'
+  max: '2500'
   units: mm
   units_uom: millimetre
   category: trait_group_0012406
   created: '2026-08-31'
-  modified: '2026-11-15'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0009046; PO_0009049
   measured_characteristic: PATO_0000122; PATO_0000117
   keywords: GO_0000003; TO_0000373
@@ -8359,13 +8359,13 @@ trait_0012357:
   description: Length of the pedicel, the stalk supporting a single flower.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: '0.01'
+  min: '0'
   max: '1500'
   units: mm
   units_uom: millimetre
   category: trait_group_0012406
   created: '2026-09-15'
-  modified: '2026-11-15'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000122; PATO_0000117
   keywords: GO_0000003; TO_0000373
@@ -9156,7 +9156,7 @@ trait_0012440:
   type: STATO_0000252
   category: trait_group_0012404
   created: '2026-09-15'
-  modified: '2026-10-15'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000052; PATO_0001710; PATO_0000051; PATO_0001591
   keywords: GO_0000003; PO_0009058; PO_0009049
@@ -10011,13 +10011,13 @@ trait_0012485:
   description: The length of an individual flower petal.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: '1'
-  max: '100'
+  min: '0'
+  max: '150'
   units: mm
   units_uom: millimetre
   category: trait_group_0012406
   created: '2025-04-01'
-  modified: '2025-04-01'
+  modified: '2026-11-21'
   constraints: applicable to flowering plants
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000122; PATO_0000117
@@ -10220,13 +10220,13 @@ trait_0012495:
   description: The length of a bract.
   inScheme: https://w3id.org/APD
   type: STATO_0000251
-  min: '1'
-  max: '100'
+  min: '0'
+  max: '600'
   units: mm
   units_uom: millimetre
   category: trait_group_0012404
   created: '2026-09-15'
-  modified: '2026-09-15'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0025034
   measured_characteristic: PATO_0000122; PATO_0000117
   keywords: GO_0000003; PO_0009055
@@ -11047,7 +11047,7 @@ trait_0012624:
   type: STATO_0000252
   category: trait_group_0012604; trait_group_0012504
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2021-11-30'
   structure: PO_0025082; PO_0009010; PO_0009001
   measured_characteristic: PATO_0001995; PATO_0000141
@@ -11217,11 +11217,12 @@ trait_0012631:
   related_match: TO_0000852
 trait_0012632:
   trait: seed_ovule_ratio
-  label: Seed set proportion
-  description_encoded: A reproductive structure life history trait which is the proportion
-    [PATO:0001470] of ovules [PO:0020003] in a flower [PO:0009046] that develop into
-    mature [PATO:0001701] seeds [PO:0009010].
-  description: Proportion of ovules that develop into mature seeds.
+  label: Seed to ovule ratio
+  description_encoded: A reproductive structure life history trait which is the ratio
+    [PATO:0001470] of mature [PATO:0001701] seeds [PO:0009010] to ovules [PO:0020003]
+    in a flower [PO:0009046].
+  description: Ratio of mature seeds to ovules, i.e. the proportion of ovules that
+    develop into mature seeds.
   comments: If seed set is measured under different pollination treatments (e.g. open
     or natural pollination, pollinator exclusion, emasculation, hand self- or cross-pollination),
     these should be recorded.
@@ -11233,7 +11234,7 @@ trait_0012632:
   units_uom: '{count}/{count}'
   category: trait_group_0030706; trait_group_0030504
   created: '2026-11-14'
-  modified: '2026-11-14'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0009001; PO_0009010; PO_0009046
   measured_characteristic: PATO_0001555; STATO_0000300; PATO_0001470; NCIT_C25463
   keywords: GO_0000003; PO_0020003; GO_0009856; EnvThes:21061; TO_0000852
@@ -15630,7 +15631,7 @@ trait_0030015:
   type: STATO_0000252
   category: trait_group_0030006
   created: '2021-07-14'
-  modified: '2026-09-15'
+  modified: '2026-11-21'
   reviewed: '2022-10-31'
   constraints: none
   structure: PO_0000003
@@ -16184,7 +16185,7 @@ trait_0030036:
   related_match: TO_0000549
 trait_0030037:
   trait: leaf_heterophylly
-  label: Leaf heterogeneity
+  label: Leaf heterophylly
   description_encoded: A leaf shape trait [TO:0000492] which is whether the leaves
     [PO:0025034] borne by a plant [PO:0000003] are all of a single, uniform [NCIT:C73944]
     shape [PATO:0000052] and size [PATO:0000117] or are heterogenous [NCIT:C28359]
@@ -16200,7 +16201,7 @@ trait_0030037:
   type: STATO_0000252
   category: trait_group_0011304
   created: '2026-08-31'
-  modified: '2026-09-15'
+  modified: '2026-11-21'
   structure: PO_0025034
   measured_characteristic: PATO_0000052; PATO_0000117
   keywords: TO_0000492

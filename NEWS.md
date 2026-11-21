@@ -48,10 +48,23 @@ keywords and allowed ranges; 75 traits move into the trait groups added on this
 branch (post-fire recovery, flammability, regeneration life history, leaf surface
 morphology and others). 68 allowable values are added to existing traits.
 
-**Three allowable values are added ahead of traits.yml.** `flowering_cues` gains
-`disturbance` (flowering increases after disturbance other than fire) and
-`disturbance_independent` (plants do not require disturbance to flower), which
-threatened-species profiles already record. `storage_organ` gains `roots_woody`.
+**Edits ahead of traits.yml.** Some changes are taken from austraits.build
+branches that are not yet merged into `develop`, or are made here first:
+
+- Eight allowable values are added. `flowering_cues` gains `disturbance`
+  (flowering increases after disturbance other than fire), `disturbance_independent`
+  (plants do not require disturbance to flower) and `low_temperature_following_rain`;
+  `flower_shape` gains `ligulate` and `papilionaceous`; `dispersal_unit` gains
+  `infructescence`; `plant_growth_substrate` gains `swampy`; and `storage_organ`
+  gains `roots_woody`.
+- Four allowed ranges are widened: `inflorescence_peduncle_length` to 0–2,500 mm
+  (was 0.01–1,500), `pedicel_length` to a minimum of 0 mm (was 0.01),
+  `flower_petal_length` to 0–150 mm (was 1–100) and `flower_bract_length` to
+  0–600 mm (was 1–100).
+- The three renamed traits get labels to match their names: "Inflorescence
+  peduncle length", "Seed to ovule ratio" and "Leaf heterophylly". The definition
+  of `seed_ovule_ratio` is reworded as the ratio of mature seeds to ovules; it
+  measures the same thing.
 
 **Eight allowable values are removed, which is a breaking change.**
 `root_system_type` replaces `tap_root_present`, `tap_root_absent` and
