@@ -63,7 +63,12 @@
 # their modified dates; and the new labels show wherever another entity links to
 # those traits (four trait groups and leaf_heterophylly's two values). Nothing else
 # moved.
-APD_ENTITY_TABLE_DIGEST <- "0d6b029a9a788b4ace582864655ed78b"
+#
+# Re-pinned for TRY matches moved off four retired TRY traits (535, 829, 1229, 719)
+# (previous digest 0d6b029a9a788b4ace582864655ed78b). Verified attributable by
+# rendering every entity with and without the change: only the 15 traits whose
+# TRY match or modified date changed differ. Nothing else moved.
+APD_ENTITY_TABLE_DIGEST <- "dc95348c63d999e10c4e4f356593baa0"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -216,9 +221,10 @@ test_that("rendering drops only empty rows, across every entity", {
   expect_true(all(!nzchar(trimws(dropped))))
   # 24,884 before the monthly presence glossary term added six pairs, and 24,890
   # before three new allowable values added six each, and 24,908 before five more
-  # added six each.
-  expect_identical(rendered_pairs, 24938L)
-  expect_identical(length(dropped), 4202L)
+  # added six each. The three root_water_potential_*_lost_conductivity traits then
+  # lost their TRY match, which moved three rows from rendered to dropped (blank).
+  expect_identical(rendered_pairs, 24935L)
+  expect_identical(length(dropped), 4205L)
 })
 
 test_that("no gt stylesheet reaches the page", {

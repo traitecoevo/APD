@@ -1065,12 +1065,13 @@ trait_0000238:
   units_uom: milligram per gram
   category: trait_group_0000206
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   structure: PO_0009047
   measured_characteristic: PATO_0000125; ECSO_00000619; PATO_0001470
   keywords: CHEBI_25555; CHEBI_33937
   TOP_exact: Stem nitrogen content per stem dry mass [TOP501] (https://top-thesaurus.org/index)
-  TRY_exact: Stem nitrogen (N) content per stem dry mass [TRY:406] (https://www.try-db.org/de/de.php)
+  TRY_close: Stem / wood nitrogen (N) content per unit stem / wood dry mass [TRY:406]
+    (https://www.try-db.org/de/de.php)
 trait_0000416:
   trait: wood_C_per_dry_mass
   label: Wood carbon (C) content per unit wood dry mass
@@ -1165,12 +1166,13 @@ trait_0000438:
   units_uom: milligram per gram
   category: trait_group_0000408
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   structure: PO_0009047; PO_0005848
   measured_characteristic: PATO_0000125; ECSO_00000619; PATO_0001470
   keywords: CHEBI_25555; NCIT_C93062; CHEBI_33937; ENVO_01000628
   TOP_exact: Wood nitrogen content per wood dry mass trait [TOP742] (https://top-thesaurus.org/index)
-  TRY_exact: Wood nitrogen (N) content per wood dry mass [TRY:1229] (https://www.try-db.org/de/de.php)
+  TRY_exact: Stem / wood nitrogen (N) content per unit stem / wood dry mass [TRY:406]
+    (https://www.try-db.org/de/de.php)
 trait_0000440:
   trait: wood_Na_per_dry_mass
   label: Wood sodium (Na) content per unit wood dry mass
@@ -3644,11 +3646,12 @@ trait_0003011:
   units_uom: parts per thousand
   category: trait_group_0003004
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   structure: PO_0004518
   measured_characteristic: PATO_0000125; ECSO_00000619; PATO_0001470
   keywords: ECSO_00001142; ECSO_00000669; CHEBI_36928; NCIT_C47933
-  TRY_exact: Bark carbon (C) isotope signature (delta 13C) [TRY:829] (https://www.try-db.org/de/de.php)
+  TRY_close: Bark stable carbon isotope composition (delta 13C) (branch bark) [TRY:3712]
+    (https://www.try-db.org/de/de.php)
   BROT_related: Integrated water-use efficiency [BROT:16] (http://doi.org/10.1038/sdata.2018.135)
 trait_0003012:
   trait: leaf_delta13C
@@ -6942,11 +6945,11 @@ trait_0011710:
   units_uom: micromole per micromole
   category: trait_group_0011702
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   structure: PO_0025034
   measured_characteristic: STATO_0000300; PATO_0001470; ElectromagneticProperty; ENVO_01001023
   keywords: NCIT_C16940; NCIT_C17732; Transmission; ENVO_01001864
-  TRY_exact: Leaf light transmittance [TRY:535] (https://www.try-db.org/de/de.php)
+  TRY_exact: Leaf light transmission (transmittance) [TRY:4418] (https://www.try-db.org/de/de.php)
 trait_0011711:
   trait: leaf_absorption
   label: Leaf visible light absorption
@@ -14869,7 +14872,7 @@ trait_0021050:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2025-06-06'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   deprecated_trait_name: leaf_hydraulic_vulnerability
   structure: PO_0025034; PO_0009047
@@ -14877,8 +14880,8 @@ trait_0021050:
   reviewers: Timothy Brodribb; Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000131; TO_0000237; TO_0000276
-  TRY_exact: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_exact: Leaf xylem water potential at which 50% of conductance is lost [TRY:4543]
+    (https://www.try-db.org/de/de.php)
 trait_0021051:
   trait: stem_water_potential_12percent_lost_conductivity
   label: Stem xylem pressure, 12% lost conductivity (P12)
@@ -14897,7 +14900,7 @@ trait_0021051:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2025-06-03'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   deprecated_trait_name: water_potential_12percent_lost_conductivity
   structure: PO_0009047; PO_0025034
@@ -14905,8 +14908,8 @@ trait_0021051:
   reviewers: Timothy Brodribb; Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P88) [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_exact: Stem / branch xylem water potential at which 12% of conductivity is lost
+    (P12) [TRY:4502] (https://www.try-db.org/de/de.php)
 trait_0021052:
   trait: stem_water_potential_50percent_lost_conductivity
   label: Stem xylem pressure, 50% lost conductivity (P50)
@@ -14925,7 +14928,7 @@ trait_0021052:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2025-06-03'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   deprecated_trait_name: water_potential_50percent_lost_conductivity
   structure: PO_0009047; PO_0025034
@@ -14934,8 +14937,8 @@ trait_0021052:
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
   exact_match: CO_357:0000454
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P88) [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_exact: Stem / branch xylem water potential at which 50% of conductivity is lost
+    (P50) [TRY:4494] (https://www.try-db.org/de/de.php)
 trait_0021053:
   trait: stem_water_potential_88percent_lost_conductivity
   label: Stem xylem pressure, 88% lost conductivity (P88)
@@ -14954,7 +14957,7 @@ trait_0021053:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2025-06-03'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   deprecated_trait_name: water_potential_88percent_lost_conductivity
   structure: PO_0009047; PO_0025034
@@ -14962,8 +14965,8 @@ trait_0021053:
   reviewers: Timothy Brodribb; Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P88) [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_exact: Stem / branch xylem water potential at which 88% of conductivity is lost
+    (P88) [TRY:4495] (https://www.try-db.org/de/de.php)
 trait_0021054:
   trait: hydraulic_safety_margin_50
   label: Hydraulic safety margin, 50%
@@ -14988,15 +14991,15 @@ trait_0021054:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2026-10-15'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   structure: PO_0009047
   measured_characteristic: PATO_0002284; PATO_0001035
   reviewers: Timothy Brodribb; Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_related: 'Hydraulic safety margin: difference between Pmin and P50 [TRY:4334]
+    (https://www.try-db.org/de/de.php)'
   BROT_exact: Resistance to xylem cavitation [BROT:19] (http://doi.org/10.1038/sdata.2018.135)
 trait_0021055:
   trait: hydraulic_safety_margin_88
@@ -15022,15 +15025,15 @@ trait_0021055:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2026-10-15'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   structure: PO_0009047
   measured_characteristic: PATO_0002284; PATO_0001035
   reviewers: Timothy Brodribb; Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_related: 'Hydraulic safety margin: difference between Pmin and P88 [TRY:4335]
+    (https://www.try-db.org/de/de.php)'
   BROT_exact: Resistance to xylem cavitation [BROT:19] (http://doi.org/10.1038/sdata.2018.135)
 trait_0021056:
   trait: leaf_turgor_loss_point
@@ -15229,15 +15232,13 @@ trait_0021062:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2023-06-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2023-06-14'
   structure: PO_0009005
   measured_characteristic: PATO_0002284; PATO_0001035
   reviewers: Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
 trait_0021063:
   trait: root_water_potential_12percent_lost_conductivity
   label: Root xylem pressure, 12% lost conductivity (P12)
@@ -15256,15 +15257,13 @@ trait_0021063:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2023-06-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2023-06-14'
   structure: PO_0009005
   measured_characteristic: PATO_0002284; PATO_0001035
   reviewers: Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
 trait_0021064:
   trait: root_water_potential_88percent_lost_conductivity
   label: Root xylem pressure, 88% lost conductivity (P88)
@@ -15283,15 +15282,13 @@ trait_0021064:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2023-06-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2023-06-14'
   structure: PO_0009005
   measured_characteristic: PATO_0002284; PATO_0001035
   reviewers: Brendan Choat
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000237; TO_0000276
-  TRY_related: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
 trait_0021065:
   trait: leaf_water_potential_12percent_lost_conductivity
   label: Leaf xylem pressure, 12% lost conductance (P12)
@@ -15310,7 +15307,7 @@ trait_0021065:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   structure: PO_0025034; PO_0009047
   measured_characteristic: PATO_0002284; PATO_0001035
@@ -15318,8 +15315,8 @@ trait_0021065:
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000131; TO_0000237; TO_0000276
   related_match: TO_0000131
-  TRY_exact: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_related: Leaf xylem water potential at which 50% of conductance is lost [TRY:4543]
+    (https://www.try-db.org/de/de.php)
 trait_0021066:
   trait: leaf_water_potential_88percent_lost_conductivity
   label: Leaf xylem pressure, 88% lost conductance (P88)
@@ -15338,7 +15335,7 @@ trait_0021066:
   units_uom: megapascal
   category: trait_group_0021002
   created: '2021-07-14'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   structure: PO_0025034; PO_0009047
   measured_characteristic: PATO_0002284; PATO_0001035
@@ -15346,8 +15343,8 @@ trait_0021066:
   references: Cochard 2010; Venturas 2017
   keywords: EnvThes:22311; PO_0005352; EnvThes:22133; TO_0000131; TO_0000237; TO_0000276
   related_match: TO_0000131
-  TRY_exact: Xylem hydraulic vulnerability, xylem cavitation vulnerability, embolism
-    vulnerability, (P20, P50, P8 [TRY:719] (https://www.try-db.org/de/de.php)
+  TRY_related: Leaf xylem water potential at which 50% of conductance is lost [TRY:4543]
+    (https://www.try-db.org/de/de.php)
 trait_0021067:
   trait: leaf_relative_water_content
   label: Leaf relative water content

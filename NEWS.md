@@ -55,6 +55,23 @@ morphology and others). 68 allowable values are added to existing traits.
 `plant_growth_substrate` gains `swampy`; and `storage_organ` gains `roots_woody`.
 `flower_petal_length` now allows 0–150 mm (was 1–100 mm).
 
+**TRY matches updated for four retired TRY traits.** TRY has replaced traits 535,
+829, 1229 and 719 with more specific ones, so 15 traits now point at the current
+identifiers:
+
+- `leaf_transmission` is an exact match to TRY 4418 (was 535).
+- `wood_N_per_dry_mass` is an exact match to TRY 406 (was 1229), which
+  `stem_N_per_dry_mass` now matches closely rather than exactly.
+- `bark_delta13C` is a close match to TRY 3712, which is branch bark only (was an
+  exact match to 829).
+- TRY 719 covered xylem vulnerability as a whole. `stem_water_potential_12percent_lost_conductivity`,
+  `_50percent_` and `_88percent_` are now exact matches to TRY 4502, 4494 and 4495
+  (were related to 719). `leaf_water_potential_50percent_lost_conductivity` is an
+  exact match to TRY 4543, and the 12% and 88% leaf traits are related to it (all
+  three were exact matches to 719). `hydraulic_safety_margin_50` and `_88` are
+  related to TRY 4334 and 4335. The three `root_water_potential_*_lost_conductivity`
+  traits no longer have a TRY match, since TRY has no root equivalent.
+
 **Eight allowable values are removed, which is a breaking change.**
 `root_system_type` replaces `tap_root_present`, `tap_root_absent` and
 `tap_root_sometimes_present` with `taproot`, `taproot_absent` and
