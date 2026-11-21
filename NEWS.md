@@ -48,6 +48,11 @@ keywords and allowed ranges; 75 traits move into the trait groups added on this
 branch (post-fire recovery, flammability, regeneration life history, leaf surface
 morphology and others). 68 allowable values are added to existing traits.
 
+**Three allowable values are added ahead of traits.yml.** `flowering_cues` gains
+`disturbance` (flowering increases after disturbance other than fire) and
+`disturbance_independent` (plants do not require disturbance to flower), which
+threatened-species profiles already record. `storage_organ` gains `roots_woody`.
+
 **Eight allowable values are removed, which is a breaking change.**
 `root_system_type` replaces `tap_root_present`, `tap_root_absent` and
 `tap_root_sometimes_present` with `taproot`, `taproot_absent` and

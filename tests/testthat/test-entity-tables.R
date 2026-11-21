@@ -48,7 +48,13 @@
 # differ in their value type only -- the four phenology traits and the imported
 # active_growing_time and dormancy_time, now monthly presence -- and
 # glossary_40126 is added. Nothing else moved.
-APD_ENTITY_TABLE_DIGEST <- "b623542a11ab94d94643774dd21b2d1a"
+#
+# Re-pinned for three allowable values added ahead of traits.yml: flowering_cues
+# disturbance and disturbance_independent, and storage_organ roots_woody (previous
+# digest b623542a11ab94d94643774dd21b2d1a). Verified attributable by rendering
+# every entity with and without the change: the three values are added, and only
+# flowering_cues and storage_organ differ, in their value lists and modified dates.
+APD_ENTITY_TABLE_DIGEST <- "eeb4a29db1d0abaa74cdc8c0c1c855e2"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
@@ -83,8 +89,8 @@ test_that("every entity renders a table, and the markup has not changed", {
   subjects <- setdiff(subjects, c("https://w3id.org/APD/traits",
                                   "https://w3id.org/APD/glossary"))
 
-  # 751 traits + 81 groups + 1,543 categorical values + 25 glossary terms
-  expect_identical(length(subjects), 2400L)
+  # 751 traits + 81 groups + 1,546 categorical values + 25 glossary terms
+  expect_identical(length(subjects), 2403L)
 
   # Digest the HTML the builders return, not its printed form: a tibble prints to
   # the terminal width, and testthat pins that to 80 while an interactive session
@@ -199,8 +205,9 @@ test_that("rendering drops only empty rows, across every entity", {
   # Every dropped row was blank -- no value was lost, only labels with nothing
   # after them.
   expect_true(all(!nzchar(trimws(dropped))))
-  # 24,884 before the monthly presence glossary term added six pairs.
-  expect_identical(rendered_pairs, 24890L)
+  # 24,884 before the monthly presence glossary term added six pairs, and 24,890
+  # before three new allowable values added six each.
+  expect_identical(rendered_pairs, 24908L)
   expect_identical(length(dropped), 4202L)
 })
 

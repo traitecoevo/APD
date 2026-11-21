@@ -16847,7 +16847,7 @@ trait_0030213:
   type: STATO_0000252
   category: trait_group_0030008; trait_group_0030704
   created: '2023-05-19'
-  modified: '2024-02-05'
+  modified: '2026-11-21'
   structure: PO_0025082; PO_0009046
   measured_characteristic: PATO_0000165; PATO_0001309
   keywords: PO_0007016; TO_0002616; ENVO_01000203; EnvThes:20373; ENVO_01000786
@@ -17591,7 +17591,7 @@ trait_0030512:
   type: STATO_0000252
   category: trait_group_0030508; trait_group_0030710
   created: '2021-07-14'
-  modified: '2026-09-15'
+  modified: '2026-11-21'
   reviewed: '2023-05-31'
   structure: PO_0000003; PO_0009005; PO_0009047
   measured_characteristic: PATO_0000141; NCIT_C25518

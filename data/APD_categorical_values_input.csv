@@ -152,6 +152,8 @@ flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to 
 flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
 flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
 flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
+flowering_cues_disturbance,disturbance,Plants increase flowering in response to disturbance other than fire.,flowering_cues
+flowering_cues_disturbance_independent,disturbance_independent,Plants do not require disturbance to flower.,flowering_cues
 flower_structural_sex_type_bisexual,bisexual,Hermaphrodite; flowers with both male and female reproductive organs.,flower_structural_sex_type
 flower_structural_sex_type_incompletely_unisexual,incompletely_unisexual,Male flowers with pistillodes and/or female flowers with staminodes.,flower_structural_sex_type
 flower_structural_sex_type_unisexual,unisexual,Flowers with either male or female reproductive organs.,flower_structural_sex_type
@@ -660,6 +662,7 @@ storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carboh
 storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutrients, carbohydrates and water.",storage_organ
 storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
 storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
+storage_organ_roots_woody,roots_woody,Plants have woody roots.,storage_organ
 storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
 storage_organ_lignotuber_absent,lignotuber_absent,A plant that explicitly lacks a lignotuber.,storage_organ
 resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,Plants have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.,resprouting_capacity_non_fire_disturbance
