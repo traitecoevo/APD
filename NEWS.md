@@ -37,15 +37,14 @@ Watson 2012 for bark; Jordan 2008 for stomatal position; Richards 1997 and Lloyd
 Schoen 1992 for breeding systems) and two already there (Chittka 1992 and 1994 for
 the bee colour-space traits). `bark_morphology_eucalyptus` gains the two bark
 references too. Their categorical
-traits bring 664 new allowable values. Three are named differently here than in
-traits.yml, ahead of the same renames there: `inflorescence_peduncle_length`
-(was `peduncle_length`), `seed_ovule_ratio` (was `seed_set_proportion`) and
-`leaf_heterophylly` (was `leaf_heterogeneity`).
+traits bring 664 new allowable values. Three have different names here from the
+ones they were imported under: `inflorescence_peduncle_length` (`peduncle_length`),
+`seed_ovule_ratio` (`seed_set_proportion`) and `leaf_heterophylly`
+(`leaf_heterogeneity`).
 
-**167 existing traits are edited to match traits.yml**, and their `modified`
-dates move to the date of the austraits.build change. Most edits are wording,
-keywords and allowed ranges; 75 traits move into the trait groups added on this
-branch (post-fire recovery, flammability, regeneration life history, leaf surface
+**167 existing traits are edited**, and their `modified` dates move to the date
+of the change. Most edits are wording, keywords and allowed ranges; 75 traits move
+into the trait groups added in this release (post-fire recovery, flammability, regeneration life history, leaf surface
 morphology and others). 68 allowable values are added to existing traits.
 
 **Six more allowable values and a wider range.** `flowering_cues` gains
@@ -81,9 +80,9 @@ loses `compact` and `spindly`; `pollination_syndrome` loses `animal`; and
 `seed_germination_treatment` loses `rain`, since rain as a germination trigger
 is recorded under the new trait `germination_cues`.
 
-`pollination_system` (`trait_0030062`) is no longer in traits.yml, apparently
-superseded by `pollination_vector_known`, `pollination_vector_possible` and
-`flower_visitor`. It stays published here, unchanged.
+`pollination_system` (`trait_0030062`) stays published, unchanged. The new traits
+`pollination_vector_known`, `pollination_vector_possible` and `flower_visitor`
+record pollinators in more detail.
 
 **The trait hierarchy's path columns now match its `Parent` links.** In
 `APD_trait_hierarchy.csv`, the `tier_*` and `hierarchy` columns spell out each
