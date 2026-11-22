@@ -506,7 +506,9 @@
         let parent = rootData;
         let key = '';
         path.forEach(seg => {
-          key += '/' + seg;
+          // A separator no label can contain: with '/', a group "a/b" and a
+          // group "b" under "a" would be merged into one node.
+          key += '\u0000' + seg;
           let node = byPathKey.get(key);
           if (!node) {
             node = { name: seg, children: [] };
@@ -602,18 +604,23 @@
   let catOrder = [];
   let catColorVar = new Map();
 
-  function matchesFilters(traitId) {
-    const t = traitById.get(traitId);
+  function matchesFacets(t) {
     for (const fk of FACET_KEYS) {
       const set = activeFilters[fk];
       if (set.size && !(t[fk] || []).some(v => set.has(v))) return false;
     }
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      const hay = (t.label + ' ' + t.id + ' ' + t.description + ' ' + t.terms.join(' ')).toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
     return true;
+  }
+  function matchesSearch(t, q) {
+    if (!q) return true;
+    const hay = (t.label + ' ' + t.id + ' ' + t.description + ' ' + t.terms.join(' ')).toLowerCase();
+    return hay.includes(q.toLowerCase());
+  }
+  // The search dropdown uses the same test, so it never lists a trait that the
+  // filtered tree has pruned (clicking one did nothing) or misses one it shows.
+  function matchesFilters(traitId) {
+    const t = traitById.get(traitId);
+    return matchesFacets(t) && matchesSearch(t, searchQuery);
   }
   function filtersActive() {
     return !!searchQuery || FACET_KEYS.some(fk => activeFilters[fk].size);
@@ -814,12 +821,13 @@
   }
 
   // Close a group, or step up from it: the view moves to its parent.
+  // A domain closes like any other group, and the view then fits the whole tree.
   function closeGroup(d) {
-    if (!d.parent || d.parent === hroot) { resetTree(); return; }
+    if (!d.parent) { resetTree(); return; }
     collapseSubtree(d);
     setFocus(d.parent);
     update(d);
-    frame(d.parent);
+    if (d.parent === hroot) fitView(); else frame(d.parent);
   }
 
   // Keep a group open but close everything inside it.
@@ -847,6 +855,12 @@
   // The breadcrumb over the tree: the path to the group last opened. Clicking a
   // crumb closes everything below it.
   const crumbsEl = document.getElementById('tree-crumbs');
+  // Whether anything below the domains is open. A search or facet opens many
+  // branches while the focus stays on the root, so the focus alone cannot say
+  // whether there is anything to collapse.
+  function anyGroupOpen() {
+    return hroot.descendants().some(n => n.depth >= 2 && n.children);
+  }
   function setFocus(d) {
     focusNode = d;
     const path = d.ancestors().reverse();
@@ -855,7 +869,7 @@
       const name = i === 0 ? 'All groups' : n.data.name;
       return `<button class="tc${last ? ' current' : ''}" data-i="${i}"${last ? ' aria-current="true"' : ''}>${escapeHtml(name)}</button>`;
     }).join('<span class="sep">›</span>') +
-      `<button class="tc-reset" id="collapse-all" title="Close every group (Esc steps up one level)"${d === hroot ? ' disabled' : ''}>Collapse all</button>`;
+      `<button class="tc-reset" id="collapse-all" title="Close every group (Esc steps up one level)"${d === hroot && !anyGroupOpen() ? ' disabled' : ''}>Collapse all</button>`;
     crumbsEl.querySelectorAll('.tc').forEach(b => {
       b.addEventListener('click', () => {
         const target = path[+b.dataset.i];
@@ -867,7 +881,10 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape' || e.target.closest('input, textarea')) return;
-    if (focusNode && focusNode !== hroot) closeGroup(focusNode);
+    // Stepping up from a domain goes back to the starting view, which keeps the
+    // domains open, rather than closing the domain itself.
+    if (focusNode && focusNode.depth >= 2) closeGroup(focusNode);
+    else if (hroot && (focusNode !== hroot || anyGroupOpen())) resetTree();
   });
 
   /* ---------------------------------------------------------------
@@ -941,10 +958,15 @@
   // than the DOM (which is mid-transition). If they do not fit at a readable
   // scale, the anchor node is kept in view instead.
   const TOP_INSET = 52;   // the breadcrumb bar
+  // An embed that loads hidden (an inactive tab) has no size to fit to, so the
+  // fit is owed until it gets one; see the ResizeObserver below.
+  let fitOwed = false;
   function viewNodes(nodes, anchor, minScale) {
     const svgEl = svg.node();
     const w = svgEl.clientWidth, h = svgEl.clientHeight - TOP_INSET;
-    if (!w || !h || !nodes.length) return;
+    if (w <= 0 || h <= 0) { fitOwed = true; return; }
+    fitOwed = false;
+    if (!nodes.length) return;
     let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
     nodes.forEach(d => {
       const lw = d._lw ?? labelWidth(d);
@@ -968,6 +990,9 @@
     viewNodes([...ctx, d, ...(d.children || [])], d, 0.6);
   }
   function fitView() { viewNodes(hroot.descendants(), hroot, 0.15); }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(() => { if (fitOwed && hroot) fitView(); }).observe(svg.node());
+  }
   document.getElementById('zoom-in').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1.3);
   document.getElementById('zoom-out').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1 / 1.3);
   document.getElementById('zoom-reset').onclick = fitView;
@@ -1143,18 +1168,18 @@
 
   function renderSearchResults(q) {
     if (!q) { searchResults.classList.remove('open'); searchResults.innerHTML = ''; return; }
-    const ql = q.toLowerCase();
-    const matches = RAW.filter(t =>
-      t.label.toLowerCase().includes(ql) ||
-      t.id.toLowerCase().includes(ql) ||
-      t.terms.some(k => k.toLowerCase().includes(ql))
-    ).slice(0, 40);
+    const matches = RAW.filter(t => matchesFacets(t) && matchesSearch(t, q)).slice(0, 40);
     searchResults.innerHTML = matches.length
       ? matches.map(t => `<button data-id="${escapeHtml(t.id)}"><span class="sr-label">${escapeHtml(t.label)}</span><span class="sr-id mono">${escapeHtml(t.id)}</span></button>`).join('')
       : '<div class="search-empty">No traits found.</div>';
     searchResults.classList.add('open');
     searchResults.querySelectorAll('button[data-id]').forEach(b => {
-      b.addEventListener('click', () => revealTrait(b.dataset.id));
+      b.addEventListener('click', () => {
+        // The list is already filtered by the latest keystroke; bring the tree
+        // up to date before looking for the trait in it.
+        if (searchDebounce) { clearTimeout(searchDebounce); searchDebounce = null; applyFilters(); }
+        revealTrait(b.dataset.id);
+      });
     });
   }
 
@@ -1163,7 +1188,7 @@
     searchQuery = searchInput.value.trim();
     renderSearchResults(searchQuery);
     clearTimeout(searchDebounce);
-    searchDebounce = setTimeout(applyFilters, 150);
+    searchDebounce = setTimeout(() => { searchDebounce = null; applyFilters(); }, 150);
   });
   searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) renderSearchResults(searchInput.value.trim()); });
   document.addEventListener('click', (e) => {
@@ -1202,6 +1227,16 @@
   masterTreeData = buildGroupTree();
   sortTree(masterTreeData);
   renderFullTree();
+
+  // Label widths are measured on a canvas, which falls back to another font
+  // until Public Sans has loaded, so the first layout can space the levels for
+  // the wrong widths. Re-space them once it is in; the view is left where it is.
+  if (document.fonts && document.fonts.load) {
+    Promise.all([
+      document.fonts.load('400 11px "Public Sans"'),
+      document.fonts.load('600 12px "Public Sans"'),
+    ]).then(() => update(hroot)).catch(() => {});
+  }
 
 })();
 </script>

@@ -32,11 +32,13 @@ apd_split_field <- function(value) {
 #' @param paths Output of `apd_trait_group_paths()` (R/hierarchy.R).
 #' @return A list of `list(path, resolved)`; `resolved` is `FALSE` for an
 #'   identifier missing from the hierarchy, whose path is the identifier alone.
+#'   The root group is in the hierarchy with an empty path, so it is resolved,
+#'   and dropped as an ancestor whenever the trait names any other group.
 apd_trait_end_groups <- function(ids, paths) {
 
   groups <- lapply(unique(sub("^APD:", "", ids)), function(id) {
     path <- paths[[id]]
-    if (length(path) == 0) {
+    if (is.null(path)) {
       list(path = id, resolved = FALSE)
     } else {
       list(path = path, resolved = TRUE)
@@ -94,7 +96,9 @@ apd_trait_browser_data <- function(inputs) {
       uri = paste0(trait$inScheme, "/traits/", trait$identifier),
       label = text(trait$label),
       description = text(trait$description),
-      type = text(apd_lookup(trait$type, terms, "identifier", "label")),
+      type = text(dplyr::coalesce(
+        apd_lookup(trait$type, terms, "identifier", "label"), trait$type
+      )),
       units = text(trait$units),
       structure_measured = I(structure),
       characteristic_measured = I(labels_for(trait$measured_characteristic)),
@@ -137,8 +141,12 @@ apd_write_trait_browser <- function(inputs,
     list(version = version, built = format(built), traits = traits),
     auto_unbox = TRUE
   )
-  # A literal `</` inside the block would end the <script> element early.
-  json <- stringi::stri_replace_all_fixed(json, "</", "<\\/")
+  # Every `<` is written as `\u003c`, which JSON.parse reads back as `<`. A
+  # literal `</script` inside the block would end the element early, and a
+  # `<!--` followed by `<script` would stop the real `</script>` ending it at
+  # all, so the page's own code would be read as data. Escaping `</` alone
+  # covered only the first.
+  json <- stringi::stri_replace_all_fixed(json, "<", "\\u003c")
 
   at <- regexpr(APD_TRAIT_BROWSER_BLOCK, page, fixed = TRUE)
   filled <- paste0(

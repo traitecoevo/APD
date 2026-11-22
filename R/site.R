@@ -86,7 +86,7 @@ apd_missing_anchors <- function(html = file.path("docs", "index.html"),
 #' break `quarto preview`, which serves the project at `/`.
 #'
 #' Text substitution rather than a JSON round trip, so the diff is confined to
-#' the field being changed and no `jsonlite` dependency is added for one edit.
+#' the field being changed.
 #'
 #' @param path Path to the rendered `search.json`.
 #' @return The number of hrefs rewritten, invisibly.

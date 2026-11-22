@@ -14,6 +14,15 @@ test_that("an ancestor group is dropped and an unknown one is flagged", {
   expect_identical(vapply(groups, `[[`, logical(1), "resolved"), c(TRUE, FALSE))
 })
 
+test_that("the root group is known, and dropped beside any other group", {
+  # The root's path is empty, which is not the same as missing.
+  paths <- list(g0 = character(0), g1 = "plant morphology trait")
+
+  expect_identical(apd_trait_end_groups(c("g0", "g1"), paths),
+                   list(list(path = "plant morphology trait", resolved = TRUE)))
+  expect_true(apd_trait_end_groups("g0", paths)[[1]]$resolved)
+})
+
 test_that("every trait is in the browser, under a known group", {
   inputs <- apd_read_inputs(APD_DATA)
   traits <- apd_trait_browser_data(inputs)
@@ -56,9 +65,39 @@ test_that("the page is written with its data filled in", {
   expect_identical(data$built, "2026-01-02")
   expect_length(data$traits, n)
 
+  # scripts/check_redirects.sh finds the live page's version by this exact
+  # string, so a reordered or pretty-printed block would fail only after deploy.
+  expect_true(grepl('id="trait-data">{"version":"9.9.9"', page, fixed = TRUE))
+
   # A one-element list must still be an array, or the page's .map() fails.
   one <- Filter(function(t) length(t$structure_measured) == 1, data$traits)[[1]]
   expect_type(one$structure_measured, "list")
+})
+
+test_that("markup in a definition cannot end the data block", {
+  # `</script>` would close the block early; `<!--` then `<script` would stop
+  # the real `</script>` closing it, swallowing the page's code as data.
+  hostile <- "a </script> b <!--<script> c"
+  inputs <- apd_read_inputs(APD_DATA)
+  inputs$traits$description[[1]] <- hostile
+
+  out <- withr::local_tempfile(fileext = ".html")
+  apd_write_trait_browser(
+    inputs,
+    template = file.path(APD_ROOT, "assets", "trait_browser.html"),
+    out = out, version = "9.9.9"
+  )
+
+  page <- readr::read_file(out)
+  block <- regmatches(page, regexec(
+    '<script type="application/json" id="trait-data">(.*?)</script>', page,
+    perl = TRUE
+  ))[[1]][2]
+
+  expect_false(grepl("<", block, fixed = TRUE))
+  data <- jsonlite::fromJSON(block, simplifyVector = FALSE)
+  descriptions <- vapply(data$traits, `[[`, "", "description")
+  expect_true(hostile %in% descriptions)
 })
 
 test_that("a template without exactly one empty data block is refused", {
