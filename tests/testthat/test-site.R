@@ -137,3 +137,53 @@ test_that("the canonical link is added after the render, and only once", {
   expect_error(apd_add_canonical_link(headless, "https://example.org/"),
                "</head>")
 })
+
+test_that("a snapshot's links to unsnapshotted pages go to the live site", {
+  dir <- withr::local_tempdir()
+  writeLines("", file.path(dir, "APD.ttl"))
+  html <- file.path(dir, "index.html")
+  writeLines(paste(
+    '<a href="./index.html">', '<a href="APD.ttl">', '<a href="./news.html">',
+    '<a href="using_the_APD.html#example">', '<a href="#trait_0000012">',
+    '<a href="https://w3id.org/APD/">', '<a href="mailto:x@y.z">'
+  ), html)
+
+  n <- apd_pin_snapshot_links(html, url = "https://example.org/APD/")
+
+  page <- readr::read_file(html)
+  expect_identical(n, 2L)
+  # In the snapshot, so still relative.
+  expect_match(page, 'href="./index.html"', fixed = TRUE)
+  expect_match(page, 'href="APD.ttl"', fixed = TRUE)
+  # Not in it: the live page, keeping any fragment.
+  expect_match(page, 'href="https://example.org/APD/news.html"', fixed = TRUE)
+  expect_match(page, 'href="https://example.org/APD/using_the_APD.html#example"',
+               fixed = TRUE)
+  # Not relative paths at all.
+  expect_match(page, 'href="#trait_0000012"', fixed = TRUE)
+  expect_match(page, 'href="https://w3id.org/APD/"', fixed = TRUE)
+  expect_match(page, 'href="mailto:x@y.z"', fixed = TRUE)
+
+  # Running it again changes nothing.
+  expect_identical(apd_pin_snapshot_links(html, url = "https://example.org/APD/"),
+                   0L)
+})
+
+test_that("the shipped 2.2.0 snapshot would lose exactly its two navbar 404s", {
+  # release/2.2.0/ is an archive and is not rewritten; this runs on a copy, as
+  # evidence the rule picks out the broken links and nothing else.
+  shipped <- file.path(APD_ROOT, "release", "2.2.0")
+  dir <- withr::local_tempdir()
+  file.copy(list.files(shipped, full.names = TRUE), dir)
+
+  n <- apd_pin_snapshot_links(file.path(dir, "index.html"),
+                              url = "https://traitecoevo.github.io/APD/")
+
+  page <- readr::read_file(file.path(dir, "index.html"))
+  expect_identical(n, 2L)
+  expect_match(page, 'href="https://traitecoevo.github.io/APD/news.html"',
+               fixed = TRUE)
+  expect_match(page,
+               'href="https://traitecoevo.github.io/APD/using_the_APD.html"',
+               fixed = TRUE)
+})

@@ -169,3 +169,47 @@ apd_add_canonical_link <- function(html = file.path("docs", "index.html"),
 
   invisible(TRUE)
 }
+
+#' Point a snapshot's links at the live site where the snapshot cannot serve them
+#'
+#' `make release` copies the rendered index.html into release/<version>/, and
+#' the page's relative links come with it. The ones to files the snapshot
+#' carries (APD.ttl, APD_traits.csv, index.html itself) still resolve there. The
+#' navbar's links to the site's other pages (news.html, using_the_APD.html) do
+#' not, because those pages are never snapshotted, so every shipped snapshot
+#' links to two 404s. This rewrites each relative link whose target is not in
+#' the snapshot to the same path on the live site, and leaves the rest alone.
+#'
+#' It runs on the snapshot rather than the render, so `make site` still yields a
+#' docs/ whose links work in a local preview.
+#'
+#' @param html Path to the snapshot's index.html.
+#' @param dir The snapshot directory, whose files decide which links stay.
+#' @param url The live site's URL, with a trailing slash.
+#' @return The number of links rewritten, invisibly.
+apd_pin_snapshot_links <- function(html, dir = dirname(html),
+                                   url = apd_site_url()) {
+
+  page <- readr::read_file(html)
+
+  # Every href value; absolute, root-relative, protocol-relative, fragment-only
+  # and scheme links (mailto:, data:, javascript:) are not relative paths.
+  at <- gregexpr('href="[^"]*"', page)
+  hrefs <- regmatches(page, at)[[1]]
+  values <- substr(hrefs, 7, nchar(hrefs) - 1)
+
+  relative <- !grepl("^([a-zA-Z][a-zA-Z0-9+.-]*:|/|#)", values) &
+    nzchar(values)
+  path <- sub("^(\\./)+", "", values)
+  file <- sub("[?#].*$", "", path)
+  missing <- relative & !file.exists(file.path(dir, file))
+
+  hrefs[missing] <- sprintf('href="%s%s"', url, path[missing])
+  regmatches(page, at) <- list(hrefs)
+
+  if (any(missing)) {
+    readr::write_file(page, html)
+  }
+
+  invisible(sum(missing))
+}
