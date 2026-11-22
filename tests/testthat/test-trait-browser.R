@@ -2,21 +2,6 @@
 # website and data portal, so a browser that silently drops traits, or files them
 # under the wrong group, is published to more places than this site.
 
-test_that("trait group paths follow the Parent links, without the root", {
-  hierarchy <- tibble::tibble(
-    identifier = c("g0", "g1", "g2"),
-    label = c("plant trait", "plant morphology trait", "leaf morphology trait"),
-    Parent = c("http://www.w3.org/2004/02/skos/core#Concept",
-               "https://w3id.org/APD/traits/g0",
-               "https://w3id.org/APD/traits/g1")
-  )
-
-  paths <- apd_trait_group_paths(hierarchy)
-
-  expect_identical(paths$g0, character(0))
-  expect_identical(paths$g2, c("plant morphology trait", "leaf morphology trait"))
-})
-
 test_that("an ancestor group is dropped and an unknown one is flagged", {
   paths <- list(g1 = "plant morphology trait",
                 g2 = c("plant morphology trait", "leaf morphology trait"))
@@ -41,13 +26,15 @@ test_that("every trait is in the browser, under a known group", {
 })
 
 test_that("labels containing the field delimiter stay whole", {
-  # "ratio; proportion" is one class. Splitting the flat CSV's pasted string
-  # would make it two -- the reason the browser reads the inputs instead.
+  # "ratio; proportion" (PATO_0001470) is one class. Splitting the flat CSV's
+  # pasted string would make it two -- the reason the browser reads the inputs
+  # instead. A split shows as a bare "ratio", which no class is labelled;
+  # "proportion" alone is a class of its own (NCIT_C49159), so it proves nothing.
   traits <- apd_trait_browser_data(apd_read_inputs(APD_DATA))
   characteristics <- unlist(lapply(traits, `[[`, "characteristic_measured"))
 
   expect_true("ratio; proportion" %in% characteristics)
-  expect_false("proportion" %in% characteristics)
+  expect_false("ratio" %in% characteristics)
 })
 
 test_that("the page is written with its data filled in", {

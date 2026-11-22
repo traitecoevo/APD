@@ -13,11 +13,6 @@ format:
 ---
 ## Unreleased
 
-**New: a trait browser** at
-[trait_browser.html](https://traitecoevo.github.io/APD/trait_browser.html) — every
-trait in a zoomable tree by trait group, searchable by name, structure measured,
-characteristic measured and keyword. It is rebuilt from the dictionary with the
-rest of the site, so it always matches the current release.
 **Breaking: eight allowable values are removed.** `root_system_type` replaces
 `tap_root_present`, `tap_root_absent` and `tap_root_sometimes_present` with
 `taproot`, `taproot_absent` and `taproot_sometimes_present`.
@@ -25,6 +20,12 @@ rest of the site, so it always matches the current release.
 `bark_ribbon_type`. `stem_growth_habit` loses `compact` and `spindly`, and
 `pollination_syndrome` loses `animal`. `seed_germination_treatment` loses `rain`,
 which is now recorded under the new trait `germination_cues`.
+
+**New: a trait browser** at
+[trait_browser.html](https://traitecoevo.github.io/APD/trait_browser.html) — every
+trait in a zoomable tree by trait group, searchable by name, structure measured,
+characteristic measured and keyword. It is rebuilt from the dictionary with the
+rest of the site, so it always matches the current release.
 
 **192 new traits, imported from austraits.build** (2026-11-15), with 664 allowable
 values. They cover leaf, stem and root chemistry (sugars, starch, essential oils,

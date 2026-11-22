@@ -21,37 +21,6 @@ apd_split_field <- function(value) {
   stringr::str_trim(stringr::str_split(value, "; ")[[1]])
 }
 
-#' Root-to-leaf label path for every trait group
-#'
-#' Follows each group's `Parent` link rather than reading the `tier_*` columns.
-#' The tiers are maintained by hand and a few rows disagree with the links -- an
-#' earlier version of this browser, built from the tiers, had to repair five of
-#' them. The root, "plant trait", is left off: every path would start with it.
-#'
-#' @param hierarchy The `hierarchy` table from `apd_read_inputs()`.
-#' @return A named list of character vectors of labels, keyed by group
-#'   identifier.
-apd_trait_group_paths <- function(hierarchy) {
-
-  parent <- stats::setNames(sub(".*/", "", hierarchy$Parent),
-                            hierarchy$identifier)
-  label <- stats::setNames(hierarchy$label, hierarchy$identifier)
-
-  path_to <- function(id) {
-    path <- character(0)
-    while (parent[[id]] %in% names(parent)) {
-      if (label[[id]] %in% path) {
-        stop("The trait hierarchy has a cycle at ", id, call. = FALSE)
-      }
-      path <- c(label[[id]], path)
-      id <- parent[[id]]
-    }
-    path
-  }
-
-  stats::setNames(lapply(hierarchy$identifier, path_to), hierarchy$identifier)
-}
-
 #' The trait groups a trait is drawn under
 #'
 #' Each entry in a trait's `category` field is a group it belongs to in its own
@@ -60,7 +29,7 @@ apd_trait_group_paths <- function(hierarchy) {
 #' drawn, and is dropped.
 #'
 #' @param ids Group identifiers from one trait's `category` field.
-#' @param paths Output of `apd_trait_group_paths()`.
+#' @param paths Output of `apd_trait_group_paths()` (R/hierarchy.R).
 #' @return A list of `list(path, resolved)`; `resolved` is `FALSE` for an
 #'   identifier missing from the hierarchy, whose path is the identifier alone.
 apd_trait_end_groups <- function(ids, paths) {
