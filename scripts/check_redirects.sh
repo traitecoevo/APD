@@ -179,6 +179,38 @@ for path in APD_traits.csv APD_categorical_values.csv APD.ttl APD.nt APD.nq \
 done
 
 
+# --- trait browser -----------------------------------------------------------
+#
+# The AusTraits website and data portal embed /APD/trait_browser.html, so its
+# URL is a published interface: COMMITMENTS.md C14. A missing page would 404,
+# but a deploy could also serve the unfilled template from assets/ or a page left
+# over from an earlier release, so check for the data block too: it is filled in
+# at `make site` and opens with the version it was built from.
+#
+# 2.2.0 and earlier have no browser. Until the first release after it deploys,
+# this runs weekly against a site that cannot have one, so say so and move on;
+# from that release on, a missing browser fails like any other published URL.
+
+section "Trait browser -- COMMITMENTS.md C14"
+
+if [[ "$(printf '%s\n' 2.2.0 "$APD_VERSION" | sort -V | tail -n 1)" == 2.2.0 ]]; then
+  printf '[ info ] %-44s %s\n' "trait_browser.html" \
+    "not checked: $APD_VERSION predates the browser"
+else
+  code="$("${CURL[@]}" -w '%{http_code}' "$SITE/trait_browser.html")"
+  body="$(curl -s -L --retry 3 --max-time 30 "$SITE/trait_browser.html")"
+  marker="id=\"trait-data\">{\"version\":\"$APD_VERSION\""
+  if [[ "$body" == *"$marker"* ]]; then
+    actual="$code browser $APD_VERSION"
+  elif [[ "$body" == *'id="trait-data"'* ]]; then
+    actual="$code browser, not $APD_VERSION or unfilled"
+  else
+    actual="$code no browser"
+  fi
+  expect "trait_browser.html" "$actual" "200 browser $APD_VERSION"
+fi
+
+
 # --- summary -----------------------------------------------------------------
 
 printf '\n%s\n' "$(printf '%.0s-' {1..78})"

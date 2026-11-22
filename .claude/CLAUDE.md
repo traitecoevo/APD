@@ -28,7 +28,7 @@ Process only. Anything about *what this repo contains* goes in `AGENTS.md`.
   `release/<version>/` is an archive — `make release` refuses to overwrite one, and
   `APD_FORCE_RELEASE=1` is only for a release you are still preparing.
 - **Published URLs never move.** They are what the paper, the w3id redirects and downstream packages
-  resolve. `COMMITMENTS.md` C12 is the list; changing where a file sits in this repo is fine, changing
+  resolve. `COMMITMENTS.md` C12–C14 are the list; changing where a file sits in this repo is fine, changing
   where it is served from is not.
 - **Cutting a release? Follow [`RELEASING.md`](../RELEASING.md) step by step, in order.** Four of its
   steps gate the ones after them, and 2.1.2 went wrong in three places by treating the list as
