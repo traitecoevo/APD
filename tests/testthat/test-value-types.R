@@ -21,6 +21,11 @@ PUBLISHED_TRAIT_TYPES <- c(
 PHENOLOGY_TRAITS <- c("flowering_time", "fruiting_time", "foliage_time",
                       "recruitment_time")
 
+# The traits typed monthly presence: the four phenology traits, and the two
+# twelve-month traits from the November 2026 traits.yml import.
+MONTHLY_PRESENCE_TRAITS <- c(PHENOLOGY_TRAITS, "active_growing_time",
+                             "dormancy_time")
+
 test_that("every value type is a defined, labelled term", {
   inputs <- apd_test_inputs()
   terms <- dplyr::bind_rows(
@@ -61,7 +66,7 @@ test_that("APD_traits.csv publishes each trait's type as downstream reads it", {
 
   month <- traits$trait[traits$trait_type ==
                           PUBLISHED_TRAIT_TYPES[["monthly_presence"]]]
-  expect_setequal(month, PHENOLOGY_TRAITS)
+  expect_setequal(month, MONTHLY_PRESENCE_TRAITS)
 })
 
 test_that("the value-type checks pass on the dictionary and fire when broken", {

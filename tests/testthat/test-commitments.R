@@ -17,9 +17,9 @@ test_that("C1: every entity has a unique, well-formed URI", {
   # would make the URI ambiguous, which is the one failure C1 cannot survive.
   expect_false(any(duplicated(entities)))
 
-  # 559 traits + 71 groups + 819 categorical values + 25 glossary terms, one of
+  # 751 traits + 81 groups + 1,551 categorical values + 25 glossary terms, one of
   # which is the value type monthly presence
-  expect_identical(length(entities), 1474L)
+  expect_identical(length(entities), 2408L)
 })
 
 test_that("C1: categorical value URIs sit under traits/, as published", {
