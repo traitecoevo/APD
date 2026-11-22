@@ -13,84 +13,73 @@ format:
 ---
 ## Unreleased
 
-**Two new value types: monthly presence and text.** Every trait's value type used to be a continuous or a categorical variable, both terms from the Statistical Methods Ontology (STATO). The four phenology traits, `flowering_time`, `fruiting_time`, `foliage_time` and `recruitment_time`, are neither: a value is twelve characters, `Y` or `N` for each month starting with January. They were typed categorical while having no allowable values, which left `austraits.build` generating an empty list of allowed values for them. They are now typed **monthly presence**. The second new type, **text**, is for free text values such as taxon names; no trait uses it yet. See [traitecoevo/traits.build#87](https://github.com/traitecoevo/traits.build/issues/87).
+**Breaking: eight allowable values are removed.** `root_system_type` replaces
+`tap_root_present`, `tap_root_absent` and `tap_root_sometimes_present` with
+`taproot`, `taproot_absent` and `taproot_sometimes_present`.
+`bark_morphology_eucalyptus` loses `eucalypt_ribbonbark` to the new trait
+`bark_ribbon_type`. `stem_growth_habit` loses `compact` and `spindly`, and
+`pollination_syndrome` loses `animal`. `seed_germination_treatment` loses `rain`,
+which is now recorded under the new trait `germination_cues`.
 
-Monthly presence is a glossary term, <https://w3id.org/APD/glossary/glossary_40126>, because no published vocabulary has a term for it. Text is borrowed from the NCI Thesaurus, [`NCIT_C25704`](http://purl.obolibrary.org/obo/NCIT_C25704).
-
-**What changes for consumers.** In `APD_traits.csv`, the `trait_type` of the four phenology traits reads `monthly presence [glossary_40126]` where it read `categorical variable [STATO_0000252]`, and a text trait would read `text [NCIT_C25704]`. In the RDF, their `ets:valueType` is the glossary term rather than `obo:STATO_0000252`. Code that treats every trait that is not a continuous variable as categorical still runs, and still sees these four as categorical traits with no values, as before. No other trait, value, unit or range changed, and `APD_categorical_values.csv` is unchanged. The graph grows from 27,510 to 27,520 statements: the monthly presence term and the glossary's listing of it, and the label and identifier of the borrowed text term. On the site, each of the four traits now shows its format beside its value type.
-
-**`make check` now checks that a trait's type agrees with the rest of its definition.** A categorical trait must have allowable values, an allowable value must belong to a categorical trait, only a numeric trait may carry units or an allowed range, and the type must be one of the four. The first rule is the one the phenology traits broke.
-
-**192 new traits, imported from austraits.build.** Every definition in
-austraits.build `config/traits.yml` (`develop`, 2026-11-15) is now in the APD:
-new leaf, stem and root chemistry (sugars, starch, essential oils, nitrate, dead
-bark nutrients), stable isotopes, wood anatomy, leaf, flower and fruit morphology,
-pollination and nectar traits, breeding systems, chromosome counts, and two
-twelve-month traits (`active_growing_time`, `dormancy_time`), typed monthly
-presence like the four phenology traits above. Each has an APD
-identifier, ontology matches where the Plant Trait Ontology has a counterpart,
-TRY and BIEN matches where those databases have one, and constraints where a
-trait only applies to plants with a particular structure. Twenty traits cite the
-source of their definition, through six new entries in `APD_references.csv` (the
-IAWA hardwood feature list for 14 wood-anatomy traits; Fuller 2025 and Horsey &
-Watson 2012 for bark; Jordan 2008 for stomatal position; Richards 1997 and Lloyd &
-Schoen 1992 for breeding systems) and two already there (Chittka 1992 and 1994 for
-the bee colour-space traits). `bark_morphology_eucalyptus` gains the two bark
-references too. Their categorical
-traits bring 664 new allowable values. Three have different names here from the
-ones they were imported under: `inflorescence_peduncle_length` (`peduncle_length`),
-`seed_ovule_ratio` (`seed_set_proportion`) and `leaf_heterophylly`
-(`leaf_heterogeneity`).
-
-**167 existing traits are edited**, and their `modified` dates move to the date
-of the change. Most edits are wording, keywords and allowed ranges; 75 traits move
-into the trait groups added in this release (post-fire recovery, flammability, regeneration life history, leaf surface
-morphology and others). 68 allowable values are added to existing traits.
-
-**Six more allowable values and a wider range.** `flowering_cues` gains
-`disturbance` (flowering increases after disturbance other than fire),
-`disturbance_independent` (plants do not require disturbance to flower) and
-`low_temperature_following_rain`; `dispersal_unit` gains `infructescence`;
-`plant_growth_substrate` gains `swampy`; and `storage_organ` gains `roots_woody`.
-`flower_petal_length` now allows 0–150 mm (was 1–100 mm).
-
-**TRY matches updated for four retired TRY traits.** TRY has replaced traits 535,
-829, 1229 and 719 with more specific ones, so 15 traits now point at the current
-identifiers:
-
-- `leaf_transmission` is an exact match to TRY 4418 (was 535).
-- `wood_N_per_dry_mass` is an exact match to TRY 406 (was 1229), which
-  `stem_N_per_dry_mass` now matches closely rather than exactly.
-- `bark_delta13C` is a close match to TRY 3712, which is branch bark only (was an
-  exact match to 829).
-- TRY 719 covered xylem vulnerability as a whole. `stem_water_potential_12percent_lost_conductivity`,
-  `_50percent_` and `_88percent_` are now exact matches to TRY 4502, 4494 and 4495
-  (were related to 719). `leaf_water_potential_50percent_lost_conductivity` is an
-  exact match to TRY 4543, and the 12% and 88% leaf traits are related to it (all
-  three were exact matches to 719). `hydraulic_safety_margin_50` and `_88` are
-  related to TRY 4334 and 4335. The three `root_water_potential_*_lost_conductivity`
-  traits no longer have a TRY match, since TRY has no root equivalent.
-
-**Eight allowable values are removed, which is a breaking change.**
-`root_system_type` replaces `tap_root_present`, `tap_root_absent` and
-`tap_root_sometimes_present` with `taproot`, `taproot_absent` and
-`taproot_sometimes_present`; `bark_morphology_eucalyptus` loses
-`eucalypt_ribbonbark` to the new trait `bark_ribbon_type`; `stem_growth_habit`
-loses `compact` and `spindly`; `pollination_syndrome` loses `animal`; and
-`seed_germination_treatment` loses `rain`, since rain as a germination trigger
-is recorded under the new trait `germination_cues`.
-
-`pollination_system` (`trait_0030062`) stays published, unchanged. The new traits
+**192 new traits, imported from austraits.build** (2026-11-15), with 664 allowable
+values. They cover leaf, stem and root chemistry (sugars, starch, essential oils,
+nitrate, dead bark nutrients), stable isotopes, wood anatomy, leaf, flower and fruit
+morphology, pollination and nectar traits, breeding systems and chromosome counts.
+Each has an APD identifier, plus ontology, TRY and BIEN matches where they exist,
+and constraints where it applies only to some plants. Six references are added to
+`APD_references.csv` for the definitions that cite a source. Three of the new
+traits are named differently from the source they were imported from:
+`inflorescence_peduncle_length` (`peduncle_length`), `seed_ovule_ratio`
+(`seed_set_proportion`) and `leaf_heterophylly` (`leaf_heterogeneity`). The new
 `pollination_vector_known`, `pollination_vector_possible` and `flower_visitor`
-record pollinators in more detail.
+record pollinators in more detail than `pollination_system`, which is still
+published unchanged.
 
-**The trait hierarchy's path columns now match its `Parent` links.** In
-`APD_trait_hierarchy.csv`, the `tier_*` and `hierarchy` columns spell out each
-group's full path, and had drifted from `Parent` — the link the RDF publishes as
-`skos:broader` — for 40 of 81 groups. They are now derived from `Parent` (`make
-sync-hierarchy`), a `tier_5` column holds the three five-level paths, and `make
-check` fails if they drift again. The published RDF is unchanged; the trait
-groups austraits.build builds from the `hierarchy` column change to match it.
+**209 existing traits are edited**, and their `modified` dates move with them.
+Most edits are wording, keywords and allowed ranges. 75 traits move into the new
+trait groups, and 20 traits gain 76 allowable values between them. 24 existing
+values are reworded.
+
+**Ten new trait groups:** whole plant size, leaf surface morphology, senesced bark
+mineral and ion content, stomatal process related, regeneration life history,
+vegetative regeneration life history, vegetative structure life history,
+fire-cued phenology, post-fire recovery and flammability.
+
+**Two new value types, monthly presence and text.** A monthly presence value is
+twelve characters, `Y` or `N` for each month from January. The phenology traits
+`flowering_time`, `fruiting_time`, `foliage_time` and `recruitment_time` were
+typed categorical with no allowable values. They now have this type, as do the
+new `active_growing_time` and `dormancy_time`. Their `trait_type` in
+`APD_traits.csv` reads `monthly presence [glossary_40126]`, a new glossary term. Text is for free-text values such as
+taxon names. It is borrowed from the NCI Thesaurus (`NCIT_C25704`), and no trait
+uses it yet. See
+[traitecoevo/traits.build#87](https://github.com/traitecoevo/traits.build/issues/87).
+
+**TRY matches moved off four retired TRY traits.** TRY has replaced traits 535, 829,
+1229 and 719 with more specific ones. The new matches are:
+
+- `leaf_transmission`: exact match to TRY 4418.
+- `wood_N_per_dry_mass`: exact match to TRY 406, which `stem_N_per_dry_mass` now
+  matches closely rather than exactly.
+- `bark_delta13C`: close match to TRY 3712 (branch bark).
+- The stem P12, P50 and P88 traits: exact matches to TRY 4502, 4494 and 4495.
+- `leaf_water_potential_50percent_lost_conductivity`: exact match to TRY 4543. The
+  12% and 88% leaf traits are related to TRY 4543.
+- `hydraulic_safety_margin_50` and `_88`: related to TRY 4334 and 4335.
+
+The three root traits no longer have a TRY match, because TRY has no root
+equivalent.
+
+**127 borrowed terms are added** to `published_classes.csv`, mostly from the Plant
+Trait Ontology, the Plant Ontology, PATO and ChEBI. Two vocabularies are new to the
+APD: the Biological Spatial Ontology, and SWEET, whose two modules add the
+`SWEET_propChemical` and `SWEET_procPhysical` prefixes.
+
+**`APD_trait_hierarchy.csv`'s path columns now match its `Parent` links.** For 40
+of the 81 groups, the `tier_*` and `hierarchy` columns had drifted from `Parent`,
+which is the link the RDF publishes as `skos:broader`. They are now derived from
+`Parent`, and a new `tier_5` column holds the three five-level paths. The RDF is
+unchanged.
 
 ## APD Version 2.2.0
 
