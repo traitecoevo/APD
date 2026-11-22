@@ -1,11 +1,14 @@
 identifier,label,description,trait_name
-bark_morphology_eucalyptus_eucalypt_box,eucalypt_box,"Eucalyptus, Corymbia or Angophora taxa with ""Box"" type bark.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_gum,eucalypt_gum,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_stocking,eucalypt_stocking,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark above a rough barked stocking.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_ironbark,eucalypt_ironbark,"Eucalyptus, Corymbia or Angophora taxa with ""Ironbark"" type bark.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_peppermint,eucalypt_peppermint,"Eucalyptus, Corymbia or Angophora taxa with ""Peppermint"" type bark.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_stringybark,eucalypt_stringybark,"Eucalyptus, Corymbia or Angophora taxa with ""Stringy"" type bark.",bark_morphology_eucalyptus
-bark_morphology_eucalyptus_eucalypt_ribbonbark,eucalypt_ribbonbark,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark that sheds in ribbons.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_box,eucalypt_box,"Eucalyptus, Corymbia or Angophora taxa with ""Box"" type bark, thin, with short, close fibres or irregular ridges and cracks.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_gum,eucalypt_gum,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark, completely smooth along the main trunk.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_stocking,eucalypt_stocking,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark above a rough barked stocking, with rough bark extending less than 4 m up the trunk (for mallees, less than half their height).",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_ironbark,eucalypt_ironbark,"Eucalyptus, Corymbia or Angophora taxa with ""Ironbark"" type bark, thick, with hard, deep furrows or fissures.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_peppermint,eucalypt_peppermint,"Eucalyptus, Corymbia or Angophora taxa with ""Peppermint"" type bark, thicker and spongier than ""Box"" type bark, with medium-length fibres, strands often interlaced.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_stringybark,eucalypt_stringybark,"Eucalyptus, Corymbia or Angophora taxa with ""Stringy"" type bark, easily pulled off in strips, with long fibres in deep longitudinal fissures.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_halfbark,eucalypt_halfbark,"Eucalyptus, Corymbia or Angophora taxa with ""Gum"" type bark on the upper trunk and persistent rough bark on the lower trunk, extending higher than 4 m (for mallees, over half their height).",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_subfibrous_rough,eucalypt_subfibrous_rough,"Eucalyptus, Corymbia or Angophora taxa with rough bark that is not stringy, and that comes away in uneven spongy or rough pieces when detached.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_subfibrous_stringy,eucalypt_subfibrous_stringy,"Eucalyptus, Corymbia or Angophora taxa with bark similar to ""Stringy"" type bark, but with softer, shorter fibres in shallow longitudinal fissures.",bark_morphology_eucalyptus
+bark_morphology_eucalyptus_eucalypt_tessellated,eucalypt_tessellated,"Eucalyptus, Corymbia or Angophora taxa with friable, spongy, short-fibred bark that forms a distinctive blocky, tessellated pattern.",bark_morphology_eucalyptus
 plant_tolerance_calcicole_calcicole,calcicole,"Plants are tolerant of basic soils, such as calcareous sands and limestone derived soils.",plant_tolerance_calcicole
 plant_tolerance_calcicole_calcifuge,calcifuge,"Plants are intolerant of basic soils. (Synonyms, acidophilous)",plant_tolerance_calcicole
 competitive_stratum_ground,ground,"Graminoids, herbs and ferns reaching maximum heights of c. 0.2-1 m.",competitive_stratum
@@ -54,6 +57,7 @@ dispersal_syndrome_myrmecochory,myrmecochory,"Diaspores have elaiosomes (special
 dispersal_syndrome_undefined,undefined,"Dispersal mechanism unknown. (Synonyms, unknown)",dispersal_syndrome
 dispersal_syndrome_zoochory,zoochory,"Diaspore is dispersed by animals, by an undescribed mechanism.",dispersal_syndrome
 dispersal_unit_fruit,fruit,Dispersal unit is a fruit.,dispersal_unit
+dispersal_unit_infructescence,infructescence,"Dispersal unit is a whole infructescence (e.g. an Asteraceae capitulum or burr) carrying the fruits or seeds.",dispersal_unit
 dispersal_unit_seed,seed,Dispersal unit is a seed.,dispersal_unit
 dispersal_unit_spore,spore,Dispersal unit is a spore.,dispersal_unit
 dispersal_unit_seedling,seedling,"Dispersal unit is a seedling. (Synonyms, viviparous)",dispersal_unit
@@ -94,7 +98,7 @@ fire_exposure_level_fire_avoidance_among_rocks,fire_avoidance_among_rocks,Plants
 fire_exposure_level_fire_avoidance_near_water,fire_avoidance_near_water,Plants rarely or never experience fires because their habitat is close to a body of water.,fire_exposure_level
 fire_exposure_level_fire_avoidance_in_swamp,fire_avoidance_in_swamp,"Plants rarely experience fires because their habitat is usually saturated, but populations can be catastrophically impacted during severe droughts when the swamps dry out.",fire_exposure_level
 fire_exposure_level_seasonal_fire_avoidance,seasonal_fire_avoidance,"Plants avoid fire by only have above-ground parts during seasons when fire is rare or absent, but populations can be catastrophically impacted if fire occurs during an atypical season.",fire_exposure_level
-resprouting_capacity_fire_killed,fire_killed,"Fewer than 30% of plants resprout following a fire with 100% leaf scorch. (Synonym, fire-sensitive)",resprouting_capacity
+resprouting_capacity_fire_killed,fire_killed,"Fewer than 30% of plants resprout following a fire with 100% leaf scorch. (Synonyms, fire-sensitive)",resprouting_capacity
 resprouting_capacity_resprouts,resprouts,More than 70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
 resprouting_capacity_partial_resprouting,partial_resprouting,Between 30-70% of plants resprout following a fire with 100% leaf scorch.,resprouting_capacity
 resprouting_capacity_juvenile_juvenile_fire_killed,juvenile_fire_killed,Few to no juvenile plants resprout following fire with 100% leaf scorch.,resprouting_capacity_juvenile
@@ -110,9 +114,13 @@ post_fire_flowering_fire_dependent_flowering,fire_dependent_flowering,"Plants pr
 post_fire_flowering_fire_enhanced_flowering,fire_enhanced_flowering,"Flowering is enhanced after a fire, with plants flowering more prolifically for the first 1-4 growing seasons following the fire.",post_fire_flowering
 post_fire_flowering_fire_independent_flowering,fire_independent_flowering,"Flowering is independent of fire, with the magnitude of flowers produced by plants unchanged following a fire.",post_fire_flowering
 post_fire_flowering_fire_suppressed_flowering,fire_suppressed_flowering,"Flowering is suppressed or absent after a fire, with plants producing fewer flowers for at least the first 1-4 growing seasons following the fire.",post_fire_flowering
+post_fire_flowering_fire_enhanced_budding,fire_enhanced_budding,"Budding is enhanced after a fire, with plants budding more prolifically for the first 1-4 growing seasons following the fire.",post_fire_flowering
 plant_tolerance_fire_fire_retardant,fire_retardant,"Plants protected from fire by fire retardant in their bark, stems, or other tissues.",plant_tolerance_fire
 plant_tolerance_fire_fire_retardant_bark,fire_retardant_bark,Plants protected from fire by fire retardant in their bark.,plant_tolerance_fire
 plant_tolerance_fire_thick_bark,thick_bark,Plants protected from fire by thick bark.,plant_tolerance_fire
+plant_tolerance_fire_fleshy_leaves,fleshy_leaves,"Plants protected from low intensity fire by dense, fleshy foliage.",plant_tolerance_fire
+plant_tolerance_fire_lower_burn_temperature,lower_burn_temperature,Plants protected from fire because their tissues burn at lower temperatures than those of co-occurring plants.,plant_tolerance_fire
+plant_tolerance_fire_slower_ignition,slower_ignition,Plants protected from fire because their tissues are slower to ignite than those of co-occurring plants.,plant_tolerance_fire
 flower_colour_blue_purple,blue_purple,Flower colour is blue or purple.,flower_colour
 flower_colour_green,green,Flower colour is green.,flower_colour
 flower_colour_pink,pink,Flower colour is pink.,flower_colour
@@ -143,8 +151,11 @@ flowering_cues_rain_summer,rain_summer,Plants increase flowering in response to 
 flowering_cues_rain_autumn,rain_autumn,Plants increase flowering in response to autumn rains.,flowering_cues
 flowering_cues_rain_winter,rain_winter,Plants increase flowering in response to winter rains.,flowering_cues
 flowering_cues_rain_spring,rain_spring,Plants increase flowering in response to spring rains.,flowering_cues
+flowering_cues_low_temperature_following_rain,low_temperature_following_rain,Plants flower in response to a drop in temperature following (heavy) rain.,flowering_cues
 flowering_cues_floods,floods,Plants increase flowering in response to floods.,flowering_cues
 flowering_cues_fire,fire,Plants increase flowering in response to fires.,flowering_cues
+flowering_cues_disturbance,disturbance,Plants increase flowering in response to disturbance other than fire.,flowering_cues
+flowering_cues_disturbance_independent,disturbance_independent,Plants do not require disturbance to flower.,flowering_cues
 flower_structural_sex_type_bisexual,bisexual,Hermaphrodite; flowers with both male and female reproductive organs.,flower_structural_sex_type
 flower_structural_sex_type_incompletely_unisexual,incompletely_unisexual,Male flowers with pistillodes and/or female flowers with staminodes.,flower_structural_sex_type
 flower_structural_sex_type_unisexual,unisexual,Flowers with either male or female reproductive organs.,flower_structural_sex_type
@@ -263,7 +274,7 @@ fruit_type_follicle,follicle,"A dry, dehiscent fruit derived from a single carpe
 fruit_type_legume,legume,"A dry, dehiscent fruit derived from a single carpel that splits along two sutures; applies to Fabaceae. (Synonyms, pod)",fruit_type
 fruit_type_legume_indehiscent,legume_indehiscent,"A dry, indehiscent fruit derived from a single carpel; applies to Fabaceae.",fruit_type
 fruit_type_mericarp,mericarp,"A fruitlet (seed-containing portion of a fruit) that is a half-carpel; the individual fruitlets separate from one another at maturity; a specific type of schizocarp. (In some datasets, term likely refers to any fruitlet derived from a portion of a schizocarp that separates at maturity, not explicitly just a half-carpel.)",fruit_type
-fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits. (Synonym, apocarp)",fruit_type
+fruit_type_multiple_fruit,multiple_fruit,"A fruit composed of several fruitlets developing from a single flower (e.g. raspberries, magnolias); fruits developing from more than one flower are included under compound (aggregate) fruits. (Synonyms, apocarp)",fruit_type
 fruit_type_nut,nut,"A simple, dry, indehiscent fruit with a single seed and a hard pericarp.",fruit_type
 fruit_type_nutlet,nutlet,"A diminutive of nut, referring to a simple, dry, indehiscent structure with a single seed that might be an entire fruit (nut; monocarp) or a portion of a fruit, such as the individual components derived from an apocarp (fruit with multiple unfused ovaries) or schizocarp (fruit with multiple ovaries that separate at maturity).",fruit_type
 fruit_type_pepo,pepo,"A fleshy fruit derived from a single ovary that is divided into several carpels, has multiple seeds, and has a tough rind when mature.",fruit_type
@@ -294,7 +305,6 @@ seed_germination_treatment_leaching,leaching,Seed germinates more readily after 
 seed_germination_treatment_light,light,Seed germinates more readily after light exposure.,seed_germination_treatment
 seed_germination_treatment_mycorrhizae,mycorrhizae,Seed germinates more readily if infected by a mycorrhizal symbiont.,seed_germination_treatment
 seed_germination_treatment_none,none,No treatment required for seed to display high germination rates.,seed_germination_treatment
-seed_germination_treatment_rain,rain,Seed germinates more readily after rain.,seed_germination_treatment
 seed_germination_treatment_scarify,scarify,"Seed coat is removed, nicked, or otherwise punctured to increase germination.",seed_germination_treatment
 seed_germination_treatment_smoke,smoke,Seed germinates more readily after being subjected to a smoke treatment; includes smoked water.,seed_germination_treatment
 seed_germination_treatment_stratification,stratification,Seed germinates more readily after being stored in moist conditions; not specified if the treatment was `cold stratification` or `warm stratification`.,seed_germination_treatment
@@ -305,7 +315,7 @@ seedling_hypocotyl_hairs_hairy,hairy,Hypocotyl has hairs.,seedling_hypocotyl_hai
 plant_tolerance_inundation_not_applicable,not_applicable,Taxa is not typically confronted with being inundated and its response is unknown.,plant_tolerance_inundation
 plant_tolerance_inundation_less_than_1_month,less_than_1_month,Taxa able to tolerate being inundated for less than 1 month.,plant_tolerance_inundation
 plant_tolerance_inundation_1-6_months,1-6_months,Taxa able to tolerate being inundated for 1-6 months.,plant_tolerance_inundation
-plant_tolerance_inundation_greater_than_6_months,greater_than_6_months,Taxa able to tolerate being inundated for  more than 6 months.,plant_tolerance_inundation
+plant_tolerance_inundation_greater_than_6_months,greater_than_6_months,Taxa able to tolerate being inundated for more than 6 months.,plant_tolerance_inundation
 plant_tolerance_inundation_aquatic,aquatic,Taxa truly aquatic and able to be permanently inundated.,plant_tolerance_inundation
 plant_flood_regime_classification_terrestrial_dry,terrestrial_dry,"Species which germinate, grow and reproduce where there is no surface water and the water table is below the soil surface. (Dry species; Tdr)",plant_flood_regime_classification
 plant_flood_regime_classification_terrestrial_damp,terrestrial_damp,"Species which germinate, grow and reproduce on saturated soil. (Damp species; Tda)",plant_flood_regime_classification
@@ -321,19 +331,21 @@ leaf_arrangement_decussate,decussate,When sequential pairs of opposite leaves at
 leaf_arrangement_distichous,distichous,When alternate or opposite leaves are arranged in two opposite rows.,leaf_arrangement
 leaf_arrangement_scattered,scattered,When leaves are attached along the entire length of stem.,leaf_arrangement
 leaf_arrangement_spiral,spiral,When alternate leaves are attached in a progressive spiral pattern along the stem.,leaf_arrangement
-leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes. (Synonym, tufted)",leaf_arrangement
+leaf_arrangement_fasciculate,fasciculate,"A tight bundle or cluster of leaves attaches to the stem in a single location, generally due to the shortening of internodes. (Synonyms, tufted)",leaf_arrangement
 leaf_arrangement_clustered,clustered,"When leaves are in any type of cluster, where the type of cluster is not further specified. The leaves may be clustered toward the base of the plant (a rosette), toward the top of the plant, toward the end of branches, or in distinct tuft (fascicles), but more information is not provided.",leaf_arrangement
-leaf_arrangement_clustered_basal,clustered_basal,"When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering. (Synonym, rosette)",leaf_arrangement
-leaf_arrangement_crowded,crowded,"When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonym, congested)",leaf_arrangement
+leaf_arrangement_clustered_basal,clustered_basal,"When leaves are clustered or crowded to the base of the stem, arranged in a rosette or other basal clustering.",leaf_arrangement
+leaf_arrangement_crowded,crowded,"When internode length varies considerably along a stem, such that leaves appear crowded or tufted. (Synonyms, congested)",leaf_arrangement
 leaf_arrangement_rosette,rosette,When leaves radiate from a central point at or near ground level.,leaf_arrangement
 leaf_arrangement_imbricate,imbricate,When leaves lay tightly against the stem and are overlapping.,leaf_arrangement
 leaf_phyllotaxis_alternate,alternate,A single leaf is attached at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_opposite,opposite,A pair of leaves are attached opposite to one another at each stem node.,leaf_phyllotaxis
 leaf_phyllotaxis_whorled,whorled,"Three or more leaves are attached at each stem node, arranged in a symmetrical pattern around the stem. (Synonyms, verticillate)",leaf_phyllotaxis
-leaf_glaucousness_glaucous,glaucous,"Mature (fully expanded) leaves on adult plants have a waxy coating, giving them a glaucous appearance. (Synonyms, waxy bloom, pruinose)",leaf_glaucousness
+leaf_glaucousness_glaucous,glaucous,"Mature (fully expanded) leaves on adult plants have a waxy coating, giving them a glaucous appearance. (Synonyms, waxy_bloom, pruinose)",leaf_glaucousness
 leaf_glaucousness_not_glaucous,not_glaucous,Mature (fully expanded) leaves on adult plants do not have a glaucous appearance.,leaf_glaucousness
+leaf_glaucousness_subglaucous,subglaucous,"Mature (fully expanded) leaves on adult plants have a thin or patchy waxy coating, giving them a slightly glaucous appearance intermediate between glaucous and not glaucous. (Synonyms, semi-glaucous)",leaf_glaucousness
 leaf_hairs_adult_leaves_glabrous,glabrous,Mature (fully expanded) leaves on adult plants do not have hairs (trichomes).,leaf_hairs_adult_leaves
 leaf_hairs_adult_leaves_hairy,hairy,Mature (fully expanded) leaves on adult plants have hairs (trichomes).,leaf_hairs_adult_leaves
+leaf_hairs_adult_leaves_glandular_pubescent,glandular_pubescent,Mature (fully expanded) leaves on adult plants have glandular hairs (trichomes tipped with a secretory gland).,leaf_hairs_adult_leaves
 leaf_hairs_immature_leaves_glabrous,glabrous,Immature (still expanding) leaves do not have hairs (trichomes).,leaf_hairs_immature_leaves
 leaf_hairs_immature_leaves_hairy,hairy,Immature (still expanding) leaves have hairs (trichomes).,leaf_hairs_immature_leaves
 leaf_hairs_juvenile_leaves_glabrous,glabrous,Juvenile phase leaves do not have hairs (trichomes).,leaf_hairs_juvenile_leaves
@@ -343,21 +355,21 @@ leaf_margin_toothed,toothed,"Leaf margin has small projections or lobes along th
 leaf_margin_toothed_serrate,toothed_serrate,"Type of toothed leaf margin with sharp teeth that are angled toward the tip of the leaf. (Synonyms, saw-toothed)",leaf_margin
 leaf_margin_toothed_dentate,toothed_dentate,Type of toothed leaf margin with sharp teeth that point outwards at right angles to the leaf margin.,leaf_margin
 leaf_margin_toothed_crenate,toothed_crenate,"Type of toothed leaf margin with teeth that are rounded or obtuse, rather than having a sharp apex. [PO:0025519]",leaf_margin
-leaf_margin_posture_involute,involute,"Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonym, inrolled, incurved)",leaf_margin_posture
-leaf_margin_posture_revolute,revolute,"Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonym, recurved)",leaf_margin_posture
+leaf_margin_posture_involute,involute,"Leaf margins along the side of the leaf are rolled upward, such that the margin of the adaxial (upper) leaf surface is rolled inward. (Synonyms, inrolled, incurved)",leaf_margin_posture
+leaf_margin_posture_revolute,revolute,"Leaf margins along the side of the leaf are rolled under or downward, such that the margin of the abaxial (lower) leaf surface is rolled inward. [PATO:0001963] (Synonyms, recurved)",leaf_margin_posture
 leaf_margin_posture_flat,flat,"Leaf lamina, including margins, is a 2-dimensional plane. [PATO:0000407]",leaf_margin_posture
 leaf_margin_posture_undulate,undulate,"Leaf margins are wavy in their 2-dimensional plane. (Synonyms, wavy, rippled, sinuate)",leaf_margin_posture
 leaf_lamina_posture_concave,concave,"A longitudinal posture term indicating the leaf lamina is curved upward along the central axis, such that the upper leaf lamina surface is concave.",leaf_lamina_posture
-leaf_lamina_posture_conduplicate,conduplicate,"A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonym, folded)",leaf_lamina_posture
-leaf_lamina_posture_convex,convex,"A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonym, concavoconvex, planoconvex)",leaf_lamina_posture
-leaf_lamina_posture_convolute,convolute,"Leaf lamina is contorted. (Synonym, twisted)",leaf_lamina_posture
+leaf_lamina_posture_conduplicate,conduplicate,"A longitudinal posture term indicating the leaf lamina is folded upward along the central axis. (Synonyms, folded)",leaf_lamina_posture
+leaf_lamina_posture_convex,convex,"A longitudinal posture term indicating the leaf lamina is curved downward along the central axis, such that the lower leaf lamina surface is concave. (Synonyms, concavoconvex, planoconvex)",leaf_lamina_posture
+leaf_lamina_posture_convolute,convolute,"Leaf lamina is contorted. (Synonyms, twisted)",leaf_lamina_posture
 leaf_lamina_posture_flat,flat,The leaf lamina is a 2-dimensional plane.,leaf_lamina_posture
 leaf_lamina_posture_incurved,incurved,Leaf tip is curved upward.,leaf_lamina_posture
 leaf_lamina_posture_involute,involute,A longitudinal posture term indicating the outer portions of the leaf lamina are rolled inward or upward.,leaf_lamina_posture
 leaf_lamina_posture_plicate,plicate,"Leaf margin is pleated, with a series of longitudinal folds.",leaf_lamina_posture
 leaf_lamina_posture_recurved,recurved,Leaf tip is curved outward or downward. [PATO:0002211],leaf_lamina_posture
 leaf_lamina_posture_revolute,revolute,A longitudinal posture term indicating the outer portions of the leaf lamina are rolled outward or downward.,leaf_lamina_posture
-leaf_lamina_posture_undulate,undulate,"The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967]  (Synonyms, wavy, rippled, sinuate)",leaf_lamina_posture
+leaf_lamina_posture_undulate,undulate,"The leaf lamina surface is rippled or wavy in its 2-dimensional plane. [PATO:0000967] (Synonyms, wavy, rippled, sinuate)",leaf_lamina_posture
 leaf_lobation_unlobed,unlobed,Leaf margin lacks projections or indentations that extend more than 1/8 of the distance to the midrib.,leaf_lobation
 leaf_lobation_lobed,lobed,"Leaf margin has incisions, either rounded or sharp-tipped, that extend more than 1/8 of the distance to the midrib.",leaf_lobation
 leaf_lobation_lobed_deep,lobed_deep,"Leaf margin with lobes that extend more than halfway to the midrib. (Synonyms, parted, divided)",leaf_lobation
@@ -388,6 +400,8 @@ leaf_phenology_drought_deciduous,drought_deciduous,"Plant loses its entire leaf 
 leaf_phenology_facultative_drought_deciduous,facultative_drought_deciduous,"Plant sometimes loses its leaf canopy for part of the year, in response to drought.",leaf_phenology
 leaf_phenology_semi_deciduous,semi_deciduous,"Plant thins, but does not entirely lose, its leaf canopy in response to an environmental cue, usually drought.",leaf_phenology
 leaf_phenology_brevi_deciduous,brevi_deciduous,Plant briefly loses its entire leaf canopy but flushes a new leaf canopy almost simultaneously to leaf loss.,leaf_phenology
+leaf_phenology_summer_dormancy,summer_dormancy,"Plant loses its entire above-ground leaf canopy over summer, persisting as a dormant below-ground organ (e.g. tuber, corm, bulb) and re-emerging in autumn or winter.",leaf_phenology
+leaf_phenology_withered_at_flowering,withered_at_flowering,"Leaves wither or shrivel by the time the plant flowers, such that the plant is leafless or has only dead leaves at anthesis (hysteranthous leaf phenology).",leaf_phenology
 leaf_shape_linear,linear,"A 2-dimensional shape that is very long and narrow, has parallel sides and a length:width ratio between 12:1 and 6:1.",leaf_shape
 leaf_shape_narrowly_oblong,narrowly_oblong,"A 2-dimensional shape that is long and narrow, has parallel sides and a length:width ratio between 6:1 and 3:1. (Synonyms, lorate)",leaf_shape
 leaf_shape_oblong,oblong,A 2-dimensional shape that is somewhat elongated with parallel sides and a length:width ratio between 2:1 and 3:2.,leaf_shape
@@ -402,12 +416,12 @@ leaf_shape_lanceolate,lanceolate,"A 2-dimensional shape that is narrowly egg-sha
 leaf_shape_narrowly_ovate,narrowly_ovate,"A 2-dimensional shape that is narrowly egg-shaped, with a length:width ratio between 3:1 and 2:1. The petiole attaches near the wide, curved portion of the leaf lamina. (Synonyms, lance_ovate, widely_lanceolate)",leaf_shape
 leaf_shape_ovate,ovate,"A 2-dimensional shape that is egg-shaped, with a length:width ratio between 2:1 and 3:2. The petiole attaches near the wide, curved portion of the leaf lamina.",leaf_shape
 leaf_shape_widely_ovate,widely_ovate,"A 2-dimensional shape that is broadly egg-shaped with a length:width ratio of approximately 6:5. The petiole attaches near the wide, curved portion of the leaf lamina.",leaf_shape
-leaf_shape_narrowly_oblanceolate,narrowly_oblanceolate,"A 2-dimensional shape that is very narrowly teardrop-shaped, with a length:width ratio between 12:1 and 6:1. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole. (Synonyms, linear_oblanceolate)",leaf_shape
-leaf_shape_oblanceolate,oblanceolate,"A 2-dimensional shape that is narrowly teardrop-shaped, with a length:width ratio between 6:1 and 3:1. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole.",leaf_shape
-leaf_shape_narrowly_obovate,narrowly_obovate,"A 2-dimensional shape that is narrowly egg-shaped or teardrop-shaped with a length:width ratio between 3:1 and 2:1. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole. (Synonyms, oblance-obovate)",leaf_shape
-leaf_shape_obovate,obovate,A 2-dimensional shape that is egg-shaped with a length:width ratio between 2:1 and 3:2. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole.,leaf_shape
-leaf_shape_widely_obovate,widely_obovate,A 2-dimensional shape that is broadly egg-shaped with a length:width ratio of approximately 6:5. The leaf lamina has curved outer margins and narrows nearly to a point where it attaches to the petiole.,leaf_shape
-leaf_shape_narrowly_triangular,narrowly_triangular,"A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf. (Synonyms, triangular)",leaf_shape
+leaf_shape_narrowly_oblanceolate,narrowly_oblanceolate,"A 2-dimensional shape that is very narrowly teardrop-shaped, with a length:width ratio between 12:1 and 6:1, widest above the middle and tapering towards the petiole. (Synonyms, linear_oblanceolate)",leaf_shape
+leaf_shape_oblanceolate,oblanceolate,"A 2-dimensional shape that is narrowly teardrop-shaped, with a length:width ratio between 6:1 and 3:1, widest above the middle and tapering towards the petiole.",leaf_shape
+leaf_shape_narrowly_obovate,narrowly_obovate,"A 2-dimensional shape that is narrowly egg-shaped or teardrop-shaped with a length:width ratio between 3:1 and 2:1, widest above the middle and tapering towards the petiole. (Synonyms, oblance-obovate)",leaf_shape
+leaf_shape_obovate,obovate,"A 2-dimensional shape that is egg-shaped with a length:width ratio between 2:1 and 3:2, widest above the middle and tapering towards the petiole.",leaf_shape
+leaf_shape_widely_obovate,widely_obovate,"A 2-dimensional shape that is broadly egg-shaped with a length:width ratio of approximately 6:5, widest above the middle and tapering towards the petiole.",leaf_shape
+leaf_shape_narrowly_triangular,narrowly_triangular,"A 2-dimensional shape that is narrowly triangular to wedge-shaped, with a length:width ratio 6:1 to 3:1 and the petiole attaching near the widest portion of the leaf.",leaf_shape
 leaf_shape_triangular,triangular,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the widest portion of the leaf.",leaf_shape
 leaf_shape_deltate,deltate,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio of 1:1 and the petiole attaching along one of the broad sides.",leaf_shape
 leaf_shape_obtriangular,obtriangular,"A 2-dimensional shape that is triangular to fan-shaped or wedge-shaped, with a length:width ratio 2:1 to 3:2 and the petiole attaching near the narrowest portion of the leaf. (Synonyms, flabelliform, fan-shaped, wedge-shaped, cuneate)",leaf_shape
@@ -418,17 +432,19 @@ leaf_shape_narrowly_obtrullate,narrowly_obtrullate,"A 2-dimensional shape that i
 leaf_shape_obtrullate,obtrullate,"A 2-dimensional shape that is approximately parallelogram-shaped, widest near the tip, and with a length:width ratio 2:1 to 3:2.",leaf_shape
 leaf_shape_widely_obtrullate,widely_obtrullate,"A 2-dimensional shape that is broadly parallelogram-shaped, widest near the tip, and with a length:width ratio of approximately 6:5.",leaf_shape
 leaf_shape_acicular,acicular,"A 2-dimensional or 3-dimensional shape with a needlelike tip, often round in cross-section, with margins straight and parallel, and a length:width ratio greater than 12:1. (Synonyms, needle-shaped)",leaf_shape
-leaf_shape_terete,terete,"A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonym, cylindrical)",leaf_shape
+leaf_shape_terete,terete,"A 3-dimensional shape that is a long, narrow cylinder approximately circular in cross-section. Terete leaves often taper toward the tip. (Synonyms, cylindrical)",leaf_shape
 leaf_shape_cordate,cordate,"A 2-dimensional heart shape, approximately ovate with a cordate base, with the petiole attaching at the notch between the lobes. (Synonyms, cordiform)",leaf_shape
 leaf_shape_obcordate,obcordate,"A 2-dimensional heart shape, approximately ovate with a cordate apex, and the petiole attaching along the broad, curve side.",leaf_shape
-leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped)",leaf_shape
+leaf_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped, crescentic)",leaf_shape
 leaf_shape_reniform,reniform,"A 2-dimensional shape that is roughly kidney-shaped, wider than long with a rounded apex and two rounded, basal lobes that are smoothly concave at their intersection. (Synonyms, kidney-shaped)",leaf_shape
 leaf_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)",leaf_shape
 leaf_shape_strap-shaped,strap-shaped,A 2-dimensional shape that is strap-shaped with a rounded tip and a length:width ratio greater than 12:1.,leaf_shape
 leaf_shape_ensiform,ensiform,"A 2-dimensional shape that is sword-shaped with a pointed tip and a length:width ratio greater than 12:1. (Synonyms, sword-shaped)",leaf_shape
 leaf_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped)",leaf_shape
 leaf_shape_peltate,peltate,"A 2-dimensional orbicular shape, distinguished by the petiole attaching near the center of the leaf lamina.",leaf_shape
-leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous.",leaf_shape
+leaf_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous. (Synonyms, capillary)",leaf_shape
+leaf_shape_narrowly_linear,narrowly_linear,"A 2-dimensional shape that is very long and narrow, has parallel sides and a length:width ratio greater than 12:1.",leaf_shape
+leaf_shape_setaceous,setaceous,"A 2-dimensional shape that is long, thin, and stiff. (Synonyms, bristle-like)",leaf_shape
 leaf_base_shape_acute,acute,Two sides of the leaf meet at an angle that is less than 90°.,leaf_base_shape
 leaf_base_shape_attenuate,attenuate,"Basal leaf margin abruptly incurved (concave), the two sides intersecting at an angle of less than 45°.",leaf_base_shape
 leaf_base_shape_auriculate,auriculate,Basal leaf margin with two rounded lobes. The leaf margin above the lobes is concave. The petiole attaches in the incised region between the lobes.,leaf_base_shape
@@ -443,8 +459,10 @@ leaf_base_shape_sheathing,sheathing,The leaf base is broad and envelops the stem
 leaf_base_shape_truncate,truncate,The basal leaf margin is cut straight across with the two sides intersecting at approximately 180°.,leaf_base_shape
 plant_photosynthetic_organ_leaf,leaf,"A true leaf, including both laminar and needle-shaped leaves.",plant_photosynthetic_organ
 plant_photosynthetic_organ_cladode,cladode,"A photosynthetic shoot, regardless of form, that functions as a leaf. For example, cacti pads and Casuarina articles. (Synonyms, article, phylloclade, cladophyll)",plant_photosynthetic_organ
-plant_photosynthetic_organ_phyllode,phyllode,"A flattened bladelike petiole. (Synonyms, switch plant)",plant_photosynthetic_organ
-plant_photosynthetic_organ_non-photosynthetic_plant,non-photosynthetic_plant,A plant that lacks any photosynthetic organs.,plant_photosynthetic_organ
+plant_photosynthetic_organ_phyllode,phyllode,"A flattened bladelike petiole. (Synonyms, switch_plant)",plant_photosynthetic_organ
+plant_photosynthetic_organ_non-photosynthetic_plant,non-photosynthetic_plant,"A plant that lacks any photosynthetic organs (Synonyms, achlorophyllous).",plant_photosynthetic_organ
+plant_photosynthetic_organ_root,root,A root that functions as the plant's primary photosynthetic organ.,plant_photosynthetic_organ
+plant_photosynthetic_organ_stem,stem,A stem that functions as the plant's primary photosynthetic organ.,plant_photosynthetic_organ
 leaf_type_broadleaf,broadleaf,"Flat leaf lamina, regardless of whether the leaves are or are not toothed, lobed, or compound.",leaf_type
 leaf_type_needle,needle,Needle or awl-shaped leaf that is generally 3-dimensional.,leaf_type
 leaf_type_scale,scale,Leaf reduced to a small scale.,leaf_type
@@ -474,7 +492,7 @@ sex_type_andromonoecious,andromonoecious,Taxa with hermaphrodite flowers and sta
 sex_type_dioecious,dioecious,Taxa that produce male and female flowers on separate plants.,sex_type
 sex_type_gynodioecious,gynodioecious,Taxa in which hermaphroditic and pistillate (female) plants coexist within a population.,sex_type
 sex_type_gynomonoecious,gynomonoecious,Taxa with hermaphrodite flowers and pistillate flowers (producing just female gametes) on the same plant but no staminate (male) flowers.,sex_type
-sex_type_hermaphrodite,hermaphrodite,Taxa with flowers that produce both male and female gametes; bisexual.,sex_type
+sex_type_hermaphrodite,hermaphrodite,"Taxa with flowers that produce both male and female gametes; bisexual. (Synonyms, bisexual)",sex_type
 sex_type_monoecious,monoecious,Taxa that have both male and female flowers on the same plant but an individual flower produces only male or female gametes.,sex_type
 sex_type_polygamous,polygamous,Taxa with both unisexual and bisexual flowers on the same plant.,sex_type
 sex_type_polygamodioecious,polygamodioecious,Taxa where some flowers on a plant are hermaphrodite and other are pistillate (female) or staminate (male).,sex_type
@@ -494,6 +512,7 @@ parasitic_stem_parasitic,stem_parasitic,Parasitic plant whose haustoria penetrat
 plant_alternative_energy_and_nutrient_acquisition_strategy_saprophyte,saprophyte,Plant that acquires nutrients from decaying biomass.,plant_alternative_energy_and_nutrient_acquisition_strategy
 plant_alternative_energy_and_nutrient_acquisition_strategy_carnivorous,carnivorous,Plant that acquires some or most of its nutrients from animals or protozoa.,plant_alternative_energy_and_nutrient_acquisition_strategy
 plant_alternative_energy_and_nutrient_acquisition_strategy_nutrient_mining,nutrient_mining,"Plant that uses a specialised root structure, such as cluster roots, to mine nutrients inaccessible to other plant taxa.",plant_alternative_energy_and_nutrient_acquisition_strategy
+plant_alternative_energy_and_nutrient_acquisition_strategy_mycoheterotroph,mycoheterotroph,"Plant that acquires nutrients via a fungal intermediary, forming a relationship with mycorrhizal fungi to obtain nutrients from other plants indirectly.",plant_alternative_energy_and_nutrient_acquisition_strategy
 bark_photosynthetic_status_non_photosynthetic_bark,non_photosynthetic_bark,Plant's bark is not photosynthetic.,bark_photosynthetic_status
 bark_photosynthetic_status_photosynthetic_bark,photosynthetic_bark,Plant's bark is photosynthetic.,bark_photosynthetic_status
 photosynthetic_pathway_c3,c3,"Plant using the 'standard' photosynthetic pathway, where a 3-carbon compound is produced after the first stage in the photosynthetic pathway.",photosynthetic_pathway
@@ -507,10 +526,10 @@ photosynthetic_pathway_unknown,unknown,"Photosynthetic pathway is unknown. (This
 plant_growth_form_herb,herb,"A seed-bearing plant which does not have a woody above-ground stem; when available this term has been divided into more detailed terms. (Synonyms, forb)",plant_growth_form
 plant_growth_form_subshrub,subshrub,"A plant that is only woody at the base, with the remainder of the stems regenerating yearly. This term is not meant to encompass short-lived plants that are only borderline woody. (Synonyms, suffrutescent)",plant_growth_form
 plant_growth_form_shrub,shrub,"A woody plant that is distinguished by NOT being a tree, due to one of more of the following characteristics, 1) they are less than 8 metres in height; 2) if a plant community includes trees, the shrubs are shorter than the surrounding trees and not part of the canopy; 3) in comparison to trees, the leaves are more distributed along the entire trunk; 4) the plant has multiple relatively narrow stems arising at or near ground level. The definition of `shrub` is complex, as there are many single-stemmed shrubs within Australia and many taxa that are described in the taxonomic literature as a shrub or small tree.",plant_growth_form
-plant_growth_form_mallee,mallee,Refers to Eucalyptus species which are small trees that form a large lignotuber. They have multiple stems arising at or near ground level and regenerate from the lignotuber following fire.,plant_growth_form
+plant_growth_form_mallee,mallee,"Refers to Eucalyptus species which are small trees that form a large lignotuber. They have multiple stems arising at or near ground level and regenerate from the lignotuber following fire. (Synonyms, mallet)",plant_growth_form
 plant_growth_form_tree,tree,"A tall, woody, perennial plant, usually with a single main trunk, and its leaves predominantly elevated above the ground surface.",plant_growth_form
 plant_growth_form_graminoid,graminoid,"Herbaceous plant with a grass-like morphology that is within the order Poales. Taxa both with and without a tussock form are mapped to this term. This term is most frequently applied to three large monocot families, Poaceae, Cyperaceae, and Juncaceae, but the term could apply to other taxa within Poales with a grass-like morphology, including narrow, linear leaves and non-showy flowers, including Restionaceae, Centrolepidaceae, Anarthriaceae, and Ecdeiocoleaceae. Taxa outside Poales with a grass-like morphology should be designated as `herbs` and also have the term `tufted` mapped to the trait `stem_growth_habit`.",plant_growth_form
-plant_growth_form_tussock,tussock,"A subcategory of graminoid, which is a plant where many shoots from the basal meristem form prominent tufts.",plant_growth_form
+plant_growth_form_tussock,tussock,"A subcategory of graminoid, which is a plant where many shoots from the basal meristem form prominent tufts. (Synonyms, tufted)",plant_growth_form
 plant_growth_form_graminoid_not_tussock,graminoid_not_tussock,"A subcategory of graminoid, indicating a plant which explicitly lacks a tussock morphology, with the leaves not growing in tufts.",plant_growth_form
 plant_growth_form_hummock,hummock,Plant that grows as a dense mound up to 1 metre in height. The term generally applies only to species within the genera Triodia that form such mounds and these are considered a distinctive and uniquely Australian growth form.,plant_growth_form
 plant_growth_form_basal_large,basal_large,"A plant whose leaves form a distinctly large basal tuft or rosette, including large acaulescent monocots and cycads.",plant_growth_form
@@ -527,52 +546,62 @@ plant_succulence_succulent,succulent,A plant is designated as succulent but it i
 plant_succulence_semi-succulent,semi-succulent,"A plant has tissues that are somewhat thick and fleshy, including many chenopods.",plant_succulence
 plant_succulence_not_succulent,not_succulent,Neither stems nor leaves are thick and fleshy.,plant_succulence
 stem_growth_habit_arborescent,arborescent,Tree-like growth habit.,stem_growth_habit
-stem_growth_habit_erect,erect,Stems that grow upright.,stem_growth_habit
-stem_growth_habit_caespitose,caespitose,"Multiple short-shoots arise from the base of the plant forming a dense tuft, as in a bunch-grass. (Synonyms, cespitose, bunch-grass, tussock)",stem_growth_habit
-stem_growth_habit_cushion-forming,cushion-forming,"Multiple erect, short stems arise from the soil and are so tightly packed that they form dense, even, rounded canopy with no gaps. (Synonyms, cushion)",stem_growth_habit
+stem_growth_habit_erect,erect,"Stems that grow upright. (Synonyms, virgate, upright)",stem_growth_habit
+stem_growth_habit_caespitose,caespitose,"Multiple short-shoots arise from the base of the plant forming a dense tuft, as in a bunch-grass. (Synonyms, cespitose, bunch-grass, tussock, hummocky)",stem_growth_habit
+stem_growth_habit_cushion-forming,cushion-forming,"Multiple erect, short stems arise from the soil and are so tightly packed that they form dense, even, rounded canopy with no gaps.",stem_growth_habit
 stem_growth_habit_mat-forming,mat-forming,Multiple stems that are mostly horizontal and are densely packed but open enough that there are still a few gaps between them.,stem_growth_habit
 stem_growth_habit_tufted,tufted,"Plant has a dense clump of leaves, either at the base of the plant or clusters of leaves growing close together higher on the plant. This term can refer to grasses, shrubs, or trees.",stem_growth_habit
 stem_growth_habit_creeping,creeping,"Stem that creeps along the ground, rooting at nodes. (Synonyms, repent)",stem_growth_habit
 stem_growth_habit_decumbent,decumbent,"Stems whose bases lie flat on the ground but whose tips grow upward. (Synonyms, ascending)",stem_growth_habit
 stem_growth_habit_prostrate,prostrate,"Stems lie flat on the ground but do not root at nodes. (Synonyms, procumbent, reclining, trailing)",stem_growth_habit
-stem_growth_habit_rosette,rosette,"Plants whose leaves radiate from a central point at or near ground level. (Synonyms, acaulescent, rosulate)",stem_growth_habit
-stem_growth_habit_climbing,climbing,"Stem that does not have a self-supporting structure and ascends by leaning on or attaching itself to surrounding vegetation or another substrate. Climbing mechanisms include tendrils, petioles, adventitious roots, scrambling, and twining and are distinguished between in the trait `plant_climbing_mechanism`.",stem_growth_habit
-stem_growth_habit_sprawling,sprawling,"Stem that sprawls across other plants or objects but lacks specialised climbing structures or mechanisms. (Synonyms, clambering, scandent)",stem_growth_habit
+stem_growth_habit_rosette,rosette,"Plants whose leaves radiate from a central point at or near ground level. (Synonyms, rosulate)",stem_growth_habit
+stem_growth_habit_climbing,climbing,"Stem that does not have a self-supporting structure and ascends by leaning on or attaching itself to surrounding vegetation or another substrate. Climbing mechanisms include tendrils, petioles, adventitious roots, scrambling, and twining and are distinguished between in the trait `plant_climbing_mechanism`. (Synonyms, scrambling, twining)",stem_growth_habit
+stem_growth_habit_sprawling,sprawling,"Stem that sprawls across other plants or objects but lacks specialised climbing structures or mechanisms. (Synonyms, clambering, scandent, straggling)",stem_growth_habit
 stem_growth_habit_rhizomatous,rhizomatous,Plants with short horizontal underground stems from which shoots emerge.,stem_growth_habit
 stem_growth_habit_stoloniferous,stoloniferous,"Plants with long horizontal branches either slightly belowground or aboveground, that root at their nodes or tips, producing new plants. (Synonyms, sarmentose)",stem_growth_habit
-stem_growth_habit_spreading,spreading,"Plants with a notable horizontal extent, referring either to a broad tree canopy or a shrub or herb that spreads across the ground.",stem_growth_habit
+stem_growth_habit_spreading,spreading,"Plants with a notable horizontal extent, referring either to a broad tree canopy or a shrub or herb that spreads across the ground. (Synonyms, effuse)",stem_growth_habit
 stem_growth_habit_floating,floating,Plant where most of the leaves are floating on water.,stem_growth_habit
 stem_growth_habit_submerged,submerged,Plant where most of the leaves are submerged beneath the surface of a waterbody.,stem_growth_habit
-stem_growth_habit_dense,dense,Plant with a high density of branches.,stem_growth_habit
-stem_growth_habit_compact,compact,Plant with closely packed branches.,stem_growth_habit
+stem_growth_habit_dense,dense,"Plant with a high density of branches. (Synonyms, compact)",stem_growth_habit
 stem_growth_habit_bushy,bushy,"Plant with much-branched branches. (Synonyms, shrubby)",stem_growth_habit
 stem_growth_habit_open,open,Plant with an open architecture of branches.,stem_growth_habit
-stem_growth_habit_spindly,spindly,"Plants with weak, skinny branches.",stem_growth_habit
+stem_growth_habit_acaulescent,acaulescent,"Plant lacking an obvious aboveground stem, or with a very short one, such that the leaves appear to arise at or near ground level. (Synonyms, stemless)",stem_growth_habit
+stem_growth_habit_suffrutescent,suffrutescent,"Plant that is woody only at the base, with the upper stems herbaceous and dying back periodically. (Synonyms, suffruticose)",stem_growth_habit
+stem_growth_habit_emergent,emergent,Aquatic plant where most of the leaves emerge above the surface of a waterbody.,stem_growth_habit
+stem_growth_habit_lax,lax,"Plant with loose, open, or limp growth, lacking rigidity.",stem_growth_habit
+stem_growth_habit_low-growing,low-growing,Plant of low stature that grows close to the ground.,stem_growth_habit
+stem_growth_habit_pendulous,pendulous,"Stems that hang downwards. (Synonyms, weeping, arching, drooping, pendant)",stem_growth_habit
+stem_growth_habit_pseudostem,pseudostem,"Plant with a false stem formed by other plant tissues, most frequently leaves.",stem_growth_habit
+stem_growth_habit_slender,slender,"Plant with notably slim, thin stems.",stem_growth_habit
+stem_growth_habit_subterranean,subterranean,"Plant with entirely subterranean stems. (Synonyms, underground_stems)",stem_growth_habit
 plant_climbing_mechanism_adventitious_roots,adventitious_roots,Roots arising from stem nodes which cling to a host plant.,plant_climbing_mechanism
 plant_climbing_mechanism_hooks,hooks,Curved stem outgrowths which allow climbers to cling to a host plant.,plant_climbing_mechanism
 plant_climbing_mechanism_spines,spines,Straight stem outgrowths (including true spines as well as thorns and prickles) which allow climbers to cling to a host plant.,plant_climbing_mechanism
 plant_climbing_mechanism_tendrils,tendrils,"Modified leaves, petioles, or specialised axillary shoots that coil tightly, forming a specialised structure for climbing.",plant_climbing_mechanism
-plant_climbing_mechanism_scrambling,scrambling,"Stem growth habit, where the plant stems are too weak to support themselves, and instead lean on and are supported by host vegetation. There are no specialised structures employed.",plant_climbing_mechanism
+plant_climbing_mechanism_scrambling,scrambling,"Stem growth habit, where the plant stems are too weak to support themselves, and instead lean on and are supported by host vegetation. There are no specialised structures employed. (Synonyms, scandent, clambering)",plant_climbing_mechanism
 plant_climbing_mechanism_twining,twining,"Stem growth habit, where the plant stems twist or coil around a host plant to provide support.",plant_climbing_mechanism
 plant_growth_substrate_epiphyte,epiphyte,A plant that grows upon another plant.,plant_growth_substrate
 plant_growth_substrate_lithophyte,lithophyte,A plant that grows upon a rock.,plant_growth_substrate
 plant_growth_substrate_terrestrial,terrestrial,"A plant that grows on land, and generally referencing a plant that grows in soil.",plant_growth_substrate
 plant_growth_substrate_semiaquatic,semiaquatic,A plant that grows partially submerged in water or spends part of its life growing in water.,plant_growth_substrate
+plant_growth_substrate_swampy,swampy,"A plant that grows in swamps, marshes or swampy ground, where the soil is waterlogged or shallowly inundated for part of the year.",plant_growth_substrate
 plant_growth_substrate_aquatic,aquatic,A plant that grows in water.,plant_growth_substrate
 plant_growth_substrate_marine,marine,A plant that grows in the sea.,plant_growth_substrate
 plant_growth_substrate_hemiepiphyte,hemiepiphyte,"A plant that spends part of its life cycle as an epiphyte, growing upon another plant.",plant_growth_substrate
+plant_growth_substrate_aquatic_floating,aquatic_floating,"A plant that grows floating on the surface of water, with roots not attached to the substrate below.",plant_growth_substrate
+plant_growth_substrate_aquatic_rooted,aquatic_rooted,A plant that grows in water with roots attached to the substrate below.,plant_growth_substrate
 plant_type_by_resource_use_hydrohalophyte,hydrohalophyte,Tidal swamp or 'mangrove' and coastal lagoon elements and temperate-zone salt-marsh taxa are classed together.,plant_type_by_resource_use
 plant_type_by_resource_use_phreatophyte,phreatophyte,Deep-rooted plants—usually trees—obtaining water from a deep underground source that may or may not be saline.,plant_type_by_resource_use
 plant_type_by_resource_use_psammophile,psammophile,Sand-loving plants commonly found in littoral strand or inland sandfields.,plant_type_by_resource_use
 plant_type_by_resource_use_weedy,weedy,"This inexact term is meant to indicate a high degree of adaptability to sites, and proven tendency toward aggressive colonization of either dry or wet sites, or rarely, both. In general, weeds invade and colonize highly disturbed sites or areas.",plant_type_by_resource_use
 plant_type_by_resource_use_xerohalophyte,xerohalophyte,Plants adapted to inland salt desert and saline habitats.,plant_type_by_resource_use
 plant_type_by_resource_use_xerophyte,xerophyte,Drought-tolerant and drought-adapted plants.,plant_type_by_resource_use
+plant_type_by_resource_use_resurrection_plant,resurrection_plant,Plants that can survive extreme desiccation and then recover when water becomes available.,plant_type_by_resource_use
 pollination_syndrome_abiotic,abiotic,"Floral syndrome indicates pollination occurs through wind, water, or collision of free-floating particles.",pollination_syndrome
-pollination_syndrome_biotic,biotic,Floral syndrome suggests flowers are pollinated by a biotic agent.,pollination_syndrome
-pollination_syndrome_animal,animal,Floral syndrome suggests flowers are animal-pollinated.,pollination_syndrome
+pollination_syndrome_biotic,biotic,"Floral syndrome suggests flowers are pollinated by a biotic agent. (Synonyms, animal)",pollination_syndrome
 pollination_syndrome_ballistic,ballistic,Floral syndrome suggests pollen is launched away from the plant by explosion.,pollination_syndrome
 pollination_syndrome_bat,bat,Floral syndrome suggests flowers are bat-pollinated.,pollination_syndrome
-pollination_syndrome_bee,bee,Floral syndrome suggests flowers are bee-pollinated.,pollination_syndrome
+pollination_syndrome_bee,bee,"Floral syndrome suggests flowers are bee-pollinated. (Synonyms, hymenoptera)",pollination_syndrome
 pollination_syndrome_beetle,beetle,Floral syndrome suggests flowers are beetle-pollinated.,pollination_syndrome
 pollination_syndrome_bird,bird,Floral syndrome suggests flowers are bird-pollinated.,pollination_syndrome
 pollination_syndrome_butterfly,butterfly,Floral syndrome suggests flowers are butterfly-pollinated.,pollination_syndrome
@@ -607,17 +636,17 @@ pollination_system_wasp,wasp,Flowers are observed to be wasp-pollinated.,pollina
 pollination_system_water,water,Flowers are observed to be water-pollinated.,pollination_system
 pollination_system_wind,wind,Flowers are observed to be wind-pollinated.,pollination_system
 pollination_system_self,self,Flowers are self-pollinated.,pollination_system
-bud_bank_location_apical_buds,apical_buds,"Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonym, aerial apical sprouter)",bud_bank_location
-bud_bank_location_basal_buds,basal_buds,"Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber`. ",bud_bank_location
-bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`. (Synonym, rootstock, lignotuberous resprouter)",bud_bank_location
+bud_bank_location_apical_buds,apical_buds,"Plants resprout from above-ground apical meristems. Also termed a caudex. Term refers to palm-like plants with aerial buds that resprout, including grass trees, palms, tree ferns, and pandanus. (Synonyms, aerial_resprouter, apical_resprouter)",bud_bank_location
+bud_bank_location_basal_buds,basal_buds,"Plants resprout from its base, with buds originating from stem tissue (e.g. lignotuber) and root tissue (root crown) not distinguished between. Most buds designated as being basal are likely to be resprouts from a lignotuber, but this trait value is used if the dataset reported `basal buds` rather than `basal stem buds` or `lignotuber` (Synonyms, coppice).",bud_bank_location
+bud_bank_location_basal_stem_buds,basal_stem_buds,"Plants resprout from the base of the stem. Australian plants with basal stem buds usually have a lignotuber, documented in the trait `storage_organ`. (Synonyms, rootstock, lignotuber)",bud_bank_location
 bud_bank_location_epicormic_buds,epicormic_buds,Plants resprout from the stem or trunk.,bud_bank_location
-bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonym, geophyte)",bud_bank_location
+bud_bank_location_fleshy_underground_organ,fleshy_underground_organ,"Plants resprouts from buds on a fleshy underground organ that is a taproot tuber, bulb, corm, stem tuber, root tuber, or belowground caudex. (Synonyms, geophyte)",bud_bank_location
 bud_bank_location_root_crown,root_crown,"Plants resprout from the root crown, the root tissue at the root-stem transition.",bud_bank_location
-bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering resprouter, adventitious buds)",bud_bank_location
+bud_bank_location_bud-bearing_root,bud-bearing_root,"Root buds produce vertical suckers (from root crown) or adventitious roots. (Synonyms, root-suckering, adventitious_buds)",bud_bank_location
 bud_bank_location_rhizome,rhizome,"Plants resprout from buds on a rhizome, where it is not specified if the rhizome is woody or non-woody.",bud_bank_location
 bud_bank_location_rhizome_woody,rhizome_woody,Plants resprout from buds on a woody rhizome.,bud_bank_location
 bud_bank_location_rhizome_non_woody,rhizome_non_woody,"Plants resprout from buds on a fleshy rhizome, rhizophore, or fibrous rhizome.",bud_bank_location
-bud_bank_location_stem_buds,stem_buds,"Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial axillary resprouter)",bud_bank_location
+bud_bank_location_stem_buds,stem_buds,"Plants resprout from stem buds; this trait value is separate to epicormic buds. (Synonyms, aerial_axillary_resprouter)",bud_bank_location
 bud_bank_location_stem_tuber,stem_tuber,Plants resprout from buds on a stem tuber.,bud_bank_location
 bud_bank_location_stolon,stolon,Horizontal branches (stems) resprout from the base of the plant.,bud_bank_location
 bud_bank_location_underground_buds,underground_buds,"Plants that resprout from underground organ, but the type of organ isn't specified.",bud_bank_location
@@ -632,26 +661,33 @@ storage_organ_rhizome,rhizome,"A type of continually growing or creeping undergr
 storage_organ_rhizome_woody,rhizome_woody,A type of continually growing or creeping woody underground stem.,storage_organ
 storage_organ_rhizome_fleshy,rhizome_fleshy,"A type of continually growing or creeping fleshy, non-woody underground stem.",storage_organ
 storage_organ_rhizome_fibrous,rhizome_fibrous,"A type of continually growing or creeping fibrous, non-woody underground stem.",storage_organ
-storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carbohydrates and water. (Synonym, taproot tuber)",storage_organ
+storage_organ_root_tuber,root_tuber,"A swollen root the stores nutrients, carbohydrates and water. (Synonyms, taproot_tuber)",storage_organ
 storage_organ_stem_tuber,stem_tuber,"A swollen underground stem that stores nutrients, carbohydrates and water.",storage_organ
 storage_organ_storage_organ,storage_organ,"Plant has a storage organ, but the type is unknown.",storage_organ
 storage_organ_tuber,tuber,"A swollen underground organ that stores nutrients, carbohydrates and water, where it is not specified if the tuber develops from root or stem tissue.",storage_organ
+storage_organ_roots_woody,roots_woody,Plants have woody roots.,storage_organ
 storage_organ_no_storage_organ,no_storage_organ,No storage organ present,storage_organ
-resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,"Plants that are known to be fire-killed, but have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.",resprouting_capacity_non_fire_disturbance
+storage_organ_lignotuber_absent,lignotuber_absent,A plant that explicitly lacks a lignotuber.,storage_organ
+resprouting_capacity_non_fire_disturbance_resprouts_non_fire_disturbance,resprouts_non_fire_disturbance,Plants have the ability to resprout following a disturbance other than fire that causes 100% leaf loss.,resprouting_capacity_non_fire_disturbance
 resprouting_capacity_non_fire_disturbance_resprouts_after_cyclone,resprouts_after_cyclone,Plants are able to resprout following 100% leaf loss in a cyclone.,resprouting_capacity_non_fire_disturbance
 resprouting_capacity_non_fire_disturbance_resprouts_after_drought,resprouts_after_drought,Plants are able to resprout following 100% leaf loss during a drought.,resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_resprouts_after_non-fire_stem_loss,resprouts_after_non-fire_stem_loss,Plants are able to resprout following 100% leaf loss following stem or branch removal.,resprouting_capacity_non_fire_disturbance
+resprouting_capacity_non_fire_disturbance_killed_by_non_fire_disturbance,killed_by_non_fire_disturbance,Plants do not resprout following a non-fire disturbance that leads to 100% leaf loss.,resprouting_capacity_non_fire_disturbance
 clonal_spread_mechanism_aboveground_clonal,aboveground_clonal,"Vegetative buds or plant fragments that can disperse and produce new plants (including axillary buds, bulbils and turions).",clonal_spread_mechanism
 clonal_spread_mechanism_adventitious_roots,adventitious_roots,Adventitious roots can form at nodes on the main roots or aboveground from nodes on stems.,clonal_spread_mechanism
 clonal_spread_mechanism_bulb,bulb,"Below ground storage organ derived from stem (and sometimes leaf) tissue, that divides into new individuals.",clonal_spread_mechanism
 clonal_spread_mechanism_belowground_clonal,belowground_clonal,Plants use an unspecified underground organ for clonal spread.,clonal_spread_mechanism
 clonal_spread_mechanism_corm,corm,Below ground organ derived from stem tissue that can function either for vegetative spread or to regenerate following a disturbance.,clonal_spread_mechanism
 clonal_spread_mechanism_rhizome,rhizome,Plant has an underground stem that has stem buds and forms adventitious roots at nodes; this stem may be woody or non-woody. Rhizomes are both a mechanism for vegetative spread and a strategy to survive fire.,clonal_spread_mechanism
-clonal_spread_mechanism_root_buds,root_buds,Root buds that produce vertical suckers.,clonal_spread_mechanism
+clonal_spread_mechanism_root_buds,root_buds,"Root buds that produce vertical suckers. (Synonyms, root_suckers)",clonal_spread_mechanism
 clonal_spread_mechanism_root_tuber,root_tuber,A swollen root that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
 clonal_spread_mechanism_stem_tuber,stem_tuber,A swollen underground stem that functions as a storage organ and has buds that allow clonal growth.,clonal_spread_mechanism
 clonal_spread_mechanism_stolon,stolon,Plants having horizontal branches (stems) from the base of the plant that produce new plants from buds at its tip or nodes.,clonal_spread_mechanism
 clonal_spread_mechanism_viviparous,viviparous,Plant produces clonal offspring that grow while still attached to the parent plant.,clonal_spread_mechanism
 clonal_spread_mechanism_non_clonal,non_clonal,Plant does not display clonal growth.,clonal_spread_mechanism
+clonal_spread_mechanism_clonal,clonal,"A plant is able to spread clonally, but the mechanism is not specified.",clonal_spread_mechanism
+clonal_spread_mechanism_stem_suckers,stem_suckers,"Stem buds that produce vertical suckers. (Synonyms, stem_buds, rooting_at_nodes)",clonal_spread_mechanism
+clonal_spread_mechanism_stolon_absent,stolon_absent,Plants lack horizontal branches (stems) that produce new plants from buds.,clonal_spread_mechanism
 root_system_classification_type_i,type_i,The primary root is fibrous or fleshy and is relatively long; mesophytic.,root_system_classification
 root_system_classification_type_ii,type_ii,The primary root is relatively short and is fibrous. Roots are well branched in a dry habitat but branch little in one that is wet.,root_system_classification
 root_system_classification_type_iii,type_iii,The primary root is usually long and fibrous. The first order lateral roots are well branched and are usually short; they are rather evenly distributed along the primary root; xerophytic.,root_system_classification
@@ -689,7 +725,7 @@ plant_tolerance_salt_hydrohalophyte,hydrohalophyte,Tidal swamp or 'mangrove' and
 plant_tolerance_salt_salt_spray_tolerant,salt_spray_tolerant,Plant that is tolerant of salt spray (typically inhabiting near-coastal environments).,plant_tolerance_salt
 plant_tolerance_salt_salinity_tolerance_undefined,salinity_tolerance_undefined,Plant's ability to tolerate salt is unknown.,plant_tolerance_salt
 plant_tolerance_salt_xerohalophyte,xerohalophyte,Plants adapted to inland salt desert and saline habitats.,plant_tolerance_salt
-seed_shape_comma-shaped,comma-shaped,"A seed displaying a single arc of curvature, such that it bilaterally symmetrical. (Synonyms, comma-shaped, falcate, sickle-shaped scimitar-shaped)",seed_shape
+seed_shape_comma-shaped,comma-shaped,"A seed displaying a single arc of curvature, such that it bilaterally symmetrical. (Synonyms, falcate, sickle-shaped, scimitar-shaped)",seed_shape
 seed_shape_conical,conical,"Cone-shaped, with a broad flat base and narrow apex; turbinate refers to the inverse shape. (Synonyms, obconical, cone-shaped, turbinate, top-shaped)",seed_shape
 seed_shape_cuneate,cuneate,A 3-dimensional shape that is wedge-shaped or boat-shaped.,seed_shape
 seed_shape_cylindrical,cylindrical,"A cylinder, a shape with a flat top and bottom that are circular or elliptical in outline and are linked by a curved surface. (Synonyms, terete)",seed_shape
@@ -727,7 +763,7 @@ seed_surface_texture_pitted,pitted,"Seed surface pitted. (Synonyms, foveolate, f
 seed_surface_texture_ribbed,ribbed,"Seed surface with longitudinal raised ribs or ridges. (Synonyms, costate, carinate, lineate, fluted, striate, strigose, lineolate, scalariform, ridged)",seed_surface_texture
 seed_surface_texture_rough,rough,"Seed surface rough with no organisation of markings, resembling sandpaper. (Synonyms, scabrous)",seed_surface_texture
 seed_surface_texture_scaly,scaly,"Seed surface rough with loose scales differing in direction or not parallel in direction. (Synonyms, scurfy, squarrose)",seed_surface_texture
-seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture. (Synonym, glabrous)",seed_surface_texture
+seed_surface_texture_smooth,smooth,"Seed surface smooth, lacking texture. (Synonyms, glabrous)",seed_surface_texture
 seed_surface_texture_spiny,spiny,"Seed surface with spines. (Synonyms, echinulate)",seed_surface_texture
 seed_surface_texture_wrinkled,wrinkled,"Seed surface with a wrinkled, rugose texture. (Synonyms, rugose, rugulose, bullate)",seed_surface_texture
 seedbank_location_seedbank,seedbank,"A seedbank exists, but its locations is not specified.",seedbank_location
@@ -762,6 +798,7 @@ plant_physical_defence_structures_pungent_leaf_apex,pungent_leaf_apex,A sharp-ti
 plant_physical_defence_structures_spine,spine,"A sharp-pointed structure, which is a modified leaf or leaf part, including petioles, midribs, secondary veins, leaflets, or stipules.",plant_physical_defence_structures
 plant_physical_defence_structures_stinging_or_irritant_hairs,stinging_or_irritant_hairs,"Trichomes that sting or irritate, by injecting a toxin.",plant_physical_defence_structures
 plant_physical_defence_structures_thorn,thorn,"A sharp-pointed, stiff, woody modified stem.",plant_physical_defence_structures
+plant_physical_defence_structures_subspinescent,subspinescent,A plant bearing weakly or partially developed spine-like structures.,plant_physical_defence_structures
 plant_spinescence_no_spines,no_spines,No spines. (level 0),plant_spinescence
 plant_spinescence_low_density_soft_spines,low_density_soft_spines,Low or very local density of soft spines <5mm long; plant may sting or prickle when hit carelessly but not impart strong pain. (level 1),plant_spinescence
 plant_spinescence_high_density_soft_spines,high_density_soft_spines,"High density of soft spines, intermediate density of spines of intermediate hardness, or low density of hard, sharp spines >5mm long; plant causes actual pain when hit carelessly. (level 2)",plant_spinescence
@@ -774,9 +811,30 @@ leaf_stomatal_distribution_epistomatic,epistomatic,Leaves that only have stomata
 leaf_stomatal_distribution_hypostomatic,hypostomatic,Leaves that only have stomata on the lower (abaxial) leaf surface.,leaf_stomatal_distribution
 leaf_stomatal_hairs_stomata_covered_with_dense_hairs,stomata_covered_with_dense_hairs,Stomata densely covered by hairs.,leaf_stomatal_hairs
 leaf_stomatal_hairs_stomata_not_covered_by_hairs,stomata_not_covered_by_hairs,Stomata not hair-covered.,leaf_stomatal_hairs
-root_system_type_tap_root_absent,tap_root_absent,Tap root not present.,root_system_type
-root_system_type_tap_root_present,tap_root_present,Tap root present.,root_system_type
-root_system_type_tap_root_sometimes_present,tap_root_sometimes_present,Tap root sometimes present.,root_system_type
+root_system_type_taproot,taproot,"Taproot, where the primary root remains dominant and grows downward as a single thick main root.",root_system_type
+root_system_type_taproot_absent,taproot_absent,Tap root not present.,root_system_type
+root_system_type_taproot_sometimes_present,taproot_sometimes_present,Tap root sometimes present.,root_system_type
+root_system_type_taproot_slender,taproot_slender,"Slender, thin taproot.",root_system_type
+root_system_type_taproot_stout,taproot_stout,"Stout, thick, robust taproot.",root_system_type
+root_system_type_taproot_fleshy,taproot_fleshy,"Fleshy, swollen taproot.",root_system_type
+root_system_type_taproot_branched,taproot_branched,Taproot that bears prominent lateral branches.,root_system_type
+root_system_type_taproot_unbranched,taproot_unbranched,Unbranched taproot.,root_system_type
+root_system_type_aquatic_rooted,aquatic_rooted,Aquatic plant that is rooted in the substrate rather than free-floating.,root_system_type
+root_system_type_adventitious_roots,adventitious_roots,"Adventitious roots, which arise from stems, leaves, or other tissues rather than from the primary root.",root_system_type
+root_system_type_coralloid_roots,coralloid_roots,"Coralloid roots, short, branched, coral-like roots.",root_system_type
+root_system_type_sand-binding_roots,sand-binding_roots,"Sand-binding roots, which are sheathed in sand grains held in place by root hairs and mucilage.",root_system_type
+root_system_type_stilt_roots,stilt_roots,"Stilt roots, adventitious roots that arise from the lower stem and reach the ground, providing additional support.",root_system_type
+root_system_type_stilt_roots_absent,stilt_roots_absent,A plant that explicitly lacks stilt roots.,root_system_type
+root_system_type_prop_roots,prop_roots,"Prop roots, adventitious roots that arise from the stem above ground and brace the plant.",root_system_type
+root_system_type_prop_roots_absent,prop_roots_absent,A plant that explicitly lacks prop roots.,root_system_type
+root_system_type_aerial_roots,aerial_roots,"Aerial roots, roots that grow above the ground or water surface.",root_system_type
+root_system_type_aerial_roots_absent,aerial_roots_absent,A plant that explicitly lacks aerial roots.,root_system_type
+root_system_type_fibrous_roots,fibrous_roots,"A fibrous root system, in which many roots of similar size arise.",root_system_type
+root_system_type_fleshy_roots,fleshy_roots,"Fleshy, thickened roots that store water or nutrients.",root_system_type
+root_system_type_napiform_roots,napiform_roots,"Napiform (turnip-shaped) roots, swollen and rounded above and tapering abruptly below.",root_system_type
+root_system_type_non-tuberous_roots,non-tuberous_roots,A plant whose roots are not swollen into storage tubers.,root_system_type
+root_system_type_deep_rooted,deep_rooted,Deep root system that extends well below the soil surface.,root_system_type
+root_system_type_shallow_rooted,shallow_rooted,Shallow root system concentrated near the soil surface.,root_system_type
 vegetative_reproduction_ability_not_vegetative,not_vegetative,Plant taxa that regenerate and spread only by seed.,vegetative_reproduction_ability
 vegetative_reproduction_ability_vegetative,vegetative,"Plant taxa that can regenerate and spread through the growth and division of vegetative material, not just from seed; examples include runners, rhizomes, and bulbs.",vegetative_reproduction_ability
 vegetative_reproduction_ability_vegetative_obligate,vegetative_obligate,"Plant taxa that never (or very rarely) regenerate from seed, instead regenerating and spreading entirely through the growth and division of vegetative material.",vegetative_reproduction_ability
@@ -791,17 +849,17 @@ woodiness_detailed_herbaceous,herbaceous,Plant with non-lignified stems.,woodine
 woodiness_detailed_woody,woody,Plant whose stems produce secondary xylem (true wood).,woodiness_detailed
 woodiness_detailed_woody_base,woody_base,"Plant where secondary xylem (true wood) is present only at the base of stems. (Synonyms, suffrutescent)",woodiness_detailed
 woodiness_detailed_woody_root,woody_root,Plant that has a woody rootstock but non-woody above-ground stems.,woodiness_detailed
-woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem shrub, soft shrub, soft wood)",woodiness_detailed
+woodiness_detailed_semi_woody,semi_woody,"Plant that forms stems considered only ""partially woody"", generally having lower lignin and cellulose contents and possibly not forming secondary xylem. These are generally short-lived, fast-growing stems. (Synonyms, green-stem_shrub, soft_shrub, soft_wood)",woodiness_detailed
 woodiness_detailed_woody_like_stem,woody_like_stem,"Taxa, including monocots and ferns, that produce thick, stiff, robust lignified stems but do not produce secondary xylem.",woodiness_detailed
 woodiness_detailed_woody_like_inflorescence,woody_like_inflorescence,"Taxa, including monocots, that produce thick, stiff, robust lignified inflorescence shoots but are otherwise non-woody.",woodiness_detailed
-seed_colour_blue_purple,blue_purple,Seed coat is pink.,seed_colour
-seed_colour_green,green,Seed coat is red.,seed_colour
-seed_colour_pink,pink,Seed coat is orange.,seed_colour
-seed_colour_red_brown,red_brown,Seed coat is yellow.,seed_colour
-seed_colour_white_cream,white_cream,Seed coat is green.,seed_colour
-seed_colour_yellow_orange,yellow_orange,Seed coat is blue.,seed_colour
-seed_colour_grey,grey,Seed coat is purple.,seed_colour
-seed_colour_black,black,Seed coat is white.,seed_colour
+seed_colour_blue_purple,blue_purple,Seed coat is blue to purple.,seed_colour
+seed_colour_green,green,Seed coat is green.,seed_colour
+seed_colour_pink,pink,Seed coat is pink.,seed_colour
+seed_colour_red_brown,red_brown,Seed coat is red to brown.,seed_colour
+seed_colour_white_cream,white_cream,Seed coat is white to cream.,seed_colour
+seed_colour_yellow_orange,yellow_orange,Seed coat is yellow to orange.,seed_colour
+seed_colour_grey,grey,Seed coat is grey.,seed_colour
+seed_colour_black,black,Seed coat is black.,seed_colour
 stem_hairs_glabrous,glabrous,Adult plant stems do not have hairs (trichomes).,stem_hairs
 stem_hairs_hairy,hairy,Adult plant stems have hairs (trichomes).,stem_hairs
 leaf_surface_colour_green,green,Leaf lamina surface is green.,leaf_surface_colour
@@ -812,9 +870,683 @@ leaf_surface_colour_pale_grey_green,pale_grey_green,Leaf lamina surface is pale 
 leaf_surface_colour_dark_grey_green,dark_grey_green,Leaf lamina surface is dark grey-green.,leaf_surface_colour
 leaf_surface_colour_red,red,Leaf lamina surface is red.,leaf_surface_colour
 leaf_surface_colour_purple,purple,Leaf lamina surface is purple.,leaf_surface_colour
+leaf_surface_colour_green_olive,green_olive,Leaf lamina surface is olive green.,leaf_surface_colour
+leaf_surface_colour_green_brown,green_brown,Leaf lamina surface is brownish-green.,leaf_surface_colour
+leaf_surface_colour_green_yellow,green_yellow,Leaf lamina surface is yellowish-green.,leaf_surface_colour
+leaf_surface_colour_green_silvery,green_silvery,Leaf lamina surface is silvery-green.,leaf_surface_colour
+leaf_surface_colour_blue,blue,Leaf lamina surface is blue.,leaf_surface_colour
+leaf_surface_colour_blue_green,blue_green,Leaf lamina surface is blue-green.,leaf_surface_colour
+leaf_surface_colour_white,white,Leaf lamina surface is white.,leaf_surface_colour
+leaf_surface_colour_yellow,yellow,Leaf lamina surface is yellow.,leaf_surface_colour
+leaf_surface_colour_brown,brown,Leaf lamina surface is brown.,leaf_surface_colour
+leaf_surface_colour_yellow_brown,yellow_brown,Leaf lamina surface is yellow-brown.,leaf_surface_colour
 leaf_surface_reflectivity_dull,dull,"Leaf surface appears dull, indicating it has a low reflectivity.",leaf_surface_reflectivity
 leaf_surface_reflectivity_shiny,shiny,"Leaf surface appears shiny or glossy, indicating it has a high reflectivity. (Synonyms, glossy, lustrous, polished)",leaf_surface_reflectivity
 fruit_surface_hairs_glabrous,glabrous,Mature fruit do not have hairs (trichomes).,fruit_surface_hairs
 fruit_surface_hairs_hairy,hairy,Mature fruit have hairs (trichomes).,fruit_surface_hairs
 root_vascular_anatomy_cord_roots,cord_roots,"A root anatomy found within three genera of Mirbelieae (Daviesia, Euchilopsis, Phyllota) wherein networks of interlinking vascular strands exist (Crisp 2003; Pate and Dixon 1996).",root_vascular_anatomy
 root_vascular_anatomy_unistelar_roots,unistelar_roots,"The commonly observed root anatomy, wherein there is a single vascular strand which displays secondary thickening.",root_vascular_anatomy
+leaf_length_type_leafless,leafless,"A leafless plant, which lacks leaves and therefore has no leaf length to record.",leaf_length_type
+leaf_length_type_compound,compound,"A plant with compound leaves, for which leaflet_length, not leaf_length, is the appropriate trait under which to record the maximum length of the leaf unit.",leaf_length_type
+leaf_length_type_bladeless,bladeless,"A plant whose leaves lack a distinct blade (lamina), such that leaf_length is not the appropriate trait under which to record leaf dimensions.",leaf_length_type
+leaf_length_type_scale_leaves,scale_leaves,"A plant with scale leaves, such that leaf_length is not the appropriate trait under which to record leaf dimensions. (Synonyms, na_reduced_to_scales)",leaf_length_type
+leaf_length_type_reduced,reduced,"A plant whose leaves are reduced, such that leaf_length is not the appropriate trait under which to record leaf dimensions, but their form is not specified.",leaf_length_type
+leaf_length_type_reduced_to_sheath,reduced_to_sheath,"A plant whose leaves are reduced to a sheath, such that leaf_length is not the appropriate trait under which to record leaf dimensions.",leaf_length_type
+leaf_length_missing_not_given,not_given,A leaf length was not given in the data source consulted.,leaf_length_missing
+leaf_length_missing_not_given_flora,not_given_flora,A leaf length was not given in the flora consulted.,leaf_length_missing
+leaf_length_missing_not_given_taxon_description,not_given_taxon_description,A leaf length was not given in the taxon description consulted.,leaf_length_missing
+plant_height_type_aquatic,aquatic,"An aquatic plant, which may be submerged or floating, but which is not self-supporting and therefore stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_aquatic_floating,aquatic_floating,"A floating aquatic plant for which stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_aquatic_submerged,aquatic_submerged,"A submerged aquatic plant for which stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_climbing,climbing,"A climbing plant, which is not self-supporting and therefore stem_length or plant_height_climbing, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_epiphyte,epiphyte,"An epiphyte, which is not rooted in soil and therefore stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_geophyte,geophyte,"A geophyte, which lacks a permanent aboveground shoot system, such that the height of the reproductive shoot system (plant_height_reproductive) is the appropriate trait under which to record the maximum height of the plant.",plant_height_type
+plant_height_type_lithophyte,lithophyte,"A lithophyte, which grows on the surface of rocks rather than rooted in soil, and therefore stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_mat-forming,mat-forming,"A mat-forming plant, which is a low-growing plant with prostrate stems that root at the nodes, and while it will have a height of a few cm, plant_width or stem_length are often the only plant dimensions reported. (Synonyms, na_cushion)",plant_height_type
+plant_height_type_marine,marine,"A marine plant, which grows submerged in seawater and is not self-supporting, and therefore stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_type_rosette,rosette,"A plant whose leaves are arranged in a ring (rosette) on the ground surface and only has a flowering stem that elongates, such that plant_height_reproductive, not plant_height, is the appropriate trait under which to record the maximum height of the plant.",plant_height_type
+plant_height_type_leaf_tuft,leaf_tuft,"A plant whose leaves are arranged in a tuft on the ground surface and only has a flowering stem that elongates, such that plant_height_reproductive, not plant_height, is the appropriate trait under which to record the maximum height of the plant.",plant_height_type
+plant_height_type_prostrate,prostrate,"A prostrate plant, whose stems grow along the ground surface, generally rising just slightly, and therefore stem_length, gives a better indication of the length of the vegetative shoot system than does plant_height, although both maybe recorded. (Synonyms, na_trailing, na_creeping, na_decumbent)",plant_height_type
+plant_height_type_rhizome,rhizome,"A plant whose main stem is a horizontal rhizome, and therefore stem_length, not plant_height, is the appropriate trait under which to record the length of the vegetative shoot system.",plant_height_type
+plant_height_missing_not_given_taxon_description,not_given_taxon_description,A plant height was not given in the taxon description consulted.,plant_height_missing
+plant_height_missing_not_given_flora,not_given_flora,A plant height was not given in the Flora consulted.,plant_height_missing
+plant_height_missing_not_given,not_given,A plant height was not given in the data source consulted.,plant_height_missing
+leaf_stipule_presence_stipule_present,stipule_present,"Leaves have stipules. (Synonyms, stipulate)",leaf_stipule_presence
+leaf_stipule_presence_stipule_absent,stipule_absent,"Leaves lack stipules. (Synonyms, exstipulate)",leaf_stipule_presence
+leaf_apex_shape_acuminate,acuminate,"Leaf apex has a long, narrow, tapering point.",leaf_apex_shape
+leaf_apex_shape_acute,acute,Leaf apex comes to a point at an angle of less than 90 degrees.,leaf_apex_shape
+leaf_apex_shape_obtuse,obtuse,Leaf apex comes to a point at an angle of more than 90 degrees.,leaf_apex_shape
+leaf_apex_shape_rounded,rounded,Leaf apex is rounded.,leaf_apex_shape
+leaf_apex_shape_apiculate,apiculate,"Leaf apex narrows abruptly to a small, sharp terminal point (a mucro). (Synonyms, mucro)",leaf_apex_shape
+leaf_petiole_presence_petiole_present,petiole_present,"Leaves have a petiole. (Synonyms, petiolate).",leaf_petiole_presence
+leaf_petiole_presence_petiole_absent,petiole_absent,"Leaves lack a petiole and attach directly to the stem. (Synonyms, sessile)",leaf_petiole_presence
+petiole_shape_decurrent,decurrent,"Petiole with a winged extension that extends down the stem. (Synonyms, winged, clasping)",petiole_shape
+petiole_shape_not_decurrent,not_decurrent,Petiole without a winged extension that extends down the stem.,petiole_shape
+petiole_shape_slender,slender,Petiole that is long and thin.,petiole_shape
+leaf_glaucousness_juvenile_leaves_glaucous,glaucous,"Juvenile phase leaves have a waxy coating, giving them a glaucous appearance. (Synonyms, waxy_bloom, pruinose)",leaf_glaucousness_juvenile_leaves
+leaf_glaucousness_juvenile_leaves_not_glaucous,not_glaucous,"Juvenile phase leaves do not have a glaucous appearance. (Synonyms, green)",leaf_glaucousness_juvenile_leaves
+leaf_glaucousness_juvenile_leaves_subglaucous,subglaucous,"Juvenile phase leaves have a thin or patchy waxy coating, giving them a slightly glaucous appearance intermediate between glaucous and not glaucous. (Synonyms, semi-glaucous)",leaf_glaucousness_juvenile_leaves
+leaf_epicuticular_wax_crystal_form_amorphous,amorphous,"Epicuticular wax forms a continuous amorphous film without distinct crystals. (Synonyms, wax_film)",leaf_epicuticular_wax_crystal_form
+leaf_epicuticular_wax_crystal_form_granules,granules,Epicuticular wax crystals are small irregular granules.,leaf_epicuticular_wax_crystal_form
+leaf_epicuticular_wax_crystal_form_plates,plates,"Epicuticular wax crystals are flat plates (platelets), with entire, sinuate, crenate or digitate edges. (Synonyms, platelets)",leaf_epicuticular_wax_crystal_form
+leaf_epicuticular_wax_crystal_form_tubes,tubes,"Epicuticular wax crystals are hollow tubes (tubules), simple or branched. (Synonyms, tubules)",leaf_epicuticular_wax_crystal_form
+leaf_epicuticular_wax_density_class_high,high,"Epicuticular wax crystals densely cover the leaf surface, forming an almost complete cover. (Synonyms, dense_cover)",leaf_epicuticular_wax_density_class
+leaf_epicuticular_wax_density_class_low,low,"Epicuticular wax crystals are sparse on the leaf surface. (Synonyms, sparse, very_low)",leaf_epicuticular_wax_density_class
+leaf_epicuticular_wax_density_class_open,open,"Epicuticular wax crystals form an open cover, with the cuticle visible between crystals.",leaf_epicuticular_wax_density_class
+leaf_surface_colour_juvenile_leaves_dark_green,dark_green,Juvenile leaf lamina surface is dark green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_dark_grey_green,dark_grey_green,Juvenile leaf lamina surface is dark grey-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_green,green,Juvenile leaf lamina surface is green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_green_olive,green_olive,Juvenile leaf lamina surface is olive green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_green_brown,green_brown,Juvenile leaf lamina surface is brownish-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_green_yellow,green_yellow,Juvenile leaf lamina surface is yellowish-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_green_silvery,green_silvery,Juvenile leaf lamina surface is silvery-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_grey_green,grey_green,Juvenile leaf lamina surface is grey-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_pale_green,pale_green,Juvenile leaf lamina surface is pale green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_pale_grey_green,pale_grey_green,Juvenile leaf lamina surface is pale grey-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_purple,purple,Juvenile leaf lamina surface is purple.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_red,red,Juvenile leaf lamina surface is red.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_blue,blue,Juvenile leaf lamina surface is blue.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_blue_green,blue_green,Juvenile leaf lamina surface is blue-green.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_white,white,Juvenile leaf lamina surface is white.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_yellow,yellow,Juvenile leaf lamina surface is yellow.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_brown,brown,Juvenile leaf lamina surface is brown.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_yellow_brown,yellow_brown,Juvenile leaf lamina surface is yellow-brown.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_black,black,Juvenile leaf lamina surface is black.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_cream,cream,Juvenile leaf lamina surface is cream.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_grey,grey,Juvenile leaf lamina surface is grey.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_orange,orange,Juvenile leaf lamina surface is orange.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_pink,pink,Juvenile leaf lamina surface is pink.,leaf_surface_colour_juvenile_leaves
+leaf_surface_colour_juvenile_leaves_reddish_brown,reddish_brown,Juvenile leaf lamina surface is reddish-brown.,leaf_surface_colour_juvenile_leaves
+leaf_constitution_chartaceous,chartaceous,"Leaf lamina is thin and papery. (Synonyms, papery)",leaf_constitution
+leaf_constitution_coriaceous,coriaceous,"Leaf lamina is thick, tough and leathery. (Synonyms, leathery)",leaf_constitution
+leaf_constitution_fleshy,fleshy,"Leaf lamina is thick, soft and juicy. (Synonyms, succulent, carnose)",leaf_constitution
+leaf_constitution_membranous,membranous,"Leaf lamina is very thin, soft and often translucent. (Synonyms, membranaceous)",leaf_constitution
+leaf_constitution_rigid,rigid,"Leaf lamina is stiff and does not bend easily. (Synonyms, stiff)",leaf_constitution
+leaf_discolority_concolorous,concolorous,"Both leaf surfaces are the same colour. (Synonyms, concolourous)",leaf_discolority
+leaf_discolority_discolorous,discolorous,"The two leaf surfaces differ in colour. (Synonyms, discolourous)",leaf_discolority
+leaf_stomatal_position_encrypted,encrypted,"Stomata enclosed so that the external aperture is separated from the stomatal aperture by at least twice the width of the external aperture. (Synonyms, deeply_encrypted)",leaf_stomatal_position
+leaf_stomatal_position_sunken,sunken,"Stomata recessed below the general level of the epidermal surface, in shallow pits or below a raised cuticular rim or papillae, but not deeply enough to be encrypted.",leaf_stomatal_position
+leaf_stomatal_position_superficial,superficial,"Stomata level with the epidermal surface, or only weakly recessed.",leaf_stomatal_position
+leaf_stomatal_complex_type_actinocytic,actinocytic,Stomata surrounded by a ring of radially elongated subsidiary cells.,leaf_stomatal_complex_type
+leaf_stomatal_complex_type_anisocytic,anisocytic,"Stomata surrounded by three subsidiary cells, one distinctly smaller than the other two.",leaf_stomatal_complex_type
+leaf_stomatal_complex_type_anomocytic,anomocytic,Stomata surrounded by a variable number of cells that are not distinguishable from other epidermal cells (no distinct subsidiary cells).,leaf_stomatal_complex_type
+leaf_stomatal_complex_type_cyclocytic,cyclocytic,Stomata surrounded by one or two narrow rings of four or more subsidiary cells.,leaf_stomatal_complex_type
+leaf_stomatal_complex_type_diacytic,diacytic,Stomata enclosed by a pair of subsidiary cells whose common walls are at right angles to the guard cells.,leaf_stomatal_complex_type
+leaf_stomatal_complex_type_paracytic,paracytic,Stomata accompanied on either side by one or more subsidiary cells whose long axes are parallel to the guard cells.,leaf_stomatal_complex_type
+leaf_stomatal_complex_type_tetracytic,tetracytic,"Stomata surrounded by four subsidiary cells, two lateral and two polar.",leaf_stomatal_complex_type
+bark_texture_smooth,smooth,"Bark surface is smooth, without persistent fissures, ridges, fibres or flakes.",bark_texture
+bark_texture_rough,rough,"Bark surface is rough, with irregular cracks, ridges or a coarse texture, but without deep regular furrows.",bark_texture
+bark_texture_furrowed,furrowed,"Bark is thick, with deep longitudinal furrows or fissures separating ridges or plates. (Synonyms, fissured, deeply_fissured)",bark_texture
+bark_texture_tessellated,tessellated,"Bark is broken into small, roughly square or rectangular blocks or plates, forming a tessellated or chequered pattern.",bark_texture
+bark_texture_fibrous,fibrous,"Bark is composed of matted, shortish fibres that come away in soft, spongy or fibrous pieces.",bark_texture
+bark_texture_stringy,stringy,Bark is composed of long fibres that can be pulled away in long strips.,bark_texture
+bark_texture_flaky,flaky,"Bark is shed in small flakes or scales, often leaving a patchy surface. (Synonyms, scaly)",bark_texture
+bark_texture_papery,papery,"Bark is thin and shed in soft, papery layers or sheets. (Synonyms, paperbark)",bark_texture
+bark_texture_corky,corky,"Bark is thick, soft and spongy, composed of cork tissue.",bark_texture
+bark_texture_spiny,spiny,"Bark surface bears spines, prickles or thorns.",bark_texture
+bark_ribbon_type_consistent_ribboning,consistent_ribboning,"Plants consistently have long, persistent ribbons of bark hanging from the trunk and/or branches.",bark_ribbon_type
+bark_ribbon_type_no_ribboning,no_ribboning,Plants do not have persistent ribbons of bark on the trunk or branches.,bark_ribbon_type
+bark_ribbon_type_some_ribboning,some_ribboning,"Plants have some persistent ribbons of bark on the trunk and/or branches, either infrequent long ribbons or short ribbons at any frequency.",bark_ribbon_type
+bark_colour_black,black,Bark colour is black.,bark_colour
+bark_colour_brown,brown,Bark colour is brown.,bark_colour
+bark_colour_brown_dark,brown_dark,Bark colour is dark brown.,bark_colour
+bark_colour_brown_light,brown_light,Bark colour is light brown.,bark_colour
+bark_colour_green,green,Bark colour is green.,bark_colour
+bark_colour_grey,grey,Bark colour is grey.,bark_colour
+bark_colour_orange,orange,Bark colour is orange.,bark_colour
+bark_colour_pink,pink,Bark colour is pink.,bark_colour
+bark_colour_red,red,Bark colour is red.,bark_colour
+bark_colour_white,white,Bark colour is white.,bark_colour
+bark_colour_yellow,yellow,Bark colour is yellow.,bark_colour
+inflorescence_type_solitary,solitary,Each inflorescence is comprised of a single flower.,inflorescence_type
+inflorescence_type_raceme,raceme,"An unbranched, elongated inflorescence with individually stalked flowers.",inflorescence_type
+inflorescence_type_spike,spike,"An unbranched, elongated inflorescence with sessile or subsessile flowers",inflorescence_type
+inflorescence_type_cyme,cyme,A branched inflorescence in which each branch terminates in a flower.,inflorescence_type
+inflorescence_type_corymb,corymb,"A flat-topped or slightly convex shaped inflorescence in which the pedicels become progressively larger toward the edge of the inflorescence, such that all flowers reach approximately the same height.",inflorescence_type
+inflorescence_type_panicle,panicle,"A compoundedly branched inflorescence, most typically a raceme whose branches are themselves racemes or other multi-flowered units.",inflorescence_type
+inflorescence_type_umbel,umbel,An inflorescence in which stalked flowers arise from a single point at the top of the peduncle.,inflorescence_type
+inflorescence_type_terminal,terminal,"An inflorescence borne at the tip of a stem or branch (a position descriptor, like axillary, often recorded alongside an architecture term in source descriptions).",inflorescence_type
+inflorescence_type_axillary,axillary,"An inflorescence borne in a leaf axil (a position descriptor, often recorded alongside an architecture term in source descriptions).",inflorescence_type
+inflorescence_type_head,head,"A dense, condensed inflorescence of many sessile or subsessile flowers, resembling a single flower.",inflorescence_type
+inflorescence_shape_spherical,spherical,"An approximately spherical inflorescence, with flowers radiating outwards from a central point to form a rounded, ball-like silhouette of similar length and width. (Synonyms, globose, globular)",inflorescence_shape
+inflorescence_shape_cylindrical,cylindrical,"An elongated inflorescence of roughly uniform width along its length, with flowers arranged densely around a central axis to form a cylinder-shaped silhouette, as in a bottlebrush. (Synonyms, columnar)",inflorescence_shape
+inflorescence_shape_elongated,elongated,"An inflorescence that is distinctly longer than wide, with flowers arranged along an extended axis. (Synonyms, linear)",inflorescence_shape
+inflorescence_shape_narrow,narrow,"A slender inflorescence whose width is small relative to its length, with flowers arranged close to the axis, with short pedicels.",inflorescence_shape
+flower_anther_colour_black,black,Anther colour is black.,flower_anther_colour
+flower_anther_colour_blue,blue,Anther colour is blue.,flower_anther_colour
+flower_anther_colour_brown,brown,Anther colour is brown.,flower_anther_colour
+flower_anther_colour_cream,cream,Anther colour is cream.,flower_anther_colour
+flower_anther_colour_green,green,Anther colour is green.,flower_anther_colour
+flower_anther_colour_grey,grey,Anther colour is grey.,flower_anther_colour
+flower_anther_colour_orange,orange,Anther colour is orange.,flower_anther_colour
+flower_anther_colour_pink,pink,Anther colour is pink.,flower_anther_colour
+flower_anther_colour_purple,purple,Anther colour is purple.,flower_anther_colour
+flower_anther_colour_red,red,Anther colour is red.,flower_anther_colour
+flower_anther_colour_white,white,Anther colour is white.,flower_anther_colour
+flower_anther_colour_yellow,yellow,Anther colour is yellow.,flower_anther_colour
+flower_style_colour_black,black,Style colour is black.,flower_style_colour
+flower_style_colour_blue,blue,"Style colour is blue. (Synonyms, indigo)",flower_style_colour
+flower_style_colour_brown,brown,Style colour is brown.,flower_style_colour
+flower_style_colour_green,green,"Style colour is green. (Synonyms, turquoise)",flower_style_colour
+flower_style_colour_grey,grey,Style colour is grey.,flower_style_colour
+flower_style_colour_orange,orange,Style colour is orange.,flower_style_colour
+flower_style_colour_pink,pink,"Style colour is pink. (Synonyms, mauve)",flower_style_colour
+flower_style_colour_purple,purple,"Style colour is purple. (Synonyms, lilac, violet, magenta)",flower_style_colour
+flower_style_colour_red,red,"Style colour is red. (Synonyms, maroon, reddish_brown)",flower_style_colour
+flower_style_colour_white,white,"Style colour is white. (Synonyms, cream)",flower_style_colour
+flower_style_colour_yellow,yellow,"Style colour is yellow. (Synonyms, gold)",flower_style_colour
+flower_ovary_colour_black,black,Ovary colour is black.,flower_ovary_colour
+flower_ovary_colour_blue,blue,"Ovary colour is blue. (Synonyms, indigo)",flower_ovary_colour
+flower_ovary_colour_brown,brown,Ovary colour is brown.,flower_ovary_colour
+flower_ovary_colour_green,green,"Ovary colour is green. (Synonyms, turquoise)",flower_ovary_colour
+flower_ovary_colour_grey,grey,Ovary colour is grey.,flower_ovary_colour
+flower_ovary_colour_orange,orange,Ovary colour is orange.,flower_ovary_colour
+flower_ovary_colour_pink,pink,"Ovary colour is pink. (Synonyms, mauve)",flower_ovary_colour
+flower_ovary_colour_purple,purple,"Ovary colour is purple. (Synonyms, lilac, violet, magenta)",flower_ovary_colour
+flower_ovary_colour_red,red,"Ovary colour is red. (Synonyms, maroon, reddish_brown)",flower_ovary_colour
+flower_ovary_colour_white,white,"Ovary colour is white. (Synonyms, cream)",flower_ovary_colour
+flower_ovary_colour_yellow,yellow,"Ovary colour is yellow. (Synonyms, gold)",flower_ovary_colour
+flower_colour_detailed_black,black,Flower colour is black.,flower_colour_detailed
+flower_colour_detailed_blue,blue,Flower colour is blue.,flower_colour_detailed
+flower_colour_detailed_brown,brown,Flower colour is brown.,flower_colour_detailed
+flower_colour_detailed_cream,cream,Flower colour is cream (pale yellowish white).,flower_colour_detailed
+flower_colour_detailed_gold,gold,Flower colour is gold (deep golden yellow).,flower_colour_detailed
+flower_colour_detailed_green,green,Flower colour is green.,flower_colour_detailed
+flower_colour_detailed_grey,grey,Flower colour is grey.,flower_colour_detailed
+flower_colour_detailed_indigo,indigo,Flower colour is indigo (deep blue-violet).,flower_colour_detailed
+flower_colour_detailed_lilac,lilac,Flower colour is lilac (pale purple).,flower_colour_detailed
+flower_colour_detailed_magenta,magenta,Flower colour is magenta (purplish red).,flower_colour_detailed
+flower_colour_detailed_maroon,maroon,Flower colour is maroon (dark brownish red).,flower_colour_detailed
+flower_colour_detailed_mauve,mauve,Flower colour is mauve (pale pinkish purple).,flower_colour_detailed
+flower_colour_detailed_orange,orange,Flower colour is orange.,flower_colour_detailed
+flower_colour_detailed_pink,pink,Flower colour is pink.,flower_colour_detailed
+flower_colour_detailed_purple,purple,Flower colour is purple.,flower_colour_detailed
+flower_colour_detailed_red,red,Flower colour is red.,flower_colour_detailed
+flower_colour_detailed_reddish_brown,reddish_brown,Flower colour is reddish-brown.,flower_colour_detailed
+flower_colour_detailed_turquoise,turquoise,Flower colour is turquoise (blue-green).,flower_colour_detailed
+flower_colour_detailed_violet,violet,Flower colour is violet (bluish purple).,flower_colour_detailed
+flower_colour_detailed_white,white,Flower colour is white.,flower_colour_detailed
+flower_colour_detailed_yellow,yellow,Flower colour is yellow.,flower_colour_detailed
+inflorescence_colour_black,black,Inflorescence colour is black.,inflorescence_colour
+inflorescence_colour_blue,blue,"Inflorescence colour is blue. (Synonyms, indigo)",inflorescence_colour
+inflorescence_colour_brown,brown,Inflorescence colour is brown.,inflorescence_colour
+inflorescence_colour_green,green,"Inflorescence colour is green. (Synonyms, turquoise)",inflorescence_colour
+inflorescence_colour_grey,grey,Inflorescence colour is grey.,inflorescence_colour
+inflorescence_colour_orange,orange,Inflorescence colour is orange.,inflorescence_colour
+inflorescence_colour_pink,pink,"Inflorescence colour is pink. (Synonyms, mauve)",inflorescence_colour
+inflorescence_colour_purple,purple,"Inflorescence colour is purple. (Synonyms, lilac, violet, magenta)",inflorescence_colour
+inflorescence_colour_red,red,"Inflorescence colour is red. (Synonyms, maroon, reddish_brown)",inflorescence_colour
+inflorescence_colour_white,white,"Inflorescence colour is white. (Synonyms, cream)",inflorescence_colour
+inflorescence_colour_yellow,yellow,"Inflorescence colour is yellow. (Synonyms, gold)",inflorescence_colour
+flower_colour_bee_type_blue,blue,Colour locus falls in the blue sector of the bee colour hexagon.,flower_colour_bee_type
+flower_colour_bee_type_blue_green,blue_green,Colour locus falls in the blue-green sector of the bee colour hexagon.,flower_colour_bee_type
+flower_colour_bee_type_green,green,Colour locus falls in the green sector of the bee colour hexagon.,flower_colour_bee_type
+flower_colour_bee_type_uv,uv,Colour locus falls in the UV sector of the bee colour hexagon.,flower_colour_bee_type
+flower_colour_bee_type_uv_blue,uv_blue,Colour locus falls in the UV-blue sector of the bee colour hexagon.,flower_colour_bee_type
+flower_colour_bee_type_uv_green,uv_green,Colour locus falls in the UV-green sector of the bee colour hexagon.,flower_colour_bee_type
+flower_corolla_tube_opening_constricted,constricted,"The corolla tube opening is constricted to less than 1 mm wide, such that it is nearly closed at the top.",flower_corolla_tube_opening
+flower_corolla_tube_opening_narrow,narrow,"The corolla tube opening is narrow, approximately 1--2.5 mm wide, tapering near the top.",flower_corolla_tube_opening
+flower_corolla_tube_opening_wide,wide,"The corolla tube opening is wide, generally greater than 2.5 mm wide.",flower_corolla_tube_opening
+flower_filament_fusion_categorical_adnate,adnate,Filaments are fused to another floral organ.,flower_filament_fusion_categorical
+flower_filament_fusion_categorical_connate,connate,"Filaments are fused to one another. (Synonyms, united, fused)",flower_filament_fusion_categorical
+flower_filament_fusion_categorical_free,free,Filaments are free from one another.,flower_filament_fusion_categorical
+flower_shape_bilabiate,bilabiate,"Flower has a bilateral asymmetrical shape, with different shaped upper- and lower- lips.",flower_shape
+flower_shape_cruciform,cruciform,"Flower is cross-shaped, with four petals spread at right angles (Synonyms, cross-shaped)",flower_shape
+flower_shape_campanulate,campanulate,"Flower is bell-shaped. (Synonyms, bell-shaped)",flower_shape
+flower_shape_cup-shaped,cup-shaped,Flower is cup-shaped.,flower_shape
+flower_shape_funnelform,funnelform,"Flower is funnel-shaped. (Synonyms, funnel-shaped)",flower_shape
+flower_shape_ligulate,ligulate,Flower has a strap-shaped corolla extended to one side.,flower_shape
+flower_shape_papilionaceous,papilionaceous,"Flower has a large upper petal (standard), two lateral petals (wings) and two lower petals joined into a keel. (Synonyms, papilionate)",flower_shape
+flower_shape_rotate,rotate,"Flower is open with un-fused petals. (Synonyms, open)",flower_shape
+flower_shape_salverform,salverform,"Flower is a long, narrow cylinder that flares fully open at the tip.",flower_shape
+flower_shape_tubulate,tubulate,"Flower is a long, narrow cylinder with little to no spreading at the tip. (Synonyms, tubular)",flower_shape
+flower_shape_urceolate,urceolate,"Flower is a tube that is narrow at the base and tip and swollen or rounded in the middle. (Synonyms, urn-shaped).",flower_shape
+flower_style_shape_acicular,acicular,"Style needle-like. (Synonyms, linear)",flower_style_shape
+flower_style_shape_bilobed,bilobed,"Style divided at the apex into two branches or lobes. (Synonyms, bifid)",flower_style_shape
+flower_style_shape_clavate,clavate,"Style club-shaped, widening towards the apex. (Synonyms, club-shaped)",flower_style_shape
+flower_style_shape_conical,conical,"Style cone-shaped, broadest at the base.",flower_style_shape
+flower_style_shape_curved,curved,"Style curved along its length. (Synonyms, arcuate)",flower_style_shape
+flower_style_shape_filiform,filiform,"Style long, slender and thread-like. (Synonyms, filamentous)",flower_style_shape
+flower_style_shape_flattened,flattened,"Style laterally compressed. (Synonyms, compressed, lanceolate, oblong, obovate)",flower_style_shape
+flower_style_shape_fusiform,fusiform,"Style spindle-shaped, widest in the middle and tapering to both ends.",flower_style_shape
+flower_style_shape_hemispheric,hemispheric,Style massive and half-spherical.,flower_style_shape
+flower_style_shape_lobed,lobed,Style divided at the apex into lobes.,flower_style_shape
+flower_style_shape_obconical,obconical,"Style inversely cone-shaped, broadest at the apex.",flower_style_shape
+flower_style_shape_ovoid,ovoid,Style swollen and egg-shaped.,flower_style_shape
+flower_style_shape_quadrangular,quadrangular,Style four-angled in cross section.,flower_style_shape
+flower_style_shape_subulate,subulate,"Style awl-shaped, tapering from the base to a fine point.",flower_style_shape
+flower_style_shape_terete,terete,"Style circular in cross section. (Synonyms, cylindrical, subcylindrical)",flower_style_shape
+flower_perianth_fusion_categorical_perianth_parts_unfused,perianth_parts_unfused,A flower's pertianth parts are entirely free.,flower_perianth_fusion_categorical
+flower_perianth_fusion_categorical_perianth_parts_fused_at_base,perianth_parts_fused_at_base,"A flower's pertianth parts are fused at the base, but do not form a tube.",flower_perianth_fusion_categorical
+flower_perianth_fusion_categorical_perianth_parts_partially_fused,perianth_parts_partially_fused,"A flower's perianth parts are fused 20-80%, forming a tube, but with the tips free.",flower_perianth_fusion_categorical
+flower_perianth_fusion_categorical_perianth_tubular,perianth_tubular,"A flower's perianth parts are fused >80%, forming a tube.",flower_perianth_fusion_categorical
+flower_petal_fusion_adnate,adnate,"Petals are fused to another floral organ, such as the stamens or the hypanthium.",flower_petal_fusion
+flower_petal_fusion_connate,connate,"Petals are fused to one another, forming a corolla tube or cup. (Synonyms, united, gamopetalous, sympetalous)",flower_petal_fusion
+flower_petal_fusion_free,free,"Petals are free from one another. (Synonyms, polypetalous, choripetalous)",flower_petal_fusion
+flower_petal_shape_bilobed,bilobed,"Petal divided at the apex into two lobes. (Synonyms, bifid, 2-lobed)",flower_petal_shape
+flower_petal_shape_boat-shaped,boat-shaped,"Petal concave and keeled, like the hull of a boat. (Synonyms, cymbiform, navicular)",flower_petal_shape
+flower_petal_shape_cordate,cordate,"A 2-dimensional heart shape, approximately ovate with a cordate base, with the point of attachment at the notch between the lobes. (Synonyms, cordiform)",flower_petal_shape
+flower_petal_shape_elliptical,elliptical,"A 2-dimensional shape that is an oval, with curved margins, lacking a distinct point, and a length:width ratio between 2:1 and 3:2. (Synonyms, oval)",flower_petal_shape
+flower_petal_shape_falcate,falcate,"A 2-dimensional sickle-shape, approximately lanceolate to linear and curved on one side. (Synonyms, scimitar-shaped, sickle-shaped, falciform, crescent-shaped, crescentic)",flower_petal_shape
+flower_petal_shape_filiform,filiform,"A 2-dimensional shape that is long, thin, and typically flexuous, threadlike, filamentous. (Synonyms, capillary)",flower_petal_shape
+flower_petal_shape_hastate,hastate,"Petal approximately triangular with two outward-pointing basal lobes, like an arrowhead with flared barbs.",flower_petal_shape
+flower_petal_shape_hooded,hooded,"Petal concave and arched over at the apex, forming a hood. (Synonyms, cucullate)",flower_petal_shape
+flower_petal_shape_lanceolate,lanceolate,"A 2-dimensional shape that is narrowly egg-shaped or teardrop-shaped, with a length:width ratio between 6:1 and 3:1. The petal is widest below the middle, towards its base.",flower_petal_shape
+flower_petal_shape_linear,linear,"A 2-dimensional shape that is very long and narrow, has parallel sides and a length:width ratio between 12:1 and 6:1.",flower_petal_shape
+flower_petal_shape_lobed,lobed,Petal divided into lobes; the number of lobes not specified or more than three.,flower_petal_shape
+flower_petal_shape_oblanceolate,oblanceolate,"A 2-dimensional shape that is narrowly teardrop-shaped, with a length:width ratio between 6:1 and 3:1, widest above the middle and tapering towards the base.",flower_petal_shape
+flower_petal_shape_oblong,oblong,A 2-dimensional shape that is somewhat elongated with parallel sides and a length:width ratio between 2:1 and 3:2.,flower_petal_shape
+flower_petal_shape_obovate,obovate,"A 2-dimensional shape that is egg-shaped, with a length:width ratio between 2:1 and 3:2, widest above the middle and tapering towards the base.",flower_petal_shape
+flower_petal_shape_orbicular,orbicular,"A 2-dimensional shape that is approximately circular. (Synonyms, circular)",flower_petal_shape
+flower_petal_shape_ovate,ovate,"A 2-dimensional shape that is egg-shaped, with a length:width ratio between 2:1 and 3:2. The petal is widest below the middle, towards its base.",flower_petal_shape
+flower_petal_shape_reniform,reniform,"A 2-dimensional shape that is roughly kidney-shaped, wider than long with a rounded apex and two rounded, basal lobes that are smoothly concave at their intersection. (Synonyms, kidney-shaped)",flower_petal_shape
+flower_petal_shape_rhomboidal,rhomboidal,"A 2-dimensional shape that is approximately diamond or parallelogram-shaped, with approximately straight edges, widest near the middle, and a length:width ratio 2:1 to 3:2. The petal is attached at one of the points.",flower_petal_shape
+flower_petal_shape_saccate,saccate,"Petal with a pouch-like swelling. (Synonyms, pouched, gibbous)",flower_petal_shape
+flower_petal_shape_semicircular,semicircular,Petal approximately half-circular in outline.,flower_petal_shape
+flower_petal_shape_spathulate,spathulate,"A 2-dimensional shape that can be approximately oblong, obovate, or oblanceolate in outline with a long attenuate base, like a spoon. (Synonyms, spoon-shaped, clavate)",flower_petal_shape
+flower_petal_shape_subulate,subulate,"A 2-dimensional shape that is awl-shaped, approximately narrowly oblong to narrowly triangular with a broad base. (Synonyms, awl-shaped)",flower_petal_shape
+flower_petal_shape_triangular,triangular,"A 2-dimensional shape that is triangular to wedge-shaped, with a length:width ratio 2:1 to 3:2 and widest at the base.",flower_petal_shape
+flower_petal_shape_trilobed,trilobed,"Petal divided at the apex into three lobes. (Synonyms, trifid, 3-lobed)",flower_petal_shape
+flower_sepal_fusion_adnate,adnate,Sepals are fused to another floral organ.,flower_sepal_fusion
+flower_sepal_fusion_connate,connate,"Sepals are fused to one another. (Synonyms, united, fused, joined)",flower_sepal_fusion
+flower_sepal_fusion_free,free,Sepals are free from one another.,flower_sepal_fusion
+fruit_shape_clavate,clavate,"Fruit is club-shaped, elongate and gradually widening towards the apex.",fruit_shape
+fruit_shape_coiled,coiled,"Fruit is coiled through one or more turns. (Synonyms, circinnate, spiral, spirally_twisted)",fruit_shape
+fruit_shape_conical,conical,"Fruit is cone-shaped, broadest at the base and narrowing to the apex.",fruit_shape
+fruit_shape_constricted,constricted,Fruit is elongate and constricted between the seeds.,fruit_shape
+fruit_shape_cup-shaped,cup-shaped,"Fruit is cup-shaped, open or flattened at the apex with convex sides. (Synonyms, cupular, cupuliform)",fruit_shape
+fruit_shape_curved,curved,"Fruit is elongate and curved along its length. (Synonyms, arcuate, falcate, recurved, sigmoid)",fruit_shape
+fruit_shape_cylindrical,cylindrical,"Fruit is a cylinder, circular in cross section with parallel sides. (Synonyms, terete, barrel-shaped, doliiform)",fruit_shape
+fruit_shape_ellipsoid,ellipsoid,"Fruit is elliptic in long section and circular in cross section, with curved sides; length:width ratio between 2:1 and 3:2.",fruit_shape
+fruit_shape_flattened,flattened,"Fruit is laterally compressed, non-circular in cross section. (Synonyms, compressed, flat)",fruit_shape
+fruit_shape_fusiform,fusiform,"Fruit is spindle-shaped, narrowly ellipsoid and tapering towards both ends. (Synonyms, spindle-shaped)",fruit_shape
+fruit_shape_globoid,globoid,"Fruit is circular in both long section and cross section. (Synonyms, globose, globular, spherical)",fruit_shape
+fruit_shape_hemispheric,hemispheric,"Fruit is half a sphere, with a flat base and a domed top. (Synonyms, hemispherical)",fruit_shape
+fruit_shape_lenticular,lenticular,Fruit is shaped like a biconvex lens and circular in outline.,fruit_shape
+fruit_shape_linear,linear,"Fruit is very long and narrow with parallel sides, such as many legume pods.",fruit_shape
+fruit_shape_moniliform,moniliform,"Fruit is elongate and deeply constricted between the seeds, like a string of beads.",fruit_shape
+fruit_shape_obconical,obconical,"Fruit is inversely cone-shaped, broadest at the apex and narrowing to the base. (Synonyms, turbinate, top-shaped)",fruit_shape
+fruit_shape_oblong,oblong,Fruit is elongate with parallel sides and rounded ends; length:width ratio between 2:1 and 3:2.,fruit_shape
+fruit_shape_obovoid,obovoid,"Fruit is inversely egg-shaped, broadest above the middle (towards the apex). (Synonyms, pyriform)",fruit_shape
+fruit_shape_ovoid,ovoid,"Fruit is egg-shaped, broadest below the middle (towards the base).",fruit_shape
+fruit_shape_reniform,reniform,"Fruit is kidney-shaped, with a notch on one side.",fruit_shape
+fruit_shape_straight,straight,Fruit is elongate and straight along its length.,fruit_shape
+fruit_shape_twisted,twisted,"Fruit is twisted about its long axis. (Synonyms, contorted)",fruit_shape
+fruit_surface_texture_bumpy,bumpy,"Fruit surface covered with small, rounded protuberances. (Synonyms, papillose, tuberculate, verrucose, colliculate)",fruit_surface_texture
+fruit_surface_texture_grooved,grooved,"Fruit surface with grooves or furrows. (Synonyms, sulcate)",fruit_surface_texture
+fruit_surface_texture_keeled,keeled,"Fruit surface with one or more prominent, sharp ridges (keels).",fruit_surface_texture
+fruit_surface_texture_lenticellate,lenticellate,"Fruit surface dotted with lenticels, small raised pores.",fruit_surface_texture
+fruit_surface_texture_netted,netted,"Fruit surface covered with raised, reticulate, interconnected ridges. (Synonyms, reticulate)",fruit_surface_texture
+fruit_surface_texture_pitted,pitted,"Fruit surface pitted. (Synonyms, foveolate, punctate)",fruit_surface_texture
+fruit_surface_texture_ribbed,ribbed,"Fruit surface with longitudinal raised ribs or ridges. (Synonyms, costate, striate, ridged)",fruit_surface_texture
+fruit_surface_texture_rough,rough,"Fruit surface rough with no organisation of markings. (Synonyms, scabrous)",fruit_surface_texture
+fruit_surface_texture_scaly,scaly,Fruit surface covered with scales.,fruit_surface_texture
+fruit_surface_texture_smooth,smooth,"Fruit surface smooth, lacking texture.",fruit_surface_texture
+fruit_surface_texture_spiny,spiny,"Fruit surface with spines or short, sharp points. (Synonyms, echinate, muricate, prickly)",fruit_surface_texture
+fruit_surface_texture_wrinkled,wrinkled,"Fruit surface wrinkled. (Synonyms, rugose, rugulose)",fruit_surface_texture
+fruit_surface_reflectivity_dull,dull,"Fruit surface appears dull, with low reflectivity. (Synonyms, matt)",fruit_surface_reflectivity
+fruit_surface_reflectivity_glaucous,glaucous,"Fruit surface is covered with a whitish or bluish waxy bloom. (Synonyms, pruinose)",fruit_surface_reflectivity
+fruit_surface_reflectivity_shiny,shiny,"Fruit surface appears shiny or glossy, with a high reflectivity. (Synonyms, glossy, lustrous)",fruit_surface_reflectivity
+fruit_constitution_cartilaginous,cartilaginous,"Fruit wall tough and firm but flexible, like cartilage.",fruit_constitution
+fruit_constitution_chartaceous,chartaceous,"Fruit wall thin and papery. (Synonyms, papery, papyraceous)",fruit_constitution
+fruit_constitution_coriaceous,coriaceous,"Fruit wall thick, tough and leathery. (Synonyms, leathery, subcoriaceous)",fruit_constitution
+fruit_constitution_corky,corky,Fruit wall corky.,fruit_constitution
+fruit_constitution_fibrous,fibrous,Fruit wall fibrous.,fruit_constitution
+fruit_constitution_fleshy,fleshy,"Fruit wall soft and juicy. (Synonyms, succulent, subfleshy)",fruit_constitution
+fruit_constitution_hard,hard,"Fruit wall hard and brittle. (Synonyms, crustaceous, bony, stony)",fruit_constitution
+fruit_constitution_hyaline,hyaline,Fruit wall thin and translucent.,fruit_constitution
+fruit_constitution_membranous,membranous,"Fruit wall very thin and soft. (Synonyms, membranaceous, sub-membranous)",fruit_constitution
+fruit_constitution_rigid,rigid,Fruit wall stiff.,fruit_constitution
+fruit_constitution_spongy,spongy,Fruit wall soft and spongy.,fruit_constitution
+fruit_constitution_woody,woody,"Fruit wall hard and woody. (Synonyms, lignified, subwoody)",fruit_constitution
+leaf_secondary_vein_angle_categorical_greater_than_45_degrees,greater_than_45_degrees,"Secondary veins diverge from the midrib at an angle greater than 45°. (Synonyms, wide_angle, penniveined)",leaf_secondary_vein_angle_categorical
+leaf_secondary_vein_angle_categorical_less_than_45_degrees,less_than_45_degrees,"Secondary veins diverge from the midrib at an angle less than 45°. (Synonyms, acute)",leaf_secondary_vein_angle_categorical
+leaf_secondary_vein_angle_categorical_parallel,parallel,"Secondary veins run approximately parallel to the midrib. (Synonyms, subparallel)",leaf_secondary_vein_angle_categorical
+leaf_secondary_vein_angle_categorical_perpendicular,perpendicular,Secondary veins diverge from the midrib at approximately 90°.,leaf_secondary_vein_angle_categorical
+leaf_intramarginal_vein_intramarginal_vein_present,intramarginal_vein_present,Leaf lamina has an intramarginal vein.,leaf_intramarginal_vein
+leaf_intramarginal_vein_intramarginal_vein_absent,intramarginal_vein_absent,Leaf lamina lacks an intramarginal vein.,leaf_intramarginal_vein
+leaf_intramarginal_vein_position_close_to_margin,close_to_margin,Intramarginal vein runs close to the margin.,leaf_intramarginal_vein_position
+leaf_intramarginal_vein_position_remote_from_margin,remote_from_margin,Intramarginal vein runs well within the margin.,leaf_intramarginal_vein_position
+wood_porosity_diffuse-porous,diffuse-porous,Vessels of more or less uniform diameter throughout the growth ring.,wood_porosity
+wood_porosity_ring-porous,ring-porous,"Vessels in the earlywood distinctly larger than those in the latewood, forming a well-defined zone or ring.",wood_porosity
+wood_porosity_semi-ring-porous,semi-ring-porous,"Vessels in the earlywood larger than those in the latewood, with a gradual change from wide earlywood to narrow latewood vessels.",wood_porosity
+stem_vessel_grouping_vessel_solitary,vessel_solitary,"90% or more of vessels solitary, not contacting other vessels.",stem_vessel_grouping
+stem_vessel_grouping_vessel_clusters,vessel_clusters,Groups of three or more vessels that contact in both radial and tangential directions is common.,stem_vessel_grouping
+stem_vessel_grouping_vessel_radial_multiples_many,vessel_radial_multiples_many,Vessels primarily in radial multiples of four or more vessels.,stem_vessel_grouping
+stem_vessel_grouping_vessel_radial_multiples_few,vessel_radial_multiples_few,Vessels primarily in radial multiples or groups of two or three.,stem_vessel_grouping
+stem_vessel_perforation_plate_type_foraminate,foraminate,Perforation plate with several more or less circular perforations.,stem_vessel_perforation_plate_type
+stem_vessel_perforation_plate_type_reticulate,reticulate,Perforation plate with a net-like pattern of perforations.,stem_vessel_perforation_plate_type
+stem_vessel_perforation_plate_type_scalariform,scalariform,"Perforation plate with elongated, parallel perforations separated by bars.",stem_vessel_perforation_plate_type
+stem_vessel_perforation_plate_type_simple,simple,"Perforation plate with a single, large, more or less circular perforation.",stem_vessel_perforation_plate_type
+wood_ray_cell_type_heterocellular,heterocellular,Rays composed of cells of different shapes.,wood_ray_cell_type
+wood_ray_cell_type_homocellular,homocellular,All ray cells have the same shape.,wood_ray_cell_type
+wood_growth_ring_distinctiveness_absent,absent,Growth ring boundaries not visible.,wood_growth_ring_distinctiveness
+wood_growth_ring_distinctiveness_distinct,distinct,Growth rings with an abrupt structural change at the boundaries between growth rings.,wood_growth_ring_distinctiveness
+wood_growth_ring_distinctiveness_indistinct,indistinct,"Growth ring boundaries vague and poorly defined, marked by gradual structural changes.",wood_growth_ring_distinctiveness
+wood_growth_ring_distinctiveness_indistinct_or_absent,indistinct_or_absent,Growth rings vague with their boundaries poorly defined or not visible. Used where a source does not distinguish indistinct from absent growth rings.,wood_growth_ring_distinctiveness
+wood_growth_ring_distinctiveness_moderately_distinct,moderately_distinct,"Growth ring boundaries evident, but less sharply marked than distinct boundaries.",wood_growth_ring_distinctiveness
+stem_intervessel_pit_arrangement_alternate,alternate,Intervessel pits arranged in diagonal rows.,stem_intervessel_pit_arrangement
+stem_intervessel_pit_arrangement_opposite,opposite,"Intervessel pits arranged in short to long horizontal rows, orientated transversely across the length of the vessel.",stem_intervessel_pit_arrangement
+stem_intervessel_pit_arrangement_scalariform,scalariform,Elongated or linear intervessel pits arranged in a ladder-like series.,stem_intervessel_pit_arrangement
+stem_intervessel_pit_vesturing_not_vestured,not_vestured,Intervessel pits without vestures.,stem_intervessel_pit_vesturing
+stem_intervessel_pit_vesturing_vestured,vestured,Intervessel pits with the pit cavity and/or aperture wholly or partly lined with projections from the secondary cell wall.,stem_intervessel_pit_vesturing
+wood_fibre_wall_thickness_categorical_thick-walled,thick-walled,"Double fibre wall thickness equal to or greater than the width of the fibre lumen, with the lumina still distinctly open.",wood_fibre_wall_thickness_categorical
+wood_fibre_wall_thickness_categorical_thin-walled,thin-walled,"Fibre lumina wider than the double wall thickness, but less than three times the double wall thickness.",wood_fibre_wall_thickness_categorical
+wood_fibre_wall_thickness_categorical_thin_to_thick-walled,thin_to_thick-walled,"Fibre lumina less than three times the double wall thickness, and distinctly open. Used where a source does not distinguish thin-walled from thick-walled fibres.",wood_fibre_wall_thickness_categorical
+wood_fibre_wall_thickness_categorical_very_thick-walled,very_thick-walled,Fibre lumina almost completely closed.,wood_fibre_wall_thickness_categorical
+wood_fibre_wall_thickness_categorical_very_thin-walled,very_thin-walled,Fibre lumina three or more times wider than the double wall thickness.,wood_fibre_wall_thickness_categorical
+wood_axial_parenchyma_arrangement_aliform,aliform,"Parenchyma surrounding or to one side of the vessel, with lateral extensions.",wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_confluent,confluent,"Coalescing vasicentric or aliform parenchyma surrounding or to one side of two or more vessels, often forming irregular bands.",wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_diffuse,diffuse,Single axial parenchyma strands or pairs of strands distributed irregularly among the fibres.,wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_diffuse-in-aggregates,diffuse-in-aggregates,"Axial parenchyma strands grouped into short, discontinuous tangential or oblique lines.",wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_lozenge-aliform,lozenge-aliform,Aliform parenchyma with lateral extensions forming a diamond-shaped outline.,wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_scanty_paratracheal,scanty_paratracheal,"Occasional parenchyma cells associated with the vessels, or an incomplete sheath of parenchyma around the vessels.",wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_unilateral_paratracheal,unilateral_paratracheal,Paratracheal parenchyma forming semicircular hoods or caps only on one side of the vessels.,wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_vasicentric,vasicentric,Parenchyma cells forming a complete circular to oval sheath around a solitary vessel or vessel multiple.,wood_axial_parenchyma_arrangement
+wood_axial_parenchyma_arrangement_winged-aliform,winged-aliform,"Aliform parenchyma with elongated, narrow lateral extensions.",wood_axial_parenchyma_arrangement
+wood_fibre_pit_type_distinctly_bordered,distinctly_bordered,"Fibre pits with a distinct border, the pit chamber 3 um or more in diameter.",wood_fibre_pit_type
+wood_fibre_pit_type_moderately_distinctly_bordered,moderately_distinctly_bordered,Fibre pits with a border that is visible but less distinct than in distinctly bordered pits.,wood_fibre_pit_type
+wood_fibre_pit_type_simple_to_minutely_bordered,simple_to_minutely_bordered,"Fibre pits simple or with a minute border, the pit chamber less than 3 um in diameter.",wood_fibre_pit_type
+wood_deposit_frequency_abundant,abundant,"Wood deposits abundant, filling many cells.",wood_deposit_frequency
+wood_deposit_frequency_absent,absent,Wood deposits not seen.,wood_deposit_frequency
+wood_deposit_frequency_moderately_abundant,moderately_abundant,Wood deposits moderately abundant.,wood_deposit_frequency
+wood_deposit_frequency_sparse,sparse,Wood deposits present in a few cells.,wood_deposit_frequency
+stem_branching_form_unbranched,unbranched,"A single stem that does not branch, including references to fern rhizomes. (Synonyms, single-stemmed)",stem_branching_form
+stem_branching_form_branched,branched,A plant whose stem divides into branches.,stem_branching_form
+stem_branching_form_few-stemmed,few-stemmed,A plant with a few stems.,stem_branching_form
+stem_branching_form_multi-stemmed,multi-stemmed,"A plant with several stems. (Synonyms, multiple_stems, several-stemmed)",stem_branching_form
+stem_branching_form_many-stemmed,many-stemmed,A plant with numerous stems.,stem_branching_form
+stem_branching_form_single_basal_stem,single_basal_stem,A plant with a single stem at ground level.,stem_branching_form
+stem_branching_form_multiple_basal_stems,multiple_basal_stems,A plant with multiple stems arising at ground level.,stem_branching_form
+stem_branching_form_multiple_near_basal_stems,multiple_near_basal_stems,A plant with multiple stems arising a little above ground level.,stem_branching_form
+stem_branching_form_much-branched,much-branched,"A plant with many branches. (Synonyms, many-branched, twiggy)",stem_branching_form
+stem_branching_form_openly-branched,openly-branched,"A plant with widely spaced branches. (Synonyms, widely-branched, diffuse)",stem_branching_form
+stem_branching_form_sparsely-branched,sparsely-branched,"A plant with few branches. (Synonyms, little-branched, sparingly-branched, few-branched)",stem_branching_form
+stem_branching_form_moderately-branched,moderately-branched,A plant with an intermediate number of branches.,stem_branching_form
+stem_branching_form_compactly-branched,compactly-branched,"A plant with closely spaced, tightly arranged branches.",stem_branching_form
+stem_branching_form_densely-branched,densely-branched,A plant with a high density of branches.,stem_branching_form
+stem_branching_form_intricately-branched,intricately-branched,"A plant with complex, finely divided branching.",stem_branching_form
+stem_branching_form_monopodial,monopodial,A plant with a single main axis bearing lateral branches.,stem_branching_form
+stem_branching_form_horizontally-branched,horizontally-branched,A plant with branches that extend horizontally.,stem_branching_form
+stem_branching_form_tangled,tangled,A plant with branches that interlace in a disordered manner.,stem_branching_form
+stem_branching_form_gnarled,gnarled,"A plant with crooked, twisted, knotty branches.",stem_branching_form
+stem_branching_form_divaricately-branched,divaricately-branched,A plant with branches that diverge at wide angles.,stem_branching_form
+stem_branching_form_dichasially-branched,dichasially-branched,"A plant that branches into opposite pairs of lateral axes below each terminal. (Synonyms, corymbose-branched)",stem_branching_form
+stem_branching_form_virgate,virgate,"A plant composed of straight, slender, wand-like stems. (Synonyms, wand-like)",stem_branching_form
+stem_base_form_buttressed,buttressed,A stem that has a flared shape at its base.,stem_base_form
+stem_base_form_fluted,fluted,A stem with vertical grooves and ridges along its base.,stem_base_form
+stem_constitution_rigid,rigid,"Stems that are stiff and resist bending. (Synonyms, stiff)",stem_constitution
+stem_constitution_robust,robust,"Stems that are thick, strong, and sturdy. (Synonyms, stout, sturdy)",stem_constitution
+stem_constitution_wiry,wiry,Stems that are thin but tough and springy.,stem_constitution
+stem_constitution_slender,slender,"Stems that are long and thin. (Synonyms, filiform)",stem_constitution
+stem_constitution_straggly,straggly,"Stems that are long, weak, and untidy in arrangement.",stem_constitution
+stem_constitution_flexible,flexible,"Stems that bend readily without breaking. (Synonyms, soft, flaccid)",stem_constitution
+stem_constitution_wispy,wispy,"Stems that are very fine, thin, and delicate.",stem_constitution
+stem_constitution_spindly,spindly,"Plants with weak, skinny branches. (Synonyms, delicate, weak-stemmed)",stem_constitution
+stem_shape_angular,angular,"Stem angled in cross section. (Synonyms, angled, quadrangular, square, 4-angled, tetragonal, 3-angled, 6-angled)",stem_shape
+stem_shape_flattened,flattened,"Stem flattened in cross section. (Synonyms, compressed)",stem_shape
+stem_shape_terete,terete,"Stem circular in cross section. (Synonyms, subterete, cylindrical)",stem_shape
+stem_shape_winged,winged,Stem with longitudinal wings.,stem_shape
+plant_canopy_form_broom-like,broom-like,"A canopy of many slender, erect branches clustered together like the bristles of a broom.",plant_canopy_form
+plant_canopy_form_columnar,columnar,"A tall, narrow canopy of roughly uniform width from base to top, with near-vertical sides. (Synonyms, slender)",plant_canopy_form
+plant_canopy_form_dense-crowned,dense-crowned,"A canopy whose branches and foliage are closely spaced, admitting little light.",plant_canopy_form
+plant_canopy_form_diffuse,diffuse,"A loose, open canopy of widely spaced branches and foliage with an indistinct outline.",plant_canopy_form
+plant_canopy_form_flat-topped,flat-topped,A canopy that is broad and level across the top.,plant_canopy_form
+plant_canopy_form_globose,globose,"An approximately spherical canopy, rounded both above and below.",plant_canopy_form
+plant_canopy_form_hemispherical,hemispherical,"A canopy shaped like half a sphere, rounded above and flat below. (Synonyms, domed)",plant_canopy_form
+plant_canopy_form_obconical,obconical,"A canopy shaped like an inverted cone, narrow at the base and broadening upwards, like a spinning top. (Synonyms, top-shaped, turbinate)",plant_canopy_form
+plant_canopy_form_open-crowned,open-crowned,"A canopy whose branches and foliage are widely spaced, admitting considerable light.",plant_canopy_form
+plant_canopy_form_mounded,mounded,"A low, rounded canopy resembling a mound.",plant_canopy_form
+plant_canopy_form_pine-like,pine-like,"A conical canopy of whorled branches tapering to a narrow apex, as in a typical conifer.",plant_canopy_form
+plant_canopy_form_pyramidal,pyramidal,"A canopy that is broadest at the base and tapers to a point, triangular in outline.",plant_canopy_form
+plant_canopy_form_rounded,rounded,"A canopy with a curved, dome-like upper outline.",plant_canopy_form
+plant_canopy_form_spreading,spreading,"A broad, umbrella-shaped canopy whose branches extend widely outwards, much wider than the trunk. (Synonyms, umbrageous)",plant_canopy_form
+plant_canopy_form_squat,squat,"A low, broad canopy that is wider than it is tall. (Synonyms, stunted)",plant_canopy_form
+rhizome_form_woody,woody,A woody rhizome.,rhizome_form
+rhizome_form_stout,stout,"A stout, thick, robust rhizome.",rhizome_form
+rhizome_form_branched,branched,A branched rhizome.,rhizome_form
+rhizome_form_slender,slender,"A slender, thin rhizome.",rhizome_form
+rhizome_form_short_creeping,short_creeping,A short-creeping rhizome that spreads only a short distance horizontally.,rhizome_form
+rhizome_form_long_creeping,long_creeping,A long-creeping rhizome that spreads a considerable distance horizontally.,rhizome_form
+leaf_heterophylly_isophyllous,isophyllous,A plant on which all leaves are of a uniform shape and size.,leaf_heterophylly
+leaf_heterophylly_anisophyllous,anisophyllous,"A plant that bears leaves of two or more distinctly different shapes or sizes, at a single node, along a shoot, or across developmental stages or environments.",leaf_heterophylly
+mycorrhizal_association_type_arbuscular_mycorrhizal,arbuscular_mycorrhizal,"Symbiosis in which the mycorrhizal fungi does penetrate the cortex cells of the plant roots and its hyphae form arbuscules and vesicles inside the plant root. (Synonyms, endomycorrhizal, AM, VAM)",mycorrhizal_association_type
+mycorrhizal_association_type_coiling_vam,coiling_vam,Associations that spread predominantly by intracellular hyphal coils within roots.,mycorrhizal_association_type
+mycorrhizal_association_type_ectomycorrhizal,ectomycorrhizal,Symbiosis in which the mycorrhizal fungi does not penetrate the cortex cells of the plant roots.,mycorrhizal_association_type
+mycorrhizal_association_type_ericoid_mycorrhizal,ericoid_mycorrhizal,A form of arbuscular mycorrhizal relationship only found on plants in the order Ericales. The fungi's hyphae penetrate the plant root but do not form arbuscules.,mycorrhizal_association_type
+mycorrhizal_association_type_mycorrhizal,mycorrhizal,"Plant mycorrhizal association exists, but type not specified.",mycorrhizal_association_type
+mycorrhizal_association_type_non_mycorrhizal,non_mycorrhizal,Plants lacking a mycorrhizal symbiont.,mycorrhizal_association_type
+mycorrhizal_association_type_orchid_mycorrhizal,orchid_mycorrhizal,"A mycorrhizal relationship specific to orchid taxa, and for most orchids, generally essential for seedlings to establish.",mycorrhizal_association_type
+mycorrhizal_association_type_subepidermal_mycorrhizal,subepidermal_mycorrhizal,Mycorrhizae where hyphae grow in a cavity under epidermal cells. Only in the genus Thysanotus (family Laxmaniaceae).,mycorrhizal_association_type
+root_structure_specialised_carnivorous,carnivorous,Plant has non-mycorrhizal carnivorous root.,root_structure_specialised
+root_structure_specialised_cluster_roots,cluster_roots,Non-proteoid taxa with cluster roots.,root_structure_specialised
+root_structure_specialised_dauciform_root,dauciform_root,A type of cluster root found in the family Cyperaceae.,root_structure_specialised
+root_structure_specialised_fine_roots,fine_roots,Particularly fine roots for nutrient uptake.,root_structure_specialised
+root_structure_specialised_haustorium,haustorium,"A highly modified stem or root of a parasitic plant, such as mistletoe, or a specialized branch or tube originating from a hairlike filament (hypha) of a fungus. The haustorium penetrates the tissues of a host and absorbs nutrients and water.",root_structure_specialised
+root_structure_specialised_hemiparasitic_root,hemiparasitic_root,Plant with a partially parasitic root.,root_structure_specialised
+root_structure_specialised_long_root_hairs,long_root_hairs,Plant with specialised long root hairs.,root_structure_specialised
+root_structure_specialised_parasitic_root,parasitic_root,Plant with a parasitic root.,root_structure_specialised
+root_structure_specialised_proteoid_root,proteoid_root,"Also known as cluster roots, are plant roots that form clusters of closely spaced short lateral rootlets and aid in nutrient uptake in nutrient-poor soils; common in members of the family Proteaceae but present in other families as well.",root_structure_specialised
+root_structure_specialised_root_hairs,root_hairs,Plant with specialised root hairs.,root_structure_specialised
+root_structure_specialised_sand-binding,sand-binding,"Persistent sheaths of sand that form around the roots of taxa in the families Restionaceae, Cyperaceae, Haemodoraceae, and Lomandraceae in western Australia. Assumed to function in nutrient uptake.",root_structure_specialised
+root_structure_specialised_saprophyte,saprophyte,Plant that acquires nutrients from decaying biomass.,root_structure_specialised
+root_structure_specialised_unknown,unknown,Root structures unknown.,root_structure_specialised
+breeding_system_apomixis,apomixis,"Seeds develop asexually, without the union of gametes or meiosis (i.e. without fertilisation); does not require a pollinator.",breeding_system
+breeding_system_autogamy,autogamy,"Self-pollination within a single flower, either autonomously or mechanically, with or without an animal vector. (Synonyms, self-pollination)",breeding_system
+breeding_system_cleistogamy,cleistogamy,Autonomous self-pollination within flowers that do not open; does not require a pollinator.,breeding_system
+breeding_system_geitonogamy,geitonogamy,Pollen is transferred between different flowers on the same individual; requires a pollen vector.,breeding_system
+breeding_system_allogamy,allogamy,"Pollen is transferred between flowers on different individuals. (Synonyms, cross-pollination, xenogamy)",breeding_system
+breeding_system_mixed_mating,mixed_mating,Plants use both self-pollination (autogamy and/or geitonogamy) and cross-pollination (allogamy).,breeding_system
+breeding_system_self-compatible,self-compatible,Pollen is able to fertilise ovules on the same individual.,breeding_system
+breeding_system_self-incompatible,self-incompatible,Pollen is unable to fertilise ovules on the same individual.,breeding_system
+flower_dichogamy_adichogamous,adichogamous,"Male and female functions of a flower or inflorescence overlap in time. (Synonyms, homogamous, adichogamy, homogamy)",flower_dichogamy
+flower_dichogamy_protandrous,protandrous,"Pollen is released before the stigma of the same flower or inflorescence becomes receptive. (Synonyms, protandry)",flower_dichogamy
+flower_dichogamy_protogynous,protogynous,"The stigma becomes receptive before pollen is released from the same flower or inflorescence. (Synonyms, protogyny)",flower_dichogamy
+pollination_vector_known_abiotic,abiotic,Plants have an abiotic pollination vector.,pollination_vector_known
+pollination_vector_known_allodapini,allodapini,"Reed and allodapine bees (Tribe Allodapini in the family Apidae) are a known pollination vector. (Synonyms, reed_bees, allodapine_bees)",pollination_vector_known
+pollination_vector_known_animal,animal,"Animals (Animalia) are a known pollination vector. (Synonyms, animalia)",pollination_vector_known
+pollination_vector_known_ant,ant,"Ants (Formicidae) are a known pollination vector. (Synonyms, formicidae)",pollination_vector_known
+pollination_vector_known_anthophorini,anthophorini,"Blue-banded and teddy bear bees (Tribe Anthophorini in the family Apidae) are a known pollination vector. (Synonyms, teddy_bear_bees, blue-banded_bees)",pollination_vector_known
+pollination_vector_known_autonomous,autonomous,Plants are autonomously pollinated.,pollination_vector_known
+pollination_vector_known_bat,bat,"Bats (Chiroptera) are a known pollination vector. (Synonyms, chiroptera)",pollination_vector_known
+pollination_vector_known_bee,bee,"Bees (Hymenoptera clade Anthophila) are a known pollination vector. (Synonyms, anthophila)",pollination_vector_known
+pollination_vector_known_bee_fly,bee_fly,"Bee Fly (Bombyliidae) are a known pollination vector. (Synonyms, bombyliidae)",pollination_vector_known
+pollination_vector_known_beetle,beetle,"Beetles (Coleoptera) are a known pollination vector. (Synonyms, coleoptera)",pollination_vector_known
+pollination_vector_known_bird,bird,"Birds (Aves) are a known pollination vector. (Synonyms, aves)",pollination_vector_known
+pollination_vector_known_bumblebee,bumblebee,"Bumblebees (Bombus) are a known pollination vector. (Synonyms, bombus)",pollination_vector_known
+pollination_vector_known_butterfly,butterfly,"Butterflies (Rhopalocera) are a known pollination vector. (Synonyms, rhopalocera)",pollination_vector_known
+pollination_vector_known_carpenter_bee,carpenter_bee,"Carpenter bees (genus Xylocopa in the family Apidae) are a known pollination vector. (Synonyms, xylocopa, xylocopini)",pollination_vector_known
+pollination_vector_known_carrion_fly,carrion_fly,"Carrion flies (Diptera families Calliphoridae and Sarcophagidae) are a known pollination vector. (Synonyms, calliphoridae, sarcophagidae)",pollination_vector_known
+pollination_vector_known_cockroach,cockroach,"Cockroaches (Blattodea) are a known pollination vector. (Synonyms, blattodea)",pollination_vector_known
+pollination_vector_known_colletidae,colletidae,"Plasterer or masked bees (Family Colletidae) are a known pollination vector. (Synonyms, plasterer_bee, masked_bee)",pollination_vector_known
+pollination_vector_known_fly,fly,"Flies (Diptera suborder Brachycera) are a known pollination vector. (Synonyms, brachycera)",pollination_vector_known
+pollination_vector_known_flying_fox,flying_fox,"Flying fox (Pteropus) are a known pollination vector. (Synonyms, pteropus)",pollination_vector_known
+pollination_vector_known_gecko,gecko,"Geckoes (Squamata families Gekkonidae and Diplodactylidae) are a known pollination vector. (Synonyms, gekkonidae, diplodactylidae)",pollination_vector_known
+pollination_vector_known_hemiptera,hemiptera,"Hemiptera (true bug) are a known pollination vector. (Synonyms, true_bug)",pollination_vector_known
+pollination_vector_known_honeybee,honeybee,"Honeybees (Apis mellifera) are a known pollination vector. (Synonyms, apis_mellifera)",pollination_vector_known
+pollination_vector_known_honeyeater,honeyeater,"Honeyeaters (Meliphagidae) are a known pollination vector. (Synonyms, meliphagidae)",pollination_vector_known
+pollination_vector_known_hoverfly,hoverfly,"Hoverflies (Syrphidae) are a known pollination vector. (Synonyms, syrphidae)",pollination_vector_known
+pollination_vector_known_hymenoptera,hymenoptera,Hymenoptera are a known pollination vector.,pollination_vector_known
+pollination_vector_known_ichneumon_wasp,ichneumon_wasp,"Ichneumon wasps (Family Ichneumonidae in the order Hymenoptera) are a known pollination vector. (Synonyms, ichneumonidae)",pollination_vector_known
+pollination_vector_known_insect,insect,"Insects (Insecta) are a known pollination vector. (Synonyms, insecta)",pollination_vector_known
+pollination_vector_known_lepidoptera,lepidoptera,Lepidoptera are a known pollination vector.,pollination_vector_known
+pollination_vector_known_lizard,lizard,Lizards are a known pollination vector.,pollination_vector_known
+pollination_vector_known_mammal,mammal,"Mammals (Mammalia) are a known pollination vector. (Synonyms, mammalia)",pollination_vector_known
+pollination_vector_known_marsupial,marsupial,"Marsupials (Marsupialia) are a known pollination vector. (Synonyms, marsupialia)",pollination_vector_known
+pollination_vector_known_megachilidae,megachilidae,"Leafcutter or resin bees (Family Megachilidae) are a known pollination vector. (Synonyms, leafcutter_bee, resin_bee)",pollination_vector_known
+pollination_vector_known_mosquito,mosquito,"Mosquitoes (Diptera family Culicidae) are a known pollination vector. (Synonyms, culicidae)",pollination_vector_known
+pollination_vector_known_moth,moth,Moths (a non-monophyletic group including all non-Rhopalocera lepidopterans) are a known pollination vector.,pollination_vector_known
+pollination_vector_known_orthoptera,orthoptera,Orthoptera are a known pollination vector.,pollination_vector_known
+pollination_vector_known_parrot,parrot,"Parrots (Aves family Psittacidae) are a known pollination vector. (Synonyms, psittacidae)",pollination_vector_known
+pollination_vector_known_rodent,rodent,"Rodents (Rodentia) are a known pollination vector. (Synonyms, rodentia)",pollination_vector_known
+pollination_vector_known_silvereye,silvereye,"Silvereye or white-eyes (Aves family zosteropidae) are a known pollination vector. (Synonyms, zosteropidae, white-eye)",pollination_vector_known
+pollination_vector_known_skink,skink,"Skinks (Squamata family Scincidae) are a known pollination vector. (Synonyms, scincidae)",pollination_vector_known
+pollination_vector_known_stenotritid_bee,stenotritid_bee,"Stenotritid bees (Family Stenotritidae) are a known pollination vector. (Synonyms, stenotritidae)",pollination_vector_known
+pollination_vector_known_stingless_bee,stingless_bee,"Stingless bees (genera Tetragonula and Austroplebeia in the family Apidae) are a known pollination vector. (Synonyms, tetragonula, austroplebeia)",pollination_vector_known
+pollination_vector_known_sunbirds,sunbirds,"Sunbirds (Aves family Nectariniidae) are a known pollination vector. (Synonyms, nectariniidae, Cinnyris)",pollination_vector_known
+pollination_vector_known_sweat_bee,sweat_bee,"Sweat bees (Family Halictidae) are a known pollination vector. (Synonyms, halictidae)",pollination_vector_known
+pollination_vector_known_thrips,thrips,"Thrips (Order Thysanoptera) are a known pollination vector. (Synonyms, thysanoptera)",pollination_vector_known
+pollination_vector_known_thynnine_wasp,thynnine_wasp,"Thynnine wasps (Family Thynnidae in the order Hymenoptera) are a known pollination vector. (Synonyms, thynnidae)",pollination_vector_known
+pollination_vector_known_vertebrate,vertebrate,"Vertebrates (Subphylum Vertebrata) are a known pollination vector. (Synonyms, vertebrata)",pollination_vector_known
+pollination_vector_known_wasp,wasp,Wasps are a known pollination vector.,pollination_vector_known
+pollination_vector_known_water,water,Water is a known pollination vector.,pollination_vector_known
+pollination_vector_known_wind,wind,Wind is a known pollination vector.,pollination_vector_known
+pollination_vector_known_none,none,Flower was not pollinated during the observation period.,pollination_vector_known
+pollination_vector_possible_abiotic,abiotic,Plants have an abiotic pollination vector.,pollination_vector_possible
+pollination_vector_possible_allodapini,allodapini,"Reed and allodapine bees (Tribe Allodapini in the family Apidae) are a possible pollination vector. (Synonyms, reed_bees, allodapine_bees, braunsapis, exoneura)",pollination_vector_possible
+pollination_vector_possible_animal,animal,"Animals (Animalia) are a possible pollination vector. (Synonyms, animalia)",pollination_vector_possible
+pollination_vector_possible_ant,ant,"Ants (Formicidae) are a possible pollination vector. (Synonyms, formicidae)",pollination_vector_possible
+pollination_vector_possible_anthophorini,anthophorini,"Blue-banded and teddy bear bees (Tribe Anthophorini in the family Apidae) are a possible pollination vector. (Synonyms, teddy_bear_bees, blue-banded_bees, amegilla)",pollination_vector_possible
+pollination_vector_possible_autonomous,autonomous,Plants are autonomously pollinated.,pollination_vector_possible
+pollination_vector_possible_bat,bat,"Bats (Chiroptera) are a possible pollination vector. (Synonyms, chiroptera)",pollination_vector_possible
+pollination_vector_possible_bee,bee,"Bees (Hymenoptera clade Anthophila) are a possible pollination vector. (Synonyms, anthophila, apidae)",pollination_vector_possible
+pollination_vector_possible_bee_fly,bee_fly,"Bee Fly (Bombyliidae) are a possible pollination vector. (Synonyms, bombyliidae)",pollination_vector_possible
+pollination_vector_possible_beetle,beetle,"Beetles (Coleoptera) are a possible pollination vector. (Synonyms, coleoptera)",pollination_vector_possible
+pollination_vector_possible_bird,bird,"Birds (Aves) are a possible pollination vector. (Synonyms, aves)",pollination_vector_possible
+pollination_vector_possible_bumblebee,bumblebee,"Bumblebees (Bombus) are a possible pollination vector. (Synonyms, bombus)",pollination_vector_possible
+pollination_vector_possible_butterfly,butterfly,"Butterflies (Rhopalocera) are a possible pollination vector. (Synonyms, rhopalocera)",pollination_vector_possible
+pollination_vector_possible_carpenter_bee,carpenter_bee,"Carpenter bees (genus Xylocopa in the family Apidae) are a possible pollination vector. (Synonyms, xylocopa, xylocopini)",pollination_vector_possible
+pollination_vector_possible_carrion_fly,carrion_fly,"Carrion flies (Diptera families Calliphoridae and Sarcophagidae) are a possible pollination vector. (Synonyms, calliphoridae, sarcophagidae)",pollination_vector_possible
+pollination_vector_possible_cockroach,cockroach,"Cockroaches (Blattodea) are a possible pollination vector. (Synonyms, blattodea)",pollination_vector_possible
+pollination_vector_possible_colletidae,colletidae,"Plasterer or masked bees (Family Colletidae) are a possible pollination vector. (Synonyms, plasterer_bee, masked_bee)",pollination_vector_possible
+pollination_vector_possible_fly,fly,"Flies (Diptera suborder Brachycera) are a possible pollination vector. (Synonyms, brachycera)",pollination_vector_possible
+pollination_vector_possible_flying_fox,flying_fox,"Flying fox (Pteropus) are a possible pollination vector. (Synonyms, pteropus)",pollination_vector_possible
+pollination_vector_possible_gecko,gecko,"Geckoes (Squamata families Gekkonidae and Diplodactylidae) are a possible pollination vector. (Synonyms, gekkonidae, diplodactylidae)",pollination_vector_possible
+pollination_vector_possible_hemiptera,hemiptera,"Hemiptera (true bug) are a possible pollination vector. (Synonyms, true_bug)",pollination_vector_possible
+pollination_vector_possible_honeybee,honeybee,"Honeybees (Apis mellifera) are a possible pollination vector. (Synonyms, apis_mellifera)",pollination_vector_possible
+pollination_vector_possible_honeyeater,honeyeater,"Honeyeaters (Meliphagidae) are a possible pollination vector. (Synonyms, meliphagidae)",pollination_vector_possible
+pollination_vector_possible_hoverfly,hoverfly,"Hoverflies (Syrphidae) are a possible pollination vector. (Synonyms, syrphidae)",pollination_vector_possible
+pollination_vector_possible_hymenoptera,hymenoptera,Hymenoptera are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_ichneumon_wasp,ichneumon_wasp,"Ichneumon wasps (Family Ichneumonidae in the order Hymenoptera) are a possible pollination vector. (Synonyms, ichneumonidae)",pollination_vector_possible
+pollination_vector_possible_insect,insect,"Insects (Insecta) are a possible pollination vector. (Synonyms, insecta)",pollination_vector_possible
+pollination_vector_possible_lepidoptera,lepidoptera,Lepidoptera are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_lizard,lizard,Lizards are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_mammal,mammal,"Mammals (Mammalia) are a possible pollination vector. (Synonyms, mammalia)",pollination_vector_possible
+pollination_vector_possible_marsupial,marsupial,"Marsupials (Marsupialia) are a possible pollination vector. (Synonyms, marsupialia)",pollination_vector_possible
+pollination_vector_possible_megachilidae,megachilidae,"Leafcutter or resin bees (Family Megachilidae) are a possible pollination vector. (Synonyms, leafcutter_bee, resin_bee)",pollination_vector_possible
+pollination_vector_possible_mosquito,mosquito,"Mosquitoes (Diptera family Culicidae) are a possible pollination vector. (Synonyms, culicidae)",pollination_vector_possible
+pollination_vector_possible_moth,moth,Moths (a non-monophyletic group including all non-Rhopalocera lepidopterans) are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_orthoptera,orthoptera,Orthoptera are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_parrot,parrot,"Parrots (Aves family Psittacidae) are a possible pollination vector. (Synonyms, psittacidae)",pollination_vector_possible
+pollination_vector_possible_rodent,rodent,"Rodents (Rodentia) are a possible pollination vector. (Synonyms, rodentia)",pollination_vector_possible
+pollination_vector_possible_silvereye,silvereye,"Silvereye or white-eyes (Aves family zosteropidae) are a possible pollination vector. (Synonyms, zosteropidae, white-eye)",pollination_vector_possible
+pollination_vector_possible_skink,skink,"Skinks (Squamata family Scincidae) are a possible pollination vector. (Synonyms, scincidae)",pollination_vector_possible
+pollination_vector_possible_stenotritid_bee,stenotritid_bee,"Stenotritid bees (Family Stenotritidae) are a possible pollination vector. (Synonyms, stenotritidae)",pollination_vector_possible
+pollination_vector_possible_stingless_bee,stingless_bee,"Stingless bees (genera Tetragonula and Austroplebeia in the family Apidae) are a possible pollination vector. (Synonyms, tetragonula, austroplebeia)",pollination_vector_possible
+pollination_vector_possible_sunbirds,sunbirds,"Sunbirds (Aves family Nectariniidae) are a possible pollination vector. (Synonyms, nectariniidae, Cinnyris)",pollination_vector_possible
+pollination_vector_possible_sweat_bee,sweat_bee,"Sweat bees (Family Halictidae) are a possible pollination vector. (Synonyms, halictidae)",pollination_vector_possible
+pollination_vector_possible_thrips,thrips,"Thrips (Order Thysanoptera) are a possible pollination vector. (Synonyms, thysanoptera)",pollination_vector_possible
+pollination_vector_possible_thynnine_wasp,thynnine_wasp,"Thynnine wasps (Family Thynnidae in the order Hymenoptera) are a possible pollination vector. (Synonyms, thynnidae, thynninae)",pollination_vector_possible
+pollination_vector_possible_vertebrate,vertebrate,"Vertebrates (Subphylum Vertebrata) are a possible pollination vector. (Synonyms, vertebrata)",pollination_vector_possible
+pollination_vector_possible_wasp,wasp,Wasps are a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_water,water,Water is a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_wind,wind,Wind is a possible pollination vector.,pollination_vector_possible
+pollination_vector_possible_none,none,Flower was not pollinated during the observation period.,pollination_vector_possible
+flower_visitor_allodapini,allodapini,"Reed and allodapine bees (Tribe Allodapini in the family Apidae) are an observed flower visitor. (Synonyms, reed_bees, allodapine_bees)",flower_visitor
+flower_visitor_animal,animal,"Animals (Animalia) are an observed flower visitor. (Synonyms, animalia)",flower_visitor
+flower_visitor_ant,ant,"Ants (Formicidae) are an observed flower visitor. (Synonyms, formicidae)",flower_visitor
+flower_visitor_anthophorini,anthophorini,"Blue-banded and teddy bear bees (Tribe Anthophorini in the family Apidae) are an observed flower visitor. (Synonyms, teddy_bear_bees, blue-banded_bees)",flower_visitor
+flower_visitor_autonomous,autonomous,Plants are autonomously pollinated.,flower_visitor
+flower_visitor_bat,bat,"Bats (Chiroptera) are an observed flower visitor. (Synonyms, chiroptera)",flower_visitor
+flower_visitor_bee,bee,"Bees (Hymenoptera clade Anthophila) are an observed flower visitor. (Synonyms, anthophila)",flower_visitor
+flower_visitor_bee_fly,bee_fly,"Bee Fly (Bombyliidae) are an observed flower visitor. (Synonyms, bombyliidae)",flower_visitor
+flower_visitor_beetle,beetle,"Beetles (Coleoptera) are an observed flower visitor. (Synonyms, coleoptera)",flower_visitor
+flower_visitor_bird,bird,"Birds (Aves) are an observed flower visitor. (Synonyms, aves)",flower_visitor
+flower_visitor_bumblebee,bumblebee,"Bumblebees (Bombus) are an observed flower visitor. (Synonyms, bombus)",flower_visitor
+flower_visitor_butterfly,butterfly,"Butterflies (Rhopalocera) are an observed flower visitor. (Synonyms, rhopalocera)",flower_visitor
+flower_visitor_carpenter_bee,carpenter_bee,"Carpenter bees (genus Xylocopa in the family Apidae) are an observed flower visitor. (Synonyms, xylocopa, xylocopini)",flower_visitor
+flower_visitor_carrion_fly,carrion_fly,"Carrion flies (Diptera families Calliphoridae and Sarcophagidae) are an observed flower visitor. (Synonyms, calliphoridae, sarcophagidae)",flower_visitor
+flower_visitor_caterpillar,caterpillar,Caterpillars (lepidoptera) are an observed flower visitor.,flower_visitor
+flower_visitor_cockroach,cockroach,"Cockroaches (Blattodea) are an observed flower visitor. (Synonyms, blattodea)",flower_visitor
+flower_visitor_colletidae,colletidae,"Plasterer or masked bees (Family Colletidae) are an observed flower visitor. (Synonyms, plasterer_bee, masked_bee)",flower_visitor
+flower_visitor_cricket,cricket,"Crickets (Orthoptera family Gryllidae) are an observed flower visitor. (Synonyms, gryllidae)",flower_visitor
+flower_visitor_dragonfly,dragonfly,"Dragonflies (Odonata) are an observed flower visitor. (Synonyms, odonata)",flower_visitor
+flower_visitor_fly,fly,"Flies (Diptera suborder Brachycera) are an observed flower visitor. (Synonyms, brachycera)",flower_visitor
+flower_visitor_flying_fox,flying_fox,"Flying fox (Pteropus) are an observed flower visitor. (Synonyms, pteropus)",flower_visitor
+flower_visitor_gecko,gecko,"Geckoes (Squamata families Gekkonidae and Diplodactylidae) are an observed flower visitor. (Synonyms, gekkonidae, diplodactylidae)",flower_visitor
+flower_visitor_hemiptera,hemiptera,"Hemiptera (true bug) are an observed flower visitor. (Synonyms, true_bug)",flower_visitor
+flower_visitor_honeybee,honeybee,"Honeybees (Apis mellifera) are an observed flower visitor. (Synonyms, apis_mellifera)",flower_visitor
+flower_visitor_honeyeater,honeyeater,"Honeyeaters (Meliphagidae) are an observed flower visitor. (Synonyms, meliphagidae)",flower_visitor
+flower_visitor_hoverfly,hoverfly,"Hoverflies (Syrphidae) are an observed flower visitor. (Synonyms, syrphidae)",flower_visitor
+flower_visitor_hymenoptera,hymenoptera,Hymenoptera are an observed flower visitor.,flower_visitor
+flower_visitor_ichneumon_wasp,ichneumon_wasp,"Ichneumon wasps (Family Ichneumonidae in the order Hymenoptera) are an observed flower visitor. (Synonyms, ichneumonidae)",flower_visitor
+flower_visitor_insect,insect,"Insects (Insecta) are an observed flower visitor. (Synonyms, insecta)",flower_visitor
+flower_visitor_lepidoptera,lepidoptera,Lepidoptera are an observed flower visitor.,flower_visitor
+flower_visitor_lizard,lizard,Lizards are an observed flower visitor.,flower_visitor
+flower_visitor_mammal,mammal,"Mammals (Mammalia) are an observed flower visitor. (Synonyms, mammalia)",flower_visitor
+flower_visitor_marsupial,marsupial,"Marsupials (Marsupialia) are an observed flower visitor. (Synonyms, marsupialia)",flower_visitor
+flower_visitor_megachilidae,megachilidae,"Leafcutter or resin bees (Family Megachilidae) are an observed flower visitor. (Synonyms, leafcutter_bee, resin_bee)",flower_visitor
+flower_visitor_mosquito,mosquito,"Mosquitoes (Diptera family Culicidae) are an observed flower visitor. (Synonyms, culicidae)",flower_visitor
+flower_visitor_moth,moth,Moths (a non-monophyletic group including all non-Rhopalocera lepidopterans) are an observed flower visitor.,flower_visitor
+flower_visitor_orthoptera,orthoptera,Orthoptera are an observed flower visitor.,flower_visitor
+flower_visitor_parrot,parrot,"Parrots (Aves family Psittacidae) are an observed flower visitor. (Synonyms, psittacidae)",flower_visitor
+flower_visitor_rodent,rodent,"Rodents (Rodentia) are an observed flower visitor. (Synonyms, rodentia)",flower_visitor
+flower_visitor_silvereye,silvereye,"Silvereye or white-eyes (Aves family zosteropidae) are an observed flower visitor. (Synonyms, zosteropidae, white-eye)",flower_visitor
+flower_visitor_skink,skink,"Skinks (Squamata family Scincidae) are an observed flower visitor. (Synonyms, scincidae)",flower_visitor
+flower_visitor_spider,spider,"Spiders (Order Araneae) are an observed flower visitor. (Synonyms, araneae)",flower_visitor
+flower_visitor_stenotritid_bee,stenotritid_bee,"Stenotritid bees (Family Stenotritidae) are an observed flower visitor. (Synonyms, stenotritidae)",flower_visitor
+flower_visitor_stingless_bee,stingless_bee,"Stingless bees (genera Tetragonula and Austroplebeia in the family Apidae) are an observed flower visitor. (Synonyms, tetragonula, austroplebeia)",flower_visitor
+flower_visitor_sunbirds,sunbirds,"Sunbirds (Aves family Nectariniidae) are an observed flower visitor. (Synonyms, nectariniidae, Cinnyris)",flower_visitor
+flower_visitor_sweat_bee,sweat_bee,"Sweat bees (Family Halictidae) are an observed flower visitor. (Synonyms, halictidae)",flower_visitor
+flower_visitor_thrips,thrips,"Thrips (Order Thysanoptera) are an observed flower visitor. (Synonyms, thysanoptera)",flower_visitor
+flower_visitor_thynnine_wasp,thynnine_wasp,"Thynnine wasps (Family Thynnidae in the order Hymenoptera) are an observed flower visitor. (Synonyms, thynnidae)",flower_visitor
+flower_visitor_vertebrate,vertebrate,"Vertebrates (Subphylum Vertebrata) are an observed flower visitor. (Synonyms, vertebrata)",flower_visitor
+flower_visitor_wasp,wasp,Wasps are an observed flower visitor.,flower_visitor
+flower_visitor_none,none,Flower was not visited by any animal taxa during the observation period.,flower_visitor
+flower_pollinator_reward_deceit,deceit,Pollinators do not receive a reward.,flower_pollinator_reward
+flower_pollinator_reward_food,food,Pollinators rewarded with food.,flower_pollinator_reward
+flower_pollinator_reward_heat,heat,Pollinators rewarded with heat.,flower_pollinator_reward
+flower_pollinator_reward_nectar,nectar,Pollinators rewarded with nectar.,flower_pollinator_reward
+flower_pollinator_reward_oil,oil,Pollinators rewarded with oil.,flower_pollinator_reward
+flower_pollinator_reward_pollen,pollen,Pollinators rewarded with pollen.,flower_pollinator_reward
+flower_pollinator_reward_reproduction,reproduction,Pollinators rewarded with reproduction.,flower_pollinator_reward
+flower_pollinator_reward_scent,scent,Pollinators rewarded with scent.,flower_pollinator_reward
+flower_pollinator_reward_stigmatic_exudate,stigmatic_exudate,Pollinators rewarded with stigmatic exudate.,flower_pollinator_reward
+flower_pollinator_reward_sugary_exudate,sugary_exudate,Pollinators rewarded with sugary exudate.,flower_pollinator_reward
+flower_nectar_production_nectar_produced,nectar_produced,A plant's flowers produce nectar.,flower_nectar_production
+flower_nectar_production_nectar_absent,nectar_absent,A plant's flowers do not produce nectar.,flower_nectar_production
+extrafloral_nectaries_extrafloral_nectaries_present,extrafloral_nectaries_present,Plant has extrafloral nectaries.,extrafloral_nectaries
+extrafloral_nectaries_extrafloral_nectaries_absent,extrafloral_nectaries_absent,Plant lacks extrafloral nectaries.,extrafloral_nectaries
+extrafloral_nectary_position_leaf_apex,leaf_apex,Extrafloral nectaries are at or near the apex of a leaf or phyllode.,extrafloral_nectary_position
+extrafloral_nectary_position_leaf_base,leaf_base,"Extrafloral nectaries are at or near the base of a leaf or phyllode, including just above the pulvinus.",extrafloral_nectary_position
+extrafloral_nectary_position_leaf_middle,leaf_middle,Extrafloral nectaries are near the middle of the leaf or phyllode.,extrafloral_nectary_position
+extrafloral_nectary_position_petiole,petiole,Extrafloral nectaries are on the petiole of a leaf.,extrafloral_nectary_position
+extrafloral_nectary_position_rachis,rachis,Extrafloral nectaries are on the rachis of a compound leaf.,extrafloral_nectary_position
+extrafloral_nectary_position_rachis_interjugary,rachis_interjugary,"Extrafloral nectaries are on the rachis of a compound leaf, between the pairs of pinnae or leaflets.",extrafloral_nectary_position
+extrafloral_nectary_position_rachis_jugary,rachis_jugary,"Extrafloral nectaries are on the rachis of a compound leaf, at the junction of a pair of pinnae or leaflets.",extrafloral_nectary_position
+extrafloral_nectary_position_stem,stem,Extrafloral nectaries are on the stem.,extrafloral_nectary_position
+flower_scent_production_scent_produced,scent_produced,A plant's flowers produce scent compounds.,flower_scent_production
+flower_scent_production_scent_absent,scent_absent,A plant's flowers do not produce scent compounds.,flower_scent_production
+polyploidy_type_allopolyploid,allopolyploid,"Polyploid arising from hybridisation between different species, followed by chromosome doubling, so that it carries divergent parental genomes. (Synonyms, allotetraploid, allotriploid, allohexaploid)",polyploidy_type
+polyploidy_type_autopolyploid,autopolyploid,"Polyploid arising from genome duplication within a single species, so that it carries multiple copies of similar genomes. (Synonyms, autotetraploid, autotriploid, autohexaploid)",polyploidy_type
+flowering_predictability_irregular_between_years,irregular_between_years,"Plants flower irregularly between years, flowering in some years but not others, sometimes with many years between flowering events.",flowering_predictability
+flowering_predictability_irregular_within_year,irregular_within_year,"Plants flower sporadically, in irregular bursts or flushes within a season or through the year.",flowering_predictability
+flowering_predictability_synchronous,synchronous,Plants in a population or area flower at the same time (gregarious flowering).,flowering_predictability
+flowering_predictability_regular,regular,Plants generally flower each year and during the same months each year.,flowering_predictability
+recruitment_pattern_mass_recruitment,mass_recruitment,"Plants exhibit mass recruitment, where many seedlings establish simultaneously, punctuated by periods with no recruitment or minimal recruitment.",recruitment_pattern
+recruitment_pattern_mass_recruitment_absent,mass_recruitment_absent,"Plants do not exhibit mass recruitment, but instead some recruitment occurs across time.",recruitment_pattern
+recruitment_pattern_recruitment_episodic,recruitment_episodic,"Recruitment is restricted to infrequent episodes when favourable conditions occur (for example, unusually wet years), with little or no recruitment in the intervening years.",recruitment_pattern
+recruitment_pattern_recruitment_intensity_variable,recruitment_intensity_variable,Plants sometimes exhibit mass recruitment and other times display gradual recruitment across time.,recruitment_pattern
+flower_opening_time_afternoon,afternoon,Flowers open in the afternoon.,flower_opening_time
+flower_opening_time_day,day,"Flowers open during the day (diurnal), with no narrower time of day specified.",flower_opening_time
+flower_opening_time_evening,evening,Flowers open in the evening.,flower_opening_time
+flower_opening_time_morning,morning,Flowers open in the morning.,flower_opening_time
+flower_opening_time_night,night,Flowers open at night (nocturnal).,flower_opening_time
+germination_cues_burial,burial,"Germination increases when seeds are buried in the soil, in darkness.",germination_cues
+germination_cues_disturbance,disturbance,"Germination increases following soil or vegetation disturbance other than fire, such as clearing or soil turnover.",germination_cues
+germination_cues_fire,fire,"Germination increases following fire, with the fire-related cue (heat, smoke) not specified.",germination_cues
+germination_cues_floods,floods,Germination increases following flooding or as floodwaters recede.,germination_cues
+germination_cues_heat,heat,"Germination increases following exposure to the heat of a fire, typically by cracking a hard seed coat.",germination_cues
+germination_cues_light,light,"Germination increases when seeds are exposed to light, such as at the soil surface or in canopy gaps.",germination_cues
+germination_cues_rain,rain,"Germination increases following rain, but the time of year is not specified.",germination_cues
+germination_cues_rain_autumn,rain_autumn,Germination increases following autumn rains.,germination_cues
+germination_cues_rain_spring,rain_spring,Germination increases following spring rains.,germination_cues
+germination_cues_rain_summer,rain_summer,Germination increases following summer rains.,germination_cues
+germination_cues_rain_winter,rain_winter,Germination increases following winter rains.,germination_cues
+germination_cues_smoke,smoke,Germination increases following exposure to smoke or smoke-derived chemicals from fire.,germination_cues
+germination_cues_temperature_cool,temperature_cool,"Germination is restricted to, or greatest at, cool temperatures, such as those of a cool, wet winter.",germination_cues
+germination_cues_temperature_warm,temperature_warm,"Germination is restricted to, or greatest at, warm temperatures.",germination_cues
+plant_tolerance_frost_frost_hardy,frost_hardy,Taxa tolerates severe and/or repeated frosts without significant damage to foliage or shoots.,plant_tolerance_frost
+plant_tolerance_frost_frost_sensitive,frost_sensitive,Taxa tolerates light frosts but is damaged by moderate to severe frosts.,plant_tolerance_frost
+plant_tolerance_frost_frost_tender,frost_tender,Taxa is damaged or killed by even light frost.,plant_tolerance_frost
+plant_tolerance_frost_not_applicable,not_applicable,Taxa is virtually never confronted with frost in nature and the response is unknown.,plant_tolerance_frost

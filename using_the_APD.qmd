@@ -56,7 +56,7 @@ The RVA copy is refreshed as part of each APD release, so check the version show
 
 ## Machine-readable serialisations: `APD.ttl`, `APD.nt`, `APD.nq`, `APD.json`
 
-The dictionary is published as RDF in four serialisations. All four carry the same 27,500 or so triples describing 1,473 concepts — 559 trait concepts, 819 allowed categorical values, plus trait groupings and glossary terms — so the choice is about tooling, not content.
+The dictionary is published as RDF in four serialisations. All four carry the same 27,500 or so triples describing 1,475 concepts — 559 trait concepts, 819 allowed categorical values, plus trait groupings and glossary terms — so the choice is about tooling, not content.
 
 | File | Format | Suits |
 |-----------------|-----------------|-------------------------------------------|

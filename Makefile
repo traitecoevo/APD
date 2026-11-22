@@ -4,9 +4,10 @@
 # calls functions in R/ -- there is no chunk of a notebook you have to know to
 # skip.
 #
-# Seven targets, one per thing you'd actually want to do. Two of them exist only
+# Eight targets, one per thing you'd actually want to do. Two of them exist only
 # because trait definitions get edited in a spreadsheet; if that stops being true,
-# they go.
+# they go. `sync-hierarchy` exists because the trait hierarchy stores each path
+# twice; if the derived copy is ever dropped, it goes too.
 #
 # Targets always run: the data build takes about 8 seconds, so tracking which
 # outputs are stale would cost more in surprise than it saves in time. The one
@@ -14,15 +15,16 @@
 
 R := Rscript
 
-.PHONY: help data check site release export-csv import-csv clean
+.PHONY: help data check site release export-csv import-csv sync-hierarchy clean
 
 help:  ## Show this help
 	@echo "APD -- make targets:"
 	@echo
 	@grep -E '^[a-z-]+:.*?## .*$$' $(MAKEFILE_LIST) \
-		| awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[1m%-12s\033[0m %s\n", $$1, $$2}'
+		| awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[1m%-15s\033[0m %s\n", $$1, $$2}'
 	@echo
 	@echo "Editing traits:   make export-csv -> edit the spreadsheet -> make import-csv -> make check"
+	@echo "Editing groups:   edit Parent in data/APD_trait_hierarchy.csv -> make sync-hierarchy -> make check"
 	@echo "Releasing:        make release, then tag, GitHub Release, Zenodo, ARDC RVA"
 
 data:  ## Build the dictionary from data/: RDF serialisations + the two flat CSVs
@@ -42,6 +44,9 @@ export-csv:  ## Export trait definitions to data/edit/ for spreadsheet editing
 
 import-csv:  ## Import edited CSV back into data/APD_traits_input.yml
 	$(R) scripts/import_csv.R
+
+sync-hierarchy:  ## Rewrite the trait hierarchy's tier_*/hierarchy columns from Parent
+	$(R) scripts/sync_hierarchy.R
 
 clean:  ## Delete the generated artefacts, the rendered site and the Quarto cache
 	rm -rf export docs .quarto
