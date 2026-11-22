@@ -68,7 +68,13 @@
 # (previous digest 0d6b029a9a788b4ace582864655ed78b). Verified attributable by
 # rendering every entity with and without the change: only the 15 traits whose
 # TRY match or modified date changed differ. Nothing else moved.
-APD_ENTITY_TABLE_DIGEST <- "dc95348c63d999e10c4e4f356593baa0"
+#
+# Re-pinned for definitions of seven new trait groups: the three fire groups, the
+# stomatal process group, and wording fixes in the regeneration and vegetative
+# structure groups (previous digest dc95348c63d999e10c4e4f356593baa0). Verified
+# attributable by rendering every entity with and without the change: only those
+# seven groups differ.
+APD_ENTITY_TABLE_DIGEST <- "65205f0dab1136edf18206e9568995a4"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the
