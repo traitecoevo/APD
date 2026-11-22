@@ -275,8 +275,27 @@
     background: color-mix(in srgb, var(--surface) 88%, transparent); padding: 5px 9px; border-radius: 6px;
     border: 1px solid var(--border-soft); max-width: 260px;
   }
+  .tree-crumbs {
+    position: absolute; left: 14px; top: 14px; right: 60px; display: flex; align-items: center; gap: 4px;
+    width: max-content; max-width: calc(100% - 74px); overflow-x: auto; white-space: nowrap;
+    background: color-mix(in srgb, var(--surface) 92%, transparent); border: 1px solid var(--border-soft);
+    border-radius: 8px; padding: 5px 6px; font-size: 11.5px; color: var(--text-faint); z-index: 2;
+  }
+  .tree-crumbs .tc {
+    border: 0; background: var(--accent-soft); color: var(--accent-ink); font-family: inherit; font-size: 11.5px;
+    padding: 2px 7px; border-radius: 5px; cursor: pointer;
+  }
+  .tree-crumbs .tc:hover { filter: brightness(0.95); }
+  .tree-crumbs .tc.current { background: none; color: var(--text); font-weight: 600; cursor: default; }
+  .tree-crumbs .sep { color: var(--text-faint); }
+  .tree-crumbs .tc-reset {
+    margin-left: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-dim);
+    border-radius: 5px; padding: 2px 8px; font-size: 11px; cursor: pointer; font-family: inherit;
+  }
+  .tree-crumbs .tc-reset:hover { color: var(--accent-ink); border-color: var(--accent-soft-border); }
+  .tree-crumbs .tc-reset[disabled] { opacity: 0.45; cursor: default; }
   .legend {
-    position: absolute; left: 14px; top: 14px; display: flex; flex-direction: column; gap: 4px;
+    position: absolute; left: 14px; top: 56px; display: flex; flex-direction: column; gap: 4px;
     background: color-mix(in srgb, var(--surface) 90%, transparent); border: 1px solid var(--border-soft);
     border-radius: 8px; padding: 8px 10px; font-size: 10.5px; color: var(--text-dim); max-width: 210px;
   }
@@ -343,6 +362,9 @@
 
   /* facet browser */
   .facet-tabs { display: flex; gap: 4px; margin-bottom: 10px; flex-wrap: wrap; }
+  .filter-summary .action-switch { display: none; }
+  .filter-summary .action-switch.show { display: flex; }
+  .action-btn[data-action] { font-size: 11px; padding: 4px 9px; }
   .action-switch { display: flex; gap: 3px; padding: 2px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 7px; }
   .action-btn { border: 0; background: none; padding: 3px 8px; font-size: 10px; font-weight: 600; border-radius: 5px; cursor: pointer; color: var(--text-dim); font-family: inherit; white-space: nowrap; }
   .action-btn.active { background: var(--surface); color: var(--accent-ink); box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
@@ -391,6 +413,10 @@
   </div>
   <div class="filter-summary">
     <span id="filter-summary-text"></span>
+    <div class="action-switch" id="action-switch" role="group" aria-label="Traits that do not match">
+      <button class="action-btn" data-action="browse" title="Keep the whole tree and grey out traits that do not match">Grey out others</button>
+      <button class="action-btn active" data-action="filter" title="Redraw the tree with only the branches that lead to a match">Hide others</button>
+    </div>
     <button id="clear-filters">Clear filters</button>
   </div>
 </header>
@@ -398,8 +424,9 @@
 <div class="layout">
   <div class="canvas-wrap">
     <svg id="tree-svg"></svg>
+    <nav class="tree-crumbs" id="tree-crumbs" aria-label="Open trait group"></nav>
     <div class="legend" id="legend"></div>
-    <div class="hint" id="hint">Click a category to expand · drag to pan · scroll to zoom</div>
+    <div class="hint" id="hint">Click a group to open it · click it again or press Esc to close · drag to pan · scroll to zoom</div>
     <div class="zoom-controls">
       <button id="zoom-in" title="Zoom in">+</button>
       <button id="zoom-out" title="Zoom out">−</button>
@@ -419,10 +446,6 @@
       <div>
         <div class="panel-title">
           <span>Explore by facet</span>
-          <div class="action-switch" id="action-switch">
-            <button class="action-btn active" data-action="browse" title="Highlight matching traits in the full tree">Highlight</button>
-            <button class="action-btn" data-action="filter" title="Redraw the tree with only matching traits">Filter</button>
-          </div>
         </div>
         <div class="facet-tabs" id="facet-tabs">
           <button class="facet-tab terms active" data-facet="terms">Terms</button>
@@ -459,7 +482,7 @@
     <p><b>How this is organised.</b> Branches follow each trait's <span class="mono">trait_group</span> — the trait categories curated by hand in the APD, from broad domain (plant morphology, biochemical, biological process, life history) down to specific trait categories.</p>
     <p><b>${nMulti} traits belong to more than one category</b> and appear in each of them; hence the total number of endpoints is greater than the number of traits in the APD.</p>
     ${nUnresolved ? `<p><b>${nUnresolved} end-group placements</b> use a trait group not found in the APD trait hierarchy (dashed ring).</p>` : ''}
-    <p><b>Highlight vs. Filter.</b> Selecting a facet pill — Terms, Structure, Characteristic or Trait group — normally just highlights matching traits in the full tree ("Highlight"). Switch to "Filter" to redraw the tree showing only the branches that lead to a match.</p>
+    <p><b>Hide or grey out.</b> Searching or selecting a facet pill — Terms, Structure, Characteristic or Trait group — redraws the tree with only the branches that lead to a match ("Hide others", at the top of the page). Switch to "Grey out others" to keep the full tree and grey out the traits that do not match.</p>
     <p><b>Source.</b> Built from the <a href="https://w3id.org/APD/" target="_blank" rel="noopener">AusTraits Plant Dictionary</a> version ${escapeHtml(DATA.version)} on ${escapeHtml(DATA.built)}. Definitions licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
   `;
 
@@ -510,13 +533,14 @@
     });
   }
 
+  // Distinct traits under a node. A trait in two groups has a leaf in each, so
+  // counting leaves would count it twice wherever both groups sit below one node
+  // (the root used to say 943 against the header's 751).
   function countLeaves(node) {
     if (node.isLeaf) return 1;
     if (node._leafCount != null) return node._leafCount;
-    let n = 0;
-    (node.children || []).forEach(c => n += countLeaves(c));
-    node._leafCount = n;
-    return n;
+    node._leafCount = new Set(collectLeafTraitIds(node)).size;
+    return node._leafCount;
   }
   function sortTree(node) {
     if (!node.children) return;
@@ -570,7 +594,7 @@
   let currentRootData = null;
   let hroot = null;
   let viewIsFiltered = false;
-  let facetAction = 'browse'; // 'browse' (highlight) | 'filter' (redraw)
+  let facetAction = 'filter'; // 'filter' (redraw with matches only) | 'browse' (grey out the rest)
   let selectedTraitId = null;
   const activeFilters = {};
   FACET_KEYS.forEach(fk => activeFilters[fk] = new Set());
@@ -612,14 +636,16 @@
     const v = catColorVar.get(n.data.name) || '--text-faint';
     return `var(${v})`;
   }
+  // Colours are fixed by the full tree's domain order, so a domain keeps its
+  // colour when a filtered tree leaves an earlier domain out.
   function rebuildColorsAndLegend() {
-    catOrder = currentRootData.children.map(c => c.name);
+    catOrder = masterTreeData.children.map(c => c.name);
     catColorVar = new Map(catOrder.map((name, i) => [name, `--cat-${i % 15}`]));
     const legendEl = document.getElementById('legend');
     legendEl.innerHTML = '<div class="legend-title">Trait domain</div>' +
-      catOrder.map((name, i) => {
-        const short = name.replace(/ trait$/, '').replace(', physiological process trait', ' / physiological');
-        return `<div class="legend-row"><span class="legend-dot" style="background:var(--cat-${i % 15})"></span>${escapeHtml(short)} <span class="mono" style="color:var(--text-faint);margin-left:auto">${countLeaves(currentRootData.children[i])}</span></div>`;
+      currentRootData.children.map(c => {
+        const short = c.name.replace(/ trait$/, '').replace(', physiological process trait', ' / physiological');
+        return `<div class="legend-row"><span class="legend-dot" style="background:var(${catColorVar.get(c.name) || '--text-faint'})"></span>${escapeHtml(short)} <span class="mono" style="color:var(--text-faint);margin-left:auto">${countLeaves(c)}</span></div>`;
       }).join('');
   }
 
@@ -646,8 +672,43 @@
   const gNodes = gZoom.append('g').attr('class', 'nodes-layer');
 
   const dx = 24;
-  const dy = 230;
-  const treeLayout = d3.tree().nodeSize([dx, dy]);
+  const treeLayout = d3.tree().nodeSize([dx, 1]);
+
+  // Labels: an open group is labelled to the left of its dot, a leaf or a closed
+  // group to the right. Widths are measured so each level can be spaced to fit.
+  const LEVEL_GAP = 28;
+  const MIN_LEVEL = 120;
+  const measureCtx = document.createElement('canvas').getContext('2d');
+  function nodeRadius(d) {
+    return d.data.isLeaf ? 4 : Math.max(5, Math.min(11, 4 + Math.sqrt(countLeaves(d.data))));
+  }
+  function nodeLabel(d) {
+    return d.data.isLeaf ? d.data.name : `${d.data.name} · ${countLeaves(d.data)}`;
+  }
+  function labelOffset(d) { return nodeRadius(d) + 5; }
+  function labelOnLeft(d) { return !d.data.isLeaf && !!d.children; }
+  function labelWidth(d) {
+    measureCtx.font = d.data.isLeaf ? '400 11px "Public Sans", sans-serif' : '600 12px "Public Sans", sans-serif';
+    return measureCtx.measureText(nodeLabel(d)).width + labelOffset(d);
+  }
+
+  // d3.tree spaces levels evenly, so a long label ran into the level beside it.
+  // Instead the gap between two levels fits the widest right-hand label on the
+  // one and the widest left-hand label on the other.
+  function spaceLevels(nodes) {
+    const right = [], left = [];
+    nodes.forEach(d => {
+      d._lw = labelWidth(d);
+      const side = labelOnLeft(d) ? left : right;
+      side[d.depth] = Math.max(side[d.depth] || 0, d._lw);
+    });
+    const at = [0];
+    const maxDepth = d3.max(nodes, d => d.depth);
+    for (let k = 1; k <= maxDepth; k++) {
+      at[k] = at[k - 1] + Math.max(MIN_LEVEL, (right[k - 1] || 0) + (left[k] || 0) + LEVEL_GAP);
+    }
+    nodes.forEach(d => { d.y = at[d.depth]; });
+  }
 
   function diagonal(sy, sx, ty, tx) {
     return `M${sy},${sx} C${(sy + ty) / 2},${sx} ${(sy + ty) / 2},${tx} ${ty},${tx}`;
@@ -656,6 +717,7 @@
   function update(source) {
     treeLayout(hroot);
     const nodes = hroot.descendants();
+    spaceLevels(nodes);
     const links = hroot.links();
     const active = filtersActive();
 
@@ -690,14 +752,14 @@
       .attr('transform', d => `translate(${d.y},${d.x})`);
 
     nodeUpdate.select('circle')
-      .attr('r', d => d.data.isLeaf ? 4 : Math.max(5, Math.min(11, 4 + Math.sqrt(countLeaves(d.data)))))
+      .attr('r', nodeRadius)
       .attr('fill', d => d.data.isLeaf ? 'var(--surface)' : colorForNode(d))
       .attr('stroke', d => d.data.isLeaf ? colorForNode(d) : 'var(--surface)');
 
     nodeUpdate.select('text')
-      .attr('x', d => d.data.isLeaf ? 9 : (d.children ? -9 : 9))
-      .attr('text-anchor', d => d.data.isLeaf ? 'start' : (d.children ? 'end' : 'start'))
-      .text(d => d.data.isLeaf ? d.data.name : `${d.data.name} · ${countLeaves(d.data)}`);
+      .attr('x', d => labelOnLeft(d) ? -labelOffset(d) : labelOffset(d))
+      .attr('text-anchor', d => labelOnLeft(d) ? 'end' : 'start')
+      .text(nodeLabel);
 
     nodeUpdate.classed('dim', d => {
       if (!active) return false;
@@ -715,11 +777,98 @@
     updateFilterSummary();
   }
 
+  /* ---------------------------------------------------------------
+   * 6b. Opening and closing groups
+   *     One path is open at a time: opening a group closes every other open
+   *     group below the domains, and closing a group closes everything inside
+   *     it, so re-opening it starts tidy. While a search or facet is active the
+   *     matches may be spread over several branches, so opening a group then
+   *     leaves the others alone.
+   * ------------------------------------------------------------- */
+  let focusNode = null;
+
+  function collapseSubtree(d) {
+    (d._children || []).forEach(collapseSubtree);
+    d.children = null;
+  }
+
+  // The starting state: the root and the domains open, everything else closed.
+  function baseState() {
+    (function walk(d) {
+      d.children = d.depth < 2 ? d._children : null;
+      (d._children || []).forEach(walk);
+    })(hroot);
+  }
+
+  function closeOffPath(d) {
+    const keep = new Set(d.ancestors());
+    hroot.each(n => { if (n.depth >= 2 && n.children && !keep.has(n)) collapseSubtree(n); });
+  }
+
+  function openGroup(d) {
+    if (!filtersActive() || viewIsFiltered) closeOffPath(d);
+    d.children = d._children;
+    setFocus(d);
+    update(d);
+    frame(d);
+  }
+
+  // Close a group, or step up from it: the view moves to its parent.
+  function closeGroup(d) {
+    if (!d.parent || d.parent === hroot) { resetTree(); return; }
+    collapseSubtree(d);
+    setFocus(d.parent);
+    update(d);
+    frame(d.parent);
+  }
+
+  // Keep a group open but close everything inside it.
+  function collapseTo(d) {
+    if (d === hroot) { resetTree(); return; }
+    d.children = d._children;
+    d.children.forEach(collapseSubtree);
+    setFocus(d);
+    update(d);
+    frame(d);
+  }
+
+  function resetTree() {
+    baseState();
+    setFocus(hroot);
+    update(hroot);
+    fitView();
+  }
+
   function nodeClicked(d) {
     if (d.data.isLeaf) { selectTrait(d.data.trait.id); update(d); return; }
-    if (d.children) d.children = null; else d.children = d._children;
-    update(d);
+    if (d.children) closeGroup(d); else openGroup(d);
   }
+
+  // The breadcrumb over the tree: the path to the group last opened. Clicking a
+  // crumb closes everything below it.
+  const crumbsEl = document.getElementById('tree-crumbs');
+  function setFocus(d) {
+    focusNode = d;
+    const path = d.ancestors().reverse();
+    crumbsEl.innerHTML = path.map((n, i) => {
+      const last = i === path.length - 1;
+      const name = i === 0 ? 'All groups' : n.data.name;
+      return `<button class="tc${last ? ' current' : ''}" data-i="${i}"${last ? ' aria-current="true"' : ''}>${escapeHtml(name)}</button>`;
+    }).join('<span class="sep">›</span>') +
+      `<button class="tc-reset" id="collapse-all" title="Close every group (Esc steps up one level)"${d === hroot ? ' disabled' : ''}>Collapse all</button>`;
+    crumbsEl.querySelectorAll('.tc').forEach(b => {
+      b.addEventListener('click', () => {
+        const target = path[+b.dataset.i];
+        if (target !== focusNode) collapseTo(target);
+      });
+    });
+    document.getElementById('collapse-all').addEventListener('click', resetTree);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || e.target.closest('input, textarea')) return;
+    if (focusNode && focusNode !== hroot) closeGroup(focusNode);
+  });
 
   /* ---------------------------------------------------------------
    * 7. Full tree vs. filtered (pruned) tree
@@ -738,15 +887,21 @@
       if (opts.collapseDeep && d.depth >= 2) d.children = null;
     });
     rebuildColorsAndLegend();
-    if (filtersActive()) expandMatchingAncestors();
+    if (opts.expandMatches && filtersActive()) expandMatchingAncestors();
+    setFocus(hroot);
     update(hroot);
-    setTimeout(fitView, 340);
+    fitView();
   }
 
   function renderFullTree() {
-    mountTree(masterTreeData, { collapseDeep: true });
     viewIsFiltered = false;
+    mountTree(masterTreeData, { collapseDeep: true, expandMatches: true });
   }
+
+  // The filtered tree opens fully when the matches fit on a screen or two;
+  // beyond that it starts at the domains like the full tree, and since every
+  // branch left in it leads to a match, it opens one path at a time too.
+  const FILTER_OPEN_ALL = 60;
 
   function pruneNode(node) {
     if (node.isLeaf) return matchesFilters(node.trait.id) ? node : null;
@@ -756,8 +911,10 @@
   }
   function renderFilteredTree() {
     const pruned = pruneNode(masterTreeData) || { name: 'AusTraits', children: [] };
-    mountTree(pruned, { collapseDeep: false });
+    let placements = 0;
+    (function walk(n) { if (n.isLeaf) placements++; else n.children.forEach(walk); })(pruned);
     viewIsFiltered = true;
+    mountTree(pruned, { collapseDeep: placements > FILTER_OPEN_ALL });
   }
 
   /* ---------------------------------------------------------------
@@ -780,16 +937,37 @@
   });
   svg.call(zoom).on('dblclick.zoom', null);
 
-  function fitView() {
-    const bbox = gNodes.node().getBBox();
+  // Move the view onto a set of nodes, from their final layout positions rather
+  // than the DOM (which is mid-transition). If they do not fit at a readable
+  // scale, the anchor node is kept in view instead.
+  const TOP_INSET = 52;   // the breadcrumb bar
+  function viewNodes(nodes, anchor, minScale) {
     const svgEl = svg.node();
-    const w = svgEl.clientWidth, h = svgEl.clientHeight;
-    if (!bbox.width || !bbox.height) return;
-    const scale = Math.min(1, 0.9 / Math.max(bbox.width / w, bbox.height / h));
-    const tx = w / 2 - (bbox.x + bbox.width / 2) * scale;
-    const ty = h / 2 - (bbox.y + bbox.height / 2) * scale;
+    const w = svgEl.clientWidth, h = svgEl.clientHeight - TOP_INSET;
+    if (!w || !h || !nodes.length) return;
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    nodes.forEach(d => {
+      const lw = d._lw ?? labelWidth(d);
+      x0 = Math.min(x0, labelOnLeft(d) ? d.y - lw : d.y - 12);
+      x1 = Math.max(x1, labelOnLeft(d) ? d.y + 12 : d.y + lw);
+      y0 = Math.min(y0, d.x - dx / 2);
+      y1 = Math.max(y1, d.x + dx / 2);
+    });
+    const fit = Math.min(0.92 * w / (x1 - x0), 0.9 * h / (y1 - y0));
+    const scale = Math.max(minScale, Math.min(1, fit));
+    const cx = (x1 - x0) * scale <= w ? (x0 + x1) / 2 : anchor.y;
+    const cy = (y1 - y0) * scale <= h ? (y0 + y1) / 2 : anchor.x;
+    const tx = w / 2 - cx * scale;
+    const ty = TOP_INSET + h / 2 - cy * scale;
     svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
   }
+  // A group, its parent (for context) and its children, at a scale where the
+  // labels stay readable.
+  function frame(d) {
+    const ctx = d.parent && d.parent !== hroot ? [d.parent] : [];
+    viewNodes([...ctx, d, ...(d.children || [])], d, 0.6);
+  }
+  function fitView() { viewNodes(hroot.descendants(), hroot, 0.15); }
   document.getElementById('zoom-in').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1.3);
   document.getElementById('zoom-out').onclick = () => svg.transition().duration(200).call(zoom.scaleBy, 1 / 1.3);
   document.getElementById('zoom-reset').onclick = fitView;
@@ -926,7 +1104,8 @@
     } else if (viewIsFiltered) {
       renderFullTree();
     } else {
-      if (filtersActive()) expandMatchingAncestors();
+      // Matches can open several branches at once, so no one path is current.
+      if (filtersActive()) { expandMatchingAncestors(); setFocus(hroot); }
       update(hroot);
     }
     renderFacetCloud();
@@ -936,10 +1115,17 @@
   function updateFilterSummary() {
     const summaryEl = document.getElementById('filter-summary-text');
     const clearBtn = document.getElementById('clear-filters');
-    if (!filtersActive()) { summaryEl.textContent = ''; clearBtn.classList.remove('show'); return; }
+    const switchEl = document.getElementById('action-switch');
+    if (!filtersActive()) {
+      summaryEl.textContent = '';
+      clearBtn.classList.remove('show');
+      switchEl.classList.remove('show');
+      return;
+    }
     const n = RAW.reduce((acc, t) => acc + (matchesFilters(t.id) ? 1 : 0), 0);
     summaryEl.innerHTML = `<b>${n}</b> of ${RAW.length} traits match`;
     clearBtn.classList.add('show');
+    switchEl.classList.add('show');
   }
 
   document.getElementById('clear-filters').addEventListener('click', () => {
@@ -987,29 +1173,24 @@
   function revealTrait(id) {
     searchResults.classList.remove('open');
 
+    // Every node, including those inside closed groups.
     const targets = [];
-    hroot.each(d => { if (d.data.isLeaf && d.data.trait.id === id) targets.push(d); });
+    (function walk(d) {
+      if (d.data.isLeaf && d.data.trait.id === id) targets.push(d);
+      (d._children || []).forEach(walk);
+    })(hroot);
     if (!targets.length) return;
-    targets.forEach(target => {
-      let node = target;
-      const chain = [];
-      while (node.parent) { chain.push(node.parent); node = node.parent; }
-      chain.forEach(n => { if (n._children && !n.children) n.children = n._children; });
-    });
 
-    update(hroot);
+    // Start from the tidy state and open only the path(s) to this trait; one
+    // trait can sit in more than one group.
+    baseState();
+    targets.forEach(target => target.ancestors().forEach(n => { if (n._children) n.children = n._children; }));
+
+    const found = targets[0];
+    setFocus(found.parent);
     selectTrait(id);
-
-    setTimeout(() => {
-      let found = null;
-      hroot.each(d => { if (d.data.isLeaf && d.data.trait.id === id) found = found || d; });
-      if (!found) return;
-      const svgEl = svg.node();
-      const w = svgEl.clientWidth, h = svgEl.clientHeight;
-      const tx = w * 0.32 - found.y;
-      const ty = h / 2 - found.x;
-      svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(1));
-    }, 40);
+    update(hroot);
+    viewNodes([found.parent, ...found.parent.children], found, 0.6);
   }
 
   /* ---------------------------------------------------------------
