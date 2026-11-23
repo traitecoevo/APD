@@ -190,26 +190,39 @@ apd_add_canonical_link <- function(html = file.path("docs", "index.html"),
 apd_pin_snapshot_links <- function(html, dir = dirname(html),
                                    url = apd_site_url()) {
 
+  url <- sub("/*$", "/", url)
   page <- readr::read_file(html)
 
-  # Every href value; absolute, root-relative, protocol-relative, fragment-only
-  # and scheme links (mailto:, data:, javascript:) are not relative paths.
-  at <- gregexpr('href="[^"]*"', page)
+  # Every href attribute. The lookbehind keeps `xlink:href` and `data-href` out.
+  at <- gregexpr('(?<=[[:space:]])href="[^"]*"', page, perl = TRUE)
   hrefs <- regmatches(page, at)[[1]]
-  values <- substr(hrefs, 7, nchar(hrefs) - 1)
+  values <- trimws(substr(hrefs, 7, nchar(hrefs) - 1))
 
-  relative <- !grepl("^([a-zA-Z][a-zA-Z0-9+.-]*:|/|#)", values) &
-    nzchar(values)
-  path <- sub("^(\\./)+", "", values)
-  file <- sub("[?#].*$", "", path)
-  missing <- relative & !file.exists(file.path(dir, file))
+  # A relative path, once any `./` is gone: not a scheme (https:, mailto:,
+  # data:), root- or protocol-relative, fragment- or query-only, empty, or a
+  # template placeholder in an inline script.
+  path <- sub("^\\.(?=[?#]|$)", "", sub("^(\\./)+", "", values), perl = TRUE)
+  relative <- !grepl("^([a-zA-Z][a-zA-Z0-9+.-]*:|/|[?#])", path) &
+    nzchar(path) & !grepl("${", path, fixed = TRUE)
+
+  # Only the relative ones are looked up; the page also holds tens of thousands
+  # of absolute links and inlined stylesheets megabytes long. Matching against
+  # the snapshot's file list, rather than file.exists(), is exact about case
+  # (releases are cut on macOS, served from Linux) and never matches a
+  # directory or a path outside the snapshot.
+  missing <- relative
+  if (any(relative)) {
+    file <- utils::URLdecode(sub("[?#].*$", "", path[relative]))
+    missing[relative] <- !file %in% list.files(dir, recursive = TRUE)
+  }
+
+  if (!any(missing)) {
+    return(invisible(0L))
+  }
 
   hrefs[missing] <- sprintf('href="%s%s"', url, path[missing])
   regmatches(page, at) <- list(hrefs)
-
-  if (any(missing)) {
-    readr::write_file(page, html)
-  }
+  readr::write_file(page, html)
 
   invisible(sum(missing))
 }

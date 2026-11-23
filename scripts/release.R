@@ -77,7 +77,11 @@ for (name in names(RELEASE_FILES)) {
   if (!file.exists(from)) {
     stop("Missing ", from, " -- run `make site` first.", call. = FALSE)
   }
-  file.copy(from, file.path(to_path, name), overwrite = TRUE)
+  # Checked, because the link pinning below reads what is in the snapshot: a
+  # file that failed to copy would have its link sent to the live site instead.
+  if (!file.copy(from, file.path(to_path, name), overwrite = TRUE)) {
+    stop("Could not copy ", from, " into ", to_path, "/", call. = FALSE)
+  }
 }
 
 # The page's links to the site's other pages (the navbar's News, Using the APD)
