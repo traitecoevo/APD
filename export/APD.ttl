@@ -17705,11 +17705,11 @@ APD:seed_shape_ovoid
     skos:prefLabel "ovoid"@en .
 
 APD:seed_shape_ovoid_elongated
-    dcterms:description "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate; obclavate, club-shaped)"@en ;
+    dcterms:description "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate, obclavate, club-shaped)"@en ;
     dcterms:identifier "seed_shape_ovoid_elongated" ;
     a skos:Concept ;
     skos:broader APD:trait_0012618 ;
-    skos:definition "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate; obclavate, club-shaped)"@en ;
+    skos:definition "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate, obclavate, club-shaped)"@en ;
     skos:inScheme APD_scheme:traits ;
     skos:prefLabel "ovoid_elongated"@en .
 
