@@ -102,12 +102,16 @@ That rebuilds the dictionary, parses all four RDF serialisations, runs `validate
 test suite. It reports at two severities:
 
 - **`FAIL`** — a regression. Fix it.
-- **`gap`** — a problem that is already in the published dictionary, listed in `APD_KNOWN_GAPS`
-  (`R/validate.R`) with the reason it is still open. There are currently nine. They are expected;
-  they do not fail the build; and each needs its own reviewed change because every one of them alters
-  published output.
+- **`gap`** — reported, but does not fail the build. Two things produce one:
+  - a problem that is already in the published dictionary, listed in `APD_KNOWN_GAPS`
+    (`R/validate.R`) with the reason it is still open. **The register is currently empty**: every
+    problem the checks can find has been fixed, so a validation `gap` means someone added an entry on
+    purpose. An entry belongs there only for a published defect that cannot be fixed without a
+    decision from the vocabulary owner.
+  - `export/` differing from the committed copies, which is expected while you are editing `data/`
+    (see [Commit the rebuilt artefacts](#commit-the-rebuilt-artefacts)).
 
-Anything *not* on that register fails, so new breakage cannot hide behind the existing debt.
+Any validation problem *not* on the register fails, so new breakage cannot hide behind old debt.
 
 Then open a pull request against **`develop`** (the default branch — not `master`). CI will build,
 validate and, if you touched anything that affects the site, render it and attach the page as an
