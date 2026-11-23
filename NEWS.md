@@ -11,7 +11,7 @@ format:
     toc-expand: 1
     embed-resources: true
 ---
-## Unreleased
+## APD Version 3.0.0
 
 **Breaking: eight allowable values are removed.** `root_system_type` replaces
 `tap_root_present`, `tap_root_absent` and `tap_root_sometimes_present` with

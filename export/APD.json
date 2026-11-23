@@ -42503,7 +42503,7 @@
       "@type": "http://www.w3.org/2004/02/skos/core#Concept",
       "http://purl.org/dc/terms/description": {
         "@language": "en",
-        "@value": "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate; obclavate, club-shaped)"
+        "@value": "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate, obclavate, club-shaped)"
       },
       "http://purl.org/dc/terms/identifier": "seed_shape_ovoid_elongated",
       "http://www.w3.org/2004/02/skos/core#broader": {
@@ -42511,7 +42511,7 @@
       },
       "http://www.w3.org/2004/02/skos/core#definition": {
         "@language": "en",
-        "@value": "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate; obclavate, club-shaped)"
+        "@value": "A 3-dimensional shape that is egg-shaped in long section and circular in cross section, where the length dimension is much longer than the width/height dimensions. Term as used in AusTraits includes specific shapes club-shaped (clavate/obclavate) and tear-shaped (lachrimiform). (Synonyms, lachrimiform, tear-shaped, lachrymiform, clavate, obclavate, club-shaped)"
       },
       "http://www.w3.org/2004/02/skos/core#inScheme": {
         "@id": "https://w3id.org/APD/traits"

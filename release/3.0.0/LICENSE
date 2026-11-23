@@ -1,0 +1,61 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2021-2026 The AusTraits Plant Dictionary contributors
+
+This licence covers the **dictionary itself**: the trait definitions and the
+metadata that make up the AusTraits Plant Dictionary. Wenk et al. 2024 states
+that the data are CC BY 4.0, and this file is that statement.
+
+Concretely, the content is:
+
+  - the input tables in `data/` -- trait definitions, allowable categorical
+    values, the trait hierarchy, glossary, units, references and reviewers
+  - everything generated from them in `export/` -- `APD.ttl`, `APD.nt`,
+    `APD.nq`, `APD.json`, `APD_triples.csv`, `APD_traits.csv` and
+    `APD_categorical_values.csv`
+  - the same content where it appears in the rendered website and in the
+    versioned snapshots under `release/`
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the licence, and
+indicate if changes were made.
+
+The full legal code is at:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+A plain-language summary is at:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+
+What this licence does NOT cover
+--------------------------------
+
+The **software** that builds and presents the dictionary is licensed separately,
+under the 2-clause BSD licence: the R code in `R/`, the scripts in `scripts/`,
+the `Makefile`, the tests in `tests/`, the Quarto sources (`index.qmd`,
+`using_the_APD.qmd`, `_quarto.yml`) and the stylesheet in `assets/`. See
+`LICENSE-CODE`.
+
+The distinction is content versus machinery, not one directory versus another.
+A rendered page in `docs/` contains all three of: dictionary content, which is
+CC BY 4.0 under this licence; markup produced by the code above, which is BSD-2;
+and **third-party assets embedded by Quarto** -- Bootstrap and Quarto's own
+JavaScript, each under its own licence (MIT and similar). Those remain under
+their own terms and nothing here relicenses them.
+
+
+Attribution
+-----------
+
+Please cite the paper describing the dictionary:
+
+    Wenk EH, Sauquet H, Gallagher RV, Brownlee R, Boettiger C, et al. (2024)
+    The AusTraits Plant Dictionary. Scientific Data 11:537.
+    https://doi.org/10.1038/s41597-024-03368-z
+
+and, where you depend on a specific version, the Zenodo deposit for that
+version under the concept DOI:
+
+    https://doi.org/10.5281/zenodo.8040789
