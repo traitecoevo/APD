@@ -77,8 +77,20 @@ for (name in names(RELEASE_FILES)) {
   if (!file.exists(from)) {
     stop("Missing ", from, " -- run `make site` first.", call. = FALSE)
   }
-  file.copy(from, file.path(to_path, name), overwrite = TRUE)
+  # Checked, because the link pinning below reads what is in the snapshot: a
+  # file that failed to copy would have its link sent to the live site instead.
+  if (!file.copy(from, file.path(to_path, name), overwrite = TRUE)) {
+    stop("Could not copy ", from, " into ", to_path, "/", call. = FALSE)
+  }
 }
+
+# The page's links to the site's other pages (the navbar's News, Using the APD)
+# would resolve inside the snapshot, where those pages do not exist. Point them
+# at the live site; links to files the snapshot carries stay relative. Done here,
+# not in build_site.R, so a local docs/ still previews offline. See R/site.R.
+pinned <- apd_pin_snapshot_links(file.path(to_path, "index.html"))
+message("Pointed ", pinned, " links in the snapshot's index.html at ",
+        apd_site_url())
 
 message("Snapshotted ", length(RELEASE_FILES), " files into ", to_path, "/")
 message("\nStill to do by hand: tag v", version, ", attach these files to the ",
