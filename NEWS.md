@@ -83,6 +83,8 @@ which is the link the RDF publishes as `skos:broader`. They are now derived from
 `Parent`, and a new `tier_5` column holds the three five-level paths. The RDF is
 unchanged.
 
+**Release snapshots link to the live site's other pages.** A snapshot's `index.html` at `release/<version>/` linked to News and Using the APD with relative links, which resolved inside the snapshot, where those pages do not exist. From this release on, `make release` points any link the snapshot cannot serve at the live site. Earlier snapshots are archives and are left as they are.
+
 ## APD Version 2.2.0
 
 **No trait, allowable value, unit or APD identifier changed.** Nothing you have

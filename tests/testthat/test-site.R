@@ -137,3 +137,67 @@ test_that("the canonical link is added after the render, and only once", {
   expect_error(apd_add_canonical_link(headless, "https://example.org/"),
                "</head>")
 })
+
+test_that("a snapshot's links to unsnapshotted pages go to the live site", {
+  dir <- withr::local_tempdir()
+  writeLines("", file.path(dir, "APD.ttl"))
+  dir.create(file.path(dir, "sub"))
+  html <- file.path(dir, "index.html")
+  keep <- c(
+    # In the snapshot, so they resolve there.
+    './index.html', 'APD.ttl', 'index.html#trait_0000012', 'index.html?q=1',
+    ' APD.ttl ', 'APD%2Ettl',
+    # The snapshot's own page, or not relative paths at all.
+    './', './#trait_0000012', '?q=leaf', '#trait_0000012', '',
+    'https://w3id.org/APD/', '//example.org/', '/root.html', 'mailto:x@y.z',
+    '${item.href}'
+  )
+  writeLines(c(
+    sprintf('<a href="%s">', keep),
+    '<a href="./news.html">', '<a href="using_the_APD.html#example">',
+    # Case matters on the server, and a directory is not a page.
+    '<a href="apd.ttl">', '<a href="sub">',
+    # Not an href attribute.
+    '<use xlink:href="icons.svg#i">', '<a data-href="foo.html">'
+  ), html)
+
+  n <- apd_pin_snapshot_links(html, url = "https://example.org/APD")
+
+  page <- readr::read_file(html)
+  expect_identical(n, 4L)
+  for (value in keep) {
+    expect_match(page, sprintf('href="%s"', value), fixed = TRUE)
+  }
+  # The live page, with its fragment, and the slash supplied.
+  expect_match(page, 'href="https://example.org/APD/news.html"', fixed = TRUE)
+  expect_match(page, 'href="https://example.org/APD/using_the_APD.html#example"',
+               fixed = TRUE)
+  expect_match(page, 'href="https://example.org/APD/apd.ttl"', fixed = TRUE)
+  expect_match(page, 'href="https://example.org/APD/sub"', fixed = TRUE)
+  expect_match(page, 'xlink:href="icons.svg#i"', fixed = TRUE)
+  expect_match(page, 'data-href="foo.html"', fixed = TRUE)
+
+  # Running it again changes nothing.
+  expect_identical(apd_pin_snapshot_links(html, url = "https://example.org/APD/"),
+                   0L)
+  expect_identical(readr::read_file(html), page)
+})
+
+test_that("the shipped 2.2.0 snapshot would lose exactly its two navbar 404s", {
+  # release/2.2.0/ is an archive and is not rewritten; this runs on a copy of
+  # its index.html, checked against the shipped directory's files.
+  shipped <- file.path(APD_ROOT, "release", "2.2.0")
+  html <- withr::local_tempfile(fileext = ".html")
+  file.copy(file.path(shipped, "index.html"), html)
+
+  live <- "https://traitecoevo.github.io/APD/"
+  n <- apd_pin_snapshot_links(html, dir = shipped, url = live)
+  expect_identical(n, 2L)
+
+  # Nothing else changed: undoing the two rewrites gives back the shipped bytes.
+  page <- readr::read_file(html)
+  undone <- gsub(paste0('href="', live, '(news|using_the_APD)\\.html"'),
+                 'href="./\\1.html"', page)
+  expect_identical(undone, readr::read_file(file.path(shipped, "index.html")))
+  expect_false(identical(page, undone))
+})
