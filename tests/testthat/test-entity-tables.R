@@ -74,7 +74,11 @@
 # structure groups (previous digest dc95348c63d999e10c4e4f356593baa0). Verified
 # attributable by rendering every entity with and without the change: only those
 # seven groups differ.
-APD_ENTITY_TABLE_DIGEST <- "65205f0dab1136edf18206e9568995a4"
+#
+# Re-pinned when seed_shape ovoid_elongated's synonym list replaced
+# "clavate; obclavate" with "clavate, obclavate" (#70; previous digest
+# 65205f0dab1136edf18206e9568995a4).
+APD_ENTITY_TABLE_DIGEST <- "227b8294d684c1679b26f648f78362ce"
 
 # index.qmd has four loops, one per entity type, each calling its own builder.
 # Only create_APD_categorical_values_table() takes a bare slug: it prepends the

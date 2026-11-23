@@ -85,6 +85,11 @@ unchanged.
 
 **Release snapshots link to the live site's other pages.** A snapshot's `index.html` at `release/<version>/` linked to News and Using the APD with relative links, which resolved inside the snapshot, where those pages do not exist. From this release on, `make release` points any link the snapshot cannot serve at the live site. Earlier snapshots are archives and are left as they are.
 
+**A synonym list now uses commas throughout.** The definition of `seed_shape`
+`ovoid_elongated` listed `clavate; obclavate` as one synonym. It now lists
+`clavate` and `obclavate` separately, so code that splits a definition's
+`(Synonyms, …)` list on commas finds both.
+
 ## APD Version 2.2.0
 
 **No trait, allowable value, unit or APD identifier changed.** Nothing you have
