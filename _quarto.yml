@@ -38,6 +38,8 @@ website:
         text: Home
       - href: using_the_APD.html
         text: Using the APD
+      - href: trait_browser.html
+        text: Trait browser
       - href: https://vocabs.ardc.edu.au/viewById/649
         text: ARDC RVA endpoint
 

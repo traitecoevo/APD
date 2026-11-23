@@ -51,6 +51,14 @@ if (!all(copied)) {
        call. = FALSE)
 }
 
+# The trait browser is a static page outside the Quarto render, like 406.html,
+# but its data is filled in from data/ rather than copied as-is. It is also
+# embedded by the AusTraits website and data portal, so its URL,
+# /APD/trait_browser.html, is a published interface. See R/trait_browser.R.
+apd_require("jsonlite")
+n_traits <- apd_write_trait_browser(apd_read_inputs("data"))
+message("Wrote the trait browser with ", n_traits, " traits")
+
 # Every published URI resolves to a fragment of the document just rendered, so
 # a missing anchor turns a citable identifier into a scroll to the top of the
 # page. Checked here rather than in `make check`, because it is a property of
